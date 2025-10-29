@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PriorityMatcher from '../components/PriorityMatcher.astro';
+import PriorityRecommendations from '../components/PriorityRecommendations.astro';
 import { getCategoryIcon } from '../utils/helpers';
 
 const categories = [
@@ -77,19 +78,29 @@ const schema = {
             <span class="relative z-10">Men's Health</span>
             <span class="absolute bottom-2 left-0 w-full h-3 bg-brand-accent/20 -rotate-1"></span>
           </span>
-          Match
+          Match in 30 Seconds
         </h1>
 
-        <p class="text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto">
-          No rankings. No bias. Just honest comparisons helping you find the service that's best <em>for you</em>.
+        <p class="text-xl text-slate-600 mb-4 leading-relaxed max-w-2xl mx-auto">
+          Answer 3 quick questions about what matters to you, and we'll show personalized recommendations from 50+ services.
+        </p>
+
+        <p class="text-base text-slate-500 mb-8 max-w-2xl mx-auto">
+          No rankings. No bias. Just honest comparisons helping you find the service that's best <strong>for you</strong>.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href="#matcher" class="btn-primary px-8">
-            Find My Match
+          <a href="#matcher" class="btn-primary px-8 group">
+            Get My Recommendations
+            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
           </a>
-          <a href="#categories" class="btn-ghost">
-            Browse Categories
+          <a href="#categories" class="btn-ghost group">
+            Browse All Services
+            <svg class="w-4 h-4 ml-2 opacity-50 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
           </a>
         </div>
       </div>
@@ -120,6 +131,13 @@ const schema = {
   <section id="matcher" class="section-light">
     <div class="container-custom">
       <PriorityMatcher />
+    </div>
+  </section>
+
+  <!-- Priority-Based Recommendations (shown after selection) -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <PriorityRecommendations />
     </div>
   </section>
 

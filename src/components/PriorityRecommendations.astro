@@ -1,0 +1,198 @@
+---
+import { getCollection } from 'astro:content';
+import AffiliateButton from './AffiliateButton.astro';
+
+// Get all brands with priority scores
+const allBrands = await getCollection('brands');
+---
+
+<!-- Hidden by default, shown via JavaScript when priorities are selected -->
+<div id="priority-recommendations" class="hidden mt-12">
+  <div class="bg-gradient-to-r from-brand-accent/10 via-medical-blue-light to-brand-accent/10 rounded-3xl p-8 lg:p-12 border-2 border-brand-accent/20">
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-accent text-white text-sm font-semibold mb-4">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        Your Personalized Matches
+      </div>
+      <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-2">
+        Top Services For Your Priorities
+      </h3>
+      <p class="text-slate-600">
+        Based on your selections, here are the services that best match your needs
+      </p>
+    </div>
+
+    <div id="recommendations-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Recommendations will be inserted here by JavaScript -->
+    </div>
+
+    <div class="text-center mt-8">
+      <button
+        id="clear-priorities-btn"
+        class="btn-ghost text-sm"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+        Try Different Priorities
+      </button>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ brands: allBrands.map(b => ({
+  title: b.data.title,
+  slug: b.slug,
+  rating: b.data.rating,
+  categories: b.data.categories,
+  pricing: b.data.pricing,
+  priorities: b.data.priorities || {},
+  bestFor: b.data.bestFor || [],
+  pros: b.data.pros,
+})) }}>
+  function showRecommendations() {
+    const selectedPriorities = JSON.parse(sessionStorage.getItem('selectedPriorities') || '[]');
+
+    if (selectedPriorities.length === 0) {
+      document.getElementById('priority-recommendations')?.classList.add('hidden');
+      return;
+    }
+
+    // Score each brand based on selected priorities
+    const scoredBrands = brands.map(brand => {
+      let score = 0;
+      let matchCount = 0;
+
+      selectedPriorities.forEach(priority => {
+        if (brand.priorities && brand.priorities[priority]) {
+          score += brand.priorities[priority];
+          matchCount++;
+        }
+      });
+
+      // Average score
+      const averageScore = matchCount > 0 ? score / matchCount : 0;
+
+      return {
+        ...brand,
+        matchScore: averageScore,
+        matchCount: matchCount
+      };
+    });
+
+    // Sort by score and take top 6
+    const topMatches = scoredBrands
+      .filter(b => b.matchScore > 0)
+      .sort((a, b) => b.matchScore - a.matchScore)
+      .slice(0, 6);
+
+    // Display recommendations
+    const recommendationsList = document.getElementById('recommendations-list');
+    const recommendationsSection = document.getElementById('priority-recommendations');
+
+    if (!recommendationsList || !recommendationsSection) return;
+
+    if (topMatches.length === 0) {
+      recommendationsList.innerHTML = `
+        <div class="col-span-full text-center py-8">
+          <p class="text-slate-600">No exact matches found. Try selecting different priorities or browse all services below.</p>
+        </div>
+      `;
+    } else {
+      recommendationsList.innerHTML = topMatches.map(brand => `
+        <div class="card p-6 bg-white hover:shadow-lg transition-all duration-200">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <h4 class="font-bold text-lg text-slate-900 mb-1">${brand.title}</h4>
+              <div class="flex items-center gap-2">
+                <div class="flex items-center gap-1">
+                  ${Array.from({ length: 5 }).map((_, i) => `
+                    <svg class="w-4 h-4 ${i < Math.floor(brand.rating) ? 'text-amber-400' : 'text-slate-300'}" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  `).join('')}
+                </div>
+                <span class="text-sm text-slate-600">${brand.rating.toFixed(1)}</span>
+              </div>
+            </div>
+            <div class="badge badge-success text-xs">
+              ${Math.round(brand.matchScore)}/10 Match
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <div class="text-xs text-slate-500 mb-1">Starting from</div>
+            <div class="text-2xl font-bold text-brand-accent">${brand.pricing.medicationFrom || brand.pricing.consultationFee}</div>
+          </div>
+
+          ${brand.bestFor && brand.bestFor.length > 0 ? `
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              ${brand.bestFor.slice(0, 2).map(bf => `
+                <span class="badge badge-${bf.variant || 'primary'} text-xs">
+                  ${bf.icon || ''} ${bf.label}
+                </span>
+              `).join('')}
+            </div>
+          ` : ''}
+
+          <div class="space-y-2 mb-4">
+            ${brand.pros.slice(0, 2).map(pro => `
+              <div class="flex items-start gap-2 text-sm">
+                <svg class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-slate-600">${pro}</span>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <a href="/go/${brand.slug}" rel="nofollow sponsored" target="_blank" class="btn-primary text-center text-sm">
+              Visit ${brand.title}
+            </a>
+            <a href="/${brand.slug}" class="btn-ghost text-sm text-center">
+              Full Review
+            </a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Show the section
+    recommendationsSection.classList.remove('hidden');
+
+    // Smooth scroll to recommendations
+    setTimeout(() => {
+      recommendationsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+
+  // Initialize on page load if priorities exist
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', showRecommendations);
+  } else {
+    showRecommendations();
+  }
+
+  // Listen for priority matcher updates
+  window.addEventListener('priorities-updated', showRecommendations);
+
+  // Clear button handler
+  document.getElementById('clear-priorities-btn')?.addEventListener('click', () => {
+    sessionStorage.removeItem('selectedPriorities');
+    document.getElementById('priority-recommendations')?.classList.add('hidden');
+
+    // Scroll back to matcher
+    document.getElementById('matcher')?.scrollIntoView({ behavior: 'smooth' });
+
+    // Reset matcher UI
+    document.querySelectorAll('.priority-card.selected').forEach(card => {
+      card.classList.remove('selected');
+    });
+
+    const findBtn = document.getElementById('find-matches-btn');
+    if (findBtn) findBtn.disabled = true;
+  });
+</script>

@@ -67,12 +67,37 @@ const { category = 'general' } = Astro.props;
 ---
 
 <div class="priority-matcher bg-white rounded-3xl border border-slate-200 p-8 lg:p-12 shadow-sm">
+  <!-- Progress Indicator -->
+  <div class="flex items-center justify-center gap-2 mb-8">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full bg-brand-accent text-white flex items-center justify-center text-sm font-bold">1</div>
+      <span class="text-sm font-medium text-slate-900">Select Priorities</span>
+    </div>
+    <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center text-sm font-bold">2</div>
+      <span class="text-sm text-slate-500">Get Matches</span>
+    </div>
+    <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center text-sm font-bold">3</div>
+      <span class="text-sm text-slate-500">Choose Service</span>
+    </div>
+  </div>
+
   <div class="text-center mb-10">
     <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
       What Matters Most to You?
     </h2>
-    <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-      Select your priorities and we'll show you the best match. No rankings, just the right fit for your needs.
+    <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-2">
+      Select 1-3 priorities that matter most. We'll rank services based on your choices.
+    </p>
+    <p class="text-sm text-slate-500">
+      ⚡ Takes 30 seconds • 🔒 No email required
     </p>
   </div>
 
@@ -110,12 +135,15 @@ const { category = 'general' } = Astro.props;
   <div class="text-center">
     <button
       id="find-matches-btn"
-      class="btn-primary px-8 py-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+      class="btn-primary px-8 py-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed group"
       disabled
     >
-      Find My Best Match
+      <span class="btn-text">Find My Best Match</span>
+      <svg class="w-5 h-5 ml-2 inline-block group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      </svg>
     </button>
-    <p class="text-sm text-slate-500 mt-3">
+    <p id="selection-count" class="text-sm text-slate-500 mt-3">
       Select at least one priority to continue
     </p>
   </div>
@@ -159,8 +187,21 @@ const { category = 'general' } = Astro.props;
           card.classList.add('selected');
         }
 
-        // Enable/disable button based on selection
-        findMatchesBtn.disabled = selectedPriorities.size === 0;
+        // Enable/disable button and update UI based on selection
+        const count = selectedPriorities.size;
+        findMatchesBtn.disabled = count === 0;
+
+        // Update selection count text
+        const selectionCount = document.getElementById('selection-count');
+        if (selectionCount) {
+          if (count === 0) {
+            selectionCount.textContent = 'Select at least one priority to continue';
+            selectionCount.className = 'text-sm text-slate-500 mt-3';
+          } else {
+            selectionCount.textContent = `${count} ${count === 1 ? 'priority' : 'priorities'} selected • Ready to find matches!`;
+            selectionCount.className = 'text-sm text-emerald-600 font-medium mt-3';
+          }
+        }
       });
 
       // Add keyboard support
@@ -177,20 +218,27 @@ const { category = 'general' } = Astro.props;
     findMatchesBtn?.addEventListener('click', () => {
       const priorities = Array.from(selectedPriorities);
 
-      // Store in session storage for use across pages
-      sessionStorage.setItem('userPriorities', JSON.stringify(priorities));
+      // Store in session storage for use across pages (using consistent key)
+      sessionStorage.setItem('selectedPriorities', JSON.stringify(priorities));
 
-      // Navigate to results or scroll to comparison
-      const comparisonSection = document.getElementById('categories');
-      if (comparisonSection) {
-        comparisonSection.scrollIntoView({ behavior: 'smooth' });
+      // Trigger recommendations update
+      window.dispatchEvent(new CustomEvent('priorities-updated'));
 
-        // Add a subtle highlight animation
-        comparisonSection.classList.add('animate-pulse');
-        setTimeout(() => {
-          comparisonSection.classList.remove('animate-pulse');
-        }, 2000);
-      }
+      // Show loading state
+      const originalContent = findMatchesBtn.innerHTML;
+      findMatchesBtn.innerHTML = `
+        <svg class="animate-spin h-5 w-5 mx-auto" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+      `;
+      findMatchesBtn.disabled = true;
+
+      // Reset button after recommendations load
+      setTimeout(() => {
+        findMatchesBtn.innerHTML = originalContent;
+        findMatchesBtn.disabled = selectedPriorities.size === 0;
+      }, 1500);
 
       // Analytics event
       if (typeof window !== 'undefined' && (window as any).gtag) {
