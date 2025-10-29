@@ -4,7 +4,6 @@ const brands = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    slug: z.string(),
     logo: z.string().optional(),
     description: z.string(),
     categories: z.array(z.enum([

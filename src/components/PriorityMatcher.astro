@@ -160,9 +160,10 @@ const { category = 'general' } = Astro.props;
       });
 
       // Add keyboard support
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
+      card.addEventListener('keydown', (e: Event) => {
+        const keyEvent = e as KeyboardEvent;
+        if (keyEvent.key === 'Enter' || keyEvent.key === ' ') {
+          keyEvent.preventDefault();
           (card as HTMLElement).click();
         }
       });

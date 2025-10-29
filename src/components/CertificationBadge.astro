@@ -51,7 +51,7 @@ const iconSizes = {
   lg: 'w-4 h-4',
 };
 
-const colorClasses = {
+const colorClasses: Record<string, string> = {
   blue: 'bg-blue-50 text-blue-700 border-blue-200',
   emerald: 'bg-emerald-50 text-emerald-700 border-emerald-200',
   purple: 'bg-purple-50 text-purple-700 border-purple-200',
@@ -61,7 +61,7 @@ const colorClasses = {
 ---
 
 <span
-  class={`inline-flex items-center gap-1.5 rounded-full border font-medium ${sizeClasses[size]} ${colorClasses[badge.color]} ${className}`}
+  class={`inline-flex items-center gap-1.5 rounded-full border font-medium ${sizeClasses[size]} ${colorClasses[badge.color] || colorClasses.blue} ${className}`}
 >
   {showIcon && (
     <svg class={iconSizes[size]} fill="currentColor" viewBox="0 0 20 20" set:html={badge.icon} />

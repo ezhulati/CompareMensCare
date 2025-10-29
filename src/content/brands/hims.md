@@ -1,6 +1,5 @@
 ---
 title: "Hims"
-slug: "hims"
 description: "Comprehensive telehealth platform offering treatments for ED, hair loss, testosterone, weight loss, and mental health with affordable generic medications."
 categories: ["sexual-health", "hair-health", "testosterone", "weight-loss"]
 rating: 4.5

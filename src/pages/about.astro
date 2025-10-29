@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'About CompareMensCare.com',
+  description: 'Learn about our mission to provide transparent, evidence-based comparisons of men\'s health telehealth services.',
+};
+---
+
+<BaseLayout
+  title="About Us - Our Mission & Values"
+  description="Learn about CompareMensCare.com, our mission to provide transparent comparisons of men's health services, and our commitment to evidence-based information."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-2 text-sm text-slate-600 mb-6">
+          <a href="/" class="hover:text-brand-accent transition-colors">Home</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-slate-900 font-medium">About</span>
+        </div>
+
+        <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          About CompareMensCare
+        </h1>
+        <p class="text-xl text-slate-600 leading-relaxed">
+          We're on a mission to help men make informed decisions about their health by providing
+          transparent, unbiased comparisons of telehealth services.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="section bg-slate-50">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">
+        Our Story
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <p class="text-slate-600 leading-relaxed mb-4">
+          CompareMensCare was born from a simple frustration: finding honest information about men's health
+          telehealth services was unnecessarily difficult. Most "comparison" sites were thinly-veiled
+          advertisements pushing whichever service paid the highest commission. Reviews were suspiciously
+          positive. Rankings seemed arbitrary.
+        </p>
+
+        <p class="text-slate-600 leading-relaxed mb-4">
+          We wanted something different—a resource that actually compared services honestly, acknowledged
+          that different services work better for different people, and put user needs first.
+        </p>
+
+        <p class="text-slate-600 leading-relaxed">
+          That's why we built CompareMensCare.com. We don't rank services as "best overall" because there
+          is no universal winner. Instead, we identify which service is "best for" specific needs—best for
+          price, best for variety, best for speed, etc. Your priorities determine what's best for you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Mission -->
+  <section class="section bg-white">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">
+        Our Mission & Values
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-6">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4 text-2xl">
+            🎯
+          </div>
+          <h3 class="font-bold text-xl mb-3 text-slate-900">User-First Approach</h3>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            Your needs come before our affiliate commissions. We present all services equally and let you
+            decide what's best for your situation. We never hide or downplay services just because they
+            don't have affiliate programs.
+          </p>
+        </div>
+
+        <div class="card p-6">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 text-2xl">
+            📊
+          </div>
+          <h3 class="font-bold text-xl mb-3 text-slate-900">Evidence-Based Information</h3>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            Medical information comes from peer-reviewed research and clinical guidelines—not marketing materials.
+            We cite our sources and link to original research so you can verify our claims.
+          </p>
+        </div>
+
+        <div class="card p-6">
+          <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-4 text-2xl">
+            🔍
+          </div>
+          <h3 class="font-bold text-xl mb-3 text-slate-900">Complete Transparency</h3>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            We disclose all affiliate relationships, explain our methodology, and acknowledge our limitations.
+            We believe transparency builds trust, and trust is essential when discussing health.
+          </p>
+        </div>
+
+        <div class="card p-6">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4 text-2xl">
+            ⚖️
+          </div>
+          <h3 class="font-bold text-xl mb-3 text-slate-900">Honest Balance</h3>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            Every service has pros and cons. We present both honestly without exaggerating benefits or
+            hiding drawbacks. Real comparisons require acknowledging tradeoffs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Cover -->
+  <section class="section-light">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">
+        What We Cover
+      </h2>
+      <p class="text-lg text-slate-600 mb-10 text-center">
+        Comprehensive comparisons across all major men's health categories
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/sexual-health" class="card-hover p-6 group">
+          <div class="text-4xl mb-3">❤️‍🔥</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Sexual Health
+          </h3>
+          <p class="text-slate-600 text-sm">
+            ED treatments, premature ejaculation solutions, and sexual wellness services.
+          </p>
+        </a>
+
+        <a href="/hair-health" class="card-hover p-6 group">
+          <div class="text-4xl mb-3">💇‍♂️</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Hair Health
+          </h3>
+          <p class="text-slate-600 text-sm">
+            Hair loss treatments including finasteride, minoxidil, and combination therapies.
+          </p>
+        </a>
+
+        <a href="/testosterone" class="card-hover p-6 group">
+          <div class="text-4xl mb-3">💪</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Testosterone & Hormones
+          </h3>
+          <p class="text-slate-600 text-sm">
+            TRT clinics, hormone optimization, and alternative therapies.
+          </p>
+        </a>
+
+        <a href="/weight-loss" class="card-hover p-6 group">
+          <div class="text-4xl mb-3">⚖️</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Weight Loss
+          </h3>
+          <p class="text-slate-600 text-sm">
+            GLP-1 medications (Wegovy, Ozempic, Mounjaro) and weight management programs.
+          </p>
+        </a>
+
+        <a href="/mental-health" class="card-hover p-6 group">
+          <div class="text-4xl mb-3">🧠</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Mental Health
+          </h3>
+          <p class="text-slate-600 text-sm">
+            Online therapy platforms, psychiatric care, and counseling services.
+          </p>
+        </a>
+
+        <a href="/diagnostics" class="card-hover p-6 group">
+          <div class="text-4xl mb-3">🔬</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Diagnostics & Wellness
+          </h3>
+          <p class="text-slate-600 text-sm">
+            At-home health testing for hormones, vitamins, STDs, and metabolic health.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Make Money -->
+  <section class="section bg-white">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">
+        How We Make Money
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Transparency matters, especially when discussing health. Here's exactly how we fund this site:
+        </p>
+
+        <div class="card p-6 mb-6">
+          <h3 class="font-semibold text-lg mb-3 text-slate-900">Affiliate Commissions</h3>
+          <p class="text-slate-600 leading-relaxed text-sm mb-3">
+            When you click a link to a telehealth service and make a purchase, we may earn a commission.
+            This is at no extra cost to you—the price is the same whether you use our link or go directly
+            to the service.
+          </p>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            <strong>Important:</strong> We do NOT let affiliate commissions influence our comparisons.
+            Services that don't offer affiliate programs are presented with the same prominence and fairness
+            as those that do. Our goal is to help you find the best service for your needs, not to maximize
+            our commissions.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 border-l-4 border-brand-accent p-6 rounded">
+          <p class="text-slate-700 leading-relaxed text-sm font-medium mb-2">
+            Our Commitment to You:
+          </p>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li>✓ We present all services equally, regardless of affiliate status</li>
+            <li>✓ We clearly disclose affiliate relationships on every page</li>
+            <li>✓ We never hide or downplay services with better pricing/features</li>
+            <li>✓ We acknowledge pros and cons honestly for all services</li>
+            <li>✓ Your trust matters more than any commission</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Team -->
+  <section class="section-light">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">
+        Our Team
+      </h2>
+
+      <div class="prose prose-lg max-w-none text-center">
+        <p class="text-slate-600 leading-relaxed mb-6">
+          CompareMensCare is run by a small team of health writers, researchers, and web developers
+          passionate about making healthcare information accessible and transparent.
+        </p>
+
+        <p class="text-slate-600 leading-relaxed mb-6">
+          While we are not medical professionals, we work with licensed healthcare providers to review
+          medical content and ensure accuracy. All medical information is sourced from peer-reviewed
+          research and clinical guidelines.
+        </p>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-lg p-6 text-left">
+          <p class="text-sm text-amber-900 font-medium mb-2">
+            Medical Disclaimer:
+          </p>
+          <p class="text-sm text-amber-800">
+            The information on this site is for informational purposes only and does not constitute
+            medical advice. Always consult with a qualified healthcare professional before making any
+            health decisions or starting any treatment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="section bg-slate-900 text-white">
+    <div class="container-custom text-center max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">
+        Get in Touch
+      </h2>
+      <p class="text-xl text-slate-300 mb-6">
+        Questions, feedback, or suggestions? We'd love to hear from you.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:contact@comparemenscare.com" class="btn bg-white text-slate-900 hover:bg-slate-100">
+          Send us an email
+        </a>
+        <a href="/methodology" class="btn-outline border-white text-white hover:bg-white/10">
+          Our Methodology
+        </a>
+      </div>
+      <p class="text-sm text-slate-400 mt-8">
+        For support with specific services, please contact the service directly.
+        We are an independent comparison site and cannot provide customer support for individual telehealth companies.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

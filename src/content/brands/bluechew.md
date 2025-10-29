@@ -1,6 +1,5 @@
 ---
 title: "BlueChew"
-slug: "bluechew"
 description: "Specialized telehealth service offering chewable ED medications on a subscription basis with affordable monthly plans."
 categories: ["sexual-health"]
 rating: 4.3

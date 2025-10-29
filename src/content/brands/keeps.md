@@ -1,6 +1,5 @@
 ---
 title: "Keeps"
-slug: "keeps"
 description: "Affordable hair loss treatment subscription service offering finasteride and minoxidil with dermatologist support."
 categories: ["hair-health"]
 rating: 4.4

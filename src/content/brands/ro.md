@@ -1,6 +1,5 @@
 ---
 title: "Ro"
-slug: "ro"
 description: "Flexible telehealth platform offering ED treatments, hair loss solutions, and weight management with both brand-name and generic medications."
 categories: ["sexual-health", "hair-health", "weight-loss"]
 rating: 4.6

@@ -1,6 +1,5 @@
 ---
 title: "BetterHelp"
-slug: "betterhelp"
 description: "Leading online therapy platform offering affordable mental health support with licensed therapists via video, phone, and messaging."
 categories: ["mental-health"]
 rating: 4.4
