@@ -1,0 +1,156 @@
+---
+import AffiliateButton from './AffiliateButton.astro';
+
+export interface Brand {
+  name: string;
+  slug: string;
+  rating: number;
+  consultationFee: string;
+  medicationFrom: string;
+  subscriptionType: string;
+  pros: string[];
+  cons: string[];
+}
+
+export interface Props {
+  brands: Brand[];
+  location?: string;
+}
+
+const { brands, location = 'category-table' } = Astro.props;
+---
+
+<div class="overflow-x-auto bg-white rounded-lg shadow">
+  <table class="min-w-full divide-y divide-gray-200">
+    <thead class="bg-gray-50">
+      <tr>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Provider
+        </th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Rating
+        </th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Consultation
+        </th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Medication From
+        </th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Type
+        </th>
+        <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+      {brands.map((brand) => (
+        <tr class="hover:bg-gray-50 transition-colors">
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex flex-col">
+              <a href={`/${brand.slug}`} class="text-sm font-medium text-brand-primary hover:underline">
+                {brand.name}
+              </a>
+              <div class="text-xs text-gray-500 mt-1">
+                <span class="text-green-600">✓ {brand.pros[0]}</span>
+              </div>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <span class="text-yellow-400 mr-1">★</span>
+              <span class="text-sm font-medium text-gray-900">{brand.rating.toFixed(1)}</span>
+              <span class="text-sm text-gray-500 ml-1">/5</span>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <span class="text-sm text-gray-900">{brand.consultationFee}</span>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <span class="text-sm text-gray-900">{brand.medicationFrom}</span>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">
+              {brand.subscriptionType}
+            </span>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-center">
+            <AffiliateButton
+              brand={brand.slug}
+              text="Visit Site"
+              variant="primary"
+              size="sm"
+              location={location}
+            />
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<!-- Mobile-friendly version -->
+<div class="lg:hidden space-y-4">
+  {brands.map((brand) => (
+    <div class="bg-white rounded-lg shadow p-4 border border-gray-200">
+      <div class="flex justify-between items-start mb-3">
+        <div>
+          <a href={`/${brand.slug}`} class="font-semibold text-lg text-brand-primary hover:underline">
+            {brand.name}
+          </a>
+          <div class="flex items-center mt-1">
+            <span class="text-yellow-400 mr-1">★</span>
+            <span class="text-sm font-medium">{brand.rating.toFixed(1)}/5</span>
+          </div>
+        </div>
+        <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">
+          {brand.subscriptionType}
+        </span>
+      </div>
+
+      <dl class="space-y-2 text-sm mb-4">
+        <div class="flex justify-between">
+          <dt class="text-gray-500">Consultation:</dt>
+          <dd class="font-medium">{brand.consultationFee}</dd>
+        </div>
+        <div class="flex justify-between">
+          <dt class="text-gray-500">Medication from:</dt>
+          <dd class="font-medium">{brand.medicationFrom}</dd>
+        </div>
+        <div>
+          <dt class="text-gray-500 mb-1">Top Pro:</dt>
+          <dd class="text-green-600 text-xs">✓ {brand.pros[0]}</dd>
+        </div>
+      </dl>
+
+      <AffiliateButton
+        brand={brand.slug}
+        text="Visit Site"
+        variant="primary"
+        size="md"
+        location={location}
+        class="w-full"
+      />
+    </div>
+  ))}
+</div>
+
+<style>
+  /* Hide desktop table on mobile */
+  .overflow-x-auto {
+    display: block;
+  }
+
+  @media (max-width: 1023px) {
+    .overflow-x-auto {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .lg\:hidden {
+      display: none !important;
+    }
+  }
+</style>

@@ -1,0 +1,314 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import type { Brand } from '../components/ComparisonTable.astro';
+
+// Example brand data (in production, this would come from content collections)
+const brands: Brand[] = [
+  {
+    name: 'Hims',
+    slug: 'hims',
+    rating: 4.5,
+    consultationFee: 'Free',
+    medicationFrom: '$20/month',
+    subscriptionType: 'Subscription',
+    pros: [
+      'Wide selection of ED treatments',
+      'Affordable pricing',
+      'Fast shipping',
+    ],
+    cons: [
+      'Subscription required',
+      'Limited customization',
+    ],
+  },
+  {
+    name: 'Ro',
+    slug: 'ro',
+    rating: 4.6,
+    consultationFee: 'Free',
+    medicationFrom: '$4/dose',
+    subscriptionType: 'Flexible',
+    pros: [
+      'Brand-name and generic options',
+      'Licensed physicians',
+      'No subscription required',
+    ],
+    cons: [
+      'Per-dose pricing can be expensive',
+      'Shipping fees apply',
+    ],
+  },
+  {
+    name: 'BlueChew',
+    slug: 'bluechew',
+    rating: 4.3,
+    consultationFee: 'Free',
+    medicationFrom: '$20/month',
+    subscriptionType: 'Subscription',
+    pros: [
+      'Chewable tablets',
+      'Fast-acting',
+      'Discreet packaging',
+    ],
+    cons: [
+      'Compounded only',
+      'Limited dose options',
+    ],
+  },
+  {
+    name: 'Manual',
+    slug: 'manual',
+    rating: 4.4,
+    consultationFee: '£29.99',
+    medicationFrom: '£2.50/dose',
+    subscriptionType: 'Flexible',
+    pros: [
+      'UK-based service',
+      'Comprehensive approach',
+      'Educational resources',
+    ],
+    cons: [
+      'UK only',
+      'Consultation fee required',
+    ],
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Best ED Telehealth Services',
+  description: 'Compare the best online ED treatment services including Hims, Ro, BlueChew, and more.',
+  about: {
+    '@type': 'MedicalCondition',
+    name: 'Erectile Dysfunction',
+  },
+};
+---
+
+<BaseLayout
+  title="Best ED Telehealth Services - Sexual Health Comparison"
+  description="Compare the top erectile dysfunction telehealth services. Find the best ED treatment options, pricing, and reviews for Hims, Ro, BlueChew, Manual, and more."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
+    <div class="container-custom">
+      <div class="max-w-4xl">
+        <div class="flex items-center space-x-2 text-sm text-gray-600 mb-4">
+          <a href="/" class="hover:text-brand-primary">Home</a>
+          <span>›</span>
+          <span class="text-gray-900 font-medium">Sexual Health</span>
+        </div>
+
+        <h1 class="text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-4">
+          Best ED Telehealth Services
+        </h1>
+        <p class="text-xl text-gray-600 leading-relaxed mb-6">
+          Compare evidence-based erectile dysfunction treatments from licensed telehealth providers.
+          Find the right service based on medication options, pricing, and consultation methods.
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <a href="#comparison" class="btn-primary">
+            Compare Providers
+          </a>
+          <a href="/guides/understanding-ed" class="btn-outline">
+            Learn About ED
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Overview -->
+  <section class="py-8 bg-white border-b border-gray-200">
+    <div class="container-custom">
+      <div class="grid md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-3xl font-bold text-brand-primary mb-1">8</div>
+          <div class="text-sm text-gray-600">Providers Reviewed</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-brand-primary mb-1">$4+</div>
+          <div class="text-sm text-gray-600">Per Dose</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-brand-primary mb-1">FDA</div>
+          <div class="text-sm text-gray-600">Approved Options</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-brand-primary mb-1">24-48h</div>
+          <div class="text-sm text-gray-600">Average Delivery</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Understanding ED Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-display font-bold mb-6">Understanding Erectile Dysfunction</h2>
+        <div class="prose prose-lg max-w-none">
+          <p>
+            Erectile dysfunction (ED) affects millions of men worldwide. It's the inability to achieve
+            or maintain an erection firm enough for sexual intercourse. ED can have physical causes
+            (such as heart disease, diabetes, or hormonal imbalances) or psychological causes (such as
+            stress, anxiety, or depression).
+          </p>
+          <p>
+            Modern telehealth services make it easier than ever to get treatment. After a brief online
+            consultation, licensed physicians can prescribe FDA-approved medications that are delivered
+            discreetly to your door.
+          </p>
+        </div>
+        <a href="/guides/understanding-ed" class="inline-flex items-center text-brand-primary font-medium mt-4">
+          Read our comprehensive ED guide
+          <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section id="comparison" class="py-12 bg-white">
+    <div class="container-custom">
+      <div class="mb-8">
+        <h2 class="text-3xl font-display font-bold mb-3">Compare ED Providers</h2>
+        <p class="text-gray-600">
+          All prices normalized to monthly cost. Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+        </p>
+      </div>
+
+      <ComparisonTable brands={brands} location="sexual-health-table" />
+    </div>
+  </section>
+
+  <!-- Treatment Options -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-display font-bold mb-8">Treatment Options</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="font-semibold text-xl mb-3">Sildenafil (Viagra)</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            The most well-known ED medication. Take 30-60 minutes before activity. Effects last 4-6 hours.
+          </p>
+          <div class="text-sm text-gray-500">
+            <div class="font-medium text-gray-900 mb-1">Available from:</div>
+            <ul class="space-y-1">
+              <li>• Hims: $4-$8/dose</li>
+              <li>• Ro: $4-$12/dose</li>
+              <li>• BlueChew: ~$20/month</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="font-semibold text-xl mb-3">Tadalafil (Cialis)</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Longer-lasting option. Can be taken daily or as-needed. Effects last up to 36 hours.
+          </p>
+          <div class="text-sm text-gray-500">
+            <div class="font-medium text-gray-900 mb-1">Available from:</div>
+            <ul class="space-y-1">
+              <li>• Hims: $3-$10/dose</li>
+              <li>• Ro: $4-$11/dose</li>
+              <li>• BlueChew: ~$30/month</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="font-semibold text-xl mb-3">Vardenafil (Levitra)</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Similar to Viagra but may work faster. Take 30-60 minutes before. Effects last 4-5 hours.
+          </p>
+          <div class="text-sm text-gray-500">
+            <div class="font-medium text-gray-900 mb-1">Available from:</div>
+            <ul class="space-y-1">
+              <li>• Hims: $10-$12/dose</li>
+              <li>• Ro: $8-$14/dose</li>
+              <li>• Limited availability</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-12 bg-white">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl font-display font-bold mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <details class="group">
+          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4 bg-gray-50 rounded-lg">
+            <span>How do online ED services work?</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-gray-600 mt-3 p-4 pt-0">
+            You complete an online health questionnaire, a licensed physician reviews your information,
+            and if appropriate, prescribes medication that's shipped directly to you. The entire process
+            usually takes 24-48 hours.
+          </p>
+        </details>
+
+        <details class="group">
+          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4 bg-gray-50 rounded-lg">
+            <span>Are these medications safe?</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-gray-600 mt-3 p-4 pt-0">
+            When prescribed by licensed physicians and used as directed, ED medications are generally safe.
+            However, they may not be appropriate for everyone, especially those with certain heart conditions
+            or taking nitrates. Always disclose your complete medical history.
+          </p>
+        </details>
+
+        <details class="group">
+          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4 bg-gray-50 rounded-lg">
+            <span>What's the difference between brand-name and generic?</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-gray-600 mt-3 p-4 pt-0">
+            Generic ED medications contain the same active ingredients as brand-name versions but cost
+            significantly less. They're FDA-approved and equally effective. Some providers offer compounded
+            medications, which are custom-made by pharmacies but not FDA-approved.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Comparisons -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-display font-bold mb-8">Related Comparisons</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/compare/hims-vs-ro" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="font-semibold text-lg mb-2">Hims vs Ro</h3>
+          <p class="text-gray-600 text-sm">Which ED service offers better value and selection?</p>
+        </a>
+        <a href="/compare/bluechew-vs-roman" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="font-semibold text-lg mb-2">BlueChew vs Roman</h3>
+          <p class="text-gray-600 text-sm">Comparing subscription models and chewable options.</p>
+        </a>
+        <a href="/hair-health" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="font-semibold text-lg mb-2">Hair Health</h3>
+          <p class="text-gray-600 text-sm">Browse our hair loss treatment comparisons.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
