@@ -7,7 +7,7 @@ import { formatDate, getCategoryName } from '../utils/helpers';
 export async function getStaticPaths() {
   const brands = await getCollection('brands');
   return brands.map((brand) => ({
-    params: { brand: brand.data.slug },
+    params: { brand: brand.slug },
     props: { brand },
   }));
 }

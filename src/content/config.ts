@@ -4,7 +4,6 @@ const brands = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    slug: z.string(),
     logo: z.string().optional(),
     description: z.string(),
     categories: z.array(z.enum([
@@ -44,7 +43,6 @@ const guides = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    slug: z.string(),
     description: z.string(),
     category: z.enum([
       'sexual-health',
@@ -73,7 +71,6 @@ const comparisons = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    slug: z.string(),
     description: z.string(),
     brand1: z.string(),
     brand2: z.string(),
@@ -105,7 +102,6 @@ const blog = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    slug: z.string(),
     description: z.string(),
     image: z.string().optional(),
     category: z.array(z.string()),
@@ -120,7 +116,6 @@ const categories = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    slug: z.string(),
     description: z.string(),
     icon: z.string().optional(),
     image: z.string().optional(),
