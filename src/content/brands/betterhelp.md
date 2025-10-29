@@ -37,8 +37,8 @@ cons:
   - "No prescribing capabilities (therapy only)"
   - "Therapist availability can vary"
 featured: true
-publishDate: 2025-01-15
-lastReviewed: 2025-01-15
+publishDate: 2025-01-15T00:00:00.000Z
+lastReviewed: 2025-01-15T00:00:00.000Z
 reviewerName: "Dr. Michael Thompson"
 reviewerCredentials: "PsyD, Clinical Psychology"
 ---

@@ -31,8 +31,8 @@ cons:
   - "3-month minimum commitment"
   - "Fewer customization options than some competitors"
 featured: true
-publishDate: 2025-01-15
-lastReviewed: 2025-01-15
+publishDate: 2025-01-15T00:00:00.000Z
+lastReviewed: 2025-01-15T00:00:00.000Z
 reviewerName: "Dr. Sarah Chen"
 reviewerCredentials: "MD, Dermatology"
 ---
