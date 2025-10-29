@@ -4,6 +4,7 @@ slug: "hims"
 description: "Comprehensive telehealth platform offering treatments for ED, hair loss, testosterone, weight loss, and mental health with affordable generic medications."
 categories: ["sexual-health", "hair-health", "testosterone", "weight-loss"]
 rating: 4.5
+reviewCount: 24500
 affiliateLink: "hims"
 affiliateId: "hims"
 cookieDays: 30
@@ -12,6 +13,9 @@ pricing:
   consultationFee: "Free"
   medicationFrom: "$4/dose"
   subscriptionType: "Subscription"
+  priceMin: 4
+  priceMax: 958
+  currency: "USD"
 services:
   - "Erectile Dysfunction Treatment"
   - "Hair Loss Treatment"
@@ -32,6 +36,34 @@ cons:
   - "Subscription model may not suit everyone"
   - "Some treatments require ongoing subscription"
   - "No in-person consultations available"
+bestFor:
+  - label: "Best for Variety"
+    variant: "primary"
+    icon: "🎯"
+  - label: "One-Stop Shop"
+    variant: "success"
+  - label: "Best Value"
+    variant: "success"
+    icon: "💰"
+priorities:
+  affordability: 9
+  privacy: 8
+  speed: 8
+  selection: 10
+  transparency: 9
+  ease: 9
+  support: 7
+  insurance: 0
+  comprehensive: 10
+features:
+  freeConsultation: true
+  subscriptionRequired: true
+  insuranceAccepted: false
+  sameDayShipping: false
+  discretePackaging: true
+  cancelAnytime: true
+  mobileApp: true
+  pharmacyPickup: false
 featured: true
 publishDate: 2025-01-15T00:00:00.000Z
 lastReviewed: 2025-01-15T00:00:00.000Z

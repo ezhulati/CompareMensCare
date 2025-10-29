@@ -4,14 +4,18 @@ slug: "bluechew"
 description: "Specialized telehealth service offering chewable ED medications on a subscription basis with affordable monthly plans."
 categories: ["sexual-health"]
 rating: 4.3
+reviewCount: 9800
 affiliateLink: "bluechew"
 affiliateId: "bluechew"
 cookieDays: 30
 commission: "Per sale"
 pricing:
-  consultationFee: "Free (included in subscription)"
+  consultationFee: "Free"
   medicationFrom: "$20/month"
-  subscriptionType: "Monthly Subscription"
+  subscriptionType: "Subscription"
+  priceMin: 20
+  priceMax: 120
+  currency: "USD"
 services:
   - "Chewable Sildenafil (generic Viagra)"
   - "Chewable Tadalafil (generic Cialis)"
@@ -33,7 +37,35 @@ cons:
   - "Not available in South Carolina"
   - "Limited dosage customization"
   - "Does not accept insurance"
-featured: true
+bestFor:
+  - label: "Best for Chewables"
+    variant: "warning"
+    icon: "💊"
+  - label: "Best Value"
+    variant: "success"
+    icon: "💰"
+  - label: "Simple Plans"
+    variant: "neutral"
+priorities:
+  affordability: 10
+  privacy: 9
+  speed: 9
+  selection: 5
+  transparency: 8
+  ease: 10
+  support: 7
+  insurance: 0
+  comprehensive: 3
+features:
+  freeConsultation: true
+  subscriptionRequired: true
+  insuranceAccepted: false
+  sameDayShipping: false
+  discretePackaging: true
+  cancelAnytime: true
+  mobileApp: false
+  pharmacyPickup: false
+featured: false
 publishDate: 2025-01-15T00:00:00.000Z
 lastReviewed: 2025-01-15T00:00:00.000Z
 reviewerName: "Dr. James Mitchell"

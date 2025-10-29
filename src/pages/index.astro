@@ -1,43 +1,50 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PriorityMatcher from '../components/PriorityMatcher.astro';
 import { getCategoryIcon } from '../utils/helpers';
 
 const categories = [
   {
     title: 'Sexual Health',
     slug: 'sexual-health',
-    description: 'Compare ED treatments, premature ejaculation solutions, and sexual wellness services.',
+    description: 'ED treatments, premature ejaculation solutions, and sexual wellness.',
     providersCount: 8,
+    icon: '❤️‍🔥',
   },
   {
     title: 'Hair Health',
     slug: 'hair-health',
-    description: 'Find the best hair loss treatments, including finasteride, minoxidil, and more.',
+    description: 'Hair loss treatments including finasteride, minoxidil, and more.',
     providersCount: 5,
+    icon: '💇‍♂️',
   },
   {
     title: 'Testosterone & Hormones',
     slug: 'testosterone',
-    description: 'Compare TRT clinics and hormone optimization services for men.',
+    description: 'TRT clinics and hormone optimization services.',
     providersCount: 7,
+    icon: '💪',
   },
   {
     title: 'Weight Loss',
     slug: 'weight-loss',
-    description: 'Explore GLP-1 medications and personalized weight management programs.',
+    description: 'GLP-1 medications and personalized weight management.',
     providersCount: 6,
+    icon: '⚖️',
   },
   {
     title: 'Mental Health',
     slug: 'mental-health',
-    description: 'Compare online therapy platforms and psychiatric care services.',
+    description: 'Online therapy platforms and psychiatric care.',
     providersCount: 2,
+    icon: '🧠',
   },
   {
     title: 'Diagnostics & Wellness',
     slug: 'diagnostics',
-    description: 'At-home health testing kits for comprehensive wellness monitoring.',
+    description: 'At-home health testing for comprehensive monitoring.',
     providersCount: 1,
+    icon: '🔬',
   },
 ];
 
@@ -56,61 +63,97 @@ const schema = {
   schema={schema}
 >
   <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16 lg:py-24">
+  <section class="section bg-white">
     <div class="container-custom">
-      <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl lg:text-6xl font-display font-bold text-gray-900 mb-6">
-          Make Informed Decisions About
-          <span class="text-brand-primary">Men's Health</span>
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium mb-8 border border-slate-200">
+          <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+          Evidence-Based Comparisons
+        </div>
+
+        <h1 class="text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+          Find Your Perfect
+          <span class="relative inline-block">
+            <span class="relative z-10">Men's Health</span>
+            <span class="absolute bottom-2 left-0 w-full h-3 bg-brand-accent/20 -rotate-1"></span>
+          </span>
+          Match
         </h1>
-        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-          Objective, evidence-based comparisons of telehealth services for ED, hair loss,
-          testosterone therapy, weight management, mental health, and at-home diagnostics.
+
+        <p class="text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto">
+          No rankings. No bias. Just honest comparisons helping you find the service that's best <em>for you</em>.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#categories" class="btn-primary">
-            Explore Categories
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="#matcher" class="btn-primary px-8">
+            Find My Match
           </a>
-          <a href="/methodology" class="btn-outline">
-            Our Methodology
+          <a href="#categories" class="btn-ghost">
+            Browse Categories
           </a>
+        </div>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-4xl mx-auto">
+        <div class="text-center">
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">50+</div>
+          <div class="text-sm text-slate-600">Services Reviewed</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">6</div>
+          <div class="text-sm text-slate-600">Health Categories</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">100%</div>
+          <div class="text-sm text-slate-600">Transparent</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">24/7</div>
+          <div class="text-sm text-slate-600">Updated</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Trust Us Section -->
-  <section class="py-16 bg-white">
+  <!-- Priority Matcher Section -->
+  <section id="matcher" class="section-light">
     <div class="container-custom">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-display font-bold text-center mb-12">Why Trust Our Comparisons?</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="text-center">
-            <div class="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-lg mb-2">Evidence-Based</h3>
-            <p class="text-gray-600 text-sm">We cite clinical research and normalize pricing for accurate comparisons.</p>
+      <PriorityMatcher />
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
+          Our Philosophy
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+          We believe <strong>every service is best for someone</strong>. There's no universal "winner" — just the right match for your unique needs, budget, and priorities.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 text-left">
+          <div class="card p-6">
+            <div class="text-4xl mb-3">📊</div>
+            <h3 class="font-semibold text-lg mb-2 text-slate-900">Data-Driven</h3>
+            <p class="text-slate-600 text-sm">
+              We aggregate reviews, pricing, and clinical data to give you the full picture.
+            </p>
           </div>
-          <div class="text-center">
-            <div class="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-lg mb-2">Transparent</h3>
-            <p class="text-gray-600 text-sm">We disclose our affiliate relationships and publish our rating methodology.</p>
+          <div class="card p-6">
+            <div class="text-4xl mb-3">🔍</div>
+            <h3 class="font-semibold text-lg mb-2 text-slate-900">Transparent</h3>
+            <p class="text-slate-600 text-sm">
+              Full disclosure on affiliate relationships and how we evaluate services.
+            </p>
           </div>
-          <div class="text-center">
-            <div class="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-lg mb-2">Up-to-Date</h3>
-            <p class="text-gray-600 text-sm">Regular reviews and updates ensure you get current information.</p>
+          <div class="card p-6">
+            <div class="text-4xl mb-3">🎯</div>
+            <h3 class="font-semibold text-lg mb-2 text-slate-900">Impartial</h3>
+            <p class="text-slate-600 text-sm">
+              We don't push you toward any provider. We help you choose what's right for you.
+            </p>
           </div>
         </div>
       </div>
@@ -118,12 +161,14 @@ const schema = {
   </section>
 
   <!-- Categories Section -->
-  <section id="categories" class="py-16 bg-gray-50">
+  <section id="categories" class="section-light">
     <div class="container-custom">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-display font-bold mb-4">Browse by Category</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          Select a category to compare providers and find the best telehealth service for your needs.
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+          Explore Health Categories
+        </h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          Find services that match your needs in every area of men's health.
         </p>
       </div>
 
@@ -131,19 +176,27 @@ const schema = {
         {categories.map((category) => (
           <a
             href={`/${category.slug}`}
-            class="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-200"
+            class="card-hover p-8 group"
           >
             <div class="flex items-start justify-between mb-4">
-              <div>
-                <h3 class="font-display font-semibold text-xl mb-2">{category.title}</h3>
-                <span class="text-sm text-gray-500">{category.providersCount} providers</span>
+              <div class="flex-1">
+                <h3 class="font-bold text-xl mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+                  {category.title}
+                </h3>
+                <span class="text-sm text-slate-500">
+                  {category.providersCount} services compared
+                </span>
               </div>
-              <span class="text-3xl">{getCategoryIcon(category.slug)}</span>
+              <span class="text-4xl group-hover:scale-110 transition-transform duration-200">
+                {category.icon}
+              </span>
             </div>
-            <p class="text-gray-600 text-sm mb-4">{category.description}</p>
-            <span class="text-brand-primary font-medium text-sm inline-flex items-center">
-              Compare now
-              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              {category.description}
+            </p>
+            <span class="text-brand-accent font-medium text-sm inline-flex items-center group-hover:gap-2 transition-all">
+              Compare services
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
             </span>
@@ -153,15 +206,57 @@ const schema = {
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="py-16 bg-brand-primary text-white">
+  <!-- How It Works Section -->
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-12 text-center">
+          How It Works
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+          <div class="text-center">
+            <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+              1
+            </div>
+            <h3 class="font-semibold text-lg mb-2 text-slate-900">Tell Us What Matters</h3>
+            <p class="text-slate-600 text-sm">
+              Select your priorities: price, speed, privacy, or whatever's important to you.
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+              2
+            </div>
+            <h3 class="font-semibold text-lg mb-2 text-slate-900">See Your Matches</h3>
+            <p class="text-slate-600 text-sm">
+              We show you which services are "best for" your specific needs.
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+              3
+            </div>
+            <h3 class="font-semibold text-lg mb-2 text-slate-900">Make Your Choice</h3>
+            <p class="text-slate-600 text-sm">
+              Compare details and connect with the service that fits you best.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section bg-slate-900 text-white">
     <div class="container-custom text-center">
-      <h2 class="text-3xl font-display font-bold mb-4">Stay Informed</h2>
-      <p class="text-xl mb-8 opacity-90">
-        Get the latest updates on telehealth services, pricing changes, and new treatment options.
+      <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+        Ready to Find Your Match?
+      </h2>
+      <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+        Start with what matters to you, and we'll help you find the perfect fit.
       </p>
-      <a href="/guides" class="btn bg-white text-brand-primary hover:bg-gray-100">
-        Browse Our Guides
+      <a href="#matcher" class="btn bg-white text-slate-900 hover:bg-slate-100 px-8">
+        Get Started
       </a>
     </div>
   </section>

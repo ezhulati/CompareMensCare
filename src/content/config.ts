@@ -4,6 +4,7 @@ const brands = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    slug: z.string(),
     logo: z.string().optional(),
     description: z.string(),
     categories: z.array(z.enum([
@@ -15,6 +16,7 @@ const brands = defineCollection({
       'diagnostics'
     ])),
     rating: z.number().min(0).max(5),
+    reviewCount: z.number().optional(),
     affiliateLink: z.string(),
     affiliateId: z.string(),
     cookieDays: z.number(),
@@ -23,6 +25,9 @@ const brands = defineCollection({
       consultationFee: z.string(),
       medicationFrom: z.string().optional(),
       subscriptionType: z.string(),
+      priceMin: z.number().optional(),
+      priceMax: z.number().optional(),
+      currency: z.string().default('USD'),
     }),
     services: z.array(z.string()),
     availability: z.object({
@@ -31,6 +36,36 @@ const brands = defineCollection({
     }),
     pros: z.array(z.string()),
     cons: z.array(z.string()),
+    // "Best For" framework attributes
+    bestFor: z.array(z.object({
+      label: z.string(),
+      variant: z.enum(['primary', 'success', 'warning', 'neutral', 'premium']).default('primary'),
+      icon: z.string().optional(),
+      category: z.string().optional(), // Category-specific best for
+    })).optional(),
+    // Priority matching scores (0-10 scale)
+    priorities: z.object({
+      affordability: z.number().min(0).max(10).optional(),
+      privacy: z.number().min(0).max(10).optional(),
+      speed: z.number().min(0).max(10).optional(),
+      selection: z.number().min(0).max(10).optional(),
+      transparency: z.number().min(0).max(10).optional(),
+      ease: z.number().min(0).max(10).optional(),
+      support: z.number().min(0).max(10).optional(),
+      insurance: z.number().min(0).max(10).optional(),
+      comprehensive: z.number().min(0).max(10).optional(),
+    }).optional(),
+    // Feature highlights
+    features: z.object({
+      freeConsultation: z.boolean().default(false),
+      subscriptionRequired: z.boolean().default(false),
+      insuranceAccepted: z.boolean().default(false),
+      sameDayShipping: z.boolean().default(false),
+      discretePackaging: z.boolean().default(true),
+      cancelAnytime: z.boolean().default(true),
+      mobileApp: z.boolean().default(false),
+      pharmacyPickup: z.boolean().default(false),
+    }).optional(),
     featured: z.boolean().default(false),
     publishDate: z.date(),
     lastReviewed: z.date(),

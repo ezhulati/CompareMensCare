@@ -1,0 +1,60 @@
+---
+interface Props {
+  label: string;
+  icon?: string;
+  variant?: 'primary' | 'success' | 'warning' | 'neutral' | 'premium';
+  size?: 'sm' | 'md' | 'lg';
+  showIcon?: boolean;
+}
+
+const {
+  label,
+  icon,
+  variant = 'primary',
+  size = 'md',
+  showIcon = true,
+} = Astro.props;
+
+// Map variants to icon defaults if not provided
+const defaultIcons: Record<string, string> = {
+  primary: '⭐',
+  success: '✓',
+  warning: '⚡',
+  neutral: '•',
+  premium: '👑',
+};
+
+const displayIcon = icon || (showIcon ? defaultIcons[variant] : '');
+
+// Size classes
+const sizeClasses = {
+  sm: 'text-xs px-2 py-0.5 gap-1',
+  md: 'text-sm px-3 py-1 gap-1.5',
+  lg: 'text-base px-4 py-1.5 gap-2',
+};
+
+// Variant classes
+const variantClasses = {
+  primary: 'bg-brand-accent/10 text-brand-accent border-brand-accent/30',
+  success: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+  warning: 'bg-amber-50 text-amber-700 border-amber-200',
+  neutral: 'bg-slate-100 text-slate-700 border-slate-200',
+  premium: 'bg-gradient-to-r from-amber-50 to-yellow-50 text-amber-900 border-amber-300',
+};
+---
+
+<span class={`
+  inline-flex items-center rounded-full font-medium border
+  ${sizeClasses[size]}
+  ${variantClasses[variant]}
+  transition-all duration-200 hover:scale-105
+`}>
+  {displayIcon && (
+    <span class="flex-shrink-0">
+      {displayIcon}
+    </span>
+  )}
+  <span class="whitespace-nowrap">
+    {label}
+  </span>
+</span>

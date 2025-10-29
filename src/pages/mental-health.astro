@@ -1,0 +1,446 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import type { Brand } from '../components/ComparisonTable.astro';
+
+const brands: Brand[] = [
+  {
+    name: 'BetterHelp',
+    slug: 'betterhelp',
+    rating: 4.5,
+    consultationFee: 'Free matching',
+    medicationFrom: '$65-100/week',
+    subscriptionType: 'Weekly billing',
+    pros: [
+      'Largest therapist network (30,000+)',
+      'Messaging, video, phone, and live chat',
+      'Easy to switch therapists',
+    ],
+    cons: [
+      'Weekly billing can add up',
+      'Quality varies by therapist',
+    ],
+    bestFor: [
+      { label: 'Best for Variety', variant: 'primary', icon: '👥' },
+      { label: 'Most Flexible', variant: 'success' },
+    ],
+    featured: true,
+  },
+  {
+    name: 'Talkspace',
+    slug: 'talkspace',
+    rating: 4.4,
+    consultationFee: 'Free',
+    medicationFrom: '$69-109/week',
+    subscriptionType: 'Monthly',
+    pros: [
+      'Insurance accepted',
+      'Psychiatry available',
+      'Teen therapy options',
+    ],
+    cons: [
+      'Higher pricing without insurance',
+      'Limited therapist availability',
+    ],
+    bestFor: [
+      { label: 'Best for Insurance', variant: 'warning', icon: '💳' },
+      { label: 'Medication Management', variant: 'neutral' },
+    ],
+  },
+  {
+    name: 'Cerebral',
+    slug: 'cerebral',
+    rating: 4.2,
+    consultationFee: '$30-85',
+    medicationFrom: '$85-325/month',
+    subscriptionType: 'Monthly',
+    pros: [
+      'Therapy and medication combined',
+      'Licensed prescribers',
+      'Treats anxiety, depression, ADHD',
+    ],
+    cons: [
+      'Focus on medication management',
+      'Less therapy emphasis',
+    ],
+    bestFor: [
+      { label: 'Best for Medication', variant: 'primary', icon: '💊' },
+      { label: 'Psychiatry', variant: 'success' },
+    ],
+  },
+  {
+    name: 'Brightside',
+    slug: 'brightside',
+    rating: 4.3,
+    consultationFee: '$95',
+    medicationFrom: '$95-299/month',
+    subscriptionType: 'Monthly',
+    pros: [
+      'Medication-first approach',
+      'Psychiatrist prescribers',
+      'Fast medication access',
+    ],
+    cons: [
+      'Limited therapy options',
+      'Higher costs',
+    ],
+    bestFor: [
+      { label: 'Best for Psychiatry', variant: 'neutral', icon: '🩺' },
+    ],
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Best Online Therapy & Mental Health Services',
+  description: 'Compare the best online therapy platforms and mental health services for men including BetterHelp, Talkspace, and Cerebral.',
+  about: {
+    '@type': 'MedicalCondition',
+    name: 'Mental Health',
+  },
+};
+---
+
+<BaseLayout
+  title="Best Online Therapy & Mental Health Services for Men"
+  description="Compare top online therapy and mental health platforms including BetterHelp, Talkspace, Cerebral, and more. Find affordable counseling and psychiatric care."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="max-w-4xl">
+        <div class="flex items-center gap-2 text-sm text-slate-600 mb-6">
+          <a href="/" class="hover:text-brand-accent transition-colors">Home</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-slate-900 font-medium">Mental Health</span>
+        </div>
+
+        <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+          Online Therapy & Mental Health Services
+        </h1>
+        <p class="text-xl text-slate-600 leading-relaxed mb-8">
+          Compare online therapy platforms, counseling services, and psychiatric care options. Get help for anxiety, depression, stress, and more from licensed professionals.
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <a href="#comparison" class="btn-primary">
+            View Comparison
+          </a>
+          <a href="#how-it-works" class="btn-outline">
+            How It Works
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="py-10 bg-slate-50 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">10+</div>
+          <div class="text-sm text-slate-600">Platforms Reviewed</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">$65+</div>
+          <div class="text-sm text-slate-600">Per Week</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">24-48h</div>
+          <div class="text-sm text-slate-600">To Get Matched</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">Licensed</div>
+          <div class="text-sm text-slate-600">Therapists</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="section bg-white">
+    <div class="container-custom max-w-4xl">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">Mental Health Matters</h2>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Mental health challenges affect millions of men, yet many face barriers accessing traditional therapy—
+          from cost and time constraints to stigma and availability. Online therapy platforms have made professional
+          mental health support more accessible, affordable, and convenient than ever.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Whether you're dealing with anxiety, depression, relationship issues, work stress, or simply want someone
+          to talk to, modern telehealth platforms offer licensed therapists, psychiatrists, and counselors available
+          via messaging, video, phone, or live chat.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section -->
+  <section id="comparison" class="section-light">
+    <div class="container-custom">
+      <div class="mb-10">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+          Mental Health Service Comparison
+        </h2>
+        <p class="text-slate-600">
+          Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+        </p>
+      </div>
+
+      <ComparisonTable brands={brands} location="mental-health-table" />
+    </div>
+  </section>
+
+  <!-- Service Types -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 text-center">
+        Types of Online Mental Health Care
+      </h2>
+      <p class="text-lg text-slate-600 mb-10 text-center max-w-2xl mx-auto">
+        Understanding your options helps you choose the right service.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl">
+              💬
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Online Therapy</h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Traditional talk therapy via messaging, video, or phone with licensed therapists (LCSW, LPC, LMFT).
+            Best for anxiety, depression, stress, relationships, and general mental wellness.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Best Platforms:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• BetterHelp: Largest network</li>
+              <li>• Talkspace: Insurance accepted</li>
+              <li>• $65-110/week average</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl">
+              💊
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Psychiatric Care</h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Medication management with licensed psychiatrists or psychiatric nurse practitioners. Best for
+            moderate to severe depression, anxiety, ADHD, and conditions requiring medication.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Best Platforms:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• Cerebral: Therapy + meds</li>
+              <li>• Brightside: Psychiatry-focused</li>
+              <li>• $85-325/month average</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl">
+              🎯
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Specialized Therapy</h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Targeted treatment for specific issues like couples counseling, trauma (EMDR/CBT), addiction,
+            grief, or career coaching with specialized practitioners.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Common Specialties:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• Cognitive Behavioral Therapy (CBT)</li>
+              <li>• Couples & relationship counseling</li>
+              <li>• Trauma & PTSD treatment</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl">
+              📱
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Self-Guided Tools</h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Apps and digital therapeutics offering meditation, mood tracking, CBT exercises, and wellness content.
+            Good for mild symptoms or as supplement to therapy.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Popular Options:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• Headspace: Meditation</li>
+              <li>• Calm: Sleep & anxiety</li>
+              <li>• Generally $10-20/month</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="section-light">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">How Online Therapy Works</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+            1
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900">Take Assessment</h3>
+          <p class="text-slate-600 text-sm">
+            Complete a brief questionnaire about your mental health needs and preferences.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+            2
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900">Get Matched</h3>
+          <p class="text-slate-600 text-sm">
+            Algorithm matches you with a licensed therapist who fits your needs within 24-48 hours.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+            3
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900">Start Therapy</h3>
+          <p class="text-slate-600 text-sm">
+            Communicate via messaging, video, phone, or live chat based on your preference.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+            4
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900">Ongoing Support</h3>
+          <p class="text-slate-600 text-sm">
+            Regular sessions, unlimited messaging (most platforms), and ability to switch therapists anytime.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section bg-white">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-8 text-center">
+        Common Questions
+      </h2>
+      <div class="space-y-4">
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Is online therapy as effective as in-person?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Research shows online therapy (teletherapy) is equally effective as traditional in-person therapy for
+            most conditions including anxiety, depression, and stress. The key is finding a licensed therapist you
+            connect with, regardless of format. Some people actually prefer the convenience and comfort of online sessions.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>How much does online therapy cost?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Most platforms charge $65-110 per week ($260-440/month) for unlimited messaging plus weekly live sessions.
+            This is typically cheaper than traditional therapy which averages $100-200 per session. Some platforms
+            like Talkspace accept insurance which can significantly reduce costs.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Are online therapists real licensed professionals?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Yes. Reputable platforms like BetterHelp, Talkspace, and others only work with licensed, credentialed
+            therapists (LCSW, LPC, LMFT, psychologists) who are licensed in your state. They undergo background
+            checks and credential verification. Always verify your therapist's credentials in your first session.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>What if I don't like my therapist?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Most platforms make it easy to switch therapists anytime at no extra cost. Finding the right therapeutic
+            fit is crucial for effective treatment, so don't hesitate to request a new match if you don't feel
+            comfortable or aren't making progress with your current therapist.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Content -->
+  <section class="section-light border-t border-slate-200">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">
+        Explore More Categories
+      </h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/sexual-health" class="card-hover p-6 group">
+          <div class="text-3xl mb-3">❤️‍🔥</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Sexual Health
+          </h3>
+          <p class="text-slate-600 text-sm">
+            ED treatments and sexual wellness solutions.
+          </p>
+        </a>
+        <a href="/testosterone" class="card-hover p-6 group">
+          <div class="text-3xl mb-3">💪</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Testosterone & Hormones
+          </h3>
+          <p class="text-slate-600 text-sm">
+            TRT clinics and hormone optimization.
+          </p>
+        </a>
+        <a href="/diagnostics" class="card-hover p-6 group">
+          <div class="text-3xl mb-3">🔬</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Diagnostics & Wellness
+          </h3>
+          <p class="text-slate-600 text-sm">
+            At-home health testing and monitoring.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

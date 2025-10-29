@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const posts = [
+  {
+    title: 'Major Updates to Hims ED Treatment Pricing for 2025',
+    category: 'Sexual Health',
+    slug: '/blog/hims-pricing-update-2025',
+    description: 'Hims has announced new pricing tiers for ED medications. Here\'s what changed and how it affects you.',
+    date: 'March 15, 2025',
+    readTime: '5 min read',
+    featured: true,
+  },
+  {
+    title: 'New FDA Guidelines for Compounded Semaglutide',
+    category: 'Weight Loss',
+    slug: '/blog/fda-compounded-semaglutide',
+    description: 'The FDA has released new guidance on compounded GLP-1 medications. What this means for weight loss services.',
+    date: 'March 12, 2025',
+    readTime: '7 min read',
+    featured: true,
+  },
+  {
+    title: 'BlueChew vs Hims: 2025 Comparison Update',
+    category: 'Sexual Health',
+    slug: '/blog/bluechew-vs-hims-2025',
+    description: 'We\'ve updated our head-to-head comparison with the latest pricing, features, and user feedback.',
+    date: 'March 8, 2025',
+    readTime: '8 min read',
+    featured: false,
+  },
+  {
+    title: 'Is Enclomiphene Better Than TRT for Younger Men?',
+    category: 'Testosterone',
+    slug: '/blog/enclomiphene-vs-trt',
+    description: 'Exploring the benefits and drawbacks of enclomiphene as an alternative to traditional testosterone therapy.',
+    date: 'March 5, 2025',
+    readTime: '10 min read',
+    featured: false,
+  },
+  {
+    title: 'BetterHelp Price Increase: What You Need to Know',
+    category: 'Mental Health',
+    slug: '/blog/betterhelp-price-increase',
+    description: 'BetterHelp has adjusted its pricing structure. We break down the changes and compare alternatives.',
+    date: 'February 28, 2025',
+    readTime: '6 min read',
+    featured: false,
+  },
+  {
+    title: 'Hair Loss Treatment Breakthroughs in 2025',
+    category: 'Hair Health',
+    slug: '/blog/hair-loss-breakthroughs-2025',
+    description: 'New research and emerging treatments that could change the hair loss landscape.',
+    date: 'February 22, 2025',
+    readTime: '9 min read',
+    featured: false,
+  },
+];
+
+const featuredPosts = posts.filter(post => post.featured);
+const recentPosts = posts.filter(post => !post.featured);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'CompareMensCare Blog',
+  description: 'Latest news, updates, and insights about men\'s health telehealth services.',
+};
+---
+
+<BaseLayout
+  title="Blog - Latest Men's Health News & Service Updates"
+  description="Stay up to date with the latest news about telehealth services, treatment options, pricing changes, and men's health insights."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium mb-8 border border-slate-200">
+          <span class="w-2 h-2 bg-brand-accent rounded-full animate-pulse"></span>
+          Latest Updates
+        </div>
+
+        <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          Men's Health Blog
+        </h1>
+        <p class="text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto">
+          Stay informed with the latest service updates, pricing changes, research news, and insights
+          about men's health telehealth.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Posts -->
+  {featuredPosts.length > 0 && (
+    <section class="section bg-slate-50">
+      <div class="container-custom">
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold text-slate-900">Featured Posts</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {featuredPosts.map((post) => (
+            <a
+              href={post.slug}
+              class="card-hover p-8 group bg-white"
+            >
+              <div class="mb-4">
+                <span class="text-xs font-medium text-brand-accent uppercase tracking-wide">
+                  {post.category}
+                </span>
+              </div>
+
+              <h3 class="font-bold text-2xl mb-3 text-slate-900 group-hover:text-brand-accent transition-colors leading-tight">
+                {post.title}
+              </h3>
+
+              <p class="text-slate-600 mb-4 leading-relaxed">
+                {post.description}
+              </p>
+
+              <div class="flex items-center justify-between text-sm text-slate-500">
+                <span>{post.date}</span>
+                <span>{post.readTime}</span>
+              </div>
+
+              <div class="mt-4 pt-4 border-t border-slate-200">
+                <span class="text-brand-accent font-medium text-sm inline-flex items-center group-hover:gap-2 transition-all">
+                  Read article
+                  <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Recent Posts -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-slate-900">Recent Posts</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {recentPosts.map((post) => (
+          <a
+            href={post.slug}
+            class="card-hover p-6 group"
+          >
+            <div class="mb-3">
+              <span class="text-xs font-medium text-brand-accent uppercase tracking-wide">
+                {post.category}
+              </span>
+            </div>
+
+            <h3 class="font-bold text-lg mb-3 text-slate-900 group-hover:text-brand-accent transition-colors leading-tight">
+              {post.title}
+            </h3>
+
+            <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+              {post.description}
+            </p>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+              <span>{post.date}</span>
+              <span>{post.readTime}</span>
+            </div>
+
+            <span class="text-brand-accent font-medium text-sm inline-flex items-center group-hover:gap-2 transition-all">
+              Read more
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+  <!-- Categories -->
+  <section class="section-light">
+    <div class="container-custom">
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-slate-900 text-center mb-3">
+          Browse by Category
+        </h2>
+        <p class="text-slate-600 text-center">
+          Find articles specific to your health interests
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+        <a href="/blog/sexual-health" class="card-hover p-4 text-center group">
+          <div class="text-3xl mb-2">❤️‍🔥</div>
+          <div class="font-medium text-sm text-slate-900 group-hover:text-brand-accent transition-colors">
+            Sexual Health
+          </div>
+        </a>
+        <a href="/blog/hair-health" class="card-hover p-4 text-center group">
+          <div class="text-3xl mb-2">💇‍♂️</div>
+          <div class="font-medium text-sm text-slate-900 group-hover:text-brand-accent transition-colors">
+            Hair Health
+          </div>
+        </a>
+        <a href="/blog/testosterone" class="card-hover p-4 text-center group">
+          <div class="text-3xl mb-2">💪</div>
+          <div class="font-medium text-sm text-slate-900 group-hover:text-brand-accent transition-colors">
+            Testosterone
+          </div>
+        </a>
+        <a href="/blog/weight-loss" class="card-hover p-4 text-center group">
+          <div class="text-3xl mb-2">⚖️</div>
+          <div class="font-medium text-sm text-slate-900 group-hover:text-brand-accent transition-colors">
+            Weight Loss
+          </div>
+        </a>
+        <a href="/blog/mental-health" class="card-hover p-4 text-center group">
+          <div class="text-3xl mb-2">🧠</div>
+          <div class="font-medium text-sm text-slate-900 group-hover:text-brand-accent transition-colors">
+            Mental Health
+          </div>
+        </a>
+        <a href="/blog/diagnostics" class="card-hover p-4 text-center group">
+          <div class="text-3xl mb-2">🔬</div>
+          <div class="font-medium text-sm text-slate-900 group-hover:text-brand-accent transition-colors">
+            Diagnostics
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section bg-slate-900 text-white">
+    <div class="container-custom text-center max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">
+        Never Miss an Update
+      </h2>
+      <p class="text-xl text-slate-300 mb-8">
+        Get notified about service changes, new research, and important men's health news.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="flex-1 px-4 py-3 rounded-lg bg-white text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-accent"
+        />
+        <button class="btn bg-brand-accent hover:bg-brand-accent/90 text-white px-6">
+          Subscribe
+        </button>
+      </div>
+      <p class="text-xs text-slate-400 mt-4">
+        Weekly digest. Unsubscribe anytime.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

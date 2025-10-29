@@ -1,0 +1,264 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const guides = [
+  {
+    title: 'Complete Guide to Erectile Dysfunction Treatment',
+    category: 'Sexual Health',
+    slug: '/guides/ed-treatment',
+    description: 'Everything you need to know about ED medications, treatments, and choosing the right option.',
+    readTime: '12 min read',
+    icon: '❤️‍🔥',
+  },
+  {
+    title: 'Hair Loss Treatment Guide: Finasteride vs Minoxidil',
+    category: 'Hair Health',
+    slug: '/guides/hair-loss-treatment',
+    description: 'Compare proven hair loss treatments and understand which option is right for you.',
+    readTime: '10 min read',
+    icon: '💇‍♂️',
+  },
+  {
+    title: 'Testosterone Replacement Therapy (TRT) Explained',
+    category: 'Testosterone',
+    slug: '/guides/trt-guide',
+    description: 'Complete guide to TRT including benefits, risks, costs, and what to expect.',
+    readTime: '15 min read',
+    icon: '💪',
+  },
+  {
+    title: 'GLP-1 Weight Loss Medications: Complete Guide',
+    category: 'Weight Loss',
+    slug: '/guides/glp1-guide',
+    description: 'Understand how semaglutide and tirzepatide work, their effectiveness, and side effects.',
+    readTime: '14 min read',
+    icon: '⚖️',
+  },
+  {
+    title: 'Online Therapy: A Beginner\'s Guide',
+    category: 'Mental Health',
+    slug: '/guides/online-therapy-guide',
+    description: 'How to choose an online therapy platform and get the most from virtual counseling.',
+    readTime: '8 min read',
+    icon: '🧠',
+  },
+  {
+    title: 'Understanding At-Home Health Testing',
+    category: 'Diagnostics',
+    slug: '/guides/home-testing-guide',
+    description: 'Learn how at-home testing works, accuracy, and which tests you should consider.',
+    readTime: '9 min read',
+    icon: '🔬',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Men\'s Health Guides & Resources',
+  description: 'Comprehensive guides about men\'s health topics including ED, hair loss, TRT, weight loss, and mental health.',
+};
+---
+
+<BaseLayout
+  title="Men's Health Guides & Resources - CompareMensCare"
+  description="In-depth guides covering ED treatment, hair loss, testosterone therapy, weight loss, mental health, and at-home testing. Evidence-based information you can trust."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium mb-8 border border-slate-200">
+          <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+          Evidence-Based Resources
+        </div>
+
+        <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          Men's Health Guides
+        </h1>
+        <p class="text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto">
+          In-depth, research-backed guides to help you understand your options and make informed decisions
+          about your health.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-10 bg-slate-50 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-4xl mx-auto">
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">20+</div>
+          <div class="text-sm text-slate-600">Guides Published</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">6</div>
+          <div class="text-sm text-slate-600">Health Categories</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">100%</div>
+          <div class="text-sm text-slate-600">Evidence-Based</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">Monthly</div>
+          <div class="text-sm text-slate-600">Updated</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guides Grid -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="mb-10">
+        <h2 class="text-3xl font-bold text-slate-900 mb-3 text-center">
+          Browse All Guides
+        </h2>
+        <p class="text-slate-600 text-center max-w-2xl mx-auto">
+          Comprehensive resources covering everything from treatment options to understanding your symptoms.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {guides.map((guide) => (
+          <a
+            href={guide.slug}
+            class="card-hover p-6 group"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="text-4xl">{guide.icon}</div>
+              <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+                {guide.readTime}
+              </span>
+            </div>
+
+            <div class="mb-2">
+              <span class="text-xs font-medium text-brand-accent uppercase tracking-wide">
+                {guide.category}
+              </span>
+            </div>
+
+            <h3 class="font-bold text-lg mb-3 text-slate-900 group-hover:text-brand-accent transition-colors leading-tight">
+              {guide.title}
+            </h3>
+
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              {guide.description}
+            </p>
+
+            <span class="text-brand-accent font-medium text-sm inline-flex items-center group-hover:gap-2 transition-all">
+              Read guide
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories CTA -->
+  <section class="section-light">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">
+          Looking for Service Comparisons?
+        </h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Check out our detailed category pages comparing top telehealth services.
+        </p>
+        <div class="grid md:grid-cols-3 gap-4">
+          <a href="/sexual-health" class="card-hover p-6 group">
+            <div class="text-3xl mb-2">❤️‍🔥</div>
+            <h3 class="font-semibold text-slate-900 group-hover:text-brand-accent transition-colors">
+              Sexual Health
+            </h3>
+          </a>
+          <a href="/hair-health" class="card-hover p-6 group">
+            <div class="text-3xl mb-2">💇‍♂️</div>
+            <h3 class="font-semibold text-slate-900 group-hover:text-brand-accent transition-colors">
+              Hair Health
+            </h3>
+          </a>
+          <a href="/testosterone" class="card-hover p-6 group">
+            <div class="text-3xl mb-2">💪</div>
+            <h3 class="font-semibold text-slate-900 group-hover:text-brand-accent transition-colors">
+              Testosterone
+            </h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Trust Us -->
+  <section class="section bg-white">
+    <div class="container-custom max-w-3xl">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">
+          Why Trust Our Guides?
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-4 text-3xl">
+            📚
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900">Evidence-Based</h3>
+          <p class="text-slate-600 text-sm">
+            All information backed by clinical studies, medical literature, and expert consensus.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4 text-3xl">
+            🔍
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900">Transparent</h3>
+          <p class="text-slate-600 text-sm">
+            We cite our sources, disclose affiliations, and present balanced perspectives.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mx-auto mb-4 text-3xl">
+            ✏️
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900">Regularly Updated</h3>
+          <p class="text-slate-600 text-sm">
+            Content reviewed and updated monthly to reflect latest research and service changes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="section bg-slate-900 text-white">
+    <div class="container-custom text-center max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">
+        Get Health Tips in Your Inbox
+      </h2>
+      <p class="text-xl text-slate-300 mb-8">
+        Subscribe to get our latest guides, service updates, and evidence-based health tips.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="flex-1 px-4 py-3 rounded-lg bg-white text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-accent"
+        />
+        <button class="btn bg-brand-accent hover:bg-brand-accent/90 text-white px-6">
+          Subscribe
+        </button>
+      </div>
+      <p class="text-xs text-slate-400 mt-4">
+        We respect your privacy. Unsubscribe anytime.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

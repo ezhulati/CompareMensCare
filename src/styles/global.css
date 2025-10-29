@@ -8,11 +8,13 @@
   }
 
   body {
-    @apply bg-white text-gray-900 antialiased;
+    @apply bg-white text-slate-900 antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-semibold tracking-tight;
+    @apply font-display font-semibold;
   }
 
   h1 {
@@ -26,34 +28,159 @@
   h3 {
     @apply text-2xl lg:text-3xl;
   }
-
-  a {
-    @apply text-brand-primary hover:text-brand-secondary transition-colors;
-  }
 }
 
 @layer components {
+  /* Modern Button Styles */
   .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-95;
   }
 
   .btn-primary {
-    @apply btn bg-brand-primary text-white hover:bg-blue-700 focus:ring-brand-primary;
+    @apply btn bg-brand-primary text-white hover:bg-slate-800 focus:ring-slate-900 shadow-sm hover:shadow;
   }
 
   .btn-secondary {
-    @apply btn bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-500;
+    @apply btn bg-slate-100 text-slate-900 hover:bg-slate-200 focus:ring-slate-400 border border-slate-200;
   }
 
   .btn-outline {
-    @apply btn border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white focus:ring-brand-primary;
+    @apply btn border border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 focus:ring-slate-400;
   }
 
+  .btn-ghost {
+    @apply btn hover:bg-slate-100 text-slate-700;
+  }
+
+  /* Container */
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-2xl border border-slate-200 transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-lg hover:border-slate-300 hover:-translate-y-0.5;
+  }
+
+  .card-glass {
+    @apply backdrop-blur-sm bg-white/80 rounded-2xl border border-slate-200/50 shadow-sm;
+  }
+
+  /* Badge Styles */
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-brand-primary/10 text-brand-primary border border-brand-primary/20;
+  }
+
+  .badge-success {
+    @apply badge bg-emerald-50 text-emerald-700 border border-emerald-200;
+  }
+
+  .badge-warning {
+    @apply badge bg-amber-50 text-amber-700 border border-amber-200;
+  }
+
+  .badge-neutral {
+    @apply badge bg-slate-100 text-slate-700 border border-slate-200;
+  }
+
+  .badge-premium {
+    @apply badge bg-medical-purple-light text-medical-purple-dark border border-medical-purple;
+  }
+
+  /* Medical-Specific Card Styles */
+  .card-medical {
+    @apply card border-l-4 border-l-medical-blue bg-medical-blue-light/20;
+  }
+
+  .card-medical-info {
+    @apply card border-l-4 border-l-brand-accent bg-blue-50/30;
+    transition: all 0.2s ease;
+  }
+
+  .card-medical-info:hover {
+    @apply shadow-md border-l-brand-accent;
+  }
+
+  .card-certification {
+    @apply card bg-slate-50 border border-slate-200;
+  }
+
+  /* Input Styles */
+  .input {
+    @apply w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent transition-colors bg-white;
+  }
+
+  /* Prose */
   .prose-custom {
-    @apply prose prose-lg prose-blue max-w-none prose-headings:font-display prose-a:text-brand-primary prose-a:no-underline hover:prose-a:underline;
+    @apply prose prose-slate max-w-none prose-headings:font-display prose-a:text-brand-accent prose-a:no-underline hover:prose-a:underline prose-a:font-medium;
+  }
+
+  /* Section Styles */
+  .section {
+    @apply py-16 lg:py-24;
+  }
+
+  .section-light {
+    @apply section bg-slate-50;
+  }
+
+  .section-dark {
+    @apply section bg-brand-primary text-white;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-4 transition-all duration-700;
+  }
+
+  .animate-on-scroll.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Focus visible for accessibility */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2;
+  }
+
+  /* Medical trust signals */
+  .trust-indicator {
+    @apply inline-flex items-center gap-1.5 text-sm text-slate-600;
+  }
+
+  .trust-indicator svg {
+    @apply w-4 h-4 text-medical-green flex-shrink-0;
+  }
+
+  /* Medical disclaimer text */
+  .medical-disclaimer {
+    @apply text-disclaimer text-slate-600 leading-relaxed;
+  }
+
+  /* Comparison table enhancements */
+  .comparison-row {
+    @apply transition-all duration-200;
+  }
+
+  .comparison-row:hover {
+    @apply bg-slate-50/50;
+  }
+
+  .comparison-row.featured {
+    @apply bg-blue-50/20;
   }
 }

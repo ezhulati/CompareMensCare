@@ -1,0 +1,382 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import type { Brand } from '../components/ComparisonTable.astro';
+
+const brands: Brand[] = [
+  {
+    name: 'Hone Health',
+    slug: 'hone-health',
+    rating: 4.7,
+    consultationFee: '$199',
+    medicationFrom: '$150/month',
+    subscriptionType: 'Monthly',
+    pros: [
+      'Comprehensive hormone testing',
+      'Expert physician consultations',
+      'Injectable & cream options',
+    ],
+    cons: [
+      'Higher upfront costs',
+      'Requires lab work',
+    ],
+    bestFor: [
+      { label: 'Best for Comprehensive Care', variant: 'primary', icon: '🏥' },
+      { label: 'Best Testing', variant: 'success' },
+    ],
+    featured: true,
+  },
+  {
+    name: 'Maximus',
+    slug: 'maximus',
+    rating: 4.5,
+    consultationFee: '$149',
+    medicationFrom: '$199/month',
+    subscriptionType: 'Subscription',
+    pros: [
+      'All-inclusive pricing',
+      'Enclomiphene option',
+      'Regular monitoring',
+    ],
+    cons: [
+      'Higher monthly cost',
+      'Limited flexibility',
+    ],
+    bestFor: [
+      { label: 'Best for Enclomiphene', variant: 'warning', icon: '💊' },
+      { label: 'All-Inclusive', variant: 'neutral' },
+    ],
+  },
+  {
+    name: 'TRT Nation',
+    slug: 'trt-nation',
+    rating: 4.4,
+    consultationFee: '$250',
+    medicationFrom: '$99/month',
+    subscriptionType: 'Flexible',
+    pros: [
+      'Affordable medication',
+      'Multiple testosterone options',
+      'Fast shipping',
+    ],
+    cons: [
+      'High consultation fee',
+      'Less comprehensive monitoring',
+    ],
+    bestFor: [
+      { label: 'Best Value Medication', variant: 'success', icon: '💰' },
+    ],
+  },
+  {
+    name: 'Hims',
+    slug: 'hims',
+    rating: 4.3,
+    consultationFee: 'Free',
+    medicationFrom: '$79/month',
+    subscriptionType: 'Subscription',
+    pros: [
+      'No consultation fee',
+      'Convenient platform',
+      'Quick approval',
+    ],
+    cons: [
+      'Limited testing options',
+      'Basic monitoring',
+    ],
+    bestFor: [
+      { label: 'Best for Convenience', variant: 'primary', icon: '⚡' },
+    ],
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Best TRT Clinics & Testosterone Therapy Services',
+  description: 'Compare the best online testosterone replacement therapy (TRT) clinics and hormone optimization services.',
+  about: {
+    '@type': 'MedicalCondition',
+    name: 'Low Testosterone',
+  },
+};
+---
+
+<BaseLayout
+  title="Best TRT Clinics - Compare Testosterone Therapy Services"
+  description="Compare top testosterone replacement therapy (TRT) clinics and hormone optimization services. Find the best pricing, testing, and treatment options online."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="max-w-4xl">
+        <div class="flex items-center gap-2 text-sm text-slate-600 mb-6">
+          <a href="/" class="hover:text-brand-accent transition-colors">Home</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-slate-900 font-medium">Testosterone & Hormones</span>
+        </div>
+
+        <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+          TRT Clinics & Testosterone Therapy Compared
+        </h1>
+        <p class="text-xl text-slate-600 leading-relaxed mb-8">
+          Compare testosterone replacement therapy (TRT) clinics offering comprehensive hormone optimization, testing, and treatment plans.
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <a href="#comparison" class="btn-primary">
+            View Comparison
+          </a>
+          <a href="#treatment-options" class="btn-outline">
+            Treatment Options
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="py-10 bg-slate-50 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">7+</div>
+          <div class="text-sm text-slate-600">TRT Services</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">$79+</div>
+          <div class="text-sm text-slate-600">Per Month</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">3-7</div>
+          <div class="text-sm text-slate-600">Days to Start</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">95%+</div>
+          <div class="text-sm text-slate-600">Patient Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="section bg-white">
+    <div class="container-custom max-w-4xl">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">Understanding Low Testosterone</h2>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Low testosterone (hypogonadism) affects millions of men, causing fatigue, decreased libido, muscle loss,
+          mood changes, and reduced quality of life. Modern TRT clinics offer convenient online consultations,
+          comprehensive testing, and personalized treatment plans delivered to your door.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          The best TRT clinics provide regular monitoring, physician oversight, and multiple treatment options
+          including injectable testosterone, testosterone creams, and alternative therapies like enclomiphene
+          that preserve fertility.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section -->
+  <section id="comparison" class="section-light">
+    <div class="container-custom">
+      <div class="mb-10">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+          TRT Clinic Comparison
+        </h2>
+        <p class="text-slate-600">
+          Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+        </p>
+      </div>
+
+      <ComparisonTable brands={brands} location="testosterone-table" />
+    </div>
+  </section>
+
+  <!-- Treatment Options -->
+  <section id="treatment-options" class="section bg-white">
+    <div class="container-custom">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 text-center">
+        Treatment Options
+      </h2>
+      <p class="text-lg text-slate-600 mb-10 text-center max-w-2xl mx-auto">
+        Compare the most common testosterone replacement therapy options.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card p-6 ring-2 ring-brand-accent">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl">
+              💉
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Injectable Testosterone</h3>
+          </div>
+          <p class="text-sm text-slate-500 mb-2">Cypionate or Enanthate</p>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Most popular and cost-effective option. Injected 1-2 times weekly for stable testosterone levels.
+            Available through most TRT clinics.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Pricing Range:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• $99-250/month medication</li>
+              <li>• $0-250 consultation</li>
+              <li>• $50-199 lab testing</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl">
+              🧴
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Testosterone Cream</h3>
+          </div>
+          <p class="text-sm text-slate-500 mb-2">Topical Application</p>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Daily application cream absorbed through skin. No needles required. Good for those who prefer
+            non-injectable options, though generally more expensive.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Pricing Range:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• $150-300/month medication</li>
+              <li>• Similar testing costs</li>
+              <li>• Daily application required</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl">
+              💊
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Enclomiphene</h3>
+          </div>
+          <p class="text-sm text-slate-500 mb-2">Alternative Therapy</p>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Oral medication that stimulates natural testosterone production. Preserves fertility unlike traditional
+            TRT. Good option for younger men or those planning children.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Pricing Range:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• $150-250/month medication</li>
+              <li>• Maximus: $199/month all-in</li>
+              <li>• Maintains fertility</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-light">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-8 text-center">
+        Common Questions
+      </h2>
+      <div class="space-y-4">
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>What are symptoms of low testosterone?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Common symptoms include fatigue, decreased libido, erectile dysfunction, muscle loss, weight gain,
+            mood changes, brain fog, and difficulty concentrating. A blood test measuring total and free testosterone
+            is needed for diagnosis.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Is TRT safe?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            When properly monitored by a physician, TRT is generally safe. Regular blood work is essential to monitor
+            testosterone levels, estrogen, and health markers. Risks include elevated red blood cell count, acne,
+            and fertility suppression. Most clinics require regular testing every 3-6 months.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>How quickly does TRT work?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Most men notice improvements in energy and mood within 2-4 weeks. Libido and sexual function typically
+            improve within 4-6 weeks. Body composition changes (muscle gain, fat loss) take 3-6 months. Full benefits
+            are usually realized after 6-12 months of treatment.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Will TRT affect my fertility?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Traditional testosterone therapy suppresses natural sperm production and can reduce fertility. However,
+            this is often reversible. For men concerned about fertility, alternatives like enclomiphene or HCG co-therapy
+            can maintain testosterone levels while preserving fertility.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Content -->
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">
+        Explore More Categories
+      </h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/sexual-health" class="card-hover p-6 group">
+          <div class="text-3xl mb-3">❤️‍🔥</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Sexual Health
+          </h3>
+          <p class="text-slate-600 text-sm">
+            ED treatments and sexual wellness solutions.
+          </p>
+        </a>
+        <a href="/weight-loss" class="card-hover p-6 group">
+          <div class="text-3xl mb-3">⚖️</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Weight Loss
+          </h3>
+          <p class="text-slate-600 text-sm">
+            GLP-1 medications and weight management programs.
+          </p>
+        </a>
+        <a href="/mental-health" class="card-hover p-6 group">
+          <div class="text-3xl mb-3">🧠</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Mental Health
+          </h3>
+          <p class="text-slate-600 text-sm">
+            Online therapy and psychiatric care platforms.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,413 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import type { Brand } from '../components/ComparisonTable.astro';
+
+const brands: Brand[] = [
+  {
+    name: 'Ro',
+    slug: 'ro',
+    rating: 4.7,
+    consultationFee: '$99',
+    medicationFrom: '$145/month',
+    subscriptionType: 'Subscription',
+    pros: [
+      'Multiple GLP-1 options (Wegovy, Ozempic)',
+      'Comprehensive weight loss program',
+      'Licensed physician oversight',
+    ],
+    cons: [
+      'Higher monthly costs',
+      'Medication subject to availability',
+    ],
+    bestFor: [
+      { label: 'Best for Brand-Name GLP-1', variant: 'primary', icon: '💊' },
+      { label: 'Best Support', variant: 'success' },
+    ],
+    featured: true,
+  },
+  {
+    name: 'Hims',
+    slug: 'hims',
+    rating: 4.5,
+    consultationFee: 'Free',
+    medicationFrom: '$199/month',
+    subscriptionType: 'Subscription',
+    pros: [
+      'No consultation fee',
+      'Semaglutide & tirzepatide available',
+      'Fast approval process',
+    ],
+    cons: [
+      'Compounded medications only',
+      'Limited personalization',
+    ],
+    bestFor: [
+      { label: 'Best for Quick Start', variant: 'warning', icon: '⚡' },
+      { label: 'No Consult Fee', variant: 'neutral' },
+    ],
+  },
+  {
+    name: 'Calibrate',
+    slug: 'calibrate',
+    rating: 4.6,
+    consultationFee: '$135/month',
+    medicationFrom: 'Varies',
+    subscriptionType: 'Annual Program',
+    pros: [
+      'Comprehensive metabolic reset program',
+      'Dedicated coaching team',
+      'Evidence-based approach',
+    ],
+    cons: [
+      'Annual commitment required',
+      'Higher total cost',
+    ],
+    bestFor: [
+      { label: 'Best for Coaching', variant: 'primary', icon: '👥' },
+      { label: 'Long-Term Success', variant: 'success' },
+    ],
+  },
+  {
+    name: 'Found',
+    slug: 'found',
+    rating: 4.4,
+    consultationFee: '$99',
+    medicationFrom: '$199/month',
+    subscriptionType: 'Flexible',
+    pros: [
+      'Personalized weight loss plans',
+      'Registered dietitian support',
+      'Behavioral health coaching',
+    ],
+    cons: [
+      'May require insurance',
+      'Longer approval process',
+    ],
+    bestFor: [
+      { label: 'Best for Personalization', variant: 'neutral', icon: '🎯' },
+    ],
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Best Weight Loss Services & GLP-1 Programs',
+  description: 'Compare the best online weight loss services offering GLP-1 medications like Wegovy, Ozempic, and Mounjaro.',
+  about: {
+    '@type': 'MedicalCondition',
+    name: 'Obesity',
+  },
+};
+---
+
+<BaseLayout
+  title="Best Weight Loss Services - Compare GLP-1 Programs (Wegovy, Ozempic)"
+  description="Compare top weight loss services offering GLP-1 medications including Wegovy, Ozempic, Mounjaro, and semaglutide. Find the best pricing and support programs."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="max-w-4xl">
+        <div class="flex items-center gap-2 text-sm text-slate-600 mb-6">
+          <a href="/" class="hover:text-brand-accent transition-colors">Home</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-slate-900 font-medium">Weight Loss</span>
+        </div>
+
+        <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+          GLP-1 Weight Loss Services Compared
+        </h1>
+        <p class="text-xl text-slate-600 leading-relaxed mb-8">
+          Compare online weight loss programs offering GLP-1 medications like Wegovy, Ozempic, Mounjaro, and compounded semaglutide with personalized support.
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <a href="#comparison" class="btn-primary">
+            View Comparison
+          </a>
+          <a href="#medications" class="btn-outline">
+            GLP-1 Options
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="py-10 bg-slate-50 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">6+</div>
+          <div class="text-sm text-slate-600">Programs Compared</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">$145+</div>
+          <div class="text-sm text-slate-600">Starting Price</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">15%+</div>
+          <div class="text-sm text-slate-600">Average Weight Loss</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">FDA</div>
+          <div class="text-sm text-slate-600">Approved</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="section bg-white">
+    <div class="container-custom max-w-4xl">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">Understanding GLP-1 Medications</h2>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          GLP-1 (glucagon-like peptide-1) medications have revolutionized weight loss treatment. Originally developed
+          for type 2 diabetes, medications like semaglutide (Wegovy, Ozempic) and tirzepatide (Mounjaro, Zepbound)
+          help regulate appetite, slow digestion, and promote significant weight loss averaging 15-20% of body weight.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Modern telehealth platforms make these medications accessible with online consultations, home delivery,
+          and comprehensive support programs including nutrition coaching, exercise guidance, and ongoing medical supervision.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section -->
+  <section id="comparison" class="section-light">
+    <div class="container-custom">
+      <div class="mb-10">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+          Weight Loss Service Comparison
+        </h2>
+        <p class="text-slate-600">
+          Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+        </p>
+      </div>
+
+      <ComparisonTable brands={brands} location="weight-loss-table" />
+    </div>
+  </section>
+
+  <!-- Medication Options -->
+  <section id="medications" class="section bg-white">
+    <div class="container-custom">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 text-center">
+        GLP-1 Medication Options
+      </h2>
+      <p class="text-lg text-slate-600 mb-10 text-center max-w-2xl mx-auto">
+        Compare the most effective weight loss medications available through telehealth.
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card p-6 ring-2 ring-brand-accent">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl">
+              💉
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Semaglutide</h3>
+          </div>
+          <p class="text-sm text-slate-500 mb-2">Wegovy / Ozempic</p>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Weekly injection. Clinical trials showed 15-17% average weight loss. FDA-approved for weight management.
+            Most widely available GLP-1 medication.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Availability:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• Ro: Brand-name Wegovy</li>
+              <li>• Hims: Compounded version</li>
+              <li>• Most platforms offer</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl">
+              ⚡
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Tirzepatide</h3>
+          </div>
+          <p class="text-sm text-slate-500 mb-2">Mounjaro / Zepbound</p>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Dual GLP-1/GIP receptor agonist. Clinical trials showed up to 22% weight loss. Newer medication
+            showing enhanced effectiveness.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Availability:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• Ro: Brand-name available</li>
+              <li>• Hims: Compounded version</li>
+              <li>• Limited availability</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl">
+              💰
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Compounded Options</h3>
+          </div>
+          <p class="text-sm text-slate-500 mb-2">More Affordable</p>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Pharmacy-compounded semaglutide or tirzepatide. Same active ingredient at lower cost.
+            Not FDA-approved but widely used.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Pricing:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• Hims: $199-299/month</li>
+              <li>• Found: $199+/month</li>
+              <li>• 40-60% cheaper</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to Expect -->
+  <section class="section-light">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">What to Expect</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card p-6">
+          <div class="text-4xl mb-3 text-center">📋</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 text-center">Week 1-4</h3>
+          <p class="text-slate-600 text-sm text-center">
+            Initial dose titration. Mild nausea is common. Average 2-5 lbs weight loss as body adjusts to medication.
+          </p>
+        </div>
+        <div class="card p-6">
+          <div class="text-4xl mb-3 text-center">📉</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 text-center">Month 2-6</h3>
+          <p class="text-slate-600 text-sm text-center">
+            Steady weight loss of 1-2 lbs per week. Appetite suppression becomes pronounced. Side effects typically decrease.
+          </p>
+        </div>
+        <div class="card p-6">
+          <div class="text-4xl mb-3 text-center">🎯</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 text-center">Month 6-12</h3>
+          <p class="text-slate-600 text-sm text-center">
+            Maximum weight loss achieved. Most studies show 15-22% total body weight loss by month 12-18.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section bg-white">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-8 text-center">
+        Common Questions
+      </h2>
+      <div class="space-y-4">
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>How much weight can I expect to lose?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Clinical trials show semaglutide (Wegovy) produces 15-17% average weight loss, while tirzepatide (Mounjaro)
+            shows up to 22% weight loss over 12-18 months. Individual results vary based on starting weight, lifestyle
+            changes, and adherence to treatment.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>What are the side effects?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Most common side effects are nausea, diarrhea, constipation, and reduced appetite. These typically
+            decrease after the first few weeks. Starting with a low dose and gradually increasing helps minimize
+            side effects. Serious side effects are rare but can include pancreatitis and gallbladder issues.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Do I need to take it forever?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            GLP-1 medications are designed for long-term use. Studies show most people regain weight after stopping.
+            However, the medications can be used as a tool to establish healthier habits. Some people maintain weight
+            loss after discontinuation with proper lifestyle changes, while others require ongoing treatment.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>What's the difference between compounded and brand-name?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Brand-name medications (Wegovy, Ozempic, Mounjaro) are FDA-approved and manufactured by pharmaceutical
+            companies. Compounded versions are made by specialized pharmacies using the same active ingredient but
+            aren't FDA-approved. Compounded options are 40-60% cheaper but may have less consistent dosing and
+            aren't covered by insurance.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Content -->
+  <section class="section-light border-t border-slate-200">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">
+        Explore More Categories
+      </h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/testosterone" class="card-hover p-6 group">
+          <div class="text-3xl mb-3">💪</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Testosterone & Hormones
+          </h3>
+          <p class="text-slate-600 text-sm">
+            TRT clinics and hormone optimization services.
+          </p>
+        </a>
+        <a href="/mental-health" class="card-hover p-6 group">
+          <div class="text-3xl mb-3">🧠</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Mental Health
+          </h3>
+          <p class="text-slate-600 text-sm">
+            Online therapy and psychiatric care platforms.
+          </p>
+        </a>
+        <a href="/diagnostics" class="card-hover p-6 group">
+          <div class="text-3xl mb-3">🔬</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Diagnostics & Wellness
+          </h3>
+          <p class="text-slate-600 text-sm">
+            At-home health testing and monitoring.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

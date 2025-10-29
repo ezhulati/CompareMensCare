@@ -2,6 +2,7 @@
 import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AffiliateButton from '../components/AffiliateButton.astro';
+import BestForBadge from '../components/BestForBadge.astro';
 import { formatDate, getCategoryName } from '../utils/helpers';
 
 export async function getStaticPaths() {
@@ -14,6 +15,21 @@ export async function getStaticPaths() {
 
 const { brand } = Astro.props;
 const { Content } = await brand.render();
+
+// Get related brands
+const allBrands = await getCollection('brands');
+const relatedBrands = allBrands
+  .filter((b) =>
+    b.slug !== brand.slug &&
+    b.data.categories.some((cat) => brand.data.categories.includes(cat))
+  )
+  .slice(0, 3);
+
+// Priority score helper
+const getPriorityPercentage = (score?: number) => {
+  if (!score) return 0;
+  return (score / 10) * 100;
+};
 
 const schema = {
   '@context': 'https://schema.org',
@@ -63,58 +79,98 @@ const schema = {
   </div>
 
   <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
+  <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
     <div class="container-custom">
-      <div class="max-w-4xl mx-auto">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
-          <div class="flex-1">
-            <h1 class="text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid lg:grid-cols-3 gap-8">
+          <!-- Main Info -->
+          <div class="lg:col-span-2">
+            <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
               {brand.data.title} Review
             </h1>
-            <p class="text-xl text-gray-600 leading-relaxed">
+            <p class="text-xl text-slate-600 leading-relaxed mb-6">
               {brand.data.description}
             </p>
-          </div>
 
-          <!-- Rating Card -->
-          <div class="bg-white rounded-lg shadow-md p-6 md:w-64 flex-shrink-0">
-            <div class="text-center">
-              <div class="text-5xl font-bold text-brand-primary mb-2">{brand.data.rating.toFixed(1)}</div>
-              <div class="flex justify-center items-center mb-2">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <span class={`text-2xl ${i < Math.floor(brand.data.rating) ? 'text-yellow-400' : 'text-gray-300'}`}>★</span>
+            <!-- Best For Badges -->
+            {brand.data.bestFor && brand.data.bestFor.length > 0 && (
+              <div class="flex flex-wrap gap-2 mb-6">
+                {brand.data.bestFor.map((item) => (
+                  <BestForBadge
+                    label={item.label}
+                    variant={item.variant}
+                    icon={item.icon}
+                    size="md"
+                  />
                 ))}
               </div>
-              <div class="text-sm text-gray-600 mb-4">Out of 5.0</div>
-              <AffiliateButton
-                brand={brand.data.affiliateLink}
-                text="Visit Site"
-                variant="primary"
-                size="md"
-                location="hero-cta"
-                class="w-full"
-              />
+            )}
+
+            <!-- Rating -->
+            <div class="flex items-center gap-4">
+              <div class="flex items-center gap-2">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg
+                    class={`w-5 h-5 ${
+                      i < Math.floor(brand.data.rating)
+                        ? 'text-amber-400'
+                        : 'text-slate-300'
+                    }`}
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <span class="text-2xl font-bold text-slate-900">{brand.data.rating}</span>
+              {brand.data.reviewCount && (
+                <span class="text-slate-600">({brand.data.reviewCount.toLocaleString()} reviews)</span>
+              )}
             </div>
           </div>
-        </div>
 
-        <!-- Quick Info Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white rounded-lg shadow-sm p-6">
-          <div class="text-center">
-            <div class="text-sm text-gray-600 mb-1">Consultation</div>
-            <div class="font-semibold text-gray-900">{brand.data.pricing.consultationFee}</div>
-          </div>
-          <div class="text-center">
-            <div class="text-sm text-gray-600 mb-1">Starting From</div>
-            <div class="font-semibold text-gray-900">{brand.data.pricing.medicationFrom}</div>
-          </div>
-          <div class="text-center">
-            <div class="text-sm text-gray-600 mb-1">Type</div>
-            <div class="font-semibold text-gray-900">{brand.data.pricing.subscriptionType}</div>
-          </div>
-          <div class="text-center">
-            <div class="text-sm text-gray-600 mb-1">Availability</div>
-            <div class="font-semibold text-gray-900">{brand.data.availability.countries[0]}</div>
+          <!-- Pricing Card -->
+          <div class="lg:col-span-1">
+            <div class="card p-6 sticky top-20">
+              <div class="mb-4">
+                <div class="text-sm text-slate-600 mb-1">Starting at</div>
+                <div class="text-3xl font-bold text-slate-900 mb-1">
+                  {brand.data.pricing.medicationFrom || brand.data.pricing.consultationFee}
+                </div>
+                <div class="text-sm text-slate-600">{brand.data.pricing.subscriptionType}</div>
+              </div>
+
+              <div class="space-y-3 mb-6 pb-6 border-b border-slate-200">
+                <div class="flex justify-between text-sm">
+                  <span class="text-slate-600">Consultation:</span>
+                  <span class="font-medium text-slate-900">{brand.data.pricing.consultationFee}</span>
+                </div>
+                {brand.data.pricing.medicationFrom && (
+                  <div class="flex justify-between text-sm">
+                    <span class="text-slate-600">Medication from:</span>
+                    <span class="font-medium text-slate-900">{brand.data.pricing.medicationFrom}</span>
+                  </div>
+                )}
+                <div class="flex justify-between text-sm">
+                  <span class="text-slate-600">Availability:</span>
+                  <span class="font-medium text-slate-900">{brand.data.availability.countries[0]}</span>
+                </div>
+              </div>
+
+              <AffiliateButton
+                brand={brand.data.affiliateLink}
+                text={`Visit ${brand.data.title}`}
+                variant="primary"
+                size="lg"
+                location="brand-detail-sidebar"
+                class="w-full justify-center mb-3"
+              />
+
+              <p class="text-xs text-slate-500 text-center">
+                Affiliate link - we may earn a commission
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -8,31 +8,47 @@ const brands: Brand[] = [
     name: 'Keeps',
     slug: 'keeps',
     rating: 4.4,
+    reviewCount: 8400,
     consultationFee: 'Free',
     medicationFrom: '$7/month',
     subscriptionType: '3-month',
     pros: ['Most affordable hair loss treatment', '50% off first 3 months', 'Dermatologist support'],
     cons: ['3-month minimum commitment', 'Limited service offerings'],
+    bestFor: [
+      { label: 'Best Value', variant: 'success', icon: '💰' },
+      { label: 'Budget-Friendly', variant: 'success' },
+    ],
+    featured: true,
   },
   {
     name: 'Hims',
     slug: 'hims',
     rating: 4.5,
+    reviewCount: 24500,
     consultationFee: 'Free',
     medicationFrom: '$25/month',
     subscriptionType: 'Monthly',
     pros: ['Comprehensive platform', 'Multiple treatment options', 'Fast shipping'],
     cons: ['Slightly higher pricing than Keeps', 'Subscription required'],
+    bestFor: [
+      { label: 'One-Stop Shop', variant: 'primary', icon: '🏪' },
+      { label: 'Best for Variety', variant: 'primary' },
+    ],
   },
   {
     name: 'Ro',
     slug: 'ro',
     rating: 4.6,
+    reviewCount: 18200,
     consultationFee: '$15',
     medicationFrom: '$30/month',
     subscriptionType: 'Flexible',
     pros: ['Flexible payment options', 'Brand and generic medications', '15% first-month discount'],
     cons: ['Consultation fee', 'Can be expensive per-dose'],
+    bestFor: [
+      { label: 'Best for Flexibility', variant: 'neutral', icon: '⚡' },
+      { label: 'Premium Options', variant: 'premium' },
+    ],
   },
 ];
 
@@ -49,82 +65,70 @@ const schema = {
   description="Compare the top hair loss treatment services for men. Find the best prices on finasteride, minoxidil, and combination treatments from Keeps, Hims, Ro, and more."
   schema={schema}
 >
-  <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
+  <!-- Hero Section -->
+  <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
     <div class="container-custom">
       <div class="max-w-4xl">
-        <div class="flex items-center space-x-2 text-sm text-gray-600 mb-4">
-          <a href="/" class="hover:text-brand-primary">Home</a>
-          <span>›</span>
-          <span class="text-gray-900 font-medium">Hair Health</span>
+        <div class="flex items-center gap-2 text-sm text-slate-600 mb-6">
+          <a href="/" class="hover:text-brand-accent transition-colors">Home</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-slate-900 font-medium">Hair Health</span>
         </div>
 
-        <h1 class="text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-4">
-          Best Hair Loss Treatment Services
+        <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+          Hair Loss Treatment Services Compared
         </h1>
-        <p class="text-xl text-gray-600 leading-relaxed mb-6">
-          Compare evidence-based hair loss treatments including finasteride and minoxidil from top telehealth providers.
-          Find the most affordable, effective solutions for male pattern baldness.
+        <p class="text-xl text-slate-600 leading-relaxed mb-8">
+          Find the hair loss service that's right for you. We compare finasteride and minoxidil providers to help you stop hair loss and regrow hair.
         </p>
 
         <div class="flex flex-wrap gap-3">
-          <a href="#comparison" class="btn-primary">Compare Providers</a>
-          <a href="/guides/hair-loss-treatment" class="btn-outline">Hair Loss Guide</a>
+          <a href="#comparison" class="btn-primary">
+            View Comparison
+          </a>
+          <a href="#treatments" class="btn-outline">
+            Treatment Options
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-8 bg-white border-b border-gray-200">
+  <!-- Quick Stats -->
+  <section class="py-10 bg-slate-50 border-b border-slate-200">
     <div class="container-custom">
-      <div class="grid md:grid-cols-4 gap-6 text-center">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
         <div>
-          <div class="text-3xl font-bold text-brand-primary mb-1">5+</div>
-          <div class="text-sm text-gray-600">Providers Reviewed</div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">3</div>
+          <div class="text-sm text-slate-600">Services Compared</div>
         </div>
         <div>
-          <div class="text-3xl font-bold text-brand-primary mb-1">$7+</div>
-          <div class="text-sm text-gray-600">Per Month</div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">$7+</div>
+          <div class="text-sm text-slate-600">Starting Price</div>
         </div>
         <div>
-          <div class="text-3xl font-bold text-brand-primary mb-1">2</div>
-          <div class="text-sm text-gray-600">Proven Medications</div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">FDA</div>
+          <div class="text-sm text-slate-600">Approved</div>
         </div>
         <div>
-          <div class="text-3xl font-bold text-brand-primary mb-1">80%+</div>
-          <div class="text-sm text-gray-600">Success Rate</div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">3-6mo</div>
+          <div class="text-sm text-slate-600">See Results</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-12 bg-gray-50">
-    <div class="container-custom max-w-5xl">
-      <h2 class="text-3xl font-display font-bold mb-6">Understanding Male Hair Loss</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="prose prose-lg">
-          <p>
-            Male pattern baldness (androgenetic alopecia) affects approximately 50% of men by age 50.
-            It's caused by a combination of genetics and the hormone DHT (dihydrotestosterone), which
-            miniaturizes hair follicles over time.
-          </p>
-        </div>
-        <div class="prose prose-lg">
-          <p>
-            Two FDA-approved medications have been proven effective in treating hair loss:
-            <strong>finasteride</strong> (Propecia) and <strong>minoxidil</strong> (Rogaine).
-            Many men use both together for maximum results.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="comparison" class="py-12 bg-white">
+  <!-- Comparison Section -->
+  <section id="comparison" class="section bg-white">
     <div class="container-custom">
-      <div class="mb-8">
-        <h2 class="text-3xl font-display font-bold mb-3">Compare Hair Loss Providers</h2>
-        <p class="text-gray-600">
-          All prices normalized to monthly cost. Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+      <div class="mb-10">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+          Service Comparison
+        </h2>
+        <p class="text-slate-600">
+          Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
         </p>
       </div>
 
@@ -132,99 +136,152 @@ const schema = {
     </div>
   </section>
 
-  <section class="py-12 bg-gray-50">
+  <!-- Treatment Options -->
+  <section id="treatments" class="section-light">
     <div class="container-custom">
-      <h2 class="text-3xl font-display font-bold mb-8">Treatment Options</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white p-6 rounded-lg shadow-sm">
-          <h3 class="font-semibold text-xl mb-3">Finasteride (Propecia)</h3>
-          <p class="text-gray-600 text-sm mb-4">
-            Oral medication that blocks DHT production. Clinically proven to stop hair loss in 90% of men and regrow hair in 65%.
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 text-center">
+        Hair Loss Treatment Options
+      </h2>
+      <p class="text-lg text-slate-600 mb-10 text-center max-w-2xl mx-auto">
+        FDA-approved medications proven to stop hair loss and promote regrowth.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div class="card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl">
+              💊
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Finasteride</h3>
+          </div>
+          <p class="text-sm text-slate-500 mb-2">Oral Medication (Propecia)</p>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Blocks DHT, the hormone that causes male pattern baldness. Take daily. 80-90% of users maintain or regrow hair. Most effective treatment available.
           </p>
-          <div class="text-sm text-gray-500">
-            <div class="font-medium text-gray-900 mb-2">Pricing:</div>
-            <ul class="space-y-1">
-              <li>• Keeps: $27/month (with 50% off first 3 months)</li>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Pricing:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• Keeps: $7-20/month</li>
               <li>• Hims: $25-40/month</li>
-              <li>• Ro: $30+/month</li>
+              <li>• Ro: $30-50/month</li>
             </ul>
           </div>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-sm">
-          <h3 class="font-semibold text-xl mb-3">Minoxidil (Rogaine)</h3>
-          <p class="text-gray-600 text-sm mb-4">
-            Topical solution or foam applied directly to the scalp. Stimulates hair growth and slows hair loss. Works for 60-70% of users.
+        <div class="card p-6 ring-2 ring-brand-accent">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl">
+              🧴
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Minoxidil</h3>
+          </div>
+          <p class="text-sm text-slate-500 mb-2">Topical Solution (Rogaine)</p>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Stimulates blood flow to hair follicles. Apply twice daily. Works best for crown/top of head. Often combined with finasteride for best results.
           </p>
-          <div class="text-sm text-gray-500">
-            <div class="font-medium text-gray-900 mb-2">Pricing:</div>
-            <ul class="space-y-1">
-              <li>• Keeps: $7+/month</li>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Pricing:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• Keeps: $15-25/month</li>
               <li>• Hims: $15-30/month</li>
-              <li>• Ro: $18+/month</li>
+              <li>• Ro: $20-35/month</li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-8">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-200">
+          <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <span class="text-sm font-medium text-slate-700">
+            Combination therapy (finasteride + minoxidil) provides best results
+          </span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-12 bg-white">
+  <!-- FAQ Section -->
+  <section class="section bg-white">
     <div class="container-custom max-w-3xl">
-      <h2 class="text-3xl font-display font-bold mb-8">Frequently Asked Questions</h2>
-      <div class="space-y-6">
-        <details class="group">
-          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4 bg-gray-50 rounded-lg">
-            <span>How long does it take to see results?</span>
-            <span class="transition group-open:rotate-180">▼</span>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-8 text-center">
+        Common Questions
+      </h2>
+      <div class="space-y-4">
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>How long until I see results?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
           </summary>
-          <p class="text-gray-600 mt-3 p-4 pt-0">
-            Most men see results within 3-6 months, but it can take up to 12 months for maximum results.
-            Hair loss may initially increase slightly as weak hairs are replaced by stronger ones.
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Most users see noticeable results in 3-6 months. Hair loss should slow or stop within the first few months, with regrowth becoming visible around 6-12 months. Consistency is key - these medications work best when taken daily.
           </p>
         </details>
 
-        <details class="group">
-          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4 bg-gray-50 rounded-lg">
-            <span>Is finasteride safe?</span>
-            <span class="transition group-open:rotate-180">▼</span>
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Are there side effects?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
           </summary>
-          <p class="text-gray-600 mt-3 p-4 pt-0">
-            Finasteride is FDA-approved and generally safe. About 2-4% of men experience sexual side effects
-            (decreased libido, erectile dysfunction), which typically resolve after stopping the medication.
-            Discuss risks with your doctor.
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Finasteride side effects are rare (2-4% of users) and may include decreased libido or erectile dysfunction. Minoxidil may cause scalp irritation or unwanted facial hair growth. Most users experience no side effects. Always consult with a healthcare provider.
           </p>
         </details>
 
-        <details class="group">
-          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4 bg-gray-50 rounded-lg">
-            <span>Should I use finasteride and minoxidil together?</span>
-            <span class="transition group-open:rotate-180">▼</span>
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Do I need to use these medications forever?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
           </summary>
-          <p class="text-gray-600 mt-3 p-4 pt-0">
-            Yes, using both together often produces better results than either alone. Finasteride blocks DHT
-            (the cause), while minoxidil stimulates growth (the treatment). Many providers offer combination packages.
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Yes, these medications require ongoing use to maintain results. If you stop treatment, hair loss will resume within 6-12 months. Think of it like managing any chronic condition - consistent treatment is necessary for continued benefits.
           </p>
         </details>
       </div>
     </div>
   </section>
 
-  <section class="py-12 bg-gray-50">
+  <!-- Related Content -->
+  <section class="section-light border-t border-slate-200">
     <div class="container-custom">
-      <h2 class="text-3xl font-display font-bold mb-8">Related Comparisons</h2>
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">
+        Explore More Categories
+      </h2>
       <div class="grid md:grid-cols-3 gap-6">
-        <a href="/compare/keeps-vs-hims" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="font-semibold text-lg mb-2">Keeps vs Hims</h3>
-          <p class="text-gray-600 text-sm">Which hair loss service offers better value?</p>
+        <a href="/sexual-health" class="card-hover p-6 group">
+          <div class="text-3xl mb-3">❤️‍🔥</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Sexual Health
+          </h3>
+          <p class="text-slate-600 text-sm">
+            Compare ED treatment services and medications.
+          </p>
         </a>
-        <a href="/hims" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="font-semibold text-lg mb-2">Hims Review</h3>
-          <p class="text-gray-600 text-sm">Complete review of Hims hair loss treatments.</p>
+        <a href="/testosterone" class="card-hover p-6 group">
+          <div class="text-3xl mb-3">💪</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Testosterone & Hormones
+          </h3>
+          <p class="text-slate-600 text-sm">
+            TRT clinics and hormone optimization services.
+          </p>
         </a>
-        <a href="/keeps" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="font-semibold text-lg mb-2">Keeps Review</h3>
-          <p class="text-gray-600 text-sm">Is Keeps the most affordable option?</p>
+        <a href="/weight-loss" class="card-hover p-6 group">
+          <div class="text-3xl mb-3">⚖️</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Weight Loss
+          </h3>
+          <p class="text-slate-600 text-sm">
+            GLP-1 medications and weight management programs.
+          </p>
         </a>
       </div>
     </div>

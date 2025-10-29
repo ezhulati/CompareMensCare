@@ -1,0 +1,365 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Our Methodology - How We Evaluate Services',
+  description: 'Learn about our transparent, evidence-based methodology for comparing men\'s health telehealth services.',
+};
+---
+
+<BaseLayout
+  title="Our Methodology - How We Compare Services"
+  description="Transparent, evidence-based methodology for evaluating and comparing men's health telehealth services. Learn how we research, test, and review."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-2 text-sm text-slate-600 mb-6">
+          <a href="/" class="hover:text-brand-accent transition-colors">Home</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-slate-900 font-medium">Methodology</span>
+        </div>
+
+        <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          Our Methodology
+        </h1>
+        <p class="text-xl text-slate-600 leading-relaxed">
+          How we evaluate, compare, and present information about men's health telehealth services.
+          Transparency matters—here's exactly how we work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Principles -->
+  <section class="section bg-slate-50">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">
+        Our Core Principles
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-6">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4 text-2xl">
+            🎯
+          </div>
+          <h3 class="font-bold text-xl mb-3 text-slate-900">No Rankings</h3>
+          <p class="text-slate-600 leading-relaxed">
+            We don't rank services as "best overall" because there is no universal winner. Instead, we identify
+            which service is "best for" specific needs—best for price, best for variety, best for speed, etc.
+            Your priorities determine the best choice for you.
+          </p>
+        </div>
+
+        <div class="card p-6">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 text-2xl">
+            🔍
+          </div>
+          <h3 class="font-bold text-xl mb-3 text-slate-900">Evidence-Based</h3>
+          <p class="text-slate-600 leading-relaxed">
+            All medical information comes from peer-reviewed research, clinical guidelines, and expert consensus.
+            We cite sources and link to original research. Claims without evidence are clearly labeled as such.
+          </p>
+        </div>
+
+        <div class="card p-6">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4 text-2xl">
+            💰
+          </div>
+          <h3 class="font-bold text-xl mb-3 text-slate-900">Transparent Affiliations</h3>
+          <p class="text-slate-600 leading-relaxed">
+            We use affiliate links and may earn commissions when you purchase through our links. This is disclosed
+            on every page. Crucially, affiliate relationships do NOT influence our comparisons—we present all
+            services equally and let you decide.
+          </p>
+        </div>
+
+        <div class="card p-6">
+          <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-4 text-2xl">
+            ⚖️
+          </div>
+          <h3 class="font-bold text-xl mb-3 text-slate-900">Balanced Perspective</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Every service has pros and cons. We present both honestly. We don't hide negative aspects or
+            exaggerate positives. Our goal is to give you the complete picture so you can make an informed decision.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Evaluation Process -->
+  <section class="section bg-white">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">
+        Our Evaluation Process
+      </h2>
+      <p class="text-lg text-slate-600 mb-10 text-center">
+        How we research and evaluate each telehealth service
+      </p>
+
+      <div class="space-y-8">
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center font-bold text-xl">
+              1
+            </div>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-2 text-slate-900">Initial Research</h3>
+            <p class="text-slate-600 leading-relaxed mb-3">
+              We start by thoroughly researching each service: reviewing their website, terms of service,
+              privacy policy, pricing structure, available treatments, and medical team credentials.
+            </p>
+            <ul class="text-sm text-slate-600 space-y-1">
+              <li>• Review official website and documentation</li>
+              <li>• Verify physician licensing and credentials</li>
+              <li>• Document all pricing and fees</li>
+              <li>• Identify unique features and limitations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center font-bold text-xl">
+              2
+            </div>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-2 text-slate-900">User Experience Testing</h3>
+            <p class="text-slate-600 leading-relaxed mb-3">
+              Where possible, we go through the actual consultation process to evaluate user experience,
+              customer service, shipping times, and product quality.
+            </p>
+            <ul class="text-sm text-slate-600 space-y-1">
+              <li>• Test signup and consultation process</li>
+              <li>• Evaluate website usability and mobile experience</li>
+              <li>• Measure response times and customer support</li>
+              <li>• Assess packaging and delivery quality</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center font-bold text-xl">
+              3
+            </div>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-2 text-slate-900">Review Aggregation</h3>
+            <p class="text-slate-600 leading-relaxed mb-3">
+              We analyze thousands of user reviews from multiple sources to identify common themes, complaints,
+              and praise. This gives us insight into real-world experiences.
+            </p>
+            <ul class="text-sm text-slate-600 space-y-1">
+              <li>• Aggregate reviews from Trustpilot, Google, Reddit, and forums</li>
+              <li>• Identify recurring positive and negative themes</li>
+              <li>• Verify complaint patterns and resolution</li>
+              <li>• Monitor BBB ratings and complaints</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center font-bold text-xl">
+              4
+            </div>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-2 text-slate-900">Medical Accuracy Review</h3>
+            <p class="text-slate-600 leading-relaxed mb-3">
+              All medical information is fact-checked against peer-reviewed literature, clinical guidelines,
+              and FDA resources. We consult with medical professionals when needed.
+            </p>
+            <ul class="text-sm text-slate-600 space-y-1">
+              <li>• Cross-reference claims with medical literature</li>
+              <li>• Verify medication information with FDA databases</li>
+              <li>• Consult clinical practice guidelines</li>
+              <li>• Review for potential misinformation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center font-bold text-xl">
+              5
+            </div>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-2 text-slate-900">Ongoing Monitoring</h3>
+            <p class="text-slate-600 leading-relaxed mb-3">
+              Telehealth services change frequently. We monitor pricing updates, new features, policy changes,
+              and user feedback to keep our content accurate.
+            </p>
+            <ul class="text-sm text-slate-600 space-y-1">
+              <li>• Monthly pricing verification</li>
+              <li>• Quarterly deep reviews of each service</li>
+              <li>• Real-time monitoring of major changes</li>
+              <li>• Continuous user feedback collection</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Criteria -->
+  <section class="section-light">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">
+        What We Evaluate
+      </h2>
+      <p class="text-lg text-slate-600 mb-10 text-center">
+        Key factors we consider when comparing services
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-6">
+          <h3 class="font-semibold text-lg mb-3 text-slate-900">💰 Cost & Value</h3>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li>• Consultation fees (or lack thereof)</li>
+            <li>• Medication pricing (monthly/per-dose)</li>
+            <li>• Hidden fees and shipping costs</li>
+            <li>• Insurance acceptance and FSA/HSA eligibility</li>
+            <li>• Subscription requirements and flexibility</li>
+          </ul>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="font-semibold text-lg mb-3 text-slate-900">👨‍⚕️ Medical Quality</h3>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li>• Physician credentials and licensing</li>
+            <li>• Quality of medical consultation</li>
+            <li>• Medication options (brand vs. generic vs. compounded)</li>
+            <li>• Follow-up care and ongoing monitoring</li>
+            <li>• Evidence-based treatment protocols</li>
+          </ul>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="font-semibold text-lg mb-3 text-slate-900">📱 User Experience</h3>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li>• Ease of signup and consultation process</li>
+            <li>• Website and mobile app quality</li>
+            <li>• Customer service responsiveness</li>
+            <li>• Prescription refill process</li>
+            <li>• Account management and flexibility</li>
+          </ul>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="font-semibold text-lg mb-3 text-slate-900">⚡ Speed & Convenience</h3>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li>• Time to approval</li>
+            <li>• Shipping speed and tracking</li>
+            <li>• Discreet packaging</li>
+            <li>• Availability of expedited options</li>
+            <li>• Auto-refill and subscription management</li>
+          </ul>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="font-semibold text-lg mb-3 text-slate-900">🔒 Privacy & Security</h3>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li>• HIPAA compliance</li>
+            <li>• Data security practices</li>
+            <li>• Discreet billing and packaging</li>
+            <li>• Privacy policy transparency</li>
+            <li>• Third-party data sharing</li>
+          </ul>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="font-semibold text-lg mb-3 text-slate-900">📊 Reputation & Trust</h3>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li>• User review averages across platforms</li>
+            <li>• BBB rating and complaint resolution</li>
+            <li>• Years in operation</li>
+            <li>• Company transparency and ethics</li>
+            <li>• Response to negative feedback</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Limitations -->
+  <section class="section bg-white">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">
+        Our Limitations
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <p class="text-slate-600 leading-relaxed mb-4">
+          We believe in transparency about what we can and cannot do:
+        </p>
+
+        <div class="card p-6 mb-4">
+          <h3 class="font-semibold text-lg mb-2 text-slate-900">We are not medical professionals</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            While we research medical topics thoroughly and cite clinical evidence, we are not doctors.
+            Our content is for informational purposes only and does not constitute medical advice.
+            Always consult a qualified healthcare provider for medical decisions.
+          </p>
+        </div>
+
+        <div class="card p-6 mb-4">
+          <h3 class="font-semibold text-lg mb-2 text-slate-900">We cannot verify all user reviews</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            While we aggregate reviews from multiple sources, we cannot independently verify every review's
+            authenticity. We note patterns and trends rather than relying on individual reviews.
+          </p>
+        </div>
+
+        <div class="card p-6 mb-4">
+          <h3 class="font-semibold text-lg mb-2 text-slate-900">Pricing can change frequently</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Telehealth services update their pricing regularly. While we monitor changes monthly, there may
+            be brief periods where our listed prices are outdated. We always recommend verifying current
+            pricing directly with the service.
+          </p>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="font-semibold text-lg mb-2 text-slate-900">Affiliate relationships exist</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            We earn commissions from affiliate links. While we strive to remain objective, this creates
+            a potential conflict of interest. We mitigate this by presenting all services equally and
+            clearly disclosing our relationships.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feedback CTA -->
+  <section class="section bg-slate-900 text-white">
+    <div class="container-custom text-center max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">
+        Help Us Improve
+      </h2>
+      <p class="text-xl text-slate-300 mb-6">
+        Found an error? Have feedback on our methodology? We want to hear from you.
+      </p>
+      <div class="flex gap-4 justify-center">
+        <a href="mailto:feedback@comparemenscare.com" class="btn bg-white text-slate-900 hover:bg-slate-100">
+          Send Feedback
+        </a>
+        <a href="/about" class="btn-outline border-white text-white hover:bg-white/10">
+          About Us
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

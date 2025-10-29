@@ -4,14 +4,18 @@ slug: "ro"
 description: "Flexible telehealth platform offering ED treatments, hair loss solutions, and weight management with both brand-name and generic medications."
 categories: ["sexual-health", "hair-health", "weight-loss"]
 rating: 4.6
+reviewCount: 18200
 affiliateLink: "ro"
 affiliateId: "ro"
 cookieDays: 30
 commission: "Per sale"
 pricing:
-  consultationFee: "$15 (with 15% first month discount)"
+  consultationFee: "$15"
   medicationFrom: "$4/dose"
-  subscriptionType: "Flexible (per-dose or subscription)"
+  subscriptionType: "Flexible"
+  priceMin: 4
+  priceMax: 958
+  currency: "USD"
 services:
   - "Erectile Dysfunction Treatment"
   - "Hair Loss Treatment"
@@ -32,6 +36,34 @@ cons:
   - "$15 consultation fee (though offset by first-month discount)"
   - "Per-dose pricing can add up for frequent users"
   - "Some compounded products not FDA-approved"
+bestFor:
+  - label: "Best for Flexibility"
+    variant: "success"
+    icon: "⚡"
+  - label: "No Commitment"
+    variant: "neutral"
+  - label: "Brand-Name Options"
+    variant: "premium"
+    icon: "👑"
+priorities:
+  affordability: 8
+  privacy: 8
+  speed: 9
+  selection: 9
+  transparency: 10
+  ease: 8
+  support: 8
+  insurance: 0
+  comprehensive: 7
+features:
+  freeConsultation: false
+  subscriptionRequired: false
+  insuranceAccepted: false
+  sameDayShipping: false
+  discretePackaging: true
+  cancelAnytime: true
+  mobileApp: true
+  pharmacyPickup: false
 featured: true
 publishDate: 2025-01-15T00:00:00.000Z
 lastReviewed: 2025-01-15T00:00:00.000Z

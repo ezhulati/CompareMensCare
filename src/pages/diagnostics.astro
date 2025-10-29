@@ -1,0 +1,502 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import type { Brand } from '../components/ComparisonTable.astro';
+
+const brands: Brand[] = [
+  {
+    name: 'Everlywell',
+    slug: 'everlywell',
+    rating: 4.6,
+    consultationFee: 'Free',
+    medicationFrom: '$49-299',
+    subscriptionType: 'One-time or subscription',
+    pros: [
+      'Widest test selection (40+ tests)',
+      'CLIA-certified labs',
+      'FSA/HSA accepted',
+    ],
+    cons: [
+      'Higher pricing than competitors',
+      'Some tests require blood draw',
+    ],
+    bestFor: [
+      { label: 'Best Variety', variant: 'primary', icon: '🔬' },
+      { label: 'Most Comprehensive', variant: 'success' },
+    ],
+    featured: true,
+  },
+  {
+    name: 'LetsGetChecked',
+    slug: 'letsgetchecked',
+    rating: 4.5,
+    consultationFee: 'Free',
+    medicationFrom: '$69-399',
+    subscriptionType: 'One-time',
+    pros: [
+      'Includes physician consultation',
+      'Fast results (2-5 days)',
+      'Excellent customer service',
+    ],
+    cons: [
+      'More expensive than alternatives',
+      'Limited test menu',
+    ],
+    bestFor: [
+      { label: 'Best Support', variant: 'warning', icon: '👨‍⚕️' },
+      { label: 'Fast Results', variant: 'success' },
+    ],
+  },
+  {
+    name: 'myLAB Box',
+    slug: 'mylab-box',
+    rating: 4.3,
+    consultationFee: 'Free',
+    medicationFrom: '$59-349',
+    subscriptionType: 'One-time',
+    pros: [
+      'STD testing focus',
+      'Simple sample collection',
+      'Discreet packaging',
+    ],
+    cons: [
+      'Limited to sexual health tests',
+      'Fewer general wellness options',
+    ],
+    bestFor: [
+      { label: 'Best for STD Testing', variant: 'neutral', icon: '🧪' },
+    ],
+  },
+  {
+    name: 'Hone Health',
+    slug: 'hone-health',
+    rating: 4.4,
+    consultationFee: '$99',
+    medicationFrom: '$45+',
+    subscriptionType: 'With treatment',
+    pros: [
+      'Comprehensive hormone panels',
+      'TRT integration',
+      'Expert physician analysis',
+    ],
+    cons: [
+      'Focused on hormone testing',
+      'Requires consultation fee',
+    ],
+    bestFor: [
+      { label: 'Best for Hormones', variant: 'primary', icon: '💪' },
+    ],
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Best At-Home Health Testing Services',
+  description: 'Compare the best at-home health testing and diagnostic services for men including hormone tests, STD testing, and wellness panels.',
+};
+---
+
+<BaseLayout
+  title="Best At-Home Health Testing - Diagnostics & Wellness Services"
+  description="Compare at-home health testing services including hormone panels, STD tests, vitamin levels, and comprehensive wellness diagnostics. Get lab results from home."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="max-w-4xl">
+        <div class="flex items-center gap-2 text-sm text-slate-600 mb-6">
+          <a href="/" class="hover:text-brand-accent transition-colors">Home</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-slate-900 font-medium">Diagnostics & Wellness</span>
+        </div>
+
+        <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+          At-Home Health Testing & Diagnostics
+        </h1>
+        <p class="text-xl text-slate-600 leading-relaxed mb-8">
+          Compare at-home testing services for hormone levels, vitamin deficiencies, STDs, metabolic health, and more.
+          Get lab-quality results without leaving home.
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <a href="#comparison" class="btn-primary">
+            View Comparison
+          </a>
+          <a href="#test-types" class="btn-outline">
+            Test Types
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="py-10 bg-slate-50 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">100+</div>
+          <div class="text-sm text-slate-600">Tests Available</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">$49+</div>
+          <div class="text-sm text-slate-600">Starting Price</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">2-5</div>
+          <div class="text-sm text-slate-600">Days for Results</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">CLIA</div>
+          <div class="text-sm text-slate-600">Certified Labs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="section bg-white">
+    <div class="container-custom max-w-4xl">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">Why At-Home Testing?</h2>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          At-home health testing has revolutionized preventive care and health monitoring. Instead of scheduling
+          doctor appointments, taking time off work, and visiting labs, you can now order comprehensive health
+          tests online, collect samples at home, and receive physician-reviewed results in days.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          These tests use the same CLIA-certified labs as your doctor's office, ensuring accuracy and reliability.
+          Common applications include monitoring testosterone and hormone levels, checking vitamin deficiencies,
+          STD screening, metabolic health panels, and tracking biomarkers over time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section -->
+  <section id="comparison" class="section-light">
+    <div class="container-custom">
+      <div class="mb-10">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+          Testing Service Comparison
+        </h2>
+        <p class="text-slate-600">
+          Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+        </p>
+      </div>
+
+      <ComparisonTable brands={brands} location="diagnostics-table" />
+    </div>
+  </section>
+
+  <!-- Test Types -->
+  <section id="test-types" class="section bg-white">
+    <div class="container-custom">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 text-center">
+        Popular Test Types
+      </h2>
+      <p class="text-lg text-slate-600 mb-10 text-center max-w-2xl mx-auto">
+        Understand the most common at-home health tests and what they measure.
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl">
+              💪
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Hormone Testing</h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Measures testosterone (total & free), estrogen, cortisol, thyroid hormones, and more.
+            Essential for TRT monitoring, hormone optimization, and identifying deficiencies.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Common Tests:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• Total & Free Testosterone</li>
+              <li>• Thyroid Panel (TSH, T3, T4)</li>
+              <li>• Cortisol & DHEA</li>
+            </ul>
+            <div class="mt-3 text-slate-500">
+              Price Range: $49-199
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-6 ring-2 ring-brand-accent">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center text-2xl">
+              🧪
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">STD Testing</h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Comprehensive screening for sexually transmitted infections including chlamydia, gonorrhea,
+            HIV, syphilis, herpes, and more. Discreet and confidential.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Common Panels:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• 8-panel comprehensive test</li>
+              <li>• HIV testing</li>
+              <li>• Herpes (HSV-1 & HSV-2)</li>
+            </ul>
+            <div class="mt-3 text-slate-500">
+              Price Range: $59-299
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-green-100 text-green-600 flex items-center justify-center text-2xl">
+              💊
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Vitamin & Nutrition</h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Measures vitamin D, B12, folate, iron, magnesium, and other essential nutrients.
+            Helps identify deficiencies affecting energy, mood, and overall health.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Common Tests:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• Vitamin D</li>
+              <li>• Vitamin B12 & Folate</li>
+              <li>• Iron & Ferritin</li>
+            </ul>
+            <div class="mt-3 text-slate-500">
+              Price Range: $49-159
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl">
+              ❤️
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Heart Health</h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Cholesterol panel (HDL, LDL, triglycerides), inflammation markers (CRP), and cardiovascular
+            risk assessment. Monitor heart disease risk factors.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Common Tests:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• Lipid Panel (Cholesterol)</li>
+              <li>• High-sensitivity CRP</li>
+              <li>• Homocysteine</li>
+            </ul>
+            <div class="mt-3 text-slate-500">
+              Price Range: $69-179
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl">
+              🩸
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Metabolic Health</h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Blood sugar (HbA1c), insulin resistance, kidney and liver function. Essential for
+            diabetes screening, metabolic syndrome, and overall wellness.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Common Tests:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• HbA1c (diabetes screening)</li>
+              <li>• Comprehensive Metabolic Panel</li>
+              <li>• Liver & Kidney function</li>
+            </ul>
+            <div class="mt-3 text-slate-500">
+              Price Range: $79-199
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl">
+              🧬
+            </div>
+            <h3 class="font-bold text-xl text-slate-900">Wellness Panels</h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+            Comprehensive packages combining multiple tests for complete health overview.
+            Often includes hormones, vitamins, metabolic markers, and more.
+          </p>
+          <div class="text-sm">
+            <div class="font-medium text-slate-900 mb-2">Typical Includes:</div>
+            <ul class="space-y-1 text-slate-600">
+              <li>• Men's Health Panel</li>
+              <li>• Athletic Performance Panel</li>
+              <li>• Complete Wellness Panel</li>
+            </ul>
+            <div class="mt-3 text-slate-500">
+              Price Range: $149-399
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section-light">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">How At-Home Testing Works</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+            1
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900">Order Online</h3>
+          <p class="text-slate-600 text-sm">
+            Choose your test and order online. No doctor visit required for most tests.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+            2
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900">Collect Sample</h3>
+          <p class="text-slate-600 text-sm">
+            Use the provided kit to collect a finger-prick blood sample, saliva, or urine at home.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+            3
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900">Mail to Lab</h3>
+          <p class="text-slate-600 text-sm">
+            Ship your sample back using the prepaid shipping label. Free shipping included.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+            4
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900">Get Results</h3>
+          <p class="text-slate-600 text-sm">
+            Receive physician-reviewed results in 2-5 days via secure online portal.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section bg-white">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-8 text-center">
+        Common Questions
+      </h2>
+      <div class="space-y-4">
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Are at-home tests accurate?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Yes. Reputable at-home testing companies use the same CLIA-certified labs that process samples
+            from doctor's offices and hospitals. The tests use identical methodology and equipment. However,
+            proper sample collection is important—carefully follow all instructions for accurate results.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Do I need a doctor's order?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            No. Most at-home testing services don't require a doctor's order. They employ physicians who
+            review and approve your test order. However, some tests may not be available in certain states
+            due to regulations (typically NY, NJ, and RI have restrictions).
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Can I use insurance or FSA/HSA?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Most at-home tests aren't covered by insurance, but many companies accept FSA/HSA cards.
+            Everlywell and LetsGetChecked both accept FSA/HSA. Some services offer reimbursement paperwork
+            you can submit to insurance, though approval isn't guaranteed.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>How long do results take?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Most tests return results in 2-5 business days after the lab receives your sample. Shipping
+            typically takes 1-2 days each way. Total time from sample collection to results is usually
+            5-9 days. Some tests may take longer depending on complexity.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Content -->
+  <section class="section-light border-t border-slate-200">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">
+        Explore More Categories
+      </h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/testosterone" class="card-hover p-6 group">
+          <div class="text-3xl mb-3">💪</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Testosterone & Hormones
+          </h3>
+          <p class="text-slate-600 text-sm">
+            TRT clinics with hormone testing included.
+          </p>
+        </a>
+        <a href="/weight-loss" class="card-hover p-6 group">
+          <div class="text-3xl mb-3">⚖️</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Weight Loss
+          </h3>
+          <p class="text-slate-600 text-sm">
+            GLP-1 programs with metabolic testing.
+          </p>
+        </a>
+        <a href="/sexual-health" class="card-hover p-6 group">
+          <div class="text-3xl mb-3">❤️‍🔥</div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Sexual Health
+          </h3>
+          <p class="text-slate-600 text-sm">
+            ED treatments and STD testing options.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
