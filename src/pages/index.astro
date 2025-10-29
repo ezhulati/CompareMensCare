@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCategoryIcon } from '../utils/helpers';
+
+const categories = [
+  {
+    title: 'Sexual Health',
+    slug: 'sexual-health',
+    description: 'Compare ED treatments, premature ejaculation solutions, and sexual wellness services.',
+    providersCount: 8,
+  },
+  {
+    title: 'Hair Health',
+    slug: 'hair-health',
+    description: 'Find the best hair loss treatments, including finasteride, minoxidil, and more.',
+    providersCount: 5,
+  },
+  {
+    title: 'Testosterone & Hormones',
+    slug: 'testosterone',
+    description: 'Compare TRT clinics and hormone optimization services for men.',
+    providersCount: 7,
+  },
+  {
+    title: 'Weight Loss',
+    slug: 'weight-loss',
+    description: 'Explore GLP-1 medications and personalized weight management programs.',
+    providersCount: 6,
+  },
+  {
+    title: 'Mental Health',
+    slug: 'mental-health',
+    description: 'Compare online therapy platforms and psychiatric care services.',
+    providersCount: 2,
+  },
+  {
+    title: 'Diagnostics & Wellness',
+    slug: 'diagnostics',
+    description: 'At-home health testing kits for comprehensive wellness monitoring.',
+    providersCount: 1,
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'CompareMensCare.com',
+  description: 'Evidence-based comparisons of telehealth services for men\'s health',
+  url: 'https://comparemenscare.com',
+};
+---
+
+<BaseLayout
+  title="CompareMensCare.com - Objective Telehealth Service Comparisons"
+  description="Evidence-based comparisons of telehealth services for men's health. Compare ED treatments, hair loss solutions, TRT clinics, weight loss programs, and more."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16 lg:py-24">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl lg:text-6xl font-display font-bold text-gray-900 mb-6">
+          Make Informed Decisions About
+          <span class="text-brand-primary">Men's Health</span>
+        </h1>
+        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+          Objective, evidence-based comparisons of telehealth services for ED, hair loss,
+          testosterone therapy, weight management, mental health, and at-home diagnostics.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#categories" class="btn-primary">
+            Explore Categories
+          </a>
+          <a href="/methodology" class="btn-outline">
+            Our Methodology
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Trust Us Section -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-display font-bold text-center mb-12">Why Trust Our Comparisons?</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Evidence-Based</h3>
+            <p class="text-gray-600 text-sm">We cite clinical research and normalize pricing for accurate comparisons.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Transparent</h3>
+            <p class="text-gray-600 text-sm">We disclose our affiliate relationships and publish our rating methodology.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Up-to-Date</h3>
+            <p class="text-gray-600 text-sm">Regular reviews and updates ensure you get current information.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section id="categories" class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-display font-bold mb-4">Browse by Category</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Select a category to compare providers and find the best telehealth service for your needs.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {categories.map((category) => (
+          <a
+            href={`/${category.slug}`}
+            class="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-200"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <h3 class="font-display font-semibold text-xl mb-2">{category.title}</h3>
+                <span class="text-sm text-gray-500">{category.providersCount} providers</span>
+              </div>
+              <span class="text-3xl">{getCategoryIcon(category.slug)}</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-4">{category.description}</p>
+            <span class="text-brand-primary font-medium text-sm inline-flex items-center">
+              Compare now
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-brand-primary text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl font-display font-bold mb-4">Stay Informed</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Get the latest updates on telehealth services, pricing changes, and new treatment options.
+      </p>
+      <a href="/guides" class="btn bg-white text-brand-primary hover:bg-gray-100">
+        Browse Our Guides
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,110 @@
+---
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import DisclosureBanner from '../components/DisclosureBanner.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  publishDate?: Date;
+  author?: string;
+  schema?: Record<string, unknown>;
+  showDisclosure?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  image,
+  type = 'website',
+  publishDate,
+  author,
+  schema,
+  showDisclosure = true,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      image={image}
+      type={type}
+      publishDate={publishDate}
+      author={author}
+      schema={schema}
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Google Analytics -->
+    {import.meta.env.PUBLIC_GA_ID && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_ID}`}></script>
+        <script is:inline define:vars={{ gaId: import.meta.env.PUBLIC_GA_ID }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', gaId);
+        </script>
+      </>
+    )}
+  </head>
+  <body>
+    {showDisclosure && <DisclosureBanner />}
+    <Header />
+    <main class="min-h-screen">
+      <slot />
+    </main>
+    <Footer />
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="hidden fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50">
+      <div class="container-custom flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm">
+          We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you consent to our use of cookies.
+          <a href="/privacy" class="underline hover:text-brand-accent">Learn more</a>
+        </p>
+        <button
+          id="accept-cookies"
+          class="btn-primary whitespace-nowrap"
+        >
+          Accept
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Cookie consent
+      const cookieConsent = document.getElementById('cookie-consent');
+      const acceptButton = document.getElementById('accept-cookies');
+
+      if (!localStorage.getItem('cookieConsent')) {
+        cookieConsent?.classList.remove('hidden');
+      }
+
+      acceptButton?.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'true');
+        cookieConsent?.classList.add('hidden');
+      });
+    </script>
+  </body>
+</html>
