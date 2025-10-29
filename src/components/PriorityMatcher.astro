@@ -136,9 +136,13 @@ const { category = 'general' } = Astro.props;
 </style>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
+  // Run on initial page load and after Astro navigation
+  function initPriorityMatcher() {
     const priorityCards = document.querySelectorAll('.priority-card');
     const findMatchesBtn = document.getElementById('find-matches-btn') as HTMLButtonElement;
+
+    if (!findMatchesBtn || priorityCards.length === 0) return;
+
     const selectedPriorities = new Set<string>();
 
     priorityCards.forEach((card) => {
@@ -195,5 +199,15 @@ const { category = 'general' } = Astro.props;
         });
       }
     });
-  });
+  }
+
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPriorityMatcher);
+  } else {
+    initPriorityMatcher();
+  }
+
+  // Also support Astro view transitions if enabled in future
+  document.addEventListener('astro:page-load', initPriorityMatcher);
 </script>

@@ -3,6 +3,7 @@ title: "Keeps"
 description: "Affordable hair loss treatment subscription service offering finasteride and minoxidil with dermatologist support."
 categories: ["hair-health"]
 rating: 4.4
+reviewCount: 12400
 affiliateLink: "keeps"
 affiliateId: "keeps"
 cookieDays: 30
@@ -11,6 +12,9 @@ pricing:
   consultationFee: "Free"
   medicationFrom: "$7/month"
   subscriptionType: "3-month subscription"
+  priceMin: 7
+  priceMax: 80
+  currency: "USD"
 services:
   - "Finasteride (oral)"
   - "Minoxidil (topical foam and solution)"
@@ -19,6 +23,33 @@ services:
 availability:
   countries: ["United States"]
   states: ["All 50 states"]
+bestFor:
+  - label: "Best Value"
+    variant: "success"
+    icon: "💰"
+  - label: "Budget-Friendly"
+    variant: "success"
+  - label: "Hair Loss Specialist"
+    variant: "primary"
+priorities:
+  affordability: 10
+  privacy: 8
+  speed: 7
+  selection: 6
+  transparency: 9
+  ease: 9
+  support: 7
+  insurance: 0
+  comprehensive: 3
+features:
+  freeConsultation: true
+  subscriptionRequired: true
+  insuranceAccepted: false
+  sameDayShipping: false
+  discretePackaging: true
+  cancelAnytime: true
+  mobileApp: false
+  pharmacyPickup: false
 pros:
   - "Very affordable pricing - lower than most competitors"
   - "50% off first 3 months for new customers"

@@ -1,96 +1,29 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ComparisonTable from '../components/ComparisonTable.astro';
-import type { Brand } from '../components/ComparisonTable.astro';
+import FilterableComparison from '../components/FilterableComparison.astro';
+import type { FilterableBrand } from '../components/FilterableComparison.astro';
 
-// Example brand data with "best for" attributes
-const brands: Brand[] = [
-  {
-    name: 'Hims',
-    slug: 'hims',
-    rating: 4.5,
-    consultationFee: 'Free',
-    medicationFrom: '$20/month',
-    subscriptionType: 'Subscription',
-    pros: [
-      'Wide selection of ED treatments',
-      'Affordable pricing',
-      'Fast shipping',
-    ],
-    cons: [
-      'Subscription required',
-      'Limited customization',
-    ],
-    bestFor: [
-      { label: 'Best for Variety', variant: 'primary', icon: '🎯' },
-      { label: 'One-Stop Shop', variant: 'success' },
-    ],
-    featured: true,
-  },
-  {
-    name: 'Ro',
-    slug: 'ro',
-    rating: 4.6,
-    consultationFee: 'Free',
-    medicationFrom: '$4/dose',
-    subscriptionType: 'Flexible',
-    pros: [
-      'Brand-name and generic options',
-      'Licensed physicians',
-      'No subscription required',
-    ],
-    cons: [
-      'Per-dose pricing can be expensive',
-      'Shipping fees apply',
-    ],
-    bestFor: [
-      { label: 'Best for Flexibility', variant: 'success', icon: '⚡' },
-      { label: 'No Commitment', variant: 'neutral' },
-    ],
-  },
-  {
-    name: 'BlueChew',
-    slug: 'bluechew',
-    rating: 4.3,
-    consultationFee: 'Free',
-    medicationFrom: '$20/month',
-    subscriptionType: 'Subscription',
-    pros: [
-      'Chewable tablets',
-      'Fast-acting',
-      'Discreet packaging',
-    ],
-    cons: [
-      'Compounded only',
-      'Limited dose options',
-    ],
-    bestFor: [
-      { label: 'Best for Chewables', variant: 'warning', icon: '💊' },
-      { label: 'Best Value', variant: 'success', icon: '💰' },
-    ],
-  },
-  {
-    name: 'Manual',
-    slug: 'manual',
-    rating: 4.4,
-    consultationFee: '£29.99',
-    medicationFrom: '£2.50/dose',
-    subscriptionType: 'Flexible',
-    pros: [
-      'UK-based service',
-      'Comprehensive approach',
-      'Educational resources',
-    ],
-    cons: [
-      'UK only',
-      'Consultation fee required',
-    ],
-    bestFor: [
-      { label: 'Best for UK', variant: 'neutral', icon: '🇬🇧' },
-      { label: 'Best for Education', variant: 'primary' },
-    ],
-  },
-];
+// Get all brands that offer sexual health services
+const allBrands = await getCollection('brands');
+const sexualHealthBrands = allBrands
+  .filter((brand) => brand.data.categories.includes('sexual-health'))
+  .map((brand): FilterableBrand => ({
+    name: brand.data.title,
+    slug: brand.slug,
+    rating: brand.data.rating,
+    consultationFee: brand.data.pricing.consultationFee,
+    medicationFrom: brand.data.pricing.medicationFrom || brand.data.pricing.consultationFee,
+    subscriptionType: brand.data.pricing.subscriptionType,
+    pros: brand.data.pros,
+    cons: brand.data.cons,
+    bestFor: brand.data.bestFor,
+    featured: brand.data.featured,
+    features: brand.data.features,
+    priorities: brand.data.priorities,
+    priceMin: brand.data.pricing.priceMin,
+    priceMax: brand.data.pricing.priceMax,
+  }));
 
 const schema = {
   '@context': 'https://schema.org',
@@ -145,7 +78,7 @@ const schema = {
     <div class="container-custom">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
         <div>
-          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">4</div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">{sexualHealthBrands.length}</div>
           <div class="text-sm text-slate-600">Services Compared</div>
         </div>
         <div>
@@ -176,7 +109,7 @@ const schema = {
         </p>
       </div>
 
-      <ComparisonTable brands={brands} location="sexual-health-table" />
+      <FilterableComparison brands={sexualHealthBrands} location="sexual-health-table" />
     </div>
   </section>
 

@@ -1,53 +1,29 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ComparisonTable from '../components/ComparisonTable.astro';
-import type { Brand } from '../components/ComparisonTable.astro';
+import FilterableComparison from '../components/FilterableComparison.astro';
+import type { FilterableBrand } from '../components/FilterableComparison.astro';
 
-const brands: Brand[] = [
-  {
-    name: 'Keeps',
-    slug: 'keeps',
-    rating: 4.4,
-    consultationFee: 'Free',
-    medicationFrom: '$7/month',
-    subscriptionType: '3-month',
-    pros: ['Most affordable hair loss treatment', '50% off first 3 months', 'Dermatologist support'],
-    cons: ['3-month minimum commitment', 'Limited service offerings'],
-    bestFor: [
-      { label: 'Best Value', variant: 'success', icon: '💰' },
-      { label: 'Budget-Friendly', variant: 'success' },
-    ],
-    featured: true,
-  },
-  {
-    name: 'Hims',
-    slug: 'hims',
-    rating: 4.5,
-    consultationFee: 'Free',
-    medicationFrom: '$25/month',
-    subscriptionType: 'Monthly',
-    pros: ['Comprehensive platform', 'Multiple treatment options', 'Fast shipping'],
-    cons: ['Slightly higher pricing than Keeps', 'Subscription required'],
-    bestFor: [
-      { label: 'One-Stop Shop', variant: 'primary', icon: '🏪' },
-      { label: 'Best for Variety', variant: 'primary' },
-    ],
-  },
-  {
-    name: 'Ro',
-    slug: 'ro',
-    rating: 4.6,
-    consultationFee: '$15',
-    medicationFrom: '$30/month',
-    subscriptionType: 'Flexible',
-    pros: ['Flexible payment options', 'Brand and generic medications', '15% first-month discount'],
-    cons: ['Consultation fee', 'Can be expensive per-dose'],
-    bestFor: [
-      { label: 'Best for Flexibility', variant: 'neutral', icon: '⚡' },
-      { label: 'Premium Options', variant: 'premium' },
-    ],
-  },
-];
+// Get all brands that offer hair health services
+const allBrands = await getCollection('brands');
+const hairHealthBrands = allBrands
+  .filter((brand) => brand.data.categories.includes('hair-health'))
+  .map((brand): FilterableBrand => ({
+    name: brand.data.title,
+    slug: brand.slug,
+    rating: brand.data.rating,
+    consultationFee: brand.data.pricing.consultationFee,
+    medicationFrom: brand.data.pricing.medicationFrom || brand.data.pricing.consultationFee,
+    subscriptionType: brand.data.pricing.subscriptionType,
+    pros: brand.data.pros,
+    cons: brand.data.cons,
+    bestFor: brand.data.bestFor,
+    featured: brand.data.featured,
+    features: brand.data.features,
+    priorities: brand.data.priorities,
+    priceMin: brand.data.pricing.priceMin,
+    priceMax: brand.data.pricing.priceMax,
+  }));
 
 const schema = {
   '@context': 'https://schema.org',
@@ -98,7 +74,7 @@ const schema = {
     <div class="container-custom">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
         <div>
-          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">3</div>
+          <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-1">{hairHealthBrands.length}</div>
           <div class="text-sm text-slate-600">Services Compared</div>
         </div>
         <div>
@@ -129,7 +105,7 @@ const schema = {
         </p>
       </div>
 
-      <ComparisonTable brands={brands} location="hair-health-table" />
+      <FilterableComparison brands={hairHealthBrands} location="hair-health-table" />
     </div>
   </section>
 

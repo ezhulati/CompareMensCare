@@ -1,0 +1,650 @@
+---
+import AffiliateButton from './AffiliateButton.astro';
+import BestForBadge from './BestForBadge.astro';
+
+interface BestFor {
+  label: string;
+  variant?: 'primary' | 'success' | 'warning' | 'neutral' | 'premium';
+  icon?: string;
+}
+
+interface Features {
+  freeConsultation?: boolean;
+  subscriptionRequired?: boolean;
+  insuranceAccepted?: boolean;
+  sameDayShipping?: boolean;
+  discretePackaging?: boolean;
+  cancelAnytime?: boolean;
+  mobileApp?: boolean;
+  pharmacyPickup?: boolean;
+}
+
+interface BrandPriorities {
+  affordability?: number;
+  privacy?: number;
+  speed?: number;
+  selection?: number;
+  transparency?: number;
+  ease?: number;
+  support?: number;
+  insurance?: number;
+  comprehensive?: number;
+}
+
+export interface FilterableBrand {
+  name: string;
+  slug: string;
+  rating: number;
+  consultationFee: string;
+  medicationFrom: string;
+  subscriptionType: string;
+  pros: string[];
+  cons: string[];
+  bestFor?: BestFor[];
+  featured?: boolean;
+  features?: Features;
+  priorities?: BrandPriorities;
+  priceMin?: number;
+  priceMax?: number;
+}
+
+export interface Props {
+  brands: FilterableBrand[];
+  location?: string;
+  showFilters?: boolean;
+}
+
+const { brands, location = 'category-table', showFilters = true } = Astro.props;
+
+// Extract unique subscription types
+const subscriptionTypes = [...new Set(brands.map(b => b.subscriptionType))];
+---
+
+<div class="filterable-comparison" data-location={location}>
+  {showFilters && (
+    <div class="filter-panel card p-6 mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-bold text-slate-900">Filter & Sort</h3>
+        <button
+          class="clear-filters-btn text-sm text-slate-600 hover:text-brand-accent transition-colors hidden"
+          aria-label="Clear all filters"
+        >
+          Clear All
+        </button>
+      </div>
+
+      <div class="grid lg:grid-cols-4 gap-6">
+        <!-- Sort -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">Sort By</label>
+          <select class="sort-select w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-accent focus:border-brand-accent transition-colors">
+            <option value="featured">Featured First</option>
+            <option value="rating-desc">Rating: High to Low</option>
+            <option value="rating-asc">Rating: Low to High</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="match">Best Match</option>
+          </select>
+        </div>
+
+        <!-- Min Rating -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">Minimum Rating</label>
+          <select class="rating-filter w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-accent focus:border-brand-accent transition-colors">
+            <option value="0">Any Rating</option>
+            <option value="3">3+ Stars</option>
+            <option value="4">4+ Stars</option>
+            <option value="4.5">4.5+ Stars</option>
+          </select>
+        </div>
+
+        <!-- Subscription Type -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">Payment Model</label>
+          <select class="subscription-filter w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-accent focus:border-brand-accent transition-colors">
+            <option value="">All Types</option>
+            {subscriptionTypes.map(type => (
+              <option value={type}>{type}</option>
+            ))}
+          </select>
+        </div>
+
+        <!-- Price Range -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">Max Price</label>
+          <select class="price-filter w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-accent focus:border-brand-accent transition-colors">
+            <option value="999999">Any Price</option>
+            <option value="5">Under $5/dose</option>
+            <option value="10">Under $10/dose</option>
+            <option value="20">Under $20/dose</option>
+            <option value="50">Under $50/dose</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Feature Filters -->
+      <div class="mt-6 pt-6 border-t border-slate-200">
+        <label class="block text-sm font-medium text-slate-700 mb-3">Features</label>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <label class="feature-filter-item flex items-center gap-2 cursor-pointer group">
+            <input
+              type="checkbox"
+              class="feature-filter w-4 h-4 rounded border-slate-300 text-brand-accent focus:ring-brand-accent"
+              data-feature="freeConsultation"
+            />
+            <span class="text-sm text-slate-700 group-hover:text-slate-900">Free Consultation</span>
+          </label>
+          <label class="feature-filter-item flex items-center gap-2 cursor-pointer group">
+            <input
+              type="checkbox"
+              class="feature-filter w-4 h-4 rounded border-slate-300 text-brand-accent focus:ring-brand-accent"
+              data-feature="insuranceAccepted"
+            />
+            <span class="text-sm text-slate-700 group-hover:text-slate-900">Insurance Accepted</span>
+          </label>
+          <label class="feature-filter-item flex items-center gap-2 cursor-pointer group">
+            <input
+              type="checkbox"
+              class="feature-filter w-4 h-4 rounded border-slate-300 text-brand-accent focus:ring-brand-accent"
+              data-feature="sameDayShipping"
+            />
+            <span class="text-sm text-slate-700 group-hover:text-slate-900">Same-Day Shipping</span>
+          </label>
+          <label class="feature-filter-item flex items-center gap-2 cursor-pointer group">
+            <input
+              type="checkbox"
+              class="feature-filter w-4 h-4 rounded border-slate-300 text-brand-accent focus:ring-brand-accent"
+              data-feature="mobileApp"
+            />
+            <span class="text-sm text-slate-700 group-hover:text-slate-900">Mobile App</span>
+          </label>
+          <label class="feature-filter-item flex items-center gap-2 cursor-pointer group">
+            <input
+              type="checkbox"
+              class="feature-filter w-4 h-4 rounded border-slate-300 text-brand-accent focus:ring-brand-accent"
+              data-feature="cancelAnytime"
+            />
+            <span class="text-sm text-slate-700 group-hover:text-slate-900">Cancel Anytime</span>
+          </label>
+          <label class="feature-filter-item flex items-center gap-2 cursor-pointer group">
+            <input
+              type="checkbox"
+              class="feature-filter w-4 h-4 rounded border-slate-300 text-brand-accent focus:ring-brand-accent"
+              data-feature="discretePackaging"
+            />
+            <span class="text-sm text-slate-700 group-hover:text-slate-900">Discreet Packaging</span>
+          </label>
+          <label class="feature-filter-item flex items-center gap-2 cursor-pointer group">
+            <input
+              type="checkbox"
+              class="feature-filter w-4 h-4 rounded border-slate-300 text-brand-accent focus:ring-brand-accent"
+              data-feature="pharmacyPickup"
+            />
+            <span class="text-sm text-slate-700 group-hover:text-slate-900">Pharmacy Pickup</span>
+          </label>
+          <label class="feature-filter-item flex items-center gap-2 cursor-pointer group">
+            <input
+              type="checkbox"
+              class="feature-filter w-4 h-4 rounded border-slate-300 text-brand-accent focus:ring-brand-accent"
+              data-feature="subscriptionRequired"
+              data-inverse="true"
+            />
+            <span class="text-sm text-slate-700 group-hover:text-slate-900">No Subscription Required</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Active Filters Display -->
+      <div class="active-filters mt-4 pt-4 border-t border-slate-200 hidden">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-sm font-medium text-slate-700">Active Filters:</span>
+          <div class="active-filters-list flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <!-- Results Count -->
+  <div class="results-summary mb-4 text-sm text-slate-600">
+    Showing <span class="visible-count font-medium text-slate-900">{brands.length}</span> of <span class="total-count font-medium">{brands.length}</span> services
+  </div>
+
+  <!-- Brand Cards -->
+  <div class="brand-list space-y-4">
+    {brands.map((brand) => (
+      <article
+        class={`
+          brand-card card p-6 lg:p-8 relative overflow-hidden transition-all duration-200
+          ${brand.featured ? 'ring-2 ring-brand-accent shadow-lg' : 'hover:shadow-md'}
+        `}
+        data-brand={JSON.stringify({
+          name: brand.name,
+          slug: brand.slug,
+          rating: brand.rating,
+          subscriptionType: brand.subscriptionType,
+          priceMin: brand.priceMin,
+          priceMax: brand.priceMax,
+          featured: brand.featured,
+          features: brand.features || {},
+          priorities: brand.priorities || {},
+        })}
+      >
+        {brand.featured && (
+          <div class="absolute -top-1 -right-1 bg-brand-accent text-white text-xs font-semibold px-4 py-1.5 rounded-bl-xl rounded-tr-2xl">
+            Top Pick
+          </div>
+        )}
+
+        <div class="grid lg:grid-cols-12 gap-6 items-center">
+          <!-- Brand Info -->
+          <div class="lg:col-span-3">
+            <a href={`/${brand.slug}`} class="group block">
+              <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">
+                {brand.name}
+              </h3>
+            </a>
+            <div class="flex items-center gap-2 mb-3">
+              <div class="flex items-center gap-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg
+                    class={`w-4 h-4 ${
+                      i < Math.floor(brand.rating)
+                        ? 'text-amber-400'
+                        : 'text-slate-300'
+                    }`}
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <span class="text-sm font-medium text-slate-700">
+                {brand.rating.toFixed(1)}
+              </span>
+            </div>
+
+            {brand.bestFor && brand.bestFor.length > 0 && (
+              <div class="flex flex-wrap gap-1.5">
+                {brand.bestFor.map((item) => (
+                  <BestForBadge
+                    label={item.label}
+                    variant={item.variant}
+                    icon={item.icon}
+                    size="sm"
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+
+          <!-- Pricing Info -->
+          <div class="lg:col-span-4 grid grid-cols-2 gap-4">
+            <div>
+              <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Consultation</div>
+              <div class="text-lg font-semibold text-slate-900">{brand.consultationFee}</div>
+            </div>
+            <div>
+              <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">From</div>
+              <div class="text-lg font-semibold text-slate-900">{brand.medicationFrom}</div>
+            </div>
+          </div>
+
+          <!-- Pros -->
+          <div class="lg:col-span-3">
+            <div class="space-y-1.5">
+              {brand.pros.slice(0, 2).map((pro) => (
+                <div class="flex items-start gap-2 text-sm">
+                  <svg class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="text-slate-700">{pro}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="lg:col-span-2 flex flex-col gap-2">
+            <AffiliateButton
+              brand={brand.slug}
+              text="Visit Site"
+              variant="primary"
+              size="md"
+              location={location}
+              class="w-full justify-center"
+            />
+            <a
+              href={`/${brand.slug}`}
+              class="btn-ghost text-sm text-center"
+            >
+              Full Review
+            </a>
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <!-- No Results Message -->
+  <div class="no-results hidden text-center py-12">
+    <div class="inline-flex items-center justify-center w-16 h-16 bg-slate-100 rounded-full mb-4">
+      <svg class="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 mb-2">No services match your filters</h3>
+    <p class="text-slate-600 mb-4">Try adjusting your filters to see more results</p>
+    <button class="clear-filters-btn btn-secondary">Clear All Filters</button>
+  </div>
+</div>
+
+<script>
+  // @ts-nocheck
+  class FilterableComparison {
+    container;
+    brandCards;
+    sortSelect;
+    ratingFilter;
+    subscriptionFilter;
+    priceFilter;
+    featureFilters;
+    clearButtons;
+    activeFiltersContainer;
+    activeFiltersList;
+    visibleCountEl;
+    totalCountEl;
+    noResults;
+
+    constructor(container) {
+      this.container = container;
+      this.brandCards = Array.from(container.querySelectorAll('.brand-card'));
+      this.sortSelect = container.querySelector('.sort-select');
+      this.ratingFilter = container.querySelector('.rating-filter');
+      this.subscriptionFilter = container.querySelector('.subscription-filter');
+      this.priceFilter = container.querySelector('.price-filter');
+      this.featureFilters = Array.from(container.querySelectorAll('.feature-filter'));
+      this.clearButtons = Array.from(container.querySelectorAll('.clear-filters-btn'));
+      this.activeFiltersContainer = container.querySelector('.active-filters');
+      this.activeFiltersList = container.querySelector('.active-filters-list');
+      this.visibleCountEl = container.querySelector('.visible-count');
+      this.totalCountEl = container.querySelector('.total-count');
+      this.noResults = container.querySelector('.no-results');
+
+      this.init();
+    }
+
+    init() {
+      // Load state from URL
+      this.loadStateFromURL();
+
+      // Event listeners
+      this.sortSelect?.addEventListener('change', () => this.applyFiltersAndSort());
+      this.ratingFilter?.addEventListener('change', () => this.applyFiltersAndSort());
+      this.subscriptionFilter?.addEventListener('change', () => this.applyFiltersAndSort());
+      this.priceFilter?.addEventListener('change', () => this.applyFiltersAndSort());
+      this.featureFilters.forEach(filter => {
+        filter.addEventListener('change', () => this.applyFiltersAndSort());
+      });
+      this.clearButtons.forEach(btn => {
+        btn.addEventListener('click', () => this.clearAllFilters());
+      });
+
+      // Initial render
+      this.applyFiltersAndSort();
+    }
+
+    loadStateFromURL() {
+      const params = new URLSearchParams(window.location.search);
+
+      if (params.has('sort') && this.sortSelect) {
+        this.sortSelect.value = params.get('sort');
+      }
+      if (params.has('minRating') && this.ratingFilter) {
+        this.ratingFilter.value = params.get('minRating');
+      }
+      if (params.has('subscription') && this.subscriptionFilter) {
+        this.subscriptionFilter.value = params.get('subscription');
+      }
+      if (params.has('maxPrice') && this.priceFilter) {
+        this.priceFilter.value = params.get('maxPrice');
+      }
+      if (params.has('features')) {
+        const features = params.get('features').split(',');
+        this.featureFilters.forEach(filter => {
+          const feature = filter.dataset.feature;
+          if (features.includes(feature)) {
+            filter.checked = true;
+          }
+        });
+      }
+    }
+
+    updateURL() {
+      const params = new URLSearchParams();
+
+      if (this.sortSelect && this.sortSelect.value !== 'featured') {
+        params.set('sort', this.sortSelect.value);
+      }
+      if (this.ratingFilter && this.ratingFilter.value !== '0') {
+        params.set('minRating', this.ratingFilter.value);
+      }
+      if (this.subscriptionFilter && this.subscriptionFilter.value) {
+        params.set('subscription', this.subscriptionFilter.value);
+      }
+      if (this.priceFilter && this.priceFilter.value !== '999999') {
+        params.set('maxPrice', this.priceFilter.value);
+      }
+
+      const selectedFeatures = this.featureFilters
+        .filter(f => f.checked)
+        .map(f => f.dataset.feature);
+      if (selectedFeatures.length > 0) {
+        params.set('features', selectedFeatures.join(','));
+      }
+
+      const newURL = params.toString()
+        ? `${window.location.pathname}?${params.toString()}`
+        : window.location.pathname;
+
+      window.history.replaceState({}, '', newURL);
+    }
+
+    applyFiltersAndSort() {
+      // Get filter values
+      const minRating = parseFloat(this.ratingFilter?.value || 0);
+      const subscriptionType = this.subscriptionFilter?.value || '';
+      const maxPrice = parseFloat(this.priceFilter?.value || 999999);
+      const selectedFeatures = this.featureFilters
+        .filter(f => f.checked)
+        .map(f => ({ feature: f.dataset.feature, inverse: f.dataset.inverse === 'true' }));
+
+      // Filter brands
+      let visibleBrands = this.brandCards.map(card => {
+        const data = JSON.parse(card.dataset.brand);
+        return { card, data };
+      });
+
+      // Apply filters
+      visibleBrands = visibleBrands.filter(({ data }) => {
+        // Rating filter
+        if (data.rating < minRating) return false;
+
+        // Subscription filter
+        if (subscriptionType && data.subscriptionType !== subscriptionType) return false;
+
+        // Price filter
+        if (data.priceMin && data.priceMin > maxPrice) return false;
+
+        // Feature filters
+        for (const { feature, inverse } of selectedFeatures) {
+          const hasFeature = data.features?.[feature] === true;
+          if (inverse ? hasFeature : !hasFeature) return false;
+        }
+
+        return true;
+      });
+
+      // Sort brands
+      const sortBy = this.sortSelect?.value || 'featured';
+      visibleBrands.sort((a, b) => {
+        switch (sortBy) {
+          case 'rating-desc':
+            return b.data.rating - a.data.rating;
+          case 'rating-asc':
+            return a.data.rating - b.data.rating;
+          case 'price-asc':
+            return (a.data.priceMin || 0) - (b.data.priceMin || 0);
+          case 'price-desc':
+            return (b.data.priceMin || 0) - (a.data.priceMin || 0);
+          case 'match':
+            return this.calculateMatchScore(b.data) - this.calculateMatchScore(a.data);
+          case 'featured':
+          default:
+            // Featured first, then by rating
+            if (b.data.featured && !a.data.featured) return 1;
+            if (!b.data.featured && a.data.featured) return -1;
+            return b.data.rating - a.data.rating;
+        }
+      });
+
+      // Update visibility and order
+      const visibleCards = new Set(visibleBrands.map(v => v.card));
+      this.brandCards.forEach(card => {
+        if (visibleCards.has(card)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Reorder DOM
+      const parent = this.brandCards[0]?.parentElement;
+      if (parent) {
+        visibleBrands.forEach(({ card }) => {
+          parent.appendChild(card);
+        });
+      }
+
+      // Update UI
+      this.updateResultsCount(visibleBrands.length);
+      this.updateActiveFilters(selectedFeatures, minRating, subscriptionType, maxPrice);
+      this.updateURL();
+    }
+
+    calculateMatchScore(brandData) {
+      // Try to get user priorities from session storage
+      const selectedPriorities = JSON.parse(sessionStorage.getItem('selectedPriorities') || '[]');
+      if (!selectedPriorities.length || !brandData.priorities) return 0;
+
+      let totalScore = 0;
+      let count = 0;
+
+      selectedPriorities.forEach(priority => {
+        const score = brandData.priorities[priority];
+        if (score !== undefined) {
+          totalScore += score;
+          count++;
+        }
+      });
+
+      return count > 0 ? totalScore / count : 0;
+    }
+
+    updateResultsCount(visibleCount) {
+      if (this.visibleCountEl) {
+        this.visibleCountEl.textContent = visibleCount;
+      }
+
+      // Show/hide no results message
+      if (this.noResults) {
+        if (visibleCount === 0) {
+          this.noResults.classList.remove('hidden');
+          this.container.querySelector('.brand-list')?.classList.add('hidden');
+        } else {
+          this.noResults.classList.add('hidden');
+          this.container.querySelector('.brand-list')?.classList.remove('hidden');
+        }
+      }
+    }
+
+    updateActiveFilters(selectedFeatures, minRating, subscriptionType, maxPrice) {
+      const activeFilters = [];
+
+      if (minRating > 0) {
+        activeFilters.push({ label: `${minRating}+ Stars`, type: 'rating' });
+      }
+      if (subscriptionType) {
+        activeFilters.push({ label: subscriptionType, type: 'subscription' });
+      }
+      if (maxPrice < 999999) {
+        activeFilters.push({ label: `Under $${maxPrice}`, type: 'price' });
+      }
+      selectedFeatures.forEach(({ feature, inverse }) => {
+        const label = feature.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+        activeFilters.push({
+          label: inverse ? `No ${label}` : label,
+          type: 'feature',
+          feature
+        });
+      });
+
+      if (activeFilters.length > 0) {
+        this.activeFiltersContainer?.classList.remove('hidden');
+        this.clearButtons.forEach(btn => btn.classList.remove('hidden'));
+
+        if (this.activeFiltersList) {
+          this.activeFiltersList.innerHTML = activeFilters.map(filter => `
+            <span class="badge badge-neutral">
+              ${filter.label}
+              <button
+                class="ml-1 hover:text-slate-900"
+                onclick="this.closest('.filterable-comparison').__filterableComparison.removeFilter('${filter.type}', '${filter.feature || ''}')"
+                aria-label="Remove filter"
+              >×</button>
+            </span>
+          `).join('');
+        }
+      } else {
+        this.activeFiltersContainer?.classList.add('hidden');
+        this.clearButtons.forEach(btn => btn.classList.add('hidden'));
+      }
+    }
+
+    removeFilter(type, feature) {
+      switch (type) {
+        case 'rating':
+          if (this.ratingFilter) this.ratingFilter.value = '0';
+          break;
+        case 'subscription':
+          if (this.subscriptionFilter) this.subscriptionFilter.value = '';
+          break;
+        case 'price':
+          if (this.priceFilter) this.priceFilter.value = '999999';
+          break;
+        case 'feature':
+          const filterToUncheck = this.featureFilters.find(f => f.dataset.feature === feature);
+          if (filterToUncheck) filterToUncheck.checked = false;
+          break;
+      }
+      this.applyFiltersAndSort();
+    }
+
+    clearAllFilters() {
+      if (this.sortSelect) this.sortSelect.value = 'featured';
+      if (this.ratingFilter) this.ratingFilter.value = '0';
+      if (this.subscriptionFilter) this.subscriptionFilter.value = '';
+      if (this.priceFilter) this.priceFilter.value = '999999';
+      this.featureFilters.forEach(filter => filter.checked = false);
+      this.applyFiltersAndSort();
+    }
+  }
+
+  // Initialize all filterable comparisons on the page
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.filterable-comparison').forEach(container => {
+      const instance = new FilterableComparison(container);
+      container.__filterableComparison = instance; // Store reference for removeFilter
+    });
+  });
+</script>
