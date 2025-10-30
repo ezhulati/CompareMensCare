@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PriorityMatcher from '../components/PriorityMatcher.astro';
-import PriorityRecommendations from '../components/PriorityRecommendations.astro';
+import GuidedMatcher from '../components/GuidedMatcher.astro';
+import PersonalizedResults from '../components/PersonalizedResults.astro';
 import { getCategoryIcon } from '../utils/helpers';
 
 const categories = [
@@ -78,11 +78,11 @@ const schema = {
             <span class="relative z-10">Men's Health</span>
             <span class="absolute bottom-2 left-0 w-full h-3 bg-brand-accent/20 -rotate-1"></span>
           </span>
-          Match in 30 Seconds
+          Match in 2 Minutes
         </h1>
 
         <p class="text-xl text-slate-600 mb-4 leading-relaxed max-w-2xl mx-auto">
-          Answer 3 quick questions about what matters to you, and we'll show personalized recommendations from 50+ services.
+          Answer just 2-3 simple questions, and we'll find the service that's truly right for your situation.
         </p>
 
         <p class="text-base text-slate-500 mb-8 max-w-2xl mx-auto">
@@ -127,17 +127,17 @@ const schema = {
     </div>
   </section>
 
-  <!-- Priority Matcher Section -->
+  <!-- Guided Matcher Section -->
   <section id="matcher" class="section-light">
     <div class="container-custom">
-      <PriorityMatcher />
+      <GuidedMatcher />
     </div>
   </section>
 
-  <!-- Priority-Based Recommendations (shown after selection) -->
+  <!-- Personalized Results (shown after guided matching) -->
   <section class="section bg-white">
     <div class="container-custom">
-      <PriorityRecommendations />
+      <PersonalizedResults />
     </div>
   </section>
 

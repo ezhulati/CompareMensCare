@@ -135,19 +135,19 @@ export function getPriorityLabel(priority: Priority): string {
 }
 
 /**
- * Get priority icon for display
+ * Get priority icon name for Icon component
  */
 export function getPriorityIcon(priority: Priority): string {
   const icons: Record<Priority, string> = {
-    affordability: '💰',
-    privacy: '🔒',
-    speed: '⚡',
-    selection: '🎯',
-    transparency: '📊',
-    ease: '✨',
-    support: '💬',
-    insurance: '🏥',
-    comprehensive: '🏪',
+    affordability: 'affordability',
+    privacy: 'privacy',
+    speed: 'speed',
+    selection: 'selection',
+    transparency: 'transparency',
+    ease: 'ease',
+    support: 'support',
+    insurance: 'insurance',
+    comprehensive: 'comprehensive',
   };
   return icons[priority];
 }

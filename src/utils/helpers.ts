@@ -64,18 +64,18 @@ export function getCategoryName(slug: string): string {
 }
 
 /**
- * Gets category icon
+ * Gets category icon name for Icon component
  */
 export function getCategoryIcon(slug: string): string {
   const categoryIcons: Record<string, string> = {
-    'sexual-health': '❤️',
-    'hair-health': '💇',
-    'testosterone': '💪',
-    'weight-loss': '⚖️',
-    'mental-health': '🧠',
-    'diagnostics': '🔬',
+    'sexual-health': 'sexual-health',
+    'hair-health': 'hair-health',
+    'testosterone': 'testosterone',
+    'weight-loss': 'weight-loss',
+    'mental-health': 'mental-health',
+    'diagnostics': 'diagnostics',
   };
-  return categoryIcons[slug] || '📋';
+  return categoryIcons[slug] || 'selection';
 }
 
 /**
