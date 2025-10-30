@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
 
 const guides = [
   {
@@ -8,7 +9,7 @@ const guides = [
     slug: '/guides/ed-treatment',
     description: 'Everything you need to know about ED medications, treatments, and choosing the right option.',
     readTime: '12 min read',
-    icon: '❤️‍🔥',
+    icon: 'sexual-health',
   },
   {
     title: 'Hair Loss Treatment Guide: Finasteride vs Minoxidil',
@@ -16,7 +17,7 @@ const guides = [
     slug: '/guides/hair-loss-treatment',
     description: 'Compare proven hair loss treatments and understand which option is right for you.',
     readTime: '10 min read',
-    icon: '💇‍♂️',
+    icon: 'hair-health',
   },
   {
     title: 'Testosterone Replacement Therapy (TRT) Explained',
@@ -24,7 +25,7 @@ const guides = [
     slug: '/guides/trt-guide',
     description: 'Complete guide to TRT including benefits, risks, costs, and what to expect.',
     readTime: '15 min read',
-    icon: '💪',
+    icon: 'testosterone',
   },
   {
     title: 'GLP-1 Weight Loss Medications: Complete Guide',
@@ -32,7 +33,7 @@ const guides = [
     slug: '/guides/glp1-guide',
     description: 'Understand how semaglutide and tirzepatide work, their effectiveness, and side effects.',
     readTime: '14 min read',
-    icon: '⚖️',
+    icon: 'weight-loss',
   },
   {
     title: 'Online Therapy: A Beginner\'s Guide',
@@ -40,7 +41,7 @@ const guides = [
     slug: '/guides/online-therapy-guide',
     description: 'How to choose an online therapy platform and get the most from virtual counseling.',
     readTime: '8 min read',
-    icon: '🧠',
+    icon: 'mental-health',
   },
   {
     title: 'Understanding At-Home Health Testing',
@@ -48,7 +49,7 @@ const guides = [
     slug: '/guides/home-testing-guide',
     description: 'Learn how at-home testing works, accuracy, and which tests you should consider.',
     readTime: '9 min read',
-    icon: '🔬',
+    icon: 'diagnostics',
   },
 ];
 
@@ -128,7 +129,9 @@ const schema = {
             class="card-hover p-6 group"
           >
             <div class="flex items-start justify-between mb-4">
-              <div class="text-4xl">{guide.icon}</div>
+              <div class="text-brand-accent">
+                <Icon name={guide.icon} size="xl" />
+              </div>
               <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
                 {guide.readTime}
               </span>
@@ -172,19 +175,25 @@ const schema = {
         </p>
         <div class="grid md:grid-cols-3 gap-4">
           <a href="/sexual-health" class="card-hover p-6 group">
-            <div class="text-3xl mb-2">❤️‍🔥</div>
+            <div class="mb-2">
+              <Icon name="sexual-health" class="w-8 h-8 text-red-600" />
+            </div>
             <h3 class="font-semibold text-slate-900 group-hover:text-brand-accent transition-colors">
               Sexual Health
             </h3>
           </a>
           <a href="/hair-health" class="card-hover p-6 group">
-            <div class="text-3xl mb-2">💇‍♂️</div>
+            <div class="mb-2">
+              <Icon name="hair-health" class="w-8 h-8 text-amber-600" />
+            </div>
             <h3 class="font-semibold text-slate-900 group-hover:text-brand-accent transition-colors">
               Hair Health
             </h3>
           </a>
           <a href="/testosterone" class="card-hover p-6 group">
-            <div class="text-3xl mb-2">💪</div>
+            <div class="mb-2">
+              <Icon name="testosterone" class="w-8 h-8 text-blue-600" />
+            </div>
             <h3 class="font-semibold text-slate-900 group-hover:text-brand-accent transition-colors">
               Testosterone
             </h3>
@@ -205,8 +214,8 @@ const schema = {
 
       <div class="grid md:grid-cols-3 gap-6">
         <div class="text-center">
-          <div class="w-16 h-16 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-4 text-3xl">
-            📚
+          <div class="w-16 h-16 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-4">
+            <Icon name="book" class="w-8 h-8" />
           </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900">Evidence-Based</h3>
           <p class="text-slate-600 text-sm">
@@ -215,8 +224,8 @@ const schema = {
         </div>
 
         <div class="text-center">
-          <div class="w-16 h-16 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4 text-3xl">
-            🔍
+          <div class="w-16 h-16 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+            <Icon name="search" class="w-8 h-8" />
           </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900">Transparent</h3>
           <p class="text-slate-600 text-sm">
@@ -225,8 +234,8 @@ const schema = {
         </div>
 
         <div class="text-center">
-          <div class="w-16 h-16 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mx-auto mb-4 text-3xl">
-            ✏️
+          <div class="w-16 h-16 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mx-auto mb-4">
+            <Icon name="star" class="w-8 h-8" />
           </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900">Regularly Updated</h3>
           <p class="text-slate-600 text-sm">

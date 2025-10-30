@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
 
 const posts = [
   {
@@ -199,37 +200,49 @@ const schema = {
 
       <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
         <a href="/blog/sexual-health" class="card-hover p-4 text-center group">
-          <div class="text-3xl mb-2">❤️‍🔥</div>
+          <div class="mb-2 flex justify-center">
+            <Icon name="sexual-health" class="w-8 h-8 text-red-600" />
+          </div>
           <div class="font-medium text-sm text-slate-900 group-hover:text-brand-accent transition-colors">
             Sexual Health
           </div>
         </a>
         <a href="/blog/hair-health" class="card-hover p-4 text-center group">
-          <div class="text-3xl mb-2">💇‍♂️</div>
+          <div class="mb-2 flex justify-center">
+            <Icon name="hair-health" class="w-8 h-8 text-amber-600" />
+          </div>
           <div class="font-medium text-sm text-slate-900 group-hover:text-brand-accent transition-colors">
             Hair Health
           </div>
         </a>
         <a href="/blog/testosterone" class="card-hover p-4 text-center group">
-          <div class="text-3xl mb-2">💪</div>
+          <div class="mb-2 flex justify-center">
+            <Icon name="testosterone" class="w-8 h-8 text-blue-600" />
+          </div>
           <div class="font-medium text-sm text-slate-900 group-hover:text-brand-accent transition-colors">
             Testosterone
           </div>
         </a>
         <a href="/blog/weight-loss" class="card-hover p-4 text-center group">
-          <div class="text-3xl mb-2">⚖️</div>
+          <div class="mb-2 flex justify-center">
+            <Icon name="weight-loss" class="w-8 h-8 text-purple-600" />
+          </div>
           <div class="font-medium text-sm text-slate-900 group-hover:text-brand-accent transition-colors">
             Weight Loss
           </div>
         </a>
         <a href="/blog/mental-health" class="card-hover p-4 text-center group">
-          <div class="text-3xl mb-2">🧠</div>
+          <div class="mb-2 flex justify-center">
+            <Icon name="mental-health" class="w-8 h-8 text-blue-600" />
+          </div>
           <div class="font-medium text-sm text-slate-900 group-hover:text-brand-accent transition-colors">
             Mental Health
           </div>
         </a>
         <a href="/blog/diagnostics" class="card-hover p-4 text-center group">
-          <div class="text-3xl mb-2">🔬</div>
+          <div class="mb-2 flex justify-center">
+            <Icon name="diagnostics" class="w-8 h-8 text-purple-600" />
+          </div>
           <div class="font-medium text-sm text-slate-900 group-hover:text-brand-accent transition-colors">
             Diagnostics
           </div>

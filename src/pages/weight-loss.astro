@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
+import Icon from '../components/Icon.astro';
 import type { Brand } from '../components/ComparisonTable.astro';
 
 const brands: Brand[] = [
@@ -21,7 +22,7 @@ const brands: Brand[] = [
       'Medication subject to availability',
     ],
     bestFor: [
-      { label: 'Best for Brand-Name GLP-1', variant: 'primary', icon: '💊' },
+      { label: 'Best for Brand-Name GLP-1', variant: 'primary', icon: 'pill' },
       { label: 'Best Support', variant: 'success' },
     ],
     featured: true,
@@ -43,7 +44,7 @@ const brands: Brand[] = [
       'Limited personalization',
     ],
     bestFor: [
-      { label: 'Best for Quick Start', variant: 'warning', icon: '⚡' },
+      { label: 'Best for Quick Start', variant: 'warning', icon: 'zap' },
       { label: 'No Consult Fee', variant: 'neutral' },
     ],
   },
@@ -64,7 +65,7 @@ const brands: Brand[] = [
       'Higher total cost',
     ],
     bestFor: [
-      { label: 'Best for Coaching', variant: 'primary', icon: '👥' },
+      { label: 'Best for Coaching', variant: 'primary', icon: 'people' },
       { label: 'Long-Term Success', variant: 'success' },
     ],
   },
@@ -85,7 +86,7 @@ const brands: Brand[] = [
       'Longer approval process',
     ],
     bestFor: [
-      { label: 'Best for Personalization', variant: 'neutral', icon: '🎯' },
+      { label: 'Best for Personalization', variant: 'neutral', icon: 'target' },
     ],
   },
 ];
@@ -209,8 +210,8 @@ const schema = {
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="card p-6 ring-2 ring-brand-accent">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl">
-              💉
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center">
+              <Icon name="injection" class="w-6 h-6" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Semaglutide</h3>
           </div>
@@ -231,8 +232,8 @@ const schema = {
 
         <div class="card p-6">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl">
-              ⚡
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center">
+              <Icon name="zap" class="w-6 h-6" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Tirzepatide</h3>
           </div>
@@ -253,8 +254,8 @@ const schema = {
 
         <div class="card p-6">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl">
-              💰
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+              <Icon name="affordability" class="w-6 h-6" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Compounded Options</h3>
           </div>
@@ -282,21 +283,27 @@ const schema = {
       <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">What to Expect</h2>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="card p-6">
-          <div class="text-4xl mb-3 text-center">📋</div>
+          <div class="mb-3 flex justify-center">
+            <Icon name="clipboard" class="w-8 h-8 text-blue-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 text-center">Week 1-4</h3>
           <p class="text-slate-600 text-sm text-center">
             Initial dose titration. Mild nausea is common. Average 2-5 lbs weight loss as body adjusts to medication.
           </p>
         </div>
         <div class="card p-6">
-          <div class="text-4xl mb-3 text-center">📉</div>
+          <div class="mb-3 flex justify-center">
+            <Icon name="chart-down" class="w-8 h-8 text-emerald-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 text-center">Month 2-6</h3>
           <p class="text-slate-600 text-sm text-center">
             Steady weight loss of 1-2 lbs per week. Appetite suppression becomes pronounced. Side effects typically decrease.
           </p>
         </div>
         <div class="card p-6">
-          <div class="text-4xl mb-3 text-center">🎯</div>
+          <div class="mb-3 flex justify-center">
+            <Icon name="target" class="w-8 h-8 text-purple-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 text-center">Month 6-12</h3>
           <p class="text-slate-600 text-sm text-center">
             Maximum weight loss achieved. Most studies show 15-22% total body weight loss by month 12-18.
@@ -381,7 +388,9 @@ const schema = {
       </h2>
       <div class="grid md:grid-cols-3 gap-6">
         <a href="/testosterone" class="card-hover p-6 group">
-          <div class="text-3xl mb-3">💪</div>
+          <div class="mb-3">
+            <Icon name="testosterone" class="w-8 h-8 text-blue-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
             Testosterone & Hormones
           </h3>
@@ -390,7 +399,9 @@ const schema = {
           </p>
         </a>
         <a href="/mental-health" class="card-hover p-6 group">
-          <div class="text-3xl mb-3">🧠</div>
+          <div class="mb-3">
+            <Icon name="mental-health" class="w-8 h-8 text-blue-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
             Mental Health
           </h3>
@@ -399,7 +410,9 @@ const schema = {
           </p>
         </a>
         <a href="/diagnostics" class="card-hover p-6 group">
-          <div class="text-3xl mb-3">🔬</div>
+          <div class="mb-3">
+            <Icon name="diagnostics" class="w-8 h-8 text-purple-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
             Diagnostics & Wellness
           </h3>

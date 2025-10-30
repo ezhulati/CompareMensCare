@@ -39,10 +39,10 @@ cons:
 bestFor:
   - label: "Best for Chewables"
     variant: "warning"
-    icon: "💊"
+    icon: "pill"
   - label: "Best Value"
     variant: "success"
-    icon: "💰"
+    icon: "affordability"
   - label: "Simple Plans"
     variant: "neutral"
 priorities:
@@ -228,9 +228,9 @@ Always consult with your provider about potential interactions and contraindicat
 
 **Best for**: Men seeking the most convenient, discreet ED treatment format with fast-acting results at an affordable monthly price.
 
-**Pricing**: ⭐⭐⭐⭐⭐ (Excellent)
-**Convenience**: ⭐⭐⭐⭐⭐ (Excellent)
-**Innovation**: ⭐⭐⭐⭐⭐ (Excellent - unique chewable format)
-**FDA Approval**: ⭐⭐⭐ (Compounded, not FDA-approved products)
+**Pricing**: 5/5 stars (Excellent)
+**Convenience**: 5/5 stars (Excellent)
+**Innovation**: 5/5 stars (Excellent - unique chewable format)
+**FDA Approval**: 3/5 stars (Compounded, not FDA-approved products)
 
 *Last updated: January 2025*

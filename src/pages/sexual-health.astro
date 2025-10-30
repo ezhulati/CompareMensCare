@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FilterableComparison from '../components/FilterableComparison.astro';
+import Icon from '../components/Icon.astro';
 import type { FilterableBrand } from '../components/FilterableComparison.astro';
 
 // Get all brands that offer sexual health services
@@ -55,18 +56,18 @@ const schema = {
         </div>
 
         <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-          ED Treatment Services Compared
+          Online ED Treatment: Is It Safe? Is It Legit? Here's the Truth.
         </h1>
         <p class="text-xl text-slate-600 leading-relaxed mb-8">
-          Find the erectile dysfunction service that's right for you. We compare pricing, medication options, and what makes each unique.
+          You've probably seen ads for Hims, Ro, or BlueChew. Maybe you're wondering if these services are actually safe — or just too good to be true. We'll show you which ones use real doctors, FDA-approved meds, and ship discreetly.
         </p>
 
         <div class="flex flex-wrap gap-3">
           <a href="#comparison" class="btn-primary">
-            View Comparison
+            See Which Service Fits Me
           </a>
-          <a href="#treatments" class="btn-outline">
-            Treatment Options
+          <a href="#faq" class="btn-outline">
+            Common Questions
           </a>
         </div>
       </div>
@@ -126,8 +127,8 @@ const schema = {
       <div class="grid md:grid-cols-3 gap-6">
         <div class="card p-6">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl">
-              💊
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center">
+              <Icon name="pill" class="w-6 h-6" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Sildenafil</h3>
           </div>
@@ -147,8 +148,8 @@ const schema = {
 
         <div class="card p-6 ring-2 ring-brand-accent">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl">
-              ⚡
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center">
+              <Icon name="zap" class="w-6 h-6" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Tadalafil</h3>
           </div>
@@ -168,8 +169,8 @@ const schema = {
 
         <div class="card p-6">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl">
-              🎯
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+              <Icon name="target" class="w-6 h-6" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Vardenafil</h3>
           </div>
@@ -191,51 +192,84 @@ const schema = {
   </section>
 
   <!-- FAQ Section -->
-  <section class="section bg-white">
+  <section id="faq" class="section bg-white">
     <div class="container-custom max-w-3xl">
-      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-8 text-center">
-        Common Questions
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3 text-center">
+        Your Questions, Answered
       </h2>
+      <p class="text-slate-600 text-center mb-8">
+        We asked real users what they wanted to know before trying online ED treatment. Here are the honest answers.
+      </p>
       <div class="space-y-4">
         <details class="group card p-6">
           <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>How do online ED services work?</span>
+            <span>Wait, is this actually legal and safe?</span>
             <span class="transition group-open:rotate-180 text-brand-accent">
               <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            You complete an online health questionnaire, a licensed physician reviews your information,
-            and if appropriate, prescribes medication that's shipped directly to you. The entire process
-            usually takes 24-48 hours.
+            <strong>Yes, it's completely legal.</strong> Every service we list uses licensed US physicians who review your medical history before prescribing. The medications are the exact same FDA-approved drugs you'd get at CVS or Walgreens — just delivered to your door instead. Services like Hims, Ro, and BlueChew have been doing this for years and serve millions of men.
           </p>
         </details>
 
         <details class="group card p-6">
           <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>Are these medications safe?</span>
+            <span>Will my neighbors/roommates know what's in the package?</span>
             <span class="transition group-open:rotate-180 text-brand-accent">
               <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            When prescribed by licensed physicians and used as directed, ED medications are generally safe.
-            However, they may not be appropriate for everyone, especially those with certain heart conditions
-            or taking nitrates. Always disclose your complete medical history.
+            <strong>Nope. The packaging is completely unmarked.</strong> It comes in a plain cardboard box or padded envelope with no logos or medical labels. The return address shows the company name (like "Hims Inc.") but nothing about what's inside. Some services like BlueChew even use generic business names on the return label. Your credit card statement will also show a discrete name, not "ED MEDICATION COMPANY."
           </p>
         </details>
 
         <details class="group card p-6">
           <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>What's the difference between brand-name and generic?</span>
+            <span>How do I know it'll actually work for me?</span>
             <span class="transition group-open:rotate-180 text-brand-accent">
               <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <p class="text-slate-600 mt-4 leading-relaxed">
-            Generic ED medications contain the same active ingredients as brand-name versions but cost
-            significantly less. They're FDA-approved and equally effective. Some providers offer compounded
-            medications, which are custom-made by pharmacies but not FDA-approved.
+            <strong>You don't, until you try it.</strong> ED medications work for about 70-80% of men, but everyone's different. The good news: most services let you switch medications or dosages for free if the first one doesn't work. Start with the lowest dose and adjust from there. If you've never tried Viagra or Cialis before, there's a good chance one of them will help.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>What's the difference between generic and brand-name? Should I pay more?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            <strong>Generic works exactly the same.</strong> Sildenafil is generic Viagra. Tadalafil is generic Cialis. Same active ingredient, same dosage, same effect — just way cheaper. The brand-name pills cost $70+ per dose. Generics are $4-12. Unless you have a specific reason to want the brand name, save your money and get generic.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Can I just try one dose without committing to a subscription?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            <strong>It depends on the service.</strong> Ro lets you order one-time without a subscription. Hims and BlueChew require subscriptions, but you can cancel anytime (even after the first shipment). Most guys find that if they're using it regularly, the subscription is cheaper anyway. But if you just want to test it first, go with Ro.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Will my insurance know? Will this affect my premiums?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            <strong>No. Most of these services don't use insurance at all.</strong> You pay out-of-pocket, which means it never touches your insurance records. That's actually why a lot of guys prefer it — complete privacy. The downside is you can't use your insurance to cover it, but generics are so cheap ($4-12/dose) that it's often cheaper than a co-pay anyway.
           </p>
         </details>
       </div>
@@ -250,7 +284,9 @@ const schema = {
       </h2>
       <div class="grid md:grid-cols-3 gap-6">
         <a href="/hair-health" class="card-hover p-6 group">
-          <div class="text-3xl mb-3">💇‍♂️</div>
+          <div class="mb-3">
+            <Icon name="hair-health" class="w-8 h-8 text-amber-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
             Hair Health
           </h3>
@@ -259,7 +295,9 @@ const schema = {
           </p>
         </a>
         <a href="/testosterone" class="card-hover p-6 group">
-          <div class="text-3xl mb-3">💪</div>
+          <div class="mb-3">
+            <Icon name="testosterone" class="w-8 h-8 text-blue-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
             Testosterone & Hormones
           </h3>
@@ -268,7 +306,9 @@ const schema = {
           </p>
         </a>
         <a href="/mental-health" class="card-hover p-6 group">
-          <div class="text-3xl mb-3">🧠</div>
+          <div class="mb-3">
+            <Icon name="mental-health" class="w-8 h-8 text-blue-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
             Mental Health
           </h3>

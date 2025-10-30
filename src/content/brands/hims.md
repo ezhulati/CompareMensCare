@@ -38,12 +38,12 @@ cons:
 bestFor:
   - label: "Best for Variety"
     variant: "primary"
-    icon: "🎯"
+    icon: "target"
   - label: "One-Stop Shop"
     variant: "success"
   - label: "Best Value"
     variant: "success"
-    icon: "💰"
+    icon: "affordability"
 priorities:
   affordability: 9
   privacy: 8
@@ -231,9 +231,9 @@ Common complaints include:
 
 **Best for**: Budget-conscious men seeking convenient online access to ED medications, hair loss treatments, or other men's health services.
 
-**Pricing**: ⭐⭐⭐⭐⭐ (Excellent)
-**Service Range**: ⭐⭐⭐⭐⭐ (Excellent)
-**Convenience**: ⭐⭐⭐⭐⭐ (Excellent)
-**Customer Support**: ⭐⭐⭐⭐ (Good)
+**Pricing**: 5/5 stars (Excellent)
+**Service Range**: 5/5 stars (Excellent)
+**Convenience**: 5/5 stars (Excellent)
+**Customer Support**: 4/5 stars (Good)
 
 *Last updated: January 2025*

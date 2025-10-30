@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FilterableComparison from '../components/FilterableComparison.astro';
+import Icon from '../components/Icon.astro';
 import type { FilterableBrand } from '../components/FilterableComparison.astro';
 
 // Get all brands that offer hair health services
@@ -122,8 +123,8 @@ const schema = {
       <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         <div class="card p-6">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl">
-              💊
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center">
+              <Icon name="pill" class="w-6 h-6" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Finasteride</h3>
           </div>
@@ -143,8 +144,8 @@ const schema = {
 
         <div class="card p-6 ring-2 ring-brand-accent">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl">
-              🧴
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+              <Icon name="lotion" class="w-6 h-6" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Minoxidil</h3>
           </div>
@@ -230,7 +231,9 @@ const schema = {
       </h2>
       <div class="grid md:grid-cols-3 gap-6">
         <a href="/sexual-health" class="card-hover p-6 group">
-          <div class="text-3xl mb-3">❤️‍🔥</div>
+          <div class="mb-3">
+            <Icon name="sexual-health" class="w-8 h-8 text-red-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
             Sexual Health
           </h3>
@@ -239,7 +242,9 @@ const schema = {
           </p>
         </a>
         <a href="/testosterone" class="card-hover p-6 group">
-          <div class="text-3xl mb-3">💪</div>
+          <div class="mb-3">
+            <Icon name="testosterone" class="w-8 h-8 text-blue-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
             Testosterone & Hormones
           </h3>
@@ -248,7 +253,9 @@ const schema = {
           </p>
         </a>
         <a href="/weight-loss" class="card-hover p-6 group">
-          <div class="text-3xl mb-3">⚖️</div>
+          <div class="mb-3">
+            <Icon name="weight-loss" class="w-8 h-8 text-purple-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
             Weight Loss
           </h3>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -46,8 +47,8 @@ const schema = {
 
       <div class="grid md:grid-cols-2 gap-6">
         <div class="card p-6">
-          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4 text-2xl">
-            🎯
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <Icon name="target" class="w-6 h-6" />
           </div>
           <h3 class="font-bold text-xl mb-3 text-slate-900">No Rankings</h3>
           <p class="text-slate-600 leading-relaxed">
@@ -58,8 +59,8 @@ const schema = {
         </div>
 
         <div class="card p-6">
-          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 text-2xl">
-            🔍
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
+            <Icon name="search" class="w-6 h-6" />
           </div>
           <h3 class="font-bold text-xl mb-3 text-slate-900">Evidence-Based</h3>
           <p class="text-slate-600 leading-relaxed">
@@ -69,8 +70,8 @@ const schema = {
         </div>
 
         <div class="card p-6">
-          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4 text-2xl">
-            💰
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4">
+            <Icon name="affordability" class="w-6 h-6" />
           </div>
           <h3 class="font-bold text-xl mb-3 text-slate-900">Transparent Affiliations</h3>
           <p class="text-slate-600 leading-relaxed">
@@ -81,8 +82,8 @@ const schema = {
         </div>
 
         <div class="card p-6">
-          <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-4 text-2xl">
-            ⚖️
+          <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+            <Icon name="weight-loss" class="w-6 h-6" />
           </div>
           <h3 class="font-bold text-xl mb-3 text-slate-900">Balanced Perspective</h3>
           <p class="text-slate-600 leading-relaxed">
@@ -225,7 +226,10 @@ const schema = {
 
       <div class="grid md:grid-cols-2 gap-6">
         <div class="card p-6">
-          <h3 class="font-semibold text-lg mb-3 text-slate-900">💰 Cost & Value</h3>
+          <h3 class="font-semibold text-lg mb-3 text-slate-900 flex items-center gap-2">
+            <Icon name="affordability" class="w-5 h-5 text-emerald-600" />
+            Cost & Value
+          </h3>
           <ul class="space-y-2 text-sm text-slate-600">
             <li>• Consultation fees (or lack thereof)</li>
             <li>• Medication pricing (monthly/per-dose)</li>
@@ -236,7 +240,10 @@ const schema = {
         </div>
 
         <div class="card p-6">
-          <h3 class="font-semibold text-lg mb-3 text-slate-900">👨‍⚕️ Medical Quality</h3>
+          <h3 class="font-semibold text-lg mb-3 text-slate-900 flex items-center gap-2">
+            <Icon name="doctor" class="w-5 h-5 text-blue-600" />
+            Medical Quality
+          </h3>
           <ul class="space-y-2 text-sm text-slate-600">
             <li>• Physician credentials and licensing</li>
             <li>• Quality of medical consultation</li>
@@ -247,7 +254,10 @@ const schema = {
         </div>
 
         <div class="card p-6">
-          <h3 class="font-semibold text-lg mb-3 text-slate-900">📱 User Experience</h3>
+          <h3 class="font-semibold text-lg mb-3 text-slate-900 flex items-center gap-2">
+            <Icon name="phone" class="w-5 h-5 text-purple-600" />
+            User Experience
+          </h3>
           <ul class="space-y-2 text-sm text-slate-600">
             <li>• Ease of signup and consultation process</li>
             <li>• Website and mobile app quality</li>
@@ -258,7 +268,10 @@ const schema = {
         </div>
 
         <div class="card p-6">
-          <h3 class="font-semibold text-lg mb-3 text-slate-900">⚡ Speed & Convenience</h3>
+          <h3 class="font-semibold text-lg mb-3 text-slate-900 flex items-center gap-2">
+            <Icon name="zap" class="w-5 h-5 text-amber-600" />
+            Speed & Convenience
+          </h3>
           <ul class="space-y-2 text-sm text-slate-600">
             <li>• Time to approval</li>
             <li>• Shipping speed and tracking</li>
@@ -269,7 +282,10 @@ const schema = {
         </div>
 
         <div class="card p-6">
-          <h3 class="font-semibold text-lg mb-3 text-slate-900">🔒 Privacy & Security</h3>
+          <h3 class="font-semibold text-lg mb-3 text-slate-900 flex items-center gap-2">
+            <Icon name="privacy" class="w-5 h-5 text-slate-600" />
+            Privacy & Security
+          </h3>
           <ul class="space-y-2 text-sm text-slate-600">
             <li>• HIPAA compliance</li>
             <li>• Data security practices</li>
@@ -280,7 +296,10 @@ const schema = {
         </div>
 
         <div class="card p-6">
-          <h3 class="font-semibold text-lg mb-3 text-slate-900">📊 Reputation & Trust</h3>
+          <h3 class="font-semibold text-lg mb-3 text-slate-900 flex items-center gap-2">
+            <Icon name="transparency" class="w-5 h-5 text-emerald-600" />
+            Reputation & Trust
+          </h3>
           <ul class="space-y-2 text-sm text-slate-600">
             <li>• User review averages across platforms</li>
             <li>• BBB rating and complaint resolution</li>

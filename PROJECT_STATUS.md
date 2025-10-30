@@ -1,10 +1,10 @@
 # CompareMensCare.com - Project Status
 
-## 🎉 Live Site
+## [LIVE] Live Site
 **Deployment:** https://compare-mens-care-c018r2fsd-ezhulatis-projects.vercel.app
 **Repository:** https://github.com/ezhulati/CompareMensCare
 
-## ✅ Completed (Phase 1 - Foundation)
+## [COMPLETED] Completed (Phase 1 - Foundation)
 
 ### Infrastructure & Setup
 - [x] Astro 5 + Tailwind CSS project initialized
@@ -46,7 +46,7 @@
 - [x] Mobile-responsive design
 - [x] Schema.org structured data
 
-## 🚧 In Progress / Next Steps
+## [IN PROGRESS] In Progress / Next Steps
 
 ### Immediate Next Steps (Phase 2)
 
@@ -161,15 +161,15 @@
 - [ ] Cost calculator tool
 - [ ] Mobile app considerations
 
-## 📊 Current Metrics
+## [METRICS] Current Metrics
 
 - **Total Pages:** 3 (Home, Sexual Health, Go redirects)
 - **Components:** 8 reusable components
 - **Affiliate Partners:** 12 configured
-- **Build Status:** ✅ Passing on Vercel
+- **Build Status:** [PASSING] Passing on Vercel
 - **Lines of Code:** ~1,500+
 
-## 🔧 Configuration Needed
+## [CONFIG] Configuration Needed
 
 ### Environment Variables (Add in Vercel Dashboard)
 ```
@@ -196,7 +196,7 @@ PUBLIC_LETSGETCHECKED_AFFILIATE_URL=...
 5. Add "comparemenscare.com" and "www.comparemenscare.com"
 6. Configure DNS as instructed by Vercel
 
-## 📝 Notes
+## [NOTES] Notes
 
 - Local build issues due to macOS file permissions (resolved by deploying to Vercel)
 - Vercel builds work perfectly and site is live
@@ -205,7 +205,7 @@ PUBLIC_LETSGETCHECKED_AFFILIATE_URL=...
 - Mobile-first responsive design implemented
 - Schema.org markup ready for SEO
 
-## 🚀 Next Actions
+## [ACTION] Next Actions
 
 1. **Content Priority:** Focus on creating the 12 brand review pages and 4 category hubs
 2. **Domain:** Transfer CompareMensCare.com domain in Vercel dashboard

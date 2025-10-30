@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import type { Brand } from '../components/ComparisonTable.astro';
+import Icon from '../components/Icon.astro';
 
 const brands: Brand[] = [
   {
@@ -21,7 +22,7 @@ const brands: Brand[] = [
       'Quality varies by therapist',
     ],
     bestFor: [
-      { label: 'Best for Variety', variant: 'primary', icon: '👥' },
+      { label: 'Best for Variety', variant: 'primary', icon: 'people' },
       { label: 'Most Flexible', variant: 'success' },
     ],
     featured: true,
@@ -43,7 +44,7 @@ const brands: Brand[] = [
       'Limited therapist availability',
     ],
     bestFor: [
-      { label: 'Best for Insurance', variant: 'warning', icon: '💳' },
+      { label: 'Best for Insurance', variant: 'warning', icon: 'credit-card' },
       { label: 'Medication Management', variant: 'neutral' },
     ],
   },
@@ -64,7 +65,7 @@ const brands: Brand[] = [
       'Less therapy emphasis',
     ],
     bestFor: [
-      { label: 'Best for Medication', variant: 'primary', icon: '💊' },
+      { label: 'Best for Medication', variant: 'primary', icon: 'pill' },
       { label: 'Psychiatry', variant: 'success' },
     ],
   },
@@ -85,7 +86,7 @@ const brands: Brand[] = [
       'Higher costs',
     ],
     bestFor: [
-      { label: 'Best for Psychiatry', variant: 'neutral', icon: '🩺' },
+      { label: 'Best for Psychiatry', variant: 'neutral', icon: 'medical' },
     ],
   },
 ];
@@ -210,8 +211,8 @@ const schema = {
       <div class="grid md:grid-cols-2 gap-6">
         <div class="card p-6">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl">
-              💬
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center">
+              <Icon name="support" class="w-7 h-7" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Online Therapy</h3>
           </div>
@@ -231,8 +232,8 @@ const schema = {
 
         <div class="card p-6">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl">
-              💊
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center">
+              <Icon name="pill" class="w-7 h-7" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Psychiatric Care</h3>
           </div>
@@ -252,8 +253,8 @@ const schema = {
 
         <div class="card p-6">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl">
-              🎯
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+              <Icon name="target" class="w-7 h-7" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Specialized Therapy</h3>
           </div>
@@ -273,8 +274,8 @@ const schema = {
 
         <div class="card p-6">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl">
-              📱
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center">
+              <Icon name="phone" class="w-7 h-7" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Self-Guided Tools</h3>
           </div>
@@ -414,7 +415,9 @@ const schema = {
       </h2>
       <div class="grid md:grid-cols-3 gap-6">
         <a href="/sexual-health" class="card-hover p-6 group">
-          <div class="text-3xl mb-3">❤️‍🔥</div>
+          <div class="mb-3">
+            <Icon name="sexual-health" class="w-8 h-8 text-red-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
             Sexual Health
           </h3>
@@ -423,7 +426,9 @@ const schema = {
           </p>
         </a>
         <a href="/testosterone" class="card-hover p-6 group">
-          <div class="text-3xl mb-3">💪</div>
+          <div class="mb-3">
+            <Icon name="testosterone" class="w-8 h-8 text-blue-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
             Testosterone & Hormones
           </h3>
@@ -432,7 +437,9 @@ const schema = {
           </p>
         </a>
         <a href="/diagnostics" class="card-hover p-6 group">
-          <div class="text-3xl mb-3">🔬</div>
+          <div class="mb-3">
+            <Icon name="diagnostics" class="w-8 h-8 text-purple-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
             Diagnostics & Wellness
           </h3>

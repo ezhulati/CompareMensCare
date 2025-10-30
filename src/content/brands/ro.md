@@ -38,12 +38,12 @@ cons:
 bestFor:
   - label: "Best for Flexibility"
     variant: "success"
-    icon: "⚡"
+    icon: "zap"
   - label: "No Commitment"
     variant: "neutral"
   - label: "Brand-Name Options"
     variant: "premium"
-    icon: "👑"
+    icon: "crown"
 priorities:
   affordability: 8
   privacy: 8
@@ -200,9 +200,9 @@ Beyond ED and hair loss, Ro offers:
 
 **Best for**: Men who want maximum flexibility in payment and medication options, particularly those who might prefer brand-name ED drugs or innovative formulations.
 
-**Pricing**: ⭐⭐⭐⭐ (Very Good)
-**Flexibility**: ⭐⭐⭐⭐⭐ (Excellent)
-**Product Range**: ⭐⭐⭐⭐⭐ (Excellent)
-**Innovation**: ⭐⭐⭐⭐⭐ (Excellent)
+**Pricing**: 4/5 stars (Very Good)
+**Flexibility**: 5/5 stars (Excellent)
+**Product Range**: 5/5 stars (Excellent)
+**Innovation**: 5/5 stars (Excellent)
 
 *Last updated: January 2025*

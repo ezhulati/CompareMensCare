@@ -1,4 +1,6 @@
 ---
+import Icon from './Icon.astro';
+
 interface Props {
   label: string;
   icon?: string;
@@ -17,11 +19,11 @@ const {
 
 // Map variants to icon defaults if not provided
 const defaultIcons: Record<string, string> = {
-  primary: '⭐',
-  success: '✓',
-  warning: '⚡',
-  neutral: '•',
-  premium: '👑',
+  primary: 'star',
+  success: 'check',
+  warning: 'warning',
+  neutral: 'dot',
+  premium: 'crown',
 };
 
 const displayIcon = icon || (showIcon ? defaultIcons[variant] : '');
@@ -51,7 +53,7 @@ const variantClasses = {
 `}>
   {displayIcon && (
     <span class="flex-shrink-0">
-      {displayIcon}
+      <Icon name={displayIcon} size="sm" />
     </span>
   )}
   <span class="whitespace-nowrap">

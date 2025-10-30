@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import type { Brand } from '../components/ComparisonTable.astro';
+import Icon from '../components/Icon.astro';
 
 const brands: Brand[] = [
   {
@@ -21,7 +22,7 @@ const brands: Brand[] = [
       'Some tests require blood draw',
     ],
     bestFor: [
-      { label: 'Best Variety', variant: 'primary', icon: '🔬' },
+      { label: 'Best Variety', variant: 'primary', icon: 'diagnostics' },
       { label: 'Most Comprehensive', variant: 'success' },
     ],
     featured: true,
@@ -43,7 +44,7 @@ const brands: Brand[] = [
       'Limited test menu',
     ],
     bestFor: [
-      { label: 'Best Support', variant: 'warning', icon: '👨‍⚕️' },
+      { label: 'Best Support', variant: 'warning', icon: 'medical' },
       { label: 'Fast Results', variant: 'success' },
     ],
   },
@@ -64,7 +65,7 @@ const brands: Brand[] = [
       'Fewer general wellness options',
     ],
     bestFor: [
-      { label: 'Best for STD Testing', variant: 'neutral', icon: '🧪' },
+      { label: 'Best for STD Testing', variant: 'neutral', icon: 'diagnostics' },
     ],
   },
   {
@@ -84,7 +85,7 @@ const brands: Brand[] = [
       'Requires consultation fee',
     ],
     bestFor: [
-      { label: 'Best for Hormones', variant: 'primary', icon: '💪' },
+      { label: 'Best for Hormones', variant: 'primary', icon: 'testosterone' },
     ],
   },
 ];
@@ -206,8 +207,8 @@ const schema = {
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="card p-6">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl">
-              💪
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center">
+              <Icon name="testosterone" class="w-7 h-7" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Hormone Testing</h3>
           </div>
@@ -230,8 +231,8 @@ const schema = {
 
         <div class="card p-6 ring-2 ring-brand-accent">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center text-2xl">
-              🧪
+            <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center">
+              <Icon name="test-tube" class="w-7 h-7" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">STD Testing</h3>
           </div>
@@ -254,8 +255,8 @@ const schema = {
 
         <div class="card p-6">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-green-100 text-green-600 flex items-center justify-center text-2xl">
-              💊
+            <div class="w-12 h-12 rounded-xl bg-green-100 text-green-600 flex items-center justify-center">
+              <Icon name="pill" class="w-7 h-7" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Vitamin & Nutrition</h3>
           </div>
@@ -278,8 +279,8 @@ const schema = {
 
         <div class="card p-6">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl">
-              ❤️
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center">
+              <Icon name="heart" class="w-7 h-7" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Heart Health</h3>
           </div>
@@ -302,8 +303,8 @@ const schema = {
 
         <div class="card p-6">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl">
-              🩸
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center">
+              <Icon name="blood" class="w-7 h-7" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Metabolic Health</h3>
           </div>
@@ -326,8 +327,8 @@ const schema = {
 
         <div class="card p-6">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl">
-              🧬
+            <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center">
+              <Icon name="dna" class="w-7 h-7" />
             </div>
             <h3 class="font-bold text-xl text-slate-900">Wellness Panels</h3>
           </div>
@@ -470,7 +471,9 @@ const schema = {
       </h2>
       <div class="grid md:grid-cols-3 gap-6">
         <a href="/testosterone" class="card-hover p-6 group">
-          <div class="text-3xl mb-3">💪</div>
+          <div class="mb-3">
+            <Icon name="testosterone" class="w-8 h-8 text-blue-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
             Testosterone & Hormones
           </h3>
@@ -479,7 +482,9 @@ const schema = {
           </p>
         </a>
         <a href="/weight-loss" class="card-hover p-6 group">
-          <div class="text-3xl mb-3">⚖️</div>
+          <div class="mb-3">
+            <Icon name="weight-loss" class="w-8 h-8 text-green-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
             Weight Loss
           </h3>
@@ -488,7 +493,9 @@ const schema = {
           </p>
         </a>
         <a href="/sexual-health" class="card-hover p-6 group">
-          <div class="text-3xl mb-3">❤️‍🔥</div>
+          <div class="mb-3">
+            <Icon name="sexual-health" class="w-8 h-8 text-red-600" />
+          </div>
           <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
             Sexual Health
           </h3>

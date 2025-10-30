@@ -26,7 +26,7 @@ availability:
 bestFor:
   - label: "Best Value"
     variant: "success"
-    icon: "💰"
+    icon: "affordability"
   - label: "Budget-Friendly"
     variant: "success"
   - label: "Hair Loss Specialist"

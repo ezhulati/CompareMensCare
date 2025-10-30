@@ -3,6 +3,7 @@ import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AffiliateButton from '../components/AffiliateButton.astro';
 import BestForBadge from '../components/BestForBadge.astro';
+import Icon from '../components/Icon.astro';
 import { formatDate, getCategoryName } from '../utils/helpers';
 
 export async function getStaticPaths() {
@@ -194,7 +195,7 @@ const schema = {
               <div class="card p-4">
                 <div class="flex items-center justify-between mb-2">
                   <div class="flex items-center gap-2">
-                    <span>💰</span>
+                    <Icon name="affordability" class="w-5 h-5 text-emerald-600" />
                     <span class="font-medium text-slate-900">Best Value</span>
                   </div>
                   <span class="text-sm font-bold text-slate-900">{brand.data.priorities.affordability}/10</span>
@@ -212,7 +213,7 @@ const schema = {
               <div class="card p-4">
                 <div class="flex items-center justify-between mb-2">
                   <div class="flex items-center gap-2">
-                    <span>🔒</span>
+                    <Icon name="privacy" class="w-5 h-5 text-slate-600" />
                     <span class="font-medium text-slate-900">Maximum Privacy</span>
                   </div>
                   <span class="text-sm font-bold text-slate-900">{brand.data.priorities.privacy}/10</span>
@@ -230,7 +231,7 @@ const schema = {
               <div class="card p-4">
                 <div class="flex items-center justify-between mb-2">
                   <div class="flex items-center gap-2">
-                    <span>⚡</span>
+                    <Icon name="zap" class="w-5 h-5 text-amber-600" />
                     <span class="font-medium text-slate-900">Fast Access</span>
                   </div>
                   <span class="text-sm font-bold text-slate-900">{brand.data.priorities.speed}/10</span>
@@ -248,7 +249,7 @@ const schema = {
               <div class="card p-4">
                 <div class="flex items-center justify-between mb-2">
                   <div class="flex items-center gap-2">
-                    <span>🎯</span>
+                    <Icon name="target" class="w-5 h-5 text-purple-600" />
                     <span class="font-medium text-slate-900">Treatment Variety</span>
                   </div>
                   <span class="text-sm font-bold text-slate-900">{brand.data.priorities.selection}/10</span>
@@ -266,7 +267,7 @@ const schema = {
               <div class="card p-4">
                 <div class="flex items-center justify-between mb-2">
                   <div class="flex items-center gap-2">
-                    <span>📊</span>
+                    <Icon name="transparency" class="w-5 h-5 text-emerald-600" />
                     <span class="font-medium text-slate-900">Price Transparency</span>
                   </div>
                   <span class="text-sm font-bold text-slate-900">{brand.data.priorities.transparency}/10</span>
@@ -284,7 +285,7 @@ const schema = {
               <div class="card p-4">
                 <div class="flex items-center justify-between mb-2">
                   <div class="flex items-center gap-2">
-                    <span>✨</span>
+                    <Icon name="star" class="w-5 h-5 text-amber-600" />
                     <span class="font-medium text-slate-900">Easy to Use</span>
                   </div>
                   <span class="text-sm font-bold text-slate-900">{brand.data.priorities.ease}/10</span>
@@ -302,7 +303,7 @@ const schema = {
               <div class="card p-4">
                 <div class="flex items-center justify-between mb-2">
                   <div class="flex items-center gap-2">
-                    <span>💬</span>
+                    <Icon name="support" class="w-5 h-5 text-blue-600" />
                     <span class="font-medium text-slate-900">Great Support</span>
                   </div>
                   <span class="text-sm font-bold text-slate-900">{brand.data.priorities.support}/10</span>
@@ -320,7 +321,7 @@ const schema = {
               <div class="card p-4">
                 <div class="flex items-center justify-between mb-2">
                   <div class="flex items-center gap-2">
-                    <span>🏪</span>
+                    <Icon name="store" class="w-5 h-5 text-indigo-600" />
                     <span class="font-medium text-slate-900">One-Stop Shop</span>
                   </div>
                   <span class="text-sm font-bold text-slate-900">{brand.data.priorities.comprehensive}/10</span>
