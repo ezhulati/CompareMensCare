@@ -7,31 +7,50 @@ export default {
         brand: {
           primary: '#0F172A',      // Slate 900 - sophisticated dark
           secondary: '#475569',    // Slate 600 - muted gray
-          accent: '#3B82F6',       // Blue 500 - minimal pop
+          accent: '#0066CC',       // IBM Watson Health blue - trust & authority
           light: '#F8FAFC',        // Slate 50 - soft background
         },
-        // Medical-specific color variants
+        // Clinical color palette - inspired by healthcare platforms
         medical: {
           blue: {
-            light: '#EFF6FF',      // Light blue background
-            DEFAULT: '#3B82F6',    // Trust blue
-            dark: '#1E40AF',       // Deep blue
+            50: '#EFF6FF',         // Lightest blue background
+            100: '#DBEAFE',        // Light blue hover states
+            200: '#BFDBFE',        // Border blue
+            500: '#0066CC',        // Primary medical blue (IBM Watson Health)
+            600: '#0052A3',        // Hover state
+            700: '#003D7A',        // Active state
+            900: '#001F3F',        // Darkest blue
           },
           green: {
-            light: '#F0FDF4',      // Light green background
-            DEFAULT: '#10B981',    // Health green
-            dark: '#047857',       // Deep green
+            50: '#F0FDF4',         // Lightest green background
+            100: '#DCFCE7',        // Light green hover
+            500: '#059669',        // Clinical success green (darker than default)
+            600: '#047857',        // Hover green
+            700: '#065F46',        // Active green
           },
-          purple: {
-            light: '#F5F3FF',      // Light purple background
-            DEFAULT: '#8B5CF6',    // Premium purple
-            dark: '#6D28D9',       // Deep purple
+          gray: {
+            50: '#F9FAFB',         // Background gray
+            100: '#F3F4F6',        // Card background
+            200: '#E5E7EB',        // Border gray
+            300: '#D1D5DB',        // Disabled gray
+            400: '#9CA3AF',        // Placeholder text
+            500: '#6B7280',        // Secondary text
+            600: '#4B5563',        // Body text
+            700: '#374151',        // Headings
+            800: '#1F2937',        // Dark headings
+            900: '#111827',        // Almost black
           },
+          // Semantic colors for medical context
+          trust: '#0066CC',        // Primary trust color
+          safety: '#059669',       // Safety/approval green
+          alert: '#DC2626',        // Critical/error red
+          caution: '#D97706',      // Warning amber (more professional than bright yellow)
         },
-        success: '#10B981',        // Green 500
-        warning: '#F59E0B',        // Amber 500
-        info: '#3B82F6',           // Blue 500
-        error: '#EF4444',          // Red 500 - for form validation
+        // Semantic intent colors
+        success: '#059669',        // Clinical green (less bright)
+        warning: '#D97706',        // Amber 600 (more professional)
+        info: '#0066CC',           // Medical trust blue
+        error: '#DC2626',          // Red 600 (less screaming)
       },
       fontFamily: {
         sans: ['Inter var', 'Inter', '-apple-system', 'system-ui', 'sans-serif'],

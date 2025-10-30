@@ -161,7 +161,7 @@ If approved, your medication is shipped in discreet packaging directly to your a
 
 ## Pros and Cons
 
-### Pros ✓
+### Pros
 - **Affordable pricing**: Among the lowest prices for generic ED medications
 - **Comprehensive platform**: One-stop shop for multiple men's health issues
 - **Licensed providers**: All prescriptions from U.S.-licensed healthcare professionals
@@ -171,7 +171,7 @@ If approved, your medication is shipped in discreet packaging directly to your a
 - **Fast shipping**: 2-5 day delivery on most orders
 - **Quality medications**: Generic medications are FDA-approved
 
-### Cons ✗
+### Cons
 - **Subscription required**: Some treatments require ongoing subscription
 - **No insurance**: Doesn't accept health insurance (though prices are often lower anyway)
 - **Online only**: No option for in-person consultations

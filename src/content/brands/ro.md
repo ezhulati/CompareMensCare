@@ -154,7 +154,7 @@ Beyond ED and hair loss, Ro offers:
 
 ## Pros and Cons
 
-### Pros ✓
+### Pros
 - **Payment flexibility**: Choose per-dose or subscription
 - **No forced subscriptions**: Pay as you go option available
 - **Brand and generic**: Widest medication selection
@@ -164,7 +164,7 @@ Beyond ED and hair loss, Ro offers:
 - **15% first-month discount**: Good value for new customers
 - **Unlimited follow-ups**: Included with consultation fee
 
-### Cons ✗
+### Cons
 - **Consultation fee**: $15 vs free at Hims (though offset by discount)
 - **Per-dose costs**: Can be expensive for frequent users compared to subscriptions
 - **Compounded products**: Some options not FDA-approved

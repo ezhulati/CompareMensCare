@@ -151,7 +151,7 @@ BlueChew is a specialized telehealth service focused exclusively on erectile dys
 
 ## Pros and Cons
 
-### Pros ✓
+### Pros
 - **Affordable**: Starting at just $20/month
 - **Convenient format**: Chewable, no water needed
 - **Fast-acting**: Quicker absorption than pills
@@ -161,7 +161,7 @@ BlueChew is a specialized telehealth service focused exclusively on erectile dys
 - **Try before you buy**: First month free offer
 - **Three medications**: Sildenafil, tadalafil, and vardenafil
 
-### Cons ✗
+### Cons
 - **Compounded only**: Not FDA-approved (though ingredients are)
 - **Subscription required**: No one-time purchase option
 - **Limited availability**: Not in South Carolina
