@@ -1,0 +1,208 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FilterableComparison from '../components/FilterableComparison.astro';
+import QuickPicks from '../components/QuickPicks.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import PrivacyAssurance from '../components/PrivacyAssurance.astro';
+import FAQSection from '../components/FAQSection.astro';
+import Icon from '../components/Icon.astro';
+import type { FilterableBrand } from '../components/FilterableComparison.astro';
+
+// Get all brands that offer herpes treatment
+const allBrands = await getCollection('brands');
+const herpesBrands = allBrands
+  .filter((brand) => brand.data.categories.includes('herpes'))
+  .map((brand): FilterableBrand => ({
+    name: brand.data.title,
+    slug: brand.slug,
+    rating: brand.data.rating,
+    consultationFee: brand.data.pricing.consultationFee,
+    medicationFrom: brand.data.pricing.medicationFrom || brand.data.pricing.consultationFee,
+    subscriptionType: brand.data.pricing.subscriptionType,
+    pros: brand.data.pros,
+    cons: brand.data.cons,
+    bestFor: brand.data.bestFor,
+    featured: brand.data.featured,
+    features: brand.data.features,
+    priorities: brand.data.priorities,
+    priceMin: brand.data.pricing.priceMin,
+    priceMax: brand.data.pricing.priceMax,
+  }));
+
+// Quick picks for herpes treatment
+const quickPicks = [
+  {
+    segment: 'budget' as const,
+    brandName: 'Lemonaid Health',
+    brandSlug: 'lemonaid-health',
+    detail: '$25/month suppressive therapy',
+  },
+  {
+    segment: 'privacy' as const,
+    brandName: 'Nurx',
+    brandSlug: 'nurx',
+    detail: 'Ultra-discreet packaging & billing',
+  },
+  {
+    segment: 'speed' as const,
+    brandName: 'Ro',
+    brandSlug: 'ro',
+    detail: '24hr approval, 2-3 day delivery',
+  },
+  {
+    segment: 'quality' as const,
+    brandName: 'Nurx',
+    brandSlug: 'nurx',
+    detail: 'Specialized care, education, support',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Best Online Herpes Treatment Services',
+  description: 'Compare the best online herpes treatment services offering valacyclovir (Valtrex) for episodic and suppressive therapy.',
+  about: {
+    '@type': 'MedicalCondition',
+    name: 'Genital Herpes',
+  },
+};
+
+// FAQ data for AI-SEO optimization
+const faqs = [
+  {
+    question: "Is online herpes treatment safe and legitimate?",
+    answer: "Yes, online herpes treatment is completely safe and legitimate when using licensed telehealth services. All platforms we list use licensed US physicians who review your medical history before prescribing. They provide the same medications (valacyclovir, acyclovir) as in-person doctors, from licensed US pharmacies. Herpes is well-suited for telehealth because it's a straightforward diagnosis and treatment."
+  },
+  {
+    question: "How much does online herpes treatment cost?",
+    answer: "Episodic (outbreak) treatment costs $30-55 for a 10-day supply of valacyclovir including consultation. Suppressive (daily) therapy costs $25-45 per month. Many services accept insurance which can significantly reduce medication costs. Without insurance, generic valacyclovir is very affordable compared to in-person care."
+  },
+  {
+    question: "What's the difference between episodic and suppressive therapy?",
+    answer: "Episodic therapy means taking medication only during outbreaks (usually 3-10 days per outbreak). Suppressive therapy means taking a daily low-dose medication to prevent outbreaks. Suppressive therapy is recommended if you have 6+ outbreaks per year, are in an active sexual relationship, or want to reduce transmission risk to a partner by about 50%."
+  },
+  {
+    question: "Will my package be discreet?",
+    answer: "Yes, all herpes medication arrives in completely discreet packaging. Boxes and envelopes have no logos, no medical labels, and return addresses don't mention telehealth services. Nurx is particularly known for exceptional discretion. Billing on credit cards also uses generic company names, not 'herpes medication' or anything identifiable."
+  },
+  {
+    question: "Can online doctors prescribe Valtrex?",
+    answer: "Online doctors prescribe valacyclovir, which is the generic version of Valtrex. It's the exact same medication with the same active ingredient and dosage. Generic valacyclovir is FDA-approved as bioequivalent to brand-name Valtrex and works identically. Most online services focus on affordable generics rather than expensive brand-name options."
+  },
+  {
+    question: "Do I need to have an active outbreak to get treatment?",
+    answer: "No, you don't need an active outbreak. You can get suppressive therapy (daily prevention medication) even between outbreaks. For episodic therapy, it's best to have medication on hand before an outbreak starts, as early treatment is most effective. Most services allow you to keep emergency supplies for fast treatment at first signs of an outbreak."
+  },
+  {
+    question: "How quickly does valacyclovir work?",
+    answer: "Valacyclovir works fastest when taken at the very first sign of an outbreak (tingling, itching, or burning). Taken within 24 hours of symptom onset, it can significantly shorten outbreak duration and severity. For suppressive therapy, it takes about 1-2 weeks of daily use to reach maximum effectiveness in preventing outbreaks."
+  },
+  {
+    question: "Can I get tested for herpes online?",
+    answer: "Some online services offer herpes testing through at-home test kits or partner labs. However, most platforms require a confirmed diagnosis before prescribing treatment. If you suspect you have herpes but haven't been tested, consider using a service like Everlywell or LifeMD that offers testing alongside treatment."
+  },
+  {
+    question: "Will insurance cover online herpes treatment?",
+    answer: "Some platforms like Nurx accept insurance for medication costs (though consultation fees are usually out-of-pocket). Other services like Lemonaid and Ro are cash-pay only. However, generic valacyclovir is so affordable that cash prices ($25-45/month for suppressive therapy) are often comparable to insurance copays anyway."
+  },
+  {
+    question: "Can online treatment reduce transmission to my partner?",
+    answer: "Yes, daily suppressive therapy with valacyclovir reduces transmission risk to partners by approximately 50%. Combined with consistent condom use and avoiding sex during outbreaks, you can significantly reduce (but not eliminate) transmission risk. Online doctors can provide guidance on safer sex practices and partner communication."
+  }
+];
+---
+
+<BaseLayout
+  title="Best Online Herpes Treatment - Valacyclovir Prescription Services"
+  description="Compare the top online herpes treatment services. Get valacyclovir (Valtrex) prescribed online for episodic and suppressive therapy with discreet delivery."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="max-w-4xl">
+        <div class="flex items-center gap-2 text-sm text-slate-600 mb-6">
+          <a href="/" class="hover:text-brand-accent transition-colors">Home</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-slate-900 font-medium">Herpes Treatment</span>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 border border-purple-200 text-sm font-medium text-purple-700 mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          Complete privacy, judgment-free care
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
+          Take Control of Your Herpes
+        </h1>
+        <p class="text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed mb-6 sm:mb-8 max-w-2xl px-4">
+          Stop stressing about outbreaks. Stop avoiding relationships. Real herpes treatment from real doctors — valacyclovir delivered discreetly. Compare services offering episodic and suppressive therapy with total confidentiality.
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <a href="#comparison" class="btn-primary">
+            Compare Services
+          </a>
+          <a href="/guides/herpes-treatment-online-complete-guide" class="btn-outline">
+            Treatment Guide
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Picks Section -->
+  <QuickPicks picks={quickPicks} categoryTitle="Herpes Treatment" />
+
+  <!-- Trust Signals -->
+  <TrustSignals />
+
+  <!-- Comparison Table -->
+  <section id="comparison" class="section bg-white">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">
+          Compare Herpes Treatment Services
+        </h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          All services offer valacyclovir (generic Valtrex) prescribed by licensed doctors. Find the one with the privacy, support, and pricing you need.
+        </p>
+      </div>
+
+      <FilterableComparison
+        brands={herpesBrands}
+        category="herpes"
+        defaultSort="rating"
+      />
+    </div>
+  </section>
+
+  <!-- Privacy Assurance -->
+  <PrivacyAssurance />
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Common Questions About Online Herpes Treatment" />
+
+  <!-- Final CTA -->
+  <section class="section-light">
+    <div class="container-custom text-center">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
+          Ready to Take Control?
+        </h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Most consultations are approved within 24 hours. Medication delivered discreetly in 2-3 days.
+        </p>
+        <a href="#comparison" class="btn-primary btn-lg">
+          Compare Herpes Services
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

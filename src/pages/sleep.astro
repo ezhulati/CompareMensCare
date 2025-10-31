@@ -1,0 +1,208 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FilterableComparison from '../components/FilterableComparison.astro';
+import QuickPicks from '../components/QuickPicks.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import PrivacyAssurance from '../components/PrivacyAssurance.astro';
+import FAQSection from '../components/FAQSection.astro';
+import Icon from '../components/Icon.astro';
+import type { FilterableBrand } from '../components/FilterableComparison.astro';
+
+// Get all brands that offer sleep/insomnia treatment
+const allBrands = await getCollection('brands');
+const sleepBrands = allBrands
+  .filter((brand) => brand.data.categories.includes('sleep'))
+  .map((brand): FilterableBrand => ({
+    name: brand.data.title,
+    slug: brand.slug,
+    rating: brand.data.rating,
+    consultationFee: brand.data.pricing.consultationFee,
+    medicationFrom: brand.data.pricing.medicationFrom || brand.data.pricing.consultationFee,
+    subscriptionType: brand.data.pricing.subscriptionType,
+    pros: brand.data.pros,
+    cons: brand.data.cons,
+    bestFor: brand.data.bestFor,
+    featured: brand.data.featured,
+    features: brand.data.features,
+    priorities: brand.data.priorities,
+    priceMin: brand.data.pricing.priceMin,
+    priceMax: brand.data.pricing.priceMax,
+  }));
+
+// Quick picks for sleep/insomnia treatment
+const quickPicks = [
+  {
+    segment: 'budget' as const,
+    brandName: 'Lemonaid Health',
+    brandSlug: 'lemonaid-health',
+    detail: '$15/month trazodone, lowest cost',
+  },
+  {
+    segment: 'privacy' as const,
+    brandName: 'Lemonaid Health',
+    brandSlug: 'lemonaid-health',
+    detail: 'Discreet, no insurance needed',
+  },
+  {
+    segment: 'speed' as const,
+    brandName: 'LifeMD',
+    brandSlug: 'lifemd',
+    detail: 'Same-day approval, fast delivery',
+  },
+  {
+    segment: 'quality' as const,
+    brandName: 'LifeMD',
+    brandSlug: 'lifemd',
+    detail: 'Comprehensive platform, MD oversight',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Best Online Sleep & Insomnia Treatment Services',
+  description: 'Compare the best online sleep treatment services offering trazodone, hydroxyzine, and other insomnia medications.',
+  about: {
+    '@type': 'MedicalCondition',
+    name: 'Insomnia',
+  },
+};
+
+// FAQ data for AI-SEO optimization
+const faqs = [
+  {
+    question: "Is online insomnia treatment safe?",
+    answer: "Yes, online insomnia treatment is safe when using licensed telehealth services. All services we list use licensed US physicians who review your medical history, sleep patterns, and current medications before prescribing. Most online platforms prescribe non-addictive sleep aids like trazodone and hydroxyzine, which have excellent safety profiles and are not controlled substances."
+  },
+  {
+    question: "How much does online sleep medication cost?",
+    answer: "Online sleep medication typically costs $15-30 per month for generic medications like trazodone or hydroxyzine. Initial consultations range from $15-49. This is often cheaper than seeing a doctor in person and filling a prescription at a pharmacy, especially without insurance. Many platforms don't accept insurance but prices are competitive with insurance copays."
+  },
+  {
+    question: "What medications do online doctors prescribe for insomnia?",
+    answer: "Online doctors commonly prescribe trazodone (most popular, non-addictive), hydroxyzine (antihistamine for anxiety-related insomnia), and sometimes ramelteon or doxepin. They do NOT prescribe controlled substances like Ambien, benzodiazepines, or other habit-forming sleep medications. Online platforms focus on safer, non-addictive sleep aids suitable for telemedicine."
+  },
+  {
+    question: "Will I wake up groggy from online sleep medications?",
+    answer: "Trazodone, the most commonly prescribed online sleep medication, generally has minimal next-day grogginess compared to older sleep aids. Most people take 25-100mg at bedtime and wake up feeling rested. However, everyone responds differently - your doctor may start you at a low dose and adjust based on your response."
+  },
+  {
+    question: "Can I use online sleep treatment long-term?",
+    answer: "Yes, medications like trazodone and hydroxyzine can be used long-term under medical supervision. Unlike benzodiazepines or Ambien, these are non-addictive and safe for extended use. Online doctors can provide ongoing prescriptions with periodic check-ins to assess effectiveness and adjust dosing as needed."
+  },
+  {
+    question: "How quickly will I receive my sleep medication?",
+    answer: "Most online services deliver sleep medications within 2-5 business days. After your consultation is approved (typically same day or within 24 hours), medications ship from licensed US pharmacies via standard mail. Some platforms offer expedited shipping for faster delivery."
+  },
+  {
+    question: "Do I need a video consultation for sleep medication?",
+    answer: "No, most online sleep services don't require video calls. You'll complete a detailed questionnaire about your sleep patterns, medical history, and symptoms. A licensed physician reviews your information asynchronously and approves your prescription if appropriate. This text-based approach is just as medically valid and more convenient."
+  },
+  {
+    question: "What if sleep medication doesn't work for me?",
+    answer: "If your prescribed medication doesn't work, you can message your provider to discuss alternatives or dosage adjustments. Most services include follow-up care in the initial consultation fee. Your doctor might recommend trying a different medication, increasing the dose, or combining medication with behavioral sleep strategies."
+  },
+  {
+    question: "Can online doctors treat sleep apnea?",
+    answer: "No, online telehealth services cannot diagnose or treat sleep apnea, which requires in-person evaluation and sleep studies. If you have symptoms like loud snoring, breathing pauses during sleep, or excessive daytime sleepiness, you should see a doctor in person for possible sleep apnea testing. Online services are best for primary insomnia."
+  },
+  {
+    question: "Is trazodone addictive?",
+    answer: "No, trazodone is not addictive or habit-forming. It's an antidepressant that's commonly used off-label for insomnia at lower doses (25-100mg). Unlike Ambien or benzodiazepines, you won't build tolerance, experience withdrawal, or develop dependence. This makes it ideal for long-term insomnia management."
+  }
+];
+---
+
+<BaseLayout
+  title="Best Online Sleep & Insomnia Treatment - Telehealth Comparison"
+  description="Compare the top online insomnia treatment services. Get trazodone, hydroxyzine, and other non-addictive sleep medications prescribed online."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="max-w-4xl">
+        <div class="flex items-center gap-2 text-sm text-slate-600 mb-6">
+          <a href="/" class="hover:text-brand-accent transition-colors">Home</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-slate-900 font-medium">Sleep & Insomnia</span>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-sm font-medium text-blue-700 mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Non-addictive sleep solutions from licensed doctors
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
+          Finally, Get the Sleep You Need
+        </h1>
+        <p class="text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed mb-6 sm:mb-8 max-w-2xl px-4">
+          Stop lying awake at 2 AM. Stop being exhausted all day. Real sleep treatment from real doctors — non-addictive medications delivered discreetly. Compare services offering trazodone, hydroxyzine, and other safe sleep aids.
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <a href="#comparison" class="btn-primary">
+            Compare Services
+          </a>
+          <a href="/guides/insomnia-treatment-online" class="btn-outline">
+            How It Works
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Picks Section -->
+  <QuickPicks picks={quickPicks} categoryTitle="Sleep & Insomnia Treatment" />
+
+  <!-- Trust Signals -->
+  <TrustSignals />
+
+  <!-- Comparison Table -->
+  <section id="comparison" class="section bg-white">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">
+          Compare Sleep Treatment Services
+        </h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          All services offer non-addictive sleep medications prescribed by licensed doctors. Find the one that fits your needs and budget.
+        </p>
+      </div>
+
+      <FilterableComparison
+        brands={sleepBrands}
+        category="sleep"
+        defaultSort="rating"
+      />
+    </div>
+  </section>
+
+  <!-- Privacy Assurance -->
+  <PrivacyAssurance />
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} title="Common Questions About Online Sleep Treatment" />
+
+  <!-- Final CTA -->
+  <section class="section-light">
+    <div class="container-custom text-center">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
+          Ready to Sleep Better Tonight?
+        </h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Most consultations are approved same-day. Start now and have your medication delivered in 2-3 days.
+        </p>
+        <a href="#comparison" class="btn-primary btn-lg">
+          Compare Sleep Services
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
