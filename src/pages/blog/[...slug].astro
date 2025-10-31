@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
 import { formatDate } from '../../utils/helpers';
 
 export async function getStaticPaths() {
@@ -87,12 +88,7 @@ const relatedPosts = allPosts
 
       <!-- Meta Info -->
       <div class="flex flex-wrap items-center gap-4 text-sm text-slate-600 mb-8 pb-8 border-b border-slate-200">
-        <div class="flex items-center gap-2">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-          </svg>
-          <span>By {post.data.author}</span>
-        </div>
+        <AuthorBio name={post.data.author} showExtended={false} />
         <div class="flex items-center gap-2">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -105,6 +101,9 @@ const relatedPosts = allPosts
       <div class="prose prose-lg max-w-none">
         <Content />
       </div>
+
+      <!-- Author Bio (Extended) -->
+      <AuthorBio name={post.data.author} showExtended={true} />
 
       <!-- Tags -->
       {post.data.tags && post.data.tags.length > 0 && (

@@ -1,0 +1,94 @@
+---
+/**
+ * QuickVerdict Component
+ *
+ * Displays a quick verdict at the top of comparison pages.
+ * Provides AI platforms with immediate, quotable comparisons.
+ *
+ * Props:
+ * - brand1: First brand name (string, required)
+ * - brand1Verdict: Verdict for first brand (string, required)
+ * - brand1BestFor: What brand1 is best for (string, required)
+ * - brand2: Second brand name (string, required)
+ * - brand2Verdict: Verdict for second brand (string, required)
+ * - brand2BestFor: What brand2 is best for (string, required)
+ * - bottomLine: Optional bottom line recommendation (string, optional)
+ */
+
+interface Props {
+  brand1: string;
+  brand1Verdict: string;
+  brand1BestFor: string;
+  brand2: string;
+  brand2Verdict: string;
+  brand2BestFor: string;
+  bottomLine?: string;
+}
+
+const {
+  brand1,
+  brand1Verdict,
+  brand1BestFor,
+  brand2,
+  brand2Verdict,
+  brand2BestFor,
+  bottomLine,
+} = Astro.props;
+---
+
+<div class="quick-verdict bg-gradient-to-br from-slate-50 to-blue-50 border border-slate-200 rounded-lg p-8 my-8">
+  <div class="flex items-center gap-3 mb-6">
+    <svg class="w-8 h-8 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+    </svg>
+    <h2 class="text-2xl font-bold text-slate-900">Quick Verdict</h2>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <!-- Brand 1 -->
+    <div class="bg-white border-2 border-blue-600 rounded-lg p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <h3 class="text-xl font-bold text-slate-900">{brand1}</h3>
+      </div>
+      <p class="text-slate-700 mb-3 leading-relaxed">{brand1Verdict}</p>
+      <div class="bg-blue-50 border border-blue-200 rounded px-3 py-2">
+        <p class="text-sm font-semibold text-blue-900">
+          <span class="text-blue-700">Best For:</span> {brand1BestFor}
+        </p>
+      </div>
+    </div>
+
+    <!-- Brand 2 -->
+    <div class="bg-white border-2 border-purple-600 rounded-lg p-6">
+      <div class="flex items-center gap-2 mb-3">
+        <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <h3 class="text-xl font-bold text-slate-900">{brand2}</h3>
+      </div>
+      <p class="text-slate-700 mb-3 leading-relaxed">{brand2Verdict}</p>
+      <div class="bg-purple-50 border border-purple-200 rounded px-3 py-2">
+        <p class="text-sm font-semibold text-purple-900">
+          <span class="text-purple-700">Best For:</span> {brand2BestFor}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {bottomLine && (
+    <div class="bg-slate-900 text-white rounded-lg p-6">
+      <p class="text-sm font-semibold text-brand-accent uppercase tracking-wide mb-2">Bottom Line</p>
+      <p class="text-lg leading-relaxed">{bottomLine}</p>
+    </div>
+  )}
+</div>
+
+<style>
+  .quick-verdict {
+    /* Ensure AI platforms can easily parse and quote */
+    position: relative;
+  }
+</style>

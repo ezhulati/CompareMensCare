@@ -1,0 +1,59 @@
+---
+/**
+ * QuickSummary Component
+ *
+ * Displays a concise summary at the top of guides and articles.
+ * Optimized for AI platforms to quickly parse and quote key information.
+ *
+ * Props:
+ * - summary: Summary text (string, required) - Keep to 2-3 sentences
+ * - points: Array of key bullet points (string[], optional)
+ */
+
+interface Props {
+  summary: string;
+  points?: string[];
+}
+
+const { summary, points = [] } = Astro.props;
+---
+
+<div class="quick-summary bg-blue-50 border-l-4 border-blue-600 rounded-r-lg p-6 my-8">
+  <div class="flex items-start gap-3">
+    <div class="flex-shrink-0 mt-0.5">
+      <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </div>
+    <div class="flex-1">
+      <h3 class="text-sm font-bold text-blue-900 uppercase tracking-wide mb-2">Quick Summary</h3>
+      <p class="text-base text-blue-900 leading-relaxed mb-3">
+        {summary}
+      </p>
+      {points.length > 0 && (
+        <ul class="space-y-2">
+          {points.map((point) => (
+            <li class="flex items-start gap-2 text-sm text-blue-800">
+              <svg class="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </div>
+</div>
+
+<style>
+  .quick-summary {
+    /* High visibility for AI parsing */
+    position: relative;
+  }
+
+  .quick-summary p {
+    /* Ensure good readability */
+    line-height: 1.6;
+  }
+</style>
