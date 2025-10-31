@@ -1,0 +1,249 @@
+---
+import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+import QuickVerdict from '../../components/QuickVerdict.astro';
+
+const comparisonData = {
+  brand1Slug: 'ro',
+  brand2Slug: 'nurx',
+  category: 'herpes',
+  verdict: {
+    brand1BestFor: 'Best for users who want a comprehensive multi-condition platform with herpes treatment as one of many services. Great if you need ED, weight loss, or other treatments alongside herpes care.',
+    brand2BestFor: 'Best for users who want specialized, privacy-focused herpes care with industry-leading discretion and dedicated support for sexual health conditions.',
+  },
+  comparisonTable: [
+    {
+      feature: 'Suppressive Therapy Cost',
+      brand1Value: '$30-40/month',
+      brand2Value: '$30/month',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Consultation Fee',
+      brand1Value: '$15',
+      brand2Value: '$15',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Privacy Specialization',
+      brand1Value: 'Standard discreet',
+      brand2Value: 'Industry-leading',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Herpes Education',
+      brand1Value: 'Basic resources',
+      brand2Value: 'Comprehensive guides',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Multi-Condition Platform',
+      brand1Value: 'Full health platform',
+      brand2Value: 'Sexual health only',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Insurance Accepted',
+      brand1Value: 'No',
+      brand2Value: 'Yes',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Delivery Speed',
+      brand1Value: '2-3 days',
+      brand2Value: '2-3 days',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Platform Polish',
+      brand1Value: 'Premium experience',
+      brand2Value: 'Modern, focused',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Customer Support Hours',
+      brand1Value: 'Business hours',
+      brand2Value: '9AM-9PM PT daily',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Brand Recognition',
+      brand1Value: 'High (Roman/Ro)',
+      brand2Value: 'Growing',
+      winner: '1' as const,
+    },
+  ],
+};
+---
+
+<ComparisonLayout {...comparisonData}>
+  <!-- Quick Verdict for AI Optimization -->
+  <QuickVerdict
+    brand1="Ro"
+    brand1Verdict="Comprehensive telehealth platform offering herpes treatment alongside ED, hair loss, weight loss, and more in a premium experience"
+    brand1BestFor="Users wanting multi-condition care with herpes as one of several treatments ($30-40/month herpes)"
+    brand2="Nurx"
+    brand2Verdict="Sexual health specialist with industry-leading privacy, dedicated herpes support, and insurance acceptance"
+    brand2BestFor="Users prioritizing maximum discretion and specialized herpes care ($30/month, insurance accepted)"
+    bottomLine="Choose Ro for all-in-one platform if you need multiple treatments. Choose Nurx for specialized, private herpes care."
+  />
+
+  <!-- Additional comparison content -->
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">
+        Detailed Comparison
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Platform Philosophy</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> is a comprehensive digital health platform. They treat herpes as one condition among many, offering ED treatment, hair loss, weight management, skin care, and more. If you need multiple treatments, managing everything through one platform is convenient. However, herpes isn't their specialty - it's just another service they offer.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Nurx</strong> specializes in sexual health conditions, particularly stigmatized ones like herpes and STI prevention. Their entire platform is built around privacy, discretion, and compassionate care for sensitive conditions. If you only need herpes treatment, Nurx's specialized focus provides better support and resources.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Price Comparison</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> charges $30-40/month for suppressive valacyclovir therapy. No insurance accepted, cash-pay only. Consultation is $15. Annual cost: $375-495 without considering any promotional discounts.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Nurx</strong> charges $30/month for suppressive therapy with a $15 consultation. However, they accept insurance which can significantly reduce medication costs. With insurance, Nurx could be $10-20/month or less depending on your plan. Without insurance, they're slightly cheaper than Ro at $30 vs $30-40/month.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Privacy & Discretion</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> offers standard telehealth discretion - plain packaging, discreet billing. They're professional and private, but discretion isn't their primary selling point since they treat many non-stigmatized conditions too.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Nurx</strong> is industry-leading in privacy. Ultra-discreet packaging with parent company return address, billing under generic company name, and their entire service built around stigmatized sexual health conditions. They understand the emotional weight of herpes and prioritize discretion accordingly. If maximum privacy is essential, Nurx is superior.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Educational Resources & Support</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> provides basic educational materials about herpes and standard customer support. You can reach providers with questions, but resources are general rather than comprehensive. They focus more on delivering medication than extensive education.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Nurx</strong> excels at education and emotional support. Comprehensive guides about transmission, disclosure conversations, partner safety, outbreak management, and relationship advice. Customer support (9 AM - 9 PM PT) is trained in compassionate care for sexual health conditions. This matters most for newly diagnosed users or those struggling emotionally.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Multi-Condition Management</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> shines if you need multiple treatments. Managing herpes + ED + hair loss through one platform simplifies logistics, consolidates billing, and may offer bundled savings. If you have several health concerns, Ro's comprehensive approach is convenient.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Nurx</strong> focuses exclusively on sexual health (herpes, PrEP, STI testing, birth control). If you only need herpes treatment and don't require other services, Nurx's specialized focus provides better care for this specific condition.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Platform Experience</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> has a premium, polished platform that feels like a high-end medical practice. Beautiful design, smooth user experience, professional tone. If you value aesthetics and brand reputation, Ro's platform is impressive.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Nurx</strong> has a modern, focused platform with mobile app and judgment-free messaging. It's specifically designed for sensitive conditions with empathetic language and supportive tone. Less "premium" than Ro but more emotionally intelligent for stigmatized conditions.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Who Each Service is Best For</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> is ideal for:
+        </p>
+        <ul class="text-slate-600 mb-8 space-y-2">
+          <li>Users needing multiple treatments (ED + herpes + hair loss, etc.)</li>
+          <li>Those who value brand recognition and premium platform</li>
+          <li>Users wanting comprehensive health platform for various conditions</li>
+          <li>People who prefer managing all health needs in one place</li>
+        </ul>
+
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Nurx</strong> is ideal for:
+        </p>
+        <ul class="text-slate-600 mb-8 space-y-2">
+          <li>Users prioritizing maximum privacy and discretion</li>
+          <li>Recently diagnosed needing emotional support and education</li>
+          <li>Those in relationships concerned about transmission</li>
+          <li>Users with insurance (Nurx accepts it, Ro doesn't)</li>
+          <li>Anyone wanting specialized herpes care over generalist platform</li>
+        </ul>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Our Recommendation</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Choose <strong>Ro</strong> if you need multiple treatments beyond just herpes. If you're already using Ro for ED or hair loss, adding herpes treatment is convenient and consolidates your healthcare. Their premium platform and brand reputation also appeal to users who value polished experiences.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Choose <strong>Nurx</strong> if herpes is your primary concern and you value specialized care, maximum privacy, or have insurance. Nurx's dedicated focus on sexual health provides better support, education, and discretion for herpes specifically. Insurance acceptance can make them significantly cheaper than Ro's cash-only model.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-light">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">
+        Common Questions
+      </h2>
+
+      <div class="space-y-4">
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Do they prescribe the same herpes medication?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Yes, both prescribe valacyclovir (generic Valtrex) from licensed U.S. pharmacies. The medication is identical - FDA-approved, same dosages, same quality. You're choosing between platforms and service models, not medication quality.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Which is cheaper with insurance?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Nurx is cheaper if you have insurance because they accept it (Ro doesn't). Depending on your plan, Nurx with insurance could be $10-20/month vs Ro's $30-40 cash price. Without insurance, they're similar in price. Always check your insurance's valacyclovir coverage before deciding.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Can I use Ro for herpes and other conditions simultaneously?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Yes, that's Ro's strength. You can manage herpes, ED, hair loss, weight loss, and more through one platform. Single account, consolidated billing, one customer support team. This convenience is why many users choose Ro despite Nurx's specialized herpes focus.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Which is more private?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Nurx is more private. Their packaging is industry-leading discreet with parent company return address, and their entire service is designed around stigmatized conditions. Ro offers standard telehealth privacy which is good, but not as thoroughly considered. If maximum discretion is critical, Nurx is superior.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Should I choose based on what else I need?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Yes, absolutely. If you need herpes + ED + hair loss, use Ro and consolidate everything. If you only need herpes treatment, Nurx's specialized care and insurance acceptance make it the better choice. Let your full health needs guide the decision, not just herpes alone.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+</ComparisonLayout>

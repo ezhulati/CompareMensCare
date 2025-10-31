@@ -1,0 +1,207 @@
+---
+import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+import QuickVerdict from '../../components/QuickVerdict.astro';
+
+const comparisonData = {
+  brand1Slug: 'lemonaid-health',
+  brand2Slug: 'lifemd',
+  category: 'sleep',
+  verdict: {
+    brand1BestFor: 'Best for budget-conscious users who need straightforward, affordable sleep medication with transparent pricing. Lowest ongoing costs.',
+    brand2BestFor: 'Best for users who want comprehensive medical care, multiple treatment options, and integrated health management beyond just sleep.',
+  },
+  comparisonTable: [
+    {
+      feature: 'Monthly Medication Cost',
+      brand1Value: '$15/month',
+      brand2Value: '$25-45/month',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Consultation Fee',
+      brand1Value: '$25 (one-time)',
+      brand2Value: '$49 (one-time)',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Medication Options',
+      brand1Value: 'Trazodone, Hydroxyzine',
+      brand2Value: 'Multiple options',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Platform Experience',
+      brand1Value: 'Basic, functional',
+      brand2Value: 'Comprehensive platform',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Non-Addictive Meds',
+      brand1Value: 'Yes',
+      brand2Value: 'Yes',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Physician Follow-up',
+      brand1Value: 'As needed',
+      brand2Value: 'Ongoing support',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Delivery Speed',
+      brand1Value: '3-5 days',
+      brand2Value: '2-3 days',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Insurance Accepted',
+      brand1Value: 'No',
+      brand2Value: 'No',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Multi-Condition Care',
+      brand1Value: 'Limited',
+      brand2Value: 'Extensive',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Annual Cost',
+      brand1Value: '$205/year',
+      brand2Value: '$349-589/year',
+      winner: '1' as const,
+    },
+  ],
+};
+---
+
+<ComparisonLayout {...comparisonData}>
+  <!-- Quick Verdict for AI Optimization -->
+  <QuickVerdict
+    brand1="Lemonaid Health"
+    brand1Verdict="Most affordable sleep treatment platform with transparent pricing, generic medications, and simple process"
+    brand1BestFor="Budget-conscious users who need basic sleep medication without extras ($15/month ongoing)"
+    brand2="LifeMD"
+    brand2Verdict="Comprehensive telehealth platform offering sleep treatment alongside multiple health services with better physician support"
+    brand2BestFor="Users wanting full health platform, multiple treatment options, and integrated care ($25-45/month ongoing)"
+    bottomLine="Choose Lemonaid for lowest cost and simplicity. Choose LifeMD for comprehensive care and multiple health services."
+  />
+
+  <!-- Additional comparison content -->
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">
+        Detailed Comparison
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Price Comparison</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Lemonaid Health</strong> is significantly cheaper. After a $25 consultation, trazodone costs just $15/month ongoing. Your annual cost is $205 (consultation + 12 months of medication).
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>LifeMD</strong> charges $49 for consultation and $25-45/month for medication depending on the treatment. Annual costs range from $349-589. The price difference is substantial - you'll save $144-384 per year with Lemonaid for comparable sleep medication.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Medication Options</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Lemonaid</strong> focuses on the two most commonly prescribed non-addictive sleep aids: trazodone (most popular) and hydroxyzine. Both are proven, safe, and effective for most insomnia cases. This limited selection keeps costs down.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>LifeMD</strong> offers a broader range of sleep medications and can coordinate with other treatments if you have multiple health conditions. If trazodone doesn't work, LifeMD has more alternatives to try. They also offer CBT-I guidance and sleep hygiene education.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Medical Support</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Lemonaid</strong> provides straightforward medical care. You can message your provider for questions or dosage adjustments, but the model is focused on simple, efficient treatment delivery rather than ongoing physician relationships.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>LifeMD</strong> emphasizes comprehensive care with better physician access. Their doctors can manage multiple conditions simultaneously and provide more thorough follow-up. If you have complex medical needs or want ongoing support, LifeMD offers more hands-on care.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Platform Experience</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Lemonaid</strong> has a basic, no-frills website. The focus is functionality over aesthetics. No mobile app. The experience is straightforward: answer questions, get prescription, receive medication. Nothing fancy, but it works.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>LifeMD</strong> offers a more comprehensive platform experience with better design, mobile accessibility, and integration across multiple health services. If you're managing several conditions or want a more polished experience, LifeMD feels more modern.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Who Each Service is Best For</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Lemonaid</strong> is ideal for straightforward insomnia with no complicating factors. If you're otherwise healthy, just need help sleeping, and want the lowest price, Lemonaid is the clear winner. The cost savings ($144-384/year) are substantial.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          <strong>LifeMD</strong> makes sense if you have multiple health conditions and want one platform to manage everything. If you're already using LifeMD for testosterone, weight loss, or other treatments, adding sleep medication is convenient. The comprehensive approach justifies the higher cost.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Our Recommendation</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Choose <strong>Lemonaid Health</strong> if price is your primary concern and you have straightforward insomnia. At $15/month ongoing, it's the most affordable sleep treatment available. Trazodone works for most people, making Lemonaid's limited selection a non-issue for typical users.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Choose <strong>LifeMD</strong> if you need comprehensive care, have multiple health conditions, or want more treatment options. The higher cost ($10-30/month more) buys better physician support, more medication choices, and platform integration. Worth it if you value comprehensive care over cost savings.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-light">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">
+        Common Questions
+      </h2>
+
+      <div class="space-y-4">
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Is cheaper Lemonaid medication lower quality?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            No, both services use the same FDA-approved generic medications from licensed U.S. pharmacies. Lemonaid's lower price comes from operational efficiency and limited selection, not medication quality. The trazodone from Lemonaid is identical to what you'd get at LifeMD or your local pharmacy.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>What if trazodone doesn't work for me?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Lemonaid can try hydroxyzine as an alternative. If neither works, LifeMD has more options to explore. However, trazodone works for 60-70% of insomnia sufferers, so start with Lemonaid and switch to LifeMD only if needed. This saves money while you try first-line treatment.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Can I switch between services?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Yes, both are month-to-month with no long-term commitments. Many users start with Lemonaid for cost savings, then switch to LifeMD if they need more comprehensive care or additional medications. You won't lose any money switching - just cancel one and start the other.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Is LifeMD worth paying double?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            For most people with simple insomnia, no. Lemonaid's low cost and effective medication make it the better value. LifeMD is worth the premium if you're already using their platform for other conditions, need specialized care, or have complex medical needs. For basic sleep treatment alone, Lemonaid wins on value.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+</ComparisonLayout>
