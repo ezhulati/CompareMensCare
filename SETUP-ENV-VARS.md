@@ -28,7 +28,7 @@ Value: https://www.forhims.com/?ref=YOUR_AFFILIATE_ID
 Environment: Production, Preview, Development
 ```
 
-Repeat for all 12 brands (see full list in DEPLOYMENT.md)
+Repeat for all 19 brands (see full list below)
 
 3. After adding all variables, redeploy:
 ```bash
@@ -49,7 +49,7 @@ vercel env add PUBLIC_HIMS_AFFILIATE_URL production
 # When prompted, enter: https://www.forhims.com/?ref=YOUR_ID
 
 vercel env add PUBLIC_RO_AFFILIATE_URL production
-# etc... for all 12 brands
+# etc... for all 19 brands
 ```
 
 After adding all variables:
@@ -82,6 +82,13 @@ You need to join each brand's affiliate program first:
 | BetterHelp | Impact Radius | https://impact.com |
 | Talkspace | CJ Affiliate | https://www.cj.com |
 | LetsGetChecked | ShareASale | https://www.shareasale.com |
+| **Cerebral** | **Acceleration Partners** | **https://www.accelerationpartners.com** |
+| **Amwell** | **Research needed** | **Contact amwell.com** |
+| **Teladoc** | **Research needed** | **Contact teladoc.com** |
+| **Everlywell** | **FlexOffers / CJ** | **https://www.flexoffers.com** |
+| **imaware** | **GoAffPro** | **https://imaware.goaffpro.com** |
+| **Henry Meds** | **Impact Network** | **https://impact.com** |
+| **LifeMD** | **Shopnomix / Linkbux** | **https://linkmydeals.com** |
 
 **Note:** Affiliate program approval can take 1-3 business days. Use placeholder URLs until approved.
 
