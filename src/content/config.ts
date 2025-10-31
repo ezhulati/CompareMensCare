@@ -153,6 +153,11 @@ const blog = defineCollection({
     tags: z.array(z.string()),
     publishDate: z.date(),
     author: z.string(),
+    summary: z.string().optional(),
+    summaryPoints: z.array(z.string()).optional(),
+    researchHours: z.number().optional(),
+    sourcesReviewed: z.number().optional(),
+    keyTakeaways: z.array(z.string()).optional(),
     featured: z.boolean().default(false),
   }),
 });
