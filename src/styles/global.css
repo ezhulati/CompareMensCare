@@ -8,25 +8,72 @@
   }
 
   body {
-    @apply bg-white text-slate-900 antialiased;
-    font-feature-settings: 'cv11', 'ss01';
-    font-variation-settings: 'opsz' 32;
+    @apply bg-white text-slate-900 antialiased font-sans;
+    /* OpenType features for better readability */
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-semibold;
-  }
+  /* Typography Hierarchy - World-Class System */
 
+  /* Display Level - Hero Headlines (Manrope) */
   h1 {
-    @apply text-4xl lg:text-5xl;
+    @apply font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
   }
 
   h2 {
-    @apply text-3xl lg:text-4xl;
+    @apply font-display font-bold text-3xl sm:text-4xl lg:text-5xl;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
   }
 
+  /* Heading Level - Section Titles (Inter Tight) */
   h3 {
-    @apply text-2xl lg:text-3xl;
+    @apply font-heading font-bold text-2xl sm:text-3xl lg:text-4xl;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  h4 {
+    @apply font-heading font-semibold text-xl sm:text-2xl lg:text-3xl;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  h5 {
+    @apply font-heading font-semibold text-lg sm:text-xl lg:text-2xl;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+  }
+
+  h6 {
+    @apply font-heading font-semibold text-base sm:text-lg;
+    letter-spacing: 0;
+    line-height: 1.4;
+  }
+
+  /* Body Text - Optimal Readability (Inter) */
+  p {
+    @apply font-sans text-base leading-relaxed;
+    letter-spacing: 0;
+  }
+
+  /* Links - Accessible & Clear */
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  /* Strong emphasis */
+  strong, b {
+    @apply font-semibold;
+  }
+
+  /* Lists */
+  ul, ol {
+    @apply font-sans text-base leading-relaxed;
   }
 }
 
@@ -284,6 +331,58 @@
   /* Gradient Text */
   .gradient-text {
     @apply bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary bg-clip-text text-transparent;
+  }
+
+  /* ===== NEW: Typography Utilities ===== */
+
+  /* Pricing Display - Monospace for clarity */
+  .text-pricing {
+    @apply font-mono text-xl sm:text-2xl font-bold tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  .text-pricing-large {
+    @apply font-mono text-3xl sm:text-4xl lg:text-5xl font-bold tabular-nums;
+    letter-spacing: -0.03em;
+  }
+
+  .text-pricing-small {
+    @apply font-mono text-base sm:text-lg font-semibold tabular-nums;
+  }
+
+  /* Stats & Numbers - Clean and impactful */
+  .text-stat {
+    @apply font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tabular-nums;
+    letter-spacing: -0.04em;
+  }
+
+  .text-stat-label {
+    @apply font-sans text-sm sm:text-base text-slate-600 uppercase tracking-wide;
+  }
+
+  /* Eyebrow Text - Section labels */
+  .text-eyebrow {
+    @apply font-heading text-xs sm:text-sm font-semibold uppercase tracking-wider text-brand-accent;
+  }
+
+  /* Lead Paragraph - Enhanced intro text */
+  .text-lead {
+    @apply font-sans text-lg sm:text-xl lg:text-2xl leading-relaxed text-slate-700;
+  }
+
+  /* Caption Text */
+  .text-caption {
+    @apply font-sans text-xs sm:text-sm text-slate-500 leading-snug;
+  }
+
+  /* Disclaimer Text - Medical/Legal */
+  .text-disclaimer {
+    @apply font-sans text-xs leading-relaxed text-slate-600 italic;
+  }
+
+  /* Trust Badge Text */
+  .text-trust {
+    @apply font-heading text-sm font-semibold text-medical-trust;
   }
 }
 

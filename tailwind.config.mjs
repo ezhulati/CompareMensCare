@@ -61,8 +61,17 @@ export default {
         error: '#DC2626',          // Red 600 (less screaming)
       },
       fontFamily: {
-        sans: ['Inter var', 'Inter', '-apple-system', 'system-ui', 'sans-serif'],
-        display: ['Inter var', 'Inter', '-apple-system', 'system-ui', 'sans-serif'],
+        // Display - Large headlines, hero text (H1-H2)
+        display: ['Manrope', 'Inter', '-apple-system', 'system-ui', 'sans-serif'],
+
+        // Heading - Section titles, cards (H3-H6)
+        heading: ['Inter Tight', 'Inter', '-apple-system', 'system-ui', 'sans-serif'],
+
+        // Body - Paragraphs, descriptions, main content
+        sans: ['Inter', '-apple-system', 'system-ui', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+
+        // Mono - Pricing, stats, data, technical specs
+        mono: ['Space Mono', 'Menlo', 'Monaco', 'Courier New', 'monospace'],
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1.5', letterSpacing: '0.02em' }],
