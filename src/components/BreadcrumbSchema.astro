@@ -11,13 +11,11 @@
  * ]} />
  */
 
-export interface BreadcrumbItem {
-  name: string;
-  url: string;
-}
-
 interface Props {
-  items: BreadcrumbItem[];
+  items: Array<{
+    name: string;
+    url: string;
+  }>;
 }
 
 const { items } = Astro.props;
