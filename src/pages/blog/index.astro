@@ -11,8 +11,8 @@ const sortedPosts = allPosts.sort((a, b) =>
 );
 
 // Group by category
-const categories = ['sexual-health', 'hair-health', 'testosterone', 'weight-loss', 'mental-health', 'diagnostics'];
-const categoryNames = {
+const categories = ['sexual-health', 'hair-health', 'testosterone', 'weight-loss', 'mental-health', 'diagnostics'] as const;
+const categoryNames: Record<string, string> = {
   'sexual-health': 'Sexual Health',
   'hair-health': 'Hair Health',
   'testosterone': 'Testosterone',
@@ -179,8 +179,8 @@ const featuredPosts = sortedPosts.filter(post => post.data.featured).slice(0, 3)
   <!-- Category Filter Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const filters = document.querySelectorAll('.category-filter');
-      const posts = document.querySelectorAll('.post-card');
+      const filters = document.querySelectorAll<HTMLButtonElement>('.category-filter');
+      const posts = document.querySelectorAll<HTMLElement>('.post-card');
 
       filters.forEach(filter => {
         filter.addEventListener('click', () => {
@@ -194,8 +194,8 @@ const featuredPosts = sortedPosts.filter(post => post.data.featured).slice(0, 3)
 
           // Filter posts
           posts.forEach(post => {
-            const postCategories = post.dataset.categories.split(',');
-            if (category === 'all' || postCategories.includes(category)) {
+            const postCategories = post.dataset.categories?.split(',') || [];
+            if (category === 'all' || postCategories.includes(category || '')) {
               post.style.display = 'block';
             } else {
               post.style.display = 'none';
