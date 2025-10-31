@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FilterableComparison from '../components/FilterableComparison.astro';
+import QuickPicks from '../components/QuickPicks.astro';
+import TrustSignals from '../components/TrustSignals.astro';
 import Icon from '../components/Icon.astro';
 import type { FilterableBrand } from '../components/FilterableComparison.astro';
 
@@ -25,6 +27,34 @@ const hairHealthBrands = allBrands
     priceMin: brand.data.pricing.priceMin,
     priceMax: brand.data.pricing.priceMax,
   }));
+
+// Quick picks for this category
+const quickPicks = [
+  {
+    segment: 'budget' as const,
+    brandName: 'Keeps',
+    brandSlug: 'keeps',
+    detail: '$7/month, 50% off first order',
+  },
+  {
+    segment: 'privacy' as const,
+    brandName: 'Hims',
+    brandSlug: 'hims',
+    detail: 'Discreet delivery, auto-refill',
+  },
+  {
+    segment: 'speed' as const,
+    brandName: 'Hims',
+    brandSlug: 'hims',
+    detail: 'Fast approval, 2-day shipping',
+  },
+  {
+    segment: 'quality' as const,
+    brandName: 'Ro',
+    brandSlug: 'ro',
+    detail: 'Brand & generic, MD consultation',
+  },
+];
 
 const schema = {
   '@context': 'https://schema.org',
@@ -91,6 +121,24 @@ const schema = {
           <div class="text-sm text-slate-600">See Results</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Quick Picks Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <QuickPicks picks={quickPicks} category="Hair Health" />
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="py-6 bg-white">
+    <div class="container-custom">
+      <TrustSignals
+        lastUpdated={new Date()}
+        reviewsCount={12000}
+        servicesCompared={hairHealthBrands.length}
+      />
     </div>
   </section>
 

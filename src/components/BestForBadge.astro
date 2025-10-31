@@ -4,7 +4,7 @@ import Icon from './Icon.astro';
 interface Props {
   label: string;
   icon?: string;
-  variant?: 'primary' | 'success' | 'warning' | 'neutral' | 'premium';
+  variant?: 'primary' | 'success' | 'warning' | 'neutral' | 'premium' | 'quick-pick';
   size?: 'sm' | 'md' | 'lg';
   showIcon?: boolean;
 }
@@ -24,6 +24,7 @@ const defaultIcons: Record<string, string> = {
   warning: 'warning',
   neutral: 'dot',
   premium: 'crown',
+  'quick-pick': 'zap',
 };
 
 const displayIcon = icon || (showIcon ? defaultIcons[variant] : '');
@@ -42,6 +43,7 @@ const variantClasses = {
   warning: 'bg-amber-50 text-amber-700 border-amber-200',
   neutral: 'bg-slate-100 text-slate-700 border-slate-200',
   premium: 'bg-gradient-to-r from-amber-50 to-yellow-50 text-amber-900 border-amber-300',
+  'quick-pick': 'bg-emerald-500 text-white border-emerald-600 font-semibold shadow-md',
 };
 ---
 

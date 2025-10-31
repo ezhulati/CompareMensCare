@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import GuidedMatcher from '../components/GuidedMatcher.astro';
 import PersonalizedResults from '../components/PersonalizedResults.astro';
-import Icon from '../components/Icon.astro';
+import { Eye, ShieldCheck, Shield, Heart, Sparkles, Activity, TrendingDown, Brain, Stethoscope } from 'lucide-astro';
 import { getCategoryIcon } from '../utils/helpers';
 
 const categories = [
@@ -11,44 +11,47 @@ const categories = [
     slug: 'sexual-health',
     description: 'ED treatments, premature ejaculation solutions, and sexual wellness.',
     providersCount: 8,
-    icon: 'sexual-health',
   },
   {
     title: 'Hair Health',
     slug: 'hair-health',
     description: 'Hair loss treatments including finasteride, minoxidil, and more.',
     providersCount: 5,
-    icon: 'hair-health',
   },
   {
     title: 'Testosterone & Hormones',
     slug: 'testosterone',
     description: 'TRT clinics and hormone optimization services.',
     providersCount: 7,
-    icon: 'testosterone',
   },
   {
     title: 'Weight Loss',
     slug: 'weight-loss',
     description: 'GLP-1 medications and personalized weight management.',
     providersCount: 6,
-    icon: 'weight-loss',
   },
   {
     title: 'Mental Health',
     slug: 'mental-health',
     description: 'Online therapy platforms and psychiatric care.',
     providersCount: 2,
-    icon: 'mental-health',
   },
   {
     title: 'Diagnostics & Wellness',
     slug: 'diagnostics',
     description: 'At-home health testing for comprehensive monitoring.',
     providersCount: 1,
-    icon: 'diagnostics',
   },
 ];
+
+const categoryIcons: Record<string, any> = {
+  'sexual-health': Heart,
+  'hair-health': Sparkles,
+  'testosterone': Activity,
+  'weight-loss': TrendingDown,
+  'mental-health': Brain,
+  'diagnostics': Stethoscope,
+};
 
 const schema = {
   '@context': 'https://schema.org',
@@ -155,7 +158,7 @@ const schema = {
         <div class="grid md:grid-cols-3 gap-6 text-left">
           <div class="card p-6">
             <div class="mb-3 text-blue-600">
-              <Icon name="transparency" size="xl" />
+              <Eye class="w-12 h-12" />
             </div>
             <h3 class="font-semibold text-lg mb-2 text-slate-900">Real Prices, No BS</h3>
             <p class="text-slate-600 text-sm">
@@ -164,7 +167,7 @@ const schema = {
           </div>
           <div class="card p-6">
             <div class="mb-3 text-emerald-600">
-              <Icon name="safety" size="xl" />
+              <ShieldCheck class="w-12 h-12" />
             </div>
             <h3 class="font-semibold text-lg mb-2 text-slate-900">Safe & Legit Only</h3>
             <p class="text-slate-600 text-sm">
@@ -173,7 +176,7 @@ const schema = {
           </div>
           <div class="card p-6">
             <div class="mb-3 text-purple-600">
-              <Icon name="selection" size="xl" />
+              <Shield class="w-12 h-12" />
             </div>
             <h3 class="font-semibold text-lg mb-2 text-slate-900">Your Privacy Matters</h3>
             <p class="text-slate-600 text-sm">
@@ -198,35 +201,38 @@ const schema = {
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {categories.map((category) => (
-          <a
-            href={`/${category.slug}`}
-            class="card-hover p-8 group"
-          >
-            <div class="flex items-start justify-between mb-4">
-              <div class="flex-1">
-                <h3 class="font-bold text-xl mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
-                  {category.title}
-                </h3>
-                <span class="text-sm text-slate-500">
-                  {category.providersCount} services compared
-                </span>
+        {categories.map((category) => {
+          const IconComponent = categoryIcons[category.slug];
+          return (
+            <a
+              href={`/${category.slug}`}
+              class="card-hover p-8 group"
+            >
+              <div class="flex items-start justify-between mb-4">
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+                    {category.title}
+                  </h3>
+                  <span class="text-sm text-slate-500">
+                    {category.providersCount} services compared
+                  </span>
+                </div>
+                <div class="text-brand-accent group-hover:scale-110 transition-transform duration-200">
+                  <IconComponent class="w-12 h-12" />
+                </div>
               </div>
-              <div class="text-brand-accent group-hover:scale-110 transition-transform duration-200">
-                <Icon name={category.icon} size="xl" />
-              </div>
-            </div>
-            <p class="text-slate-600 text-sm leading-relaxed mb-4">
-              {category.description}
-            </p>
-            <span class="text-brand-accent font-medium text-sm inline-flex items-center group-hover:gap-2 transition-all">
-              Compare services
-              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
-          </a>
-        ))}
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                {category.description}
+              </p>
+              <span class="text-brand-accent font-medium text-sm inline-flex items-center group-hover:gap-2 transition-all">
+                Compare services
+                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          );
+        })}
       </div>
     </div>
   </section>

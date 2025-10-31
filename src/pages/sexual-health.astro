@@ -2,6 +2,9 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FilterableComparison from '../components/FilterableComparison.astro';
+import QuickPicks from '../components/QuickPicks.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import PrivacyAssurance from '../components/PrivacyAssurance.astro';
 import Icon from '../components/Icon.astro';
 import type { FilterableBrand } from '../components/FilterableComparison.astro';
 
@@ -25,6 +28,34 @@ const sexualHealthBrands = allBrands
     priceMin: brand.data.pricing.priceMin,
     priceMax: brand.data.pricing.priceMax,
   }));
+
+// Quick picks for this category
+const quickPicks = [
+  {
+    segment: 'budget' as const,
+    brandName: 'BlueChew',
+    brandSlug: 'bluechew',
+    detail: '$20/month, no consult fee',
+  },
+  {
+    segment: 'privacy' as const,
+    brandName: 'Ro',
+    brandSlug: 'ro',
+    detail: 'Most discreet, flexible dosing',
+  },
+  {
+    segment: 'speed' as const,
+    brandName: 'Hims',
+    brandSlug: 'hims',
+    detail: '48hr approval, free shipping',
+  },
+  {
+    segment: 'quality' as const,
+    brandName: 'Ro',
+    brandSlug: 'ro',
+    detail: 'Brand & generic, MD oversight',
+  },
+];
 
 const schema = {
   '@context': 'https://schema.org',
@@ -95,6 +126,31 @@ const schema = {
           <div class="text-sm text-slate-600">Delivery</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Quick Picks Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <QuickPicks picks={quickPicks} category="Sexual Health" />
+    </div>
+  </section>
+
+  <!-- Privacy Assurance -->
+  <section class="py-8 bg-white">
+    <div class="container-custom">
+      <PrivacyAssurance />
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="py-6 bg-white">
+    <div class="container-custom">
+      <TrustSignals
+        lastUpdated={new Date()}
+        reviewsCount={15000}
+        servicesCompared={sexualHealthBrands.length}
+      />
     </div>
   </section>
 

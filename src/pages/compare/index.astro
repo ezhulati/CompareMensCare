@@ -1,0 +1,282 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+
+// Available comparisons
+const comparisons = [
+  {
+    title: 'Keeps vs Hims',
+    slug: 'keeps-vs-hims',
+    category: 'Hair Health',
+    categorySlug: 'hair-health',
+    description: 'Compare pricing, treatment options, and service quality for hair loss treatment.',
+    brand1: 'Keeps',
+    brand2: 'Hims',
+    winner: 'Budget users prefer Keeps, convenience seekers prefer Hims',
+  },
+  {
+    title: 'BlueChew vs Hims',
+    slug: 'bluechew-vs-hims',
+    category: 'Sexual Health',
+    categorySlug: 'sexual-health',
+    description: 'Compare chewable vs pill formats, pricing, and delivery speed for ED treatment.',
+    brand1: 'BlueChew',
+    brand2: 'Hims',
+    winner: 'BlueChew for budget, Hims for speed & options',
+  },
+  {
+    title: 'Ro vs Hims',
+    slug: 'ro-vs-hims',
+    category: 'Sexual Health',
+    categorySlug: 'sexual-health',
+    description: 'Premium care vs fast convenience - see which ED treatment service fits your priorities.',
+    brand1: 'Ro',
+    brand2: 'Hims',
+    winner: 'Ro for customization, Hims for speed',
+  },
+];
+
+// Group by category
+const comparisonsByCategory = comparisons.reduce((acc, comparison) => {
+  if (!acc[comparison.category]) {
+    acc[comparison.category] = [];
+  }
+  acc[comparison.category].push(comparison);
+  return acc;
+}, {} as Record<string, typeof comparisons>);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Compare Men\'s Health Services',
+  description: 'Side-by-side comparisons of top men\'s health services for ED, hair loss, testosterone, and more.',
+};
+---
+
+<BaseLayout
+  title="Compare Men's Health Services - Side-by-Side Comparisons"
+  description="Compare the top men's health telemedicine services. See detailed side-by-side comparisons of pricing, features, and treatment options for ED, hair loss, testosterone, and more."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="flex items-center gap-2 text-sm text-slate-600 mb-6 justify-center">
+          <a href="/" class="hover:text-brand-accent transition-colors">Home</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-slate-900 font-medium">Compare Services</span>
+        </div>
+
+        <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+          Compare Men's Health Services
+        </h1>
+        <p class="text-xl text-slate-600 leading-relaxed">
+          Side-by-side comparisons to help you choose the right service for your needs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparisons by Category -->
+  <section class="section bg-white">
+    <div class="container-custom max-w-5xl">
+      {Object.entries(comparisonsByCategory).map(([category, categoryComparisons]) => (
+        <div class="mb-12 last:mb-0">
+          <h2 class="text-2xl font-bold text-slate-900 mb-6">{category}</h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            {categoryComparisons.map((comparison) => (
+              <a
+                href={`/compare/${comparison.slug}`}
+                class="card-hover p-6 group"
+              >
+                <div class="flex items-start justify-between mb-3">
+                  <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-accent transition-colors">
+                    {comparison.title}
+                  </h3>
+                  <svg class="w-5 h-5 text-slate-400 group-hover:text-brand-accent transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+
+                <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                  {comparison.description}
+                </p>
+
+                <div class="flex items-center gap-2 text-sm">
+                  <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full font-medium">
+                    {comparison.brand1}
+                  </span>
+                  <span class="text-slate-400">vs</span>
+                  <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full font-medium">
+                    {comparison.brand2}
+                  </span>
+                </div>
+
+                <div class="mt-4 pt-4 border-t border-slate-200">
+                  <div class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">
+                    Bottom Line
+                  </div>
+                  <div class="text-sm text-slate-700">
+                    {comparison.winner}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- How Comparisons Work -->
+  <section class="section-light border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">
+        How Our Comparisons Work
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card p-6 text-center">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-4">
+            <Icon name="medical" class="w-6 h-6" />
+          </div>
+          <h3 class="font-bold text-lg mb-2 text-slate-900">
+            Side-by-Side Analysis
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            We compare pricing, features, treatment options, and user experience in detail.
+          </p>
+        </div>
+
+        <div class="card p-6 text-center">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+            <Icon name="checkmark" class="w-6 h-6" />
+          </div>
+          <h3 class="font-bold text-lg mb-2 text-slate-900">
+            No Universal Winner
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            We show which service is best for different priorities - budget, speed, quality, privacy.
+          </p>
+        </div>
+
+        <div class="card p-6 text-center">
+          <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mx-auto mb-4">
+            <Icon name="info" class="w-6 h-6" />
+          </div>
+          <h3 class="font-bold text-lg mb-2 text-slate-900">
+            Regularly Updated
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Pricing and features change. We review comparisons monthly to keep information current.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-10 bg-blue-50 rounded-xl p-6 border border-blue-200">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0">
+            <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div>
+            <div class="font-semibold text-slate-900 mb-1">
+              Can't find a comparison you're looking for?
+            </div>
+            <p class="text-slate-700 text-sm">
+              We're constantly adding new comparisons. Browse our <a href="/" class="text-brand-accent hover:underline">category pages</a> to see all available services and their detailed reviews.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Browse Categories -->
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">
+        Browse by Category
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <a href="/sexual-health" class="card-hover p-6 group">
+          <div class="mb-3">
+            <Icon name="sexual-health" class="w-8 h-8 text-red-600" />
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Sexual Health
+          </h3>
+          <p class="text-slate-600 text-sm">
+            Compare ED treatment services and medications.
+          </p>
+        </a>
+
+        <a href="/hair-health" class="card-hover p-6 group">
+          <div class="mb-3">
+            <Icon name="hair-health" class="w-8 h-8 text-amber-600" />
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Hair Health
+          </h3>
+          <p class="text-slate-600 text-sm">
+            Finasteride, minoxidil, and hair loss treatments.
+          </p>
+        </a>
+
+        <a href="/testosterone" class="card-hover p-6 group">
+          <div class="mb-3">
+            <Icon name="testosterone" class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Testosterone & Hormones
+          </h3>
+          <p class="text-slate-600 text-sm">
+            TRT clinics and hormone optimization services.
+          </p>
+        </a>
+
+        <a href="/weight-loss" class="card-hover p-6 group">
+          <div class="mb-3">
+            <Icon name="weight-loss" class="w-8 h-8 text-purple-600" />
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Weight Loss
+          </h3>
+          <p class="text-slate-600 text-sm">
+            GLP-1 medications and weight management programs.
+          </p>
+        </a>
+
+        <a href="/mental-health" class="card-hover p-6 group">
+          <div class="mb-3">
+            <Icon name="mental-health" class="w-8 h-8 text-green-600" />
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Mental Health
+          </h3>
+          <p class="text-slate-600 text-sm">
+            Online therapy and psychiatry services.
+          </p>
+        </a>
+
+        <a href="/diagnostics" class="card-hover p-6 group">
+          <div class="mb-3">
+            <Icon name="diagnostics" class="w-8 h-8 text-cyan-600" />
+          </div>
+          <h3 class="font-semibold text-lg mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+            Diagnostics & Wellness
+          </h3>
+          <p class="text-slate-600 text-sm">
+            At-home lab testing and health monitoring.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

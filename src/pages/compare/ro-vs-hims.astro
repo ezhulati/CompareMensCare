@@ -1,0 +1,192 @@
+---
+import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+
+const comparisonData = {
+  brand1Slug: 'ro',
+  brand2Slug: 'hims',
+  category: 'sexual-health',
+  verdict: {
+    brand1BestFor: 'Best for users who want the most comprehensive care, flexible dosing options, and ongoing MD support. Premium service.',
+    brand2BestFor: 'Best for users who want a balance of quality, convenience, and price. Fast shipping and broad product selection.',
+  },
+  comparisonTable: [
+    {
+      feature: 'Starting Price',
+      brand1Value: '$49/month',
+      brand2Value: '$44/month',
+      winner: '2',
+    },
+    {
+      feature: 'Consultation Fee',
+      brand1Value: 'Free',
+      brand2Value: 'Free',
+      winner: 'tie',
+    },
+    {
+      feature: 'Medication Options',
+      brand1Value: 'Extensive',
+      brand2Value: 'Broad',
+      winner: '1',
+    },
+    {
+      feature: 'Brand-Name Meds',
+      brand1Value: 'Viagra & Cialis',
+      brand2Value: 'Viagra & Cialis',
+      winner: 'tie',
+    },
+    {
+      feature: 'Generic Options',
+      brand1Value: 'Yes, multiple doses',
+      brand2Value: 'Yes, multiple doses',
+      winner: 'tie',
+    },
+    {
+      feature: 'Flexible Dosing',
+      brand1Value: 'Highly customizable',
+      brand2Value: 'Standard options',
+      winner: '1',
+    },
+    {
+      feature: 'Physician Follow-up',
+      brand1Value: 'Ongoing MD access',
+      brand2Value: 'As needed',
+      winner: '1',
+    },
+    {
+      feature: 'Shipping Speed',
+      brand1Value: '3-5 days',
+      brand2Value: '2-3 days',
+      winner: '2',
+    },
+    {
+      feature: 'Platform Experience',
+      brand1Value: 'Premium, polished',
+      brand2Value: 'User-friendly',
+      winner: '1',
+    },
+    {
+      feature: 'Additional Services',
+      brand1Value: 'Full health platform',
+      brand2Value: 'Full wellness',
+      winner: 'tie',
+    },
+  ],
+};
+---
+
+<ComparisonLayout {...comparisonData}>
+  <!-- Additional comparison content -->
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">
+        Detailed Comparison
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Price Comparison</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hims</strong> has a slight edge on starting price at $44/month vs Ro's $49/month for generic ED medications. However, both services are in the same price range for comparable treatments. Generic sildenafil runs $44-85/month at Hims vs $49-95/month at Ro. Tadalafil is similar: $44-95/month at Hims vs $49-100/month at Ro.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          Both also offer brand-name Viagra and Cialis at premium pricing ($140-200/month range). The price difference is minimal - your choice should be based on other factors like physician access and platform experience.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Medical Care & Support</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> emphasizes ongoing physician relationships. After your initial consultation, you have continued access to your physician for questions, dose adjustments, or concerns. This makes Ro feel more like a traditional doctor's office with the convenience of telemedicine.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Hims</strong> provides medical consultations as needed but focuses more on the streamlined subscription experience. You can reach out to providers when you need them, but the model is less focused on ongoing physician relationships and more on convenient medication delivery.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Treatment Customization</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> excels at customization. They offer more dosing options, flexible regimens, and will work with you to find the exact right treatment. If you need a specific dose or want to combine treatments, Ro's physicians are more likely to accommodate custom requests.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Hims</strong> offers standard dosing options that cover most users' needs. While they have multiple options, the focus is on proven, straightforward treatment plans rather than highly customized regimens.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Platform & Experience</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> has a more premium, polished feel. Their website, mobile experience, and communication feel more like working with a traditional high-end medical practice. The experience emphasizes quality, professionalism, and thoroughness.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Hims</strong> optimizes for simplicity and speed. Their platform is designed to get you from consultation to medication as quickly as possible. It's more casual, more consumer-friendly, and faster - but perhaps less "medical" in tone.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Shipping & Logistics</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hims</strong> ships faster (2-3 days vs 3-5 days). Both offer discreet packaging, automatic refills, and easy subscription management. Both let you cancel or pause anytime.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Our Recommendation</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Choose <strong>Ro</strong> if you value ongoing physician relationships, want highly customized treatment, or prefer a premium medical experience. Ro is ideal for users who appreciate thoroughness, want flexible dosing, or have specific medical needs requiring physician consultation.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Choose <strong>Hims</strong> if you want the fastest, most streamlined experience at a competitive price. Hims is perfect for users who know what they need, want minimal friction, and value speed over customization. Their 2-3 day shipping is hard to beat.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-light">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">
+        Common Questions
+      </h2>
+
+      <div class="space-y-4">
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Is Ro worth the higher price?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Ro's pricing is only slightly higher ($5-10/month difference for most treatments). The value comes from ongoing physician access and more customization options. If you value having a doctor available for questions or need flexible dosing, Ro is worth it. If you just want standard ED treatment delivered fast, Hims offers better value.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Do they use the same medications?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Yes, both offer the same FDA-approved medications: generic sildenafil (Viagra), generic tadalafil (Cialis), and brand-name options. They source from licensed U.S. pharmacies. The medications are identical - the difference is in service, customization, and platform experience, not the drugs themselves.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Which has better privacy?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Both offer excellent privacy. Discreet unmarked packaging, confidential online consultations, and private billing. Neither service's name appears on your credit card statement in an obvious way. Both are HIPAA-compliant. From a privacy standpoint, they're equivalent.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Can I use both services for different health needs?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Technically yes, but it's simpler to use one platform. Both Ro and Hims offer multiple health services (ED, hair loss, testosterone, weight loss, etc.). If you need treatment for multiple conditions, pick whichever platform you prefer and consolidate everything there. It's easier to manage and potentially cheaper with bundled treatments.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+</ComparisonLayout>

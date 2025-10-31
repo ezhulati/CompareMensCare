@@ -1,0 +1,305 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BrandCard from '../components/BrandCard.astro';
+import Icon from '../components/Icon.astro';
+import BestForBadge from '../components/BestForBadge.astro';
+
+// Get all brands
+const allBrands = await getCollection('brands');
+
+// Priority labels
+const priorityLabels: Record<string, string> = {
+  affordability: 'Best Value',
+  privacy: 'Maximum Privacy',
+  speed: 'Fast Access',
+  selection: 'Treatment Variety',
+  transparency: 'Price Transparency',
+  ease: 'Easy to Use',
+  support: 'Great Support',
+  insurance: 'Insurance Accepted',
+  comprehensive: 'One-Stop Shop',
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Your Personalized Service Matches',
+  description: 'Your personalized recommendations based on your priorities.',
+};
+---
+
+<BaseLayout
+  title="Your Personalized Matches - CompareMensCare"
+  description="See which men's health services best match your priorities and needs."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 border border-emerald-200 rounded-full text-sm font-medium text-emerald-700 mb-6">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          Your Personalized Matches
+        </div>
+
+        <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+          Services Ranked For You
+        </h1>
+        <p class="text-xl text-slate-600" id="priority-summary">
+          Based on your selected priorities
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results will be inserted here by client-side script -->
+  <div id="results-container" class="section bg-white">
+    <div class="container-custom max-w-5xl">
+      <!-- Loading state -->
+      <div class="text-center py-12">
+        <div class="inline-flex items-center gap-3 text-slate-600">
+          <svg class="animate-spin h-8 w-8 text-brand-accent" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span class="text-lg">Calculating your best matches...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No Priorities Selected State -->
+  <section id="no-priorities" class="section bg-white hidden">
+    <div class="container-custom max-w-2xl text-center">
+      <div class="card p-8">
+        <div class="w-16 h-16 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto mb-4">
+          <Icon name="info" class="w-8 h-8" />
+        </div>
+        <h2 class="text-2xl font-bold text-slate-900 mb-3">
+          No Priorities Selected
+        </h2>
+        <p class="text-slate-600 mb-6">
+          To see personalized matches, please select your priorities first.
+        </p>
+        <a href="/" class="btn-primary">
+          Select Your Priorities
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Actions Section -->
+  <section class="section-light border-t border-slate-200">
+    <div class="container-custom max-w-4xl text-center">
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">
+        Want Different Results?
+      </h2>
+      <p class="text-slate-600 mb-6">
+        You can adjust your priorities anytime to get new recommendations.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <button id="reset-priorities-btn" class="btn-outline">
+          <Icon name="refresh" class="w-4 h-4 inline-block mr-2" />
+          Reset Priorities
+        </button>
+        <a href="/" class="btn-primary">
+          Browse All Services
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ allBrands, priorityLabels }}>
+  // Calculate match score for a brand based on user priorities
+  function calculateMatchScore(brand, userPriorities) {
+    if (!brand.data.priorities || userPriorities.length === 0) {
+      return 0;
+    }
+
+    let totalScore = 0;
+    let maxPossibleScore = 0;
+
+    userPriorities.forEach((priority) => {
+      const score = brand.data.priorities[priority] || 0;
+      totalScore += score;
+      maxPossibleScore += 10; // Max score per priority is 10
+    });
+
+    // Return percentage match (0-100)
+    return maxPossibleScore > 0 ? Math.round((totalScore / maxPossibleScore) * 100) : 0;
+  }
+
+  // Get score breakdown for visualization
+  function getScoreBreakdown(brand, userPriorities) {
+    if (!brand.data.priorities) return [];
+
+    return userPriorities.map((priority) => ({
+      priority,
+      label: priorityLabels[priority] || priority,
+      score: brand.data.priorities[priority] || 0,
+      maxScore: 10,
+    }));
+  }
+
+  // Render results
+  function renderResults() {
+    const resultsContainer = document.getElementById('results-container');
+    const noPrioritiesSection = document.getElementById('no-priorities');
+    const prioritySummary = document.getElementById('priority-summary');
+
+    if (!resultsContainer || !noPrioritiesSection || !prioritySummary) return;
+
+    // Load priorities from localStorage
+    let userPriorities = [];
+    try {
+      const saved = localStorage.getItem('userPriorities');
+      if (saved) {
+        userPriorities = JSON.parse(saved);
+      }
+    } catch (e) {
+      console.error('Failed to load priorities:', e);
+    }
+
+    // Show no priorities state if empty
+    if (userPriorities.length === 0) {
+      resultsContainer.classList.add('hidden');
+      noPrioritiesSection.classList.remove('hidden');
+      return;
+    }
+
+    // Update priority summary
+    const priorityNames = userPriorities.map((p) => priorityLabels[p]).join(', ');
+    prioritySummary.textContent = `Ranked by: ${priorityNames}`;
+
+    // Calculate scores and sort brands
+    const brandsWithScores = allBrands.map((brand) => ({
+      brand,
+      score: calculateMatchScore(brand, userPriorities),
+      breakdown: getScoreBreakdown(brand, userPriorities),
+    }));
+
+    // Sort by score descending
+    brandsWithScores.sort((a, b) => b.score - a.score);
+
+    // Render results
+    const html = `
+      <div class="container-custom max-w-5xl">
+        <div class="mb-8 text-center">
+          <p class="text-slate-600">
+            Showing ${brandsWithScores.length} services ranked by your priorities
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          ${brandsWithScores.map((item, index) => {
+            const { brand, score, breakdown } = item;
+            const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '';
+
+            return `
+              <div class="card p-6 ${index < 3 ? 'ring-2 ring-brand-accent/20' : ''}">
+                <div class="flex items-start gap-6">
+                  <!-- Rank & Score -->
+                  <div class="text-center flex-shrink-0">
+                    <div class="text-3xl mb-1">${medal || `#${index + 1}`}</div>
+                    <div class="text-3xl font-bold text-brand-accent mb-1">${score}%</div>
+                    <div class="text-xs text-slate-500">Match</div>
+                  </div>
+
+                  <!-- Brand Info -->
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-start justify-between mb-3">
+                      <div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-1">
+                          ${brand.data.title}
+                        </h3>
+                        <div class="flex items-center gap-2 mb-2">
+                          <div class="flex items-center">
+                            ${Array.from({ length: 5 }).map((_, i) => `
+                              <svg class="w-4 h-4 ${i < Math.floor(brand.data.rating) ? 'text-yellow-400' : 'text-slate-300'}" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                              </svg>
+                            `).join('')}
+                          </div>
+                          <span class="text-sm text-slate-600">${brand.data.rating}/5</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                          ${brand.data.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Score Breakdown -->
+                    <div class="mb-4">
+                      <div class="text-sm font-semibold text-slate-700 mb-2">
+                        Why This Match:
+                      </div>
+                      <div class="space-y-2">
+                        ${breakdown.map((item) => `
+                          <div>
+                            <div class="flex items-center justify-between text-sm mb-1">
+                              <span class="text-slate-600">${item.label}</span>
+                              <span class="font-semibold text-slate-900">${item.score}/10</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                              <div
+                                class="bg-brand-accent rounded-full h-2 transition-all duration-500"
+                                style="width: ${(item.score / item.maxScore) * 100}%"
+                              ></div>
+                            </div>
+                          </div>
+                        `).join('')}
+                      </div>
+                    </div>
+
+                    <!-- Pricing & CTA -->
+                    <div class="flex items-center justify-between gap-4 pt-4 border-t border-slate-200">
+                      <div>
+                        <div class="text-sm text-slate-600">Starting at</div>
+                        <div class="text-2xl font-bold text-slate-900">
+                          ${brand.data.pricing.medicationFrom || brand.data.pricing.consultationFee}
+                        </div>
+                      </div>
+                      <a
+                        href="${brand.data.affiliateLink}"
+                        class="btn-primary"
+                        rel="noopener noreferrer sponsored"
+                        data-affiliate-id="${brand.data.affiliateId}"
+                      >
+                        Visit ${brand.data.title}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+
+    resultsContainer.innerHTML = html;
+  }
+
+  // Reset priorities
+  const resetBtn = document.getElementById('reset-priorities-btn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      if (confirm('This will clear your selected priorities. Continue?')) {
+        localStorage.removeItem('userPriorities');
+        sessionStorage.removeItem('selectedPriorities');
+        window.location.href = '/';
+      }
+    });
+  }
+
+  // Render on load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderResults);
+  } else {
+    renderResults();
+  }
+</script>

@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
+import QuickPicks from '../components/QuickPicks.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import PrivacyAssurance from '../components/PrivacyAssurance.astro';
 import type { Brand } from '../components/ComparisonTable.astro';
 import Icon from '../components/Icon.astro';
 
@@ -91,6 +94,34 @@ const brands: Brand[] = [
   },
 ];
 
+// Quick picks for this category
+const quickPicks = [
+  {
+    segment: 'budget' as const,
+    brandName: 'BetterHelp',
+    brandSlug: 'betterhelp',
+    detail: '$65-100/week, flexible plans',
+  },
+  {
+    segment: 'privacy' as const,
+    brandName: 'Talkspace',
+    brandSlug: 'talkspace',
+    detail: 'Confidential messaging, HIPAA',
+  },
+  {
+    segment: 'speed' as const,
+    brandName: 'BetterHelp',
+    brandSlug: 'betterhelp',
+    detail: '24hr matching, instant messaging',
+  },
+  {
+    segment: 'quality' as const,
+    brandName: 'Cerebral',
+    brandSlug: 'cerebral',
+    detail: 'Psychiatry + therapy, Rx available',
+  },
+];
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'MedicalWebPage',
@@ -160,6 +191,31 @@ const schema = {
           <div class="text-sm text-slate-600">Therapists</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Quick Picks Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <QuickPicks picks={quickPicks} category="Mental Health" />
+    </div>
+  </section>
+
+  <!-- Privacy Assurance -->
+  <section class="py-8 bg-white">
+    <div class="container-custom">
+      <PrivacyAssurance />
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="py-6 bg-white">
+    <div class="container-custom">
+      <TrustSignals
+        lastUpdated={new Date()}
+        reviewsCount={18000}
+        servicesCompared={10}
+      />
     </div>
   </section>
 

@@ -1,0 +1,99 @@
+---
+import { CircleDollarSign, Shield, Zap, Award, ArrowRight } from 'lucide-astro';
+
+interface QuickPick {
+  segment: 'budget' | 'privacy' | 'speed' | 'quality';
+  brandName: string;
+  brandSlug: string;
+  detail: string;
+}
+
+interface Props {
+  picks: QuickPick[];
+  category?: string;
+}
+
+const { picks, category } = Astro.props;
+
+const segmentConfig = {
+  budget: {
+    label: 'Tightest Budget?',
+    cardClass: 'quick-pick-card-budget',
+    iconColor: 'text-emerald-600',
+  },
+  privacy: {
+    label: 'Maximum Privacy?',
+    cardClass: 'quick-pick-card-privacy',
+    iconColor: 'text-purple-600',
+  },
+  speed: {
+    label: 'Fastest Results?',
+    cardClass: 'quick-pick-card-speed',
+    iconColor: 'text-amber-600',
+  },
+  quality: {
+    label: 'Best Medical Care?',
+    cardClass: 'quick-pick-card-quality',
+    iconColor: 'text-blue-600',
+  },
+};
+
+const iconMap = {
+  budget: CircleDollarSign,
+  privacy: Shield,
+  speed: Zap,
+  quality: Award,
+};
+---
+
+<section class="mb-12">
+  <div class="mb-6">
+    <h2 class="text-2xl font-bold text-slate-900 mb-2">
+      Quick Picks{category ? ` - ${category}` : ''}
+    </h2>
+    <p class="text-slate-600">
+      Jump straight to the best option for your top priority
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+    {picks.map((pick) => {
+      const config = segmentConfig[pick.segment];
+      const IconComponent = iconMap[pick.segment];
+      return (
+        <a
+          href={`/${pick.brandSlug}`}
+          class={`${config.cardClass} group`}
+        >
+          <div class="flex items-center justify-between mb-3">
+            <div class={`w-10 h-10 rounded-lg bg-white shadow-sm flex items-center justify-center ${config.iconColor}`}>
+              <IconComponent class="w-6 h-6" />
+            </div>
+            <ArrowRight class="w-4 h-4 text-slate-400 group-hover:text-slate-600 group-hover:translate-x-1 transition-all" />
+          </div>
+
+          <div class="quick-pick-label">
+            {config.label}
+          </div>
+
+          <div class="quick-pick-brand">
+            {pick.brandName}
+          </div>
+
+          <div class="quick-pick-detail">
+            {pick.detail}
+          </div>
+        </a>
+      );
+    })}
+  </div>
+
+  <div class="mt-6 text-center">
+    <p class="text-sm text-slate-600">
+      Not sure which matters most?
+      <a href="#comparison" class="text-brand-accent hover:underline font-medium">
+        View full comparison below
+      </a>
+    </p>
+  </div>
+</section>

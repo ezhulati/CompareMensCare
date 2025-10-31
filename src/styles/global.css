@@ -107,6 +107,139 @@
     @apply badge bg-medical-blue-50 text-medical-trust border-medical-blue-200/50;
   }
 
+  /* Filter Chip Styles */
+  .filter-chip {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer border-2;
+  }
+
+  .filter-chip-inactive {
+    @apply filter-chip bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50;
+  }
+
+  .filter-chip-active {
+    @apply filter-chip bg-brand-accent text-white border-brand-accent hover:bg-blue-600 shadow-sm;
+  }
+
+  .filter-chip-icon {
+    @apply w-4 h-4 transition-transform group-hover:scale-110;
+  }
+
+  .filter-chip-remove {
+    @apply w-4 h-4 rounded-full hover:bg-white/20 transition-colors cursor-pointer;
+  }
+
+  /* Quick Pick Styles */
+  .quick-pick-card {
+    @apply card p-4 hover:shadow-md transition-all duration-200 border-l-4;
+  }
+
+  .quick-pick-card-budget {
+    @apply quick-pick-card border-l-emerald-500 bg-emerald-50/30 hover:bg-emerald-50/50;
+  }
+
+  .quick-pick-card-privacy {
+    @apply quick-pick-card border-l-purple-500 bg-purple-50/30 hover:bg-purple-50/50;
+  }
+
+  .quick-pick-card-speed {
+    @apply quick-pick-card border-l-amber-500 bg-amber-50/30 hover:bg-amber-50/50;
+  }
+
+  .quick-pick-card-quality {
+    @apply quick-pick-card border-l-blue-500 bg-blue-50/30 hover:bg-blue-50/50;
+  }
+
+  .quick-pick-label {
+    @apply text-xs font-semibold uppercase tracking-wide text-slate-600 mb-1;
+  }
+
+  .quick-pick-brand {
+    @apply font-bold text-lg text-slate-900 mb-1;
+  }
+
+  .quick-pick-detail {
+    @apply text-sm text-slate-600;
+  }
+
+  /* Segment Badge Styles */
+  .segment-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold shadow-sm transition-all duration-200 hover:scale-105;
+  }
+
+  .segment-badge-budget {
+    @apply segment-badge bg-emerald-500 text-white border border-emerald-600;
+  }
+
+  .segment-badge-privacy {
+    @apply segment-badge bg-purple-500 text-white border border-purple-600;
+  }
+
+  .segment-badge-speed {
+    @apply segment-badge bg-amber-500 text-white border border-amber-600;
+  }
+
+  .segment-badge-quality {
+    @apply segment-badge bg-blue-500 text-white border border-blue-600;
+  }
+
+  .segment-badge-comprehensive {
+    @apply segment-badge bg-indigo-500 text-white border border-indigo-600;
+  }
+
+  /* Privacy Indicator Styles */
+  .privacy-assurance {
+    @apply bg-purple-50 border-2 border-purple-200 rounded-xl p-6;
+  }
+
+  .privacy-assurance-header {
+    @apply flex items-center gap-2 text-purple-900 font-bold text-lg mb-4;
+  }
+
+  .privacy-assurance-list {
+    @apply grid md:grid-cols-2 gap-3;
+  }
+
+  .privacy-assurance-item {
+    @apply flex items-center gap-2 text-sm text-purple-800;
+  }
+
+  .privacy-assurance-icon {
+    @apply w-5 h-5 text-purple-600 flex-shrink-0;
+  }
+
+  /* Trust Signal Enhanced Styles */
+  .trust-callout {
+    @apply bg-blue-50 border-l-4 border-l-blue-500 rounded-r-lg p-5 shadow-sm;
+  }
+
+  .trust-callout-header {
+    @apply flex items-center gap-2 text-blue-900 font-semibold text-base mb-3;
+  }
+
+  .trust-callout-icon {
+    @apply w-5 h-5 text-blue-600;
+  }
+
+  .trust-callout-body {
+    @apply text-sm text-blue-800 leading-relaxed;
+  }
+
+  .trust-callout-list {
+    @apply space-y-2 mt-3;
+  }
+
+  .trust-callout-item {
+    @apply flex items-start gap-2 text-sm text-blue-800;
+  }
+
+  .trust-callout-check {
+    @apply w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5;
+  }
+
+  .trust-callout-link {
+    @apply text-blue-600 hover:text-blue-700 font-medium underline;
+  }
+
   /* Medical-Specific Card Styles */
   .card-medical {
     @apply card border-l-4 border-l-medical-blue bg-medical-blue-light/20;

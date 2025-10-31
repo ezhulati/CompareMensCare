@@ -1,0 +1,167 @@
+---
+import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+
+const comparisonData = {
+  brand1Slug: 'keeps',
+  brand2Slug: 'hims',
+  category: 'hair-health',
+  verdict: {
+    brand1BestFor: 'Best for budget-conscious users who want the lowest price on finasteride with proven results.',
+    brand2BestFor: 'Best for users who value convenience, want combination treatments, and don\'t mind paying a bit more.',
+  },
+  comparisonTable: [
+    {
+      feature: 'Starting Price',
+      brand1Value: '$7/month',
+      brand2Value: '$25/month',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Consultation Fee',
+      brand1Value: 'Free',
+      brand2Value: 'Free',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Finasteride (Generic)',
+      brand1Value: '$7-20/month',
+      brand2Value: '$25-40/month',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Minoxidil',
+      brand1Value: '$15-25/month',
+      brand2Value: '$15-30/month',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Combination Treatments',
+      brand1Value: 'Available',
+      brand2Value: 'Multiple bundles',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Brand-Name Option',
+      brand1Value: 'No',
+      brand2Value: 'Propecia available',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Shipping Speed',
+      brand1Value: '5-7 days',
+      brand2Value: '2-3 days',
+      winner: '2' as const,
+    },
+    {
+      feature: 'First Order Discount',
+      brand1Value: '50% off',
+      brand2Value: 'Varies by promo',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Cancel Anytime',
+      brand1Value: 'Yes',
+      brand2Value: 'Yes',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Additional Products',
+      brand1Value: 'Hair only',
+      brand2Value: 'Full wellness',
+      winner: '2' as const,
+    },
+  ],
+};
+---
+
+<ComparisonLayout {...comparisonData}>
+  <!-- Additional comparison content -->
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">
+        Detailed Comparison
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Price Comparison</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Keeps</strong> is the clear winner on price, with finasteride starting at just $7/month when you take advantage of their 50% off first order discount. Their regular pricing ranges from $14-20/month for finasteride and $15-25/month for minoxidil.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Hims</strong> starts at $25/month for finasteride and goes up to $40/month. While more expensive, Hims offers more treatment bundles and includes brand-name Propecia as an option for those who prefer it over generic finasteride.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Treatment Options</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Both services offer the FDA-approved treatments proven to work: finasteride (oral) and minoxidil (topical). Both also offer combination treatments for maximum effectiveness.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Hims</strong> has a slight edge in variety, offering more bundle options, brand-name medications, and even prescription shampoos. <strong>Keeps</strong> focuses exclusively on hair loss, offering the core treatments at the best prices.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Convenience & Experience</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hims</strong> offers faster shipping (2-3 days vs 5-7 days) and a more comprehensive platform that includes other men's health services. If you're interested in addressing multiple health concerns (ED, testosterone, skincare), Hims provides a one-stop solution.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Keeps</strong> provides a streamlined, focused experience. Their consultation is quick, their pricing is transparent, and they specialize solely in hair loss. No upsells, no distractions.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Our Recommendation</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Choose <strong>Keeps</strong> if you're primarily focused on getting the lowest price on proven hair loss treatments. Their $7/month finasteride is hard to beat, and their 50% off first order makes it easy to try without a big commitment.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Choose <strong>Hims</strong> if you value speed, want access to multiple treatment bundles, or plan to use their platform for other health services. While pricier, their faster shipping and broader selection justify the cost for many users.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-light">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">
+        Common Questions
+      </h2>
+
+      <div class="space-y-4">
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Is Keeps finasteride the same as Hims finasteride?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Yes, both services offer the same generic finasteride (1mg tablets). They source from FDA-approved pharmacies and undergo the same quality standards. The medication is identical - the difference is in pricing, shipping speed, and overall platform features.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Can I switch from Keeps to Hims or vice versa?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Absolutely. Both services allow you to cancel anytime without penalty. Since you're taking the same medication, you can easily switch between providers. Some users start with Keeps for the low price, then switch to Hims if they want faster shipping or additional services.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Which one has better customer support?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Both offer responsive customer support via email and chat. Hims has slightly faster response times and offers phone support, while Keeps focuses on email and chat. In practice, most users find both services responsive to questions about orders, consultations, or treatment adjustments.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+</ComparisonLayout>

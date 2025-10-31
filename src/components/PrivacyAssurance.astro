@@ -1,0 +1,72 @@
+---
+import { Shield, Check } from 'lucide-astro';
+
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+{compact ? (
+  <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-6">
+    <div class="flex items-center gap-2 text-purple-900 font-semibold text-sm mb-2">
+      <Shield class="w-4 h-4" />
+      <span>Your Privacy Matters</span>
+    </div>
+    <p class="text-xs text-purple-800">
+      All services offer discreet packaging, private billing, HIPAA compliance, and confidential consultations.
+    </p>
+  </div>
+) : (
+  <div class="privacy-assurance mb-8">
+    <div class="privacy-assurance-header">
+      <Shield class="privacy-assurance-icon" />
+      <span>Your Privacy Matters</span>
+    </div>
+
+    <p class="text-sm text-purple-800 mb-4">
+      We understand privacy is crucial for sensitive health matters. All services on this page provide:
+    </p>
+
+    <div class="privacy-assurance-list">
+      <div class="privacy-assurance-item">
+        <Check class="privacy-assurance-icon" />
+        <div>
+          <div class="font-semibold">Discreet Packaging</div>
+          <div class="text-xs text-purple-700">No external labels indicating medical contents</div>
+        </div>
+      </div>
+
+      <div class="privacy-assurance-item">
+        <Check class="privacy-assurance-icon" />
+        <div>
+          <div class="font-semibold">Private Billing</div>
+          <div class="text-xs text-purple-700">Generic billing descriptions on statements</div>
+        </div>
+      </div>
+
+      <div class="privacy-assurance-item">
+        <Check class="privacy-assurance-icon" />
+        <div>
+          <div class="font-semibold">HIPAA Compliant</div>
+          <div class="text-xs text-purple-700">Your medical data is protected by law</div>
+        </div>
+      </div>
+
+      <div class="privacy-assurance-item">
+        <Check class="privacy-assurance-icon" />
+        <div>
+          <div class="font-semibold">Confidential Consultations</div>
+          <div class="text-xs text-purple-700">Private communication with licensed physicians</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4 pt-4 border-t border-purple-200">
+      <p class="text-sm text-purple-700">
+        Learn more about <a href="/privacy" class="font-semibold hover:underline">how we protect your privacy →</a>
+      </p>
+    </div>
+  </div>
+)}

@@ -1,10 +1,30 @@
 ---
-import Icon from './Icon.astro';
+import {
+  Heart,
+  Sparkles,
+  Activity,
+  TrendingDown,
+  Brain,
+  Stethoscope,
+  UserPlus,
+  ArrowLeftRight,
+  DollarSign,
+  Shield,
+  ShieldCheck,
+  Zap,
+  CircleDollarSign,
+  TrendingUp,
+  Calendar,
+  Layers,
+  Lock,
+  Clock,
+  CalendarDays,
+  CalendarCheck
+} from 'lucide-astro';
 
 interface Category {
   id: string;
   label: string;
-  icon: string;
   description: string;
 }
 
@@ -12,40 +32,43 @@ const categories: Category[] = [
   {
     id: 'sexual-health',
     label: 'Sexual Health',
-    icon: 'sexual-health',
     description: 'ED treatments & sexual wellness',
   },
   {
     id: 'hair-health',
     label: 'Hair Health',
-    icon: 'hair-health',
     description: 'Hair loss treatments',
   },
   {
     id: 'testosterone',
     label: 'Testosterone',
-    icon: 'testosterone',
     description: 'TRT & hormone optimization',
   },
   {
     id: 'weight-loss',
     label: 'Weight Loss',
-    icon: 'weight-loss',
     description: 'GLP-1 & weight management',
   },
   {
     id: 'mental-health',
     label: 'Mental Health',
-    icon: 'mental-health',
     description: 'Therapy & psychiatric care',
   },
   {
     id: 'diagnostics',
     label: 'Diagnostics',
-    icon: 'diagnostics',
     description: 'At-home health testing',
   },
 ];
+
+const categoryIcons: Record<string, any> = {
+  'sexual-health': Heart,
+  'hair-health': Sparkles,
+  'testosterone': Activity,
+  'weight-loss': TrendingDown,
+  'mental-health': Brain,
+  'diagnostics': Stethoscope,
+};
 ---
 
 <div class="guided-matcher bg-white rounded-3xl border border-slate-200 p-8 lg:p-12 shadow-sm">
@@ -72,23 +95,26 @@ const categories: Category[] = [
     </div>
 
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-      {categories.map((category) => (
-        <button
-          type="button"
-          data-category={category.id}
-          class="category-card group relative card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring"
-        >
-          <div class="flex justify-center mb-3 text-brand-accent transition-transform duration-200 group-hover:scale-110">
-            <Icon name={category.icon} size="xl" />
-          </div>
-          <h3 class="font-semibold text-slate-900 mb-1 group-hover:text-brand-accent transition-colors">
-            {category.label}
-          </h3>
-          <p class="text-sm text-slate-600">
-            {category.description}
-          </p>
-        </button>
-      ))}
+      {categories.map((category) => {
+        const IconComponent = categoryIcons[category.id];
+        return (
+          <button
+            type="button"
+            data-category={category.id}
+            class="category-card group relative card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring"
+          >
+            <div class="flex justify-center mb-3 text-brand-accent transition-transform duration-200 group-hover:scale-110">
+              <IconComponent class="w-12 h-12" />
+            </div>
+            <h3 class="font-semibold text-slate-900 mb-1 group-hover:text-brand-accent transition-colors">
+              {category.label}
+            </h3>
+            <p class="text-sm text-slate-600">
+              {category.description}
+            </p>
+          </button>
+        );
+      })}
     </div>
   </div>
 
@@ -116,7 +142,7 @@ const categories: Category[] = [
         class="experience-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group"
       >
         <div class="flex justify-center mb-3 text-emerald-600">
-          <Icon name="novice" size="xl" />
+          <UserPlus class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">First Timer</h3>
         <p class="text-sm text-slate-600">
@@ -130,7 +156,7 @@ const categories: Category[] = [
         class="experience-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group"
       >
         <div class="flex justify-center mb-3 text-blue-600">
-          <Icon name="comparison" size="xl" />
+          <ArrowLeftRight class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Switching Services</h3>
         <p class="text-sm text-slate-600">
@@ -144,7 +170,7 @@ const categories: Category[] = [
         class="experience-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group"
       >
         <div class="flex justify-center mb-3 text-emerald-600">
-          <Icon name="price" size="xl" />
+          <DollarSign class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Finding Value</h3>
         <p class="text-sm text-slate-600">
@@ -178,7 +204,7 @@ const categories: Category[] = [
         class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
       >
         <div class="flex mb-3 text-purple-600">
-          <Icon name="privacy" size="xl" />
+          <Shield class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Privacy & Discretion</h3>
         <p class="text-sm text-slate-600">
@@ -192,7 +218,7 @@ const categories: Category[] = [
         class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
       >
         <div class="flex mb-3 text-blue-600">
-          <Icon name="safety" size="xl" />
+          <ShieldCheck class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Safety & Trust</h3>
         <p class="text-sm text-slate-600">
@@ -206,7 +232,7 @@ const categories: Category[] = [
         class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
       >
         <div class="flex mb-3 text-amber-600">
-          <Icon name="ease" size="xl" />
+          <Zap class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Easy Process</h3>
         <p class="text-sm text-slate-600">
@@ -220,7 +246,7 @@ const categories: Category[] = [
         class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
       >
         <div class="flex mb-3 text-emerald-600">
-          <Icon name="cost" size="xl" />
+          <CircleDollarSign class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Affordable Cost</h3>
         <p class="text-sm text-slate-600">
@@ -254,7 +280,7 @@ const categories: Category[] = [
         class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
       >
         <div class="flex mb-3 text-red-600">
-          <Icon name="price-high" size="xl" />
+          <TrendingUp class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Too Expensive</h3>
         <p class="text-sm text-slate-600">
@@ -268,7 +294,7 @@ const categories: Category[] = [
         class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
       >
         <div class="flex mb-3 text-blue-600">
-          <Icon name="flexibility" size="xl" />
+          <Calendar class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Lack of Flexibility</h3>
         <p class="text-sm text-slate-600">
@@ -282,7 +308,7 @@ const categories: Category[] = [
         class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
       >
         <div class="flex mb-3 text-indigo-600">
-          <Icon name="selection" size="xl" />
+          <Layers class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Limited Options</h3>
         <p class="text-sm text-slate-600">
@@ -296,7 +322,7 @@ const categories: Category[] = [
         class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
       >
         <div class="flex mb-3 text-purple-600">
-          <Icon name="privacy-compare" size="xl" />
+          <Lock class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Privacy Concerns</h3>
         <p class="text-sm text-slate-600">
@@ -330,7 +356,7 @@ const categories: Category[] = [
         class="concern-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group"
       >
         <div class="flex justify-center mb-3 text-slate-600">
-          <Icon name="occasional" size="xl" />
+          <Clock class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Occasionally</h3>
         <p class="text-sm text-slate-600">
@@ -344,7 +370,7 @@ const categories: Category[] = [
         class="concern-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group"
       >
         <div class="flex justify-center mb-3 text-blue-600">
-          <Icon name="regular" size="xl" />
+          <CalendarDays class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Regularly</h3>
         <p class="text-sm text-slate-600">
@@ -358,7 +384,7 @@ const categories: Category[] = [
         class="concern-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group"
       >
         <div class="flex justify-center mb-3 text-emerald-600">
-          <Icon name="daily" size="xl" />
+          <CalendarCheck class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Daily</h3>
         <p class="text-sm text-slate-600">

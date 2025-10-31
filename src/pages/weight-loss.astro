@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
+import QuickPicks from '../components/QuickPicks.astro';
+import TrustSignals from '../components/TrustSignals.astro';
 import Icon from '../components/Icon.astro';
 import type { Brand } from '../components/ComparisonTable.astro';
 
@@ -91,6 +93,34 @@ const brands: Brand[] = [
   },
 ];
 
+// Quick picks for this category
+const quickPicks = [
+  {
+    segment: 'budget' as const,
+    brandName: 'Hims',
+    brandSlug: 'hims',
+    detail: '$199/month, no consult fee',
+  },
+  {
+    segment: 'privacy' as const,
+    brandName: 'Ro',
+    brandSlug: 'ro',
+    detail: 'Discreet packaging & billing',
+  },
+  {
+    segment: 'speed' as const,
+    brandName: 'Hims',
+    brandSlug: 'hims',
+    detail: 'Fast approval, quick start',
+  },
+  {
+    segment: 'quality' as const,
+    brandName: 'Ro',
+    brandSlug: 'ro',
+    detail: 'Brand-name meds, MD oversight',
+  },
+];
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'MedicalWebPage',
@@ -160,6 +190,24 @@ const schema = {
           <div class="text-sm text-slate-600">Approved</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Quick Picks Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <QuickPicks picks={quickPicks} category="Weight Loss" />
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="py-6 bg-white">
+    <div class="container-custom">
+      <TrustSignals
+        lastUpdated={new Date()}
+        reviewsCount={10000}
+        servicesCompared={6}
+      />
     </div>
   </section>
 

@@ -1,0 +1,192 @@
+---
+import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+
+const comparisonData = {
+  brand1Slug: 'bluechew',
+  brand2Slug: 'hims',
+  category: 'sexual-health',
+  verdict: {
+    brand1BestFor: 'Best for budget users who want chewable ED meds without a consultation fee. Lowest monthly cost.',
+    brand2BestFor: 'Best for users who want traditional pills, faster shipping, and access to multiple treatment options including brand-name Viagra/Cialis.',
+  },
+  comparisonTable: [
+    {
+      feature: 'Starting Price',
+      brand1Value: '$20/month',
+      brand2Value: '$44/month',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Consultation Fee',
+      brand1Value: 'Free',
+      brand2Value: 'Free',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Medication Format',
+      brand1Value: 'Chewable only',
+      brand2Value: 'Pills & chewables',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Sildenafil (Generic Viagra)',
+      brand1Value: '$20-40/month',
+      brand2Value: '$44-85/month',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Tadalafil (Generic Cialis)',
+      brand1Value: '$20-60/month',
+      brand2Value: '$44-95/month',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Brand-Name Options',
+      brand1Value: 'No',
+      brand2Value: 'Viagra & Cialis',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Daily vs On-Demand',
+      brand1Value: 'Both available',
+      brand2Value: 'Both available',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Shipping Speed',
+      brand1Value: '5-7 days',
+      brand2Value: '2-3 days',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Discreet Packaging',
+      brand1Value: 'Yes',
+      brand2Value: 'Yes',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Cancel Anytime',
+      brand1Value: 'Yes',
+      brand2Value: 'Yes',
+      winner: 'tie' as const,
+    },
+  ],
+};
+---
+
+<ComparisonLayout {...comparisonData}>
+  <!-- Additional comparison content -->
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">
+        Detailed Comparison
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Price Comparison</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>BlueChew</strong> is significantly cheaper, with plans starting at $20/month for 6 chewable tablets. Their most popular plan is $30/month for sildenafil or $40-60/month for tadalafil, depending on dose and quantity.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Hims</strong> starts at $44/month for generic sildenafil pills and goes up to $95/month for tadalafil. They also offer brand-name Viagra and Cialis at premium prices ($140-200/month). While more expensive, you get faster shipping and more delivery format options.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Medication Format</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>BlueChew's</strong> unique selling point is chewable tablets. These dissolve quickly, work slightly faster than pills, and don't require water. Some users prefer the convenience, especially for spontaneous situations. The chewable format may also absorb faster for quicker onset.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Hims</strong> offers traditional pills as well as chewable options. If you prefer the familiar pill format or want access to brand-name medications (Viagra, Cialis), Hims is your only option. They also provide hard mints for ED treatment, giving you more choices in delivery format.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Treatment Options</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Both services offer:
+        </p>
+        <ul class="list-disc pl-6 text-slate-600 mb-6 space-y-2">
+          <li><strong>Sildenafil</strong> (generic Viagra): Takes effect in 30-60 min, lasts 4-6 hours</li>
+          <li><strong>Tadalafil</strong> (generic Cialis): Takes effect in 30-60 min, lasts up to 36 hours</li>
+          <li><strong>Daily vs on-demand dosing</strong>: Choose based on frequency of use</li>
+        </ul>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          The medications are clinically equivalent. The main differences are format (chewable vs pill) and price.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Privacy & Discretion</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Both services ship in unmarked packaging with no indication of contents. Both offer confidential online consultations with licensed physicians. Neither service requires an in-person doctor visit.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Hims</strong> ships faster (2-3 days vs 5-7 days), which may matter if you value getting your medication quickly and discreetly.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Our Recommendation</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Choose <strong>BlueChew</strong> if you want the lowest price and don't mind the chewable format. At $20-30/month, it's nearly half the cost of Hims. The chewables work just as well and may even absorb slightly faster. Great for budget-conscious users.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Choose <strong>Hims</strong> if you prefer traditional pills, want faster shipping, or value having access to brand-name options. Their broader platform also covers hair loss, skin, and other men's health, making it convenient if you need multiple services.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-light">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">
+        Common Questions
+      </h2>
+
+      <div class="space-y-4">
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Are BlueChew chewables as effective as Hims pills?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Yes. Both contain the same active ingredients (sildenafil or tadalafil) at the same doses. The chewable format may actually work slightly faster since it absorbs through the oral mucosa. Clinical effectiveness is identical - the difference is purely in format and user preference.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Do I need a prescription for both services?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Yes, both require a prescription. However, both services include a free online medical consultation with a licensed physician as part of their subscription. You fill out a health questionnaire, and if approved, the doctor writes the prescription. No in-person visit needed.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Can I try one and switch to the other?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Absolutely. Both services let you cancel anytime. Many users start with BlueChew for the lower price, then switch to Hims if they prefer pills or want faster shipping. Or vice versa - some try Hims first, then switch to BlueChew to save money once they know chewables work for them.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Which one has better customer reviews?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Both have strong reviews (4.4-4.5/5 stars). BlueChew users love the low price and chewable format. Hims users appreciate the fast shipping and professional platform. Complaints for BlueChew center on slower shipping; for Hims, the main complaint is higher pricing. Both have excellent customer support.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+</ComparisonLayout>
