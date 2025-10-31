@@ -29,7 +29,9 @@ import {
   BarChart,
   TestTube,
   FileText,
-  Search
+  Search,
+  Moon,
+  RefreshCw
 } from 'lucide-astro';
 
 interface Category {
@@ -69,6 +71,16 @@ const categories: Category[] = [
     label: 'Diagnostics',
     description: 'At-home health testing',
   },
+  {
+    id: 'sleep',
+    label: 'Sleep & Insomnia',
+    description: 'Sleep medications & support',
+  },
+  {
+    id: 'herpes',
+    label: 'Herpes Treatment',
+    description: 'Outbreak management & prevention',
+  },
 ];
 
 const categoryIcons: Record<string, any> = {
@@ -78,6 +90,8 @@ const categoryIcons: Record<string, any> = {
   'weight-loss': TrendingDown,
   'mental-health': Brain,
   'diagnostics': Stethoscope,
+  'sleep': Moon,
+  'herpes': ShieldCheck,
 };
 ---
 
@@ -823,6 +837,270 @@ const categoryIcons: Record<string, any> = {
         <div class="flex mb-3 text-emerald-600"><CircleDollarSign class="w-10 h-10 sm:w-11 sm:h-11" /></div>
         <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Most Affordable</h3>
         <p class="text-sm text-slate-600 leading-snug">Budget-friendly testing</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== SLEEP FLOW ========== -->
+  <div id="question-2-sleep" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        What's behind the sleepless nights?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">
+        Different causes need different solutions — let's figure out what's going on
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-3xl mx-auto">
+      <button type="button" data-q2="stress" class="q2-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-orange-600"><Activity class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Work Stress Is Killing My Sleep</h3>
+        <p class="text-sm text-slate-600 leading-snug">Brain won't shut off, thinking about deadlines</p>
+      </button>
+      <button type="button" data-q2="chronic" class="q2-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-red-600"><Calendar class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">I've Been Fighting This for Years</h3>
+        <p class="text-sm text-slate-600 leading-snug">Tried everything, nothing sticks</p>
+      </button>
+      <button type="button" data-q2="acute" class="q2-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-blue-600"><TrendingUp class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Life Just Got Crazy</h3>
+        <p class="text-sm text-slate-600 leading-snug">Big changes, temporary chaos</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-sleep-stress" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        What matters most right now?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">Pick your top priority</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-3xl mx-auto">
+      <button type="button" data-q3="no-hangover" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-green-600"><Zap class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Won't Mess Up My Morning</h3>
+        <p class="text-sm text-slate-600 leading-snug">Need to be sharp for work tomorrow</p>
+      </button>
+      <button type="button" data-q3="non-addictive" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-blue-600"><ShieldCheck class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Not Becoming Dependent</h3>
+        <p class="text-sm text-slate-600 leading-snug">Want something non-habit forming</p>
+      </button>
+      <button type="button" data-q3="fast-sleep" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-purple-600"><Clock class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Need It Fast, Life Can't Wait</h3>
+        <p class="text-sm text-slate-600 leading-snug">Immediate relief, quick delivery</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-sleep-chronic" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        What do you need to finally fix this?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">Choose your priority</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-3xl mx-auto">
+      <button type="button" data-q3="medical-oversight-sleep" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-blue-600"><BadgeCheck class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Real Medical Oversight</h3>
+        <p class="text-sm text-slate-600 leading-snug">Proper diagnosis and monitoring</p>
+      </button>
+      <button type="button" data-q3="affordable-longterm" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-emerald-600"><CircleDollarSign class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Something I Can Afford Long-Term</h3>
+        <p class="text-sm text-slate-600 leading-snug">Sustainable cost for ongoing use</p>
+      </button>
+      <button type="button" data-q3="try-new-sleep" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-purple-600"><RefreshCw class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Honestly, I Need to Try Something New</h3>
+        <p class="text-sm text-slate-600 leading-snug">Willing to experiment with guidance</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-sleep-acute" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        How do you want to handle this?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">Choose your approach</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-3xl mx-auto">
+      <button type="button" data-q3="temporary-sleep" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-blue-600"><Clock class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Get Me Through This, Then I'm Done</h3>
+        <p class="text-sm text-slate-600 leading-snug">Temporary use, no long-term commitment</p>
+      </button>
+      <button type="button" data-q3="private-sleep" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-purple-600"><Lock class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Keep It Totally Private</h3>
+        <p class="text-sm text-slate-600 leading-snug">Maximum discretion and privacy</p>
+      </button>
+      <button type="button" data-q3="simple-sleep" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-green-600"><Zap class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Just Make It Simple</h3>
+        <p class="text-sm text-slate-600 leading-snug">Easy process, no complications</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== HERPES FLOW ========== -->
+  <div id="question-2-herpes" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        Where are you with herpes?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">
+        Everyone's situation is different — let's find what fits yours
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-3xl mx-auto">
+      <button type="button" data-q2="new-diagnosis" class="q2-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-blue-600"><FileText class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Just Got Diagnosed</h3>
+        <p class="text-sm text-slate-600 leading-snug">Still processing this, need to understand it</p>
+      </button>
+      <button type="button" data-q2="frequent" class="q2-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-red-600"><RefreshCw class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Outbreaks Won't Stop</h3>
+        <p class="text-sm text-slate-600 leading-snug">Having them way too often, need better control</p>
+      </button>
+      <button type="button" data-q2="relationship" class="q2-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-purple-600"><Heart class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Protecting My Partner</h3>
+        <p class="text-sm text-slate-600 leading-snug">In a relationship, want to minimize their risk</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-herpes-new-diagnosis" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        What do you need most right now?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">Choose your priority</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-3xl mx-auto">
+      <button type="button" data-q3="understand-herpes" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-blue-600"><FileText class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Help Me Understand This</h3>
+        <p class="text-sm text-slate-600 leading-snug">Education and context</p>
+      </button>
+      <button type="button" data-q3="max-discretion" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-purple-600"><Lock class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Maximum Discretion</h3>
+        <p class="text-sm text-slate-600 leading-snug">Privacy and stigma concerns</p>
+      </button>
+      <button type="button" data-q3="manage-outbreak" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-red-600"><Zap class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Manage This First Outbreak</h3>
+        <p class="text-sm text-slate-600 leading-snug">Immediate symptom relief</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-herpes-frequent" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        What's your priority?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">Choose what matters most</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-3xl mx-auto">
+      <button type="button" data-q3="stop-outbreaks" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-green-600"><ShieldCheck class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Stop Them From Happening</h3>
+        <p class="text-sm text-slate-600 leading-snug">Suppressive therapy effectiveness</p>
+      </button>
+      <button type="button" data-q3="affordable-herpes" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-emerald-600"><CircleDollarSign class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Make It Affordable</h3>
+        <p class="text-sm text-slate-600 leading-snug">Cost of daily medication</p>
+      </button>
+      <button type="button" data-q3="medical-guidance-herpes" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-blue-600"><BadgeCheck class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Get Real Medical Guidance</h3>
+        <p class="text-sm text-slate-600 leading-snug">Want doctor monitoring</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-herpes-relationship" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        What matters most?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">Choose your priority</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-3xl mx-auto">
+      <button type="button" data-q3="reduce-transmission" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-purple-600"><Shield class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Reduce Transmission Risk</h3>
+        <p class="text-sm text-slate-600 leading-snug">Partner safety first</p>
+      </button>
+      <button type="button" data-q3="expert-advice" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-blue-600"><Users class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Get Expert Advice</h3>
+        <p class="text-sm text-slate-600 leading-snug">Medical guidance on risk management</p>
+      </button>
+      <button type="button" data-q3="all-tools" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-green-600"><Package class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">All the Tools I Can Get</h3>
+        <p class="text-sm text-slate-600 leading-snug">Comprehensive approach</p>
       </button>
     </div>
   </div>

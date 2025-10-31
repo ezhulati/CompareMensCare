@@ -1,7 +1,7 @@
 ---
 title: "LifeMD"
 description: "Comprehensive telehealth platform offering weight loss, men's health (ED, hair loss, TRT), mental health, and primary care with Medicare acceptance and vertically-integrated pharmacy services."
-categories: ["weight-loss", "mental-health", "sexual-health", "hair-health", "testosterone"]
+categories: ["weight-loss", "mental-health", "sexual-health", "hair-health", "testosterone", "sleep", "herpes"]
 rating: 4.1
 reviewCount: 253
 affiliateLink: "lifemd"
