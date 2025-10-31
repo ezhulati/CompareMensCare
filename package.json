@@ -7,7 +7,14 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:mobile": "playwright test --project='Mobile*'",
+    "test:tablet": "playwright test --project='Tablet*'",
+    "test:desktop": "playwright test --project='Desktop*'",
+    "test:report": "playwright show-report"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
