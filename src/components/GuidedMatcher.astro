@@ -1325,6 +1325,128 @@ const categoryIcons: Record<string, any> = {
     </div>
   </div>
 
+  <!-- ========== PEPTIDES FLOW ========== -->
+  <div id="question-2-peptides" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        What path makes sense for you?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">
+        Peptides can be obtained through medical clinics, research suppliers, or education first
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-3xl mx-auto">
+      <button type="button" data-q2="medical" class="q2-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-blue-600"><BadgeCheck class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Medical Supervision</h3>
+        <p class="text-sm text-slate-600 leading-snug">Doctor-prescribed, blood work included</p>
+      </button>
+      <button type="button" data-q2="research" class="q2-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-orange-600"><Microscope class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Research Suppliers</h3>
+        <p class="text-sm text-slate-600 leading-snug">DIY approach, you manage everything</p>
+      </button>
+      <button type="button" data-q2="education" class="q2-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-purple-600"><FileText class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Learn First</h3>
+        <p class="text-sm text-slate-600 leading-snug">Education and training courses</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-peptides-medical" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        What's your focus?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">Choose your optimization goal</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 max-w-2xl mx-auto">
+      <button type="button" data-q3="peptides-only" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-left cursor-pointer transition-all duration-200 focus-ring group min-h-[140px] flex flex-col">
+        <div class="flex mb-3 text-blue-600"><Zap class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Peptides Specifically</h3>
+        <p class="text-sm text-slate-600 leading-snug">Focused peptide therapy programs</p>
+      </button>
+      <button type="button" data-q3="comprehensive-peptides" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-left cursor-pointer transition-all duration-200 focus-ring group min-h-[140px] flex flex-col">
+        <div class="flex mb-3 text-purple-600"><Package class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Full Optimization</h3>
+        <p class="text-sm text-slate-600 leading-snug">Peptides + TRT + weight loss options</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-peptides-research" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        What's your priority?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">Choose what matters most</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-3xl mx-auto">
+      <button type="button" data-q3="budget-peptides" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-emerald-600"><CircleDollarSign class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Most Affordable</h3>
+        <p class="text-sm text-slate-600 leading-snug">Budget US supplier</p>
+      </button>
+      <button type="button" data-q3="international-peptides" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-blue-600"><Activity class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">International Options</h3>
+        <p class="text-sm text-slate-600 leading-snug">Canada or EU-based suppliers</p>
+      </button>
+      <button type="button" data-q3="premium-peptides" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-purple-600"><Sparkles class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Premium Products</h3>
+        <p class="text-sm text-slate-600 leading-snug">Peptides + nootropics/supplements</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-peptides-education" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        What's your goal?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">Choose your learning path</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 max-w-2xl mx-auto">
+      <button type="button" data-q3="learn-first" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-left cursor-pointer transition-all duration-200 focus-ring group min-h-[140px] flex flex-col">
+        <div class="flex mb-3 text-blue-600"><FileText class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Consumer Education</h3>
+        <p class="text-sm text-slate-600 leading-snug">Learn before deciding on treatment</p>
+      </button>
+      <button type="button" data-q3="practitioner" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-left cursor-pointer transition-all duration-200 focus-ring group min-h-[140px] flex flex-col">
+        <div class="flex mb-3 text-purple-600"><BadgeCheck class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Practitioner Certification</h3>
+        <p class="text-sm text-slate-600 leading-snug">Professional training and credentials</p>
+      </button>
+    </div>
+  </div>
+
   <!-- Loading State -->
   <div id="loading-state" class="hidden text-center py-12">
     <svg class="animate-spin h-12 w-12 mx-auto mb-4 text-brand-accent" fill="none" viewBox="0 0 24 24">
