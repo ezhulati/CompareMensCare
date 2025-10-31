@@ -14,7 +14,8 @@ const brands = defineCollection({
       'mental-health',
       'diagnostics',
       'sleep',
-      'herpes'
+      'herpes',
+      'peptides'
     ])),
     rating: z.number().min(0).max(5),
     reviewCount: z.number().optional(),
@@ -89,6 +90,7 @@ const guides = defineCollection({
       'diagnostics',
       'sleep',
       'herpes',
+      'peptides',
       'general'
     ]),
     image: z.string().optional(),
@@ -131,7 +133,8 @@ const comparisons = defineCollection({
       'mental-health',
       'diagnostics',
       'sleep',
-      'herpes'
+      'herpes',
+      'peptides'
     ]),
     publishDate: z.date(),
     lastReviewed: z.date(),

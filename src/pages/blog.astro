@@ -11,14 +11,17 @@ const sortedPosts = allPosts.sort((a, b) =>
 );
 
 // Group by category
-const categories = ['sexual-health', 'hair-health', 'testosterone', 'weight-loss', 'mental-health', 'diagnostics'] as const;
+const categories = ['sexual-health', 'hair-health', 'testosterone', 'weight-loss', 'peptides', 'mental-health', 'diagnostics', 'sleep', 'herpes'] as const;
 const categoryNames: Record<string, string> = {
   'sexual-health': 'Sexual Health',
   'hair-health': 'Hair Health',
   'testosterone': 'Testosterone',
   'weight-loss': 'Weight Loss',
+  'peptides': 'Peptide Therapy',
   'mental-health': 'Mental Health',
-  'diagnostics': 'Diagnostics'
+  'diagnostics': 'Diagnostics',
+  'sleep': 'Sleep & Insomnia',
+  'herpes': 'Herpes Treatment'
 };
 
 // Get featured posts

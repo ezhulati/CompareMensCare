@@ -57,8 +57,11 @@ export function getCategoryName(slug: string): string {
     'hair-health': 'Hair Health',
     'testosterone': 'Testosterone & Hormone Therapy',
     'weight-loss': 'Weight Loss',
+    'peptides': 'Peptide Therapy',
     'mental-health': 'Mental Health',
     'diagnostics': 'Diagnostics & Wellness',
+    'sleep': 'Sleep & Insomnia',
+    'herpes': 'Herpes Treatment',
   };
   return categoryNames[slug] || slug;
 }
@@ -72,8 +75,11 @@ export function getCategoryIcon(slug: string): string {
     'hair-health': 'hair-health',
     'testosterone': 'testosterone',
     'weight-loss': 'weight-loss',
+    'peptides': 'peptides',
     'mental-health': 'mental-health',
     'diagnostics': 'diagnostics',
+    'sleep': 'sleep',
+    'herpes': 'herpes',
   };
   return categoryIcons[slug] || 'selection';
 }

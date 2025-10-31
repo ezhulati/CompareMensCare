@@ -21,6 +21,15 @@ export const affiliateLinks: Record<string, string> = {
   // Phase 1 additions - Weight Loss
   henry_meds: import.meta.env.PUBLIC_HENRY_MEDS_AFFILIATE_URL || 'https://henrymeds.com/',
   lifemd: import.meta.env.PUBLIC_LIFEMD_AFFILIATE_URL || 'https://lifemd.com/',
+  // Peptides category
+  telewellnessmd: import.meta.env.PUBLIC_TELEWELLNESSMD_AFFILIATE_URL || 'https://info.telewellnessmd.com/',
+  'integrative-peptides': import.meta.env.PUBLIC_INTEGRATIVE_PEPTIDES_AFFILIATE_URL || 'https://integrativepeptides.com/',
+  'ascension-peptides': import.meta.env.PUBLIC_ASCENSION_PEPTIDES_AFFILIATE_URL || 'https://ascensionpeptides.com/',
+  'pure-life-peptides': import.meta.env.PUBLIC_PURE_LIFE_PEPTIDES_AFFILIATE_URL || 'https://purelifepeptides.com/',
+  'particle-peptides': import.meta.env.PUBLIC_PARTICLE_PEPTIDES_AFFILIATE_URL || 'https://particlepeptides.com/',
+  'limitless-life-nootropics': import.meta.env.PUBLIC_LIMITLESS_LIFE_NOOTROPICS_AFFILIATE_URL || 'https://limitlesslifenootropics.com/',
+  'body-balance-medical': import.meta.env.PUBLIC_BODY_BALANCE_MEDICAL_AFFILIATE_URL || 'https://bodybalancemedical.com/',
+  'peptide-university': import.meta.env.PUBLIC_PEPTIDE_UNIVERSITY_AFFILIATE_URL || 'https://mypeptideuniversity.com/',
 };
 
 export const affiliateInfo = {
@@ -121,5 +130,46 @@ export const affiliateInfo = {
     name: 'LifeMD',
     cookieDays: 30,
     commission: '$115 CPA',
+  },
+  // Peptides category
+  telewellnessmd: {
+    name: 'TeleWellnessMD',
+    cookieDays: 30,
+    commission: '10% of gross sales per referred patient',
+  },
+  'integrative-peptides': {
+    name: 'Integrative Peptides',
+    cookieDays: 30,
+    commission: '10-15% per sale',
+  },
+  'ascension-peptides': {
+    name: 'Ascension Peptides',
+    cookieDays: 30,
+    commission: '20% first purchase, 10% lifetime',
+  },
+  'pure-life-peptides': {
+    name: 'Pure Life Peptides',
+    cookieDays: 30,
+    commission: 'Up to 25%',
+  },
+  'particle-peptides': {
+    name: 'Particle Peptides',
+    cookieDays: 30,
+    commission: '10% (pays in EUR)',
+  },
+  'limitless-life-nootropics': {
+    name: 'Limitless Life Nootropics',
+    cookieDays: 30,
+    commission: '15% (12% on VIP peptides)',
+  },
+  'body-balance-medical': {
+    name: 'Body Balance Medical',
+    cookieDays: 30,
+    commission: '$100 per referral or 10% sales',
+  },
+  'peptide-university': {
+    name: 'Peptide University',
+    cookieDays: 30,
+    commission: '15-25% on courses',
   },
 };

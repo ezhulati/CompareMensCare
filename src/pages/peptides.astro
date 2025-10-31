@@ -1,0 +1,321 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FilterableComparison from '../components/FilterableComparison.astro';
+import QuickPicks from '../components/QuickPicks.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import FAQSection from '../components/FAQSection.astro';
+import type { FilterableBrand } from '../components/FilterableComparison.astro';
+
+// Get all brands that offer peptide therapy
+const allBrands = await getCollection('brands');
+const peptideBrands = allBrands
+  .filter((brand) => brand.data.categories.includes('peptides'))
+  .map((brand): FilterableBrand => ({
+    name: brand.data.title,
+    slug: brand.slug,
+    rating: brand.data.rating,
+    consultationFee: brand.data.pricing.consultationFee,
+    medicationFrom: brand.data.pricing.medicationFrom || brand.data.pricing.consultationFee,
+    subscriptionType: brand.data.pricing.subscriptionType,
+    pros: brand.data.pros,
+    cons: brand.data.cons,
+    bestFor: brand.data.bestFor,
+    featured: brand.data.featured,
+    features: brand.data.features,
+    priorities: brand.data.priorities,
+    priceMin: brand.data.pricing.priceMin,
+    priceMax: brand.data.pricing.priceMax,
+  }));
+
+// Quick picks for peptide therapy
+const quickPicks = [
+  {
+    segment: 'quality' as const,
+    brandName: 'TeleWellnessMD',
+    brandSlug: 'telewellnessmd',
+    detail: 'Doctor-supervised, legal prescriptions',
+  },
+  {
+    segment: 'budget' as const,
+    brandName: 'Ascension Peptides',
+    brandSlug: 'ascension-peptides',
+    detail: 'Research-grade, $30-150/month',
+  },
+  {
+    segment: 'privacy' as const,
+    brandName: 'Body Balance Medical',
+    brandSlug: 'body-balance-medical',
+    detail: 'Full optimization + peptides',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Best Peptide Therapy Providers',
+  description: 'Compare medical telehealth clinics and research peptide suppliers for BPC-157, CJC/Ipamorelin, and therapeutic peptides.',
+  about: {
+    '@type': 'MedicalTherapy',
+    name: 'Peptide Therapy',
+  },
+};
+
+const faqs = [
+  {
+    question: "Is peptide therapy legal?",
+    answer: "Legal status depends on the source. Medical clinics like TeleWellnessMD prescribe peptides through compound pharmacies (legal prescription path). Research peptide suppliers sell peptides labeled 'for research only' (legal grey area). FDA has not approved most peptides for human use, but physicians can prescribe them off-label. Medical route is safest legally."
+  },
+  {
+    question: "What's the difference between medical peptide clinics and research suppliers?",
+    answer: "Medical clinics: Licensed physicians prescribe peptides through compound pharmacies. Includes consultation, blood work, medical supervision. Costs $250-600/month. Legal prescription path. Research suppliers: Direct sale of research-grade peptides without prescription. No medical oversight. Costs $30-150/month. Legal grey area (sold 'for research'). Medical clinics are safer but more expensive. Research peptides are cheaper but you assume all risk."
+  },
+  {
+    question: "How much does peptide therapy cost?",
+    answer: "Medical clinics: $199-299 initial consultation plus $250-600/month for peptides and supervision. Includes blood work and physician oversight. Research suppliers: $30-150/month for peptides alone. Add $100-300 for self-managed blood work. Total first month: Medical clinic $450-900. Research peptides $130-450. Ongoing: Medical $250-600/month vs Research $30-150/month."
+  },
+  {
+    question: "Do I need a doctor for peptide therapy?",
+    answer: "Medically recommended but not legally required (for research peptides). Medical supervision provides: Candidacy screening, blood work monitoring, proper dosing guidance, side effect management, legal prescription protection. Research peptides can be purchased without doctor but you assume all health and legal risks. First-time users should use medical supervision. Experienced users sometimes self-manage with independent blood work."
+  },
+  {
+    question: "Which peptides are most popular?",
+    answer: "Healing: BPC-157 (tissue repair, gut health, injury recovery), TB-500 (inflammation, wound healing). Growth Hormone: CJC-1295/Ipamorelin (muscle growth, fat loss, recovery), Ibutamoren MK-677 (oral GH secretagogue). Fat Loss: AOD-9604, Tesamorelin. Longevity: Epithalon, GHK-Cu, NAD+. Most beginners start with BPC-157 (healing) or CJC/Ipamorelin (performance/body composition)."
+  },
+  {
+    question: "Are research peptides safe?",
+    answer: "Research peptides are chemically identical to pharmaceutical peptides but lack medical oversight. Risks: No candidacy screening, no blood work monitoring, contamination risk from home reconstitution, dosing errors without physician guidance. Quality varies by supplier (check third-party testing COAs). Safest approach: Get medical supervision for first cycle to learn proper protocols, then decide if self-management is appropriate for you."
+  },
+  {
+    question: "How long does it take to see results from peptides?",
+    answer: "BPC-157 (healing): 2-4 weeks for injury improvement, 4-8 weeks for gut healing. CJC/Ipamorelin (GH): 4-8 weeks for fat loss and energy, 8-12 weeks for muscle growth. TB-500 (inflammation): 3-6 weeks. Ibutamoren (MK-677): 4-8 weeks for body composition changes. Most peptides require 4-8 week minimum trial. Medical clinics monitor progress with blood work at 8-12 weeks."
+  },
+  {
+    question: "Do I need blood work for peptide therapy?",
+    answer: "Strongly recommended. Baseline blood work: Identifies contraindications (diabetes, cancer history), establishes baseline hormone levels, checks liver/kidney function. Follow-up blood work (8-12 weeks): Monitors safety (liver enzymes, glucose), tracks hormone changes (IGF-1 for GH peptides), catches problems early. Medical clinics include blood work. Research peptide users must order independently ($100-300 per panel)."
+  },
+];
+---
+
+<BaseLayout
+  title="Best Peptide Therapy Providers - Compare Medical & Research Sources"
+  description="Compare peptide therapy providers including doctor-supervised medical clinics and research peptide suppliers. Find BPC-157, CJC/Ipamorelin, TB-500, and therapeutic peptides."
+  image="/images/Testosterone_Hormones.png"
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="max-w-4xl">
+        <div class="flex items-center gap-2 text-sm text-slate-600 mb-6">
+          <a href="/" class="hover:text-brand-accent transition-colors">Home</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="text-slate-900 font-medium">Peptide Therapy</span>
+        </div>
+
+        <!-- Critical Legal Disclaimer -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-sm font-medium text-amber-800 mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          Legal grey area - medical supervision recommended
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
+          Peptide Therapy Providers
+        </h1>
+        <p class="text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed mb-6 sm:mb-8 max-w-2xl px-4">
+          Compare doctor-supervised medical clinics and research peptide suppliers. BPC-157 for healing, CJC/Ipamorelin for performance, TB-500 for recovery—find the right source with honest disclosure about legal status and medical oversight.
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <a href="#comparison" class="btn-primary">
+            Compare Providers
+          </a>
+          <a href="#faq" class="btn-outline">
+            Legal & Safety Info
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Critical Context Banner -->
+  <section class="py-8 bg-amber-50 border-b border-amber-200">
+    <div class="container-custom">
+      <div class="max-w-4xl">
+        <h2 class="text-xl font-bold text-slate-900 mb-4">Understanding Your Options</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-lg border border-emerald-200">
+            <h3 class="font-bold text-emerald-900 mb-2 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Medical Telehealth Clinics
+            </h3>
+            <p class="text-sm text-slate-600 mb-3">Doctor-supervised prescription peptides through compound pharmacies</p>
+            <ul class="text-sm text-slate-700 space-y-1">
+              <li>✓ Legal prescription path</li>
+              <li>✓ Medical supervision & blood work</li>
+              <li>✓ Safety screening</li>
+              <li>✓ Higher cost ($250-600/month)</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-amber-200">
+            <h3 class="font-bold text-amber-900 mb-2 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+              Research Peptide Suppliers
+            </h3>
+            <p class="text-sm text-slate-600 mb-3">Direct purchase of research-grade peptides ("for research only")</p>
+            <ul class="text-sm text-slate-700 space-y-1">
+              <li>⚠ Legal grey area</li>
+              <li>⚠ No medical supervision</li>
+              <li>⚠ User assumes all risk</li>
+              <li>✓ Lower cost ($30-150/month)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-sm text-slate-600 mt-4 italic">
+          We compare both options with honest disclosure. Medical supervision is safer but more expensive. Research peptides are cheaper but you assume all legal and health risks.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="py-10 bg-slate-50 border-b border-slate-200">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
+        <div>
+          <div class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-1">{peptideBrands.length}</div>
+          <div class="text-sm text-slate-600">Providers Compared</div>
+        </div>
+        <div>
+          <div class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-1">$30+</div>
+          <div class="text-sm text-slate-600">Starting Price</div>
+        </div>
+        <div>
+          <div class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-1">Medical</div>
+          <div class="text-sm text-slate-600">& Research Options</div>
+        </div>
+        <div>
+          <div class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-1">2-4wk</div>
+          <div class="text-sm text-slate-600">Results Timeline</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Picks Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <QuickPicks picks={quickPicks} category="Peptide Therapy" />
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="py-6 bg-white">
+    <div class="container-custom">
+      <TrustSignals
+        lastUpdated={new Date()}
+        reviewsCount={3870}
+        servicesCompared={peptideBrands.length}
+      />
+    </div>
+  </section>
+
+  <!-- Comparison Section -->
+  <section id="comparison" class="section bg-white">
+    <div class="container-custom">
+      <div class="mb-10">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+          Compare Peptide Providers
+        </h2>
+        <p class="text-slate-600">
+          Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+        </p>
+      </div>
+
+      <FilterableComparison brands={peptideBrands} location="peptides-table" />
+    </div>
+  </section>
+
+  <!-- Popular Peptides Overview -->
+  <section id="peptides" class="section-light">
+    <div class="container-custom">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3 sm:mb-4 text-center px-4">
+        Popular Therapeutic Peptides
+      </h2>
+      <p class="text-lg text-slate-600 mb-10 text-center max-w-2xl mx-auto">
+        Most common peptides for healing, performance, and longevity.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card p-6">
+          <h3 class="font-bold text-xl text-slate-900 mb-2">BPC-157</h3>
+          <p class="text-sm text-slate-500 mb-3">Body Protection Compound</p>
+          <p class="text-slate-600 text-sm mb-4">
+            Tissue repair, gut healing, tendon/ligament recovery. Most popular research peptide for injury healing.
+          </p>
+          <div class="text-sm space-y-1 text-slate-700">
+            <div><span class="font-medium">Timeline:</span> 2-4 weeks</div>
+            <div><span class="font-medium">Cost:</span> $40-300/month</div>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="font-bold text-xl text-slate-900 mb-2">CJC-1295/Ipamorelin</h3>
+          <p class="text-sm text-slate-500 mb-3">Growth Hormone Secretagogue</p>
+          <p class="text-slate-600 text-sm mb-4">
+            Increases natural GH production for muscle growth, fat loss, recovery, and sleep quality.
+          </p>
+          <div class="text-sm space-y-1 text-slate-700">
+            <div><span class="font-medium">Timeline:</span> 4-8 weeks</div>
+            <div><span class="font-medium">Cost:</span> $75-350/month</div>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="font-bold text-xl text-slate-900 mb-2">TB-500</h3>
+          <p class="text-sm text-slate-500 mb-3">Thymosin Beta-4</p>
+          <p class="text-slate-600 text-sm mb-4">
+            Anti-inflammatory, wound healing, recovery from injury. Often combined with BPC-157.
+          </p>
+          <div class="text-sm space-y-1 text-slate-700">
+            <div><span class="font-medium">Timeline:</span> 3-6 weeks</div>
+            <div><span class="font-medium">Cost:</span> $65-400/month</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="section bg-white">
+    <div class="container-custom max-w-4xl">
+      <FAQSection faqs={faqs} title="Peptide Therapy Questions" />
+    </div>
+  </section>
+
+  <!-- Final Disclaimer -->
+  <section class="py-8 bg-amber-50 border-t border-amber-200">
+    <div class="container-custom max-w-4xl">
+      <div class="prose prose-sm">
+        <h3 class="text-lg font-bold text-slate-900">Medical & Legal Disclaimer</h3>
+        <p class="text-slate-700">
+          Most peptides discussed are not FDA-approved for human use. Medical clinics prescribe peptides "off-label" through compound pharmacies (legal for physicians). Research peptides sold "for research purposes only" occupy legal grey areas.
+        </p>
+        <p class="text-slate-700">
+          This content is educational, not medical advice. Consult licensed physician before starting peptide therapy. We compare all legitimate sources with honest disclosure about legal status, medical oversight, and risk levels.
+        </p>
+        <p class="text-slate-700 font-medium">
+          Medical supervision is strongly recommended, especially for first-time users.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
