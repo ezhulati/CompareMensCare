@@ -7,93 +7,29 @@ import PrivacyAssurance from '../components/PrivacyAssurance.astro';
 import FAQSection from '../components/FAQSection.astro';
 import type { Brand } from '../components/ComparisonTable.astro';
 import Icon from '../components/Icon.astro';
+import { getCollection } from 'astro:content';
 
-const brands: Brand[] = [
-  {
-    name: 'BetterHelp',
-    slug: 'betterhelp',
-    rating: 4.5,
-    consultationFee: 'Free matching',
-    medicationFrom: '$65-100/week',
-    subscriptionType: 'Weekly billing',
-    pros: [
-      'Largest therapist network (30,000+)',
-      'Messaging, video, phone, and live chat',
-      'Easy to switch therapists',
-    ],
-    cons: [
-      'Weekly billing can add up',
-      'Quality varies by therapist',
-    ],
-    bestFor: [
-      { label: 'Best for Variety', variant: 'primary', icon: 'people' },
-      { label: 'Most Flexible', variant: 'success' },
-    ],
-    featured: true,
-  },
-  {
-    name: 'Talkspace',
-    slug: 'talkspace',
-    rating: 4.4,
-    consultationFee: 'Free',
-    medicationFrom: '$69-109/week',
-    subscriptionType: 'Monthly',
-    pros: [
-      'Insurance accepted',
-      'Psychiatry available',
-      'Teen therapy options',
-    ],
-    cons: [
-      'Higher pricing without insurance',
-      'Limited therapist availability',
-    ],
-    bestFor: [
-      { label: 'Best for Insurance', variant: 'warning', icon: 'credit-card' },
-      { label: 'Medication Management', variant: 'neutral' },
-    ],
-  },
-  {
-    name: 'Cerebral',
-    slug: 'cerebral',
-    rating: 4.2,
-    consultationFee: '$30-85',
-    medicationFrom: '$85-325/month',
-    subscriptionType: 'Monthly',
-    pros: [
-      'Therapy and medication combined',
-      'Licensed prescribers',
-      'Treats anxiety, depression, ADHD',
-    ],
-    cons: [
-      'Focus on medication management',
-      'Less therapy emphasis',
-    ],
-    bestFor: [
-      { label: 'Best for Medication', variant: 'primary', icon: 'pill' },
-      { label: 'Psychiatry', variant: 'success' },
-    ],
-  },
-  {
-    name: 'Brightside',
-    slug: 'brightside',
-    rating: 4.3,
-    consultationFee: '$95',
-    medicationFrom: '$95-299/month',
-    subscriptionType: 'Monthly',
-    pros: [
-      'Medication-first approach',
-      'Psychiatrist prescribers',
-      'Fast medication access',
-    ],
-    cons: [
-      'Limited therapy options',
-      'Higher costs',
-    ],
-    bestFor: [
-      { label: 'Best for Psychiatry', variant: 'neutral', icon: 'medical' },
-    ],
-  },
-];
+// Dynamically load all mental health brands from content collection
+const allBrands = await getCollection('brands');
+const mentalHealthBrands = allBrands.filter(brand =>
+  brand.data.categories.includes('mental-health')
+);
+
+// Map to Brand interface format
+const brands: Brand[] = mentalHealthBrands
+  .sort((a, b) => (b.data.rating || 0) - (a.data.rating || 0)) // Sort by rating descending
+  .map(brand => ({
+    name: brand.data.title,
+    slug: brand.data.affiliateId,
+    rating: brand.data.rating,
+    consultationFee: brand.data.pricing.consultationFee,
+    medicationFrom: brand.data.pricing.medicationFrom,
+    subscriptionType: brand.data.pricing.subscriptionType,
+    pros: brand.data.pros.slice(0, 3), // Take top 3 pros
+    cons: brand.data.cons.slice(0, 2), // Take top 2 cons
+    bestFor: brand.data.bestFor || [],
+    featured: brand.data.featured || false,
+  }));
 
 // Quick picks for this category
 const quickPicks = [
@@ -204,15 +140,15 @@ const faqs = [
         </div>
 
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
-          Online Therapy & Mental Health Services
+          Feel Like Yourself Again
         </h1>
         <p class="text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-          Compare online therapy platforms, counseling services, and psychiatric care options. Get help for anxiety, depression, stress, and more from licensed professionals.
+          Stop struggling alone. Get real support from licensed therapists — from the privacy of your home. Compare platforms for anxiety, depression, stress, and more. Find one that fits.
         </p>
 
         <div class="flex flex-wrap gap-3">
           <a href="#comparison" class="btn-primary">
-            View Comparison
+            Find My Therapist
           </a>
           <a href="#how-it-works" class="btn-outline">
             How It Works

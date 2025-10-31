@@ -6,93 +6,29 @@ import TrustSignals from '../components/TrustSignals.astro';
 import FAQSection from '../components/FAQSection.astro';
 import Icon from '../components/Icon.astro';
 import type { Brand } from '../components/ComparisonTable.astro';
+import { getCollection } from 'astro:content';
 
-const brands: Brand[] = [
-  {
-    name: 'Ro',
-    slug: 'ro',
-    rating: 4.7,
-    consultationFee: '$99',
-    medicationFrom: '$145/month',
-    subscriptionType: 'Subscription',
-    pros: [
-      'Multiple GLP-1 options (Wegovy, Ozempic)',
-      'Comprehensive weight loss program',
-      'Licensed physician oversight',
-    ],
-    cons: [
-      'Higher monthly costs',
-      'Medication subject to availability',
-    ],
-    bestFor: [
-      { label: 'Best for Brand-Name GLP-1', variant: 'primary', icon: 'pill' },
-      { label: 'Best Support', variant: 'success' },
-    ],
-    featured: true,
-  },
-  {
-    name: 'Hims',
-    slug: 'hims',
-    rating: 4.5,
-    consultationFee: 'Free',
-    medicationFrom: '$199/month',
-    subscriptionType: 'Subscription',
-    pros: [
-      'No consultation fee',
-      'Semaglutide & tirzepatide available',
-      'Fast approval process',
-    ],
-    cons: [
-      'Compounded medications only',
-      'Limited personalization',
-    ],
-    bestFor: [
-      { label: 'Best for Quick Start', variant: 'warning', icon: 'zap' },
-      { label: 'No Consult Fee', variant: 'neutral' },
-    ],
-  },
-  {
-    name: 'Calibrate',
-    slug: 'calibrate',
-    rating: 4.6,
-    consultationFee: '$135/month',
-    medicationFrom: 'Varies',
-    subscriptionType: 'Annual Program',
-    pros: [
-      'Comprehensive metabolic reset program',
-      'Dedicated coaching team',
-      'Evidence-based approach',
-    ],
-    cons: [
-      'Annual commitment required',
-      'Higher total cost',
-    ],
-    bestFor: [
-      { label: 'Best for Coaching', variant: 'primary', icon: 'people' },
-      { label: 'Long-Term Success', variant: 'success' },
-    ],
-  },
-  {
-    name: 'Found',
-    slug: 'found',
-    rating: 4.4,
-    consultationFee: '$99',
-    medicationFrom: '$199/month',
-    subscriptionType: 'Flexible',
-    pros: [
-      'Personalized weight loss plans',
-      'Registered dietitian support',
-      'Behavioral health coaching',
-    ],
-    cons: [
-      'May require insurance',
-      'Longer approval process',
-    ],
-    bestFor: [
-      { label: 'Best for Personalization', variant: 'neutral', icon: 'target' },
-    ],
-  },
-];
+// Dynamically load all weight-loss brands from content collection
+const allBrands = await getCollection('brands');
+const weightLossBrands = allBrands.filter(brand =>
+  brand.data.categories.includes('weight-loss')
+);
+
+// Map to Brand interface format
+const brands: Brand[] = weightLossBrands
+  .sort((a, b) => (b.data.rating || 0) - (a.data.rating || 0)) // Sort by rating descending
+  .map(brand => ({
+    name: brand.data.title,
+    slug: brand.data.affiliateId,
+    rating: brand.data.rating,
+    consultationFee: brand.data.pricing.consultationFee,
+    medicationFrom: brand.data.pricing.medicationFrom,
+    subscriptionType: brand.data.pricing.subscriptionType,
+    pros: brand.data.pros.slice(0, 3), // Take top 3 pros
+    cons: brand.data.cons.slice(0, 2), // Take top 2 cons
+    bestFor: brand.data.bestFor || [],
+    featured: brand.data.featured || false,
+  }));
 
 // Quick picks for this category
 const quickPicks = [
@@ -203,18 +139,18 @@ const faqs = [
         </div>
 
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
-          GLP-1 Weight Loss Services Compared
+          Finally Lose the Weight
         </h1>
         <p class="text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-          Compare online weight loss programs offering GLP-1 medications like Wegovy, Ozempic, Mounjaro, and compounded semaglutide with personalized support.
+          Stop yo-yo dieting. Start seeing real results. GLP-1 medications like Wegovy and Mounjaro with medical support — helping you lose 15-20% of your body weight. Compare programs with honest pricing.
         </p>
 
         <div class="flex flex-wrap gap-3">
           <a href="#comparison" class="btn-primary">
-            View Comparison
+            Find My Program
           </a>
           <a href="#medications" class="btn-outline">
-            GLP-1 Options
+            How It Works
           </a>
         </div>
       </div>
