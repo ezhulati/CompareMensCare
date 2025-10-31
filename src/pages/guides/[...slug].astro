@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 import AuthorBio from '../../components/AuthorBio.astro';
@@ -8,6 +8,9 @@ import HowWeResearch from '../../components/HowWeResearch.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import KeyTakeaways from '../../components/KeyTakeaways.astro';
 import { formatDate, getCategoryName } from '../../utils/helpers';
+
+// Enable prerendering for all guide pages (faster, better SEO)
+export const prerender = true;
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
