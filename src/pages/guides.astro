@@ -1,57 +1,36 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
+import { getCategoryName } from '../utils/helpers';
 
-const guides = [
-  {
-    title: 'Complete Guide to Erectile Dysfunction Treatment',
-    category: 'Sexual Health',
-    slug: '/guides/ed-treatment',
-    description: 'Everything you need to know about ED medications, treatments, and choosing the right option.',
-    readTime: '12 min read',
-    icon: 'sexual-health',
-  },
-  {
-    title: 'Hair Loss Treatment Guide: Finasteride vs Minoxidil',
-    category: 'Hair Health',
-    slug: '/guides/hair-loss-treatment',
-    description: 'Compare proven hair loss treatments and understand which option is right for you.',
-    readTime: '10 min read',
-    icon: 'hair-health',
-  },
-  {
-    title: 'Testosterone Replacement Therapy (TRT) Explained',
-    category: 'Testosterone',
-    slug: '/guides/trt-guide',
-    description: 'Complete guide to TRT including benefits, risks, costs, and what to expect.',
-    readTime: '15 min read',
-    icon: 'testosterone',
-  },
-  {
-    title: 'GLP-1 Weight Loss Medications: Complete Guide',
-    category: 'Weight Loss',
-    slug: '/guides/glp1-guide',
-    description: 'Understand how semaglutide and tirzepatide work, their effectiveness, and side effects.',
-    readTime: '14 min read',
-    icon: 'weight-loss',
-  },
-  {
-    title: 'Online Therapy: A Beginner\'s Guide',
-    category: 'Mental Health',
-    slug: '/guides/online-therapy-guide',
-    description: 'How to choose an online therapy platform and get the most from virtual counseling.',
-    readTime: '8 min read',
-    icon: 'mental-health',
-  },
-  {
-    title: 'Understanding At-Home Health Testing',
-    category: 'Diagnostics',
-    slug: '/guides/home-testing-guide',
-    description: 'Learn how at-home testing works, accuracy, and which tests you should consider.',
-    readTime: '9 min read',
-    icon: 'diagnostics',
-  },
-];
+// Map category slugs to icon names
+const categoryIcons = {
+  'sexual-health': 'sexual-health',
+  'hair-health': 'hair-health',
+  'testosterone': 'testosterone',
+  'weight-loss': 'weight-loss',
+  'mental-health': 'mental-health',
+  'diagnostics': 'diagnostics',
+};
+
+// Fetch all guides from content collection
+const allGuides = await getCollection('guides');
+
+// Sort by featured first, then by publish date (newest first)
+const guides = allGuides
+  .sort((a, b) => {
+    if (a.data.featured && !b.data.featured) return -1;
+    if (!a.data.featured && b.data.featured) return 1;
+    return b.data.publishDate.getTime() - a.data.publishDate.getTime();
+  })
+  .map(guide => ({
+    title: guide.data.title,
+    category: getCategoryName(guide.data.category),
+    slug: `/guides/${guide.slug}`,
+    description: guide.data.description,
+    icon: categoryIcons[guide.data.category] || 'diagnostics',
+  }));
 
 const schema = {
   '@context': 'https://schema.org',
@@ -91,7 +70,7 @@ const schema = {
     <div class="container-custom">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-4xl mx-auto">
         <div>
-          <div class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-1">20+</div>
+          <div class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-1">{guides.length}</div>
           <div class="text-xs sm:text-sm text-slate-600">Guides Published</div>
         </div>
         <div>
@@ -128,13 +107,10 @@ const schema = {
             href={guide.slug}
             class="card-hover p-6 group"
           >
-            <div class="flex items-start justify-between mb-4">
+            <div class="mb-4">
               <div class="text-brand-accent">
                 <Icon name={guide.icon} size="xl" />
               </div>
-              <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
-                {guide.readTime}
-              </span>
             </div>
 
             <div class="mb-2">
