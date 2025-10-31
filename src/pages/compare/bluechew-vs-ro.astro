@@ -1,0 +1,135 @@
+---
+import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+
+const comparisonData = {
+  brand1Slug: 'bluechew',
+  brand2Slug: 'ro',
+  category: 'sexual-health',
+  verdict: {
+    brand1BestFor: 'Best for users who want affordable chewable ED medication, no frills service, and simple subscription model. Perfect for budget-conscious users.',
+    brand2BestFor: 'Best for users who want premium comprehensive care, extensive medication options, ongoing physician access, and full-service health platform.',
+  },
+  comparisonTable: [
+    {
+      feature: 'Starting Price',
+      brand1Value: '$20/month',
+      brand2Value: '$49/month',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Consultation Fee',
+      brand1Value: 'Free',
+      brand2Value: 'Free',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Medication Form',
+      brand1Value: 'Chewable tablets',
+      brand2Value: 'Pills, gels, injections',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Brand-Name Options',
+      brand1Value: 'No',
+      brand2Value: 'Yes (Viagra, Cialis)',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Generic Options',
+      brand1Value: 'Yes (chewables)',
+      brand2Value: 'Yes (multiple forms)',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Service Scope',
+      brand1Value: 'ED chewables only',
+      brand2Value: 'Full health platform',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Physician Support',
+      brand1Value: 'Initial consultation',
+      brand2Value: 'Ongoing MD access',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Convenience',
+      brand1Value: 'Chew & go',
+      brand2Value: 'Multiple options',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Affordability',
+      brand1Value: 'Most affordable',
+      brand2Value: 'Premium pricing',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Treatment Variety',
+      brand1Value: 'Limited (2 options)',
+      brand2Value: 'Extensive',
+      winner: '2' as const,
+    },
+  ],
+};
+---
+
+<ComparisonLayout {...comparisonData}>
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">
+        Budget Chewables vs Premium Platform: BlueChew vs Ro
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Price Comparison</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>BlueChew</strong> is the clear winner on price, starting at just $20/month for chewable sildenafil or tadalafil. This makes it one of the most affordable ED treatment options available online. BlueChew focuses on one thing—chewable generic ED medication—and delivers it at the lowest price point.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Ro</strong> starts at $49/month for generic ED pills, significantly more than BlueChew. However, Ro's pricing reflects a more comprehensive service with ongoing physician access, extensive medication options (pills, gels, injections), and access to brand-name Viagra and Cialis. You're paying for a full medical platform, not just medication.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Medication Options</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>BlueChew</strong> specializes exclusively in chewable sildenafil and tadalafil tablets. You get two options: Sildenafil (Viagra's active ingredient) or Tadalafil (Cialis's active ingredient). The chewable format works faster than pills since it's absorbed through the mouth—often in 15-20 minutes. This is BlueChew's key innovation and selling point.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Ro</strong> offers extensive medication variety including generic and brand-name pills, daily-use options, on-demand treatments, testosterone gels, PT-141 injections, and combination therapies. If you want treatment customization or want to try different medication forms, Ro provides far more options.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Medical Support</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>BlueChew</strong> provides an initial medical consultation to ensure ED medication is safe for you, then delivers your chewables monthly. Medical support is available as needed, but the model is streamlined and focused on simple medication delivery. Most users find the initial consultation sufficient.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Ro</strong> emphasizes ongoing physician relationships. You have continued access to licensed physicians for questions, dose adjustments, side effect management, or treatment changes. Ro's physicians can adjust your treatment plan over time based on your response and changing needs. This level of medical oversight is more comprehensive than BlueChew's approach.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Convenience & User Experience</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>BlueChew</strong> wins on simplicity. Chewable tablets work faster than pills, taste decent (slightly minty), and you don't need water. The subscription is straightforward: pick your dose, get monthly deliveries, cancel anytime. The entire experience is designed to be uncomplicated and affordable.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Ro</strong> provides a more polished, comprehensive platform experience. Their website, mobile app, and patient portal feel premium and medical-grade. You can message physicians, track your treatment history, and access a full range of men's health services beyond just ED. The experience is more sophisticated but also more complex.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Service Scope</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>BlueChew</strong> does one thing only: chewable ED medication. If you need hair loss treatment, testosterone therapy, weight loss support, or other men's health services, you'll need to use other providers. BlueChew's narrow focus keeps prices low but limits versatility.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Ro</strong> is a full-service men's health platform offering ED treatment, hair loss medications, testosterone therapy, weight loss programs, and more. If you want multiple health services from one provider, Ro makes sense. You build a relationship with one medical team that handles all your men's health needs.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Final Verdict</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          These services target different users with different priorities. <strong>Choose BlueChew</strong> if you want the most affordable ED treatment ($20/month) in a convenient chewable form that works fast. BlueChew is perfect for budget-conscious users who want simple, effective treatment without paying for extra services. The chewable format is genuinely innovative and convenient.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          <strong>Choose Ro</strong> if you want comprehensive medical care, extensive treatment options, and ongoing physician support ($49/month+). Ro makes sense for users who value medical oversight, want access to brand-name medications or alternative treatments, or need other men's health services. You're paying more, but getting a full-service platform with premium care.
+        </p>
+      </div>
+    </div>
+  </section>
+</ComparisonLayout>

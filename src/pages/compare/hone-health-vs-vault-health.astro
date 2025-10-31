@@ -1,0 +1,143 @@
+---
+import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+
+const comparisonData = {
+  brand1Slug: 'hone-health',
+  brand2Slug: 'vault-health',
+  category: 'testosterone',
+  verdict: {
+    brand1BestFor: 'Best for users who want comprehensive hormone optimization, extensive testing, and data-driven TRT protocols. Ideal for those seeking clinical depth.',
+    brand2BestFor: 'Best for users who want premium concierge TRT service with dedicated health coaching, white-glove experience, and highest customer satisfaction.',
+  },
+  comparisonTable: [
+    {
+      feature: 'Starting Price',
+      brand1Value: '$99/month',
+      brand2Value: '$129/month',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Initial Testing',
+      brand1Value: 'Comprehensive panel',
+      brand2Value: 'Full hormone workup',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Service Model',
+      brand1Value: 'Clinical TRT',
+      brand2Value: 'Concierge service',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Health Coaching',
+      brand1Value: 'Available',
+      brand2Value: 'Dedicated coach',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Treatment Options',
+      brand1Value: 'Multiple modalities',
+      brand2Value: 'Customized protocols',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Lab Testing',
+      brand1Value: 'At-home kits',
+      brand2Value: 'At-home kits',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Physician Access',
+      brand1Value: 'Board-certified MDs',
+      brand2Value: 'Ongoing physician care',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Customer Rating',
+      brand1Value: '4.6/5',
+      brand2Value: '4.7/5',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Support Quality',
+      brand1Value: 'Excellent',
+      brand2Value: 'White-glove',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Data Dashboard',
+      brand1Value: 'Comprehensive',
+      brand2Value: 'Detailed tracking',
+      winner: 'tie' as const,
+    },
+  ],
+};
+---
+
+<ComparisonLayout {...comparisonData}>
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">
+        Premium TRT Specialists: Hone Health vs Vault Health
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Price & Value</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hone Health</strong> starts at $99/month for testosterone replacement therapy, positioning itself as a premium but accessible specialist TRT clinic. This includes comprehensive testing, physician consultations, and medication delivery.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Vault Health</strong> starts at $129/month for their concierge-level TRT service. The higher price point reflects their white-glove service model with dedicated health coaches, priority physician access, and premium support experience.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Hormone Testing & Diagnostics</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hone Health</strong> provides comprehensive at-home hormone testing with detailed biomarker analysis. They test total testosterone, free testosterone, estradiol, SHBG, and other relevant markers. Their data dashboard helps you track changes over time.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Vault Health</strong> offers similarly thorough hormone testing with full workups before starting treatment and regular monitoring throughout. Both clinics meet the standard of care for proper TRT management with appropriate testing protocols.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Service Model & Support</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hone Health</strong> operates as a specialist TRT clinic focused on hormone optimization. You work with board-certified physicians who specialize in men's health and hormone therapy. Support is available when needed, and the clinical approach is data-driven.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Vault Health</strong> provides a true concierge experience with dedicated health coaches assigned to every patient. Your coach serves as your primary point of contact, helps with treatment adherence, answers questions, and coordinates with physicians. This white-glove approach earns them the highest customer satisfaction ratings in TRT.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Treatment Customization</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hone Health</strong> offers multiple treatment modalities including injections, gels, and pellets. Their physicians work with you to find the right protocol based on your labs, symptoms, and preferences. Treatment plans are adjusted based on ongoing monitoring.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Vault Health</strong> similarly offers customized TRT protocols with various delivery methods. Their physicians are experienced in fine-tuning dosing and timing to optimize results while minimizing side effects. The dedicated coach helps ensure proper administration and tracks your response.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Physician Care</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hone Health</strong> connects you with board-certified physicians specializing in hormone optimization. You have access to your physician for consultations, dose adjustments, and questions about your treatment.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Vault Health</strong> emphasizes ongoing physician relationships with easier access and more touchpoints throughout your treatment journey. Their model facilitates more frequent check-ins and proactive management.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Platform & Technology</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hone Health</strong> provides a comprehensive data dashboard where you can view all your lab results, track symptoms, and monitor progress over time. The platform is designed for users who want detailed insights into their hormone optimization journey.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Vault Health</strong> also offers detailed tracking and monitoring tools, but the experience is enhanced by your health coach who helps interpret data and guides you through the process personally.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Final Verdict</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Both are excellent choices for men seeking specialized testosterone replacement therapy. <strong>Choose Hone Health</strong> if you want comprehensive clinical TRT at a more accessible price point ($99/month). Their data-driven approach and specialist physicians provide excellent care for users comfortable navigating healthcare independently.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          <strong>Choose Vault Health</strong> if you value premium concierge service and want a dedicated health coach ($129/month). Their white-glove approach, highest customer satisfaction ratings, and personalized support make them ideal for users who want guidance and hand-holding throughout their TRT journey.
+        </p>
+      </div>
+    </div>
+  </section>
+</ComparisonLayout>

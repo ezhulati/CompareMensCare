@@ -1,0 +1,151 @@
+---
+import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+
+const comparisonData = {
+  brand1Slug: 'hims',
+  brand2Slug: 'manual',
+  category: 'sexual-health',
+  verdict: {
+    brand1BestFor: 'Best for US-based users who want comprehensive men\'s health platform with fast shipping, broad product selection, and affordable pricing. Market leader in the US.',
+    brand2BestFor: 'Best for UK-based users who want TGA-approved medications, evidence-based clinical approach, and transparent pricing. Leading UK men\'s health service.',
+  },
+  comparisonTable: [
+    {
+      feature: 'Availability',
+      brand1Value: 'US only (50 states)',
+      brand2Value: 'UK only',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Starting Price',
+      brand1Value: '$4/dose',
+      brand2Value: '£2.25/dose',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Consultation Fee',
+      brand1Value: 'Free',
+      brand2Value: 'Free',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Treatment Range',
+      brand1Value: 'ED, Hair, TRT, Weight, Mental, Skin',
+      brand2Value: 'ED, Hair, TRT, Weight',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Shipping Speed',
+      brand1Value: '2-3 days (US)',
+      brand2Value: '3-4 days (UK)',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Platform Style',
+      brand1Value: 'Consumer-friendly',
+      brand2Value: 'Clinical, professional',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Doctor Registration',
+      brand1Value: 'US-licensed MDs',
+      brand2Value: 'GMC-registered',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Medication Approval',
+      brand1Value: 'FDA-approved',
+      brand2Value: 'TGA-approved',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Customer Rating',
+      brand1Value: '4.5/5 (24,500 reviews)',
+      brand2Value: '4.3/5',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Product Selection',
+      brand1Value: 'Extensive',
+      brand2Value: 'Focused',
+      winner: '1' as const,
+    },
+  ],
+};
+---
+
+<ComparisonLayout {...comparisonData}>
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">
+        US vs UK Market Leaders: Hims vs Manual
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Geographic Availability</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hims</strong> serves the United States exclusively, available in all 50 states. US residents can access Hims' full range of men's health treatments with fast domestic shipping and US-licensed physicians.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> serves the United Kingdom exclusively. UK residents work with GMC-registered doctors and receive TGA-approved medications shipped within the UK. This makes Manual vs Hims a choice based primarily on your location—US users choose Hims, UK users choose Manual.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Price Comparison</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hims</strong> starts at $4/dose for generic sildenafil, making it one of the most affordable US telehealth options for ED treatment. Pricing is transparent and competitive across their full product range including hair loss and testosterone therapy.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> starts at £2.25/dose (approximately $3 USD) for ED medication, positioning them competitively in the UK market. Both platforms offer free consultations and transparent pricing without hidden fees. Currency differences aside, both are affordable leaders in their respective markets.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Treatment Range</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hims</strong> offers the broadest product range: erectile dysfunction, hair loss, testosterone therapy, weight loss (GLP-1s), mental health care, and skincare. This makes Hims a true one-stop shop for men's health and wellness. If you need multiple services, Hims' comprehensive platform is convenient.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> focuses on core men's health treatments: erectile dysfunction, hair loss, testosterone therapy, and weight management. They don't offer mental health or skincare services. Manual's more focused approach means they specialize in essential treatments with proven efficacy.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Platform & User Experience</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hims</strong> presents a modern, consumer-friendly platform designed for speed and simplicity. The experience is casual, approachable, and optimized for quick consultations and fast medication delivery. Hims feels like a tech company that happens to do healthcare—polished, fast, and user-centric.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> offers a more clinical, professional platform that emphasizes medical credibility and evidence-based information. The interface feels more like consulting with a traditional medical practice. Manual appeals to users who want a serious, medical-first approach rather than consumer marketing.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Medical Standards</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hims</strong> uses US-licensed physicians and FDA-approved medications. All consultations are conducted by medical doctors licensed in your state. Hims meets all US regulatory requirements for telemedicine and prescription medication delivery.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> uses GMC-registered doctors (UK equivalent of US medical licensing) and TGA-approved medications. Manual emphasizes their evidence-based clinical approach and transparent medical processes. Both platforms meet rigorous medical standards in their respective countries.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Shipping & Logistics</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hims</strong> ships within 2-3 days to all US states with discreet packaging and automatic refills. Fast domestic shipping is a Hims strength, getting medication to users quickly.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> ships within 3-4 days across the UK with unmarked, discreet packaging. Delivery is reliable, though slightly slower than Hims' US shipping. Both platforms offer subscription management and easy cancellation.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Customer Trust & Reviews</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hims</strong> has extensive customer reviews with 24,500+ ratings averaging 4.5/5 stars. As the largest US men's telehealth platform, Hims has a proven track record and widespread brand recognition.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> maintains a strong 4.3/5 rating and is well-regarded in the UK market. While they have fewer total reviews than Hims (smaller market), Manual is respected for quality clinical care and transparency.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Final Verdict</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Your location determines this choice. <strong>Choose Hims</strong> if you're in the United States. Hims is the market leader with the broadest product range, fastest shipping, most reviews, and excellent pricing. Their comprehensive platform serves nearly all men's health needs conveniently.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          <strong>Choose Manual</strong> if you're in the United Kingdom. Manual is the leading UK men's health platform with GMC-registered doctors, TGA-approved medications, competitive pricing (£2.25/dose), and a professional clinical approach. For UK residents, Manual is the natural equivalent to Hims in the US.
+        </p>
+      </div>
+    </div>
+  </section>
+</ComparisonLayout>

@@ -1,0 +1,135 @@
+---
+import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+
+const comparisonData = {
+  brand1Slug: 'manual',
+  brand2Slug: 'numan',
+  category: 'sexual-health',
+  verdict: {
+    brand1BestFor: 'Best for users who value TGA-approved medications, evidence-based approach, and transparent pricing. Great for those seeking premium UK care.',
+    brand2BestFor: 'Best for users who want affordable UK men\'s health services with innovative subscription models and modern digital experience.',
+  },
+  comparisonTable: [
+    {
+      feature: 'Starting Price',
+      brand1Value: '£2.25/dose',
+      brand2Value: '£3/treatment',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Consultation Fee',
+      brand1Value: 'Free',
+      brand2Value: 'Free',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Medication Approval',
+      brand1Value: 'TGA-approved',
+      brand2Value: 'MHRA-approved',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Doctor Registration',
+      brand1Value: 'GMC-registered',
+      brand2Value: 'GMC-registered',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Treatment Range',
+      brand1Value: 'ED, Hair, TRT, Weight',
+      brand2Value: 'ED, Hair, TRT, Weight, Mental',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Subscription Model',
+      brand1Value: 'Traditional monthly',
+      brand2Value: 'Innovative flex plans',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Platform Design',
+      brand1Value: 'Clinical, professional',
+      brand2Value: 'Modern, user-friendly',
+      winner: '2' as const,
+    },
+    {
+      feature: 'UK Availability',
+      brand1Value: 'All UK',
+      brand2Value: 'All UK',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Discretion',
+      brand1Value: 'Unmarked packaging',
+      brand2Value: 'Discreet delivery',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Customer Rating',
+      brand1Value: '4.3/5',
+      brand2Value: '4.4/5',
+      winner: '2' as const,
+    },
+  ],
+};
+---
+
+<ComparisonLayout {...comparisonData}>
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">
+        UK Men's Health Leaders: Manual vs Numan
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Price & Value Comparison</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Manual</strong> edges ahead on starting price at £2.25/dose for ED treatment compared to Numan's £3/treatment. Both UK platforms offer competitive pricing compared to traditional pharmacy costs. Manual emphasizes transparent, straightforward pricing with no hidden fees.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Numan</strong> offers innovative subscription plans with flexibility that may appeal to users who want to pause or adjust treatment easily. Their pricing includes comprehensive support and follow-up consultations as needed.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Medical Credentials & Safety</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Manual</strong> uses TGA-approved medications and GMC-registered doctors. They emphasize evidence-based medicine and clinical efficacy. Every treatment is reviewed by UK-licensed physicians before dispensing.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Numan</strong> uses MHRA-approved medications with GMC-registered doctors conducting all consultations. Both platforms meet strict UK regulatory standards, ensuring safe, legal, and effective treatment.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Treatment Options</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Manual</strong> covers essential men's health categories: erectile dysfunction, hair loss, testosterone therapy, and weight management. Their focus is on core treatments with proven efficacy.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Numan</strong> offers all of Manual's categories plus mental health support, making them a more comprehensive one-stop solution for men's health needs in the UK. Their broader range may appeal to users seeking holistic care.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Platform Experience</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Manual</strong> presents a more clinical, professional interface. Their platform emphasizes medical credibility and evidence-based information. The experience feels more like consulting with a traditional medical practice.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Numan</strong> offers a modern, sleek digital experience designed for today's tech-savvy users. Their interface is intuitive, visually appealing, and optimized for quick consultations and easy subscription management.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Subscription Flexibility</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Manual</strong> operates on traditional monthly subscriptions with straightforward billing. Users can cancel anytime, and the model is transparent and predictable.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Numan</strong> innovates with flexible subscription plans allowing users to pause, skip, or adjust deliveries easily. This flexibility is ideal for users whose needs vary month to month or who travel frequently.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Final Verdict</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Both Manual and Numan are excellent UK telehealth platforms for men's health. <strong>Choose Manual</strong> if you prioritize the lowest starting price, evidence-based medicine presentation, and a more clinical approach. Their TGA-approved medications and professional platform appeal to users who want traditional medical credibility.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          <strong>Choose Numan</strong> if you value comprehensive services (including mental health), modern user experience, and flexible subscription options. Their broader treatment range and innovative platform make them ideal for users seeking a complete digital health solution.
+        </p>
+      </div>
+    </div>
+  </section>
+</ComparisonLayout>
