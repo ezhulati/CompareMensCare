@@ -2,8 +2,8 @@
 title: "When to Use At-Home Health Tests: Complete Guide to Home Testing"
 description: "Comprehensive guide to at-home health testing including when it's appropriate, what tests are available, accuracy, limitations, and when you need to see a doctor instead."
 category: "diagnostics"
-publishDate: 2025-01-15T00:00:00.000Z
-lastReviewed: 2025-01-15T00:00:00.000Z
+publishDate: 2025-01-15
+lastReviewed: 2025-01-15
 author: "Medical Editorial Team"
 medicalReviewer: "Dr. Patricia Lewis, MD - Laboratory Medicine"
 featured: true

@@ -2,8 +2,8 @@
 title: "Teletherapy vs In-Person Therapy: Complete Comparison Guide for 2025"
 description: "Comprehensive comparison of online therapy and traditional in-person therapy including effectiveness research, pros and cons, cost analysis, and which situations benefit from each approach."
 category: "mental-health"
-publishDate: 2025-01-15T00:00:00.000Z
-lastReviewed: 2025-01-15T00:00:00.000Z
+publishDate: 2025-01-15
+lastReviewed: 2025-01-15
 author: "Medical Editorial Team"
 medicalReviewer: "Dr. Jennifer Morrison, PsyD - Licensed Clinical Psychologist"
 featured: false

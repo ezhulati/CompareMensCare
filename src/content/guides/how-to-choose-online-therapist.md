@@ -2,8 +2,8 @@
 title: "How to Choose an Online Therapist: Complete Guide to Finding the Right Mental Health Professional"
 description: "Comprehensive guide to finding and choosing the right online therapist including credentials to look for, questions to ask, red flags to avoid, and how to get started with teletherapy."
 category: "mental-health"
-publishDate: 2025-01-15T00:00:00.000Z
-lastReviewed: 2025-01-15T00:00:00.000Z
+publishDate: 2025-01-15
+lastReviewed: 2025-01-15
 author: "Medical Editorial Team"
 medicalReviewer: "Dr. Jennifer Morrison, PsyD - Licensed Clinical Psychologist"
 featured: true

@@ -2,8 +2,8 @@
 title: "Understanding Erectile Dysfunction: Causes, Symptoms, and Modern Treatment Options"
 description: "Comprehensive guide to erectile dysfunction (ED) covering causes, risk factors, diagnosis, and treatment options including medications, lifestyle changes, and when to seek medical help."
 category: "sexual-health"
-publishDate: 2025-01-15T00:00:00.000Z
-lastReviewed: 2025-01-15T00:00:00.000Z
+publishDate: 2025-01-15
+lastReviewed: 2025-01-15
 author: "Medical Editorial Team"
 medicalReviewer: "Dr. James Mitchell, MD - Men's Health Specialist"
 featured: true

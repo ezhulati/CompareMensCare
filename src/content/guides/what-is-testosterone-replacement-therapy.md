@@ -2,8 +2,8 @@
 title: "What Is Testosterone Replacement Therapy (TRT)? Complete Guide for Men"
 description: "Comprehensive guide to TRT covering symptoms of low testosterone, testing, treatment options (injections, gels, pellets), benefits, risks, costs, and what to expect."
 category: "testosterone"
-publishDate: 2025-01-15T00:00:00.000Z
-lastReviewed: 2025-01-15T00:00:00.000Z
+publishDate: 2025-01-15
+lastReviewed: 2025-01-15
 author: "Medical Editorial Team"
 medicalReviewer: "Dr. Robert Chen, MD - Endocrinology & Hormone Specialist"
 featured: true
