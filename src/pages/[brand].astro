@@ -20,11 +20,13 @@ let brand = Astro.props.brand;
 if (!brand) {
   // In SSR mode, fetch the brand using the route parameter
   const brandSlug = Astro.params.brand;
-  brand = await getEntry('brands', brandSlug);
+  const fetchedBrand = await getEntry('brands', brandSlug);
 
-  if (!brand) {
+  if (!fetchedBrand) {
     return Astro.redirect('/404');
   }
+
+  brand = fetchedBrand;
 }
 
 const { Content } = await brand.render();
