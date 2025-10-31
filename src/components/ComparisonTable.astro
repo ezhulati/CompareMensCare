@@ -86,14 +86,14 @@ const { brands, location = 'category-table' } = Astro.props;
         </div>
 
         <!-- Pricing Info - Col 2 -->
-        <div class="lg:col-span-4 grid grid-cols-2 gap-4">
+        <div class="lg:col-span-4 grid grid-cols-1 xs:grid-cols-2 gap-3 sm:gap-4">
           <div>
             <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Consultation</div>
-            <div class="text-lg font-semibold text-slate-900">{brand.consultationFee}</div>
+            <div class="text-base sm:text-lg font-semibold text-slate-900">{brand.consultationFee}</div>
           </div>
           <div>
             <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">From</div>
-            <div class="text-lg font-semibold text-slate-900">{brand.medicationFrom}</div>
+            <div class="text-base sm:text-lg font-semibold text-slate-900">{brand.medicationFrom}</div>
           </div>
         </div>
 
