@@ -13,13 +13,23 @@ import {
   ShieldCheck,
   Zap,
   CircleDollarSign,
-  TrendingUp,
-  Calendar,
-  Layers,
   Lock,
   Clock,
-  CalendarDays,
-  CalendarCheck
+  Layers,
+  Target,
+  TrendingUp,
+  Microscope,
+  BadgeCheck,
+  Package,
+  Pill,
+  Users,
+  Headphones,
+  Award,
+  Calendar,
+  BarChart,
+  TestTube,
+  FileText,
+  Search
 } from 'lucide-astro';
 
 interface Category {
@@ -75,7 +85,7 @@ const categoryIcons: Record<string, any> = {
   <!-- Progress Bar -->
   <div class="max-w-md mx-auto mb-8">
     <div class="flex items-center justify-between mb-2">
-      <span class="text-sm font-medium text-slate-700">Question <span id="progress-current">1</span> of <span id="progress-total">3</span></span>
+      <span class="text-sm font-medium text-slate-700">Question <span id="progress-current">1</span> of 3</span>
       <span class="text-sm text-slate-500"><span id="progress-percent">33</span>% complete</span>
     </div>
     <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
@@ -85,31 +95,31 @@ const categoryIcons: Record<string, any> = {
 
   <!-- Question 1: Category Selection -->
   <div id="question-1" class="question-step active">
-    <div class="text-center mb-10">
-      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+    <div class="text-center mb-8 sm:mb-10">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
         What brings you here today?
       </h2>
-      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">
         Choose the health topic you're interested in exploring
       </p>
     </div>
 
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-4xl mx-auto">
       {categories.map((category) => {
         const IconComponent = categoryIcons[category.id];
         return (
           <button
             type="button"
             data-category={category.id}
-            class="category-card group relative card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring"
+            class="category-card group relative card-hover p-4 sm:p-5 lg:p-7 text-center cursor-pointer transition-all duration-200 focus-ring min-h-[160px] sm:min-h-[180px] flex flex-col items-center justify-center"
           >
-            <div class="flex justify-center mb-3 text-brand-accent transition-transform duration-200 group-hover:scale-110">
-              <IconComponent class="w-12 h-12" />
+            <div class="flex justify-center mb-3 sm:mb-4 text-brand-accent transition-transform duration-200 group-hover:scale-110">
+              <IconComponent class="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12" />
             </div>
-            <h3 class="font-semibold text-slate-900 mb-1 group-hover:text-brand-accent transition-colors">
+            <h3 class="font-heading font-bold text-slate-900 mb-1.5 sm:mb-2 group-hover:text-brand-accent transition-colors text-base sm:text-lg lg:text-xl leading-tight">
               {category.label}
             </h3>
-            <p class="text-sm text-slate-600">
+            <p class="text-xs sm:text-sm lg:text-base text-slate-600 leading-snug">
               {category.description}
             </p>
           </button>
@@ -118,8 +128,8 @@ const categoryIcons: Record<string, any> = {
     </div>
   </div>
 
-  <!-- Question 2: Experience Level (Sexual Health) -->
-  <div id="question-2-sexual" class="question-step hidden">
+  <!-- ========== SEXUAL HEALTH FLOW ========== -->
+  <div id="question-2-sexual-health" class="question-step hidden">
     <div class="text-center mb-10">
       <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -128,7 +138,7 @@ const categoryIcons: Record<string, any> = {
         Back
       </button>
       <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
-        Have you tried online ED treatment before?
+        Have you tried ED treatment before?
       </h2>
       <p class="text-lg text-slate-600 max-w-2xl mx-auto">
         This helps us understand your experience level
@@ -136,52 +146,284 @@ const categoryIcons: Record<string, any> = {
     </div>
 
     <div class="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-      <button
-        type="button"
-        data-experience="novice"
-        class="experience-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group"
-      >
+      <button type="button" data-q2="novice" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
         <div class="flex justify-center mb-3 text-emerald-600">
           <UserPlus class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">First Timer</h3>
-        <p class="text-sm text-slate-600">
-          I'm exploring this for the first time
-        </p>
+        <p class="text-sm text-slate-600">Exploring this for the first time</p>
       </button>
-
-      <button
-        type="button"
-        data-experience="comparison"
-        class="experience-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group"
-      >
+      <button type="button" data-q2="switching" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
         <div class="flex justify-center mb-3 text-blue-600">
           <ArrowLeftRight class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Switching Services</h3>
-        <p class="text-sm text-slate-600">
-          I've used a service but want to compare options
-        </p>
+        <p class="text-sm text-slate-600">Tried before, want better option</p>
       </button>
-
-      <button
-        type="button"
-        data-experience="price"
-        class="experience-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group"
-      >
+      <button type="button" data-q2="value" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
         <div class="flex justify-center mb-3 text-emerald-600">
           <DollarSign class="w-12 h-12" />
         </div>
         <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Finding Value</h3>
-        <p class="text-sm text-slate-600">
-          I'm looking for the best price
-        </p>
+        <p class="text-sm text-slate-600">Looking for the best price</p>
       </button>
     </div>
   </div>
 
-  <!-- Question 3a: Novice Concerns -->
-  <div id="question-3-novice" class="question-step hidden">
+  <div id="question-3-sexual-health-novice" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What matters most for your first experience?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose your top priority</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+      <button type="button" data-q3="privacy-discretion" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-purple-600"><Shield class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Privacy & Discretion</h3>
+        <p class="text-sm text-slate-600">Keep this completely private</p>
+      </button>
+      <button type="button" data-q3="medical-credibility" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-blue-600"><ShieldCheck class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Medical Credibility</h3>
+        <p class="text-sm text-slate-600">Safe and legitimate service</p>
+      </button>
+      <button type="button" data-q3="lowest-cost" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-emerald-600"><CircleDollarSign class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Lowest Cost</h3>
+        <p class="text-sm text-slate-600">Best value for money</p>
+      </button>
+      <button type="button" data-q3="easy-process" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-amber-600"><Zap class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Easy Process</h3>
+        <p class="text-sm text-slate-600">Simplest, most straightforward</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-sexual-health-switching" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What didn't work with your previous service?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Help us find a better match</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+      <button type="button" data-q3="too-expensive" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-red-600"><TrendingUp class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Too Expensive</h3>
+        <p class="text-sm text-slate-600">Need more affordable option</p>
+      </button>
+      <button type="button" data-q3="limited-options" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-indigo-600"><Layers class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Limited Options</h3>
+        <p class="text-sm text-slate-600">Want more treatment choices</p>
+      </button>
+      <button type="button" data-q3="poor-support" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-orange-600"><Headphones class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Poor Support</h3>
+        <p class="text-sm text-slate-600">Need better customer service</p>
+      </button>
+      <button type="button" data-q3="delivery-issues" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-blue-600"><Clock class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Delivery Issues</h3>
+        <p class="text-sm text-slate-600">Want faster, reliable shipping</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-sexual-health-value" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        How do you plan to use treatment?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">This affects which pricing model works best</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+      <button type="button" data-q3="occasionally" class="q3-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-slate-600"><Clock class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Occasionally</h3>
+        <p class="text-sm text-slate-600">Few times per month</p>
+      </button>
+      <button type="button" data-q3="regularly" class="q3-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-blue-600"><Calendar class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Regularly</h3>
+        <p class="text-sm text-slate-600">Several times per week</p>
+      </button>
+      <button type="button" data-q3="try-different" class="q3-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-purple-600"><Layers class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Try Different Options</h3>
+        <p class="text-sm text-slate-600">Want medication variety</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== HAIR HEALTH FLOW ========== -->
+  <div id="question-2-hair-health" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        Where are you in your hair loss journey?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">This helps us recommend the right treatment intensity</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+      <button type="button" data-q2="early" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-green-600"><Sparkles class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Early Thinning</h3>
+        <p class="text-sm text-slate-600">Just started noticing loss</p>
+      </button>
+      <button type="button" data-q2="moderate" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-amber-600"><Target class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Moderate Loss</h3>
+        <p class="text-sm text-slate-600">Clear pattern forming</p>
+      </button>
+      <button type="button" data-q2="advanced" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-red-600"><TrendingDown class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Advanced Loss</h3>
+        <p class="text-sm text-slate-600">Significant thinning</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-hair-health-early" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What's your main focus?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose your treatment goal</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+      <button type="button" data-q3="prevention" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-blue-600"><Shield class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Prevention</h3>
+        <p class="text-sm text-slate-600">Stop further loss, maintain current hair</p>
+      </button>
+      <button type="button" data-q3="regrowth" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-green-600"><TrendingUp class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Regrowth</h3>
+        <p class="text-sm text-slate-600">Actively regrow hair in thinning areas</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-hair-health-moderate" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What's your priority?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose what matters most to you</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+      <button type="button" data-q3="affordable" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-emerald-600"><CircleDollarSign class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Affordability</h3>
+        <p class="text-sm text-slate-600">Budget-friendly long-term treatment</p>
+      </button>
+      <button type="button" data-q3="medical-guidance" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-blue-600"><BadgeCheck class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Medical Guidance</h3>
+        <p class="text-sm text-slate-600">Expert support and monitoring</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-hair-health-advanced" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What do you need from treatment?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose your approach</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+      <button type="button" data-q3="aggressive" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-red-600"><Zap class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Aggressive Treatment</h3>
+        <p class="text-sm text-slate-600">Multiple medications, maximum results</p>
+      </button>
+      <button type="button" data-q3="realistic" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-blue-600"><ShieldCheck class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Realistic Expectations</h3>
+        <p class="text-sm text-slate-600">Honest guidance, sustainable approach</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== TESTOSTERONE FLOW ========== -->
+  <div id="question-2-testosterone" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What's your TRT experience level?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">This helps us understand your needs</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+      <button type="button" data-q2="new" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-green-600"><UserPlus class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">New to TRT</h3>
+        <p class="text-sm text-slate-600">Researching options</p>
+      </button>
+      <button type="button" data-q2="switching" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-blue-600"><ArrowLeftRight class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Switching Providers</h3>
+        <p class="text-sm text-slate-600">Want better option</p>
+      </button>
+      <button type="button" data-q2="optimizing" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-purple-600"><TrendingUp class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Optimizing</h3>
+        <p class="text-sm text-slate-600">Current user seeking improvement</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-testosterone-new" class="question-step hidden">
     <div class="text-center mb-10">
       <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -192,72 +434,33 @@ const categoryIcons: Record<string, any> = {
       <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
         What matters most to you?
       </h2>
-      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        Choose your top priority
-      </p>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose your top priority</p>
     </div>
-
     <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-      <button
-        type="button"
-        data-concern="privacy"
-        class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
-      >
-        <div class="flex mb-3 text-purple-600">
-          <Shield class="w-12 h-12" />
-        </div>
-        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Privacy & Discretion</h3>
-        <p class="text-sm text-slate-600">
-          I want this to stay completely private
-        </p>
+      <button type="button" data-q3="comprehensive-testing" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-blue-600"><Microscope class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Comprehensive Testing</h3>
+        <p class="text-sm text-slate-600">Detailed labs and monitoring</p>
       </button>
-
-      <button
-        type="button"
-        data-concern="safety"
-        class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
-      >
-        <div class="flex mb-3 text-blue-600">
-          <ShieldCheck class="w-12 h-12" />
-        </div>
-        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Safety & Trust</h3>
-        <p class="text-sm text-slate-600">
-          I want to make sure this is safe and legitimate
-        </p>
+      <button type="button" data-q3="affordable-trt" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-emerald-600"><CircleDollarSign class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Affordability</h3>
+        <p class="text-sm text-slate-600">Budget-friendly TRT option</p>
       </button>
-
-      <button
-        type="button"
-        data-concern="ease"
-        class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
-      >
-        <div class="flex mb-3 text-amber-600">
-          <Zap class="w-12 h-12" />
-        </div>
+      <button type="button" data-q3="medical-oversight" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-purple-600"><ShieldCheck class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Medical Oversight</h3>
+        <p class="text-sm text-slate-600">Expert physician supervision</p>
+      </button>
+      <button type="button" data-q3="easy-trt" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-amber-600"><Zap class="w-12 h-12" /></div>
         <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Easy Process</h3>
-        <p class="text-sm text-slate-600">
-          I want the simplest, most straightforward option
-        </p>
-      </button>
-
-      <button
-        type="button"
-        data-concern="cost"
-        class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
-      >
-        <div class="flex mb-3 text-emerald-600">
-          <CircleDollarSign class="w-12 h-12" />
-        </div>
-        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Affordable Cost</h3>
-        <p class="text-sm text-slate-600">
-          I'm looking for the best value for my money
-        </p>
+        <p class="text-sm text-slate-600">Simple, convenient experience</p>
       </button>
     </div>
   </div>
 
-  <!-- Question 3b: Comparison Concerns -->
-  <div id="question-3-comparison" class="question-step hidden">
+  <div id="question-3-testosterone-switching" class="question-step hidden">
     <div class="text-center mb-10">
       <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -266,74 +469,35 @@ const categoryIcons: Record<string, any> = {
         Back
       </button>
       <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
-        What didn't you love about your previous service?
+        What's driving your switch?
       </h2>
-      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        This helps us find a better match
-      </p>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Help us find a better fit</p>
     </div>
-
     <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-      <button
-        type="button"
-        data-concern="price-high"
-        class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
-      >
-        <div class="flex mb-3 text-red-600">
-          <TrendingUp class="w-12 h-12" />
-        </div>
-        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Too Expensive</h3>
-        <p class="text-sm text-slate-600">
-          I need a more affordable option
-        </p>
+      <button type="button" data-q3="cost-concerns" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-red-600"><TrendingDown class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Cost Concerns</h3>
+        <p class="text-sm text-slate-600">Current provider too expensive</p>
       </button>
-
-      <button
-        type="button"
-        data-concern="flexibility"
-        class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
-      >
-        <div class="flex mb-3 text-blue-600">
-          <Calendar class="w-12 h-12" />
-        </div>
-        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Lack of Flexibility</h3>
-        <p class="text-sm text-slate-600">
-          I want more control over orders and timing
-        </p>
+      <button type="button" data-q3="better-testing" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-blue-600"><TestTube class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Better Testing</h3>
+        <p class="text-sm text-slate-600">Want more comprehensive labs</p>
       </button>
-
-      <button
-        type="button"
-        data-concern="selection"
-        class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
-      >
-        <div class="flex mb-3 text-indigo-600">
-          <Layers class="w-12 h-12" />
-        </div>
-        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Limited Options</h3>
-        <p class="text-sm text-slate-600">
-          I want more treatment choices
-        </p>
+      <button type="button" data-q3="more-support" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-purple-600"><Headphones class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">More Support</h3>
+        <p class="text-sm text-slate-600">Need better guidance and care</p>
       </button>
-
-      <button
-        type="button"
-        data-concern="privacy-compare"
-        class="concern-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group"
-      >
-        <div class="flex mb-3 text-purple-600">
-          <Lock class="w-12 h-12" />
-        </div>
-        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Privacy Concerns</h3>
-        <p class="text-sm text-slate-600">
-          I want more discreet packaging or billing
-        </p>
+      <button type="button" data-q3="convenience" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-amber-600"><Clock class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Convenience</h3>
+        <p class="text-sm text-slate-600">Current process too complicated</p>
       </button>
     </div>
   </div>
 
-  <!-- Question 3c: Price Focus -->
-  <div id="question-3-price" class="question-step hidden">
+  <div id="question-3-testosterone-optimizing" class="question-step hidden">
     <div class="text-center mb-10">
       <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -342,54 +506,323 @@ const categoryIcons: Record<string, any> = {
         Back
       </button>
       <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
-        How often do you plan to use this?
+        What would make your TRT better?
       </h2>
-      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        This affects which pricing model works best for you
-      </p>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose your improvement goal</p>
     </div>
-
     <div class="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-      <button
-        type="button"
-        data-concern="occasional"
-        class="concern-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group"
-      >
-        <div class="flex justify-center mb-3 text-slate-600">
-          <Clock class="w-12 h-12" />
-        </div>
-        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Occasionally</h3>
-        <p class="text-sm text-slate-600">
-          A few times per month
-        </p>
+      <button type="button" data-q3="lower-cost" class="q3-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-emerald-600"><CircleDollarSign class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Lower Cost</h3>
+        <p class="text-sm text-slate-600">Reduce monthly expense</p>
       </button>
-
-      <button
-        type="button"
-        data-concern="regular"
-        class="concern-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group"
-      >
-        <div class="flex justify-center mb-3 text-blue-600">
-          <CalendarDays class="w-12 h-12" />
-        </div>
-        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Regularly</h3>
-        <p class="text-sm text-slate-600">
-          Several times per week
-        </p>
+      <button type="button" data-q3="detailed-labs" class="q3-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-blue-600"><BarChart class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Detailed Labs</h3>
+        <p class="text-sm text-slate-600">More comprehensive testing</p>
       </button>
+      <button type="button" data-q3="better-convenience" class="q3-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-amber-600"><Zap class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Better Convenience</h3>
+        <p class="text-sm text-slate-600">Simpler, easier process</p>
+      </button>
+    </div>
+  </div>
 
-      <button
-        type="button"
-        data-concern="daily"
-        class="concern-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group"
-      >
-        <div class="flex justify-center mb-3 text-emerald-600">
-          <CalendarCheck class="w-12 h-12" />
-        </div>
-        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Daily</h3>
-        <p class="text-sm text-slate-600">
-          Every day or almost daily
-        </p>
+  <!-- ========== WEIGHT LOSS FLOW ========== -->
+  <div id="question-2-weight-loss" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What's your weight loss goal?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">This helps us recommend the right approach</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+      <button type="button" data-q2="modest" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-green-600"><Target class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">10-25 lbs</h3>
+        <p class="text-sm text-slate-600">Modest weight loss</p>
+      </button>
+      <button type="button" data-q2="significant" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-blue-600"><TrendingDown class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">25-50 lbs</h3>
+        <p class="text-sm text-slate-600">Significant loss</p>
+      </button>
+      <button type="button" data-q2="major" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-purple-600"><Activity class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">50+ lbs</h3>
+        <p class="text-sm text-slate-600">Major transformation</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-weight-loss-modest" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What type of support do you want?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose your approach</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+      <button type="button" data-q3="medication-only" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-blue-600"><Pill class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Medication Only</h3>
+        <p class="text-sm text-slate-600">Just the prescription, no extras</p>
+      </button>
+      <button type="button" data-q3="holistic" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-green-600"><Heart class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Holistic Program</h3>
+        <p class="text-sm text-slate-600">Medication + lifestyle support</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-weight-loss-significant" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What's your priority?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose what matters most</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+      <button type="button" data-q3="affordable-weight" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-emerald-600"><CircleDollarSign class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Affordability</h3>
+        <p class="text-sm text-slate-600">Most budget-friendly option</p>
+      </button>
+      <button type="button" data-q3="supervised" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-blue-600"><BadgeCheck class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Medical Supervision</h3>
+        <p class="text-sm text-slate-600">Expert oversight and monitoring</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-weight-loss-major" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What do you need for success?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose your support level</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+      <button type="button" data-q3="comprehensive-care" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-purple-600"><Package class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Comprehensive Care</h3>
+        <p class="text-sm text-slate-600">Full support system, all tools</p>
+      </button>
+      <button type="button" data-q3="flexibility" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-blue-600"><Layers class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Flexibility & Options</h3>
+        <p class="text-sm text-slate-600">Multiple medication choices</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== MENTAL HEALTH FLOW ========== -->
+  <div id="question-2-mental-health" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What type of support are you seeking?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose the care you need</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+      <button type="button" data-q2="therapy" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-blue-600"><Users class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Talk Therapy</h3>
+        <p class="text-sm text-slate-600">Counseling and therapy sessions</p>
+      </button>
+      <button type="button" data-q2="medication" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-purple-600"><Pill class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Medication</h3>
+        <p class="text-sm text-slate-600">Psychiatry and medication management</p>
+      </button>
+      <button type="button" data-q2="both" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-green-600"><Heart class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Both</h3>
+        <p class="text-sm text-slate-600">Therapy and medication together</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-mental-health-therapy" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What matters most in a therapist?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose your priority</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+      <button type="button" data-q3="broad-network" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-blue-600"><Users class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Broad Therapist Network</h3>
+        <p class="text-sm text-slate-600">More therapists to choose from</p>
+      </button>
+      <button type="button" data-q3="specialized-matching" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-purple-600"><Target class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Specialized Matching</h3>
+        <p class="text-sm text-slate-600">Carefully matched to your needs</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-mental-health-medication" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What's your priority?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose what matters most</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+      <button type="button" data-q3="fast-access" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-blue-600"><Clock class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Fast Access</h3>
+        <p class="text-sm text-slate-600">Quick consultation and prescription</p>
+      </button>
+      <button type="button" data-q3="ongoing-relationship" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-purple-600"><Heart class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Ongoing Relationship</h3>
+        <p class="text-sm text-slate-600">Long-term physician partnership</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-mental-health-both" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What do you need from your provider?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose your approach</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+      <button type="button" data-q3="integrated" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-purple-600"><Package class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Integrated Care</h3>
+        <p class="text-sm text-slate-600">Coordinated therapy and medication</p>
+      </button>
+      <button type="button" data-q3="flexible" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-blue-600"><Layers class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Flexibility to Choose</h3>
+        <p class="text-sm text-slate-600">Pick separate providers if needed</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== DIAGNOSTICS FLOW ========== -->
+  <div id="question-2-diagnostics" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What tests are you interested in?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose your testing needs</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+      <button type="button" data-q2="hormone" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-blue-600"><Activity class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Hormone Panel</h3>
+        <p class="text-sm text-slate-600">Testosterone, thyroid tests</p>
+      </button>
+      <button type="button" data-q2="sexual" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-purple-600"><Heart class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Sexual Health</h3>
+        <p class="text-sm text-slate-600">STD/STI screening</p>
+      </button>
+      <button type="button" data-q2="comprehensive" class="q2-card card-hover p-6 text-center cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex justify-center mb-3 text-green-600"><TestTube class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Comprehensive</h3>
+        <p class="text-sm text-slate-600">Full health panel</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="question-3-diagnostics" class="question-step hidden">
+    <div class="text-center mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+        What's your priority?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose what matters most</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+      <button type="button" data-q3="fast-results" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-blue-600"><Clock class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Fast Results</h3>
+        <p class="text-sm text-slate-600">Quick turnaround time</p>
+      </button>
+      <button type="button" data-q3="detailed-analysis" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-purple-600"><FileText class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Detailed Analysis</h3>
+        <p class="text-sm text-slate-600">Comprehensive interpretation</p>
+      </button>
+      <button type="button" data-q3="consultation" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-green-600"><Users class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Doctor Consultation</h3>
+        <p class="text-sm text-slate-600">Physician review included</p>
+      </button>
+      <button type="button" data-q3="affordable-test" class="q3-card card-hover p-6 text-left cursor-pointer transition-all duration-200 focus-ring group">
+        <div class="flex mb-3 text-emerald-600"><CircleDollarSign class="w-12 h-12" /></div>
+        <h3 class="font-semibold text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Most Affordable</h3>
+        <p class="text-sm text-slate-600">Budget-friendly testing</p>
       </button>
     </div>
   </div>
@@ -415,8 +848,8 @@ const categoryIcons: Record<string, any> = {
   }
 
   .category-card:hover,
-  .experience-card:hover,
-  .concern-card:hover {
+  .q2-card:hover,
+  .q3-card:hover {
     transform: translateY(-2px);
   }
 </style>
@@ -424,19 +857,17 @@ const categoryIcons: Record<string, any> = {
 <script>
   interface UserChoices {
     category?: string;
-    experience?: string;
-    concern?: string;
+    q2?: string;
+    q3?: string;
   }
 
   function initGuidedMatcher() {
     const userChoices: UserChoices = {};
     let currentStep = 1;
-    const totalSteps = 3;
 
-    // Progress tracking
     function updateProgress(step: number) {
       currentStep = step;
-      const percent = Math.round((step / totalSteps) * 100);
+      const percent = Math.round((step / 3) * 100);
 
       const progressBar = document.getElementById('progress-bar');
       const progressCurrent = document.getElementById('progress-current');
@@ -447,7 +878,6 @@ const categoryIcons: Record<string, any> = {
       if (progressPercent) progressPercent.textContent = String(percent);
     }
 
-    // Show specific question step
     function showStep(stepId: string) {
       document.querySelectorAll('.question-step').forEach(step => {
         step.classList.remove('active');
@@ -459,7 +889,7 @@ const categoryIcons: Record<string, any> = {
       }
     }
 
-    // Question 1: Category Selection
+    // Q1: Category Selection
     document.querySelectorAll('.category-card').forEach(card => {
       card.addEventListener('click', () => {
         const category = card.getAttribute('data-category');
@@ -467,68 +897,44 @@ const categoryIcons: Record<string, any> = {
 
         userChoices.category = category;
         updateProgress(2);
+        showStep(`question-2-${category}`);
 
-        // For now, only sexual-health has full flow
-        if (category === 'sexual-health') {
-          showStep('question-2-sexual');
-        } else {
-          // For other categories, skip to results with basic selection
-          userChoices.experience = 'general';
-          userChoices.concern = 'overview';
-          showResults();
-        }
-
-        // Analytics
         if (typeof window !== 'undefined' && (window as any).gtag) {
-          (window as any).gtag('event', 'guide_category_selected', {
-            category: category,
-          });
+          (window as any).gtag('event', 'guide_category_selected', { category });
         }
       });
     });
 
-    // Question 2: Experience Level
-    document.querySelectorAll('.experience-card').forEach(card => {
+    // Q2: All categories
+    document.querySelectorAll('.q2-card').forEach(card => {
       card.addEventListener('click', () => {
-        const experience = card.getAttribute('data-experience');
-        if (!experience) return;
+        const q2 = card.getAttribute('data-q2');
+        if (!q2 || !userChoices.category) return;
 
-        userChoices.experience = experience;
+        userChoices.q2 = q2;
         updateProgress(3);
+        showStep(`question-3-${userChoices.category}-${q2}`);
 
-        // Show appropriate question 3
-        if (experience === 'novice') {
-          showStep('question-3-novice');
-        } else if (experience === 'comparison') {
-          showStep('question-3-comparison');
-        } else if (experience === 'price') {
-          showStep('question-3-price');
-        }
-
-        // Analytics
         if (typeof window !== 'undefined' && (window as any).gtag) {
-          (window as any).gtag('event', 'guide_experience_selected', {
-            experience: experience,
-          });
+          (window as any).gtag('event', 'guide_q2_selected', { category: userChoices.category, q2 });
         }
       });
     });
 
-    // Question 3: Concerns (all variants)
-    document.querySelectorAll('.concern-card').forEach(card => {
+    // Q3: All categories
+    document.querySelectorAll('.q3-card').forEach(card => {
       card.addEventListener('click', () => {
-        const concern = card.getAttribute('data-concern');
-        if (!concern) return;
+        const q3 = card.getAttribute('data-q3');
+        if (!q3) return;
 
-        userChoices.concern = concern;
-
-        // Show results
+        userChoices.q3 = q3;
         showResults();
 
-        // Analytics
         if (typeof window !== 'undefined' && (window as any).gtag) {
-          (window as any).gtag('event', 'guide_concern_selected', {
-            concern: concern,
+          (window as any).gtag('event', 'guide_q3_selected', {
+            category: userChoices.category,
+            q2: userChoices.q2,
+            q3
           });
         }
       });
@@ -543,36 +949,32 @@ const categoryIcons: Record<string, any> = {
         const currentId = currentQuestion.id;
 
         if (currentId.startsWith('question-3')) {
-          // Go back to question 2
-          showStep('question-2-sexual');
+          // Go back to Q2
+          showStep(`question-2-${userChoices.category}`);
           updateProgress(2);
-          delete userChoices.concern;
-        } else if (currentId === 'question-2-sexual') {
-          // Go back to question 1
+          delete userChoices.q3;
+        } else if (currentId.startsWith('question-2')) {
+          // Go back to Q1
           showStep('question-1');
           updateProgress(1);
-          delete userChoices.experience;
+          delete userChoices.q2;
+          delete userChoices.q3;
         }
       });
     });
 
-    // Show results
     function showResults() {
-      // Hide all questions
       document.querySelectorAll('.question-step').forEach(step => {
         step.classList.remove('active');
       });
 
-      // Show loading state
       const loadingState = document.getElementById('loading-state');
       if (loadingState) {
         loadingState.classList.remove('hidden');
       }
 
-      // Save to session storage
       sessionStorage.setItem('guidedChoices', JSON.stringify(userChoices));
 
-      // Trigger results display (to be handled by PersonalizedResults component)
       setTimeout(() => {
         window.dispatchEvent(new CustomEvent('guided-complete', {
           detail: userChoices
@@ -581,13 +983,11 @@ const categoryIcons: Record<string, any> = {
     }
   }
 
-  // Initialize
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initGuidedMatcher);
   } else {
     initGuidedMatcher();
   }
 
-  // Support Astro view transitions
   document.addEventListener('astro:page-load', initGuidedMatcher);
 </script>

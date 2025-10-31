@@ -67,245 +67,828 @@ const allBrands = await getCollection('brands');
   cons: b.data.cons,
   features: b.data.features,
 })) }}>
-  // Persona-based recommendation logic
+  // Import priority mapping (inline for availability in client-side script)
+  const priorityWeights = {
+    // Sexual Health
+    'privacy-discretion': { affordability: 0.3, privacy: 1.0, speed: 0.5, selection: 0.2, transparency: 0.4, ease: 0.7, support: 0.4, insurance: 0.1, comprehensive: 0.3 },
+    'medical-credibility': { affordability: 0.4, privacy: 0.6, speed: 0.5, selection: 0.8, transparency: 1.0, ease: 0.6, support: 0.9, insurance: 0.3, comprehensive: 1.0 },
+    'lowest-cost': { affordability: 1.0, privacy: 0.4, speed: 0.3, selection: 0.2, transparency: 0.7, ease: 0.6, support: 0.2, insurance: 0.5, comprehensive: 0.2 },
+    'easy-process': { affordability: 0.5, privacy: 0.6, speed: 0.9, selection: 0.4, transparency: 0.7, ease: 1.0, support: 0.7, insurance: 0.2, comprehensive: 0.6 },
+    'too-expensive': { affordability: 1.0, privacy: 0.3, speed: 0.4, selection: 0.5, transparency: 0.9, ease: 0.5, support: 0.3, insurance: 0.7, comprehensive: 0.4 },
+    'limited-options': { affordability: 0.5, privacy: 0.4, speed: 0.5, selection: 1.0, transparency: 0.7, ease: 0.6, support: 0.7, insurance: 0.3, comprehensive: 1.0 },
+    'poor-support': { affordability: 0.4, privacy: 0.5, speed: 0.7, selection: 0.6, transparency: 0.8, ease: 0.7, support: 1.0, insurance: 0.3, comprehensive: 0.8 },
+    'delivery-issues': { affordability: 0.6, privacy: 0.8, speed: 1.0, selection: 0.5, transparency: 0.7, ease: 0.9, support: 0.7, insurance: 0.2, comprehensive: 0.6 },
+    'occasionally': { affordability: 1.0, privacy: 0.7, speed: 0.5, selection: 0.3, transparency: 0.9, ease: 0.8, support: 0.4, insurance: 0.4, comprehensive: 0.3 },
+    'regularly': { affordability: 0.9, privacy: 0.6, speed: 0.6, selection: 0.7, transparency: 0.8, ease: 0.7, support: 0.6, insurance: 0.5, comprehensive: 0.7 },
+    'try-different': { affordability: 0.7, privacy: 0.5, speed: 0.6, selection: 1.0, transparency: 0.7, ease: 0.7, support: 0.6, insurance: 0.3, comprehensive: 0.9 },
+    // Hair Health
+    'prevention': { affordability: 0.7, privacy: 0.6, speed: 0.5, selection: 0.6, transparency: 0.8, ease: 0.9, support: 0.7, insurance: 0.4, comprehensive: 0.5 },
+    'regrowth': { affordability: 0.6, privacy: 0.5, speed: 0.6, selection: 0.9, transparency: 0.7, ease: 0.7, support: 0.8, insurance: 0.3, comprehensive: 0.9 },
+    'affordable': { affordability: 1.0, privacy: 0.5, speed: 0.5, selection: 0.5, transparency: 0.9, ease: 0.7, support: 0.5, insurance: 0.6, comprehensive: 0.4 },
+    'medical-guidance': { affordability: 0.6, privacy: 0.6, speed: 0.6, selection: 0.8, transparency: 0.9, ease: 0.7, support: 1.0, insurance: 0.5, comprehensive: 1.0 },
+    'aggressive': { affordability: 0.5, privacy: 0.5, speed: 0.7, selection: 1.0, transparency: 0.8, ease: 0.6, support: 0.9, insurance: 0.4, comprehensive: 1.0 },
+    'realistic': { affordability: 0.8, privacy: 0.6, speed: 0.5, selection: 0.6, transparency: 1.0, ease: 0.7, support: 1.0, insurance: 0.5, comprehensive: 0.7 },
+    // Testosterone
+    'comprehensive-testing': { affordability: 0.5, privacy: 0.7, speed: 0.5, selection: 0.7, transparency: 1.0, ease: 0.6, support: 1.0, insurance: 0.5, comprehensive: 1.0 },
+    'affordable-trt': { affordability: 1.0, privacy: 0.6, speed: 0.6, selection: 0.5, transparency: 0.8, ease: 0.7, support: 0.6, insurance: 0.7, comprehensive: 0.6 },
+    'medical-oversight': { affordability: 0.6, privacy: 0.7, speed: 0.5, selection: 0.7, transparency: 1.0, ease: 0.6, support: 1.0, insurance: 0.5, comprehensive: 1.0 },
+    'easy-trt': { affordability: 0.7, privacy: 0.8, speed: 0.9, selection: 0.6, transparency: 0.7, ease: 1.0, support: 0.7, insurance: 0.4, comprehensive: 0.7 },
+    'cost-concerns': { affordability: 1.0, privacy: 0.5, speed: 0.5, selection: 0.5, transparency: 0.8, ease: 0.6, support: 0.5, insurance: 0.8, comprehensive: 0.5 },
+    'better-testing': { affordability: 0.6, privacy: 0.7, speed: 0.6, selection: 0.7, transparency: 1.0, ease: 0.6, support: 0.9, insurance: 0.5, comprehensive: 1.0 },
+    'more-support': { affordability: 0.6, privacy: 0.7, speed: 0.7, selection: 0.7, transparency: 0.9, ease: 0.7, support: 1.0, insurance: 0.5, comprehensive: 0.9 },
+    'convenience': { affordability: 0.7, privacy: 0.8, speed: 0.9, selection: 0.6, transparency: 0.7, ease: 1.0, support: 0.7, insurance: 0.4, comprehensive: 0.7 },
+    'lower-cost': { affordability: 1.0, privacy: 0.5, speed: 0.6, selection: 0.5, transparency: 0.8, ease: 0.7, support: 0.5, insurance: 0.8, comprehensive: 0.5 },
+    'detailed-labs': { affordability: 0.6, privacy: 0.7, speed: 0.6, selection: 0.7, transparency: 1.0, ease: 0.6, support: 0.9, insurance: 0.5, comprehensive: 1.0 },
+    'better-convenience': { affordability: 0.7, privacy: 0.8, speed: 0.9, selection: 0.6, transparency: 0.7, ease: 1.0, support: 0.7, insurance: 0.4, comprehensive: 0.7 },
+    // Weight Loss
+    'medication-only': { affordability: 0.8, privacy: 0.7, speed: 0.8, selection: 0.5, transparency: 0.8, ease: 0.9, support: 0.5, insurance: 0.6, comprehensive: 0.4 },
+    'holistic': { affordability: 0.7, privacy: 0.6, speed: 0.6, selection: 0.8, transparency: 0.8, ease: 0.7, support: 0.9, insurance: 0.5, comprehensive: 1.0 },
+    'affordable-weight': { affordability: 1.0, privacy: 0.6, speed: 0.7, selection: 0.6, transparency: 0.9, ease: 0.8, support: 0.6, insurance: 0.7, comprehensive: 0.6 },
+    'supervised': { affordability: 0.6, privacy: 0.7, speed: 0.7, selection: 0.8, transparency: 0.9, ease: 0.7, support: 1.0, insurance: 0.6, comprehensive: 1.0 },
+    'comprehensive-care': { affordability: 0.6, privacy: 0.7, speed: 0.7, selection: 1.0, transparency: 0.9, ease: 0.7, support: 1.0, insurance: 0.6, comprehensive: 1.0 },
+    'flexibility': { affordability: 0.7, privacy: 0.7, speed: 0.8, selection: 1.0, transparency: 0.8, ease: 0.9, support: 0.8, insurance: 0.5, comprehensive: 0.9 },
+    // Mental Health
+    'broad-network': { affordability: 0.7, privacy: 0.8, speed: 0.8, selection: 1.0, transparency: 0.7, ease: 0.9, support: 0.8, insurance: 0.6, comprehensive: 0.7 },
+    'specialized-matching': { affordability: 0.7, privacy: 0.8, speed: 0.6, selection: 0.9, transparency: 0.8, ease: 0.8, support: 1.0, insurance: 0.6, comprehensive: 0.9 },
+    'fast-access': { affordability: 0.7, privacy: 0.7, speed: 1.0, selection: 0.6, transparency: 0.7, ease: 0.9, support: 0.7, insurance: 0.5, comprehensive: 0.6 },
+    'ongoing-relationship': { affordability: 0.7, privacy: 0.8, speed: 0.6, selection: 0.7, transparency: 0.8, ease: 0.8, support: 1.0, insurance: 0.6, comprehensive: 0.9 },
+    'integrated': { affordability: 0.7, privacy: 0.8, speed: 0.7, selection: 0.8, transparency: 0.8, ease: 0.8, support: 0.9, insurance: 0.6, comprehensive: 1.0 },
+    'flexible': { affordability: 0.8, privacy: 0.8, speed: 0.8, selection: 0.9, transparency: 0.7, ease: 0.9, support: 0.8, insurance: 0.6, comprehensive: 0.8 },
+    // Diagnostics
+    'fast-results': { affordability: 0.7, privacy: 0.9, speed: 1.0, selection: 0.6, transparency: 0.7, ease: 0.9, support: 0.6, insurance: 0.5, comprehensive: 0.5 },
+    'detailed-analysis': { affordability: 0.6, privacy: 0.8, speed: 0.6, selection: 0.7, transparency: 1.0, ease: 0.7, support: 0.9, insurance: 0.5, comprehensive: 0.9 },
+    'consultation': { affordability: 0.6, privacy: 0.8, speed: 0.7, selection: 0.7, transparency: 0.9, ease: 0.8, support: 1.0, insurance: 0.5, comprehensive: 0.9 },
+    'affordable-test': { affordability: 1.0, privacy: 0.8, speed: 0.7, selection: 0.5, transparency: 0.8, ease: 0.9, support: 0.6, insurance: 0.7, comprehensive: 0.5 },
+  };
+
+  // Calculate priority-based match scores for alternatives
+  function calculateAlternatives(q3Choice, category, excludeSlug) {
+    const weights = priorityWeights[q3Choice];
+    if (!weights) return [];
+
+    const categoryBrands = brands.filter(b =>
+      b.categories.includes(category) && b.slug !== excludeSlug
+    );
+
+    const scored = categoryBrands.map(brand => {
+      let totalScore = 0;
+      let maxPossible = 0;
+
+      Object.keys(weights).forEach(priority => {
+        const weight = weights[priority];
+        const brandScore = brand.priorities[priority] || 0;
+        totalScore += brandScore * weight;
+        maxPossible += 10 * weight;
+      });
+
+      const matchPercentage = maxPossible > 0 ? (totalScore / maxPossible) * 100 : 0;
+
+      return { brand, matchPercentage };
+    });
+
+    return scored
+      .sort((a, b) => b.matchPercentage - a.matchPercentage)
+      .slice(0, 2)
+      .map(item => item.brand);
+  }
+
+  // Persona-based recommendation logic (PRIMARY MATCH)
   function getPersonalizedRecommendation(choices) {
-    const { category, experience, concern } = choices;
+    const { category, q2, q3 } = choices;
 
-    // Sexual Health - Novice Flow
-    if (category === 'sexual-health' && experience === 'novice') {
-      if (concern === 'privacy') {
-        return {
-          bestMatch: brands.find(b => b.slug === 'bluechew'),
-          alternatives: [
-            brands.find(b => b.slug === 'hims'),
-            brands.find(b => b.slug === 'ro'),
-          ],
-          reasoning: "Based on your priority for maximum privacy and discretion",
-          whyThisMatches: [
-            "Ships in completely unmarked packaging",
-            "Chewable format - no pill bottles to hide",
-            "No in-person pharmacy visits required",
-            "Billing shows up as generic company name"
-          ],
-          notIdealIf: [
-            "You need brand-name medications only",
-            "You're looking for the absolute lowest price",
-          ]
-        };
-      } else if (concern === 'safety') {
-        return {
-          bestMatch: brands.find(b => b.slug === 'ro'),
-          alternatives: [
-            brands.find(b => b.slug === 'hims'),
-          ],
-          reasoning: "Based on your priority for safety and trust",
-          whyThisMatches: [
-            "Licensed physicians review every case",
-            "Offers both generic and brand-name FDA-approved medications",
-            "Transparent pricing with no hidden fees",
-            "No auto-renewals - you control every order"
-          ],
-          notIdealIf: [
-            "You need immediate same-day delivery",
-            "You want the absolute cheapest option",
-          ]
-        };
-      } else if (concern === 'ease') {
-        return {
-          bestMatch: brands.find(b => b.slug === 'hims'),
-          alternatives: [
-            brands.find(b => b.slug === 'ro'),
-            brands.find(b => b.slug === 'bluechew'),
-          ],
-          reasoning: "Based on your priority for the easiest, most straightforward experience",
-          whyThisMatches: [
-            "Simple 5-minute online consultation",
-            "Free two-day shipping on all orders",
-            "Easy-to-use subscription management",
-            "All-in-one platform - no external pharmacies"
-          ],
-          notIdealIf: [
-            "You prefer one-time orders without subscriptions",
-            "You want to pay per-use instead of monthly",
-          ]
-        };
-      } else if (concern === 'cost') {
-        return {
-          bestMatch: brands.find(b => b.slug === 'hims'),
-          alternatives: [
-            brands.find(b => b.slug === 'bluechew'),
-            brands.find(b => b.slug === 'ro'),
-          ],
-          reasoning: "Based on your priority for best value and affordability",
-          whyThisMatches: [
-            "Lowest generic ED medication prices ($4/dose)",
-            "Free online consultation - no doctor fees",
-            "Free shipping on all subscription orders",
-            "Bulk pricing available for better savings"
-          ],
-          notIdealIf: [
-            "You only need occasional doses (not full monthly supply)",
-            "You prefer pharmacy pickup over mail delivery",
-          ]
-        };
+    // ========== SEXUAL HEALTH ==========
+    if (category === 'sexual-health') {
+      if (q2 === 'novice') {
+        if (q3 === 'privacy-discretion') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'bluechew'),
+            reasoning: "Based on your priority for maximum privacy and discretion",
+            whyThisMatches: [
+              "Ships in completely unmarked packaging",
+              "Chewable format - no pill bottles to hide",
+              "No in-person pharmacy visits required",
+              "Billing shows up as generic company name"
+            ],
+            notIdealIf: [
+              "You need brand-name medications only",
+              "You're looking for the absolute lowest price"
+            ]
+          };
+        } else if (q3 === 'medical-credibility') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hims'),
+            reasoning: "Based on your priority for medical credibility and comprehensive care",
+            whyThisMatches: [
+              "Comprehensive platform with medical oversight",
+              "Licensed physicians review every case",
+              "Transparent pricing with no hidden fees",
+              "Wide selection of FDA-approved medications"
+            ],
+            notIdealIf: [
+              "You want the absolute cheapest option",
+              "You prefer minimal interaction"
+            ]
+          };
+        } else if (q3 === 'lowest-cost') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'bluechew'),
+            reasoning: "Based on your priority for the most affordable pricing",
+            whyThisMatches: [
+              "Among the lowest per-dose costs available",
+              "No consultation fees",
+              "Free shipping on subscriptions",
+              "Straightforward, affordable pricing"
+            ],
+            notIdealIf: [
+              "You want brand-name medications",
+              "You need highly customized treatment"
+            ]
+          };
+        } else if (q3 === 'easy-process') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'ro'),
+            reasoning: "Based on your priority for the easiest, most straightforward experience",
+            whyThisMatches: [
+              "Simple online consultation process",
+              "Fast shipping and fulfillment",
+              "Easy subscription management",
+              "User-friendly platform"
+            ],
+            notIdealIf: [
+              "You want the absolute lowest price",
+              "You prefer to avoid subscriptions"
+            ]
+          };
+        }
+      } else if (q2 === 'switching') {
+        if (q3 === 'too-expensive') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'bluechew'),
+            reasoning: "Based on your need for more affordable pricing",
+            whyThisMatches: [
+              "Highly competitive pricing structure",
+              "No hidden consultation fees",
+              "Volume discounts available",
+              "Free shipping on subscriptions"
+            ],
+            notIdealIf: [
+              "You need brand-name medications only",
+              "You want extensive treatment variety"
+            ]
+          };
+        } else if (q3 === 'limited-options') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hims'),
+            reasoning: "Based on your need for more treatment options",
+            whyThisMatches: [
+              "Widest range of ED medications available",
+              "Both generic and brand-name options",
+              "Multiple dosage strengths",
+              "Comprehensive men's health platform"
+            ],
+            notIdealIf: [
+              "You're happy with basic options",
+              "You want the simplest possible experience"
+            ]
+          };
+        } else if (q3 === 'poor-support') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hims'),
+            reasoning: "Based on your need for better customer support",
+            whyThisMatches: [
+              "Dedicated customer support team",
+              "Licensed physicians available",
+              "Responsive communication channels",
+              "Comprehensive care approach"
+            ],
+            notIdealIf: [
+              "You want the absolute lowest cost",
+              "You prefer minimal interaction"
+            ]
+          };
+        } else if (q3 === 'delivery-issues') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'ro'),
+            reasoning: "Based on your need for faster, more reliable shipping",
+            whyThisMatches: [
+              "Fast shipping and fulfillment",
+              "Reliable delivery tracking",
+              "Professional logistics",
+              "Consistent service"
+            ],
+            notIdealIf: [
+              "You want the absolute lowest price",
+              "You prefer one-time orders"
+            ]
+          };
+        }
+      } else if (q2 === 'value') {
+        if (q3 === 'occasionally') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'ro'),
+            reasoning: "For occasional use, flexible ordering is more economical",
+            whyThisMatches: [
+              "No forced subscriptions",
+              "Order only what you need",
+              "Transparent per-dose pricing",
+              "Easy to pause or skip"
+            ],
+            notIdealIf: [
+              "You use it multiple times per week",
+              "You want the lowest per-dose cost"
+            ]
+          };
+        } else if (q3 === 'regularly') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hims'),
+            reasoning: "For regular use, subscription pricing offers the best value",
+            whyThisMatches: [
+              "Lowest per-dose cost with subscription",
+              "Free shipping on subscriptions",
+              "Volume discounts",
+              "Consistent supply - never run out"
+            ],
+            notIdealIf: [
+              "You prefer complete flexibility",
+              "You only need it occasionally"
+            ]
+          };
+        } else if (q3 === 'try-different') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hims'),
+            reasoning: "For trying different options, you need selection variety",
+            whyThisMatches: [
+              "Widest selection of ED medications",
+              "Multiple dosage strengths available",
+              "Both sildenafil and tadalafil options",
+              "Easy to switch between treatments"
+            ],
+            notIdealIf: [
+              "You already know what works for you",
+              "You want the simplest experience"
+            ]
+          };
+        }
       }
     }
 
-    // Sexual Health - Comparison Flow
-    if (category === 'sexual-health' && experience === 'comparison') {
-      if (concern === 'price-high') {
-        return {
-          bestMatch: brands.find(b => b.slug === 'hims'),
-          alternatives: [
-            brands.find(b => b.slug === 'ro'),
-          ],
-          reasoning: "Based on your need for more affordable pricing",
-          whyThisMatches: [
-            "Starting at $4/dose - among the lowest in the industry",
-            "No consultation fees or hidden charges",
-            "Volume discounts available",
-            "Free shipping on subscriptions"
-          ],
-          notIdealIf: [
-            "You need complete flexibility in ordering timing",
-            "You want to avoid subscriptions entirely",
-          ]
-        };
-      } else if (concern === 'flexibility') {
-        return {
-          bestMatch: brands.find(b => b.slug === 'ro'),
-          alternatives: [
-            brands.find(b => b.slug === 'bluechew'),
-          ],
-          reasoning: "Based on your need for more control and flexibility",
-          whyThisMatches: [
-            "Order only when you need it - no forced subscriptions",
-            "Skip, pause, or cancel anytime with no penalties",
-            "Choose between generic and brand-name options",
-            "Transparent per-dose pricing"
-          ],
-          notIdealIf: [
-            "You want the absolute lowest prices (subscriptions are cheaper)",
-            "You prefer automatic monthly deliveries",
-          ]
-        };
-      } else if (concern === 'selection') {
-        return {
-          bestMatch: brands.find(b => b.slug === 'ro'),
-          alternatives: [
-            brands.find(b => b.slug === 'hims'),
-          ],
-          reasoning: "Based on your need for more treatment options",
-          whyThisMatches: [
-            "Widest range of ED medications available",
-            "Both generic and brand-name options (Viagra, Cialis)",
-            "Multiple dosage strengths to find your fit",
-            "Also offers combination treatments"
-          ],
-          notIdealIf: [
-            "You're happy with basic generic options",
-            "You want the simplest experience with fewer choices",
-          ]
-        };
-      } else if (concern === 'privacy-compare') {
-        return {
-          bestMatch: brands.find(b => b.slug === 'bluechew'),
-          alternatives: [
-            brands.find(b => b.slug === 'hims'),
-          ],
-          reasoning: "Based on your need for better privacy and discretion",
-          whyThisMatches: [
-            "Chewable tablets - no pill bottles",
-            "Completely unmarked discreet packaging",
-            "Generic billing descriptor",
-            "No pharmacy interactions needed"
-          ],
-          notIdealIf: [
-            "You prefer traditional pill format",
-            "You need brand-name medications specifically",
-          ]
-        };
-      }
-    }
-
-    // Sexual Health - Price Focus Flow
-    if (category === 'sexual-health' && experience === 'price') {
-      if (concern === 'occasional') {
-        return {
-          bestMatch: brands.find(b => b.slug === 'ro'),
-          alternatives: [
-            brands.find(b => b.slug === 'bluechew'),
-          ],
-          reasoning: "For occasional use, pay-per-dose is more economical than subscriptions",
-          whyThisMatches: [
-            "No subscription required - order only what you need",
-            "Transparent per-dose pricing",
-            "No monthly commitments or auto-renewals",
-            "Skip months without penalties"
-          ],
-          notIdealIf: [
-            "You use it multiple times per week (subscription would be cheaper)",
-            "You want the absolute lowest per-dose cost",
-          ]
-        };
-      } else if (concern === 'regular' || concern === 'daily') {
-        return {
-          bestMatch: brands.find(b => b.slug === 'hims'),
-          alternatives: [
-            brands.find(b => b.slug === 'bluechew'),
-          ],
-          reasoning: "For regular use, subscription pricing offers the best value",
-          whyThisMatches: [
-            "Lowest per-dose cost at $4/dose with subscription",
-            "Free shipping on all subscription orders",
-            "Volume discounts for larger quantities",
-            "Consistent supply - never run out"
-          ],
-          notIdealIf: [
-            "You prefer complete flexibility over savings",
-            "You only need it occasionally",
-          ]
-        };
-      }
-    }
-
-    // Hair Health Flow
+    // ========== HAIR HEALTH ==========
     if (category === 'hair-health') {
-      return {
-        bestMatch: brands.find(b => b.slug === 'keeps'),
-        alternatives: [
-          brands.find(b => b.slug === 'hims'),
-        ],
-        reasoning: "Based on your interest in hair loss treatment",
-        whyThisMatches: [
-          "Specialist focus on hair loss only",
-          "Most affordable finasteride and minoxidil",
-          "Dermatologist consultations included",
-          "50% off first 3 months for new customers"
-        ],
-        notIdealIf: [
-          "You want multiple health services in one platform",
-          "You need highly customized treatment combinations",
-        ]
-      };
+      if (q2 === 'early') {
+        if (q3 === 'prevention') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'keeps'),
+            reasoning: "Based on your focus on preventing further hair loss",
+            whyThisMatches: [
+              "Specialist focus on hair loss prevention",
+              "Affordable finasteride and minoxidil",
+              "Dermatologist consultations included",
+              "Proven prevention protocols"
+            ],
+            notIdealIf: [
+              "You want aggressive regrowth treatments",
+              "You need multiple health services"
+            ]
+          };
+        } else if (q3 === 'regrowth') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hims'),
+            reasoning: "Based on your focus on active hair regrowth",
+            whyThisMatches: [
+              "Comprehensive regrowth treatments",
+              "Finasteride + minoxidil combination",
+              "Prescription-strength medications",
+              "Dermatologist oversight"
+            ],
+            notIdealIf: [
+              "You're looking for prevention only",
+              "You want specialist-only care"
+            ]
+          };
+        }
+      } else if (q2 === 'moderate') {
+        if (q3 === 'affordable') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'manual'),
+            reasoning: "Based on your priority for affordability",
+            whyThisMatches: [
+              "Highly competitive pricing",
+              "Transparent cost structure",
+              "No hidden fees",
+              "Quality medications at lower cost"
+            ],
+            notIdealIf: [
+              "You want comprehensive platform features",
+              "You need extensive support"
+            ]
+          };
+        } else if (q3 === 'medical-guidance') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hims'),
+            reasoning: "Based on your need for medical guidance and support",
+            whyThisMatches: [
+              "Dermatologist consultations included",
+              "Comprehensive treatment plans",
+              "Ongoing medical oversight",
+              "Expert hair loss specialists"
+            ],
+            notIdealIf: [
+              "You want the lowest possible cost",
+              "You prefer minimal medical interaction"
+            ]
+          };
+        }
+      } else if (q2 === 'advanced') {
+        if (q3 === 'aggressive') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hims'),
+            reasoning: "Based on your need for aggressive treatment options",
+            whyThisMatches: [
+              "Multiple medication combinations available",
+              "Prescription-strength treatments",
+              "Comprehensive approach to hair loss",
+              "Medical oversight for safety"
+            ],
+            notIdealIf: [
+              "You're looking for basic treatment only",
+              "You want the most affordable option"
+            ]
+          };
+        } else if (q3 === 'realistic') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'keeps'),
+            reasoning: "Based on your need for honest guidance and realistic expectations",
+            whyThisMatches: [
+              "Transparent about results and timelines",
+              "Evidence-based treatment approach",
+              "Dermatologist-supervised care",
+              "Realistic outcome discussions"
+            ],
+            notIdealIf: [
+              "You want the widest range of options",
+              "You prefer comprehensive platforms"
+            ]
+          };
+        }
+      }
+    }
+
+    // ========== TESTOSTERONE ==========
+    if (category === 'testosterone') {
+      if (q2 === 'new') {
+        if (q3 === 'comprehensive-testing') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hone-health'),
+            reasoning: "Based on your priority for comprehensive testing and monitoring",
+            whyThisMatches: [
+              "Extensive hormone panel testing",
+              "Detailed lab analysis and interpretation",
+              "Ongoing monitoring protocols",
+              "Physician-led care"
+            ],
+            notIdealIf: [
+              "You're primarily focused on lowest cost",
+              "You want minimal testing"
+            ]
+          };
+        } else if (q3 === 'affordable-trt') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'healthymale'),
+            reasoning: "Based on your priority for affordable TRT",
+            whyThisMatches: [
+              "Competitive pricing structure",
+              "Transparent costs",
+              "Quality care at lower price point",
+              "No hidden fees"
+            ],
+            notIdealIf: [
+              "You want the most comprehensive testing",
+              "You need extensive support services"
+            ]
+          };
+        } else if (q3 === 'medical-oversight') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hone-health'),
+            reasoning: "Based on your priority for expert medical oversight",
+            whyThisMatches: [
+              "Board-certified physicians",
+              "Comprehensive medical supervision",
+              "Detailed treatment protocols",
+              "Ongoing physician communication"
+            ],
+            notIdealIf: [
+              "You want the lowest possible cost",
+              "You prefer minimal medical interaction"
+            ]
+          };
+        } else if (q3 === 'easy-trt') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'vault-health'),
+            reasoning: "Based on your priority for a simple, convenient experience",
+            whyThisMatches: [
+              "Streamlined consultation process",
+              "Easy medication delivery",
+              "User-friendly platform",
+              "Hassle-free experience"
+            ],
+            notIdealIf: [
+              "You want the most comprehensive testing",
+              "You're primarily focused on lowest cost"
+            ]
+          };
+        }
+      } else if (q2 === 'switching') {
+        if (q3 === 'cost-concerns') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'healthymale'),
+            reasoning: "Based on your need for more affordable TRT",
+            whyThisMatches: [
+              "Lower cost structure",
+              "Transparent pricing",
+              "Quality care without premium pricing",
+              "Cost-effective treatment"
+            ],
+            notIdealIf: [
+              "You need the most comprehensive testing",
+              "You want extensive support services"
+            ]
+          };
+        } else if (q3 === 'better-testing') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hone-health'),
+            reasoning: "Based on your need for more comprehensive lab testing",
+            whyThisMatches: [
+              "Extensive hormone panels",
+              "Detailed biomarker analysis",
+              "Regular monitoring protocols",
+              "In-depth result interpretation"
+            ],
+            notIdealIf: [
+              "You're primarily focused on cost",
+              "You want basic testing only"
+            ]
+          };
+        } else if (q3 === 'more-support') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hone-health'),
+            reasoning: "Based on your need for better guidance and care",
+            whyThisMatches: [
+              "Dedicated physician support",
+              "Responsive care team",
+              "Ongoing medical guidance",
+              "Comprehensive patient support"
+            ],
+            notIdealIf: [
+              "You want the lowest possible cost",
+              "You prefer minimal interaction"
+            ]
+          };
+        } else if (q3 === 'convenience') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'vault-health'),
+            reasoning: "Based on your need for a more convenient process",
+            whyThisMatches: [
+              "Streamlined workflows",
+              "Easy medication management",
+              "Simple scheduling",
+              "Hassle-free experience"
+            ],
+            notIdealIf: [
+              "You need the most comprehensive testing",
+              "You want lowest cost as priority"
+            ]
+          };
+        }
+      } else if (q2 === 'optimizing') {
+        if (q3 === 'lower-cost') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'healthymale'),
+            reasoning: "Based on your goal to reduce monthly TRT costs",
+            whyThisMatches: [
+              "More affordable pricing structure",
+              "Cost-effective treatment options",
+              "Quality care at lower price",
+              "Transparent costs"
+            ],
+            notIdealIf: [
+              "You want the most comprehensive testing",
+              "You need extensive support"
+            ]
+          };
+        } else if (q3 === 'detailed-labs') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hone-health'),
+            reasoning: "Based on your goal for more comprehensive testing",
+            whyThisMatches: [
+              "Most detailed hormone panels",
+              "Comprehensive biomarker analysis",
+              "Regular monitoring protocols",
+              "In-depth interpretations"
+            ],
+            notIdealIf: [
+              "You're primarily focused on cost savings",
+              "You want basic testing only"
+            ]
+          };
+        } else if (q3 === 'better-convenience') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'vault-health'),
+            reasoning: "Based on your goal for a simpler, easier process",
+            whyThisMatches: [
+              "Most streamlined experience",
+              "Easy medication management",
+              "Simple processes",
+              "User-friendly platform"
+            ],
+            notIdealIf: [
+              "You need comprehensive testing",
+              "You want lowest cost priority"
+            ]
+          };
+        }
+      }
+    }
+
+    // ========== WEIGHT LOSS ==========
+    if (category === 'weight-loss') {
+      if (q2 === 'modest') {
+        if (q3 === 'medication-only') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'ro'),
+            reasoning: "Based on your preference for medication without extras",
+            whyThisMatches: [
+              "Straightforward GLP-1 prescriptions",
+              "No required bundled services",
+              "Clinical, medication-focused approach",
+              "Transparent pricing"
+            ],
+            notIdealIf: [
+              "You want comprehensive lifestyle coaching",
+              "You need extensive support programs"
+            ]
+          };
+        } else if (q3 === 'holistic') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hims'),
+            reasoning: "Based on your preference for a holistic weight loss program",
+            whyThisMatches: [
+              "Medication plus lifestyle coaching",
+              "Comprehensive support system",
+              "Nutritional guidance included",
+              "Holistic health approach"
+            ],
+            notIdealIf: [
+              "You only want medication without extras",
+              "You prefer clinical-only approach"
+            ]
+          };
+        }
+      } else if (q2 === 'significant') {
+        if (q3 === 'affordable-weight') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'ro'),
+            reasoning: "Based on your priority for affordability",
+            whyThisMatches: [
+              "Competitive GLP-1 pricing",
+              "Transparent cost structure",
+              "No hidden fees",
+              "Value-focused approach"
+            ],
+            notIdealIf: [
+              "You want comprehensive support programs",
+              "You need extensive lifestyle coaching"
+            ]
+          };
+        } else if (q3 === 'supervised') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hims'),
+            reasoning: "Based on your priority for medical supervision",
+            whyThisMatches: [
+              "Physician-supervised weight loss",
+              "Regular medical check-ins",
+              "Comprehensive monitoring",
+              "Expert medical oversight"
+            ],
+            notIdealIf: [
+              "You want the lowest possible cost",
+              "You prefer minimal medical interaction"
+            ]
+          };
+        }
+      } else if (q2 === 'major') {
+        if (q3 === 'comprehensive-care') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hims'),
+            reasoning: "Based on your need for comprehensive care and support",
+            whyThisMatches: [
+              "Full support ecosystem",
+              "Medication plus coaching",
+              "Nutritional guidance",
+              "Ongoing medical oversight"
+            ],
+            notIdealIf: [
+              "You only want medication",
+              "You're primarily focused on cost"
+            ]
+          };
+        } else if (q3 === 'flexibility') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'hims'),
+            reasoning: "Based on your need for flexibility and medication options",
+            whyThisMatches: [
+              "Multiple GLP-1 medication options",
+              "Flexible treatment plans",
+              "Ability to adjust approach",
+              "Comprehensive platform"
+            ],
+            notIdealIf: [
+              "You want the simplest experience",
+              "You're primarily focused on lowest cost"
+            ]
+          };
+        }
+      }
+    }
+
+    // ========== MENTAL HEALTH ==========
+    if (category === 'mental-health') {
+      if (q2 === 'therapy') {
+        if (q3 === 'broad-network') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'betterhelp'),
+            reasoning: "Based on your priority for a large therapist network",
+            whyThisMatches: [
+              "Largest network of licensed therapists",
+              "More therapists to choose from",
+              "Wide range of specialties",
+              "Easy to find the right match"
+            ],
+            notIdealIf: [
+              "You want highly specialized matching only",
+              "You prefer in-person therapy"
+            ]
+          };
+        } else if (q3 === 'specialized-matching') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'talkspace'),
+            reasoning: "Based on your priority for specialized therapist matching",
+            whyThisMatches: [
+              "Carefully matched to your needs",
+              "Specialized therapist selection",
+              "Focus on compatibility",
+              "Quality over quantity approach"
+            ],
+            notIdealIf: [
+              "You want the broadest network possible",
+              "You prefer to browse many options"
+            ]
+          };
+        }
+      } else if (q2 === 'medication') {
+        if (q3 === 'fast-access') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'betterhelp'),
+            reasoning: "Based on your priority for quick access to care",
+            whyThisMatches: [
+              "Fast consultation scheduling",
+              "Quick prescription access",
+              "Efficient onboarding",
+              "Rapid care initiation"
+            ],
+            notIdealIf: [
+              "You want long-term relationship focus",
+              "You prefer in-person psychiatry"
+            ]
+          };
+        } else if (q3 === 'ongoing-relationship') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'talkspace'),
+            reasoning: "Based on your priority for an ongoing physician relationship",
+            whyThisMatches: [
+              "Consistent psychiatrist partnership",
+              "Long-term care focus",
+              "Relationship-based approach",
+              "Continuity of care"
+            ],
+            notIdealIf: [
+              "You need immediate fast access",
+              "You prefer to switch providers easily"
+            ]
+          };
+        }
+      } else if (q2 === 'both') {
+        if (q3 === 'integrated') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'talkspace'),
+            reasoning: "Based on your need for integrated therapy and medication care",
+            whyThisMatches: [
+              "Coordinated therapy and psychiatry",
+              "Integrated care model",
+              "Therapist and psychiatrist communicate",
+              "Comprehensive mental health approach"
+            ],
+            notIdealIf: [
+              "You want complete flexibility to choose",
+              "You prefer separate providers"
+            ]
+          };
+        } else if (q3 === 'flexible') {
+          return {
+            bestMatch: brands.find(b => b.slug === 'betterhelp'),
+            reasoning: "Based on your need for flexibility in choosing providers",
+            whyThisMatches: [
+              "Large network for both therapy and psychiatry",
+              "Easy to switch providers if needed",
+              "Flexibility to choose separately",
+              "Wide range of options"
+            ],
+            notIdealIf: [
+              "You want integrated coordinated care",
+              "You prefer a focused care team"
+            ]
+          };
+        }
+      }
+    }
+
+    // ========== DIAGNOSTICS ==========
+    if (category === 'diagnostics') {
+      const testType = q2; // hormone, sexual, comprehensive
+      if (q3 === 'fast-results') {
+        return {
+          bestMatch: brands.find(b => b.slug === 'letsgetchecked'),
+          reasoning: "Based on your priority for fast test results",
+          whyThisMatches: [
+            "Quick turnaround on results",
+            `${testType === 'hormone' ? 'Hormone panel' : testType === 'sexual' ? 'Sexual health screening' : 'Comprehensive health panel'} available`,
+            "At-home testing convenience",
+            "Rapid processing"
+          ],
+          notIdealIf: [
+            "You need in-person testing",
+            "You want the lowest possible cost"
+          ]
+        };
+      } else if (q3 === 'detailed-analysis') {
+        return {
+          bestMatch: brands.find(b => b.slug === 'letsgetchecked'),
+          reasoning: "Based on your priority for detailed test analysis",
+          whyThisMatches: [
+            "Comprehensive result interpretation",
+            `${testType === 'hormone' ? 'Detailed hormone analysis' : testType === 'sexual' ? 'Complete STD/STI panel' : 'Full biomarker analysis'}`,
+            "Clear explanations of results",
+            "Professional analysis included"
+          ],
+          notIdealIf: [
+            "You just want basic results",
+            "You're primarily focused on cost"
+          ]
+        };
+      } else if (q3 === 'consultation') {
+        return {
+          bestMatch: brands.find(b => b.slug === 'letsgetchecked'),
+          reasoning: "Based on your priority for doctor consultation",
+          whyThisMatches: [
+            "Physician review of results included",
+            `${testType === 'hormone' ? 'Hormone specialist consultation' : testType === 'sexual' ? 'Sexual health physician review' : 'Comprehensive health consultation'}`,
+            "Follow-up recommendations",
+            "Medical guidance provided"
+          ],
+          notIdealIf: [
+            "You just want results without consultation",
+            "You want the lowest possible cost"
+          ]
+        };
+      } else if (q3 === 'affordable-test') {
+        return {
+          bestMatch: brands.find(b => b.slug === 'letsgetchecked'),
+          reasoning: "Based on your priority for affordable testing",
+          whyThisMatches: [
+            "Competitive pricing for at-home tests",
+            `${testType === 'hormone' ? 'Affordable hormone panel' : testType === 'sexual' ? 'Budget-friendly STD screening' : 'Cost-effective comprehensive testing'}`,
+            "No hidden fees",
+            "Value-focused service"
+          ],
+          notIdealIf: [
+            "You want the most comprehensive analysis",
+            "You need extensive physician consultation"
+          ]
+        };
+      }
     }
 
     // Default fallback
     return {
-      bestMatch: brands.find(b => b.slug === 'hims'),
-      alternatives: [
-        brands.find(b => b.slug === 'ro'),
-        brands.find(b => b.slug === 'bluechew'),
-      ],
+      bestMatch: brands.find(b => b.categories.includes(category)) || brands[0],
       reasoning: "Based on your selections, here's our recommendation",
       whyThisMatches: [
         "Comprehensive telehealth platform",
-        "Competitive pricing and free consultations",
+        "Competitive pricing and quality care",
         "Wide range of treatment options",
-        "Strong customer reviews and support"
+        "Strong customer reviews"
       ],
       notIdealIf: [
-        "You need specialized services beyond what's offered",
+        "You need highly specialized services"
       ]
     };
   }
@@ -377,6 +960,9 @@ const allBrands = await getCollection('brands');
     const choices = JSON.parse(choicesJson);
     const recommendation = getPersonalizedRecommendation(choices);
 
+    // Calculate alternatives using priority scoring (hybrid approach!)
+    const alternatives = calculateAlternatives(choices.q3, choices.category, recommendation.bestMatch?.slug);
+
     const resultsSection = document.getElementById('personalized-results');
     const reasoningEl = document.getElementById('recommendation-reasoning');
     const bestMatchCard = document.getElementById('best-match-card');
@@ -428,8 +1014,8 @@ const allBrands = await getCollection('brands');
       </div>
     `;
 
-    // Render alternatives
-    alternativesGrid.innerHTML = recommendation.alternatives
+    // Render alternatives (using priority-based scoring!)
+    alternativesGrid.innerHTML = alternatives
       .filter(brand => brand)
       .map(brand => renderBrandCard(brand, false))
       .join('');

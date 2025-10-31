@@ -17,47 +17,57 @@
 
   /* Typography Hierarchy - World-Class System */
 
-  /* Display Level - Hero Headlines (Manrope) */
+  /* ===== FLUID TYPOGRAPHY SYSTEM ===== */
+  /* Scales smoothly between viewport sizes using clamp() */
+
+  /* Display Level - Hero Headlines (Epilogue) */
   h1 {
-    @apply font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl;
-    letter-spacing: -0.04em;
+    @apply font-display font-bold;
+    font-size: clamp(2.25rem, 4vw + 1rem, 4rem);
+    letter-spacing: -0.025em;
     line-height: 1.1;
   }
 
   h2 {
-    @apply font-display font-bold text-3xl sm:text-4xl lg:text-5xl;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
+    @apply font-display font-semibold;
+    font-size: clamp(1.875rem, 3vw + 1rem, 3rem);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
   }
 
-  /* Heading Level - Section Titles (Inter Tight) */
+  /* Heading Level - Section Titles (Epilogue) */
   h3 {
-    @apply font-heading font-bold text-2xl sm:text-3xl lg:text-4xl;
-    letter-spacing: -0.02em;
+    @apply font-heading font-bold;
+    font-size: clamp(1.5rem, 2vw + 0.75rem, 2.25rem);
+    letter-spacing: -0.015em;
     line-height: 1.25;
   }
 
   h4 {
-    @apply font-heading font-semibold text-xl sm:text-2xl lg:text-3xl;
+    @apply font-heading font-semibold;
+    font-size: clamp(1.25rem, 1.5vw + 0.5rem, 1.875rem);
     letter-spacing: -0.01em;
     line-height: 1.3;
   }
 
   h5 {
-    @apply font-heading font-semibold text-lg sm:text-xl lg:text-2xl;
+    @apply font-heading font-semibold;
+    font-size: clamp(1.125rem, 1vw + 0.5rem, 1.5rem);
     letter-spacing: -0.01em;
     line-height: 1.35;
   }
 
   h6 {
-    @apply font-heading font-semibold text-base sm:text-lg;
+    @apply font-heading font-medium;
+    font-size: clamp(1rem, 0.5vw + 0.5rem, 1.25rem);
     letter-spacing: 0;
     line-height: 1.4;
   }
 
   /* Body Text - Optimal Readability (Inter) */
   p {
-    @apply font-sans text-base leading-relaxed;
+    @apply font-sans leading-relaxed;
+    font-size: clamp(0.9375rem, 0.5vw + 0.875rem, 1.0625rem);
     letter-spacing: 0;
   }
 
@@ -333,56 +343,66 @@
     @apply bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary bg-clip-text text-transparent;
   }
 
-  /* ===== NEW: Typography Utilities ===== */
+  /* ===== FLUID TYPOGRAPHY UTILITIES ===== */
 
   /* Pricing Display - Monospace for clarity */
   .text-pricing {
-    @apply font-mono text-xl sm:text-2xl font-bold tabular-nums;
+    @apply font-mono font-bold tabular-nums;
+    font-size: clamp(1.25rem, 1.5vw + 0.75rem, 2rem);
     letter-spacing: -0.02em;
   }
 
   .text-pricing-large {
-    @apply font-mono text-3xl sm:text-4xl lg:text-5xl font-bold tabular-nums;
+    @apply font-mono font-bold tabular-nums;
+    font-size: clamp(2.5rem, 3vw + 1rem, 4rem);
     letter-spacing: -0.03em;
   }
 
   .text-pricing-small {
-    @apply font-mono text-base sm:text-lg font-semibold tabular-nums;
+    @apply font-mono font-semibold tabular-nums;
+    font-size: clamp(0.875rem, 0.5vw + 0.75rem, 1.125rem);
   }
 
   /* Stats & Numbers - Clean and impactful */
   .text-stat {
-    @apply font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tabular-nums;
+    @apply font-display font-extrabold tabular-nums;
+    font-size: clamp(2.5rem, 4vw + 1rem, 4.5rem);
     letter-spacing: -0.04em;
   }
 
   .text-stat-label {
-    @apply font-sans text-sm sm:text-base text-slate-600 uppercase tracking-wide;
+    @apply font-sans text-slate-600 uppercase tracking-wide;
+    font-size: clamp(0.75rem, 0.5vw + 0.5rem, 0.875rem);
   }
 
   /* Eyebrow Text - Section labels */
   .text-eyebrow {
-    @apply font-heading text-xs sm:text-sm font-semibold uppercase tracking-wider text-brand-accent;
+    @apply font-heading font-semibold uppercase tracking-wider text-brand-accent;
+    font-size: clamp(0.6875rem, 0.25vw + 0.625rem, 0.8125rem);
   }
 
   /* Lead Paragraph - Enhanced intro text */
   .text-lead {
-    @apply font-sans text-lg sm:text-xl lg:text-2xl leading-relaxed text-slate-700;
+    @apply font-sans leading-relaxed text-slate-700;
+    font-size: clamp(1.0625rem, 1vw + 0.75rem, 1.375rem);
   }
 
   /* Caption Text */
   .text-caption {
-    @apply font-sans text-xs sm:text-sm text-slate-500 leading-snug;
+    @apply font-sans text-slate-500 leading-snug;
+    font-size: clamp(0.75rem, 0.25vw + 0.6875rem, 0.875rem);
   }
 
   /* Disclaimer Text - Medical/Legal */
   .text-disclaimer {
-    @apply font-sans text-xs leading-relaxed text-slate-600 italic;
+    @apply font-sans leading-relaxed text-slate-600 italic;
+    font-size: clamp(0.6875rem, 0.25vw + 0.625rem, 0.8125rem);
   }
 
   /* Trust Badge Text */
   .text-trust {
-    @apply font-heading text-sm font-semibold text-medical-trust;
+    @apply font-heading font-semibold text-medical-trust;
+    font-size: clamp(0.8125rem, 0.25vw + 0.75rem, 0.9375rem);
   }
 }
 

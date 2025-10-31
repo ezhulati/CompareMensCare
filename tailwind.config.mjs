@@ -61,19 +61,21 @@ export default {
         error: '#DC2626',          // Red 600 (less screaming)
       },
       fontFamily: {
-        // Display - Large headlines, hero text (H1-H2)
-        display: ['Manrope', 'Inter', '-apple-system', 'system-ui', 'sans-serif'],
+        // Display - Large headlines, hero text (H1-H2) - Epilogue for premium sharpness
+        display: ['Epilogue', '-apple-system', 'system-ui', 'sans-serif'],
 
-        // Heading - Section titles, cards (H3-H6)
-        heading: ['Inter Tight', 'Inter', '-apple-system', 'system-ui', 'sans-serif'],
+        // Heading - Section titles, cards (H3-H6) - Epilogue for consistency
+        heading: ['Epilogue', '-apple-system', 'system-ui', 'sans-serif'],
 
-        // Body - Paragraphs, descriptions, main content
+        // Body - Paragraphs, descriptions, main content - Inter for readability
         sans: ['Inter', '-apple-system', 'system-ui', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
 
         // Mono - Pricing, stats, data, technical specs
         mono: ['Space Mono', 'Menlo', 'Monaco', 'Courier New', 'monospace'],
       },
       fontSize: {
+        // Note: We use fluid typography with clamp() in global.css
+        // These are fallback/utility sizes for edge cases
         'xs': ['0.75rem', { lineHeight: '1.5', letterSpacing: '0.02em' }],
         'sm': ['0.875rem', { lineHeight: '1.5', letterSpacing: '0.01em' }],
         'base': ['1rem', { lineHeight: '1.6', letterSpacing: '0' }],
@@ -84,9 +86,6 @@ export default {
         '4xl': ['2.25rem', { lineHeight: '1.2', letterSpacing: '-0.03em' }],
         '5xl': ['3rem', { lineHeight: '1.1', letterSpacing: '-0.03em' }],
         '6xl': ['3.75rem', { lineHeight: '1', letterSpacing: '-0.04em' }],
-        // Medical-specific utility sizes
-        'disclaimer': ['0.8125rem', { lineHeight: '1.4', letterSpacing: '0' }],
-        'caption': ['0.8125rem', { lineHeight: '1.3', letterSpacing: '0.02em' }],
       },
       spacing: {
         '18': '4.5rem',
