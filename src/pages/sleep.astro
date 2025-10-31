@@ -158,7 +158,11 @@ const faqs = [
   </section>
 
   <!-- Quick Picks Section -->
-  <QuickPicks picks={quickPicks} categoryTitle="Sleep & Insomnia Treatment" />
+  <section class="section bg-white">
+    <div class="container-custom">
+      <QuickPicks picks={quickPicks} category="Sleep & Insomnia" />
+    </div>
+  </section>
 
   <!-- Trust Signals -->
   <TrustSignals />
@@ -175,11 +179,7 @@ const faqs = [
         </p>
       </div>
 
-      <FilterableComparison
-        brands={sleepBrands}
-        category="sleep"
-        defaultSort="rating"
-      />
+      <FilterableComparison brands={sleepBrands} location="sleep-table" />
     </div>
   </section>
 

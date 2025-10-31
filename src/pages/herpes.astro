@@ -158,7 +158,11 @@ const faqs = [
   </section>
 
   <!-- Quick Picks Section -->
-  <QuickPicks picks={quickPicks} categoryTitle="Herpes Treatment" />
+  <section class="section bg-white">
+    <div class="container-custom">
+      <QuickPicks picks={quickPicks} category="Herpes Treatment" />
+    </div>
+  </section>
 
   <!-- Trust Signals -->
   <TrustSignals />
@@ -175,11 +179,7 @@ const faqs = [
         </p>
       </div>
 
-      <FilterableComparison
-        brands={herpesBrands}
-        category="herpes"
-        defaultSort="rating"
-      />
+      <FilterableComparison brands={herpesBrands} location="herpes-table" />
     </div>
   </section>
 
