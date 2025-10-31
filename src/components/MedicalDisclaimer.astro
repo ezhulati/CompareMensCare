@@ -9,14 +9,14 @@ const { variant = 'banner', class: className = '' } = Astro.props;
 ---
 
 {variant === 'banner' && (
-  <div class={`bg-medical-blue-light border-y border-blue-200 ${className}`}>
+  <div class={`${className}`}>
     <div class="container-custom py-3">
-      <p class="text-disclaimer text-slate-700 text-center flex items-center justify-center gap-2 flex-wrap">
+      <p class="text-sm text-slate-400 text-center flex items-center justify-center gap-2 flex-wrap">
         <svg class="w-4 h-4 flex-shrink-0 text-brand-accent" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
         </svg>
         <span>
-          <strong class="font-semibold">Medical Disclaimer:</strong> This information is for educational purposes only and not a substitute for professional medical advice.
+          <strong class="font-semibold text-slate-300">Medical Disclaimer:</strong> This information is for educational purposes only and not a substitute for professional medical advice.
           <a href="/disclaimer" class="text-brand-accent hover:underline font-medium ml-1">Learn more</a>
         </span>
       </p>

@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import QuickPicks from '../components/QuickPicks.astro';
 import TrustSignals from '../components/TrustSignals.astro';
+import FAQSection from '../components/FAQSection.astro';
 import Icon from '../components/Icon.astro';
 import type { Brand } from '../components/ComparisonTable.astro';
 
@@ -131,6 +132,50 @@ const schema = {
     name: 'Obesity',
   },
 };
+
+// FAQ data for AI-SEO optimization
+const faqs = [
+  {
+    question: "How much do GLP-1 medications cost online?",
+    answer: "GLP-1 medications cost $99-350 per month through online weight loss services. Ro charges $99-145/month for compounded semaglutide. Hims offers GLP-1s at $199-299/month. Numan costs $149-249/month. Brand-name Wegovy costs $1300+/month without insurance but many services offer compounded versions at 60-80% lower prices. Most services require a $49-99 initial consultation."
+  },
+  {
+    question: "Is compounded semaglutide safe?",
+    answer: "Yes, compounded semaglutide is safe when sourced from FDA-registered 503B pharmacies. Compounded versions contain the same active ingredient (semaglutide) as Wegovy/Ozempic but are made by compounding pharmacies instead of drug manufacturers. Services like Ro, Hims, and Numan only use FDA-registered pharmacies. Compounded semaglutide has the same effectiveness (10-15% total body weight loss) as brand-name versions."
+  },
+  {
+    question: "Do I qualify for GLP-1 weight loss medication?",
+    answer: "You typically qualify for GLP-1 medications if your BMI is 30+ or BMI is 27+ with weight-related health conditions (diabetes, high blood pressure, high cholesterol). Most online services require BMI of 27-30+ and will not prescribe if you're already at healthy weight. You must be 18+ years old. Services conduct medical screenings to ensure safety - pregnant women and people with certain conditions (pancreatitis history, thyroid cancer) cannot use GLP-1s."
+  },
+  {
+    question: "How much weight can I lose with GLP-1 medications?",
+    answer: "Most users lose 10-15% of total body weight with GLP-1 medications over 12-18 months. Clinical studies show semaglutide (Wegovy) results in 12-15% weight loss, tirzepatide (Mounjaro/Zepbound) results in 15-20% weight loss. For a 200-pound person, this means losing 20-40 pounds. Results vary - some lose more, some less. Maximum weight loss typically occurs at 60-72 weeks. Combining medication with diet/exercise improves results."
+  },
+  {
+    question: "What are the side effects of GLP-1 medications?",
+    answer: "Common GLP-1 side effects include nausea (40-50% of users), vomiting, diarrhea, constipation, and stomach pain. Most side effects are mild-moderate and improve after 4-8 weeks as your body adjusts. Rare but serious side effects include pancreatitis, gallbladder problems, and thyroid tumors (in animal studies). Starting at low doses and gradually increasing reduces side effects. Most users find side effects manageable and worth the weight loss benefits."
+  },
+  {
+    question: "Does insurance cover online weight loss programs?",
+    answer: "Most insurance doesn't cover online weight loss services or compounded GLP-1s. Brand-name Wegovy/Mounjaro are covered by some insurance plans but often require prior authorization and documented weight loss attempts. Compounded semaglutide from online services is not covered because it's not FDA-approved. However, cash-pay compounded versions ($99-350/month) are often cheaper than insurance co-pays for brand names ($50-100/month co-pay after $500+ deductible)."
+  },
+  {
+    question: "What's the difference between semaglutide and tirzepatide?",
+    answer: "Semaglutide (Wegovy, Ozempic) targets one hormone (GLP-1) and produces 10-15% weight loss. Tirzepatide (Mounjaro, Zepbound) targets two hormones (GLP-1 and GIP) and produces 15-20% weight loss. Tirzepatide is newer, slightly more effective, but costs more ($250-350/month vs $99-299/month for semaglutide). Both are weekly injections with similar side effects. Tirzepatide may have fewer nausea side effects."
+  },
+  {
+    question: "How long do I need to stay on GLP-1 medications?",
+    answer: "Most people need to stay on GLP-1 medications long-term (1+ years) to maintain weight loss. Clinical trials show 50-70% of weight returns within 1 year of stopping medication. Some users transition to maintenance doses after reaching goal weight. Think of GLP-1s like managing chronic conditions - ongoing treatment maintains results. Combining medication with sustainable lifestyle changes improves long-term success even after stopping."
+  },
+  {
+    question: "Can I get GLP-1 weight loss medication without seeing a doctor?",
+    answer: "No, GLP-1 medications require a prescription from a licensed physician. However, online services provide virtual consultations ($0-99) where you complete a medical questionnaire and a doctor reviews it remotely. No video calls required for most services. If approved (70-80% approval rate), medication ships to your door. This is legitimate telehealth, not a workaround - services like Ro, Hims, and Numan use board-certified physicians."
+  },
+  {
+    question: "Which online weight loss service is best?",
+    answer: "Ro offers best value at $99-145/month for compounded semaglutide with comprehensive support. Hims provides most convenience with integrated health platform at $199-299/month. Numan offers middle-ground pricing at $149-249/month with strong physician oversight. Your choice depends on priorities: lowest cost (Ro), convenience (Hims), or balanced approach (Numan). All three use FDA-registered compounding pharmacies and licensed physicians."
+  }
+];
 ---
 
 <BaseLayout
@@ -361,70 +406,14 @@ const schema = {
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="section bg-white">
+  <!-- FAQ Section with Schema Markup -->
+  <section id="faq" class="section bg-white">
     <div class="container-custom max-w-3xl">
-      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-8 text-center">
-        Common Questions
-      </h2>
-      <div class="space-y-4">
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>How much weight can I expect to lose?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            Clinical trials show semaglutide (Wegovy) produces 15-17% average weight loss, while tirzepatide (Mounjaro)
-            shows up to 22% weight loss over 12-18 months. Individual results vary based on starting weight, lifestyle
-            changes, and adherence to treatment.
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>What are the side effects?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            Most common side effects are nausea, diarrhea, constipation, and reduced appetite. These typically
-            decrease after the first few weeks. Starting with a low dose and gradually increasing helps minimize
-            side effects. Serious side effects are rare but can include pancreatitis and gallbladder issues.
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>Do I need to take it forever?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            GLP-1 medications are designed for long-term use. Studies show most people regain weight after stopping.
-            However, the medications can be used as a tool to establish healthier habits. Some people maintain weight
-            loss after discontinuation with proper lifestyle changes, while others require ongoing treatment.
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>What's the difference between compounded and brand-name?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            Brand-name medications (Wegovy, Ozempic, Mounjaro) are FDA-approved and manufactured by pharmaceutical
-            companies. Compounded versions are made by specialized pharmacies using the same active ingredient but
-            aren't FDA-approved. Compounded options are 40-60% cheaper but may have less consistent dosing and
-            aren't covered by insurance.
-          </p>
-        </details>
-      </div>
+      <FAQSection
+        title="Common Questions About GLP-1 Weight Loss Medications"
+        categoryName="GLP-1 Medications & Weight Loss"
+        faqs={faqs}
+      />
     </div>
   </section>
 

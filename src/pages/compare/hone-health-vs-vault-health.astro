@@ -1,5 +1,6 @@
 ---
 import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+import QuickVerdict from '../../components/QuickVerdict.astro';
 
 const comparisonData = {
   brand1Slug: 'hone-health',
@@ -75,6 +76,17 @@ const comparisonData = {
 ---
 
 <ComparisonLayout {...comparisonData}>
+  <!-- Quick Verdict for AI Optimization -->
+  <QuickVerdict
+    brand1="Hone Health"
+    brand1Verdict="Clinical TRT specialist with comprehensive hormone testing, data-driven protocols, and accessible pricing"
+    brand1BestFor="Users wanting clinical depth and detailed tracking at lower cost ($99/month)"
+    brand2="Vault Health"
+    brand2Verdict="Premium concierge TRT service with dedicated health coaches, white-glove support, and highest customer satisfaction"
+    brand2BestFor="Users seeking personalized guidance and premium service experience ($129/month)"
+    bottomLine="Choose Hone Health for data-driven clinical TRT at the best price. Choose Vault Health for concierge service with dedicated coaching and white-glove support."
+  />
+
   <section class="section bg-white border-t border-slate-200">
     <div class="container-custom max-w-4xl">
       <h2 class="text-3xl font-bold text-slate-900 mb-6">

@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import QuickPicks from '../components/QuickPicks.astro';
 import TrustSignals from '../components/TrustSignals.astro';
+import FAQSection from '../components/FAQSection.astro';
 import type { Brand } from '../components/ComparisonTable.astro';
 import Icon from '../components/Icon.astro';
 
@@ -126,6 +127,50 @@ const schema = {
   name: 'Best At-Home Health Testing Services',
   description: 'Compare the best at-home health testing and diagnostic services for men including hormone tests, STD testing, and wellness panels.',
 };
+
+// FAQ data for AI-SEO optimization
+const faqs = [
+  {
+    question: "How much do at-home health tests cost?",
+    answer: "At-home health tests cost $49-299 depending on the test type. Basic STD tests start at $49-79. Testosterone tests cost $49-99. Comprehensive hormone panels cost $99-199. Full metabolic panels cost $129-299. LetsGetChecked charges $69-199 per test. Everlywell costs $49-259. Hone Health offers testing included with treatment plans at $199 consultation. Most tests include shipping, lab analysis, and physician review of results."
+  },
+  {
+    question: "Are at-home health tests accurate?",
+    answer: "Yes, at-home health tests from reputable companies are highly accurate (95-99%) when used correctly. They use the same CLIA-certified labs as doctor's offices. Sample collection quality affects accuracy - follow instructions carefully. Finger-prick blood tests are slightly less accurate than venous blood draws but sufficient for screening. All major services (LetsGetChecked, Everlywell, Hone Health) use certified labs and include physician review to ensure result accuracy."
+  },
+  {
+    question: "Do I need a doctor's order for at-home tests?",
+    answer: "No, most at-home test companies do not require a doctor's order. Services like LetsGetChecked and Everlywell allow you to order tests directly online. They employ physicians who review and approve test orders as part of the service. Results include physician review and consultation if needed. Some states (NY, NJ, RI) have restrictions on direct-to-consumer lab testing, but most services work around these limitations."
+  },
+  {
+    question: "How long do at-home test results take?",
+    answer: "At-home test results typically take 2-5 days after the lab receives your sample. Testing process: order test (arrives in 2-3 days), collect sample, mail to lab (1-2 days shipping), lab analysis (2-5 days), receive results online. Total time from order to results: 5-10 days average. Urgent tests may have expedited options. Results are reviewed by physicians before being released to you."
+  },
+  {
+    question: "What can at-home health tests detect?",
+    answer: "At-home tests detect hormones (testosterone, cortisol, thyroid), STDs/STIs (chlamydia, gonorrhea, HIV, herpes), vitamin deficiencies (D, B12), metabolism markers (glucose, cholesterol, HbA1c), liver/kidney function, inflammation markers (CRP), and fertility markers. Comprehensive panels test 10-40+ biomarkers. Tests cannot diagnose all conditions - abnormal results require follow-up with healthcare provider for diagnosis and treatment."
+  },
+  {
+    question: "Are at-home STD tests reliable?",
+    answer: "Yes, at-home STD tests are 95-99% reliable using the same lab technology as clinics. LetsGetChecked and Everlywell test for chlamydia, gonorrhea, HIV, herpes, syphilis, trichomoniasis, and hepatitis. Tests use urine samples, blood spots, or swabs. All positive results are reviewed by physicians who provide counseling and treatment guidance. Testing 2-4 weeks after potential exposure ensures accuracy. Home STD tests are FDA-cleared and use CLIA-certified labs."
+  },
+  {
+    question: "Can I use insurance for at-home health tests?",
+    answer: "Most at-home test services do not accept insurance directly and operate on cash-pay basis. However, many provide itemized receipts you can submit to insurance for potential reimbursement (typically reimbursement rates are 20-50%). FSA/HSA cards can be used to pay for tests. Some companies like Everlywell are working with insurance providers. Cash-pay prices ($49-299) are often comparable to insurance co-pays plus deductibles anyway."
+  },
+  {
+    question: "How do I collect samples for at-home tests?",
+    answer: "Sample collection varies by test type. Blood tests use finger-prick lancets to collect drops of blood on cards. Urine tests require collecting sample in provided container. Swab tests involve swabbing cheeks, throat, or genital areas. Most tests take 5-15 minutes to complete. Instructions are detailed and include diagrams. Tests must be mailed to lab within 24-48 hours using prepaid shipping. Proper collection is critical for accuracy."
+  },
+  {
+    question: "What happens if my at-home test results are abnormal?",
+    answer: "If results are abnormal, a physician reviews your results and contacts you (usually by phone or secure messaging) to discuss findings. They provide recommendations for follow-up testing or treatment. Many services offer telemedicine consultations included in test cost. For serious results (very low testosterone, positive STD, etc.), you'll be advised to see a healthcare provider in-person. Services like Hone Health directly connect you with treatment if tests show you qualify."
+  },
+  {
+    question: "Which at-home testing service is best?",
+    answer: "LetsGetChecked is best for comprehensive test variety and accuracy ($69-199 per test). Everlywell offers widest selection with frequent sales ($49-259). Hone Health is best if you want testing integrated with treatment (testosterone/TRT) at $199 consultation. Your choice depends on what you're testing: general wellness (Everlywell), STD screening (LetsGetChecked), or hormone optimization leading to treatment (Hone Health). All three use CLIA-certified labs and include physician review."
+  }
+];
 ---
 
 <BaseLayout
@@ -445,69 +490,14 @@ const schema = {
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="section bg-white">
+  <!-- FAQ Section with Schema Markup -->
+  <section id="faq" class="section bg-white">
     <div class="container-custom max-w-3xl">
-      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-8 text-center">
-        Common Questions
-      </h2>
-      <div class="space-y-4">
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>Are at-home tests accurate?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            Yes. Reputable at-home testing companies use the same CLIA-certified labs that process samples
-            from doctor's offices and hospitals. The tests use identical methodology and equipment. However,
-            proper sample collection is important—carefully follow all instructions for accurate results.
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>Do I need a doctor's order?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            No. Most at-home testing services don't require a doctor's order. They employ physicians who
-            review and approve your test order. However, some tests may not be available in certain states
-            due to regulations (typically NY, NJ, and RI have restrictions).
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>Can I use insurance or FSA/HSA?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            Most at-home tests aren't covered by insurance, but many companies accept FSA/HSA cards.
-            Everlywell and LetsGetChecked both accept FSA/HSA. Some services offer reimbursement paperwork
-            you can submit to insurance, though approval isn't guaranteed.
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>How long do results take?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            Most tests return results in 2-5 business days after the lab receives your sample. Shipping
-            typically takes 1-2 days each way. Total time from sample collection to results is usually
-            5-9 days. Some tests may take longer depending on complexity.
-          </p>
-        </details>
-      </div>
+      <FAQSection
+        title="Common Questions About At-Home Health Testing"
+        categoryName="At-Home Health Tests & Diagnostics"
+        faqs={faqs}
+      />
     </div>
   </section>
 

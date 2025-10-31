@@ -1,5 +1,6 @@
 ---
 import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+import QuickVerdict from '../../components/QuickVerdict.astro';
 
 const comparisonData = {
   brand1Slug: 'keeps',
@@ -75,6 +76,17 @@ const comparisonData = {
 ---
 
 <ComparisonLayout {...comparisonData}>
+  <!-- Quick Verdict for AI Optimization -->
+  <QuickVerdict
+    brand1="Keeps"
+    brand1Verdict="US hair loss specialist offering dedicated expertise, extensive product options including finasteride/minoxidil combos, and focused platform"
+    brand1BestFor="US-based users wanting specialized hair loss care with variety ($10-35/month)"
+    brand2="Manual"
+    brand2Verdict="UK comprehensive men's health platform offering hair loss treatment alongside ED, TRT, and weight management with GMC-registered doctors"
+    brand2BestFor="UK-based users seeking multi-service platform with evidence-based hair loss care (competitive UK pricing)"
+    bottomLine="Choose Keeps if you're in the US and want dedicated hair loss expertise with extensive product options. Choose Manual if you're in the UK for professional hair loss care as part of a comprehensive health platform."
+  />
+
   <section class="section bg-white border-t border-slate-200">
     <div class="container-custom max-w-4xl">
       <h2 class="text-3xl font-bold text-slate-900 mb-6">

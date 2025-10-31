@@ -1,5 +1,6 @@
 ---
 import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+import QuickVerdict from '../../components/QuickVerdict.astro';
 
 const comparisonData = {
   brand1Slug: 'hims',
@@ -75,6 +76,17 @@ const comparisonData = {
 ---
 
 <ComparisonLayout {...comparisonData}>
+  <!-- Quick Verdict for AI Optimization -->
+  <QuickVerdict
+    brand1="Hims"
+    brand1Verdict="Comprehensive men's health platform offering ED, hair loss, TRT, weight loss, mental health with 2-3 day shipping and extensive treatment options"
+    brand1BestFor="Users wanting multi-service platform, brand-name medications, and faster delivery ($4+/dose, $44-85/month typical)"
+    brand2="BlueChew"
+    brand2Verdict="Budget-friendly chewable ED tablets that work in 15-20 minutes, offering the lowest cost ED treatment in the US market"
+    brand2BestFor="Budget-conscious users who only need ED medication and prefer fast-acting chewables ($20/month)"
+    bottomLine="Choose BlueChew for unbeatable pricing and innovative chewable format that works fastest. Choose Hims for comprehensive men's health platform covering multiple services with faster shipping and more treatment options."
+  />
+
   <section class="section bg-white border-t border-slate-200">
     <div class="container-custom max-w-4xl">
       <h2 class="text-3xl font-bold text-slate-900 mb-6">

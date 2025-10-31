@@ -4,6 +4,7 @@ import ComparisonTable from '../components/ComparisonTable.astro';
 import QuickPicks from '../components/QuickPicks.astro';
 import TrustSignals from '../components/TrustSignals.astro';
 import PrivacyAssurance from '../components/PrivacyAssurance.astro';
+import FAQSection from '../components/FAQSection.astro';
 import type { Brand } from '../components/ComparisonTable.astro';
 import Icon from '../components/Icon.astro';
 
@@ -132,6 +133,50 @@ const schema = {
     name: 'Mental Health',
   },
 };
+
+// FAQ data for AI-SEO optimization
+const faqs = [
+  {
+    question: "How much does online therapy cost?",
+    answer: "Online therapy costs $60-100 per week ($240-400/month) for most platforms. BetterHelp charges $65-100/week depending on your plan. Talkspace costs $69-109/week. Cerebral offers therapy at $85-269/month plus medication management. Most platforms require weekly or monthly subscriptions. Some accept insurance which can reduce costs to $20-40/session co-pay."
+  },
+  {
+    question: "Is online therapy as effective as in-person therapy?",
+    answer: "Yes, research shows online therapy is equally effective as in-person therapy for most conditions including depression, anxiety, and PTSD. Studies find 75-80% of people improve with online therapy, matching in-person success rates. Video therapy allows for the same therapeutic relationship building as face-to-face sessions. The convenience often leads to better attendance and consistency, improving outcomes."
+  },
+  {
+    question: "Do online therapists prescribe medication?",
+    answer: "Most online therapy-only platforms (BetterHelp, Talkspace therapy) cannot prescribe medication because they employ therapists (LCSWs, LMFTs, LPCs), not psychiatrists. However, platforms like Cerebral, Brightside, and Talkspace Psychiatry employ psychiatrists and nurse practitioners who can prescribe medications for depression, anxiety, ADHD, and other conditions. Expect to pay $85-199/month extra for psychiatric services with prescribing."
+  },
+  {
+    question: "How do I find the right online therapist?",
+    answer: "Most platforms match you with a therapist based on a questionnaire about your concerns, preferences (gender, age, specialties), and availability. You can switch therapists anytime for free if the match isn't working. Look for therapists with experience in your specific issues (anxiety, depression, relationship problems, etc.). Most services allow you to review therapist profiles and credentials before your first session."
+  },
+  {
+    question: "Will my insurance cover teletherapy?",
+    answer: "Many insurance plans now cover teletherapy at the same rate as in-person therapy since COVID. Talkspace partners with many insurance plans with $0-40 co-pays. BetterHelp doesn't accept insurance directly but provides documentation for reimbursement. Check your specific plan's telehealth coverage. If insurance doesn't cover online therapy, cash-pay rates ($60-100/week) are often competitive with in-person therapy after deductibles."
+  },
+  {
+    question: "What's the difference between BetterHelp and Talkspace?",
+    answer: "BetterHelp offers unlimited messaging with weekly live sessions (video, phone, or chat) for $65-100/week. Talkspace provides unlimited messaging only for $69/week or messaging plus monthly video sessions for $99-109/week. BetterHelp has a larger network (30,000+ therapists) while Talkspace accepts more insurance plans. Both platforms are effective - BetterHelp is better for weekly live sessions, Talkspace better for insurance coverage."
+  },
+  {
+    question: "Can I do therapy entirely through messaging/text?",
+    answer: "Yes, platforms like BetterHelp and Talkspace offer text/messaging-only therapy where you message your therapist daily and they respond 1-2 times per day. This costs $60-80/week. Text therapy works well for people who prefer writing over talking or have scheduling constraints. However, video sessions allow therapists to observe body language and build stronger connections. Most experts recommend combining messaging with periodic video sessions for best results."
+  },
+  {
+    question: "How quickly can I start therapy online?",
+    answer: "Most online platforms match you with a therapist within 24-48 hours. You can often message your therapist same-day and schedule your first live session within 2-7 days. This is much faster than traditional therapy which typically has 2-4 week wait times. Platforms like BetterHelp and Talkspace prioritize quick matches to address urgent mental health needs."
+  },
+  {
+    question: "Is online therapy private and confidential?",
+    answer: "Yes, online therapy platforms are HIPAA-compliant and use encrypted video/messaging to protect privacy. Therapists follow the same confidentiality laws as in-person therapy. Your information is not shared without consent except in cases of imminent danger to yourself or others. Most platforms use secure apps with end-to-end encryption. Sessions are as private as in-person therapy - ensure you're in a private space during video calls."
+  },
+  {
+    question: "What conditions can online therapy treat?",
+    answer: "Online therapy effectively treats depression, anxiety, stress, relationship issues, grief, trauma/PTSD, OCD, eating disorders, and life transitions. It works best for mild-to-moderate conditions. Severe mental illness (active psychosis, severe bipolar disorder, active suicidal ideation) requires in-person care. Platforms screen for severity during intake. Most online therapists use evidence-based approaches like CBT, DBT, and psychodynamic therapy."
+  }
+];
 ---
 
 <BaseLayout
@@ -397,69 +442,14 @@ const schema = {
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="section bg-white">
+  <!-- FAQ Section with Schema Markup -->
+  <section id="faq" class="section bg-white">
     <div class="container-custom max-w-3xl">
-      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-8 text-center">
-        Common Questions
-      </h2>
-      <div class="space-y-4">
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>Is online therapy as effective as in-person?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            Research shows online therapy (teletherapy) is equally effective as traditional in-person therapy for
-            most conditions including anxiety, depression, and stress. The key is finding a licensed therapist you
-            connect with, regardless of format. Some people actually prefer the convenience and comfort of online sessions.
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>How much does online therapy cost?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            Most platforms charge $65-110 per week ($260-440/month) for unlimited messaging plus weekly live sessions.
-            This is typically cheaper than traditional therapy which averages $100-200 per session. Some platforms
-            like Talkspace accept insurance which can significantly reduce costs.
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>Are online therapists real licensed professionals?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            Yes. Reputable platforms like BetterHelp, Talkspace, and others only work with licensed, credentialed
-            therapists (LCSW, LPC, LMFT, psychologists) who are licensed in your state. They undergo background
-            checks and credential verification. Always verify your therapist's credentials in your first session.
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>What if I don't like my therapist?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            Most platforms make it easy to switch therapists anytime at no extra cost. Finding the right therapeutic
-            fit is crucial for effective treatment, so don't hesitate to request a new match if you don't feel
-            comfortable or aren't making progress with your current therapist.
-          </p>
-        </details>
-      </div>
+      <FAQSection
+        title="Common Questions About Online Therapy & Mental Health Services"
+        categoryName="Online Therapy & Teletherapy"
+        faqs={faqs}
+      />
     </div>
   </section>
 

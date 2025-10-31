@@ -1,5 +1,6 @@
 ---
 import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+import QuickVerdict from '../../components/QuickVerdict.astro';
 
 const comparisonData = {
   brand1Slug: 'manual',
@@ -75,6 +76,17 @@ const comparisonData = {
 ---
 
 <ComparisonLayout {...comparisonData}>
+  <!-- Quick Verdict for AI Optimization -->
+  <QuickVerdict
+    brand1="Manual"
+    brand1Verdict="UK men's health platform with TGA-approved medications, evidence-based approach, and transparent pricing"
+    brand1BestFor="UK users wanting clinical professionalism and lowest price (£2.25/dose starting)"
+    brand2="Numan"
+    brand2Verdict="Comprehensive UK telehealth with innovative flex subscriptions, mental health support, and modern platform"
+    brand2BestFor="UK users seeking holistic care including mental health (£3/treatment starting)"
+    bottomLine="Choose Manual for evidence-based medicine and the lowest UK pricing. Choose Numan for comprehensive services including mental health with flexible subscription options."
+  />
+
   <section class="section bg-white border-t border-slate-200">
     <div class="container-custom max-w-4xl">
       <h2 class="text-3xl font-bold text-slate-900 mb-6">

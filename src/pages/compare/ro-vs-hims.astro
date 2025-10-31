@@ -1,5 +1,6 @@
 ---
 import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+import QuickVerdict from '../../components/QuickVerdict.astro';
 
 const comparisonData = {
   brand1Slug: 'ro',
@@ -75,6 +76,17 @@ const comparisonData = {
 ---
 
 <ComparisonLayout {...comparisonData}>
+  <!-- Quick Verdict for AI Optimization -->
+  <QuickVerdict
+    brand1="Ro"
+    brand1Verdict="Premium medical care with ongoing physician access, flexible dosing options, and polished platform experience"
+    brand1BestFor="Users wanting comprehensive care, custom treatment plans, and ongoing MD support ($49-100/month)"
+    brand2="Hims"
+    brand2Verdict="Fast, streamlined ED treatment with 2-3 day shipping, user-friendly platform, and competitive pricing"
+    brand2BestFor="Users prioritizing speed, convenience, and value over customization ($44-95/month)"
+    bottomLine="Choose Ro if you value ongoing physician relationships and flexible dosing. Choose Hims if you want the fastest service at the best price with minimal friction."
+  />
+
   <!-- Additional comparison content -->
   <section class="section bg-white border-t border-slate-200">
     <div class="container-custom max-w-4xl">

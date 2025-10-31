@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import QuickPicks from '../components/QuickPicks.astro';
 import TrustSignals from '../components/TrustSignals.astro';
+import FAQSection from '../components/FAQSection.astro';
 import Icon from '../components/Icon.astro';
 import type { Brand } from '../components/ComparisonTable.astro';
 
@@ -130,6 +131,50 @@ const schema = {
     name: 'Low Testosterone',
   },
 };
+
+// FAQ data for AI-SEO optimization
+const faqs = [
+  {
+    question: "How much does TRT cost through online clinics?",
+    answer: "Online TRT costs $150-300 per month for medication plus $100-250 for initial consultation and lab work. Hone Health charges $199 consultation + $150-250/month for treatment. Vault Health costs $250 setup + $200-300/month. TRT Nation has $250 consultation but lower medication costs at $99-150/month. Most clinics require quarterly lab work ($100-200) for monitoring."
+  },
+  {
+    question: "Do I need a testosterone test before starting TRT?",
+    answer: "Yes, you must have blood test results showing low testosterone before starting TRT. Normal testosterone levels are 300-1000 ng/dL. Most online clinics require levels below 350 ng/dL (some below 300 ng/dL) to prescribe TRT. You'll need two morning tests taken before 10 AM to confirm diagnosis. All reputable TRT clinics require lab work - avoid services that don't test first."
+  },
+  {
+    question: "Is online TRT legal and safe?",
+    answer: "Yes, online TRT is completely legal when prescribed by licensed physicians following proper protocols. Services like Hone Health, Vault Health, and Maximus use board-certified doctors who review lab results before prescribing. They require regular blood work (every 3-6 months) to monitor safety. Online TRT follows the same medical standards as in-person clinics - the only difference is convenience of virtual consultations."
+  },
+  {
+    question: "What are the side effects of TRT?",
+    answer: "Common TRT side effects include elevated red blood cell count (requires monitoring), acne or oily skin, testicular shrinkage, and reduced fertility. Less common side effects are mood changes, sleep apnea worsening, and gynecomastia (breast tissue growth from estrogen conversion). Most side effects are manageable through dosage adjustment or ancillary medications. Proper medical monitoring every 3-6 months minimizes risks."
+  },
+  {
+    question: "How long does TRT take to work?",
+    answer: "TRT effects appear in stages. Energy and mood improve within 2-4 weeks. Libido and sexual function improve within 4-6 weeks. Muscle gain and fat loss become noticeable at 3-6 months. Full benefits (maximum muscle mass, optimal energy, best mood) take 6-12 months. Results vary by individual, baseline levels, and dosage. Injectable testosterone works faster than creams or gels."
+  },
+  {
+    question: "What's the difference between testosterone injections vs creams?",
+    answer: "Testosterone injections are administered weekly or bi-weekly with more stable blood levels and lower cost ($99-150/month). Testosterone creams/gels are applied daily, more convenient but cost more ($150-250/month) and have less consistent absorption. Injections are 85-90% effective at raising levels. Creams are 70-80% effective due to variable absorption. Most users prefer injections for effectiveness and value."
+  },
+  {
+    question: "Will TRT affect my fertility?",
+    answer: "Yes, TRT suppresses natural testosterone production and sperm production in 90% of men. Most men become infertile within 3-6 months of starting TRT. If fertility is a concern, consider alternatives like enclomiphene or HCG that preserve fertility while raising testosterone. Services like Maximus specialize in fertility-preserving options. Fertility usually returns 6-12 months after stopping TRT, but recovery isn't guaranteed."
+  },
+  {
+    question: "Can I get TRT covered by insurance?",
+    answer: "Most online TRT services don't accept insurance and operate on cash-pay basis. However, some like Vault Health provide documentation you can submit to insurance for potential reimbursement. Traditional insurance coverage for TRT is limited - many plans consider it optional or lifestyle treatment. Cash-pay online TRT ($150-300/month) is often comparable to insurance co-pays after deductibles anyway."
+  },
+  {
+    question: "Which online TRT clinic is best?",
+    answer: "Hone Health is best for comprehensive care with thorough testing and physician support ($199 consultation + $150-250/month). Maximus is best for fertility preservation with enclomiphene options ($149 consultation + $199/month all-inclusive). TRT Nation offers best value medication at $99-150/month but higher upfront costs ($250 consultation). Your choice depends on priorities: comprehensive care (Hone), fertility (Maximus), or affordability (TRT Nation)."
+  },
+  {
+    question: "Do I have to stay on TRT forever?",
+    answer: "Most men stay on TRT long-term (years or lifetime) because stopping causes testosterone to return to pre-treatment low levels within 3-6 months. Natural production may recover partially, but rarely returns to optimal levels, especially in older men. Some men cycle off TRT with PCT (post-cycle therapy) using HCG and clomiphene to restart natural production. Discuss long-term plans with your physician before starting."
+  }
+];
 ---
 
 <BaseLayout
@@ -325,69 +370,14 @@ const schema = {
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="section-light">
+  <!-- FAQ Section with Schema Markup -->
+  <section id="faq" class="section-light">
     <div class="container-custom max-w-3xl">
-      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-8 text-center">
-        Common Questions
-      </h2>
-      <div class="space-y-4">
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>What are symptoms of low testosterone?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            Common symptoms include fatigue, decreased libido, erectile dysfunction, muscle loss, weight gain,
-            mood changes, brain fog, and difficulty concentrating. A blood test measuring total and free testosterone
-            is needed for diagnosis.
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>Is TRT safe?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            When properly monitored by a physician, TRT is generally safe. Regular blood work is essential to monitor
-            testosterone levels, estrogen, and health markers. Risks include elevated red blood cell count, acne,
-            and fertility suppression. Most clinics require regular testing every 3-6 months.
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>How quickly does TRT work?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            Most men notice improvements in energy and mood within 2-4 weeks. Libido and sexual function typically
-            improve within 4-6 weeks. Body composition changes (muscle gain, fat loss) take 3-6 months. Full benefits
-            are usually realized after 6-12 months of treatment.
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>Will TRT affect my fertility?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            Traditional testosterone therapy suppresses natural sperm production and can reduce fertility. However,
-            this is often reversible. For men concerned about fertility, alternatives like enclomiphene or HCG co-therapy
-            can maintain testosterone levels while preserving fertility.
-          </p>
-        </details>
-      </div>
+      <FAQSection
+        title="Common Questions About TRT & Testosterone Therapy"
+        categoryName="Testosterone Replacement Therapy"
+        faqs={faqs}
+      />
     </div>
   </section>
 

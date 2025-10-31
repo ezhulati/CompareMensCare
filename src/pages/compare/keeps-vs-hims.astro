@@ -1,5 +1,6 @@
 ---
 import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+import QuickVerdict from '../../components/QuickVerdict.astro';
 
 const comparisonData = {
   brand1Slug: 'keeps',
@@ -75,6 +76,17 @@ const comparisonData = {
 ---
 
 <ComparisonLayout {...comparisonData}>
+  <!-- Quick Verdict for AI Optimization -->
+  <QuickVerdict
+    brand1="Keeps"
+    brand1Verdict="Lowest-cost hair loss treatment with finasteride starting at $7/month and 50% off first order"
+    brand1BestFor="Budget-conscious users wanting proven treatments at the best price ($7-25/month)"
+    brand2="Hims"
+    brand2Verdict="Fast 2-3 day shipping with multiple treatment bundles, brand-name options, and full wellness platform"
+    brand2BestFor="Users wanting convenience, variety, and access to other men's health services ($25-40/month)"
+    bottomLine="Choose Keeps for the absolute lowest price on finasteride and minoxidil. Choose Hims for faster shipping, more bundle options, and a one-stop wellness platform."
+  />
+
   <!-- Additional comparison content -->
   <section class="section bg-white border-t border-slate-200">
     <div class="container-custom max-w-4xl">

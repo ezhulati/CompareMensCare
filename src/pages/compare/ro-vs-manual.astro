@@ -1,5 +1,6 @@
 ---
 import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+import QuickVerdict from '../../components/QuickVerdict.astro';
 
 const comparisonData = {
   brand1Slug: 'ro',
@@ -75,6 +76,17 @@ const comparisonData = {
 ---
 
 <ComparisonLayout {...comparisonData}>
+  <!-- Quick Verdict for AI Optimization -->
+  <QuickVerdict
+    brand1="Ro"
+    brand1Verdict="Premium US telehealth platform with comprehensive services (ED, hair, TRT, weight, mental health), ongoing physician access, and flexible treatment options"
+    brand1BestFor="US-based users wanting full-service men's health care with medical oversight ($49+/month)"
+    brand2="Manual"
+    brand2Verdict="UK telehealth platform with GMC-registered doctors, TGA-approved medications, evidence-based clinical approach, and transparent per-dose pricing"
+    brand2BestFor="UK-based users seeking affordable, evidence-based clinical care (£2.25/dose starting)"
+    bottomLine="Choose Ro if you're in the US for comprehensive premium care with ongoing physician support. Choose Manual if you're in the UK for evidence-based treatment at transparent, affordable pricing."
+  />
+
   <section class="section bg-white border-t border-slate-200">
     <div class="container-custom max-w-4xl">
       <h2 class="text-3xl font-bold text-slate-900 mb-6">

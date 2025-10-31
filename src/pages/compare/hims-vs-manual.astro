@@ -1,5 +1,6 @@
 ---
 import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+import QuickVerdict from '../../components/QuickVerdict.astro';
 
 const comparisonData = {
   brand1Slug: 'hims',
@@ -75,6 +76,17 @@ const comparisonData = {
 ---
 
 <ComparisonLayout {...comparisonData}>
+  <!-- Quick Verdict for AI Optimization -->
+  <QuickVerdict
+    brand1="Hims"
+    brand1Verdict="US market leader with comprehensive men's health platform, 2-3 day shipping, and extensive treatment range including mental health"
+    brand1BestFor="US-based users wanting one-stop platform with fast delivery ($4/dose starting)"
+    brand2="Manual"
+    brand2Verdict="UK market leader with GMC-registered doctors, TGA-approved medications, and evidence-based clinical approach"
+    brand2BestFor="UK-based users seeking professional clinical care with transparent pricing (£2.25/dose starting)"
+    bottomLine="Choose Hims if you're in the United States for comprehensive care and fast shipping. Choose Manual if you're in the United Kingdom for evidence-based treatment and clinical professionalism."
+  />
+
   <section class="section bg-white border-t border-slate-200">
     <div class="container-custom max-w-4xl">
       <h2 class="text-3xl font-bold text-slate-900 mb-6">
