@@ -1,0 +1,166 @@
+---
+import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+
+const comparisonData = {
+  brand1Slug: 'ro',
+  brand2Slug: 'manual',
+  category: 'sexual-health',
+  verdict: {
+    brand1BestFor: 'Best for US-based users who want premium comprehensive telehealth platform with ongoing physician access, flexible treatments, and full-service men\'s health.',
+    brand2BestFor: 'Best for UK-based users who want evidence-based clinical approach, TGA-approved medications, transparent pricing, and professional GMC-registered care.',
+  },
+  comparisonTable: [
+    {
+      feature: 'Geographic Availability',
+      brand1Value: 'United States only',
+      brand2Value: 'United Kingdom only',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Starting Price',
+      brand1Value: '$49/month',
+      brand2Value: '£2.25/dose (~$3)',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Consultation Fee',
+      brand1Value: 'Free',
+      brand2Value: 'Free',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Treatment Range',
+      brand1Value: 'ED, Hair, TRT, Weight, Mental, Skin',
+      brand2Value: 'ED, Hair, TRT, Weight',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Medication Approval',
+      brand1Value: 'FDA-approved',
+      brand2Value: 'TGA-approved',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Doctor Credentials',
+      brand1Value: 'US-licensed MDs',
+      brand2Value: 'GMC-registered',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Service Model',
+      brand1Value: 'Premium platform',
+      brand2Value: 'Clinical evidence-based',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Physician Access',
+      brand1Value: 'Ongoing MD relationships',
+      brand2Value: 'As needed consultation',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Platform Style',
+      brand1Value: 'Polished, premium',
+      brand2Value: 'Professional, clinical',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Customer Rating',
+      brand1Value: '4.6/5',
+      brand2Value: '4.3/5',
+      winner: '1' as const,
+    },
+  ],
+};
+---
+
+<ComparisonLayout {...comparisonData}>
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">
+        Cross-Market Comparison: Ro (US) vs Manual (UK)
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <div class="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-8">
+          <h3 class="text-xl font-bold text-amber-900 mb-2 flex items-center gap-2">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+            </svg>
+            Important: Geographic Restriction
+          </h3>
+          <p class="text-amber-800 mb-0">
+            <strong>Ro serves the United States exclusively</strong>, while <strong>Manual serves the United Kingdom exclusively</strong>. This comparison is for users researching which platform is best in their respective markets, or for those comparing the US vs UK telehealth landscape.
+          </p>
+        </div>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Price Comparison</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Manual</strong> has the lower starting price at £2.25/dose (approximately $3 USD) for ED medication, making them highly competitive in the UK market. Their transparent, per-dose pricing is straightforward and affordable.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Ro</strong> starts at $49/month for generic ED medication subscriptions in the US market. While higher than Manual's per-dose pricing, Ro's pricing reflects their more comprehensive platform with ongoing physician access and extensive treatment customization. Currency differences aside, both are competitive leaders in their respective markets.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Treatment Range & Services</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> offers the most comprehensive men's health platform in the US with six major categories: erectile dysfunction, hair loss, testosterone therapy, weight loss (GLP-1s), mental health care, and skincare. This makes Ro a true one-stop-shop for US-based men seeking multiple health services from a single provider.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> focuses on four core men's health categories: erectile dysfunction, hair loss, testosterone therapy, and weight management. They don't offer mental health or skincare services. Manual's more focused approach means they specialize in essential treatments with proven clinical efficacy.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Medical Standards & Regulation</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> operates under US healthcare regulations with FDA-approved medications and US state-licensed physicians. All doctors are licensed in your specific state, ensuring compliance with American medical standards. Ro meets all US telemedicine requirements.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> operates under UK healthcare regulations with TGA-approved medications and GMC-registered doctors (General Medical Council - the UK medical licensing body). Manual emphasizes evidence-based medicine and meets strict UK regulatory standards for telehealth services.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Platform Experience & Approach</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> presents a premium, polished platform experience designed to feel like working with a high-end medical practice. Their interface is sophisticated, their communication is professional, and the overall experience emphasizes quality and comprehensive care. Ro's platform is designed for users who want a full-service health partner.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> offers a more clinical, professional platform that emphasizes medical credibility and scientific evidence. The interface feels more like consulting with a traditional medical practice. Manual appeals to UK users who want a serious, evidence-based approach with transparent information about treatments and efficacy.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Physician Access & Support</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> emphasizes ongoing physician relationships. After your initial consultation, you maintain access to your physician for questions, dose adjustments, treatment changes, and ongoing support. This makes Ro feel more like having a personal doctor rather than just a medication subscription service.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> provides consultations as needed. You'll have an initial consultation with a GMC-registered doctor, and you can reach out for additional consultations when needed. The model is more focused on efficient medication delivery with medical oversight rather than ongoing physician relationships.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Treatment Customization</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> excels at treatment customization with extensive medication options, flexible dosing, combination therapies, and willingness to accommodate custom treatment requests. If you need a specific dose or want to try different treatment approaches, Ro's physicians have more flexibility to create personalized protocols.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> offers standard evidence-based treatment protocols that cover most patients' needs. Their approach focuses on proven, straightforward treatments rather than highly customized regimens. This streamlined approach keeps costs down while maintaining clinical efficacy.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Customer Satisfaction</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Ro</strong> maintains a strong 4.6/5 customer rating with extensive reviews. Users appreciate the comprehensive service, professional platform, and ongoing physician access. Ro is recognized as a premium service in the US market.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> holds a solid 4.3/5 rating in the UK market. Customers value the transparent pricing, evidence-based approach, and clinical professionalism. Manual is respected as a quality UK telehealth provider.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Final Verdict</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Your location determines this choice. <strong>Choose Ro</strong> if you're in the United States and want the most comprehensive men's health platform available. Ro's extensive treatment range, ongoing physician access, premium platform experience, and flexible treatment options make them the top choice for US-based men seeking quality telehealth care.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Choose Manual</strong> if you're in the United Kingdom and want evidence-based clinical care with transparent pricing. Manual's TGA-approved medications, GMC-registered doctors, affordable per-dose pricing (£2.25/dose), and professional clinical approach make them an excellent choice for UK residents.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Both platforms are leaders in their respective markets, operating under strict medical regulations with licensed physicians and approved medications. The choice is primarily geographic - use the service available in your country.
+        </p>
+      </div>
+    </div>
+  </section>
+</ComparisonLayout>

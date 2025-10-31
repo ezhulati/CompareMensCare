@@ -1,0 +1,168 @@
+---
+import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+
+const comparisonData = {
+  brand1Slug: 'keeps',
+  brand2Slug: 'manual',
+  category: 'hair-health',
+  verdict: {
+    brand1BestFor: 'Best for US-based users focused exclusively on hair loss treatment who want specialized care, multiple product options, and proven medications.',
+    brand2BestFor: 'Best for UK-based users who want comprehensive men\'s health services including hair loss, with evidence-based treatments and transparent pricing.',
+  },
+  comparisonTable: [
+    {
+      feature: 'Geographic Availability',
+      brand1Value: 'United States only',
+      brand2Value: 'United Kingdom only',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Starting Price',
+      brand1Value: '$10/month (finasteride)',
+      brand2Value: '£2.25/dose (ED starting)',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Consultation Fee',
+      brand1Value: 'Free',
+      brand2Value: 'Free',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Hair Loss Specialization',
+      brand1Value: 'Dedicated hair loss focus',
+      brand2Value: 'Part of broader platform',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Treatment Options',
+      brand1Value: 'Finasteride, minoxidil, combos',
+      brand2Value: 'Finasteride, minoxidil',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Additional Services',
+      brand1Value: 'Hair loss only',
+      brand2Value: 'ED, TRT, weight loss',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Doctor Credentials',
+      brand1Value: 'US-licensed MDs',
+      brand2Value: 'GMC-registered',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Platform Style',
+      brand1Value: 'Hair loss specialist',
+      brand2Value: 'Clinical, evidence-based',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Medication Forms',
+      brand1Value: 'Pills, topical, combo kits',
+      brand2Value: 'Pills, topical',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Customer Rating',
+      brand1Value: '4.4/5',
+      brand2Value: '4.3/5',
+      winner: '1' as const,
+    },
+  ],
+};
+---
+
+<ComparisonLayout {...comparisonData}>
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">
+        Hair Loss Specialists: Keeps (US) vs Manual (UK)
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <div class="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-8">
+          <h3 class="text-xl font-bold text-amber-900 mb-2 flex items-center gap-2">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+            </svg>
+            Geographic Service Areas
+          </h3>
+          <p class="text-amber-800 mb-0">
+            <strong>Keeps serves the United States exclusively</strong>, while <strong>Manual serves the United Kingdom exclusively</strong>. Choose based on your location: US residents use Keeps, UK residents use Manual.
+          </p>
+        </div>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Specialization vs Comprehensive Care</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Keeps</strong> specializes exclusively in hair loss treatment. Every aspect of their service - from the platform design to the medical expertise - focuses solely on preventing and reversing male pattern baldness. This specialized focus means Keeps has deep expertise in hair loss medications, dosing protocols, combination therapies, and managing side effects. If hair loss is your primary concern, Keeps' dedicated approach may feel more aligned with your needs.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> offers hair loss treatment as part of a broader men's health platform that also includes erectile dysfunction, testosterone therapy, and weight management. While Manual provides the same proven hair loss medications (finasteride, minoxidil), they position it as one service among several. This comprehensive approach is convenient if you need multiple men's health services from one UK provider.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Treatment Options & Products</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Keeps</strong> offers extensive hair loss product options including oral finasteride (1mg daily), topical minoxidil (2% or 5%), combination kits with both medications, specialty formulations, and custom treatment plans. Keeps also provides finasteride + minoxidil combo packs designed for maximum hair regrowth. Their product line is more extensive because hair loss is their only focus.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> provides the core hair loss medications: finasteride and minoxidil in standard formulations. These are the same clinically-proven treatments that work for most men with male pattern baldness. Manual's approach is straightforward - they offer what works without specialty formulations or combo packages. Simpler product line, lower prices.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Price & Value Comparison</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Keeps</strong> starts at $10/month for oral finasteride, with combination packages ranging from $25-35/month. Pricing varies based on which products you choose. Keeps' dedicated hair loss focus means they can offer competitive pricing on these specific treatments while maintaining quality.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> offers transparent per-treatment pricing starting at £2.25/dose for ED (their primary service). Hair loss treatment pricing is competitive in the UK market. While Manual's headline pricing focuses on ED medication, their comprehensive approach may offer better value if you need multiple services.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Medical Standards</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Keeps</strong> uses US-licensed physicians who specialize in hair loss treatment and men's health. All consultations are conducted by medical doctors licensed in your state. Keeps meets US telemedicine regulations and uses FDA-approved medications.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> uses GMC-registered doctors (UK medical licensing) who are qualified to prescribe hair loss medications. Manual emphasizes evidence-based medicine and uses TGA-approved medications. Both platforms meet rigorous medical standards in their respective countries.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Platform Experience</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Keeps</strong> has designed their entire platform around hair loss treatment. The consultation questions, educational content, progress tracking tools, and support resources all focus on helping you maintain and regrow your hair. If you're dealing with hair loss anxiety or want specialized expertise, Keeps' focused approach may feel more reassuring.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> presents a professional, clinical platform that treats hair loss as one of several men's health concerns. The experience is more general-purpose healthcare rather than specialized hair clinic. This approach works well if you appreciate a straightforward, medical-first platform without the marketing focus.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Additional Services</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Keeps</strong> offers only hair loss treatment. If you need erectile dysfunction medication, testosterone therapy, or other men's health services, you'll need to use additional providers. Keeps' narrow focus keeps their service simple but limits flexibility.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> provides erectile dysfunction treatment, testosterone replacement therapy, and weight management in addition to hair loss medication. This comprehensive UK platform is convenient if you anticipate needing multiple services. One provider, one medical team, one subscription platform.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Clinical Evidence & Efficacy</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Both platforms use the same clinically-proven medications: <strong>finasteride</strong> (blocks DHT, the hormone that causes male pattern baldness) and <strong>minoxidil</strong> (stimulates hair follicles). These medications have decades of research showing they work for most men with male pattern baldness. Studies show finasteride prevents further hair loss in 90% of men and promotes regrowth in 65%. Minoxidil can increase hair density by 12-18%. Both Keeps and Manual rely on this same scientific evidence.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Customer Satisfaction</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Keeps</strong> maintains a 4.4/5 customer rating with users appreciating the specialized focus, product variety, and straightforward subscription service. Keeps is well-regarded in the US hair loss treatment market.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Manual</strong> holds a 4.3/5 rating in the UK with customers valuing the transparent pricing, professional approach, and comprehensive service range. Manual is respected as a quality UK telehealth provider.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Final Verdict</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Your location determines this choice. <strong>Choose Keeps</strong> if you're in the United States and want dedicated hair loss expertise. Keeps' specialized focus, extensive product options, combination packages, and hair-loss-specific platform make them the top US choice for men prioritizing hair preservation and regrowth.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          <strong>Choose Manual</strong> if you're in the United Kingdom and want professional hair loss treatment as part of a comprehensive men's health platform. Manual's evidence-based approach, GMC-registered doctors, competitive pricing, and multi-service platform make them an excellent choice for UK residents, especially if you need (or might need) other men's health services beyond hair loss.
+        </p>
+      </div>
+    </div>
+  </section>
+</ComparisonLayout>

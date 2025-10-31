@@ -1,0 +1,177 @@
+---
+import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+
+const comparisonData = {
+  brand1Slug: 'hims',
+  brand2Slug: 'bluechew',
+  category: 'sexual-health',
+  verdict: {
+    brand1BestFor: 'Best for users who want comprehensive men\'s health platform covering ED, hair, testosterone, weight loss, and more. Ideal for those needing multiple services.',
+    brand2BestFor: 'Best for budget-conscious users who only need ED medication and want the most affordable chewable option. Perfect for simple, no-frills treatment.',
+  },
+  comparisonTable: [
+    {
+      feature: 'Starting Price',
+      brand1Value: '$4/dose',
+      brand2Value: '$20/month',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Consultation Fee',
+      brand1Value: 'Free',
+      brand2Value: 'Free',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Medication Form',
+      brand1Value: 'Pills (swallow)',
+      brand2Value: 'Chewable tablets',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Time to Work',
+      brand1Value: '30-60 minutes',
+      brand2Value: '15-20 minutes',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Brand-Name Options',
+      brand1Value: 'Yes (Viagra, Cialis)',
+      brand2Value: 'No (generic only)',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Treatment Range',
+      brand1Value: 'ED, Hair, TRT, Weight, Mental, Skin',
+      brand2Value: 'ED chewables only',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Platform Features',
+      brand1Value: 'Full health platform',
+      brand2Value: 'Simple subscription',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Shipping Speed',
+      brand1Value: '2-3 days',
+      brand2Value: '3-5 days',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Overall Value',
+      brand1Value: 'Comprehensive care',
+      brand2Value: 'Budget leader',
+      winner: 'tie' as const,
+    },
+    {
+      feature: 'Customer Rating',
+      brand1Value: '4.5/5 (24,500 reviews)',
+      brand2Value: '4.5/5',
+      winner: 'tie' as const,
+    },
+  ],
+};
+---
+
+<ComparisonLayout {...comparisonData}>
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">
+        Market Leader vs Budget Champion: Hims vs BlueChew
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Price & Value Comparison</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>BlueChew</strong> wins decisively on price, starting at just $20/month for chewable ED medication. This makes BlueChew the most affordable option in the US telehealth market. If budget is your primary concern and you only need ED treatment, BlueChew delivers unbeatable value.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Hims</strong> starts at $4/dose (approximately $44-85/month depending on usage) for generic ED pills. While more expensive than BlueChew, Hims offers a comprehensive platform with hair loss treatments, testosterone therapy, weight loss programs, mental health care, and skincare - making them a better value if you need multiple services from one provider.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Medication Format: Pills vs Chewables</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>BlueChew</strong> specializes exclusively in chewable tablets containing sildenafil or tadalafil. The chewable format is BlueChew's key innovation - it works significantly faster than pills (15-20 minutes vs 30-60 minutes) because the medication absorbs through your mouth rather than waiting for stomach digestion. You don't need water, and the minty taste is pleasant. This is genuinely convenient.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Hims</strong> offers traditional pills that you swallow with water. Pills take 30-60 minutes to work as they need to go through your digestive system. However, Hims provides more medication options including brand-name Viagra and Cialis (if you prefer brand over generic), daily-use tadalafil, and various dosing options. Pills are the standard format most people are familiar with.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Service Scope</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>BlueChew</strong> does one thing only: chewable ED medication. You get sildenafil or tadalafil in chewable form at the lowest price available. That's it. No hair loss treatment, no testosterone therapy, no other services. BlueChew's narrow focus keeps their overhead low and their prices unbeatable. Perfect if ED medication is all you need.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Hims</strong> is a full-service men's health platform covering erectile dysfunction, hair loss (finasteride, minoxidil), testosterone replacement therapy, weight loss (GLP-1 medications), mental health care (therapy, medication), and skincare. If you're dealing with multiple men's health concerns or think you might need other services in the future, Hims' comprehensive platform is convenient - one account, one medical team, one subscription service.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Treatment Options</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>BlueChew</strong> offers exactly two options: chewable sildenafil (Viagra's active ingredient) or chewable tadalafil (Cialis's active ingredient). You can choose between on-demand use or regular subscription, and adjust your dosage. But you won't find brand-name medications, daily-use options beyond tadalafil, or alternative ED treatments. Simple and straightforward.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Hims</strong> provides extensive ED treatment options including generic sildenafil and tadalafil, brand-name Viagra and Cialis, daily-use tadalafil (2.5mg or 5mg), on-demand treatments, combination therapies, and various dosing levels. If you want to try different medications or switch between treatments, Hims gives you flexibility. Their physicians can adjust your treatment based on your response.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Platform & User Experience</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>BlueChew</strong> has a simple, streamlined platform designed for one purpose: getting you chewable ED medication cheaply and easily. The signup takes minutes, the subscription management is straightforward, and there's no complexity. BlueChew doesn't try to be fancy - they just deliver affordable medication reliably.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Hims</strong> offers a polished, modern platform that feels like a tech company doing healthcare. Their website and mobile experience are slick, user-friendly, and designed for quick consultations and medication ordering. You get access to your full health dashboard, can message providers, manage multiple subscriptions, and access educational content. The experience is more sophisticated but also more complex.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Medical Support</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>BlueChew</strong> provides an initial medical consultation to ensure ED medication is safe for you, then delivers your chewables monthly. Medical support is available if you need to adjust dosing or have questions, but the model is focused on simple medication delivery. Most users find the initial consultation sufficient.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Hims</strong> connects you with US-licensed physicians who can adjust your treatment over time, answer questions about side effects, help with dosing changes, or add complementary treatments. The level of medical support is more comprehensive, though whether you need this depends on your situation.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Shipping & Convenience</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Hims</strong> ships faster with 2-3 day delivery across the US. Both services offer discreet packaging, automatic refills, and easy subscription management. Both let you cancel or pause anytime without hassle.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>BlueChew</strong> typically ships within 3-5 days. Slightly slower but still reasonable for a subscription service where you're planning ahead.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Who Should Choose Which?</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Choose BlueChew if:</strong>
+        </p>
+        <ul class="text-slate-600 mb-6">
+          <li>Budget is your top priority ($20/month vs $44-85/month)</li>
+          <li>You only need ED medication, nothing else</li>
+          <li>You prefer the convenience of chewable tablets</li>
+          <li>You want medication that works faster (15-20 minutes)</li>
+          <li>You don't need brand-name medications</li>
+          <li>You want the simplest possible service</li>
+        </ul>
+
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Choose Hims if:</strong>
+        </p>
+        <ul class="text-slate-600 mb-6">
+          <li>You need multiple men's health services (ED + hair loss + TRT, etc.)</li>
+          <li>You want access to brand-name Viagra or Cialis</li>
+          <li>You prefer traditional pills over chewables</li>
+          <li>You want extensive treatment options and flexibility</li>
+          <li>You value a polished, comprehensive platform</li>
+          <li>You want faster shipping (2-3 days)</li>
+          <li>You might need other services in the future</li>
+        </ul>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Final Verdict</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          This comparison comes down to <strong>budget vs breadth</strong>. BlueChew is the clear winner if you only need ED medication and want the absolute lowest price. Their chewable format is innovative and convenient, and $20/month is unbeatable value.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Hims is the better choice if you want a comprehensive men's health platform that can address multiple concerns or if you value treatment variety and flexibility. While more expensive for ED medication alone, Hims becomes better value when you consider their full service range. Most users who need both ED treatment and hair loss medication, for example, find Hims' bundled approach more convenient and cost-effective than using separate providers.
+        </p>
+      </div>
+    </div>
+  </section>
+</ComparisonLayout>
