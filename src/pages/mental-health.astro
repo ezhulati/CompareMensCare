@@ -23,7 +23,7 @@ const brands: Brand[] = mentalHealthBrands
     slug: brand.data.affiliateId,
     rating: brand.data.rating,
     consultationFee: brand.data.pricing.consultationFee,
-    medicationFrom: brand.data.pricing.medicationFrom,
+    medicationFrom: brand.data.pricing.medicationFrom || 'Varies',
     subscriptionType: brand.data.pricing.subscriptionType,
     pros: brand.data.pros.slice(0, 3), // Take top 3 pros
     cons: brand.data.cons.slice(0, 2), // Take top 2 cons

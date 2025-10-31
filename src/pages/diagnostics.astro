@@ -6,8 +6,31 @@ import TrustSignals from '../components/TrustSignals.astro';
 import FAQSection from '../components/FAQSection.astro';
 import type { Brand } from '../components/ComparisonTable.astro';
 import Icon from '../components/Icon.astro';
+import { getCollection } from 'astro:content';
 
-const brands: Brand[] = [
+// Dynamically load all diagnostics brands from content collection
+const allBrands = await getCollection('brands');
+const diagnosticsBrands = allBrands.filter(brand =>
+  brand.data.categories.includes('diagnostics')
+);
+
+// Map to Brand interface format
+const brands: Brand[] = diagnosticsBrands
+  .sort((a, b) => (b.data.rating || 0) - (a.data.rating || 0))
+  .map(brand => ({
+    name: brand.data.title,
+    slug: brand.data.affiliateId,
+    rating: brand.data.rating,
+    consultationFee: brand.data.pricing.consultationFee,
+    medicationFrom: brand.data.pricing.medicationFrom || 'Varies',
+    subscriptionType: brand.data.pricing.subscriptionType,
+    pros: brand.data.pros.slice(0, 3),
+    cons: brand.data.cons.slice(0, 2),
+    bestFor: brand.data.bestFor || [],
+    featured: brand.data.featured || false,
+  }));
+
+const _oldBrands: Brand[] = [
   {
     name: 'Everlywell',
     slug: 'everlywell',
