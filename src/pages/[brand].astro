@@ -62,7 +62,9 @@ const schema = {
       '@type': 'Person',
       name: brand.data.reviewerName,
     },
-    datePublished: brand.data.lastReviewed.toISOString(),
+    datePublished: brand.data.lastReviewed instanceof Date
+      ? brand.data.lastReviewed.toISOString()
+      : brand.data.lastReviewed,
     reviewBody: brand.data.description,
   } : undefined,
   offers: {
