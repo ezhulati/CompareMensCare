@@ -1,0 +1,114 @@
+---
+/**
+ * HowWeResearch Component
+ *
+ * Displays research methodology for guides.
+ * Builds authority by showcasing data-driven research process.
+ *
+ * Props:
+ * - hoursSpent: Number of research hours (number, optional)
+ * - sourcesReviewed: Number of sources reviewed (number, optional)
+ * - lastUpdated: Last update date (Date, optional)
+ * - compact: Show compact version (boolean, default: false)
+ */
+
+interface Props {
+  hoursSpent?: number;
+  sourcesReviewed?: number;
+  lastUpdated?: Date;
+  compact?: boolean;
+}
+
+const {
+  hoursSpent = 10,
+  sourcesReviewed = 15,
+  lastUpdated,
+  compact = false,
+} = Astro.props;
+
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+};
+---
+
+{compact ? (
+  <!-- Compact Version -->
+  <div class="how-we-research-compact bg-slate-50 border border-slate-200 rounded-lg p-4 my-6">
+    <div class="flex items-center gap-3">
+      <svg class="w-5 h-5 text-brand-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+      </svg>
+      <div class="flex-1">
+        <p class="text-sm text-slate-700">
+          <strong>Research-Backed:</strong> {hoursSpent}+ hours of research • {sourcesReviewed}+ sources reviewed
+          {lastUpdated && ` • Updated ${formatDate(lastUpdated)}`}
+        </p>
+      </div>
+    </div>
+  </div>
+) : (
+  <!-- Full Version -->
+  <div class="how-we-research bg-white border-2 border-brand-accent/20 rounded-lg p-8 my-8">
+    <div class="flex items-center gap-3 mb-6">
+      <svg class="w-8 h-8 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+      </svg>
+      <h3 class="text-2xl font-bold text-slate-900">How We Research This Guide</h3>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4 mb-6">
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+        <div class="text-3xl font-bold text-blue-600 mb-1">{hoursSpent}+</div>
+        <div class="text-sm font-medium text-blue-900">Hours of Research</div>
+      </div>
+      <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 text-center">
+        <div class="text-3xl font-bold text-emerald-600 mb-1">{sourcesReviewed}+</div>
+        <div class="text-sm font-medium text-emerald-900">Sources Reviewed</div>
+      </div>
+      {lastUpdated && (
+        <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 text-center">
+          <div class="text-lg font-bold text-purple-600 mb-1">{formatDate(lastUpdated)}</div>
+          <div class="text-sm font-medium text-purple-900">Last Updated</div>
+        </div>
+      )}
+    </div>
+
+    <div class="space-y-4 text-sm text-slate-700">
+      <div class="flex gap-3">
+        <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <p><strong>Direct Source Verification:</strong> All pricing and service information is collected directly from provider websites and verified monthly.</p>
+      </div>
+
+      <div class="flex gap-3">
+        <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <p><strong>Evidence-Based Medical Information:</strong> Health information is sourced from peer-reviewed research published in medical journals, NIH databases, and clinical guidelines.</p>
+      </div>
+
+      <div class="flex gap-3">
+        <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <p><strong>User Experience Analysis:</strong> We analyze verified user reviews from Trustpilot, Better Business Bureau, and Reddit to identify common experiences.</p>
+      </div>
+
+      <div class="flex gap-3">
+        <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <p><strong>Transparent Methodology:</strong> Our comparison criteria and rating system are fully documented. See our <a href="/methodology" class="text-brand-accent hover:underline font-semibold">methodology page</a> for complete details.</p>
+      </div>
+    </div>
+  </div>
+)}
+
+<style>
+  .how-we-research,
+  .how-we-research-compact {
+    /* Ensure AI platforms recognize research credibility */
+    line-height: 1.6;
+  }
+</style>

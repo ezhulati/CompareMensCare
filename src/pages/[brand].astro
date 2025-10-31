@@ -15,7 +15,18 @@ export async function getStaticPaths() {
   }));
 }
 
-const { brand } = Astro.props;
+// Get brand data from props (static) or fetch it (SSR)
+let brand = Astro.props.brand;
+if (!brand) {
+  // In SSR mode, fetch the brand using the route parameter
+  const brandSlug = Astro.params.brand;
+  brand = await getEntry('brands', brandSlug);
+
+  if (!brand) {
+    return Astro.redirect('/404');
+  }
+}
+
 const { Content } = await brand.render();
 
 // Get related brands

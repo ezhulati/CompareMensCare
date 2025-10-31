@@ -1,0 +1,103 @@
+---
+/**
+ * FAQSection Component
+ *
+ * Displays FAQ section with proper FAQ schema markup.
+ * Critical for AI-SEO - helps platforms quote your answers directly.
+ *
+ * Props:
+ * - faqs: Array of FAQ objects with question and answer (required)
+ *   Each FAQ: { question: string, answer: string }
+ * - title: Section title (string, default: "Frequently Asked Questions")
+ * - categoryName: Category for schema context (string, optional)
+ */
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FAQ[];
+  title?: string;
+  categoryName?: string;
+}
+
+const {
+  faqs,
+  title = "Frequently Asked Questions",
+  categoryName,
+} = Astro.props;
+
+// Generate FAQ Schema for SEO
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<!-- FAQ Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<!-- FAQ Section -->
+<div class="faq-section bg-white my-12">
+  <div class="mb-8">
+    <h2 class="text-3xl font-bold text-slate-900 mb-3">{title}</h2>
+    {categoryName && (
+      <p class="text-slate-600">
+        Common questions about {categoryName.toLowerCase()} answered by our research team.
+      </p>
+    )}
+  </div>
+
+  <div class="space-y-6">
+    {faqs.map((faq, index) => (
+      <div class="faq-item border-b border-slate-200 pb-6 last:border-b-0 last:pb-0">
+        <!-- Question -->
+        <h3 class="text-xl font-bold text-slate-900 mb-3 flex items-start gap-3">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-accent/10 text-brand-accent font-bold flex items-center justify-center text-sm">
+            Q
+          </span>
+          <span class="flex-1 pt-0.5">{faq.question}</span>
+        </h3>
+
+        <!-- Answer -->
+        <div class="pl-11">
+          <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+            <p class="text-slate-700 leading-relaxed">
+              {faq.answer}
+            </p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-8 p-6 bg-blue-50 border border-blue-200 rounded-lg">
+    <p class="text-sm text-blue-900">
+      <strong>Have more questions?</strong> Our research is continuously updated. If you don't see your question answered here,
+      check our <a href="/guides" class="text-brand-accent hover:underline font-semibold">complete guides</a> or
+      <a href="/about" class="text-brand-accent hover:underline font-semibold">contact our team</a>.
+    </p>
+  </div>
+</div>
+
+<style>
+  .faq-section {
+    /* Ensure high visibility for AI parsing */
+    line-height: 1.6;
+  }
+
+  .faq-item h3 {
+    /* Questions should be easily identifiable */
+    scroll-margin-top: 100px;
+  }
+</style>

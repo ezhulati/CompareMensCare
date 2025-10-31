@@ -5,6 +5,7 @@ import FilterableComparison from '../components/FilterableComparison.astro';
 import QuickPicks from '../components/QuickPicks.astro';
 import TrustSignals from '../components/TrustSignals.astro';
 import PrivacyAssurance from '../components/PrivacyAssurance.astro';
+import FAQSection from '../components/FAQSection.astro';
 import Icon from '../components/Icon.astro';
 import type { FilterableBrand } from '../components/FilterableComparison.astro';
 
@@ -67,6 +68,50 @@ const schema = {
     name: 'Erectile Dysfunction',
   },
 };
+
+// FAQ data for AI-SEO optimization
+const faqs = [
+  {
+    question: "Is online ED treatment legal and safe?",
+    answer: "Yes, online ED treatment is completely legal and safe when using licensed telehealth services. Every service we list uses licensed US physicians who review your medical history before prescribing. The medications are FDA-approved drugs identical to those from local pharmacies - just delivered to your door. Services like Hims, Ro, and BlueChew have been operating for years and serve millions of men with full medical oversight."
+  },
+  {
+    question: "How much does online ED treatment cost?",
+    answer: "Online ED treatment costs $4-12 per dose for generic medications (sildenafil or tadalafil). Most services charge $0-49 for the initial consultation. Subscription plans average $20-90 per month depending on dosage and frequency. Generic options are 80-90% cheaper than brand-name Viagra or Cialis."
+  },
+  {
+    question: "Will my package be discreet?",
+    answer: "Yes, all packages are completely discreet. Medications arrive in plain cardboard boxes or padded envelopes with no logos or medical labels. The return address shows the company name but nothing about the contents. Credit card statements also use discrete business names, not 'ED medication' or similar terms."
+  },
+  {
+    question: "What's the difference between generic and brand-name ED medication?",
+    answer: "Generic ED medications (sildenafil, tadalafil) contain the exact same active ingredients as brand-name Viagra and Cialis at identical dosages. They are FDA-approved as bioequivalent, meaning they work the same way. The only difference is price - generics cost $4-12 per dose while brand names cost $70+ per dose."
+  },
+  {
+    question: "How effective are ED medications?",
+    answer: "ED medications are 60-70% effective for most men. Sildenafil (generic Viagra) works for about 70% of men with ED. Tadalafil (generic Cialis) has similar effectiveness rates. Results vary based on the underlying cause of ED, overall health, and proper usage. Most services allow you to switch medications or adjust dosages if the first option doesn't work."
+  },
+  {
+    question: "Can I try one dose without a subscription?",
+    answer: "It depends on the service. Ro allows one-time orders without a subscription commitment. Hims and BlueChew require subscriptions but allow cancellation anytime, even after the first shipment. Most services offer flexibility to pause, skip, or cancel subscriptions without penalties."
+  },
+  {
+    question: "How long does delivery take?",
+    answer: "Most online ED services deliver within 2-5 business days. Some offer expedited shipping (1-2 days) for an additional fee. After your consultation is approved (typically 24-48 hours), medications ship from US-based pharmacies via USPS, UPS, or FedEx."
+  },
+  {
+    question: "Will this affect my insurance or medical records?",
+    answer: "No, most online ED services don't use insurance and operate on a cash-pay basis. This means treatments never appear on insurance records or affect premiums. While you can't use insurance to cover costs, generic ED medications are so affordable ($4-12 per dose) that cash payment is often cheaper than insurance co-pays anyway."
+  },
+  {
+    question: "How quickly do ED medications work?",
+    answer: "Sildenafil (generic Viagra) takes 30-60 minutes to work and lasts 4-6 hours. Tadalafil (generic Cialis) takes 1-2 hours to work but lasts up to 36 hours. For best results, take on an empty stomach. Effects vary by individual metabolism and dosage."
+  },
+  {
+    question: "Do I need to talk to a doctor on video?",
+    answer: "No, most services don't require video calls. You complete a medical questionnaire online, and a licensed physician reviews it asynchronously. If approved, they send the prescription to a pharmacy for fulfillment. Some services offer optional video consultations, but text-based questionnaires are the standard and are just as medically valid."
+  }
+];
 ---
 
 <BaseLayout
@@ -247,88 +292,14 @@ const schema = {
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- FAQ Section with Schema Markup -->
   <section id="faq" class="section bg-white">
     <div class="container-custom max-w-3xl">
-      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3 text-center">
-        Your Questions, Answered
-      </h2>
-      <p class="text-slate-600 text-center mb-8">
-        We asked real users what they wanted to know before trying online ED treatment. Here are the honest answers.
-      </p>
-      <div class="space-y-4">
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>Wait, is this actually legal and safe?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            <strong>Yes, it's completely legal.</strong> Every service we list uses licensed US physicians who review your medical history before prescribing. The medications are the exact same FDA-approved drugs you'd get at CVS or Walgreens — just delivered to your door instead. Services like Hims, Ro, and BlueChew have been doing this for years and serve millions of men.
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>Will my neighbors/roommates know what's in the package?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            <strong>Nope. The packaging is completely unmarked.</strong> It comes in a plain cardboard box or padded envelope with no logos or medical labels. The return address shows the company name (like "Hims Inc.") but nothing about what's inside. Some services like BlueChew even use generic business names on the return label. Your credit card statement will also show a discrete name, not "ED MEDICATION COMPANY."
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>How do I know it'll actually work for me?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            <strong>You don't, until you try it.</strong> ED medications work for about 70-80% of men, but everyone's different. The good news: most services let you switch medications or dosages for free if the first one doesn't work. Start with the lowest dose and adjust from there. If you've never tried Viagra or Cialis before, there's a good chance one of them will help.
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>What's the difference between generic and brand-name? Should I pay more?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            <strong>Generic works exactly the same.</strong> Sildenafil is generic Viagra. Tadalafil is generic Cialis. Same active ingredient, same dosage, same effect — just way cheaper. The brand-name pills cost $70+ per dose. Generics are $4-12. Unless you have a specific reason to want the brand name, save your money and get generic.
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>Can I just try one dose without committing to a subscription?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            <strong>It depends on the service.</strong> Ro lets you order one-time without a subscription. Hims and BlueChew require subscriptions, but you can cancel anytime (even after the first shipment). Most guys find that if they're using it regularly, the subscription is cheaper anyway. But if you just want to test it first, go with Ro.
-          </p>
-        </details>
-
-        <details class="group card p-6">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
-            <span>Will my insurance know? Will this affect my premiums?</span>
-            <span class="transition group-open:rotate-180 text-brand-accent">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-            </span>
-          </summary>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            <strong>No. Most of these services don't use insurance at all.</strong> You pay out-of-pocket, which means it never touches your insurance records. That's actually why a lot of guys prefer it — complete privacy. The downside is you can't use your insurance to cover it, but generics are so cheap ($4-12/dose) that it's often cheaper than a co-pay anyway.
-          </p>
-        </details>
-      </div>
+      <FAQSection
+        title="Common Questions About Online ED Treatment"
+        categoryName="Erectile Dysfunction Treatment"
+        faqs={faqs}
+      />
     </div>
   </section>
 
