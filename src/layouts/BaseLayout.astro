@@ -56,17 +56,29 @@ const {
       rel="stylesheet"
     />
 
-    <!-- Google Analytics -->
+    <!-- Google Analytics (loaded conditionally based on consent) -->
     {import.meta.env.PUBLIC_GA_ID && (
-      <>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_ID}`}></script>
-        <script is:inline define:vars={{ gaId: import.meta.env.PUBLIC_GA_ID }}>
+      <script is:inline define:vars={{ gaId: import.meta.env.PUBLIC_GA_ID }}>
+        // Only load GA if user has consented
+        const consent = localStorage.getItem('cookieConsent');
+        const analyticsConsent = localStorage.getItem('analyticsConsent');
+
+        if (consent === 'true' && analyticsConsent !== 'false') {
+          // Load Google Analytics
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+          document.head.appendChild(script);
+
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', gaId);
-        </script>
-      </>
+          gtag('config', gaId, {
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=None;Secure'
+          });
+        }
+      </script>
     )}
   </head>
   <body>
@@ -78,34 +90,92 @@ const {
     </main>
     <Footer />
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-consent" class="hidden fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50">
-      <div class="container-custom flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-sm">
-          We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you consent to our use of cookies.
-          <a href="/privacy" class="underline hover:text-brand-accent">Learn more</a>
-        </p>
-        <button
-          id="accept-cookies"
-          class="btn-primary whitespace-nowrap"
-        >
-          Accept
-        </button>
+    <!-- Cookie Consent Banner (GDPR/CCPA Compliant) -->
+    <div id="cookie-consent" class="hidden fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 md:p-6 z-50 shadow-2xl">
+      <div class="container-custom max-w-6xl">
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+          <div class="flex-1">
+            <h3 class="text-lg font-bold mb-2">🍪 Cookie Preferences</h3>
+            <p class="text-sm text-slate-300 mb-3">
+              We use cookies to improve your experience and analyze site traffic. You can customize your preferences or accept all cookies.
+              <a href="/privacy" class="underline hover:text-brand-accent text-white">Learn more</a>
+            </p>
+            <div class="flex items-center gap-4 text-sm">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="essential-cookies"
+                  checked
+                  disabled
+                  class="w-4 h-4 rounded"
+                />
+                <span class="text-slate-300">Essential (Required)</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="analytics-cookies"
+                  checked
+                  class="w-4 h-4 rounded"
+                />
+                <span class="text-slate-300">Analytics</span>
+              </label>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-2 w-full lg:w-auto">
+            <button
+              id="reject-cookies"
+              class="btn-outline text-white border-white hover:bg-white hover:text-slate-900 whitespace-nowrap"
+            >
+              Reject All
+            </button>
+            <button
+              id="accept-cookies"
+              class="btn-primary whitespace-nowrap"
+            >
+              Accept All
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <script>
-      // Cookie consent
+    <script is:inline>
+      // Cookie consent management
       const cookieConsent = document.getElementById('cookie-consent');
       const acceptButton = document.getElementById('accept-cookies');
+      const rejectButton = document.getElementById('reject-cookies');
+      const analyticsCheckbox = document.getElementById('analytics-cookies');
 
+      // Show banner if no consent decision has been made
       if (!localStorage.getItem('cookieConsent')) {
         cookieConsent?.classList.remove('hidden');
       }
 
+      // Accept all cookies
       acceptButton?.addEventListener('click', () => {
         localStorage.setItem('cookieConsent', 'true');
+        localStorage.setItem('analyticsConsent', 'true');
         cookieConsent?.classList.add('hidden');
+        // Reload to apply analytics
+        window.location.reload();
+      });
+
+      // Reject all cookies (except essential)
+      rejectButton?.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'true');
+        localStorage.setItem('analyticsConsent', 'false');
+        cookieConsent?.classList.add('hidden');
+      });
+
+      // Handle analytics toggle
+      analyticsCheckbox?.addEventListener('change', (e) => {
+        const checked = e.target.checked;
+        if (!checked) {
+          acceptButton.textContent = 'Save Preferences';
+        } else {
+          acceptButton.textContent = 'Accept All';
+        }
       });
     </script>
   </body>
