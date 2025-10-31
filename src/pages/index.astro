@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import GuidedMatcher from '../components/GuidedMatcher.astro';
 import PersonalizedResults from '../components/PersonalizedResults.astro';
+import OrganizationSchema from '../components/OrganizationSchema.astro';
 import { Eye, ShieldCheck, Shield, Heart, Sparkles, Activity, TrendingDown, Brain, Stethoscope } from 'lucide-astro';
 import { getCategoryIcon } from '../utils/helpers';
 
@@ -53,20 +54,15 @@ const categoryIcons: Record<string, any> = {
   'diagnostics': Stethoscope,
 };
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'CompareMensCare.com',
-  description: 'Evidence-based comparisons of telehealth services for men\'s health',
-  url: 'https://comparemenscare.com',
-};
 ---
 
 <BaseLayout
   title="CompareMensCare.com - Objective Telehealth Service Comparisons"
   description="Evidence-based comparisons of telehealth services for men's health. Compare ED treatments, hair loss solutions, TRT clinics, weight loss programs, and more."
-  schema={schema}
 >
+  <!-- Organization & Website Schema -->
+  <OrganizationSchema />
+
   <!-- Hero Section -->
   <section class="section bg-white">
     <div class="container-custom">

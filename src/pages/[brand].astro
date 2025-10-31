@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AffiliateButton from '../components/AffiliateButton.astro';
 import BestForBadge from '../components/BestForBadge.astro';
 import Icon from '../components/Icon.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 import { formatDate, getCategoryName } from '../utils/helpers';
 
 export async function getStaticPaths() {
@@ -37,21 +38,40 @@ const schema = {
   '@type': 'Product',
   name: brand.data.title,
   description: brand.data.description,
+  category: brand.data.categories[0],
   brand: {
     '@type': 'Brand',
     name: brand.data.title,
   },
-  aggregateRating: {
+  aggregateRating: brand.data.reviewCount ? {
     '@type': 'AggregateRating',
     ratingValue: brand.data.rating,
+    reviewCount: brand.data.reviewCount,
     bestRating: 5,
     worstRating: 1,
-  },
+  } : undefined,
+  review: brand.data.reviewerName ? {
+    '@type': 'Review',
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: brand.data.rating,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    author: {
+      '@type': 'Person',
+      name: brand.data.reviewerName,
+    },
+    datePublished: brand.data.lastReviewed.toISOString(),
+    reviewBody: brand.data.description,
+  } : undefined,
   offers: {
     '@type': 'Offer',
-    price: brand.data.pricing.medicationFrom,
-    priceCurrency: 'USD',
+    price: brand.data.pricing.medicationFrom?.replace(/[^0-9.]/g, '') || '0',
+    priceCurrency: brand.data.pricing.currency || 'USD',
     availability: 'https://schema.org/InStock',
+    priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
+    url: `https://comparemenscare.com/${brand.slug}`,
   },
 };
 ---
@@ -64,6 +84,13 @@ const schema = {
   author={brand.data.reviewerName}
   schema={schema}
 >
+  <!-- Breadcrumb Schema -->
+  <BreadcrumbSchema items={[
+    { name: 'Home', url: '/' },
+    { name: getCategoryName(brand.data.categories[0]), url: `/${brand.data.categories[0]}` },
+    { name: brand.data.title, url: `/${brand.slug}` },
+  ]} />
+
   <!-- Breadcrumbs -->
   <div class="bg-gray-50 border-b border-gray-200 py-3">
     <div class="container-custom">
