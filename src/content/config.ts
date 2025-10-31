@@ -12,7 +12,9 @@ const brands = defineCollection({
       'testosterone',
       'weight-loss',
       'mental-health',
-      'diagnostics'
+      'diagnostics',
+      'sleep',
+      'herpes'
     ])),
     rating: z.number().min(0).max(5),
     reviewCount: z.number().optional(),
@@ -85,6 +87,8 @@ const guides = defineCollection({
       'weight-loss',
       'mental-health',
       'diagnostics',
+      'sleep',
+      'herpes',
       'general'
     ]),
     image: z.string().optional(),
@@ -125,7 +129,9 @@ const comparisons = defineCollection({
       'testosterone',
       'weight-loss',
       'mental-health',
-      'diagnostics'
+      'diagnostics',
+      'sleep',
+      'herpes'
     ]),
     publishDate: z.date(),
     lastReviewed: z.date(),
