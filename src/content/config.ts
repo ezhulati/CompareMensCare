@@ -158,6 +158,12 @@ const blog = defineCollection({
     researchHours: z.number().optional(),
     sourcesReviewed: z.number().optional(),
     keyTakeaways: z.array(z.string()).optional(),
+    faqTitle: z.string().optional(),
+    faqCategory: z.string().optional(),
+    faqs: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })).optional(),
     featured: z.boolean().default(false),
   }),
 });
