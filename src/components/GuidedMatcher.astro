@@ -143,7 +143,44 @@ const categoryIcons: Record<string, any> = {
   </div>
 
   <!-- ========== SEXUAL HEALTH FLOW ========== -->
-  <div id="question-2-sexual-health" class="question-step hidden">
+  <!-- Q1.5: ED vs PE Differentiation -->
+  <div id="question-1-5-sexual-health" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        What brings you here?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">
+        Let's make sure we're solving the right problem
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-3xl mx-auto">
+      <button type="button" data-sexual-health-type="ed" class="sexual-health-type-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-blue-600"><Heart class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Erectile Dysfunction (ED)</h3>
+        <p class="text-sm text-slate-600 leading-snug">Difficulty getting or maintaining an erection</p>
+      </button>
+      <button type="button" data-sexual-health-type="pe" class="sexual-health-type-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-purple-600"><Clock class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Premature Ejaculation (PE)</h3>
+        <p class="text-sm text-slate-600 leading-snug">Finishing too quickly, want more control</p>
+      </button>
+      <button type="button" data-sexual-health-type="both" class="sexual-health-type-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-green-600"><Layers class="w-10 h-10 sm:w-11 sm:h-11" /></div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Both ED and PE</h3>
+        <p class="text-sm text-slate-600 leading-snug">Dealing with both issues together</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- ED Flow (existing) -->
+  <div id="question-2-sexual-health-ed" class="question-step hidden">
     <div class="text-center mb-8 sm:mb-10">
       <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -286,6 +323,183 @@ const categoryIcons: Record<string, any> = {
         <div class="flex justify-center mb-3 text-purple-600"><Layers class="w-10 h-10 sm:w-11 sm:h-11" /></div>
         <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Want to Experiment</h3>
         <p class="text-sm text-slate-600 leading-snug">See what works best for my body</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== PE FLOW ========== -->
+  <!-- Q2: How long has this been an issue? -->
+  <div id="question-2-pe" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        How long has this been an issue?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">
+        Understanding the pattern helps us find the right solution
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-3xl mx-auto">
+      <button type="button" data-q2-pe="situational" class="q2-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-amber-600">
+          <Clock class="w-10 h-10 sm:w-11 sm:h-11" />
+        </div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Recently Started / Sometimes</h3>
+        <p class="text-sm text-slate-600 leading-snug">Happens with new partners or when stressed</p>
+      </button>
+
+      <button type="button" data-q2-pe="chronic" class="q2-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-red-600">
+          <Calendar class="w-10 h-10 sm:w-11 sm:h-11" />
+        </div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Been Dealing With This for Years</h3>
+        <p class="text-sm text-slate-600 leading-snug">Consistent issue, affecting relationship</p>
+      </button>
+
+      <button type="button" data-q2-pe="optimize" class="q2-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-emerald-600">
+          <TrendingUp class="w-10 h-10 sm:w-11 sm:h-11" />
+        </div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Want to Improve Overall</h3>
+        <p class="text-sm text-slate-600 leading-snug">Works okay, want it to work better</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Q3: Situational PE -->
+  <div id="question-3-pe-situational" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        What would help most?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">
+        Performance anxiety has solutions — let's find yours
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-3xl mx-auto">
+      <button type="button" data-q3-pe="works-right-away" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-blue-600">
+          <Zap class="w-10 h-10 sm:w-11 sm:h-11" />
+        </div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Something That Works Right Away</h3>
+        <p class="text-sm text-slate-600 leading-snug">On-demand solution for when I need it</p>
+      </button>
+
+      <button type="button" data-q3-pe="no-daily-pills" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-emerald-600">
+          <Layers class="w-10 h-10 sm:w-11 sm:h-11" />
+        </div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Want to Try Without Daily Pills First</h3>
+        <p class="text-sm text-slate-600 leading-snug">Prefer topical or as-needed options</p>
+      </button>
+
+      <button type="button" data-q3-pe="most-reliable" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-purple-600">
+          <ShieldCheck class="w-10 h-10 sm:w-11 sm:h-11" />
+        </div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Whatever Works Most Reliably</h3>
+        <p class="text-sm text-slate-600 leading-snug">Effectiveness over convenience</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Q3: Chronic PE -->
+  <div id="question-3-pe-chronic" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        What's your priority?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">
+        Long-term solutions require commitment — what matters most?
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-3xl mx-auto">
+      <button type="button" data-q3-pe="consistent-results" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-blue-600">
+          <Target class="w-10 h-10 sm:w-11 sm:h-11" />
+        </div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Consistent Results, Even If Daily Pills</h3>
+        <p class="text-sm text-slate-600 leading-snug">Need something that works every time</p>
+      </button>
+
+      <button type="button" data-q3-pe="medical-guidance" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-indigo-600">
+          <Stethoscope class="w-10 h-10 sm:w-11 sm:h-11" />
+        </div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Medical Guidance on This</h3>
+        <p class="text-sm text-slate-600 leading-snug">Want a doctor involved and monitoring</p>
+      </button>
+
+      <button type="button" data-q3-pe="combination" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-purple-600">
+          <Layers class="w-10 h-10 sm:w-11 sm:h-11" />
+        </div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Try Everything, Combination Approach</h3>
+        <p class="text-sm text-slate-600 leading-snug">Maximize effectiveness with all tools</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Q3: Optimize PE -->
+  <div id="question-3-pe-optimize" class="question-step hidden">
+    <div class="text-center mb-8 sm:mb-10">
+      <button type="button" class="back-btn text-sm text-slate-500 hover:text-slate-700 mb-4 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 px-4">
+        What appeals to you?
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">
+        Optimization mode — let's find what works best
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 max-w-3xl mx-auto">
+      <button type="button" data-q3-pe="compare-options" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-indigo-600">
+          <Layers class="w-10 h-10 sm:w-11 sm:h-11" />
+        </div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Want to Compare Different Options</h3>
+        <p class="text-sm text-slate-600 leading-snug">See all choices, pick what fits</p>
+      </button>
+
+      <button type="button" data-q3-pe="combo-approach" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-blue-600">
+          <Target class="w-10 h-10 sm:w-11 sm:h-11" />
+        </div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Willing to Try Combo Approach</h3>
+        <p class="text-sm text-slate-600 leading-snug">Behavioral techniques + medication</p>
+      </button>
+
+      <button type="button" data-q3-pe="simple-affordable" class="q3-card card-hover p-4 sm:p-5 lg:p-6 text-center cursor-pointer transition-all duration-200 focus-ring group min-h-[160px] flex flex-col items-center justify-center">
+        <div class="flex justify-center mb-3 text-emerald-600">
+          <CircleDollarSign class="w-10 h-10 sm:w-11 sm:h-11" />
+        </div>
+        <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">Keep It Simple and Affordable</h3>
+        <p class="text-sm text-slate-600 leading-snug">Cost-effective experimentation</p>
       </button>
     </div>
   </div>
@@ -1135,8 +1349,11 @@ const categoryIcons: Record<string, any> = {
 <script>
   interface UserChoices {
     category?: string;
+    sexualHealthType?: string; // 'ed', 'pe', or 'both'
     q2?: string;
+    q2pe?: string; // For PE-specific Q2 choices
     q3?: string;
+    q3pe?: string; // For PE-specific Q3 choices
   }
 
   function initGuidedMatcher() {
@@ -1174,11 +1391,43 @@ const categoryIcons: Record<string, any> = {
         if (!category) return;
 
         userChoices.category = category;
-        updateProgress(2);
-        showStep(`question-2-${category}`);
+
+        // For sexual-health, go to Q1.5 to differentiate ED/PE/Both
+        if (category === 'sexual-health') {
+          updateProgress(2);
+          showStep('question-1-5-sexual-health');
+        } else {
+          updateProgress(2);
+          showStep(`question-2-${category}`);
+        }
 
         if (typeof window !== 'undefined' && (window as any).gtag) {
           (window as any).gtag('event', 'guide_category_selected', { category });
+        }
+      });
+    });
+
+    // Q1.5: Sexual Health Type Selection (ED vs PE vs Both)
+    document.querySelectorAll('.sexual-health-type-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const type = card.getAttribute('data-sexual-health-type');
+        if (!type) return;
+
+        userChoices.sexualHealthType = type;
+        updateProgress(2);
+
+        // Route to appropriate Q2 based on type
+        if (type === 'pe') {
+          showStep('question-2-pe');
+        } else if (type === 'ed') {
+          showStep('question-2-sexual-health-ed');
+        } else if (type === 'both') {
+          // For 'both', use the ED flow for now (could create a dedicated flow later)
+          showStep('question-2-sexual-health-ed');
+        }
+
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          (window as any).gtag('event', 'sexual_health_type_selected', { type });
         }
       });
     });
@@ -1218,6 +1467,40 @@ const categoryIcons: Record<string, any> = {
       });
     });
 
+    // Q2-PE: PE-specific Q2 options
+    document.querySelectorAll('[data-q2-pe]').forEach(card => {
+      card.addEventListener('click', () => {
+        const q2pe = card.getAttribute('data-q2-pe');
+        if (!q2pe) return;
+
+        userChoices.q2pe = q2pe;
+        updateProgress(3);
+        showStep(`question-3-pe-${q2pe}`);
+
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          (window as any).gtag('event', 'guide_q2_pe_selected', { q2pe });
+        }
+      });
+    });
+
+    // Q3-PE: PE-specific Q3 options
+    document.querySelectorAll('[data-q3-pe]').forEach(card => {
+      card.addEventListener('click', () => {
+        const q3pe = card.getAttribute('data-q3-pe');
+        if (!q3pe) return;
+
+        userChoices.q3pe = q3pe;
+        showResults();
+
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          (window as any).gtag('event', 'guide_q3_pe_selected', {
+            q2pe: userChoices.q2pe,
+            q3pe
+          });
+        }
+      });
+    });
+
     // Back button handling
     document.querySelectorAll('.back-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1226,13 +1509,43 @@ const categoryIcons: Record<string, any> = {
 
         const currentId = currentQuestion.id;
 
-        if (currentId.startsWith('question-3')) {
-          // Go back to Q2
-          showStep(`question-2-${userChoices.category}`);
+        // Handle PE Q3 flows
+        if (currentId.startsWith('question-3-pe-')) {
+          showStep('question-2-pe');
+          updateProgress(2);
+          delete userChoices.q3pe;
+        }
+        // Handle regular Q3 flows
+        else if (currentId.startsWith('question-3')) {
+          // For ED flow, go back to question-2-sexual-health-ed
+          if (userChoices.category === 'sexual-health' && userChoices.sexualHealthType === 'ed') {
+            showStep('question-2-sexual-health-ed');
+          } else {
+            showStep(`question-2-${userChoices.category}`);
+          }
           updateProgress(2);
           delete userChoices.q3;
-        } else if (currentId.startsWith('question-2')) {
-          // Go back to Q1
+        }
+        // Handle PE Q2
+        else if (currentId === 'question-2-pe') {
+          showStep('question-1-5-sexual-health');
+          updateProgress(2);
+          delete userChoices.q2pe;
+        }
+        // Handle ED Q2
+        else if (currentId === 'question-2-sexual-health-ed') {
+          showStep('question-1-5-sexual-health');
+          updateProgress(2);
+          delete userChoices.q2;
+        }
+        // Handle Q1.5 (sexual health type selection)
+        else if (currentId === 'question-1-5-sexual-health') {
+          showStep('question-1');
+          updateProgress(1);
+          delete userChoices.sexualHealthType;
+        }
+        // Handle regular Q2 flows
+        else if (currentId.startsWith('question-2')) {
           showStep('question-1');
           updateProgress(1);
           delete userChoices.q2;
