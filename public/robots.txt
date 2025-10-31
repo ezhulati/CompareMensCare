@@ -1,0 +1,27 @@
+# robots.txt for CompareMensCare.com
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin/api routes (if any in future)
+Disallow: /api/
+Disallow: /_astro/
+
+# Sitemap location
+Sitemap: https://comparemenscare.com/sitemap-index.xml
+Sitemap: https://comparemenscare.com/sitemap-0.xml
+
+# Crawl-delay for polite crawling (optional)
+# User-agent: *
+# Crawl-delay: 1
+
+# Allow all search engines to crawl everything
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

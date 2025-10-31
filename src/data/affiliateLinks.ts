@@ -1,16 +1,16 @@
 export const affiliateLinks: Record<string, string> = {
-  hims: process.env.PUBLIC_HIMS_AFFILIATE_URL || 'https://www.hims.com/',
-  ro: process.env.PUBLIC_RO_AFFILIATE_URL || 'https://ro.co/',
-  bluechew: process.env.PUBLIC_BLUECHEW_AFFILIATE_URL || 'https://bluechew.com/',
-  keeps: process.env.PUBLIC_KEEPS_AFFILIATE_URL || 'https://www.keeps.com/',
-  manual: process.env.PUBLIC_MANUAL_AFFILIATE_URL || 'https://www.manual.co/',
-  numan: process.env.PUBLIC_NUMAN_AFFILIATE_URL || 'https://www.numan.com/',
-  'hone-health': process.env.PUBLIC_HONE_HEALTH_AFFILIATE_URL || 'https://honehealth.com/',
-  'vault-health': process.env.PUBLIC_VAULT_HEALTH_AFFILIATE_URL || 'https://www.vaulthealth.com/',
-  healthymale: process.env.PUBLIC_HEALTHYMALE_AFFILIATE_URL || 'https://www.healthymale.com/',
-  betterhelp: process.env.PUBLIC_BETTERHELP_AFFILIATE_URL || 'https://www.betterhelp.com/',
-  talkspace: process.env.PUBLIC_TALKSPACE_AFFILIATE_URL || 'https://www.talkspace.com/',
-  letsgetchecked: process.env.PUBLIC_LETSGETCHECKED_AFFILIATE_URL || 'https://www.letsgetchecked.com/',
+  hims: import.meta.env.PUBLIC_HIMS_AFFILIATE_URL || 'https://www.forhims.com/',
+  ro: import.meta.env.PUBLIC_RO_AFFILIATE_URL || 'https://ro.co/',
+  bluechew: import.meta.env.PUBLIC_BLUECHEW_AFFILIATE_URL || 'https://www.bluechew.com/',
+  keeps: import.meta.env.PUBLIC_KEEPS_AFFILIATE_URL || 'https://www.keeps.com/',
+  manual: import.meta.env.PUBLIC_MANUAL_AFFILIATE_URL || 'https://www.manual.co/',
+  numan: import.meta.env.PUBLIC_NUMAN_AFFILIATE_URL || 'https://www.numan.com/',
+  'hone-health': import.meta.env.PUBLIC_HONE_HEALTH_AFFILIATE_URL || 'https://www.honehealth.com/',
+  'vault-health': import.meta.env.PUBLIC_VAULT_HEALTH_AFFILIATE_URL || 'https://www.vaulthealth.com/',
+  healthymale: import.meta.env.PUBLIC_HEALTHYMALE_AFFILIATE_URL || 'https://www.healthymale.com.au/',
+  betterhelp: import.meta.env.PUBLIC_BETTERHELP_AFFILIATE_URL || 'https://www.betterhelp.com/',
+  talkspace: import.meta.env.PUBLIC_TALKSPACE_AFFILIATE_URL || 'https://www.talkspace.com/',
+  letsgetchecked: import.meta.env.PUBLIC_LETSGETCHECKED_AFFILIATE_URL || 'https://www.letsgetchecked.com/',
 };
 
 export const affiliateInfo = {

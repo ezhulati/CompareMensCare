@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found - CompareMensCare"
+  description="The page you're looking for doesn't exist. Find men's health comparisons and guides."
+>
+  <section class="section bg-white min-h-[60vh] flex items-center">
+    <div class="container-custom max-w-2xl text-center">
+      <div class="mb-8">
+        <h1 class="text-8xl font-bold text-brand-accent mb-4">404</h1>
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">Page Not Found</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Sorry, we couldn't find the page you're looking for. It may have been moved or deleted.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a href="/" class="btn-primary">
+          Go to Homepage
+        </a>
+        <a href="/sexual-health" class="btn-outline">
+          Browse ED Treatment
+        </a>
+      </div>
+
+      <div class="bg-slate-50 rounded-xl p-8 border border-slate-200">
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Popular Pages</h3>
+        <div class="grid sm:grid-cols-2 gap-4 text-left">
+          <a href="/sexual-health" class="text-brand-accent hover:underline">
+            → ED Treatment Services
+          </a>
+          <a href="/hair-health" class="text-brand-accent hover:underline">
+            → Hair Loss Treatment
+          </a>
+          <a href="/testosterone" class="text-brand-accent hover:underline">
+            → Testosterone (TRT)
+          </a>
+          <a href="/weight-loss" class="text-brand-accent hover:underline">
+            → Weight Loss (GLP-1s)
+          </a>
+          <a href="/guides" class="text-brand-accent hover:underline">
+            → Health Guides
+          </a>
+          <a href="/blog" class="text-brand-accent hover:underline">
+            → Blog & Articles
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
