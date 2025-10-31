@@ -361,7 +361,7 @@ Consult a healthcare provider if:
 - Experiencing erectile dysfunction alongside PE
 - Psychological factors (anxiety, depression) are present
 
-## Bottom Line
+## Summary
 
 Premature ejaculation is highly treatable with multiple evidence-based options:
 

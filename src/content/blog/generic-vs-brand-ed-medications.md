@@ -1,5 +1,5 @@
 ---
-title: "Generic vs Brand-Name ED Medications: Are They Really the Same?"
+title: "Generic vs Brand-Name ED Medications: Are They the Same?"
 description: "Complete guide to generic vs brand-name Viagra and Cialis including effectiveness, safety, FDA approval, cost savings, and whether generics are worth it."
 category: ["sexual-health"]
 tags: ["ed treatment", "viagra", "cialis", "generic medications"]
@@ -19,7 +19,7 @@ featured: false
 - 85-95% cheaper ($2-8 vs $70-90 per pill)
 - FDA-approved and strictly regulated
 
-**Bottom line:** Generic sildenafil and tadalafil deliver identical results to Viagra and Cialis at a fraction of the cost. There's no medical reason to choose brand-name.
+Generic sildenafil and tadalafil deliver identical results to Viagra and Cialis at a fraction of the cost. There's no medical reason to choose brand-name.
 
 ## What Are Generic Medications?
 
@@ -306,7 +306,7 @@ featured: false
 - Attributing natural variation to medication
 - Confirmation bias
 
-**Reality:**
+**In practice:**
 - ED medications don't work 100% of the time (brand or generic)
 - Success depends on arousal, stress, health
 - Natural performance variation misattributed to generic
@@ -581,7 +581,7 @@ Generic tadalafil:
 - Adjust dose if needed
 - Consider brand only as last resort
 
-**Reality: 95-98% of men are satisfied with generic and never look back.**
+**95-98% of men are satisfied with generic and never look back.**
 
 ## Where to Get Generic ED Medications
 

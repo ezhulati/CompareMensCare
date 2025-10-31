@@ -559,7 +559,7 @@ All other states typically allow asynchronous (questionnaire-based) consultation
 - Pregnancy or planning pregnancy
 - Neurological symptoms (rare but serious)
 
-## Bottom Line
+## Summary
 
 Online herpes treatment provides:
 

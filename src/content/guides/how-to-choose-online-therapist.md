@@ -67,7 +67,7 @@ citations:
 - **Communication style:** Someone who makes you feel heard, understood, and not judged
 - **Logistics:** Availability, session format (video, phone, messaging), and cost considerations
 
-**Bottom line:** Start with 2-3 consultations to find the right fit. Good therapy requires both professional competence and personal rapport—don't settle until you find both.
+Start with 2-3 consultations to find the right fit. Good therapy requires both professional competence and personal rapport—don't settle until you find both.
 
 ## Understanding Mental Health Professional Types
 
@@ -896,7 +896,7 @@ Most therapists are not available 24/7—crisis resources bridge gaps.
 
 Not for out-of-pocket therapy. Insurance typically requires a diagnosis for coverage. Diagnosis is part of your medical record. Some people prefer to pay out-of-pocket to avoid diagnosis being documented.
 
-## Bottom Line: Your Action Plan
+## Your Action Plan
 
 ### Step 1: Identify Your Needs (15 minutes)
 

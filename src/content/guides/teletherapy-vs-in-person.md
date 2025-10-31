@@ -33,7 +33,7 @@ citations:
 - **Teletherapy:** Convenience, accessibility, cost, flexibility
 - **In-person:** Severe mental illness, crisis situations, certain techniques, personal preference
 
-**Bottom line:** For common concerns (anxiety, depression, stress, relationships), teletherapy is just as effective and often more practical. Choose based on personal preference and logistics rather than assumptions about effectiveness.
+For common concerns (anxiety, depression, stress, relationships), teletherapy is just as effective and often more practical. Choose based on personal preference and logistics rather than assumptions about effectiveness.
 
 ## Research Evidence
 
@@ -442,9 +442,9 @@ Many offer both:
 4. Request records transfer
 5. Schedule overlap if possible
 
-## Bottom Line
+## Summary
 
-**What matters most:**
+**Key factors:**
 1. Therapist quality (most important)
 2. Therapeutic relationship (strong predictor)
 3. Your engagement (essential)

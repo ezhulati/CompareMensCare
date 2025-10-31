@@ -1,13 +1,18 @@
 ---
-const navItems = [
-  { title: 'Sexual Health', href: '/sexual-health' },
-  { title: 'Hair Health', href: '/hair-health' },
-  { title: 'Testosterone', href: '/testosterone' },
-  { title: 'Weight Loss', href: '/weight-loss' },
-  { title: 'Mental Health', href: '/mental-health' },
-  { title: 'Sleep & Insomnia', href: '/sleep' },
-  { title: 'Herpes Treatment', href: '/herpes' },
-  { title: 'Diagnostics', href: '/diagnostics' },
+const healthConcerns = [
+  { title: 'ED & Sexual Performance', href: '/sexual-health' },
+  { title: 'Hair Loss & Thinning', href: '/hair-health' },
+  { title: 'Low T & Energy', href: '/testosterone' },
+  { title: 'Weight & Metabolism', href: '/weight-loss' },
+  { title: 'Anxiety & Depression', href: '/mental-health' },
+  { title: 'Sleep Problems', href: '/sleep' },
+  { title: 'Herpes & Outbreaks', href: '/herpes' },
+  { title: 'Health Testing', href: '/diagnostics' },
+];
+
+const resources = [
+  { title: 'Treatment Guides', href: '/guides' },
+  { title: 'Research & Articles', href: '/blog' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -36,28 +41,78 @@ const currentPath = Astro.url.pathname;
 
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex lg:items-center lg:space-x-6">
-        {navItems.map((item) => (
-          <a
-            href={item.href}
-            class:list={[
-              'text-sm font-medium transition-colors hover:text-brand-primary',
-              currentPath.startsWith(item.href)
-                ? 'text-brand-primary'
-                : 'text-gray-700'
-            ]}
+        <!-- What's your concern? Dropdown -->
+        <div class="relative group">
+          <button
+            type="button"
+            class="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-brand-primary transition-colors"
+            aria-expanded="false"
+            aria-haspopup="true"
           >
-            {item.title}
-          </a>
-        ))}
+            <span>What's your concern?</span>
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="bg-white rounded-lg shadow-lg border border-slate-200 py-2">
+              {healthConcerns.map((concern) => (
+                <a
+                  href={concern.href}
+                  class:list={[
+                    'block px-4 py-2.5 text-sm font-medium transition-colors',
+                    currentPath.startsWith(concern.href)
+                      ? 'text-brand-primary bg-blue-50'
+                      : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50'
+                  ]}
+                >
+                  {concern.title}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Resources Dropdown -->
+        <div class="relative group">
+          <button
+            type="button"
+            class="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-brand-primary transition-colors"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <span>Resources</span>
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="bg-white rounded-lg shadow-lg border border-slate-200 py-2">
+              {resources.map((resource) => (
+                <a
+                  href={resource.href}
+                  class:list={[
+                    'block px-4 py-2.5 text-sm font-medium transition-colors',
+                    currentPath.startsWith(resource.href)
+                      ? 'text-brand-primary bg-blue-50'
+                      : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50'
+                  ]}
+                >
+                  {resource.title}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- CTA Button -->
-      <div class="hidden md:flex items-center space-x-4">
-        <a href="/guides" class="text-sm font-medium text-gray-700 hover:text-brand-primary">
-          Guides
-        </a>
-        <a href="/blog" class="text-sm font-medium text-gray-700 hover:text-brand-primary">
-          Blog
+      <!-- Find My Match CTA -->
+      <div class="hidden md:flex items-center">
+        <a
+          href="/#match"
+          class="px-6 py-2.5 bg-brand-accent text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-sm hover:shadow-md"
+        >
+          Find My Match
         </a>
       </div>
 
@@ -89,32 +144,54 @@ const currentPath = Astro.url.pathname;
 
     <!-- Mobile Navigation -->
     <div class="lg:hidden hidden" id="mobile-menu">
-      <div class="px-2 pt-2 pb-3 space-y-1">
-        {navItems.map((item) => (
-          <a
-            href={item.href}
-            class:list={[
-              'block px-3 py-2 rounded-md text-base font-medium',
-              currentPath.startsWith(item.href)
-                ? 'bg-brand-primary text-white'
-                : 'text-gray-700 hover:bg-gray-100'
-            ]}
-          >
-            {item.title}
-          </a>
-        ))}
+      <div class="px-2 pt-2 pb-3 space-y-3">
+        <!-- Find My Match CTA -->
         <a
-          href="/guides"
-          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+          href="/#match"
+          class="block px-4 py-3 bg-brand-accent text-white text-center font-semibold rounded-lg hover:bg-blue-700 transition-colors"
         >
-          Guides
+          Find My Match
         </a>
-        <a
-          href="/blog"
-          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
-        >
-          Blog
-        </a>
+
+        <!-- Health Concerns Section -->
+        <div class="pt-2">
+          <div class="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            What's your concern?
+          </div>
+          {healthConcerns.map((concern) => (
+            <a
+              href={concern.href}
+              class:list={[
+                'block px-3 py-2 rounded-md text-base font-medium',
+                currentPath.startsWith(concern.href)
+                  ? 'bg-brand-primary text-white'
+                  : 'text-gray-700 hover:bg-gray-100'
+              ]}
+            >
+              {concern.title}
+            </a>
+          ))}
+        </div>
+
+        <!-- Resources Section -->
+        <div class="pt-2 border-t border-gray-200">
+          <div class="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            Resources
+          </div>
+          {resources.map((resource) => (
+            <a
+              href={resource.href}
+              class:list={[
+                'block px-3 py-2 rounded-md text-base font-medium',
+                currentPath.startsWith(resource.href)
+                  ? 'bg-brand-primary text-white'
+                  : 'text-gray-700 hover:bg-gray-100'
+              ]}
+            >
+              {resource.title}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   </nav>

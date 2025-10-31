@@ -454,7 +454,7 @@ If you're in these states, expect a video or phone consultation rather than asyn
 - ❌ No improvement after 2-4 weeks
 - ❌ Intolerable side effects
 
-## Bottom Line
+## Summary
 
 Online insomnia treatment offers a convenient, affordable alternative to traditional sleep medicine for many men:
 

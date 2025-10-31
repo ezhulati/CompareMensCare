@@ -512,9 +512,9 @@ Testosterone Replacement Therapy (TRT) is medical treatment that supplements or 
 - Won't significantly raise T if truly low
 - Examples: D-aspartic acid, fenugreek, ashwagandha, Tribulus terrestris
 
-**Bottom line**: Don't rely on supplements to treat clinical low T
+Don't rely on supplements to treat clinical low T
 
-## The Bottom Line
+## Summary
 
 **TRT is right for you if:**
 - You have **confirmed low testosterone** (two blood tests)

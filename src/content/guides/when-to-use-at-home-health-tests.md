@@ -76,7 +76,7 @@ citations:
 - Complex conditions needing physical examination
 - Immediate treatment decisions
 
-**Bottom line:** At-home tests are valuable tools for proactive health monitoring and screening, but abnormal results always require physician follow-up. They complement—but don't replace—regular medical care.
+At-home tests are valuable tools for proactive health monitoring and screening, but abnormal results always require physician follow-up. They complement—but don't replace—regular medical care.
 
 ## What Are At-Home Health Tests?
 
@@ -1181,7 +1181,7 @@ At-home testosterone: 280 ng/dL (low)
 
 ### Insurance Coverage
 
-**Reality: Most at-home tests not covered by insurance.**
+**Most at-home tests not covered by insurance.**
 
 **Why:**
 - Direct-to-consumer (not ordered by doctor)
@@ -1577,7 +1577,7 @@ Savings: $33 per test
 - Often cheaper through insurance
 - Doctor orders appropriate tests for age/risk
 
-## Bottom Line
+## Summary
 
 **At-home health tests are powerful tools for proactive health management:**
 

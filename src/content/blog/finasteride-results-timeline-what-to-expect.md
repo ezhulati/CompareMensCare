@@ -312,7 +312,7 @@ Finasteride synchronizes hair cycles. Weak, DHT-damaged hairs (in extended growt
 - Slower results
 - May need additional treatments
 
-**Bottom line: The earlier you start, the better your results.**
+**The earlier you start, the better your results.**
 
 ---
 

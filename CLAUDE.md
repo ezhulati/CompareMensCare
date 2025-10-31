@@ -128,6 +128,31 @@ Comprehensive structured data on every page:
 
 ## Content Management
 
+### Content Writing Standards
+
+**CRITICAL: Avoid AI-Giveaway Language**
+
+When writing or editing content, NEVER use these AI-sounding phrases:
+- ❌ "Actually" / "What Actually..." → ✅ Remove or use direct statement
+- ❌ "Real talk" / "Real answer" → ✅ Just state the answer
+- ❌ "Here's what..." / "Here's the thing" → ✅ Direct statement instead
+- ❌ "Let's be honest" / "To be honest" → ✅ Remove, just be honest
+- ❌ "Bottom line:" → ✅ Use "Summary:" or state directly
+- ❌ "Reality check:" / "The reality is" → ✅ Remove entirely
+- ❌ "The truth is" → ✅ State the fact directly
+- ❌ "What really/actually matters" → ✅ "Key factors:" or "Most important:"
+
+**Why this matters:** These phrases are dead giveaways of AI-generated content and undermine credibility. Write with authority using direct statements backed by data.
+
+**Examples:**
+- Bad: "Here's what actually happens with sildenafil..."
+- Good: "Sildenafil reaches peak effectiveness at 60 minutes..."
+
+- Bad: "Bottom line: Choose based on your insurance."
+- Good: "Choose based on your insurance."
+
+**Full guidelines:** See `docs/content-guidelines.md` for complete content standards.
+
 ### Adding New Content
 
 **Brand Review:**

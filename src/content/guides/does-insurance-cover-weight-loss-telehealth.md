@@ -67,7 +67,7 @@ citations:
 - **Medicaid:** Coverage varies significantly by state (13 states cover, 37 do not)
 - **Private insurance:** Depends entirely on your specific plan and employer
 
-**Bottom line:** Most people pay out-of-pocket for weight loss medications ($200-1,500/month), but telehealth consultations are increasingly covered. Always verify coverage with your specific plan before starting treatment.
+Most people pay out-of-pocket for weight loss medications ($200-1,500/month), but telehealth consultations are increasingly covered. Always verify coverage with your specific plan before starting treatment.
 
 ## Understanding Weight Loss Telehealth Coverage
 
@@ -523,7 +523,7 @@ Metformin (a diabetes drug) causes modest weight loss (2-3% of body weight) and 
 
 Yes. If you start on a telehealth compounded program and later get insurance coverage, you can transition to brand-name medication. Your doctor can submit prior authorization using your treatment history as documentation. However, most people find the opposite challenge: trying to continue treatment when insurance won't cover.
 
-## Bottom Line: What To Do
+## Summary: What To Do
 
 ### If You Have Insurance
 

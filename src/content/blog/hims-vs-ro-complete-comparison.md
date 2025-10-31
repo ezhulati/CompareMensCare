@@ -743,7 +743,7 @@ Overall Value           Hims        Lower prices across most treatments
 
 **Can't decide? Try Hims first** for the cost savings. You can always switch to Ro if you prefer their model.
 
-**Bottom line: Both Hims and Ro deliver effective, convenient, private men's health care. Choose based on your priorities, and you'll be satisfied with either.**
+**Both Hims and Ro deliver effective, convenient, private men's health care. Choose based on your priorities, and you'll be satisfied with either.**
 
 ---
 
