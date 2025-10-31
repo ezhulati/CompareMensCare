@@ -5,13 +5,14 @@ import Icon from '../components/Icon.astro';
 import { getCategoryName } from '../utils/helpers';
 
 // Map category slugs to icon names
-const categoryIcons = {
+const categoryIcons: Record<string, string> = {
   'sexual-health': 'sexual-health',
   'hair-health': 'hair-health',
   'testosterone': 'testosterone',
   'weight-loss': 'weight-loss',
   'mental-health': 'mental-health',
   'diagnostics': 'diagnostics',
+  'general': 'diagnostics', // fallback for general category
 };
 
 // Fetch all guides from content collection
