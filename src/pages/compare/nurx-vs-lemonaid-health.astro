@@ -1,0 +1,242 @@
+---
+import ComparisonLayout from '../../layouts/ComparisonLayout.astro';
+import QuickVerdict from '../../components/QuickVerdict.astro';
+
+const comparisonData = {
+  brand1Slug: 'nurx',
+  brand2Slug: 'lemonaid-health',
+  category: 'herpes',
+  verdict: {
+    brand1BestFor: 'Best for users prioritizing maximum privacy, emotional support, educational resources, and specialized herpes care. Worth the premium for comprehensive service.',
+    brand2BestFor: 'Best for budget-conscious users who need effective herpes treatment without extras. Straightforward, affordable, and clinically effective.',
+  },
+  comparisonTable: [
+    {
+      feature: 'Suppressive Therapy Cost',
+      brand1Value: '$30/month',
+      brand2Value: '$25/month',
+      winner: '2' as const,
+    },
+    {
+      feature: 'Consultation Fee',
+      brand1Value: '$15',
+      brand2Value: '$25',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Privacy & Discretion',
+      brand1Value: 'Industry-leading',
+      brand2Value: 'Standard discreet',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Customer Support',
+      brand1Value: '9AM-9PM PT daily',
+      brand2Value: 'Limited hours',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Educational Resources',
+      brand1Value: 'Extensive',
+      brand2Value: 'Basic',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Insurance Accepted',
+      brand1Value: 'Yes',
+      brand2Value: 'No',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Delivery Speed',
+      brand1Value: '2-3 days',
+      brand2Value: '3-5 days',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Platform Experience',
+      brand1Value: 'Mobile app, polished',
+      brand2Value: 'Basic website only',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Emotional Support',
+      brand1Value: 'Compassionate care',
+      brand2Value: 'Functional only',
+      winner: '1' as const,
+    },
+    {
+      feature: 'Annual Cost (no insurance)',
+      brand1Value: '$375/year',
+      brand2Value: '$325/year',
+      winner: '2' as const,
+    },
+  ],
+};
+---
+
+<ComparisonLayout {...comparisonData}>
+  <!-- Quick Verdict for AI Optimization -->
+  <QuickVerdict
+    brand1="Nurx"
+    brand1Verdict="Privacy-first herpes treatment with exceptional support, educational resources, and compassionate care specialized for stigmatized conditions"
+    brand1BestFor="Users valuing privacy, support, and education over cost ($30/month suppressive therapy, insurance accepted)"
+    brand2="Lemonaid Health"
+    brand2Verdict="Most affordable herpes treatment with transparent pricing, effective medications, and straightforward service"
+    brand2BestFor="Budget-conscious users who need effective treatment without extras ($25/month suppressive therapy)"
+    bottomLine="Choose Nurx if privacy and support are priorities ($50/year premium). Choose Lemonaid for lowest cost and simple treatment."
+  />
+
+  <!-- Additional comparison content -->
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">
+        Detailed Comparison
+      </h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Price Comparison</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Lemonaid Health</strong> is the clear budget winner. Suppressive therapy costs $25/month after a $25 consultation. Annual cost: $325. Episodic treatment is $30 per outbreak (after consultation).
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Nurx</strong> charges $30/month for suppressive therapy after a $15 consultation. Annual cost: $375 (without insurance). The difference is $50/year - meaningful but not massive. Nurx also accepts insurance, which can significantly reduce medication costs and make them cheaper overall if your plan covers antivirals.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Privacy & Discretion</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Nurx</strong> is industry-leading in discretion. Ultra-discreet packaging with no branding, return address is generic "Thirty Madison" (parent company), and billing appears as the parent company name. They built their entire service around stigmatized sexual health conditions, so privacy is core to their identity.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Lemonaid</strong> offers standard discreet packaging - plain boxes, no medical labels. It's adequate and no one will know what's inside, but it's not as thoroughly thought-out as Nurx's privacy-first approach. For most users, Lemonaid's discretion is sufficient.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Educational Resources & Support</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Nurx</strong> excels here. They provide comprehensive guides about herpes transmission, outbreak management, disclosure conversations with partners, and relationship advice. Their customer support team (9 AM - 9 PM PT) is trained in sensitivity and can answer questions compassionately. This is valuable for newly diagnosed users or those struggling emotionally.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Lemonaid</strong> provides basic medical care and functional support. You can message providers with questions, but there's less emphasis on education, emotional support, or guidance beyond prescribing medication. If you just need pills and don't need hand-holding, this is fine.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">User Experience</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Nurx</strong> has a polished mobile app, modern website, and better overall user experience. The platform feels designed specifically for sensitive health conditions with judgment-free language and compassionate tone throughout.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Lemonaid</strong> has a basic, functional website with no mobile app. It gets the job done but doesn't feel as polished or modern. The experience is transactional rather than supportive.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Insurance Coverage</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Nurx</strong> accepts most insurance plans for medication costs. The $15 consultation is out-of-pocket, but medication may be heavily covered. If your insurance covers valacyclovir, Nurx could be significantly cheaper than Lemonaid's cash price.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          <strong>Lemonaid</strong> is cash-pay only. No insurance accepted. However, their prices are so low that they're often competitive with insurance copays anyway. If you don't have insurance or prefer not to use it (for privacy), Lemonaid's transparent pricing is appealing.
+        </p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Who Each Service is Best For</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Nurx</strong> is ideal for:
+        </p>
+        <ul class="text-slate-600 mb-8 space-y-2">
+          <li>Recently diagnosed users who need emotional support and education</li>
+          <li>People in relationships concerned about transmission to partners</li>
+          <li>Users who value maximum privacy above all else</li>
+          <li>Those with insurance that covers antivirals</li>
+          <li>Anyone wanting compassionate, specialized herpes care</li>
+        </ul>
+
+        <p class="text-slate-600 leading-relaxed mb-6">
+          <strong>Lemonaid Health</strong> is ideal for:
+        </p>
+        <ul class="text-slate-600 mb-8 space-y-2">
+          <li>Budget-conscious users focused on lowest cash price</li>
+          <li>Experienced users who know what they need</li>
+          <li>Those who don't need extra support or resources</li>
+          <li>Users without insurance or who prefer cash-pay privacy</li>
+          <li>Anyone prioritizing cost over comprehensive care</li>
+        </ul>
+
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Our Recommendation</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Choose <strong>Nurx</strong> if you're newly diagnosed, value privacy and support, or have insurance. The "Nurx premium" of $50/year buys exceptional discretion, emotional support, educational resources, and compassionate care. For stigmatized conditions like herpes, this premium is worth it for most users. If you have insurance, Nurx may actually be cheaper.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Choose <strong>Lemonaid Health</strong> if cost is your primary concern and you don't need extra support. At $25/month for suppressive therapy, it's the lowest cash price available. The medication is identical - you're just paying less for a more basic service. Perfect for experienced users who know what they need.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-light">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">
+        Common Questions
+      </h2>
+
+      <div class="space-y-4">
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Is Nurx worth $50 more per year?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            For most people, yes. The $50/year premium ($4/month) buys significantly better privacy, support, and resources. If you're newly diagnosed or concerned about discretion, this is worth it. If you've had herpes for years and just need cheap refills, Lemonaid saves money without sacrificing medication quality.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Do they prescribe the same medications?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Yes, both prescribe valacyclovir (generic Valtrex) as the primary herpes medication. Same dosages, same FDA-approved generics from licensed U.S. pharmacies. The medication is identical - you're choosing between service quality, not drug quality.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Which is better if I have insurance?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Nurx is better if you have insurance. They accept insurance for medication costs, which can reduce the $30/month significantly depending on your plan. Lemonaid doesn't accept insurance at all. However, check your copay first - Lemonaid's $25 cash price might still be cheaper than your insurance copay.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Can I switch between them?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Yes, both have no commitments and you can cancel anytime. Some users start with Nurx for support during early adjustment, then switch to Lemonaid once comfortable managing their condition. Others use Lemonaid for cost savings and are perfectly satisfied. Try one and switch if it doesn't fit your needs.
+          </p>
+        </details>
+
+        <details class="group card p-6">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none text-slate-900">
+            <span>Which is more private?</span>
+            <span class="transition group-open:rotate-180 text-brand-accent">
+              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Nurx is more private. Their packaging is industry-leading discreet, billing uses parent company name, and their entire service is built around privacy for stigmatized conditions. Lemonaid offers standard discretion which is adequate, but not as thorough. If maximum privacy is essential, Nurx is worth the premium.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+</ComparisonLayout>
