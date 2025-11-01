@@ -1,5 +1,5 @@
 ---
-title: "Premature Ejaculation Treatment Options: Complete Guide to PE Medications and Therapies"
+title: "Premature Ejaculation Treatment: Complete Guide 2025"
 description: "Comprehensive guide to premature ejaculation treatments including SSRIs, topical anesthetics, PDE5 inhibitors, and behavioral techniques with effectiveness data and side effects."
 category: "sexual-health"
 publishDate: 2025-10-31T00:00:00.000Z

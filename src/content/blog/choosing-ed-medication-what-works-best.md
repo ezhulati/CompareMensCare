@@ -1,5 +1,5 @@
 ---
-title: "How to Choose the Right ED Medication: Comparing All Options in 2025"
+title: "How to Choose the Right ED Medication: Guide 2025"
 description: "Complete guide to choosing ED medication including effectiveness rates for sildenafil, tadalafil, and vardenafil, detailed cost comparison, side effects, and which option is best for different situations."
 category: ["sexual-health"]
 tags: ["ED treatment", "sildenafil", "tadalafil", "viagra", "cialis", "medication comparison"]

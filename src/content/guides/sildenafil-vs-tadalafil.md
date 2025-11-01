@@ -1,5 +1,5 @@
 ---
-title: "Sildenafil vs Tadalafil: Which ED Medication Is Right for You?"
+title: "Sildenafil vs Tadalafil: Which ED Med Is Best? 2025"
 description: "Comprehensive comparison of sildenafil (Viagra) and tadalafil (Cialis) covering effectiveness, duration, side effects, cost, and which medication works best for different situations."
 category: "sexual-health"
 publishDate: 2025-01-15

@@ -1,5 +1,5 @@
 ---
-title: "Online Herpes Treatment: Complete Guide to Valacyclovir, Suppressive Therapy, and Telehealth Options"
+title: "Online Herpes Treatment: Valacyclovir & Telehealth Guide"
 description: "Comprehensive guide to treating genital herpes and cold sores online with valacyclovir (Valtrex) and acyclovir through telehealth platforms. Covers outbreak management, suppressive therapy, costs, and transmission prevention."
 category: "herpes"
 publishDate: 2025-10-31T00:00:00.000Z

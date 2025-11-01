@@ -1,5 +1,5 @@
 ---
-title: "How to Get Your Testosterone Tested: Complete Guide to Testing and Results"
+title: "How to Get Testosterone Tested: Complete Guide 2025"
 description: "Step-by-step guide to testosterone testing including when to test, where to get tested, how to prepare, understanding results, and what to do with low or borderline levels."
 category: "testosterone"
 publishDate: 2025-01-15

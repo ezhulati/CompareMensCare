@@ -1,5 +1,5 @@
 ---
-title: "When to See a Doctor About Erectile Dysfunction: Warning Signs and What to Expect"
+title: "When to See a Doctor About ED: Warning Signs 2025"
 description: "Learn when erectile dysfunction requires medical attention, warning signs of serious conditions, what to expect at your appointment, and how to prepare for the conversation with your doctor."
 category: "sexual-health"
 publishDate: 2025-01-15

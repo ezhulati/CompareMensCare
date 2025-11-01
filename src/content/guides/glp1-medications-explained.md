@@ -1,5 +1,5 @@
 ---
-title: "GLP-1 Medications for Weight Loss: Complete Guide to Semaglutide and Tirzepatide"
+title: "GLP-1 Medications for Weight Loss: Complete Guide 2025"
 description: "Comprehensive guide to GLP-1 agonist medications including Ozempic, Wegovy, Mounjaro, and Zepbound covering how they work, effectiveness, side effects, cost, and who should use them."
 category: "weight-loss"
 publishDate: 2025-01-15

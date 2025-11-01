@@ -1,5 +1,5 @@
 ---
-title: "Understanding Erectile Dysfunction: Causes, Symptoms, and Modern Treatment Options"
+title: "Erectile Dysfunction: Causes, Symptoms & Treatment 2025"
 description: "Comprehensive guide to erectile dysfunction (ED) covering causes, risk factors, diagnosis, and treatment options including medications, lifestyle changes, and when to seek medical help."
 category: "sexual-health"
 publishDate: 2025-01-15

@@ -1,5 +1,5 @@
 ---
-title: "Understanding Male Pattern Baldness: Causes, Stages, and Treatment Options"
+title: "Male Pattern Baldness: Causes, Stages & Treatment 2025"
 description: "Complete guide to androgenetic alopecia (male pattern baldness) including genetics, DHT, Norwood scale stages, prevention strategies, and evidence-based treatments."
 category: "hair-health"
 publishDate: 2025-01-15

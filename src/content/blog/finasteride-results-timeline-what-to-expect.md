@@ -1,5 +1,5 @@
 ---
-title: "Finasteride Results Timeline: What to Expect Month-by-Month in 2025"
+title: "Finasteride Results Timeline: Month-by-Month Guide 2025"
 description: "Complete month-by-month timeline of finasteride results including when shedding stops, regrowth begins, peak results occur, and realistic expectations with clinical study data and user experiences."
 category: ["hair-health"]
 tags: ["finasteride", "hair loss", "results timeline", "male pattern baldness", "treatment expectations"]

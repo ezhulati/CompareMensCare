@@ -1,5 +1,5 @@
 ---
-title: "How to Choose an Online Therapist: Complete Guide to Finding the Right Mental Health Professional"
+title: "How to Choose an Online Therapist: Complete Guide 2025"
 description: "Comprehensive guide to finding and choosing the right online therapist including credentials to look for, questions to ask, red flags to avoid, and how to get started with teletherapy."
 category: "mental-health"
 publishDate: 2025-01-15

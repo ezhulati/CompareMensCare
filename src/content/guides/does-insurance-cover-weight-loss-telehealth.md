@@ -1,5 +1,5 @@
 ---
-title: "Does Insurance Cover Weight Loss Telehealth? Complete Guide to Coverage and Costs"
+title: "Does Insurance Cover Weight Loss Telehealth? 2025 Guide"
 description: "Comprehensive guide to insurance coverage for weight loss medications, telehealth visits, and GLP-1 drugs including Medicare, Medicaid, and private insurance policies."
 category: "weight-loss"
 publishDate: 2025-01-15

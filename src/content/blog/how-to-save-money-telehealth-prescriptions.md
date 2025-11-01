@@ -1,5 +1,5 @@
 ---
-title: "How to Save Money on Telehealth Prescriptions: 10 Proven Strategies"
+title: "Save Money on Telehealth Prescriptions: 10 Strategies"
 description: "Practical tips to reduce costs on men's health telehealth services including generic medications, bulk buying, coupons, HSA/FSA, and choosing affordable platforms."
 category: ["general"]
 tags: ["cost savings", "telehealth", "mens health", "money saving"]

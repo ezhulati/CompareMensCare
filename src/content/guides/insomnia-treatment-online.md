@@ -1,5 +1,5 @@
 ---
-title: "Online Insomnia Treatment: Complete Guide to Sleep Medications and Telehealth Options"
+title: "Online Insomnia Treatment: Telehealth Sleep Meds Guide"
 description: "Comprehensive guide to treating insomnia online with trazodone, melatonin, and other sleep medications through telehealth platforms. Includes effectiveness data, costs, and safety information."
 category: "sleep"
 publishDate: 2025-10-31T00:00:00.000Z

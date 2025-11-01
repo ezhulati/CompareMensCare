@@ -1,5 +1,5 @@
 ---
-title: "How Long Does Sildenafil Take to Work? (And Why You're Probably Taking It Wrong)"
+title: "How Long Does Sildenafil Take to Work? Complete Guide"
 description: "Sildenafil takes 60 minutes to hit peak effectiveness. But if you're watching the clock after 30 minutes wondering if it's working, you're making the anxiety worse. What affects timing—and how to stop sabotaging yourself."
 category: ["sexual-health"]
 tags: ["sildenafil", "viagra", "onset time", "how long to work", "ED medication timing"]

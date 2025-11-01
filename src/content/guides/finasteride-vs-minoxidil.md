@@ -1,5 +1,5 @@
 ---
-title: "Finasteride vs Minoxidil: Complete Guide to Hair Loss Treatments"
+title: "Finasteride vs Minoxidil: Best Hair Loss Treatment"
 description: "Comprehensive comparison of finasteride and minoxidil for male pattern baldness, including effectiveness, side effects, cost, and whether you should use one or both together."
 category: "hair-health"
 publishDate: 2025-01-15
