@@ -5,7 +5,7 @@ category: "testosterone"
 publishDate: 2025-01-15
 lastReviewed: 2025-01-15
 author: "Medical Editorial Team"
-medicalReviewer: "Dr. Robert Chen, MD - Endocrinology & Hormone Specialist"
+medicalReviewer: "Dr. Hassan Al-Rashid, MD - Endocrinology & Hormone Specialist"
 featured: true
 summary: "Testosterone Replacement Therapy (TRT) restores testosterone to normal levels (300-1000 ng/dL) in men with clinically diagnosed low T (hypogonadism). Common symptoms include low libido, fatigue, decreased muscle mass, and erectile dysfunction. TRT options include injections ($99-200/month), gels ($150-300/month), and pellets ($300-500 per 3-4 months), all requiring physician monitoring with blood tests every 3-6 months."
 summaryPoints:

@@ -5,7 +5,7 @@ category: "mental-health"
 publishDate: 2025-01-15
 lastReviewed: 2025-01-15
 author: "Medical Editorial Team"
-medicalReviewer: "Dr. Jennifer Morrison, PsyD - Licensed Clinical Psychologist"
+medicalReviewer: "Dr. Lindsay Bjornson, PsyD - Licensed Clinical Psychologist"
 featured: false
 citations:
   - title: "Effectiveness of Telepsychology Meta-Analysis"

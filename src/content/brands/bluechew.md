@@ -69,7 +69,7 @@ features:
 featured: false
 publishDate: 2025-01-15T00:00:00.000Z
 lastReviewed: 2025-01-15T00:00:00.000Z
-reviewerName: "Dr. James Mitchell"
+reviewerName: "Dr. Marcus Kowalski"
 reviewerCredentials: "MD, Men's Health Specialist"
 ---
 

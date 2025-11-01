@@ -70,7 +70,7 @@ features:
 featured: true
 publishDate: 2025-01-15T00:00:00.000Z
 lastReviewed: 2025-01-15T00:00:00.000Z
-reviewerName: "Dr. Robert Chen"
+reviewerName: "Dr. Hassan Al-Rashid"
 reviewerCredentials: "MD, Endocrinology & Hormone Specialist"
 ---
 

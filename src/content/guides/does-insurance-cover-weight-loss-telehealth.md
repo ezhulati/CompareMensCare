@@ -5,7 +5,7 @@ category: "weight-loss"
 publishDate: 2025-01-15
 lastReviewed: 2025-01-15
 author: "Medical Editorial Team"
-medicalReviewer: "Dr. Patricia Lewis, MD - Endocrinology & Obesity Medicine"
+medicalReviewer: "Dr. Sophie Durand, MD - Endocrinology & Obesity Medicine"
 featured: false
 summary: "Insurance coverage for weight loss varies drastically: telehealth visits are usually covered (83% of private insurers), but GLP-1 medications (Wegovy, Zepbound) are rarely covered for weight loss—though often covered for diabetes. Medicare doesn't cover weight loss drugs under Part D. Medicaid covers in only 13 states. Most pay out-of-pocket: $99-350/month for compounded semaglutide, $900-1,400/month for brand-name without coverage."
 summaryPoints:

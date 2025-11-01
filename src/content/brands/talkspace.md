@@ -72,7 +72,7 @@ features:
 featured: true
 publishDate: 2025-01-15T00:00:00.000Z
 lastReviewed: 2025-01-15T00:00:00.000Z
-reviewerName: "Dr. Jennifer Morrison"
+reviewerName: "Dr. Lindsay Bjornson"
 reviewerCredentials: "PsyD, Licensed Clinical Psychologist"
 ---
 

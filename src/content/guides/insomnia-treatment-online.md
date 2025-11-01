@@ -5,7 +5,7 @@ category: "sleep"
 publishDate: 2025-10-31T00:00:00.000Z
 lastReviewed: 2025-10-31T00:00:00.000Z
 author: "CompareMensCare Research Team"
-medicalReviewer: "Dr. Jennifer Williams, MD"
+medicalReviewer: "Dr. Yuki Nakamura, MD"
 summary: "Chronic insomnia affects 10-30% of adults, with men often experiencing sleep difficulties related to stress, testosterone changes, and health conditions. Telehealth platforms now offer convenient access to prescription sleep medications like trazodone without in-person visits."
 summaryPoints:
   - "Trazodone is the most prescribed off-label sleep medication in the U.S., non-addictive alternative to benzodiazepines"

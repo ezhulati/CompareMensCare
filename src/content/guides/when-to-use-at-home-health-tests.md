@@ -5,7 +5,7 @@ category: "diagnostics"
 publishDate: 2025-01-15
 lastReviewed: 2025-01-15
 author: "Medical Editorial Team"
-medicalReviewer: "Dr. Patricia Lewis, MD - Laboratory Medicine"
+medicalReviewer: "Dr. Sophie Durand, MD - Laboratory Medicine"
 featured: true
 summary: "At-home health tests offer 95-99% accuracy (when using CLIA-certified labs) for testosterone, STD screening, vitamin levels, cholesterol, and thyroid function. Tests cost $49-299 depending on panel complexity. Results arrive in 2-5 days via secure portal. Best for: screening, routine monitoring, privacy-sensitive tests. Not for: emergency symptoms, complex diagnosis, or conditions requiring physical exam."
 summaryPoints:

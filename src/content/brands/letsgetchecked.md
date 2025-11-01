@@ -73,7 +73,7 @@ features:
 featured: false
 publishDate: 2025-01-15T00:00:00.000Z
 lastReviewed: 2025-01-15T00:00:00.000Z
-reviewerName: "Dr. Patricia Lewis"
+reviewerName: "Dr. Sophie Durand"
 reviewerCredentials: "MD, Preventive Medicine & Laboratory Medicine"
 ---
 

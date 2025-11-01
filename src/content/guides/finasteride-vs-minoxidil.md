@@ -5,7 +5,7 @@ category: "hair-health"
 publishDate: 2025-01-15
 lastReviewed: 2025-01-15
 author: "Medical Editorial Team"
-medicalReviewer: "Dr. Sarah Williams, MB BS - Dermatology"
+medicalReviewer: "Dr. Elena Petrova, MB BS - Dermatology"
 featured: true
 summary: "Finasteride (oral pill, prescription) and minoxidil (topical solution, OTC) are the only two FDA-approved hair loss treatments with proven effectiveness. Finasteride stops hair loss in 85-90% of men and promotes regrowth in 65%, while minoxidil causes improvement in 60% with significant regrowth in 30-40%. Combination therapy (both together) provides the best results with 94% effectiveness."
 summaryPoints:

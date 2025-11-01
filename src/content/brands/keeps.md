@@ -65,7 +65,7 @@ cons:
 featured: true
 publishDate: 2025-01-15T00:00:00.000Z
 lastReviewed: 2025-01-15T00:00:00.000Z
-reviewerName: "Dr. Sarah Chen"
+reviewerName: "Dr. Priya Subramanian"
 reviewerCredentials: "MD, Dermatology"
 ---
 

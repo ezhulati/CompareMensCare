@@ -70,7 +70,7 @@ features:
 featured: false
 publishDate: 2025-01-30T00:00:00.000Z
 lastReviewed: 2025-01-30T00:00:00.000Z
-reviewerName: "Dr. Sarah Martinez"
+reviewerName: "Dr. Ava Lindström"
 reviewerCredentials: "PhD, Clinical Psychology"
 ---
 

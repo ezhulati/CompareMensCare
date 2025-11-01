@@ -71,7 +71,7 @@ features:
 featured: false
 publishDate: 2025-01-30T00:00:00.000Z
 lastReviewed: 2025-01-30T00:00:00.000Z
-reviewerName: "Dr. Patricia Collins"
+reviewerName: "Dr. Julian Cross"
 reviewerCredentials: "MD, MPH, Laboratory Medicine"
 ---
 

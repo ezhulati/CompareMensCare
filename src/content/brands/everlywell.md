@@ -73,7 +73,7 @@ features:
 featured: true
 publishDate: 2025-01-30T00:00:00.000Z
 lastReviewed: 2025-01-30T00:00:00.000Z
-reviewerName: "Dr. Thomas Wright"
+reviewerName: "Dr. Trevor Ashford"
 reviewerCredentials: "MD, Internal Medicine & Preventive Health"
 ---
 

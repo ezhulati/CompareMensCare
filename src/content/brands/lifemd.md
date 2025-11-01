@@ -71,7 +71,7 @@ features:
 featured: false
 publishDate: 2025-01-30T00:00:00.000Z
 lastReviewed: 2025-01-30T00:00:00.000Z
-reviewerName: "Dr. Jennifer Williams"
+reviewerName: "Dr. Yuki Nakamura"
 reviewerCredentials: "MD, Family Medicine & Obesity Medicine"
 ---
 

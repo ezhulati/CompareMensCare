@@ -69,7 +69,7 @@ features:
 featured: false
 publishDate: 2025-01-31T00:00:00.000Z
 lastReviewed: 2025-01-31T00:00:00.000Z
-reviewerName: "Dr. Lisa Rodriguez"
+reviewerName: "Dr. Carmen Vasquez"
 reviewerCredentials: "MD, Infectious Disease Specialist"
 ---
 
