@@ -308,7 +308,7 @@ const subscriptionTypes = [...new Set(brands.map(b => b.subscriptionType))];
     {brands.map((brand) => (
       <article
         class={`
-          brand-card card p-6 lg:p-8 relative overflow-hidden transition-all duration-200
+          brand-card card p-card-sm md:p-card-md lg:p-card-lg relative overflow-hidden transition-all duration-200
           ${brand.featured ? 'ring-2 ring-brand-accent shadow-lg' : 'hover:shadow-md'}
         `}
         data-brand={JSON.stringify({
@@ -329,15 +329,15 @@ const subscriptionTypes = [...new Set(brands.map(b => b.subscriptionType))];
           </div>
         )}
 
-        <div class="grid lg:grid-cols-12 gap-6 items-center">
+        <div class="grid lg:grid-cols-12 gap-4 md:gap-5 lg:gap-6 items-center">
           <!-- Brand Info -->
           <div class="lg:col-span-3">
             <a href={`/${brand.slug}`} class="group block">
-              <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">
+              <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-accent transition-colors">
                 {brand.name}
               </h3>
             </a>
-            <div class="flex items-center gap-2 mb-3">
+            <div class="flex items-center gap-2 mb-2 md:mb-3">
               <div class="flex items-center gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <svg
@@ -373,7 +373,7 @@ const subscriptionTypes = [...new Set(brands.map(b => b.subscriptionType))];
             </div>
 
             {brand.bestFor && brand.bestFor.length > 0 && (
-              <div class="flex flex-wrap gap-1.5">
+              <div class="flex flex-wrap gap-2">
                 {brand.bestFor.map((item) => (
                   <BestForBadge
                     label={item.label}
@@ -387,20 +387,20 @@ const subscriptionTypes = [...new Set(brands.map(b => b.subscriptionType))];
           </div>
 
           <!-- Pricing Info -->
-          <div class="lg:col-span-4 grid grid-cols-1 xs:grid-cols-2 gap-3 sm:gap-4">
+          <div class="lg:col-span-4 grid grid-cols-1 xs:grid-cols-2 gap-3 md:gap-4">
             <div>
               <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Consultation</div>
-              <div class="text-base sm:text-lg font-semibold text-slate-900">{brand.consultationFee}</div>
+              <div class="text-sm md:text-base lg:text-lg font-semibold text-slate-900">{brand.consultationFee}</div>
             </div>
             <div>
               <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">From</div>
-              <div class="text-base sm:text-lg font-semibold text-slate-900">{brand.medicationFrom}</div>
+              <div class="text-sm md:text-base lg:text-lg font-semibold text-slate-900">{brand.medicationFrom}</div>
             </div>
           </div>
 
           <!-- Pros -->
           <div class="lg:col-span-3">
-            <div class="space-y-1.5">
+            <div class="space-y-2">
               {brand.pros.slice(0, 2).map((pro) => (
                 <div class="flex items-start gap-2 text-sm">
                   <svg class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">

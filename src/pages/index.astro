@@ -159,27 +159,27 @@ const categoryIcons: Record<string, any> = {
           Stop settling. Stop searching. Whether you want better performance in bed, to see your hair grow back, or finally feel like yourself again — <strong>the right treatment is out there</strong>. We'll help you find it.
         </p>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
-          <div class="card p-5 sm:p-6 min-h-[180px] flex flex-col items-center text-center">
-            <div class="mb-3 text-blue-600 flex justify-center">
-              <Eye class="w-10 h-10 sm:w-11 sm:h-11" />
+          <div class="card p-card-md md:p-card-lg flex flex-col items-center text-center h-full">
+            <div class="mb-4 text-blue-600 flex justify-center">
+              <Eye class="w-12 h-12 md:w-14 md:h-14" />
             </div>
             <h3 class="font-heading font-bold text-base sm:text-lg mb-2 text-slate-900">Know What You're Paying</h3>
             <p class="text-slate-600 text-sm leading-snug">
               Real per-dose pricing, all fees included. No bait-and-switch at checkout. Get the treatment you need without breaking the bank.
             </p>
           </div>
-          <div class="card p-5 sm:p-6 min-h-[180px] flex flex-col items-center text-center">
-            <div class="mb-3 text-emerald-600 flex justify-center">
-              <ShieldCheck class="w-10 h-10 sm:w-11 sm:h-11" />
+          <div class="card p-card-md md:p-card-lg flex flex-col items-center text-center h-full">
+            <div class="mb-4 text-emerald-600 flex justify-center">
+              <ShieldCheck class="w-12 h-12 md:w-14 md:h-14" />
             </div>
             <h3 class="font-heading font-bold text-base sm:text-lg mb-2 text-slate-900">Safe, Real Results</h3>
             <p class="text-slate-600 text-sm leading-snug">
               Licensed US doctors, FDA-approved meds only. Real treatments that actually work — not sketchy pills from overseas.
             </p>
           </div>
-          <div class="card p-5 sm:p-6 min-h-[180px] flex flex-col items-center text-center">
-            <div class="mb-3 text-purple-600 flex justify-center">
-              <Shield class="w-10 h-10 sm:w-11 sm:h-11" />
+          <div class="card p-card-md md:p-card-lg flex flex-col items-center text-center h-full">
+            <div class="mb-4 text-purple-600 flex justify-center">
+              <Shield class="w-12 h-12 md:w-14 md:h-14" />
             </div>
             <h3 class="font-heading font-bold text-base sm:text-lg mb-2 text-slate-900">Total Privacy</h3>
             <p class="text-slate-600 text-sm leading-snug">
@@ -209,7 +209,7 @@ const categoryIcons: Record<string, any> = {
           return (
             <a
               href={`/${category.slug}`}
-              class="card-hover p-5 sm:p-6 lg:p-7 group min-h-[180px] flex flex-col"
+              class="card-hover p-card-md md:p-card-lg group flex flex-col h-full"
             >
               <div class="flex items-start justify-between mb-3 sm:mb-4">
                 <div class="flex-1">
@@ -221,7 +221,7 @@ const categoryIcons: Record<string, any> = {
                   </span>
                 </div>
                 <div class="text-brand-accent group-hover:scale-110 transition-transform duration-200">
-                  <IconComponent class="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12" />
+                  <IconComponent class="w-12 h-12 md:w-14 md:h-14 lg:w-12 lg:h-12" />
                 </div>
               </div>
               <p class="text-slate-600 text-sm leading-snug mb-3 sm:mb-4 flex-grow">

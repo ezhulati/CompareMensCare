@@ -135,6 +135,37 @@
     @apply card border-2 border-medical-blue-200 bg-medical-blue-50/30 shadow-md;
   }
 
+  /* Card Spacing Variants - Responsive padding system */
+  .card-compact {
+    @apply card p-card-sm md:p-card-md;
+  }
+
+  .card-standard {
+    @apply card p-card-sm md:p-card-md lg:p-card-lg;
+  }
+
+  .card-spacious {
+    @apply card p-card-md md:p-card-lg lg:p-card-xl;
+  }
+
+  /* Responsive Interior Spacing Utilities */
+  .card-gap-sm {
+    @apply space-y-2 md:space-y-3;
+  }
+
+  .card-gap-md {
+    @apply space-y-3 md:space-y-4;
+  }
+
+  .card-gap-lg {
+    @apply space-y-4 md:space-y-5;
+  }
+
+  /* Auto-push pattern for card footers */
+  .card-auto-footer {
+    @apply mt-auto pt-4 md:pt-5;
+  }
+
   /* Professional Badge Styles */
   .badge {
     @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-semibold border;
@@ -187,7 +218,7 @@
 
   /* Quick Pick Styles */
   .quick-pick-card {
-    @apply card p-4 hover:shadow-md transition-all duration-200 border-l-4;
+    @apply card p-card-md md:p-card-lg hover:shadow-md transition-all duration-200 border-l-4;
   }
 
   .quick-pick-card-budget {

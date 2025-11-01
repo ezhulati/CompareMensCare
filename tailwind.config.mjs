@@ -92,6 +92,12 @@ export default {
         '88': '22rem',
         '112': '28rem',
         '128': '32rem',
+        // Card spacing system - responsive padding scale
+        'card-xs': '0.75rem',   // 12px - Tight spacing
+        'card-sm': '1rem',      // 16px - Mobile standard
+        'card-md': '1.25rem',   // 20px - Tablet standard
+        'card-lg': '1.5rem',    // 24px - Desktop standard
+        'card-xl': '2rem',      // 32px - Desktop generous
       },
       borderRadius: {
         '4xl': '2rem',
