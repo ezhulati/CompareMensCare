@@ -409,26 +409,28 @@ Professional competence matters, but so does personal rapport:
 
 ### Option 1: Online Therapy Platforms
 
-**BetterHelp**
+**Best for Most People:** [**BetterHelp**](/betterhelp)
 - **Model:** Match with licensed therapist, unlimited messaging + weekly live sessions
-- **Cost:** $260-360/week ($65-90/week)
-- **Pros:** Easy matching, flexible communication, affordable compared to traditional therapy
+- **Cost:** $260-360/month ($65-90/week)
+- **Pros:** Easy matching, flexible communication, affordable compared to traditional therapy, largest therapist network
 - **Cons:** Can't choose specific therapist initially, therapist may change, not covered by insurance
 - **Best for:** First-time therapy seekers, those wanting flexible communication
 
-**Talkspace**
+**Best for Insurance Coverage:** [**Talkspace**](/talkspace)
 - **Model:** Similar to BetterHelp, messaging + video/audio sessions
 - **Cost:** $276-396/month
-- **Pros:** Some insurance coverage available, psychiatry services available
+- **Pros:** Some insurance coverage available, psychiatry services available, structured plans
 - **Cons:** Video sessions limited on lower-tier plans, matching process
 - **Best for:** Those with participating insurance, medication + therapy needs
 
-**Cerebral**
+**Best for Medication + Therapy:** [**Cerebral**](/cerebral)
 - **Model:** Focuses on medication management + therapy
 - **Cost:** $85-325/month
-- **Pros:** Prescribers available, convenient for ADHD/anxiety/depression meds
+- **Pros:** Prescribers available, convenient for ADHD/anxiety/depression meds, fast appointments
 - **Cons:** Primarily medication-focused, less emphasis on deep therapy work
-- **Best for:** Medication management with therapy support
+- **Best for:** Medication management with therapy support, ADHD or anxiety treatment
+
+[Compare all online therapy services](/mental-health) to find the best option for your needs.
 
 **Brightside**
 - **Model:** Psychiatry + therapy for depression and anxiety
@@ -944,6 +946,21 @@ Write down:
 **Remember:** Finding the right therapist is like dating—it may take a few tries, but when you find the right fit, it's worth it. Don't settle. Your mental health deserves a therapist who gets you, challenges you appropriately, and helps you grow.
 
 Good luck on your therapy journey.
+
+## Related Resources
+
+**Mental Health Guides:**
+- [Teletherapy vs In-Person: Which Is Right for You?](/guides/teletherapy-vs-in-person)
+- [Does Online Therapy Work? Evidence](/blog/does-online-therapy-work-evidence)
+- [Online Therapy Cost Comparison 2025](/blog/online-therapy-cost-comparison-2025)
+
+**Service Reviews:**
+- [BetterHelp Review](/betterhelp) - Best for most people
+- [Talkspace Review](/talkspace) - Best for insurance coverage
+- [Cerebral Review](/cerebral) - Best for medication + therapy
+
+**Popular Comparisons:**
+- [BetterHelp vs Talkspace](/blog/betterhelp-vs-talkspace-comparison)
 
 ---
 

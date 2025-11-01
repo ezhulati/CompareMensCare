@@ -253,6 +253,16 @@ Telehealth platforms now offer convenient, discreet access to herpes treatment w
 
 ## Telehealth Platforms for Herpes Treatment
 
+### Our Top Recommendations
+
+**Best Overall:** [**Ro**](/ro) offers comprehensive valacyclovir treatment ($15 consultation + medication cost) with free 2-day shipping, discreet packaging, and both episodic and suppressive therapy options. Great for fast, reliable herpes care.
+
+**Best for Privacy:** [**Nurx**](/nurx) provides ultra-discreet packaging and billing with easy automatic refills. Some insurance accepted. Perfect if privacy is your top concern.
+
+**Best for Affordability:** [**Lemonaid Health**](/lemonaid-health) offers bundled consultation + medication pricing with free shipping. Ideal for budget-conscious treatment.
+
+[Compare all herpes treatment services](/herpes) to find the best option for your needs.
+
 ### Ro (Roman)
 **Comprehensive Herpes Treatment Platform**
 
@@ -575,5 +585,20 @@ Online herpes treatment provides:
 **Best Platforms**: Ro (fast 2-day shipping), Nurx (easy refills), Lemonaid (affordable)
 
 Living with herpes is manageable with modern antiviral medications and the convenience of telehealth makes treatment more accessible than ever. The key is finding the right treatment approach for your specific situation and maintaining it consistently.
+
+## Related Resources
+
+**Sexual Health Guides:**
+- [Understanding Erectile Dysfunction](/guides/understanding-erectile-dysfunction)
+- [When to See a Doctor About ED](/guides/when-to-see-doctor-about-ed)
+
+**Service Reviews:**
+- [Ro Review](/ro) - Best overall, fast 2-day shipping
+- [Nurx Review](/nurx) - Best for privacy and discretion
+- [Lemonaid Health Review](/lemonaid-health) - Most affordable option
+
+**Popular Comparisons:**
+- [Ro vs Nurx](/compare/ro-vs-nurx) - Which offers better value?
+- [Nurx vs Lemonaid Health](/compare/nurx-vs-lemonaid-health)
 
 *Consult with a healthcare provider to determine the best herpes treatment plan for your individual needs.*

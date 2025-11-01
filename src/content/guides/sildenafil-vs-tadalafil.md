@@ -345,26 +345,31 @@ If sildenafil and tadalafil don't work:
 
 ## Where to Get Sildenafil and Tadalafil
 
-### Telehealth Services (Most Convenient)
-Modern online platforms offer both medications:
-- **Hims**: Generic sildenafil from $2/dose, tadalafil from $2.50/dose
-- **Ro**: Flexible options, both medications available
-- **BlueChew**: Chewable versions of both (subscription)
-- **Manual** (UK), **Numan** (UK): Both medications available
+### Telehealth Services (Most Convenient & Affordable)
 
-**Benefits**: Discreet, convenient, often cheaper, no in-person visit
+**Best Overall:** [**Hims**](/hims) offers both generic sildenafil (from $2/dose) and tadalafil (from $2.50/dose) with same-day consultations, flexible subscriptions, and discreet delivery. Great for most men seeking affordable, convenient care.
+
+**Best for Daily Tadalafil:** [**Ro**](/ro) provides comprehensive daily tadalafil programs with physician support, health tracking, and flexible dosing options. Ideal if you want ongoing medical support and prefer daily medication for spontaneity.
+
+**Best for Chewable Medications:** [**BlueChew**](/bluechew) specializes in chewable sildenafil and tadalafil with monthly subscriptions ($20-90/month). Perfect if you want the convenience of chewables and don't need in-person care.
+
+**International Options:**
+- [**Manual**](/manual) (UK) - Both medications available for UK residents
+- [**Numan**](/numan) (UK) - Comprehensive ED care with flexible options
+
+[Compare all ED treatment services](/sexual-health) to find the best fit for your needs.
+
+**Benefits of telehealth:** Discreet consultations, medications delivered to your door, often cheaper than traditional healthcare, no in-person visit required, licensed physicians prescribe medications.
 
 ### Traditional Doctor's Office
-- See primary care doctor or urologist
-- In-person exam and prescription
-- May be covered by insurance (though often not)
-- Can discuss other health concerns
+- See primary care doctor or urologist for in-person exam
+- May be covered by insurance (though ED medications often aren't)
+- Good option if you have complex health conditions
 
 ### Local Pharmacy
-- Need prescription from doctor
-- Fill at CVS, Walgreens, local pharmacy
-- Generic versions widely available
-- Usually not covered by insurance for ED
+- Requires prescription from doctor
+- Generic versions widely available at CVS, Walgreens, etc.
+- Usually not covered by insurance for ED indication
 
 ## The Bottom Line
 
@@ -383,6 +388,23 @@ Modern online platforms offer both medications:
 **Many men try both** to determine which works better for their body and lifestyle. Both are safe, effective, and available affordably through telehealth services.
 
 **Talk to a healthcare provider** to determine which medication is right for you.
+
+## Related Resources
+
+**Treatment Guides:**
+- [Understanding Erectile Dysfunction: Complete Guide](/guides/understanding-erectile-dysfunction)
+- [When to See a Doctor About ED](/guides/when-to-see-doctor-about-ed)
+- [Premature Ejaculation Treatment Options](/guides/premature-ejaculation-treatment-options)
+
+**Service Reviews:**
+- [Hims Review](/hims) - Best pricing on both medications
+- [Ro Review](/ro) - Premium daily tadalafil programs
+- [BlueChew Review](/bluechew) - Chewable sildenafil & tadalafil
+
+**Popular Comparisons:**
+- [Hims vs Ro](/compare/ro-vs-hims) - Which offers better value?
+- [Hims vs BlueChew](/compare/hims-vs-bluechew) - Pills vs chewables
+- [Ro vs BlueChew](/compare/bluechew-vs-ro) - Premium vs budget
 
 ---
 

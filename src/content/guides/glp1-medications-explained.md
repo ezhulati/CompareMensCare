@@ -379,33 +379,39 @@ GLP-1 (glucagon-like peptide-1) medications are a class of injectable drugs orig
 - Documented weight loss attempts
 - Medical necessity letter from doctor
 
-### Affordable Alternatives: Compounded GLP-1s
+### Affordable Alternatives: Compounded GLP-1s Through Telehealth
 
-**Telehealth companies offer compounded versions:**
-- **Hims, Ro, Numan** and others
-- Compounded by licensed pharmacies
-- **$200-600/month**—much more affordable
+**Best for Affordability:** [**Hims**](/hims) offers compounded semaglutide starting at $199/month with medical consultations, weight loss coaching, and discreet delivery. Great for cost-conscious users who want comprehensive support.
 
-**Compounded semaglutide:**
-- $200-400/month typical
-- Same active ingredient
-- Not FDA-approved (compounded)
+**Best Overall Program:** [**Ro**](/ro) provides compounded semaglutide ($145-290/month) and tirzepatide with personalized dosing, ongoing physician support, and nutrition guidance. Ideal if you want structured medical supervision.
+
+**Best for Budget:** [**Henry Meds**](/henry-meds) specializes in affordable GLP-1 medications with compounded semaglutide at $297/month including consultations and shipping. Perfect if you want the lowest price with quality care.
+
+**Compounded semaglutide details:**
+- $145-400/month depending on provider and dose
+- Same active ingredient as Wegovy/Ozempic
+- Made by licensed 503B compounding pharmacies
+- Legal due to ongoing Wegovy shortages
 - Quality varies by pharmacy
 
-**Compounded tirzepatide:**
-- $400-600/month typical
-- Newer, more expensive
+**Compounded tirzepatide details:**
+- $350-600/month typical pricing
+- Same active ingredient as Zepbound/Mounjaro
+- More effective than semaglutide (20% vs 15% weight loss)
+
+[Compare all weight loss services](/weight-loss) to find the best option for your budget and needs.
 
 **Pros:**
-- Much more affordable
+- Much more affordable than brand-name ($1,000-1,500 savings/month)
 - Convenient telehealth delivery
-- No insurance hassles
+- No insurance hassles or prior authorization
+- Ongoing medical support included
 
 **Cons:**
-- Not FDA-approved compounded versions
-- Quality control less rigorous than brand
-- Insurance won't cover
-- Some question about long-term supply
+- Not FDA-approved (though legally compounded)
+- Quality control less rigorous than brand-name
+- Insurance won't cover compounded versions
+- Long-term supply uncertain if shortages end
 
 ### Savings Programs
 
@@ -528,6 +534,23 @@ GLP-1 (glucagon-like peptide-1) medications are a class of injectable drugs orig
 **Most important:** GLP-1s are tools, not magic. They work best combined with healthy lifestyle changes. They make it dramatically easier to eat less and stick to a healthy diet, but they don't do the work for you.
 
 **Talk to a healthcare provider** to determine if GLP-1 medications are right for your weight loss goals.
+
+## Related Resources
+
+**Weight Loss Guides:**
+- [Does Insurance Cover Weight Loss Telehealth?](/guides/does-insurance-cover-weight-loss-telehealth)
+- [How Much Weight Can You Lose on Semaglutide?](/blog/how-much-weight-can-you-lose-on-semaglutide)
+- [GLP-1 Side Effects Timeline](/blog/glp1-side-effects-timeline-guide)
+- [Ozempic vs Wegovy Comparison](/blog/ozempic-vs-wegovy-comparison)
+
+**Service Reviews:**
+- [Hims Review](/hims) - Affordable semaglutide with coaching
+- [Ro Review](/ro) - Comprehensive weight loss programs
+- [Henry Meds Review](/henry-meds) - Budget-friendly GLP-1s
+
+**Cost Comparisons:**
+- [GLP-1 Insurance Coverage Guide](/blog/glp1-insurance-coverage-complete-guide)
+- [2025 Men's Telehealth Cost Comparison](/blog/2025-mens-telehealth-cost-comparison)
 
 ---
 

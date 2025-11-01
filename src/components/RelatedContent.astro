@@ -1,0 +1,92 @@
+---
+import { FileText, Building2, Newspaper, ArrowRight } from 'lucide-astro';
+
+interface RelatedItem {
+  type: 'guide' | 'brand' | 'blog' | 'comparison';
+  title: string;
+  slug: string;
+  description?: string;
+}
+
+interface Props {
+  items: RelatedItem[];
+  title?: string;
+}
+
+const { items, title = 'Related Resources' } = Astro.props;
+
+const typeConfig = {
+  guide: {
+    icon: FileText,
+    iconColor: 'text-blue-600',
+    iconBg: 'bg-blue-50',
+    prefix: '/guides/',
+  },
+  brand: {
+    icon: Building2,
+    iconColor: 'text-emerald-600',
+    iconBg: 'bg-emerald-50',
+    prefix: '/',
+  },
+  blog: {
+    icon: Newspaper,
+    iconColor: 'text-purple-600',
+    iconBg: 'bg-purple-50',
+    prefix: '/blog/',
+  },
+  comparison: {
+    icon: FileText,
+    iconColor: 'text-amber-600',
+    iconBg: 'bg-amber-50',
+    prefix: '/compare/',
+  },
+};
+---
+
+<section class="section-light">
+  <div class="container-custom">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
+        {title}
+      </h2>
+      <p class="text-slate-600">
+        Continue your research with these helpful resources
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      {items.map((item) => {
+        const config = typeConfig[item.type];
+        const IconComponent = config.icon;
+        const href = config.prefix + item.slug;
+
+        return (
+          <a
+            href={href}
+            class="bg-white rounded-xl border-2 border-slate-200 hover:border-brand-accent p-6 transition-all hover:shadow-lg group"
+          >
+            <div class="flex items-start gap-4">
+              <div class={`w-12 h-12 rounded-lg ${config.iconBg} flex items-center justify-center flex-shrink-0`}>
+                <IconComponent class={`w-6 h-6 ${config.iconColor}`} />
+              </div>
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-slate-900 mb-1 group-hover:text-brand-accent transition-colors line-clamp-2">
+                  {item.title}
+                </h3>
+                {item.description && (
+                  <p class="text-sm text-slate-600 line-clamp-2">
+                    {item.description}
+                  </p>
+                )}
+                <div class="flex items-center gap-1 text-sm text-brand-accent mt-2 font-medium">
+                  Read more
+                  <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>

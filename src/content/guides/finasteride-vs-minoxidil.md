@@ -366,20 +366,34 @@ After 12+ months with no improvement:
 
 ## Where to Get Treatment
 
-### Finasteride (Requires Prescription)
-- **Telehealth services**: Hims, Ro, Keeps, Manual, Numan (convenient, affordable)
-- **Primary care doctor or dermatologist**
-- **Hair loss specialist**
+### Finasteride (Requires Prescription) - Best Through Telehealth
+
+**Best Overall:** [**Hims**](/hims) offers finasteride starting at $15/month with minoxidil bundled for comprehensive treatment. Same-day consultations, flexible subscriptions, and discreet delivery. Great for most men seeking affordable, convenient hair loss care.
+
+**Best for Premium Care:** [**Keeps**](/keeps) specializes exclusively in hair loss with personalized treatment plans, dermatologist consultations, and premium formulations. Ideal if you want specialized hair loss expertise and don't mind paying more.
+
+**Best for Combination Treatment:** [**Ro**](/ro) provides finasteride + minoxidil bundles with ongoing physician support and treatment tracking. Perfect if you want comprehensive medical supervision.
+
+**International Options:**
+- [**Manual**](/manual) (UK) - Finasteride and minoxidil for UK residents
+- [**Numan**](/numan) (UK) - Comprehensive hair loss programs
+
+[Compare all hair loss services](/hair-health) to find the best option for your needs.
+
+**Other options:**
+- Primary care doctor or dermatologist (in-person exam, may be covered by insurance)
+- Hair loss specialist clinic
 
 ### Minoxidil (No Prescription Needed)
-- Any pharmacy (Walmart, CVS, Walgreens, etc.)
-- Online (Amazon, telehealth services)
-- Drugstores
+- **Pharmacy**: Available over-the-counter at Walmart, CVS, Walgreens ($20-40/month)
+- **Online**: Amazon, telehealth services (often bundled with finasteride)
+- **Bundled with finasteride**: [Hims](/hims), [Keeps](/keeps), [Ro](/ro) offer combination treatments
 
 ### Cost Savings
-- Generic versions significantly cheaper
-- Telehealth often more affordable than traditional doctor visit
-- Buying in bulk (3-6 month supply) reduces cost
+- Generic finasteride: $15-30/month (much cheaper than brand-name Propecia)
+- Generic minoxidil: $10-30/month (cheaper than brand-name Rogaine)
+- Telehealth bundles often cheaper than buying separately
+- Buying in bulk (3-6 month supply) reduces cost further
 
 ## The Bottom Line
 
@@ -400,6 +414,23 @@ After 12+ months with no improvement:
 - Ongoing maintenance required
 
 Talk to a healthcare provider to determine the best approach for your situation.
+
+## Related Resources
+
+**Hair Loss Guides:**
+- [Understanding Male Pattern Baldness](/guides/understanding-male-pattern-baldness)
+- [Finasteride Results Timeline](/blog/finasteride-results-timeline-what-to-expect)
+- [Minoxidil Results Timeline](/blog/minoxidil-results-timeline-complete-guide)
+- [Does Hair Loss Treatment Work? Evidence](/blog/does-hair-loss-treatment-work-evidence)
+
+**Service Reviews:**
+- [Hims Review](/hims) - Best value for combination treatment
+- [Keeps Review](/keeps) - Hair loss specialists
+- [Ro Review](/ro) - Comprehensive programs
+
+**Popular Comparisons:**
+- [Hims vs Keeps](/compare/keeps-vs-hims) - Which offers better value?
+- [Hims vs Manual](/compare/hims-vs-manual) - US vs UK options
 
 ---
 

@@ -227,7 +227,7 @@ The good news: ED is highly treatable. Treatment success rates are very high wit
 
 ### Oral Medications (PDE5 Inhibitors)
 
-Most effective first-line treatment for most men.
+Most effective first-line treatment for most men. These medications are available through telehealth services like [Hims](/hims), [Ro](/ro), and [BlueChew](/bluechew) for convenient, discreet treatment.
 
 #### Sildenafil (Viagra)
 - **How it works**: Increases blood flow to penis
@@ -236,12 +236,16 @@ Most effective first-line treatment for most men.
 - **Duration**: Effects last 4-6 hours
 - **Effectiveness**: 70-85% of men
 
+Learn more: [Sildenafil vs Tadalafil comparison](/guides/sildenafil-vs-tadalafil)
+
 #### Tadalafil (Cialis)
 - **How it works**: Similar to sildenafil, longer-lasting
 - **Dosage**: 5mg, 10mg, 20mg (on-demand); 2.5mg, 5mg (daily)
 - **Timing**: Take 30 minutes before sex (or daily)
 - **Duration**: Up to 36 hours ("weekend pill")
 - **Effectiveness**: 70-85% of men
+
+Learn more: [Sildenafil vs Tadalafil comparison](/guides/sildenafil-vs-tadalafil)
 
 #### Vardenafil (Levitra) & Avanafil (Stendra)
 - Similar mechanism to sildenafil
@@ -313,22 +317,22 @@ Often most effective to combine approaches:
 
 ## Modern Telehealth Options
 
-Convenient online platforms now offer ED treatment:
+Convenient online platforms now offer ED treatment with discreet online consultations, medications delivered to your door, and often more affordable pricing than traditional healthcare.
 
-### Benefits
-- No in-person doctor visit required
-- Discreet online consultations
-- Medications delivered to your door
-- Often more affordable than traditional healthcare
-- Licensed physicians prescribe medications
+### Our Top Recommendations
 
-### Popular Telehealth Services
-- **Hims**: Affordable, comprehensive
-- **Ro**: Flexible dosing, ongoing support
-- **BlueChew**: Chewable medications
-- **Manual** (UK), **Numan** (UK), **healthyMale** (Australia)
+**Best Overall:** [**Hims**](/hims) offers comprehensive ED treatment with affordable pricing ($4-49/month), same-day consultations, and flexible medication options including sildenafil, tadalafil, and combination treatments. Great for most men seeking convenient, affordable care.
 
-See our [telehealth service comparisons](/sexual-health) for detailed reviews.
+**Best for Budget:** [**BlueChew**](/bluechew) provides chewable ED medications at the lowest monthly cost ($20-90/month) with a subscription model. Perfect if you want affordable on-demand treatment without insurance.
+
+**Best Telehealth Experience:** [**Ro**](/ro) delivers premium care with flexible dosing options, ongoing physician support, and comprehensive health tracking. Ideal if you want the most thorough online medical care and don't mind paying slightly more.
+
+**International Options:**
+- [**Manual**](/manual) (UK) - Discreet care for UK residents
+- [**Numan**](/numan) (UK) - Comprehensive men's health platform
+- [**healthyMale**](/healthymale) (Australia) - Trusted Australian telehealth
+
+See our complete [ED treatment service comparison](/sexual-health) to find the best fit for your needs and budget.
 
 ## Living with Erectile Dysfunction
 
@@ -372,6 +376,23 @@ If first-line treatments fail:
 - Effective treatments are available
 - Most men find a solution that works
 - You don't have to live with ED
+
+## Related Resources
+
+**Treatment Comparisons:**
+- [Sildenafil vs Tadalafil: Which ED Med Is Best?](/guides/sildenafil-vs-tadalafil)
+- [When to See a Doctor About ED](/guides/when-to-see-doctor-about-ed)
+- [Premature Ejaculation Treatment Options](/guides/premature-ejaculation-treatment-options)
+
+**Service Reviews:**
+- [Hims Review](/hims) - Best overall for affordability
+- [Ro Review](/ro) - Premium telehealth experience
+- [BlueChew Review](/bluechew) - Budget-friendly chewables
+
+**Popular Comparisons:**
+- [Hims vs BlueChew](/compare/hims-vs-bluechew)
+- [Hims vs Ro](/compare/ro-vs-hims)
+- [BlueChew vs Ro](/compare/bluechew-vs-ro)
 
 ---
 
