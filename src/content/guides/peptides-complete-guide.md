@@ -2,6 +2,7 @@
 title: "Peptides for Health: Complete Evidence-Based Guide 2025"
 description: "Comprehensive guide to peptide therapy covering FDA-approved and experimental peptides, safety, effectiveness, where to get them, and how they compare to alternatives like HGH and TRT."
 category: "peptides"
+image: "/images/peptide-therapy.png"
 publishDate: 2025-01-15T00:00:00Z
 lastReviewed: 2025-01-15T00:00:00Z
 featured: true
