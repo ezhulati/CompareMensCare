@@ -154,7 +154,10 @@ const allBrands = await getCollection('brands');
 
   // Persona-based recommendation logic (PRIMARY MATCH)
   function getPersonalizedRecommendation(choices) {
-    const { category, q2, q3 } = choices;
+    const { category, sexualHealthType } = choices;
+    // Handle both standard and PE-specific question paths
+    const q2 = choices.q2 || choices.q2pe;
+    const q3 = choices.q3 || choices.q3pe;
 
     // ========== SEXUAL HEALTH ==========
     if (category === 'sexual-health') {
@@ -961,7 +964,9 @@ const allBrands = await getCollection('brands');
     const recommendation = getPersonalizedRecommendation(choices);
 
     // Calculate alternatives using priority scoring (hybrid approach!)
-    const alternatives = calculateAlternatives(choices.q3, choices.category, recommendation.bestMatch?.slug);
+    // Use q3 or q3pe depending on which path was taken
+    const q3Value = choices.q3 || choices.q3pe;
+    const alternatives = calculateAlternatives(q3Value, choices.category, recommendation.bestMatch?.slug);
 
     const resultsSection = document.getElementById('personalized-results');
     const reasoningEl = document.getElementById('recommendation-reasoning');
