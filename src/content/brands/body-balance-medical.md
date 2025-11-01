@@ -2,8 +2,8 @@
 title: "Body Balance Medical"
 description: "Full-service medical clinic offering telehealth peptide therapy, hormone optimization, and weight loss programs with comprehensive medical oversight."
 categories: ["peptides", "testosterone", "weight-loss"]
-rating: 4.4
-reviewCount: 620
+rating: 4.8
+reviewCount: 367
 affiliateLink: "body-balance-medical"
 affiliateId: "body-balance-medical"
 cookieDays: 30

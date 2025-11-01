@@ -2,8 +2,8 @@
 title: "Pure Life Peptides"
 description: "Canada-based research peptide supplier offering BPC-157, TB-500, CJC/Ipamorelin with international shipping and customer discount codes."
 categories: ["peptides"]
-rating: 3.7
-reviewCount: 980
+rating: 0
+reviewCount: 0
 affiliateLink: "pure-life-peptides"
 affiliateId: "pure-life-peptides"
 cookieDays: 30

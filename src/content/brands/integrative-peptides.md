@@ -2,8 +2,8 @@
 title: "Integrative Peptides"
 description: "Integrative peptide supplements in oral/capsule forms for wellness and collagen support."
 categories: ["peptides"]
-rating: 3.6
-reviewCount: 540
+rating: 4.5
+reviewCount: 3
 affiliateLink: "integrative-peptides"
 affiliateId: "integrative-peptides"
 cookieDays: 30

@@ -2,8 +2,8 @@
 title: "Particle Peptides"
 description: "EU-based research peptide supplier offering BPC-157, TB-500, and European-sourced peptides with international shipping."
 categories: ["peptides"]
-rating: 3.5
-reviewCount: 420
+rating: 4.3
+reviewCount: 13
 affiliateLink: "particle-peptides"
 affiliateId: "particle-peptides"
 cookieDays: 30

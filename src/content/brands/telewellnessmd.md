@@ -2,8 +2,8 @@
 title: "TeleWellnessMD"
 description: "Medical telehealth clinic offering doctor-supervised peptide therapy including CJC/Ipamorelin, BPC-157, and IGF-1 LR3 with prescription oversight and blood work."
 categories: ["peptides"]
-rating: 4.3
-reviewCount: 850
+rating: 3.5
+reviewCount: 6
 affiliateLink: "telewellnessmd"
 affiliateId: "telewellnessmd"
 cookieDays: 30

@@ -2,8 +2,8 @@
 title: "Peptide University"
 description: "Education platform offering peptide therapy training courses, protocols, and certification programs for practitioners and biohackers."
 categories: ["peptides"]
-rating: 4.0
-reviewCount: 310
+rating: 0
+reviewCount: 0
 affiliateLink: "peptide-university"
 affiliateId: "peptide-university"
 cookieDays: 30

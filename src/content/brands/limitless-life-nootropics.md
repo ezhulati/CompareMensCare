@@ -2,8 +2,8 @@
 title: "Limitless Life Nootropics"
 description: "Research peptides and nootropics supplier offering BPC-157, GLP-1 agonists (semaglutide), performance peptides, and cognitive enhancers for research purposes."
 categories: ["peptides", "weight-loss"]
-rating: 3.9
-reviewCount: 1650
+rating: 3.2
+reviewCount: 143
 affiliateLink: "limitless-life-nootropics"
 affiliateId: "limitless-life-nootropics"
 cookieDays: 30

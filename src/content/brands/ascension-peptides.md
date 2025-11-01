@@ -2,8 +2,8 @@
 title: "Ascension Peptides"
 description: "Research peptide supplier offering BPC-157, CJC/Ipamorelin, TB-500, and performance peptides with bulk pricing discounts."
 categories: ["peptides"]
-rating: 3.8
-reviewCount: 2400
+rating: 4.7
+reviewCount: 61
 affiliateLink: "ascension-peptides"
 affiliateId: "ascension-peptides"
 cookieDays: 30
