@@ -73,6 +73,12 @@ const brands = defineCollection({
     featured: z.boolean().default(false),
     publishDate: z.date(),
     lastReviewed: z.date(),
+    // Dual attribution model
+    writtenBy: z.string(), // Primary author
+    writtenByCredentials: z.string(), // Primary author credentials
+    medicalReviewer: z.string(), // Medical reviewer name
+    medicalReviewerCredentials: z.string(), // Medical reviewer credentials
+    // Legacy fields (deprecated but kept for backward compatibility)
     reviewerName: z.string().optional(),
     reviewerCredentials: z.string().optional(),
   }),
@@ -98,8 +104,13 @@ const guides = defineCollection({
     image: z.string().optional(),
     publishDate: z.date(),
     lastReviewed: z.date(),
-    author: z.string(),
-    medicalReviewer: z.string().optional(),
+    // Dual attribution model
+    writtenBy: z.string(), // Primary author
+    writtenByCredentials: z.string(), // Primary author credentials
+    medicalReviewer: z.string(), // Medical reviewer name
+    medicalReviewerCredentials: z.string(), // Medical reviewer credentials
+    // Legacy field (deprecated)
+    author: z.string().optional(),
     summary: z.string().optional(),
     summaryPoints: z.array(z.string()).optional(),
     researchHours: z.number().optional(),
@@ -140,7 +151,13 @@ const comparisons = defineCollection({
     ]),
     publishDate: z.date(),
     lastReviewed: z.date(),
-    author: z.string(),
+    // Dual attribution model
+    writtenBy: z.string(), // Primary author
+    writtenByCredentials: z.string(), // Primary author credentials
+    medicalReviewer: z.string(), // Medical reviewer name
+    medicalReviewerCredentials: z.string(), // Medical reviewer credentials
+    // Legacy field (deprecated)
+    author: z.string().optional(),
     verdict: z.object({
       winner: z.string().optional(),
       brand1BestFor: z.string(),
@@ -163,7 +180,13 @@ const blog = defineCollection({
     category: z.array(z.string()),
     tags: z.array(z.string()),
     publishDate: z.date(),
-    author: z.string(),
+    // Dual attribution model
+    writtenBy: z.string(), // Primary author
+    writtenByCredentials: z.string(), // Primary author credentials
+    medicalReviewer: z.string().optional(), // Medical reviewer name (optional for blog)
+    medicalReviewerCredentials: z.string().optional(), // Medical reviewer credentials
+    // Legacy field (deprecated)
+    author: z.string().optional(),
     summary: z.string().optional(),
     summaryPoints: z.array(z.string()).optional(),
     researchHours: z.number().optional(),

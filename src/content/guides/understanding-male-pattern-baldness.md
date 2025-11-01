@@ -4,8 +4,6 @@ description: "Complete guide to androgenetic alopecia (male pattern baldness) in
 category: "hair-health"
 publishDate: 2025-01-15
 lastReviewed: 2025-01-15
-author: "Medical Editorial Team"
-medicalReviewer: "Dr. Elena Petrova, MB BS - Dermatology"
 featured: true
 summary: "Male pattern baldness (androgenetic alopecia) affects 50% of men by age 50 and 80% by age 70, caused by genetic sensitivity to DHT hormone. The condition follows predictable Norwood Scale stages from receding hairline to crown thinning. Early treatment with finasteride (85-90% effective) or minoxidil (60% effective) prevents progression—starting treatment in early stages (Norwood 2-3) provides best results."
 summaryPoints:
@@ -52,6 +50,10 @@ citations:
   - title: "The Hamilton-Norwood Scale for Male Pattern Baldness"
     url: "https://www.americanhairloss.org/men_hair_loss/norwood_scale.html"
     source: "American Hair Loss Association"
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## What Is Male Pattern Baldness?

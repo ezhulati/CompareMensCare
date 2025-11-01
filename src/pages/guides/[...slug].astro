@@ -92,21 +92,24 @@ const articleSchema = {
 
       <!-- Meta Info -->
       <div class="flex flex-wrap items-center gap-4 text-sm text-slate-600 mb-8 pb-8 border-b border-slate-200">
-        <AuthorBio name={guide.data.author} showExtended={false} />
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+          <span class="font-medium">Written by {guide.data.writtenBy}, {guide.data.writtenByCredentials}</span>
+        </div>
         <div class="flex items-center gap-2">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
           <span>Updated {formatDate(guide.data.lastReviewed)}</span>
         </div>
-        {guide.data.medicalReviewer && (
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span class="text-emerald-600 font-medium">Medically Reviewed</span>
-          </div>
-        )}
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="text-emerald-600 font-medium">Medically reviewed by {guide.data.medicalReviewer}, {guide.data.medicalReviewerCredentials}</span>
+        </div>
       </div>
 
       <!-- Medical Reviewer -->
@@ -159,7 +162,22 @@ const articleSchema = {
       )}
 
       <!-- Author Bio (Extended) -->
-      <AuthorBio name={guide.data.author} showExtended={true} />
+      <div class="mt-12 p-6 bg-slate-50 rounded-lg border border-slate-200">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-gradient-to-br from-brand-accent to-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
+              {guide.data.writtenBy.split(' ').map(n => n[0]).join('')}
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-slate-900 mb-1">{guide.data.writtenBy}</h3>
+            <p class="text-sm text-slate-600 mb-2">{guide.data.writtenByCredentials}</p>
+            <p class="text-sm text-slate-700">
+              Medical review by {guide.data.medicalReviewer}, {guide.data.medicalReviewerCredentials}
+            </p>
+          </div>
+        </div>
+      </div>
 
       <!-- FAQ Section (AI-SEO Optimization with Schema Markup) -->
       {guide.data.faqs && guide.data.faqs.length > 0 && (

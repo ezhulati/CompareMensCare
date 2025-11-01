@@ -4,8 +4,11 @@ description: "Practical tips to reduce costs on men's health telehealth services
 category: ["general"]
 tags: ["cost savings", "telehealth", "mens health", "money saving"]
 publishDate: 2025-01-15T00:00:00.000Z
-author: "Editorial Team"
 featured: true
+writtenBy: "Henrik Johansson"
+writtenByCredentials: "MPH - Health Policy Analyst"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## 10 Ways to Save on Telehealth Prescriptions

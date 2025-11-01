@@ -4,7 +4,6 @@ description: "Starting minoxidil? What happens—the shedding phase that freaks 
 category: ["hair-health"]
 tags: ["minoxidil", "rogaine", "hair regrowth timeline", "results timeline", "hair loss treatment"]
 publishDate: 2025-02-13T00:00:00.000Z
-author: "Medical Editorial Team"
 featured: true
 summary: "Minoxidil takes 4-6 months for visible regrowth with peak results at 12-18 months. Initial shedding (weeks 2-8) affects half of users and means it's working. 60-66% of guys see regrowth with 5% minoxidil at 1 year. You have to use it forever—stopping reverses all gains within 3-6 months. Use 5% foam, twice daily, be patient through shedding."
 summaryPoints:
@@ -38,6 +37,10 @@ faqs:
     answer: "Yes, significantly. Clinical data: Hair regrowth: 5% produces 45% more regrowth than 2%. Success rate: 60-66% with 5% vs 35-45% with 2%. Onset: Slightly faster with 5% (3-4 months vs 4-6 months). Maintenance: Better with 5% (30% vs 25%). Side effects: Similar rates, though 5% may cause slightly more scalp irritation. Always use 5% minoxidil unless scalp sensitivity requires 2%. Cost difference ($5-10/month more) is worth significantly better results."
   - question: "Can I use minoxidil once daily instead of twice?"
     answer: "Twice daily is optimal, but once daily provides 60-70% of the benefit if compliance is an issue. Studies show: Twice daily (recommended): 60-66% regrowth rate, maximum results. Once daily: 40-50% regrowth rate, reduced effectiveness. Sporadic use: 20-30% effectiveness, poor results. Minoxidil half-life is short (22 hours), so twice-daily maintains therapeutic levels. If you must do once daily, apply at night (better absorption during sleep). Foam once-daily may work better than liquid due to better absorption. Consistency matters more than perfection—once daily every day beats twice daily sporadically."
+writtenBy: "Layla Reyes"
+writtenByCredentials: "BCPA, MPH - Patient Advocate & Telehealth Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 You're checking your hairline in every mirror. Bathroom mirror, car visor mirror, store windows. You take photos from the same angle every week. Your crown looks thinner. The lighting makes it obvious. You're either in denial or you're panicking. Or both.

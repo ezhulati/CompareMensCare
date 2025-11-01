@@ -4,7 +4,6 @@ description: "Exhausted, low libido, can't get hard, gaining weight—sounds lik
 category: ["testosterone"]
 tags: ["low testosterone symptoms", "low T signs", "testosterone deficiency", "hypogonadism symptoms"]
 publishDate: 2025-02-19T00:00:00.000Z
-author: "Medical Editorial Team"
 featured: true
 summary: "Low T symptoms: low libido (70-90%), erectile dysfunction (60-70%), crushing fatigue (80%), mood changes (60%). But 40% of guys with these symptoms have normal testosterone. Diagnosis requires testosterone <300 ng/dL on two morning tests. Symptoms overlap with depression, sleep apnea, thyroid disorders. TRT improves sexual symptoms in 70-80% of confirmed low T cases. Get tested—don't guess based on symptoms alone."
 summaryPoints:
@@ -38,6 +37,10 @@ faqs:
     answer: "No, response varies. Sexual symptoms (best): Libido improves 70-80%, erectile function 60-70%, spontaneous erections 70%. Energy/mood (moderate): Energy improves 60-70%, mood 50-60%, motivation 50%. Physical changes (slow): Muscle mass +30-40%, fat mass -10-20%, bone density +2-5% (1-2 years). Non-specific symptoms (poor): Cognitive function 30-40%, concentration 40%, sleep variable. Symptoms that DON'T improve if other cause: If depression primary, TRT alone insufficient. If sleep apnea, need CPAP. If obesity, need weight loss. Realistic: 60-80% overall symptom improvement in confirmed low T, not 100%."
   - question: "What's the difference between low testosterone and normal aging?"
     answer: "Overlap significant but distinguishable. Normal aging: Gradual decline (1-2% per year after 30), testosterone usually stays >350 ng/dL, symptoms mild-moderate, affect most men eventually, maintain sexual interest (frequency decreases but interest present). Low testosterone (pathologic): Testosterone <300 ng/dL, symptoms moderate-severe, affects minority (4-6% overall, 20% over 60), loss of sexual interest (not just frequency), earlier onset (<50), rapid symptom onset. Key differentiator: Testosterone level on blood test. Treatment: Normal aging doesn't require treatment unless testosterone <300 ng/dL + symptoms. 'Optimizing' normal testosterone (350-500 ng/dL) not evidence-based, carries risks."
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 You're exhausted. Like, all the time. Your sex drive is gone. You can barely get it up. You're gaining weight even though you're eating the same. You're irritable as hell. You Google these symptoms and every result says: **low testosterone**.

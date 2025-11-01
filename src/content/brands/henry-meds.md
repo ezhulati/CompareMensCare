@@ -72,6 +72,10 @@ publishDate: 2025-01-30T00:00:00.000Z
 lastReviewed: 2025-01-30T00:00:00.000Z
 reviewerName: "Dr. Xavier Beaumont"
 reviewerCredentials: "DO, Endocrinology & Metabolism"
+writtenBy: "Layla Reyes"
+writtenByCredentials: "BCPA, MPH - Patient Advocate & Telehealth Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## Overview

@@ -4,7 +4,6 @@ description: "Trying to choose between Cialis and Viagra? Here's the only differ
 category: ["sexual-health"]
 tags: ["cialis", "viagra", "tadalafil", "sildenafil", "ED medication comparison"]
 publishDate: 2025-02-07T00:00:00.000Z
-author: "Medical Editorial Team"
 featured: true
 summary: "Cialis and Viagra work exactly the same way with identical success rates (70-85%). The only real difference: Cialis lasts 36 hours vs Viagra's 4-6 hours. Choose Viagra ($4-10/dose) for planned sex with predictable timing. Choose Cialis ($6-15/dose) for weekend coverage or spontaneous sex. Start with Viagra—it's cheaper and works for most guys."
 summaryPoints:
@@ -38,6 +37,10 @@ faqs:
     answer: "Yes, generic tadalafil is identical to brand Cialis in effectiveness, safety, and quality. FDA requires generics to be bioequivalent (same active ingredient, absorption rate, blood levels). Generic tadalafil costs $6-15/dose vs brand Cialis $90-110/dose—save $80-105 per dose with zero quality sacrifice. Same applies to generic sildenafil vs Viagra. Always choose generic unless you enjoy burning money."
   - question: "Which has fewer side effects, Cialis or Viagra?"
     answer: "Side effects are nearly identical overall with slight differences: Both cause headache (10-16%), flushing (10-13%), nasal congestion (4-10%). Cialis causes more back pain/muscle aches (12% vs 4%). Viagra causes more visual changes like blue tint (3% vs 1%). Most side effects are mild, temporary, and decrease with continued use. Individual tolerance varies—if one bothers you, try the other."
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 You're standing at the pharmacy counter—or more likely, staring at a telehealth checkout page—trying to decide between Cialis and Viagra. You've read the descriptions three times. They sound exactly the same. You're about to pick based on which name you've heard more often.

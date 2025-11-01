@@ -4,8 +4,11 @@ description: "Comprehensive breakdown of real costs for men's telehealth service
 category: ["general", "sexual-health", "hair-health"]
 tags: ["cost comparison", "telehealth pricing", "mens health"]
 publishDate: 2025-01-15T00:00:00.000Z
-author: "Editorial Team"
 featured: true
+writtenBy: "Layla Reyes"
+writtenByCredentials: "BCPA, MPH - Patient Advocate & Telehealth Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## What Men's Telehealth Costs in 2025

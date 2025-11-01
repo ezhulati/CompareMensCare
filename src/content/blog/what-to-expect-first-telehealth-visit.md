@@ -4,8 +4,11 @@ description: "Complete guide to your first men's health telehealth appointment i
 category: ["general"]
 tags: ["telehealth", "first visit", "mens health"]
 publishDate: 2025-01-15T00:00:00.000Z
-author: "Editorial Team"
 featured: false
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## Before Your Appointment

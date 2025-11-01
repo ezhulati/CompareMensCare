@@ -4,8 +4,6 @@ description: "Comprehensive guide to finding and choosing the right online thera
 category: "mental-health"
 publishDate: 2025-01-15
 lastReviewed: 2025-01-15
-author: "Medical Editorial Team"
-medicalReviewer: "Dr. Lindsay Bjornson, PsyD - Licensed Clinical Psychologist"
 featured: true
 summary: "Choosing an online therapist requires verification of state licensure (LCSW, LMFT, LPC, PhD, PsyD), specialization match (anxiety, depression, trauma), and therapy approach (CBT 75-80% effective for anxiety/depression). Online therapy costs $60-100/week ($240-400/month) through platforms like BetterHelp and Talkspace. 75-80% of clients report improvement with online therapy, matching in-person effectiveness."
 summaryPoints:
@@ -55,6 +53,10 @@ citations:
   - title: "State Licensure Requirements for Telepsychology"
     url: "https://www.asppb.net/page/PSYPACT"
     source: "Association of State and Provincial Psychology Boards"
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## The Short Answer

@@ -4,8 +4,6 @@ description: "Comprehensive guide to GLP-1 agonist medications including Ozempic
 category: "weight-loss"
 publishDate: 2025-01-15
 lastReviewed: 2025-01-15
-author: "Medical Editorial Team"
-medicalReviewer: "Dr. Sophie Durand, MD - Endocrinology & Obesity Medicine"
 featured: true
 summary: "GLP-1 medications (semaglutide, tirzepatide) cause 15-20% body weight loss by mimicking natural fullness hormones, reducing appetite and slowing digestion. FDA-approved for BMI 30+ or BMI 27+ with conditions. Semaglutide (Wegovy/Ozempic) costs $99-350/month; tirzepatide (Mounjaro/Zepbound) costs $350-550/month for brand-name, $99-299/month for compounded versions through online clinics. Weekly injections required indefinitely—weight regains within 6-12 months if stopped."
 summaryPoints:
@@ -52,6 +50,10 @@ citations:
   - title: "Tirzepatide Once Weekly for the Treatment of Obesity"
     url: "https://www.nejm.org/doi/full/10.1056/NEJMoa2206038"
     source: "New England Journal of Medicine"
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## What Are GLP-1 Medications?

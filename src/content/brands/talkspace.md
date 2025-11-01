@@ -74,6 +74,10 @@ publishDate: 2025-01-15T00:00:00.000Z
 lastReviewed: 2025-01-15T00:00:00.000Z
 reviewerName: "Dr. Lindsay Bjornson"
 reviewerCredentials: "PsyD, Licensed Clinical Psychologist"
+writtenBy: "Layla Reyes"
+writtenByCredentials: "BCPA, MPH - Patient Advocate & Telehealth Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## Overview

@@ -4,8 +4,6 @@ description: "Step-by-step guide to testosterone testing including when to test,
 category: "testosterone"
 publishDate: 2025-01-15
 lastReviewed: 2025-01-15
-author: "Medical Editorial Team"
-medicalReviewer: "Dr. Hassan Al-Rashid, MD - Endocrinology & Hormone Specialist"
 featured: false
 summary: "Testosterone testing requires fasting morning blood draw (7-11 AM) when levels peak 20-30% higher than afternoon. Normal range: 300-1000 ng/dL total testosterone, with levels below 300 ng/dL indicating low T (hypogonadism). Two separate tests showing low levels plus symptoms are required for TRT diagnosis. Testing costs $29-150 through at-home kits (Hone Health, Vault Health) or $50-200 at doctor's office/labs."
 summaryPoints:
@@ -49,6 +47,10 @@ citations:
   - title: "Reference Ranges for Testosterone in Men"
     url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4399262/"
     source: "PubMed Central"
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## When to Get Your Testosterone Tested

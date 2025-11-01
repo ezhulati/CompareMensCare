@@ -4,8 +4,6 @@ description: "Comprehensive guide to TRT covering symptoms of low testosterone, 
 category: "testosterone"
 publishDate: 2025-01-15
 lastReviewed: 2025-01-15
-author: "Medical Editorial Team"
-medicalReviewer: "Dr. Hassan Al-Rashid, MD - Endocrinology & Hormone Specialist"
 featured: true
 summary: "Testosterone Replacement Therapy (TRT) restores testosterone to normal levels (300-1000 ng/dL) in men with clinically diagnosed low T (hypogonadism). Common symptoms include low libido, fatigue, decreased muscle mass, and erectile dysfunction. TRT options include injections ($99-200/month), gels ($150-300/month), and pellets ($300-500 per 3-4 months), all requiring physician monitoring with blood tests every 3-6 months."
 summaryPoints:
@@ -52,6 +50,10 @@ citations:
   - title: "Testosterone Replacement Therapy"
     url: "https://www.mayoclinic.org/healthy-lifestyle/sexual-health/in-depth/testosterone-therapy/art-20045728"
     source: "Mayo Clinic"
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## What Is Testosterone Replacement Therapy (TRT)?

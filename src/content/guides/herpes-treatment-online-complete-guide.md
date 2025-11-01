@@ -4,8 +4,6 @@ description: "Comprehensive guide to treating genital herpes and cold sores onli
 category: "herpes"
 publishDate: 2025-10-31T00:00:00.000Z
 lastReviewed: 2025-10-31T00:00:00.000Z
-author: "CompareMensCare Research Team"
-medicalReviewer: "Dr. Marcus Kowalski, MD"
 summary: "Genital herpes (HSV-2) affects 1 in 6 Americans aged 14-49, while oral herpes (HSV-1) affects 50-80% of adults. While there's no cure, antiviral medications can effectively manage outbreaks, reduce transmission risk by 50%, and suppress recurrent episodes by up to 80%."
 summaryPoints:
   - "Valacyclovir (generic Valtrex) is the most popular herpes medication, reducing outbreak frequency by 70-80% when taken daily"
@@ -52,6 +50,10 @@ citations:
     url: "https://www.lemonaidhealth.com/services/genital-herpes"
     source: "Lemonaid Health"
 featured: true
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 # Online Herpes Treatment: Complete Guide

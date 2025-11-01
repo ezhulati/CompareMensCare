@@ -4,8 +4,11 @@ description: "Complete guide to generic vs brand-name Viagra and Cialis includin
 category: ["sexual-health"]
 tags: ["ed treatment", "viagra", "cialis", "generic medications"]
 publishDate: 2025-01-15T00:00:00.000Z
-author: "Editorial Team"
 featured: false
+writtenBy: "Henrik Johansson"
+writtenByCredentials: "MPH - Health Policy Analyst"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## The Short Answer

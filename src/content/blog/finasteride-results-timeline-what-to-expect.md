@@ -4,7 +4,6 @@ description: "Complete month-by-month timeline of finasteride results including 
 category: ["hair-health"]
 tags: ["finasteride", "hair loss", "results timeline", "male pattern baldness", "treatment expectations"]
 publishDate: 2025-02-01T00:00:00.000Z
-author: "Medical Editorial Team"
 featured: true
 summary: "Finasteride takes 3-6 months for visible results and 12-24 months for peak effectiveness. Clinical studies show 83-90% of men maintain or improve hair after 2 years, with regrowth occurring in 66% at 1 year. Expect initial shedding (months 1-3), stabilization (months 3-6), visible regrowth (months 6-12), and continued improvement through year 2."
 summaryPoints:
@@ -38,6 +37,10 @@ faqs:
     answer: "Five proven strategies: 1) Add minoxidil (increases success to 94% vs 80% finasteride-only). 2) Take consistently every day (same time improves compliance). 3) Be patient for 12 months (early stopping = no results). 4) Start early (better results when caught early, more hair to save). 5) Consider microneedling (emerging evidence shows enhanced regrowth when combined). Also: manage stress, healthy diet, avoid smoking—support overall scalp health."
   - question: "Does finasteride work better for some men than others?"
     answer: "Yes, success rates vary by: Age (under 40: 85-95% success; over 40: 70-80% success—younger respond better). Hair loss stage (Norwood 2-4: best results; Norwood 5-7: slower/limited regrowth). Crown vs hairline (crown responds better 75% vs 50% hairline). Consistency (daily users: 90% success; sporadic users: 60% success). Genetics (some DHT-sensitive; others less responsive). Early intervention = best outcomes. Severe, long-standing loss = more limited but still beneficial stabilization."
+writtenBy: "Layla Reyes"
+writtenByCredentials: "BCPA, MPH - Patient Advocate & Telehealth Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## The Complete Finasteride Timeline

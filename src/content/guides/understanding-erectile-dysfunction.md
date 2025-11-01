@@ -4,8 +4,6 @@ description: "Comprehensive guide to erectile dysfunction (ED) covering causes, 
 category: "sexual-health"
 publishDate: 2025-01-15
 lastReviewed: 2025-01-15
-author: "Medical Editorial Team"
-medicalReviewer: "Dr. Marcus Kowalski, MD - Men's Health Specialist"
 featured: true
 summary: "Erectile dysfunction (ED) affects 30 million+ US men and is highly treatable with 70-90% success rates. ED increases with age (40% of men in their 40s, 70%+ in their 70s) but is caused by physical factors like cardiovascular disease, diabetes, low testosterone, or psychological issues like stress and anxiety."
 summaryPoints:
@@ -55,6 +53,10 @@ citations:
   - title: "Oral phosphodiesterase-5 inhibitors and hormonal treatments for erectile dysfunction: A systematic review and meta-analysis"
     url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3036019/"
     source: "PubMed Central"
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## What Is Erectile Dysfunction?

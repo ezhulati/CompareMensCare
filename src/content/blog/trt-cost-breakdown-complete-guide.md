@@ -4,7 +4,6 @@ description: "Comprehensive breakdown of testosterone replacement therapy costs 
 category: ["testosterone"]
 tags: ["TRT", "testosterone replacement therapy", "cost", "pricing", "insurance coverage", "telehealth"]
 publishDate: 2025-02-03T00:00:00.000Z
-author: "Medical Editorial Team"
 featured: true
 summary: "TRT costs range from $129-599/month depending on delivery method and provider. Telehealth platforms (Hone Health, Vault Health) charge $129-399/month with all services included, while traditional clinics cost $200-599/month plus separate blood work ($150-300), injections ($50-150), and monitoring fees. Insurance may cover 30-80% of traditional clinic costs but rarely covers telehealth TRT."
 summaryPoints:
@@ -38,6 +37,10 @@ faqs:
     answer: "Telehealth TRT monthly fees include: testosterone medication (shipped to door), quarterly blood work kits (at-home or lab), physician consultations (unlimited messaging + video), prescription management, dosage adjustments, side effect monitoring, and shipping. What's NOT included: initial consultation fee ($0-99 one-time), additional medications (estrogen blockers, HCG), fertility services, in-person procedures. Compare to traditional clinics that charge separately for each service—telehealth bundled pricing simplifies costs."
   - question: "Can you use GoodRx or coupons to reduce TRT costs?"
     answer: "Yes, GoodRx and coupons reduce medication costs at traditional pharmacies: Testosterone cypionate: $30-75/month (vs $150-300 without). Testosterone gel: $100-300/month (vs $400-600 without). However, GoodRx doesn't cover: physician consultation fees, blood work, monitoring. Best used when: you have provider/prescription but paying out-of-pocket for medication, insurance denies coverage, testosterone is off-label. Can't use with insurance simultaneously. Telehealth platforms already include medication in bundle—GoodRx won't help there."
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## Complete TRT Cost Breakdown

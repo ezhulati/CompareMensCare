@@ -4,8 +4,11 @@ description: "Detailed comparison of Hims and Ro covering pricing, services, eff
 category: ["sexual-health", "hair-health"]
 tags: ["hims", "ro", "comparison", "telehealth"]
 publishDate: 2025-01-15T00:00:00.000Z
-author: "Editorial Team"
 featured: true
+writtenBy: "Henrik Johansson"
+writtenByCredentials: "MPH - Health Policy Analyst"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## Him vs Ro: The Definitive 2025 Comparison

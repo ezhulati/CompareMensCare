@@ -4,8 +4,6 @@ description: "Comprehensive comparison of sildenafil (Viagra) and tadalafil (Cia
 category: "sexual-health"
 publishDate: 2025-01-15
 lastReviewed: 2025-01-15
-author: "Medical Editorial Team"
-medicalReviewer: "Dr. Marcus Kowalski, MD - Men's Health Specialist"
 featured: true
 summary: "Sildenafil (Viagra) and tadalafil (Cialis) are equally effective ED medications (70-85% success rates) with identical mechanisms, but differ primarily in duration: sildenafil lasts 4-6 hours while tadalafil lasts up to 36 hours. Both cost $2-10 per dose for generics, with sildenafil requiring more precise timing and tadalafil offering daily-use options."
 summaryPoints:
@@ -55,6 +53,10 @@ citations:
   - title: "Erectile Dysfunction Treatment"
     url: "https://www.mayoclinic.org/diseases-conditions/erectile-dysfunction/diagnosis-treatment/drc-20355782"
     source: "Mayo Clinic"
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## Quick Overview

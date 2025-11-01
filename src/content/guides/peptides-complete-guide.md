@@ -22,8 +22,11 @@ keyTakeaways:
   - "Most peptides are not covered by insurance; budget for $200-600+/month in ongoing costs"
 researchHours: 35
 sourcesReviewed: 62
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 author: "Compare Mens Care Research Team"
-medicalReviewer: "Dr. Imani Washington, PharmD, BCPS - Clinical Pharmacotherapy & Peptide Specialist"
 faqs:
   - question: "What are peptides and how do they work?"
     answer: "Peptides are short chains of amino acids (typically 2-50 amino acids) that act as signaling molecules in the body. They bind to specific receptors on cells to trigger biological responses like hormone release, tissue repair, immune function, or metabolism changes. Unlike whole proteins (which are longer chains), peptides are small enough to be synthesized in labs and administered therapeutically. Common examples include semaglutide (GLP-1 peptide for weight loss), sermorelin (growth hormone-releasing hormone), and insulin (the first peptide drug discovered in 1921)."

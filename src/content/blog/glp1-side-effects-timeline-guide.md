@@ -5,7 +5,6 @@ publishDate: 2025-01-24
 category: ["weight-loss"]
 tags: ["weight-loss", "medications", "side-effects"]
 featured: false
-author: "Medical Editorial Team"
 medicallyReviewed: true
 summary: "GLP-1 side effects follow a brutal-then-better pattern: Weeks 1-4 are easy (30% mild nausea), weeks 5-8 are the worst (50-60% moderate nausea, the hardest period), then symptoms improve 70-80% by months 3-4 as your body adapts. The first dose increase (0.25mg to 0.5mg) hits hardest—this is when most people quit. But 80-85% who push through feel mostly normal by month 4-6 while still losing weight. About 10-15% have persistent side effects requiring dose adjustment or discontinuation."
 summaryPoints:
@@ -44,6 +43,10 @@ faqs:
 
   - question: "When should you stop taking GLP-1 medications due to side effects?"
     answer: "Most side effects are manageable, but certain symptoms require stopping or dose reduction: Stop immediately and seek medical attention: Severe persistent abdominal pain (especially upper abdomen radiating to back)—possible pancreatitis. Persistent vomiting for 24+ hours (unable to keep down food/fluids)—dehydration risk, possible gastroparesis. Vision changes, severe eye pain—rare retinopathy. Signs of allergic reaction (rash, facial swelling, difficulty breathing). Severe hypoglycemia if using with diabetes medications. Consider dose reduction or stopping: Nausea/vomiting interfering with daily life after 8+ weeks at stable dose despite management strategies. Severe fatigue preventing normal activities. Unintentional malnutrition (can't eat enough protein—hair loss, weakness). Worsening depression or anxiety. Quality of life worse on medication than off. Weight loss too rapid (>3 lbs/week sustained—risks muscle loss and gallstones). Discontinuation stats: 5-10% discontinue due to intolerable side effects. 80-90% of discontinuations happen in first 3 months (mostly weeks 5-8). Most common reasons: severe persistent nausea, vomiting, abdominal pain. Important perspective: Side effects should improve by week 8-12 at stable dose. If they're not improving or getting worse, that's your body telling you something. Reducing dose is often better than stopping—many people tolerate 1mg well even if 2.4mg caused severe symptoms. You can lose weight effectively at lower doses. Don't suffer in silence or 'tough it out' past month 4-6 if symptoms aren't improving—work with provider to find tolerable approach or consider stopping."
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 You're reading about GLP-1 side effects at 2 AM because you're terrified. Your doctor prescribed Wegovy, you filled the prescription, but now you're Googling horror stories. "Vomiting for months." "Worst nausea of my life." "Had to quit after two weeks."

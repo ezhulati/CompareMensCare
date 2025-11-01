@@ -4,8 +4,6 @@ description: "Comprehensive guide to treating insomnia online with trazodone, me
 category: "sleep"
 publishDate: 2025-10-31T00:00:00.000Z
 lastReviewed: 2025-10-31T00:00:00.000Z
-author: "CompareMensCare Research Team"
-medicalReviewer: "Dr. Yuki Nakamura, MD"
 summary: "Chronic insomnia affects 10-30% of adults, with men often experiencing sleep difficulties related to stress, testosterone changes, and health conditions. Telehealth platforms now offer convenient access to prescription sleep medications like trazodone without in-person visits."
 summaryPoints:
   - "Trazodone is the most prescribed off-label sleep medication in the U.S., non-addictive alternative to benzodiazepines"
@@ -50,6 +48,10 @@ citations:
     url: "https://www.lemonaidhealth.com/services/insomnia"
     source: "Lemonaid Health"
 featured: true
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 # Online Insomnia Treatment: Complete Guide

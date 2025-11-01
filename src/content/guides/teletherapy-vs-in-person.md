@@ -4,8 +4,6 @@ description: "Comprehensive comparison of online therapy and traditional in-pers
 category: "mental-health"
 publishDate: 2025-01-15
 lastReviewed: 2025-01-15
-author: "Medical Editorial Team"
-medicalReviewer: "Dr. Lindsay Bjornson, PsyD - Licensed Clinical Psychologist"
 featured: false
 citations:
   - title: "Effectiveness of Telepsychology Meta-Analysis"
@@ -17,6 +15,10 @@ citations:
   - title: "Patient Satisfaction with Telemedicine"
     url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7452962/"
     source: "Journal of Telemedicine and Telecare, 2021"
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## The Short Answer

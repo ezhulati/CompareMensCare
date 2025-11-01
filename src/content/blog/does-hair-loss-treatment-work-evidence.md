@@ -4,7 +4,6 @@ description: "Skeptical about hair loss treatments? What the clinical trials act
 category: ["hair-health"]
 tags: ["hair loss treatment effectiveness", "clinical evidence", "do hair loss treatments work", "scientific proof"]
 publishDate: 2025-02-17T00:00:00.000Z
-author: "Medical Editorial Team"
 featured: true
 summary: "Yes, hair loss treatments work with proven clinical evidence. Finasteride: 83-90% maintain or improve (10+ RCTs, 4,000+ patients). Minoxidil: 60-66% regrowth (8+ RCTs, 2,500+ patients). Combination: 80-85% success. PRP and laser have weaker evidence (30-40% improvement, small studies). Most supplements don't work except modest effects from saw palmetto (11-27%). Start early for best results—Norwood 2-4 shows 75-85% success vs 50-60% at advanced stages."
 summaryPoints:
@@ -38,6 +37,10 @@ faqs:
     answer: "10-30% of men are non-responders due to: Genetic resistance (genetic variations in androgen receptors, 5α-reductase variants make DHT blocking less effective). Advanced hair loss (Norwood 6-7 with years of miniaturization—dead follicles can't regenerate). Inadequate dosing/compliance (missing applications, insufficient dose, inconsistent use reduces effectiveness 30-70%). Wrong diagnosis (alopecia areata, telogen effluvium, thyroid—don't respond to finasteride/minoxidil for male pattern baldness). Unrealistic expectations (expecting full regrowth when treatment maintains/improves, not restores to age 18). Age factors (men >50 have lower response rates 50-60% vs 80-90% in 30s)."
   - question: "How long does it take for hair loss treatment to work?"
     answer: "Evidence-based timelines from trials: Finasteride: First signs at 3-6 months (hair loss slows), visible regrowth at 6-12 months, peak at 12-24 months (studies measure at 6, 12, 24, 60 months). Minoxidil: First signs at 2-4 months (vellus hairs), visible regrowth at 4-8 months, peak at 12-18 months (trials typically 16-48 weeks). Combination: Faster results at 3-6 months, significant improvement at 6-12 months, peak at 12-18 months. Clinical trials require 12-24 months to assess full effectiveness—shorter durations miss peak results. Stopping before 12 months = inconclusive trial (most quit at 3-6 months, missing results)."
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 You're scrolling through before-and-after photos on Reddit. Some look amazing. Some look fake. Some look like the lighting changed, not the hair. You're reading success stories and horror stories. You're trying to figure out: **Does this shit actually work, or is it all marketing and placebo?**

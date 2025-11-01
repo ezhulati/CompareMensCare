@@ -5,7 +5,6 @@ publishDate: 2025-01-22
 category: ["weight-loss"]
 tags: ["weight-loss", "medications", "comparison", "ozempic", "wegovy", "semaglutide"]
 featured: false
-author: "Medical Research Team"
 medicallyReviewed: true
 summary: "Ozempic and Wegovy contain identical semaglutide but differ in dose and FDA approval. Wegovy (2.4mg, FDA-approved for weight loss) produces 15-17% weight loss vs Ozempic (1mg typical dose, approved for diabetes) at 10-12% loss. Wegovy costs $1,300-1,600/month vs Ozempic $900-1,200/month before insurance. Insurance covers Wegovy for weight loss (45-60% of plans) but rarely covers Ozempic off-label for weight loss without diabetes."
 summaryPoints:
@@ -38,6 +37,10 @@ faqs:
     answer: "Nearly identical since both are semaglutide, but Wegovy's higher dose causes slightly more GI symptoms. Common (30-50%): Nausea (most common, especially first 8-12 weeks), vomiting, diarrhea, constipation, abdominal pain, reduced appetite (intended). Moderate (5-15%): Gallstones (risk increases with rapid weight loss), acid reflux, fatigue, injection site reactions. Rare but serious (<1-5%): Pancreatitis (severe abdominal pain), gastroparesis (stomach paralysis causing severe nausea/vomiting), hypoglycemia if combined with insulin/sulfonylureas, thyroid C-cell tumors (theoretical risk from rodent studies, not proven in humans). Most GI side effects improve significantly after 8-12 weeks. Side effect management: titrate slowly, eat smaller meals, avoid fatty foods, stay hydrated, anti-nausea meds if needed. 5-10% discontinue due to intolerable side effects, usually first 3 months."
   - question: "Is it better to get Ozempic or Wegovy through telehealth?"
     answer: "Telehealth offers advantages: Cost transparency: Flat monthly fees ($200-500) for compounded semaglutide, or insurance navigation for brand-name. Accessibility: No in-person visits, useful in areas with limited weight loss specialists. Prescribing flexibility: Telehealth providers prescribe Ozempic off-label for weight loss if you meet BMI criteria but don't have diabetes, or Wegovy if you meet FDA weight loss criteria (BMI ≥27 with comorbidity or ≥30). Supply solutions: During shortages, may offer compounded semaglutide alternatives. Considerations: Compounded semaglutide is NOT FDA-approved (but legal, same active ingredient), quality varies by compounding pharmacy, less clinical oversight than established practices, brand-name costs through telehealth still $900-1,600/month without insurance. Best providers offer comprehensive programs: nutritionist support, medical monitoring, side effect management, not just prescription dispensing."
+writtenBy: "Henrik Johansson"
+writtenByCredentials: "MPH - Health Policy Analyst"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 You're trying to lose weight. You've heard about Ozempic. You've heard about Wegovy. You know they work. But you're confused: **Aren't they the same thing? Why are there two? Which one should you get? Why is one $400 more per month?**

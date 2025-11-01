@@ -69,6 +69,10 @@ publishDate: 2025-01-31T00:00:00.000Z
 lastReviewed: 2025-01-31T00:00:00.000Z
 reviewerName: "Medical Editorial Team"
 reviewerCredentials: "Hormone & peptide therapy review"
+writtenBy: "Layla Reyes"
+writtenByCredentials: "BCPA, MPH - Patient Advocate & Telehealth Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## Overview

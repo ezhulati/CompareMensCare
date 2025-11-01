@@ -4,7 +4,6 @@ description: "Comprehensive guide to GLP-1 medication insurance coverage includi
 category: ["weight-loss"]
 tags: ["GLP-1", "insurance coverage", "Ozempic", "Wegovy", "Mounjaro", "Zepbound", "weight loss medication"]
 publishDate: 2025-02-05T00:00:00.000Z
-author: "Medical Editorial Team"
 featured: true
 summary: "GLP-1 insurance coverage varies dramatically: diabetes GLP-1s (Ozempic, Mounjaro) are covered by 80-90% of plans with $25-100 copays, while weight loss GLP-1s (Wegovy, Zepbound) are covered by only 25-40% of commercial plans and zero Medicare plans. 6 states now mandate coverage (Connecticut, Delaware, Maryland, New Jersey, Vermont, West Virginia) with more pending. Without coverage, costs are $900-1,400/month out-of-pocket."
 summaryPoints:
@@ -38,6 +37,10 @@ faqs:
     answer: "Ozempic is FDA-approved for type 2 diabetes (covered indication), while Wegovy is FDA-approved solely for weight loss (often excluded). Most plans have 'obesity medication' exclusions in contracts prohibiting coverage for any weight loss drugs regardless of medical necessity. This is cost containment strategy—insurers estimate covering GLP-1s for 40% of Americans with obesity would cost $13,000-27,000 per patient annually. Some plans cover Wegovy in states with mandates or if employer opts in, but most have blanket exclusions until employer renegotiates contract."
   - question: "Can my doctor prescribe Ozempic off-label for weight loss if I have prediabetes?"
     answer: "Yes, doctors can prescribe any medication off-label if medically justified. Ozempic prescribed for diabetes/prediabetes may be covered (80-90% of plans cover diabetes indication) even if primary goal is weight loss. However, insurance may deny if: A1C is too low to justify diabetes treatment, no documented diabetes/prediabetes diagnosis, obvious weight-loss-only indication. Strategy: If you have prediabetes (A1C 5.7-6.4%), hypertension, or other metabolic condition, provider can prescribe Ozempic/Mounjaro for those indications and weight loss becomes secondary benefit. Success rate: 60-70% approval for borderline cases."
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## GLP-1 Insurance Coverage Overview

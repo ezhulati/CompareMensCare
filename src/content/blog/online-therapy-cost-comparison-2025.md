@@ -5,7 +5,6 @@ publishDate: 2025-01-25T00:00:00.000Z
 category: ["mental-health"]
 tags: ["mental-health", "cost", "comparison"]
 featured: false
-author: "Medical Editorial Team"
 medicallyReviewed: true
 summary: "Online therapy costs $260-400/month ($60-100/week) for platforms like BetterHelp and Talkspace without insurance, or $60-200/month ($15-50 copay per session) with insurance. That's 40-60% cheaper than traditional therapy ($400-800/month). If cost is a real barrier, legitimate options exist at $0-80/session through community centers, Open Path Collective, EAP programs, and training clinics. The question isn't 'can you afford therapy'—it's 'which affordable option fits your situation.'"
 summaryPoints:
@@ -44,6 +43,10 @@ faqs:
 
   - question: "Is paying for therapy worth it if I'm not sure it'll help?"
     answer: "The cost question is usually a proxy for the commitment question. You're not really asking if therapy costs $300/month. You're asking 'Am I worth $300/month?' or 'What if I spend $300 and it doesn't work?' Here's the reality: Therapy works for 75-80% of people who consistently attend for 3+ months. You won't know if you're in the 75% or the 25% until you try. Cost-effectiveness compared to NOT getting help: Therapy: $300/month = $3,600/year. Staying miserable: Lost productivity, strained relationships, health impacts from stress, years of feeling stuck. Most people who finally start therapy say 'I wish I'd done this years ago.' Cost-benefit timing: Month 1-2: Feels expensive for limited progress (building trust with therapist). Month 3-4: Usually when real progress starts ('oh, this is actually helping'). Month 6+: Most people see significant improvement and don't question the cost anymore. What if it doesn't work? Try different therapist (most people need 2-3 tries to find good fit). Try different platform or approach. At minimum, you'll know therapy isn't for you right now—worth knowing instead of wondering. The guilt about spending money on mental health: If you had diabetes, you wouldn't feel guilty about paying for insulin. If you had a broken arm, you wouldn't debate whether setting the bone is 'worth it.' Mental health is health. You're not being self-indulgent. You're addressing a medical issue. Start-small approach if cost anxiety is paralyzing: Use your EAP's 5-8 free sessions first. If helpful, figure out how to continue (insurance, subscription, sliding scale). If not helpful, you risked nothing. Try community center sliding scale for 4-6 sessions ($20-80/session = $80-480 total for 6 sessions). Cheaper than one month of BetterHelp but enough to know if therapy helps you. The cost isn't the real question. The real question is 'Do I deserve to feel better?' And the answer is yes."
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 You've Googled "online therapy cost" five times this month. You've read three blog posts. You've clicked through to BetterHelp twice but closed the checkout page both times.

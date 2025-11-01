@@ -4,7 +4,6 @@ description: "Finasteride blocks DHT (the cause), minoxidil stimulates growth (t
 category: ["hair-health"]
 tags: ["finasteride", "minoxidil", "hair loss comparison", "rogaine", "propecia"]
 publishDate: 2025-02-15T00:00:00.000Z
-author: "Medical Editorial Team"
 featured: true
 summary: "Finasteride stops hair loss by blocking DHT (90% maintain or improve) while minoxidil stimulates growth without stopping the cause (66% regrowth). Finasteride is once-daily pill ($15-50/month, 2-4% sexual side effects), minoxidil is twice-daily topical ($15-30/month, scalp irritation). Using both together works for 80-85% vs 60-70% with either alone. Start with finasteride for prevention, add minoxidil for regrowth."
 summaryPoints:
@@ -38,6 +37,10 @@ faqs:
     answer: "Both are safe for most men with different risk profiles. Finasteride: FDA-approved since 1997, 25+ years safety data, 2-4% sexual side effects (reversible), very rare persistent effects. Safe long-term (10-20+ years studied). Minoxidil: FDA-approved since 1988, 35+ years safety data, local side effects only (scalp irritation), minimal systemic absorption. Safe long-term. Neither causes cancer or serious disease. Minoxidil is technically 'safer' (topical only, no systemic effects) but both have excellent safety profiles. Choose based on convenience and goals, not safety."
   - question: "Can I start with minoxidil and add finasteride later?"
     answer: "Yes, this is a common strategy. Months 0-6: Start minoxidil alone (assess tolerance, see initial results). Months 6-12: Add finasteride if minoxidil insufficient or want better prevention. Rationale: test tolerance separately (identify which causes side effects if any), minoxidil alone may be sufficient for mild loss, adding finasteride boosts results if needed. However, many dermatologists recommend starting both together immediately for moderate-severe loss since combination is gold standard. Starting both together: faster results, better long-term outcomes, one adjustment period. Your choice based on loss severity and risk tolerance."
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 You've been researching hair loss treatments for weeks. You've read that finasteride stops hair loss. You've read that minoxidil regrows hair. You've read that you should use both. But you're stuck in decision paralysis: **Which one do I actually need? What if finasteride kills my sex drive? Is minoxidil enough? Do I really have to use both forever?**

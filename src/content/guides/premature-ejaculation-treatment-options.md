@@ -4,8 +4,6 @@ description: "Comprehensive guide to premature ejaculation treatments including 
 category: "sexual-health"
 publishDate: 2025-10-31T00:00:00.000Z
 lastReviewed: 2025-10-31T00:00:00.000Z
-author: "CompareMensCare Research Team"
-medicalReviewer: "Dr. Marcus Kowalski, MD"
 summary: "Premature ejaculation affects 30-40% of men at some point, but effective treatments exist. This guide covers all evidence-based treatment options including SSRIs, topical treatments, behavioral techniques, and online telehealth solutions."
 summaryPoints:
   - "SSRIs (sertraline, paroxetine) are the most effective medications, increasing ejaculatory latency by 3-8x"
@@ -50,6 +48,10 @@ citations:
     url: "https://www.redboxrx.com/blog/sertraline-zoloft-vs-paroxetine-paxil-for-premature-ejaculation"
     source: "RedBox Rx"
 featured: true
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 # Premature Ejaculation Treatment Options: Complete Guide

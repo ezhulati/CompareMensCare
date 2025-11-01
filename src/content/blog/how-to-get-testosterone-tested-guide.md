@@ -4,7 +4,6 @@ description: "Wondering if you have low T but don't know how to get tested? Home
 category: ["testosterone"]
 tags: ["testosterone test", "testosterone levels", "home testosterone test", "lab test"]
 publishDate: 2025-02-21T00:00:00.000Z
-author: "Medical Editorial Team"
 featured: true
 summary: "Testosterone testing requires two morning tests (7-11 AM, fasting) measuring total testosterone, free testosterone, and SHBG. Home kits cost $49-99 (finger prick, 3-5 days) vs labs $29-150 without insurance ($0-50 with insurance). Both use same CLIA-certified labs with equivalent accuracy. Home tests offer privacy and convenience, labs offer comprehensive panels and immediate doctor review. Just pick one and get tested—stop wondering."
 summaryPoints:
@@ -38,6 +37,10 @@ faqs:
     answer: "Total testosterone thresholds: <200 ng/dL = severely low (treat), 200-300 ng/dL = low (treatment eligible), 300-400 ng/dL = low-normal (gray zone, treat if symptomatic), 400-700 ng/dL = normal, 700-1000 ng/dL = high-normal, >1000 ng/dL = abnormally high (investigate). Free testosterone: <50 pg/mL = low, 50-100 pg/mL = borderline, >100 pg/mL = normal. Discordant results (20-30%): High SHBG causes normal total but low free (symptomatic, needs treatment). Treatment decisions: Two tests <300 ng/dL + symptoms = TRT eligible. One test 250-350 ng/dL + severe symptoms = discuss treatment."
   - question: "Do I need a doctor to test testosterone?"
     answer: "No, but recommended for interpretation and treatment. Without doctor: at-home test kits (no prescription), direct-to-consumer labs (order online), results provided but self-interpret. With doctor: primary care or urologist orders test, insurance may cover, proper interpretation and treatment guidance, necessary for TRT prescription. Hybrid: at-home kit with telemedicine, results reviewed by licensed provider (included), can prescribe TRT if qualified, costs $99-199 total. Best approach: use home kit or direct lab to confirm suspicion, then see doctor for treatment (most insurance requires doctor visit anyway for TRT)."
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 You're pretty sure you have low testosterone. You've had the symptoms for months. But you're stuck on: **How do I actually get tested? Do I need a doctor? How much does it cost? What if it's awkward?**

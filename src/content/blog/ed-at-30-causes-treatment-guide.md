@@ -4,7 +4,6 @@ description: "Had ED at 30 and freaking out? You're not alone—8-11% of guys yo
 category: ["sexual-health"]
 tags: ["ED at 30", "young men ED", "erectile dysfunction causes", "30s sexual health"]
 publishDate: 2025-02-11T00:00:00.000Z
-author: "Medical Editorial Team"
 featured: true
 summary: "ED affects 8-11% of men in their 30s. Most causes are psychological (performance anxiety, stress) or lifestyle-related (weight, porn use, alcohol)—not serious disease. Treatment works for 85-95% of guys this age using medications, therapy, or lifestyle changes. It's almost always reversible, rarely permanent, and excellent prognosis compared to older men."
 summaryPoints:
@@ -38,6 +37,10 @@ faqs:
     answer: "Yes. Porn-induced ED (PIED) affects 14-35% of guys under 40 with ED. Mechanism: frequent porn (especially intense content) desensitizes dopamine response, requiring increasing stimulation. Real partners become less arousing by comparison. Symptoms: normal erections with porn, weak/no erection with partner, delayed ejaculation, loss of interest in real sex. Treatment: 90-day porn/masturbation abstinence ('reboot'). Timeline: improvement starts weeks 3-4, significant progress weeks 6-8, full recovery 3-6 months. Success rate: 70-90% recover with abstinence. Use sildenafil short-term for confidence during recovery."
   - question: "When should I see a doctor for ED at 30?"
     answer: "See a doctor if: 1) ED persists >3 months consistently, 2) Can't achieve erection in any situation (including masturbation), 3) Sudden onset with every partner, 4) Other symptoms present (chest pain, fatigue, low libido, depression), 5) Morning erections absent (indicates physical vs psychological), 6) Cardiovascular risk factors (obesity, smoking, family history), 7) Taking medications that may cause ED, 8) It's causing significant distress or relationship problems. Don't wait 1-2 years like most guys do. ED can be an early cardiovascular warning, and early treatment prevents anxiety from worsening it. Evaluation is simple: questionnaire, physical exam, blood tests. Treatment is highly effective at this age."
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 You just couldn't get it up. You're 30 years old. You've never had this problem before. You're lying there in the dark next to your partner, and your brain is screaming: *What the fuck is wrong with me? I'm too young for this. Is this permanent? Is she thinking about leaving?*

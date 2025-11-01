@@ -5,7 +5,6 @@ publishDate: 2025-01-21
 category: ["testosterone"]
 tags: ["testosterone", "TRT", "side effects", "testosterone replacement therapy"]
 featured: false
-author: "Medical Research Team"
 medicallyReviewed: true
 summary: "TRT commonly causes acne (25-30%), mood changes (15-25%), fluid retention (10-17%), testicular shrinkage (65-70%), and elevated hematocrit (10-20%). Serious side effects like cardiovascular events occur in 1-5%. Most side effects are dose-dependent and manageable through dose adjustment, injection frequency changes, or symptom-specific treatments. Fertility suppression occurs in 65-90% but is reversible 6-18 months after stopping."
 summaryPoints:
@@ -38,6 +37,10 @@ faqs:
     answer: "Long-term TRT (5+ years) carries several risks requiring ongoing monitoring: Cardiovascular effects—sustained elevation of hematocrit and potential atherosclerosis progression, especially in men over 65 (10-15% increased risk). Fertility—prolonged suppression may lead to permanent impairment in 5-10% of long-term users, particularly after 2+ years without hCG. Prostate enlargement—BPH symptoms gradually worsen in 15-25% of long-term users, potentially requiring medication or surgery. Testicular atrophy—permanent in some cases after years without hCG support. Sleep apnea—TRT worsens or causes sleep apnea in 10-20% of users through increased neck circumference and muscle mass. Dependency—natural testosterone production may not fully recover after years of TRT, making discontinuation difficult. Benefits typically outweigh risks when properly monitored with labs every 3-6 months and symptom management."
   - question: "Can TRT cause mood swings and aggression?"
     answer: "TRT can cause mood changes in 15-25% of users with varied effects. Common mood-related side effects: irritability and short temper (10-15%), especially when testosterone levels fluctuate, anxiety (8-12%), particularly in first 1-3 months, mood swings corresponding to injection cycles (20-30% with weekly injections), and improved mood and reduced depression (40-60%, often the intended benefit). The 'roid rage' stereotype is largely exaggerated—studies show significant aggression occurs mainly with supraphysiologic doses (500+ mg/week), not therapeutic TRT doses (100-200 mg/week). Mood stability improves significantly with more frequent injections (every 3.5 days) or daily gel application maintaining steady testosterone levels. If mood swings persist, checking estradiol is important—both high (>50 pg/mL) and low (<20 pg/mL) estrogen can cause mood instability."
+writtenBy: "Layla Reyes"
+writtenByCredentials: "BCPA, MPH - Patient Advocate & Telehealth Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 You're about to start TRT. Your doctor explained the benefits. But you're scrolling through Reddit at 2 AM reading horror stories: "TRT ruined my life." "Permanent side effects." "My balls shrunk." "Can't have kids now."

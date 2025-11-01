@@ -4,8 +4,6 @@ description: "Comprehensive comparison of finasteride and minoxidil for male pat
 category: "hair-health"
 publishDate: 2025-01-15
 lastReviewed: 2025-01-15
-author: "Medical Editorial Team"
-medicalReviewer: "Dr. Elena Petrova, MB BS - Dermatology"
 featured: true
 summary: "Finasteride (oral pill, prescription) and minoxidil (topical solution, OTC) are the only two FDA-approved hair loss treatments with proven effectiveness. Finasteride stops hair loss in 85-90% of men and promotes regrowth in 65%, while minoxidil causes improvement in 60% with significant regrowth in 30-40%. Combination therapy (both together) provides the best results with 94% effectiveness."
 summaryPoints:
@@ -52,6 +50,10 @@ citations:
   - title: "Male Androgenetic Alopecia: Treatment Guidelines"
     url: "https://www.jaad.org/article/S0190-9622(08)00177-9/fulltext"
     source: "Journal of the American Academy of Dermatology"
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## Quick Overview

@@ -4,7 +4,6 @@ description: "Complete guide to choosing ED medication including effectiveness r
 category: ["sexual-health"]
 tags: ["ED treatment", "sildenafil", "tadalafil", "viagra", "cialis", "medication comparison"]
 publishDate: 2025-01-30T00:00:00.000Z
-author: "Medical Editorial Team"
 featured: true
 summary: "Four FDA-approved PDE5 inhibitors treat ED with 70-85% effectiveness rates: sildenafil (Viagra) at $4-80/dose works in 30-60 minutes for 4-6 hours; tadalafil (Cialis) at $6-100/dose works in 30-45 minutes for up to 36 hours; vardenafil (Levitra) and avanafil (Stendra) offer similar profiles. Choice depends on timing needs, side effects, cost, and whether you want on-demand vs daily dosing."
 summaryPoints:
@@ -38,6 +37,10 @@ faqs:
     answer: "Side effect rates are similar across all PDE5 inhibitors: headache (10-16%), flushing (10-13%), nasal congestion (4-10%), indigestion (3-9%). However, individual tolerance varies—some men tolerate tadalafil better than sildenafil or vice versa. Visual changes (blue tint) occur slightly more with sildenafil; back pain slightly more with tadalafil. Most side effects are mild, temporary, and decrease with regular use. Try different options if one causes bothersome effects."
   - question: "How do I know which ED medication dose to try first?"
     answer: "Start with standard starting doses: sildenafil 50mg, tadalafil 10mg, vardenafil 10mg, or avanafil 100mg. If effective but causes side effects, lower the dose. If ineffective, try higher dose (sildenafil 100mg, tadalafil 20mg) before switching medications. About 70% respond to starting doses; 85%+ respond after dose adjustment. Providers typically start middle dose and adjust based on your response. Don't start with maximum dose—more isn't always better."
+writtenBy: "Henrik Johansson"
+writtenByCredentials: "MPH - Health Policy Analyst"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 ## The Four FDA-Approved ED Medications

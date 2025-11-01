@@ -4,7 +4,6 @@ description: "Sildenafil takes 60 minutes to hit peak effectiveness. But if you'
 category: ["sexual-health"]
 tags: ["sildenafil", "viagra", "onset time", "how long to work", "ED medication timing"]
 publishDate: 2025-02-09T00:00:00.000Z
-author: "Medical Editorial Team"
 featured: true
 summary: "Sildenafil takes 60 minutes to reach peak effectiveness. The biggest timing saboteurs: eating a heavy meal (adds 30-60 minutes), watching the clock anxiously (constricts blood vessels), and expecting an automatic erection without arousal. Take it 60-90 minutes before sex on an empty stomach, then forget about it and focus on foreplay."
 summaryPoints:
@@ -38,6 +37,10 @@ faqs:
     answer: "Wait another 30 minutes—you probably ate and forgot, or your body is just slow. Meanwhile: 1) Increase sexual stimulation (medication needs arousal to work), 2) Reduce anxiety (stress constricts blood vessels), 3) Stay hydrated. Don't take a second dose the same day—that's dangerous. If it doesn't work after 90-120 minutes, wait 24 hours and try again: empty stomach, 100mg dose instead of 50mg, more foreplay, less clock-watching. Give it 4-6 attempts total before concluding it doesn't work."
   - question: "Does sildenafil work faster the more you use it?"
     answer: "The medication doesn't absorb faster, but you perceive it faster: less performance anxiety (confidence improves), you learn optimal timing (empty stomach habits), you recognize subtle effects earlier (familiarity). Most guys report feeling like it 'works faster' by attempt #3-4, but actual onset time is unchanged. The improvement is psychological—reduced anxiety, better technique, realistic expectations."
+writtenBy: "Kai Nakano"
+writtenByCredentials: "Health Journalist & Men's Health Specialist"
+medicalReviewer: "Dr. Amara Okonkwo"
+medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
 
 You took the pill 30 minutes ago. You're sitting there wondering if it's working yet. You check the time. 32 minutes. You're analyzing every sensation. Is that it? Or just wishful thinking? You check again. 35 minutes. Your partner is getting ready in the bathroom and you're having a quiet panic attack wondering if this thing is going to kick in or if you just wasted $10.
