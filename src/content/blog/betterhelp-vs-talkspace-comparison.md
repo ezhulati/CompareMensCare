@@ -1,5 +1,5 @@
 ---
-title: "BetterHelp vs Talkspace: They're 95% the Same (Just Pick One)"
+title: "BetterHelp vs Talkspace: Which Is Better? 2025"
 description: "You've been comparing BetterHelp and Talkspace for a week. They're nearly identical ($260-400/month, same therapists). Have insurance? Talkspace. Don't have insurance? BetterHelp. The therapist matters 100x more than the platform."
 publishDate: 2025-01-26
 category: ["mental-health"]

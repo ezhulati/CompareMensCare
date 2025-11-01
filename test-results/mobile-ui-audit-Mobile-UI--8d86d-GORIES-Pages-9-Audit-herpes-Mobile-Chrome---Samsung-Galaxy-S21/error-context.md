@@ -1,0 +1,576 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link "CompareMensCare" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e8]
+          - generic [ref=e12]: CompareMensCare
+        - button "Toggle navigation menu" [ref=e13] [cursor=pointer]:
+          - img [ref=e14]
+  - main [ref=e16]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - link "Home" [ref=e21] [cursor=pointer]:
+          - /url: /
+        - img [ref=e22]
+        - generic [ref=e24]: Herpes Treatment
+      - generic [ref=e25]:
+        - img [ref=e26]
+        - text: Complete privacy, judgment-free care
+      - heading "Take Control of Your Herpes" [level=1] [ref=e28]
+      - paragraph [ref=e29]: Stop stressing about outbreaks. Stop avoiding relationships. Real herpes treatment from real doctors — valacyclovir delivered discreetly. Compare services offering episodic and suppressive therapy with total confidentiality.
+      - generic [ref=e30]:
+        - link "Compare Services" [ref=e31] [cursor=pointer]:
+          - /url: "#comparison"
+        - link "Treatment Guide" [ref=e32] [cursor=pointer]:
+          - /url: /guides/herpes-treatment-online-complete-guide
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - heading "Quick Picks - Herpes Treatment" [level=2] [ref=e35]
+        - paragraph [ref=e36]: Jump straight to the best option for your top priority
+      - generic [ref=e37]:
+        - link "Tightest Budget? Lemonaid Health $25/month suppressive therapy" [ref=e38] [cursor=pointer]:
+          - /url: /lemonaid-health
+          - generic [ref=e39]:
+            - img [ref=e41]
+            - img [ref=e44]
+          - generic [ref=e46]: Tightest Budget?
+          - generic [ref=e47]: Lemonaid Health
+          - generic [ref=e48]: $25/month suppressive therapy
+        - link "Maximum Privacy? Nurx Ultra-discreet packaging & billing" [ref=e49] [cursor=pointer]:
+          - /url: /nurx
+          - generic [ref=e50]:
+            - img [ref=e52]
+            - img [ref=e54]
+          - generic [ref=e56]: Maximum Privacy?
+          - generic [ref=e57]: Nurx
+          - generic [ref=e58]: Ultra-discreet packaging & billing
+        - link "Fastest Results? Ro 24hr approval, 2-3 day delivery" [ref=e59] [cursor=pointer]:
+          - /url: /ro
+          - generic [ref=e60]:
+            - img [ref=e62]
+            - img [ref=e64]
+          - generic [ref=e66]: Fastest Results?
+          - generic [ref=e67]: Ro
+          - generic [ref=e68]: 24hr approval, 2-3 day delivery
+        - link "Best Medical Care? Nurx Specialized care, education, support" [ref=e69] [cursor=pointer]:
+          - /url: /nurx
+          - generic [ref=e70]:
+            - img [ref=e72]
+            - img [ref=e75]
+          - generic [ref=e77]: Best Medical Care?
+          - generic [ref=e78]: Nurx
+          - generic [ref=e79]: Specialized care, education, support
+      - paragraph [ref=e81]:
+        - text: Not sure which matters most?
+        - link "View full comparison below" [ref=e82] [cursor=pointer]:
+          - /url: "#comparison"
+    - generic [ref=e83]:
+      - generic [ref=e84]:
+        - img [ref=e85]
+        - generic [ref=e88]: How We Compared These Services
+      - generic [ref=e89]: Our team researched, tested, and analyzed these services to bring you unbiased comparisons.
+      - list [ref=e90]:
+        - listitem [ref=e91]:
+          - img [ref=e92]
+          - generic [ref=e94]:
+            - text: Aggregated
+            - strong [ref=e95]: 10,000+
+            - text: user reviews from multiple sources
+        - listitem [ref=e96]:
+          - img [ref=e97]
+          - generic [ref=e99]: Verified current pricing and features directly with providers
+        - listitem [ref=e100]:
+          - img [ref=e101]
+          - generic [ref=e103]: Tested signup and consultation processes ourselves
+        - listitem [ref=e104]:
+          - img [ref=e105]
+          - generic [ref=e107]:
+            - text: "Last updated:"
+            - strong [ref=e108]: November 2025
+      - paragraph [ref=e110]:
+        - link "Read our full methodology →" [ref=e111] [cursor=pointer]:
+          - /url: /methodology
+    - generic [ref=e113]:
+      - generic [ref=e114]:
+        - heading "Compare Herpes Treatment Services" [level=2] [ref=e115]
+        - paragraph [ref=e116]: All services offer valacyclovir (generic Valtrex) prescribed by licensed doctors. Find the one with the privacy, support, and pricing you need.
+      - generic [ref=e117]:
+        - generic [ref=e118]:
+          - heading "Filter & Sort" [level=3] [ref=e120]
+          - generic [ref=e121]:
+            - generic [ref=e122]: Quick Filters
+            - generic [ref=e123]:
+              - button "Show budget-friendly options" [ref=e124] [cursor=pointer]:
+                - generic [ref=e125]:
+                  - img [ref=e126]
+                  - text: Budget-Friendly
+              - button "Show top-rated services" [ref=e128] [cursor=pointer]:
+                - generic [ref=e129]:
+                  - img [ref=e130]
+                  - text: Top Rated
+              - button "Show services with discreet packaging" [ref=e132] [cursor=pointer]:
+                - generic [ref=e133]:
+                  - img [ref=e134]
+                  - text: Discreet
+              - button "Show services with same-day shipping" [ref=e136] [cursor=pointer]:
+                - generic [ref=e137]:
+                  - img [ref=e138]
+                  - text: Fast Delivery
+              - button "Show services without subscription requirement" [ref=e140] [cursor=pointer]:
+                - generic [ref=e141]:
+                  - img [ref=e142]
+                  - text: No Subscription
+              - button "Show services that accept insurance" [ref=e144] [cursor=pointer]:
+                - generic [ref=e145]:
+                  - img [ref=e146]
+                  - text: Insurance
+          - generic [ref=e148]:
+            - generic [ref=e149]:
+              - generic [ref=e150]: Sort By
+              - combobox [ref=e151]:
+                - option "Featured First" [selected]
+                - 'option "Rating: High to Low"'
+                - 'option "Rating: Low to High"'
+                - 'option "Price: Low to High"'
+                - 'option "Price: High to Low"'
+                - option "Best Match"
+            - generic [ref=e152]:
+              - generic [ref=e153]: Minimum Rating
+              - combobox [ref=e154]:
+                - option "Any Rating" [selected]
+                - option "3+ Stars"
+                - option "4+ Stars"
+                - option "4.5+ Stars"
+            - generic [ref=e155]:
+              - generic [ref=e156]: Payment Model
+              - combobox [ref=e157]:
+                - option "All Types" [selected]
+                - option "Flexible"
+                - option "Subscription + medication costs"
+            - generic [ref=e158]:
+              - generic [ref=e159]: Max Price
+              - combobox [ref=e160]:
+                - option "Any Price" [selected]
+                - option "Under $5/dose"
+                - option "Under $10/dose"
+                - option "Under $20/dose"
+                - option "Under $50/dose"
+          - generic [ref=e161]:
+            - generic [ref=e162]: Features
+            - generic [ref=e163]:
+              - generic [ref=e164] [cursor=pointer]:
+                - checkbox "Free Consultation" [ref=e165]
+                - generic [ref=e166]: Free Consultation
+              - generic [ref=e167] [cursor=pointer]:
+                - checkbox "Insurance Accepted" [ref=e168]
+                - generic [ref=e169]: Insurance Accepted
+              - generic [ref=e170] [cursor=pointer]:
+                - checkbox "Same-Day Shipping" [ref=e171]
+                - generic [ref=e172]: Same-Day Shipping
+              - generic [ref=e173] [cursor=pointer]:
+                - checkbox "Mobile App" [ref=e174]
+                - generic [ref=e175]: Mobile App
+              - generic [ref=e176] [cursor=pointer]:
+                - checkbox "Cancel Anytime" [ref=e177]
+                - generic [ref=e178]: Cancel Anytime
+              - generic [ref=e179] [cursor=pointer]:
+                - checkbox "Discreet Packaging" [ref=e180]
+                - generic [ref=e181]: Discreet Packaging
+              - generic [ref=e182] [cursor=pointer]:
+                - checkbox "Pharmacy Pickup" [ref=e183]
+                - generic [ref=e184]: Pharmacy Pickup
+              - generic [ref=e185] [cursor=pointer]:
+                - checkbox "No Subscription Required" [ref=e186]
+                - generic [ref=e187]: No Subscription Required
+        - generic [ref=e188]: Showing 4 of 4 services
+        - generic [ref=e189]:
+          - article [ref=e190]:
+            - generic [ref=e191]: Top Pick
+            - generic [ref=e192]:
+              - generic [ref=e193]:
+                - link "Ro" [ref=e194] [cursor=pointer]:
+                  - /url: /ro
+                  - heading "Ro" [level=3] [ref=e195]
+                - generic [ref=e196]:
+                  - generic [ref=e197]:
+                    - img [ref=e198]
+                    - img [ref=e200]
+                    - img [ref=e202]
+                    - img [ref=e204]
+                    - img [ref=e206]
+                  - generic [ref=e208]: "3.7"
+                - generic [ref=e209]:
+                  - generic [ref=e210]:
+                    - img [ref=e212]
+                    - generic [ref=e214]: Best for Flexibility
+                  - generic [ref=e215]:
+                    - img [ref=e217]
+                    - generic [ref=e219]: No Commitment
+                  - generic [ref=e220]:
+                    - img [ref=e222]
+                    - generic [ref=e224]: Brand-Name Options
+              - generic [ref=e225]:
+                - generic [ref=e226]:
+                  - generic [ref=e227]: Consultation
+                  - generic [ref=e228]: $15
+                - generic [ref=e229]:
+                  - generic [ref=e230]: From
+                  - generic [ref=e231]: $4/dose
+              - generic [ref=e233]:
+                - generic [ref=e234]:
+                  - img [ref=e235]
+                  - generic [ref=e237]: Flexible payment options - pay per dose or subscription
+                - generic [ref=e238]:
+                  - img [ref=e239]
+                  - generic [ref=e241]: Both brand-name and generic medications available
+              - generic [ref=e242]:
+                - link "Visit Site" [ref=e243] [cursor=pointer]:
+                  - /url: /go/ro
+                  - text: Visit Site
+                  - img [ref=e244]
+                - link "Full Review" [ref=e246] [cursor=pointer]:
+                  - /url: /ro
+          - article [ref=e247]:
+            - generic [ref=e248]:
+              - generic [ref=e249]:
+                - link "Lemonaid Health" [ref=e250] [cursor=pointer]:
+                  - /url: /lemonaid-health
+                  - heading "Lemonaid Health" [level=3] [ref=e251]
+                - generic [ref=e252]:
+                  - generic [ref=e253]:
+                    - img [ref=e254]
+                    - img [ref=e256]
+                    - img [ref=e258]
+                    - img [ref=e260]
+                    - img [ref=e262]
+                  - generic [ref=e264]: "4.4"
+                - generic [ref=e265]:
+                  - generic [ref=e266]:
+                    - img [ref=e268]
+                    - generic [ref=e270]: Best for Affordability
+                  - generic [ref=e271]:
+                    - img [ref=e273]
+                    - generic [ref=e275]: Budget-Friendly
+                  - generic [ref=e276]:
+                    - img [ref=e278]
+                    - generic [ref=e280]: Simple Process
+              - generic [ref=e281]:
+                - generic [ref=e282]:
+                  - generic [ref=e283]: Consultation
+                  - generic [ref=e284]: $25
+                - generic [ref=e285]:
+                  - generic [ref=e286]: From
+                  - generic [ref=e287]: $15/month
+              - generic [ref=e289]:
+                - generic [ref=e290]:
+                  - img [ref=e291]
+                  - generic [ref=e293]: Highly affordable pricing - among the lowest costs
+                - generic [ref=e294]:
+                  - img [ref=e295]
+                  - generic [ref=e297]: Transparent flat-rate consultation fee ($25)
+              - generic [ref=e298]:
+                - link "Visit Site" [ref=e299] [cursor=pointer]:
+                  - /url: /go/lemonaid-health
+                  - text: Visit Site
+                  - img [ref=e300]
+                - link "Full Review" [ref=e302] [cursor=pointer]:
+                  - /url: /lemonaid-health
+          - article [ref=e303]:
+            - generic [ref=e304]:
+              - generic [ref=e305]:
+                - link "LifeMD" [ref=e306] [cursor=pointer]:
+                  - /url: /lifemd
+                  - heading "LifeMD" [level=3] [ref=e307]
+                - generic [ref=e308]:
+                  - generic [ref=e309]:
+                    - img [ref=e310]
+                    - img [ref=e312]
+                    - img [ref=e314]
+                    - img [ref=e316]
+                    - img [ref=e318]
+                  - generic [ref=e320]: "4.4"
+                - generic [ref=e321]:
+                  - generic [ref=e322]:
+                    - img [ref=e324]
+                    - generic [ref=e326]: Medicare Accepted
+                  - generic [ref=e327]:
+                    - img [ref=e329]
+                    - generic [ref=e331]: Comprehensive Platform
+                  - generic [ref=e332]:
+                    - img [ref=e334]
+                    - generic [ref=e336]: Brand Wegovy Available
+              - generic [ref=e337]:
+                - generic [ref=e338]:
+                  - generic [ref=e339]: Consultation
+                  - generic [ref=e340]: $19/month LifeMD Plus (optional)
+                - generic [ref=e341]:
+                  - generic [ref=e342]: From
+                  - generic [ref=e343]: $75/month
+              - generic [ref=e345]:
+                - generic [ref=e346]:
+                  - img [ref=e347]
+                  - generic [ref=e349]: Medicare accepted for qualifying primary care (26+ states, expanding)
+                - generic [ref=e350]:
+                  - img [ref=e351]
+                  - generic [ref=e353]: Comprehensive services - weight loss, men's health, mental health, primary care
+              - generic [ref=e354]:
+                - link "Visit Site" [ref=e355] [cursor=pointer]:
+                  - /url: /go/lifemd
+                  - text: Visit Site
+                  - img [ref=e356]
+                - link "Full Review" [ref=e358] [cursor=pointer]:
+                  - /url: /lifemd
+          - article [ref=e359]:
+            - generic [ref=e360]:
+              - generic [ref=e361]:
+                - link "Nurx" [ref=e362] [cursor=pointer]:
+                  - /url: /nurx
+                  - heading "Nurx" [level=3] [ref=e363]
+                - generic [ref=e364]:
+                  - generic [ref=e365]:
+                    - img [ref=e366]
+                    - img [ref=e368]
+                    - img [ref=e370]
+                    - img [ref=e372]
+                    - img [ref=e374]
+                  - generic [ref=e376]: "2.5"
+                - generic [ref=e377]:
+                  - generic [ref=e378]:
+                    - img [ref=e380]
+                    - generic [ref=e382]: Best for Privacy
+                  - generic [ref=e383]:
+                    - img [ref=e385]
+                    - generic [ref=e387]: Discreet Service
+                  - generic [ref=e388]:
+                    - img [ref=e390]
+                    - generic [ref=e392]: Great Support
+              - generic [ref=e393]:
+                - generic [ref=e394]:
+                  - generic [ref=e395]: Consultation
+                  - generic [ref=e396]: $15
+                - generic [ref=e397]:
+                  - generic [ref=e398]: From
+                  - generic [ref=e399]: $30/month
+              - generic [ref=e401]:
+                - generic [ref=e402]:
+                  - img [ref=e403]
+                  - generic [ref=e405]: Maximum discretion and privacy focus
+                - generic [ref=e406]:
+                  - img [ref=e407]
+                  - generic [ref=e409]: Free shipping on all orders
+              - generic [ref=e410]:
+                - link "Visit Site" [ref=e411] [cursor=pointer]:
+                  - /url: /go/nurx
+                  - text: Visit Site
+                  - img [ref=e412]
+                - link "Full Review" [ref=e414] [cursor=pointer]:
+                  - /url: /nurx
+    - generic [ref=e415]:
+      - generic [ref=e416]:
+        - img [ref=e417]
+        - generic [ref=e419]: Your Privacy Matters
+      - paragraph [ref=e420]: "We understand privacy is crucial for sensitive health matters. All services on this page provide:"
+      - generic [ref=e421]:
+        - generic [ref=e422]:
+          - img [ref=e423]
+          - generic [ref=e425]:
+            - generic [ref=e426]: Discreet Packaging
+            - generic [ref=e427]: No external labels indicating medical contents
+        - generic [ref=e428]:
+          - img [ref=e429]
+          - generic [ref=e431]:
+            - generic [ref=e432]: Private Billing
+            - generic [ref=e433]: Generic billing descriptions on statements
+        - generic [ref=e434]:
+          - img [ref=e435]
+          - generic [ref=e437]:
+            - generic [ref=e438]: HIPAA Compliant
+            - generic [ref=e439]: Your medical data is protected by law
+        - generic [ref=e440]:
+          - img [ref=e441]
+          - generic [ref=e443]:
+            - generic [ref=e444]: Confidential Consultations
+            - generic [ref=e445]: Private communication with licensed physicians
+      - paragraph [ref=e447]:
+        - text: Learn more about
+        - link "how we protect your privacy →" [ref=e448] [cursor=pointer]:
+          - /url: /privacy
+    - generic [ref=e449]:
+      - heading "Common Questions About Online Herpes Treatment" [level=2] [ref=e451]
+      - generic [ref=e452]:
+        - generic [ref=e453]:
+          - heading "Q Is online herpes treatment safe and legitimate?" [level=3] [ref=e454]:
+            - generic [ref=e455]: Q
+            - generic [ref=e456]: Is online herpes treatment safe and legitimate?
+          - paragraph [ref=e459]: Yes, online herpes treatment is completely safe and legitimate when using licensed telehealth services. All platforms we list use licensed US physicians who review your medical history before prescribing. They provide the same medications (valacyclovir, acyclovir) as in-person doctors, from licensed US pharmacies. Herpes is well-suited for telehealth because it's a straightforward diagnosis and treatment.
+        - generic [ref=e460]:
+          - heading "Q How much does online herpes treatment cost?" [level=3] [ref=e461]:
+            - generic [ref=e462]: Q
+            - generic [ref=e463]: How much does online herpes treatment cost?
+          - paragraph [ref=e466]: Episodic (outbreak) treatment costs $30-55 for a 10-day supply of valacyclovir including consultation. Suppressive (daily) therapy costs $25-45 per month. Many services accept insurance which can significantly reduce medication costs. Without insurance, generic valacyclovir is very affordable compared to in-person care.
+        - generic [ref=e467]:
+          - heading "Q What's the difference between episodic and suppressive therapy?" [level=3] [ref=e468]:
+            - generic [ref=e469]: Q
+            - generic [ref=e470]: What's the difference between episodic and suppressive therapy?
+          - paragraph [ref=e473]: Episodic therapy means taking medication only during outbreaks (usually 3-10 days per outbreak). Suppressive therapy means taking a daily low-dose medication to prevent outbreaks. Suppressive therapy is recommended if you have 6+ outbreaks per year, are in an active sexual relationship, or want to reduce transmission risk to a partner by about 50%.
+        - generic [ref=e474]:
+          - heading "Q Will my package be discreet?" [level=3] [ref=e475]:
+            - generic [ref=e476]: Q
+            - generic [ref=e477]: Will my package be discreet?
+          - paragraph [ref=e480]: Yes, all herpes medication arrives in completely discreet packaging. Boxes and envelopes have no logos, no medical labels, and return addresses don't mention telehealth services. Nurx is particularly known for exceptional discretion. Billing on credit cards also uses generic company names, not 'herpes medication' or anything identifiable.
+        - generic [ref=e481]:
+          - heading "Q Can online doctors prescribe Valtrex?" [level=3] [ref=e482]:
+            - generic [ref=e483]: Q
+            - generic [ref=e484]: Can online doctors prescribe Valtrex?
+          - paragraph [ref=e487]: Online doctors prescribe valacyclovir, which is the generic version of Valtrex. It's the exact same medication with the same active ingredient and dosage. Generic valacyclovir is FDA-approved as bioequivalent to brand-name Valtrex and works identically. Most online services focus on affordable generics rather than expensive brand-name options.
+        - generic [ref=e488]:
+          - heading "Q Do I need to have an active outbreak to get treatment?" [level=3] [ref=e489]:
+            - generic [ref=e490]: Q
+            - generic [ref=e491]: Do I need to have an active outbreak to get treatment?
+          - paragraph [ref=e494]: No, you don't need an active outbreak. You can get suppressive therapy (daily prevention medication) even between outbreaks. For episodic therapy, it's best to have medication on hand before an outbreak starts, as early treatment is most effective. Most services allow you to keep emergency supplies for fast treatment at first signs of an outbreak.
+        - generic [ref=e495]:
+          - heading "Q How quickly does valacyclovir work?" [level=3] [ref=e496]:
+            - generic [ref=e497]: Q
+            - generic [ref=e498]: How quickly does valacyclovir work?
+          - paragraph [ref=e501]: Valacyclovir works fastest when taken at the very first sign of an outbreak (tingling, itching, or burning). Taken within 24 hours of symptom onset, it can significantly shorten outbreak duration and severity. For suppressive therapy, it takes about 1-2 weeks of daily use to reach maximum effectiveness in preventing outbreaks.
+        - generic [ref=e502]:
+          - heading "Q Can I get tested for herpes online?" [level=3] [ref=e503]:
+            - generic [ref=e504]: Q
+            - generic [ref=e505]: Can I get tested for herpes online?
+          - paragraph [ref=e508]: Some online services offer herpes testing through at-home test kits or partner labs. However, most platforms require a confirmed diagnosis before prescribing treatment. If you suspect you have herpes but haven't been tested, consider using a service like Everlywell or LifeMD that offers testing alongside treatment.
+        - generic [ref=e509]:
+          - heading "Q Will insurance cover online herpes treatment?" [level=3] [ref=e510]:
+            - generic [ref=e511]: Q
+            - generic [ref=e512]: Will insurance cover online herpes treatment?
+          - paragraph [ref=e515]: Some platforms like Nurx accept insurance for medication costs (though consultation fees are usually out-of-pocket). Other services like Lemonaid and Ro are cash-pay only. However, generic valacyclovir is so affordable that cash prices ($25-45/month for suppressive therapy) are often comparable to insurance copays anyway.
+        - generic [ref=e516]:
+          - heading "Q Can online treatment reduce transmission to my partner?" [level=3] [ref=e517]:
+            - generic [ref=e518]: Q
+            - generic [ref=e519]: Can online treatment reduce transmission to my partner?
+          - paragraph [ref=e522]: Yes, daily suppressive therapy with valacyclovir reduces transmission risk to partners by approximately 50%. Combined with consistent condom use and avoiding sex during outbreaks, you can significantly reduce (but not eliminate) transmission risk. Online doctors can provide guidance on safer sex practices and partner communication.
+      - paragraph [ref=e524]:
+        - strong [ref=e525]: Have more questions?
+        - text: Our research is continuously updated. If you don't see your question answered here, check our
+        - link "complete guides" [ref=e526] [cursor=pointer]:
+          - /url: /guides
+        - text: or
+        - link "contact our team" [ref=e527] [cursor=pointer]:
+          - /url: /about
+        - text: .
+    - generic [ref=e530]:
+      - heading "Ready to Take Control?" [level=2] [ref=e531]
+      - paragraph [ref=e532]: Most consultations are approved within 24 hours. Medication delivered discreetly in 2-3 days.
+      - link "Compare Herpes Services" [ref=e533] [cursor=pointer]:
+        - /url: "#comparison"
+  - contentinfo [ref=e534]:
+    - paragraph [ref=e538]:
+      - strong [ref=e539]: "Affiliate Disclosure:"
+      - text: We may earn a commission if you purchase through our links. This helps support our site at no extra cost to you. We only recommend services we have researched and believe will benefit our readers.
+      - link "Learn more" [ref=e540] [cursor=pointer]:
+        - /url: /disclosure
+    - paragraph [ref=e544]:
+      - img [ref=e545]
+      - generic [ref=e547]:
+        - strong [ref=e548]: "Medical Disclaimer:"
+        - text: This information is for educational purposes only and not a substitute for professional medical advice.
+        - link "Learn more" [ref=e549] [cursor=pointer]:
+          - /url: /disclaimer
+    - generic [ref=e550]:
+      - generic [ref=e551]:
+        - generic [ref=e552]:
+          - generic [ref=e553]:
+            - img [ref=e555]
+            - heading "CompareMensCare" [level=3] [ref=e559]
+          - paragraph [ref=e560]: Evidence-based comparisons of telehealth services for men's health. Helping you make informed decisions about ED, hair loss, testosterone, weight management, and more.
+        - generic [ref=e561]:
+          - heading "Categories" [level=4] [ref=e562]
+          - list [ref=e563]:
+            - listitem [ref=e564]:
+              - link "Sexual Health" [ref=e565] [cursor=pointer]:
+                - /url: /sexual-health
+            - listitem [ref=e566]:
+              - link "Hair Health" [ref=e567] [cursor=pointer]:
+                - /url: /hair-health
+            - listitem [ref=e568]:
+              - link "Testosterone" [ref=e569] [cursor=pointer]:
+                - /url: /testosterone
+            - listitem [ref=e570]:
+              - link "Weight Loss" [ref=e571] [cursor=pointer]:
+                - /url: /weight-loss
+            - listitem [ref=e572]:
+              - link "Peptide Therapy" [ref=e573] [cursor=pointer]:
+                - /url: /peptides
+            - listitem [ref=e574]:
+              - link "Mental Health" [ref=e575] [cursor=pointer]:
+                - /url: /mental-health
+        - generic [ref=e576]:
+          - heading "Resources" [level=4] [ref=e577]
+          - list [ref=e578]:
+            - listitem [ref=e579]:
+              - link "All Guides" [ref=e580] [cursor=pointer]:
+                - /url: /guides
+            - listitem [ref=e581]:
+              - link "Blog" [ref=e582] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e583]:
+              - link "Methodology" [ref=e584] [cursor=pointer]:
+                - /url: /methodology
+            - listitem [ref=e585]:
+              - link "About Us" [ref=e586] [cursor=pointer]:
+                - /url: /about
+        - generic [ref=e587]:
+          - heading "Legal" [level=4] [ref=e588]
+          - list [ref=e589]:
+            - listitem [ref=e590]:
+              - link "Privacy Policy" [ref=e591] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e592]:
+              - link "Terms of Service" [ref=e593] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=e594]:
+              - link "Affiliate Disclosure" [ref=e595] [cursor=pointer]:
+                - /url: /disclosure
+            - listitem [ref=e596]:
+              - link "Medical Disclaimer" [ref=e597] [cursor=pointer]:
+                - /url: /disclaimer
+      - generic [ref=e599]:
+        - paragraph [ref=e600]: © 2025 CompareMensCare.com. All rights reserved.
+        - paragraph [ref=e601]: This site does not provide medical advice. Always consult with a qualified healthcare professional before making any health decisions.
+  - generic [ref=e604]:
+    - generic [ref=e605]:
+      - heading "🍪 Cookie Preferences" [level=3] [ref=e606]
+      - paragraph [ref=e607]:
+        - text: We use cookies to improve your experience and analyze site traffic. You can customize your preferences or accept all cookies.
+        - link "Learn more" [ref=e608] [cursor=pointer]:
+          - /url: /privacy
+      - generic [ref=e609]:
+        - generic [ref=e610] [cursor=pointer]:
+          - checkbox "Essential (Required)" [checked] [disabled] [ref=e611]
+          - generic [ref=e612]: Essential (Required)
+        - generic [ref=e613] [cursor=pointer]:
+          - checkbox "Analytics" [checked] [ref=e614]
+          - generic [ref=e615]: Analytics
+    - generic [ref=e616]:
+      - button "Reject All" [ref=e617] [cursor=pointer]
+      - button "Accept All" [ref=e618] [cursor=pointer]
+  - generic [ref=e621]:
+    - button "Menu" [ref=e622]:
+      - img [ref=e624]
+      - generic: Menu
+    - button "Inspect" [ref=e628]:
+      - img [ref=e630]
+      - generic: Inspect
+    - button "Audit" [ref=e632]:
+      - generic [ref=e633]:
+        - img [ref=e634]
+        - img [ref=e637]
+      - generic: Audit
+    - button "Settings" [ref=e640]:
+      - img [ref=e642]
+      - generic: Settings
+```

@@ -1,5 +1,5 @@
 ---
-title: "Online Therapy Cost: What You'll Actually Pay (Just Do It Already)"
+title: "Online Therapy Cost: What You'll Pay in 2025"
 description: "You've Googled 'online therapy cost' five times but keep closing the checkout page. $260-400/month without insurance ($60-100/week), $60-200/month with insurance. Here's exactly what you'll pay and how to afford it."
 publishDate: 2025-01-25T00:00:00.000Z
 category: ["mental-health"]

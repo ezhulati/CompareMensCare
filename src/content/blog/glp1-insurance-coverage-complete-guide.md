@@ -1,5 +1,5 @@
 ---
-title: "GLP-1 Insurance Coverage: Complete State-by-State Guide for 2025"
+title: "GLP-1 Insurance Coverage: State-by-State Guide 2025"
 description: "Comprehensive guide to GLP-1 medication insurance coverage including which plans cover Ozempic, Wegovy, Mounjaro, and Zepbound, state mandates, prior authorization requirements, and out-of-pocket costs with coverage strategies."
 category: ["weight-loss"]
 tags: ["GLP-1", "insurance coverage", "Ozempic", "Wegovy", "Mounjaro", "Zepbound", "weight loss medication"]

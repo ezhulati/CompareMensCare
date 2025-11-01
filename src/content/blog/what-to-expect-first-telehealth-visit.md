@@ -1,5 +1,5 @@
 ---
-title: "What to Expect from Your First Telehealth Visit for Men's Health"
+title: "First Telehealth Visit for Men's Health: What to Expect"
 description: "Complete guide to your first men's health telehealth appointment including how to prepare, what questions to expect, consultation process, and getting prescriptions online."
 category: ["general"]
 tags: ["telehealth", "first visit", "mens health"]

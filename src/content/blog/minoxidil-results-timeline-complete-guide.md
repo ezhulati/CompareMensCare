@@ -1,5 +1,5 @@
 ---
-title: "Minoxidil Results Timeline: What Actually Happens Month by Month"
+title: "Minoxidil Results Timeline: Month-by-Month Guide 2025"
 description: "Starting minoxidil? What happens—the shedding phase that freaks everyone out (normal, means it's working), when you'll see results (4-6 months), and why you have to do this forever."
 category: ["hair-health"]
 tags: ["minoxidil", "rogaine", "hair regrowth timeline", "results timeline", "hair loss treatment"]

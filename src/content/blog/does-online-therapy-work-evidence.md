@@ -1,5 +1,5 @@
 ---
-title: "Does Online Therapy Actually Work? (Yes—Here's the Evidence)"
+title: "Does Online Therapy Work? Evidence & Effectiveness 2025"
 description: "You're skeptical that therapy through an app is 'real therapy.' Research answer: Online therapy is as effective as in-person for depression/anxiety (60-75% improve). 50+ studies, same outcomes. You're not settling for second-best."
 publishDate: 2025-01-27
 category: ["mental-health"]

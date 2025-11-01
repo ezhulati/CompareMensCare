@@ -1,5 +1,5 @@
 ---
-title: "Cialis vs Viagra: Which One Actually Works Better? (Real Answer)"
+title: "Cialis vs Viagra: Which Works Better? 2025 Guide"
 description: "Trying to choose between Cialis and Viagra? Here's the only difference that actually matters, what happens when you take each one, and which one you should try first."
 category: ["sexual-health"]
 tags: ["cialis", "viagra", "tadalafil", "sildenafil", "ED medication comparison"]

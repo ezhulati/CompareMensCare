@@ -1,5 +1,5 @@
 ---
-title: "ED at 30: Why It's Happening and What Actually Fixes It"
+title: "ED at 30: Causes, Treatment & What Fixes It 2025"
 description: "Had ED at 30 and freaking out? You're not alone—8-11% of guys your age deal with this. What's causing it (usually not what you think), what fixes it (85-95% success rate), and when to worry."
 category: ["sexual-health"]
 tags: ["ED at 30", "young men ED", "erectile dysfunction causes", "30s sexual health"]

@@ -1,5 +1,5 @@
 ---
-title: "Does Hair Loss Treatment Actually Work? (The Real Numbers)"
+title: "Does Hair Loss Treatment Work? Evidence & Numbers 2025"
 description: "Skeptical about hair loss treatments? What the clinical trials actually show: finasteride works for 83-90% of guys, minoxidil for 60-66%, combination for 80-85%. The evidence is solid. What 'works' actually means."
 category: ["hair-health"]
 tags: ["hair loss treatment effectiveness", "clinical evidence", "do hair loss treatments work", "scientific proof"]

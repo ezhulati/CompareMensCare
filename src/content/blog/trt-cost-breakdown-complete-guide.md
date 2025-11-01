@@ -1,5 +1,5 @@
 ---
-title: "TRT Cost Breakdown: Complete Pricing Guide for 2025"
+title: "TRT Cost Breakdown: Complete Pricing Guide 2025"
 description: "Comprehensive breakdown of testosterone replacement therapy costs including telehealth vs clinic prices, insurance coverage, blood work, medication types, and hidden fees with total monthly cost comparisons."
 category: ["testosterone"]
 tags: ["TRT", "testosterone replacement therapy", "cost", "pricing", "insurance coverage", "telehealth"]

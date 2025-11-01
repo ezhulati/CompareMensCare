@@ -1,5 +1,5 @@
 ---
-title: "How to Get Testosterone Tested: Home vs Lab (Just Do It)"
+title: "How to Get Testosterone Tested: Home vs Lab Guide 2025"
 description: "Wondering if you have low T but don't know how to get tested? Home test kits cost $49-99 (finger prick, 3-5 days), labs cost $29-50 ($0-50 with insurance). Two morning tests required. Here's exactly what to do."
 category: ["testosterone"]
 tags: ["testosterone test", "testosterone levels", "home testosterone test", "lab test"]

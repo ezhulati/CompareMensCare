@@ -1,5 +1,5 @@
 ---
-title: "TRT Side Effects: What Actually Happens (And What You Can Control)"
+title: "TRT Side Effects: What Happens & What You Control 2025"
 description: "Considering TRT but scared of side effects? What happens: acne (25-30%), mood swings (15-25%), testicular shrinkage (65-70%). Most are manageable. Here's how to prevent or minimize each one."
 publishDate: 2025-01-21
 category: ["testosterone"]
