@@ -1509,6 +1509,15 @@ const categoryIcons: Record<string, any> = {
       const targetStep = document.getElementById(stepId);
       if (targetStep) {
         targetStep.classList.add('active');
+
+        // Scroll the question into view with smooth animation
+        setTimeout(() => {
+          targetStep.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest'
+          });
+        }, 100);
       }
     }
 
