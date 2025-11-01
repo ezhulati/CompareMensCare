@@ -389,6 +389,16 @@ At-Home:
 
 ## Comprehensive Test Guide
 
+### Our Top Testing Recommendations
+
+**Best Overall:** [**Everlywell**](/everlywell) offers comprehensive at-home health tests ($49-199) with physician-reviewed results and easy-to-understand reports. Great for general health screening and peace of mind.
+
+**Best for Men's Hormones:** [**LetsGetChecked**](/letsgetchecked) specializes in testosterone and men's health panels ($99) with nurse consultations included. Perfect for hormone screening and TRT monitoring.
+
+**Best for Testosterone + Treatment:** [**Hone Health**](/hone-health) provides testing ($45 with $99/month membership) plus comprehensive TRT programs if needed. Ideal if you suspect low T and want treatment options.
+
+[Compare all at-home testing services](/diagnostics) to find the best option for your needs.
+
 ### Testosterone Testing
 
 **What it measures:**
@@ -419,10 +429,11 @@ At-Home:
 - Comprehensive hormone panel: $129-149
 
 **Services:**
-- **LetsGetChecked:** $99 (includes nurse consultation)
-- **Hone Health:** $45 with membership ($99/month includes treatment)
-- **Vault Health:** $135 (includes doctor consultation)
-- **Everlywell:** $49-199 depending on panel
+- [**LetsGetChecked**](/letsgetchecked): $99 (includes nurse consultation)
+- [**Hone Health**](/hone-health): $45 with membership ($99/month includes treatment)
+- [**Vault Health**](/vault-health): $135 (includes doctor consultation)
+- [**Everlywell**](/everlywell): $49-199 depending on panel
+- [**imaware**](/imaware): Affordable testosterone testing options
 
 **Understanding results:**
 
@@ -1604,6 +1615,18 @@ Savings: $33 per test
 - Don't self-diagnose or self-treat
 
 **At-home testing empowers you with health data, but it complements—never replaces—regular medical care.**
+
+## Related Resources
+
+**Health Testing Guides:**
+- [How to Get Testosterone Tested](/guides/how-to-get-testosterone-tested)
+- [What is Testosterone Replacement Therapy](/guides/what-is-testosterone-replacement-therapy)
+
+**Service Reviews:**
+- [Everlywell Review](/everlywell) - Best overall for comprehensive testing
+- [LetsGetChecked Review](/letsgetchecked) - Best for men's hormone panels
+- [Hone Health Review](/hone-health) - Best for testosterone + treatment
+- [imaware Review](/imaware) - Affordable testing options
 
 ---
 

@@ -373,4 +373,16 @@ Premature ejaculation is highly treatable with multiple evidence-based options:
 
 The key is finding the right treatment (or combination) for your specific situation, preferences, and goals. Online telehealth has made accessing PE treatment more convenient and discreet than ever before.
 
+## Related Resources
+
+**Sexual Health Guides:**
+- [Understanding Erectile Dysfunction](/guides/understanding-erectile-dysfunction)
+- [When to See a Doctor About ED](/guides/when-to-see-doctor-about-ed)
+- [Sildenafil vs Tadalafil](/guides/sildenafil-vs-tadalafil)
+
+**Telehealth Services:**
+- [Hims Review](/hims) - Convenient PE treatment online
+- [Ro Review](/ro) - Comprehensive sexual health care
+- [Sexual Health Services Comparison](/sexual-health)
+
 *Consult with a healthcare provider to determine the best treatment plan for your individual needs.*

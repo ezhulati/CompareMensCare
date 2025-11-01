@@ -424,6 +424,22 @@ Talk to your doctor about treating both simultaneously.
 
 **Take action:** Your health and quality of life are worth a potentially uncomfortable conversation.
 
+## Related Resources
+
+**ED Treatment Guides:**
+- [Understanding Erectile Dysfunction: Complete Guide](/guides/understanding-erectile-dysfunction)
+- [Sildenafil vs Tadalafil: Which ED Med Is Best?](/guides/sildenafil-vs-tadalafil)
+- [Premature Ejaculation Treatment Options](/guides/premature-ejaculation-treatment-options)
+
+**Telehealth Options:**
+- [Hims Review](/hims) - Convenient online ED treatment
+- [Ro Review](/ro) - Comprehensive telehealth care
+- [BlueChew Review](/bluechew) - Affordable chewable medications
+
+**Related Comparisons:**
+- [Hims vs Ro](/compare/ro-vs-hims)
+- [Hims vs BlueChew](/compare/hims-vs-bluechew)
+
 ---
 
 *This guide is for informational purposes only and does not constitute medical advice. Always consult with a qualified healthcare provider for medical concerns.*

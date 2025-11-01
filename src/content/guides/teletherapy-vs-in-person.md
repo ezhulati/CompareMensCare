@@ -455,6 +455,19 @@ Many offer both:
 
 **Try teletherapy if curious.** 85-90% are satisfied. You can switch to in-person if it doesn't work. Most important: *start* therapy. Format matters less than taking that first step.
 
+## Related Resources
+
+**Mental Health Guides:**
+- [How to Choose an Online Therapist](/guides/how-to-choose-online-therapist)
+- [Does Online Therapy Work? Evidence](/blog/does-online-therapy-work-evidence)
+- [Online Therapy Cost Comparison 2025](/blog/online-therapy-cost-comparison-2025)
+
+**Teletherapy Services:**
+- [BetterHelp Review](/betterhelp) - Best for most people
+- [Talkspace Review](/talkspace) - Insurance coverage available
+- [Cerebral Review](/cerebral) - Medication + therapy
+- [Mental Health Services Comparison](/mental-health)
+
 ---
 
 *This guide provides general information. Consult mental health professionals for your specific needs. Crisis: call 988 (Suicide & Crisis Lifeline) or go to ER. Last updated: January 2025.*

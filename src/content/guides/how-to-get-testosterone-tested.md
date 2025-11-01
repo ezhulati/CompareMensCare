@@ -461,6 +461,18 @@ citations:
 
 **Understanding your numbers empowers you to make informed decisions about your health.**
 
+## Related Resources
+
+**Testosterone Guides:**
+- [What is Testosterone Replacement Therapy](/guides/what-is-testosterone-replacement-therapy)
+- [When to Use At-Home Health Tests](/guides/when-to-use-at-home-health-tests)
+- [Low Testosterone Symptoms Checklist](/blog/low-testosterone-symptoms-complete-checklist)
+
+**Testing Services:**
+- [LetsGetChecked Review](/letsgetchecked) - Comprehensive hormone testing
+- [Everlywell Review](/everlywell) - At-home testosterone tests
+- [Hone Health Review](/hone-health) - Testing + treatment options
+
 ---
 
 *This guide is for informational purposes only and does not constitute medical advice. Always consult with a qualified healthcare provider for medical testing and treatment.*
