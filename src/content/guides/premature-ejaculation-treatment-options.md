@@ -12,7 +12,7 @@ summaryPoints:
   - "Topical anesthetics work immediately but may reduce sensation for both partners"
   - "PDE5 inhibitors can help PE when combined with ED, increasing control by 2-3x"
   - "Behavioral techniques (stop-start, squeeze) are effective and free but require practice"
-  - "Online platforms like Hims and RexMD now offer convenient PE treatment access"
+  - "Online platforms like [Hims](/hims) and [Ro](/ro) now offer convenient PE treatment access"
 researchHours: 18
 sourcesReviewed: 34
 keyTakeaways:
@@ -29,7 +29,7 @@ faqs:
   - question: "How long does it take for PE medications to work?"
     answer: "SSRIs require daily use for 2-3 weeks to reach maximum effectiveness. Topical anesthetics work immediately (within 15-30 minutes). PDE5 inhibitors work within 30-60 minutes when used for PE."
   - question: "Can I get PE treatment online?"
-    answer: "Yes, platforms like Hims, RexMD, and other telehealth services now offer online consultations and prescriptions for PE treatment. You complete a health questionnaire, a licensed provider reviews it, and if appropriate, prescribes medication delivered to your door."
+    answer: "Yes, platforms like [Hims](/hims), [Ro](/ro), and other telehealth services now offer online consultations and prescriptions for PE treatment. You complete a health questionnaire, a licensed provider reviews it, and if appropriate, prescribes medication delivered to your door."
   - question: "What are the side effects of SSRIs for PE?"
     answer: "Common side effects include decreased libido (20-30% of users), mild nausea, fatigue, and slight erectile difficulties in some men. Most side effects are mild and improve after 2-3 weeks. The benefit often outweighs the risks for men with significant PE."
   - question: "Is dapoxetine available in the United States?"
@@ -351,6 +351,31 @@ Combining multiple treatments can enhance results:
 | Behavioral techniques | 45-65% | 4-12 weeks |
 | Combination therapy | 80-90% | 3-8 weeks |
 
+## Where to Get PE Treatment
+
+### Online Telehealth Services (Most Convenient)
+
+**Best Overall:** [**Hims**](/hims) offers comprehensive PE treatment with SSRIs (sertraline, paroxetine) and topical treatments starting at $44-85/month. Same-day consultations, discreet delivery, and ongoing physician support. Great for convenient, affordable PE care.
+
+**Best for Comprehensive Care:** [**Ro**](/ro) provides PE treatment with flexible medication options, physician consultations, and treatment tracking. Ideal if you want structured medical supervision and don't mind paying slightly more.
+
+**Best for Privacy:** [**Manual**](/manual) (UK) specializes in discreet men's sexual health care with comprehensive PE treatment programs. Perfect for UK residents seeking specialized care.
+
+[Compare all sexual health services](/sexual-health) to find the best option for your needs.
+
+**Benefits of telehealth:**
+- No embarrassing in-person conversations
+- Medications delivered discreetly to your door
+- Licensed physician consultations
+- Often more affordable than traditional doctor visits
+- Easy prescription refills
+
+### Traditional Healthcare Options
+- **Primary care doctor**: Can prescribe SSRIs off-label for PE
+- **Urologist**: Specialist in male sexual dysfunction
+- **Sex therapist**: For behavioral therapy and relationship counseling
+- **Psychiatrist**: If mental health factors are primary cause
+
 ## When to See a Doctor
 
 Consult a healthcare provider if:
@@ -368,7 +393,7 @@ Premature ejaculation is highly treatable with multiple evidence-based options:
 **Most Effective**: SSRIs (paroxetine, sertraline) with 70-80% success rates
 **Fastest Acting**: Topical anesthetics working within 15-30 minutes
 **Best Overall**: Combination of medication + behavioral techniques
-**Most Convenient**: Online telehealth platforms (Hims, RexMD, Ro)
+**Most Convenient**: Online telehealth platforms like [Hims](/hims) and [Ro](/ro)
 **No Cost**: Behavioral techniques with consistent practice
 
 The key is finding the right treatment (or combination) for your specific situation, preferences, and goals. Online telehealth has made accessing PE treatment more convenient and discreet than ever before.
@@ -376,13 +401,19 @@ The key is finding the right treatment (or combination) for your specific situat
 ## Related Resources
 
 **Sexual Health Guides:**
-- [Understanding Erectile Dysfunction](/guides/understanding-erectile-dysfunction)
-- [When to See a Doctor About ED](/guides/when-to-see-doctor-about-ed)
-- [Sildenafil vs Tadalafil](/guides/sildenafil-vs-tadalafil)
+- [Understanding Erectile Dysfunction](/guides/understanding-erectile-dysfunction) - Comprehensive ED guide
+- [Sildenafil vs Tadalafil: Which ED Med Is Best?](/guides/sildenafil-vs-tadalafil) - Compare ED medications
+- [When to See a Doctor About ED](/guides/when-to-see-doctor-about-ed) - When to seek help
 
-**Telehealth Services:**
-- [Hims Review](/hims) - Convenient PE treatment online
-- [Ro Review](/ro) - Comprehensive sexual health care
-- [Sexual Health Services Comparison](/sexual-health)
+**Service Reviews:**
+- [Hims Review](/hims) - Best overall for PE treatment
+- [Ro Review](/ro) - Premium sexual health care
+- [Manual Review](/manual) - UK specialists in men's health
+- [Sexual Health Services Comparison](/sexual-health) - Compare all options
+
+**Popular Comparisons:**
+- [Hims vs Ro](/compare/ro-vs-hims) - Which offers better value?
+- [Hims vs BlueChew](/compare/hims-vs-bluechew) - Comprehensive vs budget
+- [Hims vs Manual](/compare/hims-vs-manual) - US vs UK options
 
 *Consult with a healthcare provider to determine the best treatment plan for your individual needs.*

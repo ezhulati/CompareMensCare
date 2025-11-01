@@ -567,7 +567,11 @@ Yes. If you start on a telehealth compounded program and later get insurance cov
 - [Hims Review](/hims) - Compounded semaglutide from $199/month
 - [Ro Review](/ro) - Comprehensive weight loss programs
 - [Henry Meds Review](/henry-meds) - Budget-friendly GLP-1s
-- [Weight Loss Services Comparison](/weight-loss)
+- [Weight Loss Services Comparison](/weight-loss) - Compare all options
+
+**Cost Guides:**
+- [2025 Men's Telehealth Cost Comparison](/blog/2025-mens-telehealth-cost-comparison)
+- [GLP-1 Side Effects Timeline Guide](/blog/glp1-side-effects-timeline-guide)
 
 ---
 
