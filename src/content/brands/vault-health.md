@@ -2,12 +2,13 @@
 title: "Vault Health"
 description: "Premium men's health and longevity platform specializing in testosterone optimization, sexual health, and comprehensive wellness with white-glove concierge service and expert physicians."
 categories: ["testosterone", "sexual-health", "weight-loss", "diagnostics"]
-rating: 4.7
-reviewCount: 2800
+rating: 3.5
+reviewCount: 1572
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/vaulthealth.com"
 affiliateLink: "vault-health"
 affiliateId: "vault_health"
 cookieDays: 30
-commission: "Per sale"
 pricing:
   consultationFee: "Free initial consultation"
   medicationFrom: "$129/month"

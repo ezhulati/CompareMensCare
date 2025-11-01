@@ -2,8 +2,10 @@
 title: "BlueChew"
 description: "Specialized telehealth service offering chewable ED medications on a subscription basis with affordable monthly plans."
 categories: ["sexual-health"]
-rating: 4.3
-reviewCount: 9800
+rating: 4.0
+reviewCount: 622
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/bluechew.com"
 affiliateLink: "bluechew"
 affiliateId: "bluechew"
 cookieDays: 30

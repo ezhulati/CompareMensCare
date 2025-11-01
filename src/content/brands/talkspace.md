@@ -2,12 +2,13 @@
 title: "Talkspace"
 description: "Leading online therapy platform offering text, video, and live sessions with licensed therapists for anxiety, depression, stress, and mental health support with flexible subscription plans."
 categories: ["mental-health"]
-rating: 4.4
-reviewCount: 45000
+rating: 4.5
+reviewCount: 1196
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/talkspace.com"
 affiliateLink: "talkspace"
 affiliateId: "talkspace"
 cookieDays: 30
-commission: "$50-100 per referral"
 pricing:
   consultationFee: "Included in subscription"
   medicationFrom: "$69/week"

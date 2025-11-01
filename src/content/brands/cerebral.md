@@ -2,12 +2,13 @@
 title: "Cerebral"
 description: "Affordable online mental health platform offering therapy, psychiatry, and medication management with insurance acceptance and flexible care plans."
 categories: ["mental-health"]
-rating: 3.8
-reviewCount: 12800
+rating: 4.4
+reviewCount: 5325
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/cerebral.com"
 affiliateLink: "cerebral"
 affiliateId: "cerebral"
 cookieDays: 30
-commission: "Per referral"
 pricing:
   consultationFee: "Included in subscription"
   medicationFrom: "$60/month"

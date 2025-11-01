@@ -2,8 +2,10 @@
 title: "Hims"
 description: "Comprehensive telehealth platform offering treatments for ED, hair loss, testosterone, weight loss, and mental health with affordable generic medications."
 categories: ["sexual-health", "hair-health", "testosterone", "weight-loss"]
-rating: 4.5
-reviewCount: 24500
+rating: 3.0
+reviewCount: 7115
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/hims.com"
 affiliateLink: "hims"
 affiliateId: "hims"
 cookieDays: 30

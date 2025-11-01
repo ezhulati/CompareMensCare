@@ -3,7 +3,9 @@ title: "Manual"
 description: "UK-based men's health platform offering discreet online consultations and treatments for ED, hair loss, and testosterone therapy with registered UK doctors."
 categories: ["sexual-health", "hair-health", "testosterone"]
 rating: 4.3
-reviewCount: 8500
+reviewCount: 10873
+reviewSource: "Trustpilot"
+reviewUrl: "https://uk.trustpilot.com/review/manual.co"
 affiliateLink: "manual"
 affiliateId: "manual"
 cookieDays: 30

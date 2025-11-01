@@ -2,11 +2,13 @@
 title: "BetterHelp"
 description: "Leading online therapy platform offering affordable mental health support with licensed therapists via video, phone, and messaging."
 categories: ["mental-health"]
-rating: 4.4
+rating: 4.2
+reviewCount: 8992
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/betterhelp.com"
 affiliateLink: "betterhelp"
 affiliateId: "betterhelp"
 cookieDays: 30
-commission: "Per referral ($100)"
 pricing:
   consultationFee: "Included in subscription"
   medicationFrom: "$280-400/month"

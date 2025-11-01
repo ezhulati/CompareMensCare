@@ -2,8 +2,10 @@
 title: "Keeps"
 description: "Affordable hair loss treatment subscription service offering finasteride and minoxidil with dermatologist support."
 categories: ["hair-health"]
-rating: 4.4
-reviewCount: 12400
+rating: 1.3
+reviewCount: 60
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/keeps.com"
 affiliateLink: "keeps"
 affiliateId: "keeps"
 cookieDays: 30

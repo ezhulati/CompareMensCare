@@ -2,12 +2,13 @@
 title: "Henry Meds"
 description: "Affordable telehealth weight loss service offering compounded GLP-1 medications (semaglutide, tirzepatide) with oral and injectable options, plus testosterone therapy."
 categories: ["weight-loss", "testosterone"]
-rating: 4.0
-reviewCount: 12088
+rating: 4.5
+reviewCount: 12112
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/henrymeds.com"
 affiliateLink: "henry-meds"
 affiliateId: "henry_meds"
 cookieDays: 30
-commission: "$25 per subscription"
 pricing:
   consultationFee: "Included"
   medicationFrom: "$149/month"

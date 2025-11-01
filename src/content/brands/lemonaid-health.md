@@ -2,12 +2,13 @@
 title: "Lemonaid Health"
 description: "Affordable telehealth platform offering sleep medications, herpes treatment, and other health services with transparent pricing and fast delivery."
 categories: ["sleep", "herpes", "sexual-health"]
-rating: 4.5
-reviewCount: 8600
+rating: 4.4
+reviewCount: 180
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/lemonaidhealth.com"
 affiliateLink: "lemonaid-health"
 affiliateId: "lemonaid-health"
 cookieDays: 30
-commission: "Per sale"
 pricing:
   consultationFee: "$25"
   medicationFrom: "$15/month"

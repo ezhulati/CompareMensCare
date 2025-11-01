@@ -2,12 +2,13 @@
 title: "Hone Health"
 description: "Specialized hormone optimization and men's health clinic offering comprehensive TRT, peptide therapy, and performance optimization with deep diagnostic testing and ongoing physician support."
 categories: ["testosterone", "diagnostics", "weight-loss"]
-rating: 4.6
-reviewCount: 3200
+rating: 4.9
+reviewCount: 8468
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/honehealth.com"
 affiliateLink: "hone-health"
 affiliateId: "hone_health"
 cookieDays: 30
-commission: "Per sale"
 pricing:
   consultationFee: "Free"
   medicationFrom: "$99/month"

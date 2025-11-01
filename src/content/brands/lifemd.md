@@ -2,12 +2,13 @@
 title: "LifeMD"
 description: "Comprehensive telehealth platform offering weight loss, men's health (ED, hair loss, TRT), mental health, and primary care with Medicare acceptance and vertically-integrated pharmacy services."
 categories: ["weight-loss", "mental-health", "sexual-health", "hair-health", "testosterone", "sleep", "herpes"]
-rating: 4.1
-reviewCount: 253
+rating: 4.4
+reviewCount: 3035
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/lifemd.com"
 affiliateLink: "lifemd"
 affiliateId: "lifemd"
 cookieDays: 30
-commission: "$115 CPA"
 pricing:
   consultationFee: "$19/month LifeMD Plus (optional)"
   medicationFrom: "$75/month"

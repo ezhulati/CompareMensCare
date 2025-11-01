@@ -2,8 +2,10 @@
 title: "Ro"
 description: "Flexible telehealth platform offering ED treatments, hair loss solutions, and weight management with both brand-name and generic medications."
 categories: ["sexual-health", "hair-health", "weight-loss", "herpes"]
-rating: 4.6
-reviewCount: 18200
+rating: 3.7
+reviewCount: 2387
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/ro.co"
 affiliateLink: "ro"
 affiliateId: "ro"
 cookieDays: 30

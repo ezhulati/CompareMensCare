@@ -2,12 +2,13 @@
 title: "Numan"
 description: "Modern UK men's health platform offering treatments for ED, hair loss, testosterone, weight loss, and mental health with innovative subscription plans and GMC-registered doctors."
 categories: ["sexual-health", "hair-health", "testosterone", "weight-loss", "mental-health"]
-rating: 4.4
-reviewCount: 12000
+rating: 4.6
+reviewCount: 29669
+reviewSource: "Trustpilot UK"
+reviewUrl: "https://uk.trustpilot.com/review/numan.com"
 affiliateLink: "numan"
 affiliateId: "numan"
 cookieDays: 30
-commission: "Per sale"
 pricing:
   consultationFee: "Free"
   medicationFrom: "£3/treatment"

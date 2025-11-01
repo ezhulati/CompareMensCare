@@ -2,12 +2,13 @@
 title: "Amwell"
 description: "Comprehensive telehealth platform offering therapy, psychiatry, and urgent care with broad insurance acceptance and 24/7 provider availability."
 categories: ["mental-health"]
-rating: 4.5
-reviewCount: 8400
+rating: 1.3
+reviewCount: 2214
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/amwell.com"
 affiliateLink: "amwell"
 affiliateId: "amwell"
 cookieDays: 30
-commission: "Per referral"
 pricing:
   consultationFee: "Pay per visit"
   medicationFrom: "$109/visit"

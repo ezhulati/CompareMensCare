@@ -2,12 +2,13 @@
 title: "LetsGetChecked"
 description: "Comprehensive at-home health testing service offering lab-quality tests for testosterone, STDs, vitamins, hormones, and general wellness with professional medical support and telehealth consultations."
 categories: ["diagnostics"]
-rating: 4.3
-reviewCount: 18500
+rating: 4.6
+reviewCount: 18755
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/letsgetchecked.com"
 affiliateLink: "letsgetchecked"
 affiliateId: "letsgetchecked"
 cookieDays: 28
-commission: "Per sale"
 pricing:
   consultationFee: "Included with test"
   medicationFrom: "$49/test"

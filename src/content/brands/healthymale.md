@@ -2,12 +2,13 @@
 title: "healthyMale"
 description: "Australian men's health platform offering evidence-based treatments for ED, hair loss, and testosterone therapy with Australian-registered doctors and TGA-approved medications."
 categories: ["sexual-health", "hair-health", "testosterone"]
-rating: 4.2
-reviewCount: 5600
+rating: 4.7
+reviewCount: 4122
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/healthymale.com.au"
 affiliateLink: "healthymale"
 affiliateId: "healthymale"
 cookieDays: 30
-commission: "Per sale"
 pricing:
   consultationFee: "Free"
   medicationFrom: "AU$3/dose"

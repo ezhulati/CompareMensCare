@@ -2,12 +2,13 @@
 title: "Nurx"
 description: "Privacy-focused telehealth platform specializing in herpes treatment, sexual health, and birth control with discreet delivery and exceptional customer support."
 categories: ["herpes", "sexual-health"]
-rating: 4.7
-reviewCount: 12400
+rating: 2.5
+reviewCount: 1313
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/nurx.com"
 affiliateLink: "nurx"
 affiliateId: "nurx"
 cookieDays: 30
-commission: "Per sale"
 pricing:
   consultationFee: "$15"
   medicationFrom: "$30/month"

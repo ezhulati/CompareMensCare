@@ -2,12 +2,13 @@
 title: "Teladoc Health"
 description: "Leading telehealth platform offering mental health, therapy, psychiatry, and general medical care with extensive insurance coverage and 24/7 availability."
 categories: ["mental-health"]
-rating: 3.5
-reviewCount: 15600
+rating: 4.7
+reviewCount: 39410
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/teladochealth.com"
 affiliateLink: "teladoc"
 affiliateId: "teladoc"
 cookieDays: 30
-commission: "Per referral"
 pricing:
   consultationFee: "Pay per visit"
   medicationFrom: "$75/visit"

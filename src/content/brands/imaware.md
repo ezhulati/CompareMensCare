@@ -2,12 +2,13 @@
 title: "imaware"
 description: "Scientifically-validated at-home health testing with peer-reviewed accuracy, offering testosterone, STD screening, heart health, and vitamin tests with physician review."
 categories: ["diagnostics"]
-rating: 4.6
-reviewCount: 172
+rating: 2.0
+reviewCount: 175
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/imaware.com"
 affiliateLink: "imaware"
 affiliateId: "imaware"
 cookieDays: 30
-commission: "Per sale"
 pricing:
   consultationFee: "Free telehealth consultation with positive results"
   medicationFrom: "$69/test"

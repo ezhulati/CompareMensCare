@@ -2,12 +2,13 @@
 title: "Everlywell"
 description: "Leading at-home health testing service offering CLIA-certified lab tests for testosterone, STDs, vitamins, cholesterol, and more with results in days."
 categories: ["diagnostics"]
-rating: 4.2
-reviewCount: 23400
+rating: 3.4
+reviewCount: 482
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/everlywell.com"
 affiliateLink: "everlywell"
 affiliateId: "everlywell"
 cookieDays: 45
-commission: "12% for new customers, 6% for returning"
 pricing:
   consultationFee: "Free physician consultation for positive results"
   medicationFrom: "$49/test"
