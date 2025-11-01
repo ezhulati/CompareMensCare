@@ -4,6 +4,8 @@ description: "EU-based research peptide supplier offering BPC-157, TB-500, and E
 categories: ["peptides"]
 rating: 4.3
 reviewCount: 13
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/particlepeptides.com"
 affiliateLink: "particle-peptides"
 affiliateId: "particle-peptides"
 cookieDays: 30

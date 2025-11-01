@@ -19,6 +19,8 @@ const brands = defineCollection({
     ])),
     rating: z.number().min(0).max(5),
     reviewCount: z.number().optional(),
+    reviewSource: z.string().optional(),
+    reviewUrl: z.string().url().optional(),
     affiliateLink: z.string(),
     affiliateId: z.string(),
     cookieDays: z.number(),

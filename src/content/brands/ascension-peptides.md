@@ -4,6 +4,8 @@ description: "Research peptide supplier offering BPC-157, CJC/Ipamorelin, TB-500
 categories: ["peptides"]
 rating: 4.7
 reviewCount: 61
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/ascensionpeptides.com"
 affiliateLink: "ascension-peptides"
 affiliateId: "ascension-peptides"
 cookieDays: 30

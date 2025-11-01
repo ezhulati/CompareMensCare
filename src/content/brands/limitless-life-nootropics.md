@@ -4,6 +4,8 @@ description: "Research peptides and nootropics supplier offering BPC-157, GLP-1 
 categories: ["peptides", "weight-loss"]
 rating: 3.2
 reviewCount: 143
+reviewSource: "Trustpilot"
+reviewUrl: "https://www.trustpilot.com/review/limitlesslifenootropics.com"
 affiliateLink: "limitless-life-nootropics"
 affiliateId: "limitless-life-nootropics"
 cookieDays: 30

@@ -4,6 +4,8 @@ description: "Medical telehealth clinic offering doctor-supervised peptide thera
 categories: ["peptides"]
 rating: 3.5
 reviewCount: 6
+reviewSource: "Knoji"
+reviewUrl: "https://telewellnessmd.knoji.com/"
 affiliateLink: "telewellnessmd"
 affiliateId: "telewellnessmd"
 cookieDays: 30

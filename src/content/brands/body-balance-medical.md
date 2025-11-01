@@ -4,6 +4,8 @@ description: "Full-service medical clinic offering telehealth peptide therapy, h
 categories: ["peptides", "testosterone", "weight-loss"]
 rating: 4.8
 reviewCount: 367
+reviewSource: "Trustindex"
+reviewUrl: "https://www.trustindex.io/reviews/bodybalancemedical.com-1"
 affiliateLink: "body-balance-medical"
 affiliateId: "body-balance-medical"
 cookieDays: 30
