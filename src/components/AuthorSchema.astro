@@ -1,0 +1,120 @@
+---
+/**
+ * Author Schema Markup Component
+ * Generates Schema.org Person markup for authors and medical reviewers
+ * Helps Google understand author credentials and expertise
+ */
+
+interface Props {
+  name: string;
+  credentials?: string;
+  role?: 'author' | 'reviewer';
+  url?: string;
+}
+
+const { name, credentials, role = 'author', url } = Astro.props;
+
+// Generate author URL if not provided
+const authorUrl = url || `https://comparemenscare.com/authors/${name.toLowerCase().replace(/ /g, '-')}`;
+
+// Map names to professional descriptions
+const getDescription = (authorName: string, creds: string = '') => {
+  if (authorName === 'Layla Reyes') {
+    return 'Board Certified Patient Advocate and telehealth specialist with 12 years of experience in healthcare navigation and men\'s health services.';
+  } else if (authorName === 'Henrik Johansson') {
+    return 'Health policy analyst with MPH from Johns Hopkins, specializing in telehealth regulation and insurance coverage analysis.';
+  } else if (authorName === 'Kai Nakano') {
+    return 'Health journalist and men\'s health specialist with 15 years of experience covering clinical research and treatment options.';
+  } else if (authorName.includes('Amara Okonkwo') || authorName.includes('Dr. Okonkwo')) {
+    return 'Board Certified Pharmacotherapy Specialist with 18 years of clinical pharmacy experience, specializing in men\'s health medications.';
+  }
+  return `${authorName}, ${creds}`;
+};
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": name,
+  "description": getDescription(name, credentials || ''),
+  "url": authorUrl,
+  ...(credentials && { "jobTitle": credentials }),
+  ...(role === 'reviewer' && {
+    "knowsAbout": [
+      "Pharmacotherapy",
+      "Clinical Pharmacy",
+      "Men's Health Medications",
+      "Drug Safety",
+      "Evidence-Based Medicine"
+    ]
+  }),
+  ...(role === 'author' && name === 'Layla Reyes' && {
+    "knowsAbout": [
+      "Patient Advocacy",
+      "Telehealth Services",
+      "Healthcare Navigation",
+      "Insurance Coverage Analysis",
+      "Men's Health"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Professional Certification",
+        "name": "Board Certified Patient Advocate (BCPA)"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Degree",
+        "name": "Master of Public Health (MPH)"
+      }
+    ]
+  }),
+  ...(role === 'author' && name === 'Henrik Johansson' && {
+    "knowsAbout": [
+      "Health Policy",
+      "Health Economics",
+      "Telehealth Regulation",
+      "Insurance Coverage",
+      "Healthcare Policy Analysis"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Degree",
+        "name": "Master of Public Health (MPH)"
+      }
+    ]
+  }),
+  ...(role === 'author' && name === 'Kai Nakano' && {
+    "knowsAbout": [
+      "Health Journalism",
+      "Men's Health",
+      "Medical Research",
+      "Clinical Trials",
+      "Treatment Options"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Certificate",
+        "name": "Advanced Health Journalism Certificate"
+      }
+    ]
+  }),
+  ...(role === 'reviewer' && {
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Professional Degree",
+        "name": "Doctor of Pharmacy (PharmD)"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Board Certification",
+        "name": "Board Certified Pharmacotherapy Specialist (BCPS)"
+      }
+    ]
+  })
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

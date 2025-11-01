@@ -1,0 +1,243 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getAllAuthors } from '../data/authors';
+
+const authors = getAllAuthors();
+
+// Calculate team stats
+const totalExperience = authors.reduce((sum, author) => {
+  const years = parseInt(author.experience.match(/\d+/)?.[0] || '0');
+  return sum + years;
+}, 0);
+
+const totalPublications = authors.reduce((sum, author) => sum + author.publications.length, 0);
+const totalAffiliations = authors.reduce((sum, author) => sum + author.affiliations.length, 0);
+---
+
+<BaseLayout
+  title="Our Expert Team | CompareMensCare"
+  description="Meet the Board Certified Patient Advocates, health policy analysts, medical journalists, and clinical pharmacists behind CompareMensCare's independent telehealth reviews and research."
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-brand-primary to-brand-accent text-white py-16 md:py-20">
+    <div class="container-custom text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        Meet Our Expert Team
+      </h1>
+      <p class="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
+        Independent experts in patient advocacy, health policy, medical journalism, and clinical pharmacy
+      </p>
+
+      <!-- Team Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-12">
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+          <div class="text-4xl font-bold mb-2">{authors.length}</div>
+          <div class="text-blue-100 text-sm">Expert Contributors</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+          <div class="text-4xl font-bold mb-2">{totalExperience}</div>
+          <div class="text-blue-100 text-sm">Years Combined Experience</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+          <div class="text-4xl font-bold mb-2">{totalPublications}+</div>
+          <div class="text-blue-100 text-sm">Publications</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+          <div class="text-4xl font-bold mb-2">{totalAffiliations}</div>
+          <div class="text-blue-100 text-sm">Professional Affiliations</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Members -->
+  <section class="section bg-gradient-to-b from-slate-50 to-white">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto space-y-12">
+        {authors.map((author) => (
+          <article class="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow">
+            <div class="grid md:grid-cols-3 gap-0">
+              <!-- Author Image/Avatar -->
+              <div class="md:col-span-1 bg-gradient-to-br from-brand-accent to-brand-primary p-8 md:p-12 flex items-center justify-center">
+                {author.image ? (
+                  <img
+                    src={author.image}
+                    alt={author.name}
+                    class="w-48 h-48 rounded-full border-4 border-white shadow-2xl object-cover"
+                  />
+                ) : (
+                  <div class="w-48 h-48 rounded-full border-4 border-white shadow-2xl bg-white text-brand-primary flex items-center justify-center text-6xl font-bold">
+                    {author.name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                )}
+              </div>
+
+              <!-- Author Info -->
+              <div class="md:col-span-2 p-8 md:p-12">
+                <div class="mb-4">
+                  <h2 class="text-3xl font-bold text-slate-900 mb-2">
+                    <a href={`/authors/${author.slug}`} class="hover:text-brand-accent transition-colors">
+                      {author.name}
+                    </a>
+                  </h2>
+                  <p class="text-xl text-brand-accent font-semibold mb-1">{author.credentials}</p>
+                  <p class="text-lg text-slate-600">{author.title}</p>
+                </div>
+
+                <!-- Bio (First paragraph only for overview) -->
+                <div class="prose prose-slate mb-6">
+                  <p class="text-slate-700">
+                    {author.bio.split('\n\n')[0]}
+                  </p>
+                </div>
+
+                <!-- Expertise Highlights -->
+                <div class="mb-6">
+                  <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3">
+                    Areas of Expertise
+                  </h3>
+                  <div class="flex flex-wrap gap-2">
+                    {author.expertise.slice(0, 4).map(item => (
+                      <span class="px-3 py-1 text-sm text-brand-accent bg-brand-accent/10 rounded-full">
+                        {item}
+                      </span>
+                    ))}
+                    {author.expertise.length > 4 && (
+                      <span class="px-3 py-1 text-sm text-slate-600 bg-slate-100 rounded-full">
+                        +{author.expertise.length - 4} more
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <!-- Key Credential -->
+                <div class="mb-6">
+                  <div class="flex items-start gap-2 text-sm text-slate-600">
+                    <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span>{author.education[0]}</span>
+                  </div>
+                </div>
+
+                <!-- View Profile Link -->
+                <a
+                  href={`/authors/${author.slug}`}
+                  class="inline-flex items-center gap-2 text-brand-accent font-semibold hover:underline"
+                >
+                  View Full Profile
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Approach Section -->
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Our Editorial Approach
+        </h2>
+        <p class="text-lg text-slate-600">
+          Every article at CompareMensCare is created through a rigorous, multi-expert review process
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Independent Research -->
+        <div class="bg-slate-50 rounded-lg p-8 border border-slate-200">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-brand-accent/10 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">Independent Research</h3>
+              <p class="text-slate-700">
+                Our team conducts original research, comparing pricing, coverage policies, and service quality without brand influence or sponsorship.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specialized Expertise -->
+        <div class="bg-slate-50 rounded-lg p-8 border border-slate-200">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-brand-accent/10 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">Specialized Expertise</h3>
+              <p class="text-slate-700">
+                Each article is written by an expert in that specific domain - patient advocacy, health policy, or clinical journalism.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medical Review -->
+        <div class="bg-emerald-50 rounded-lg p-8 border border-emerald-200">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-emerald-600/10 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-emerald-900 mb-2">100% Medical Review</h3>
+              <p class="text-emerald-800">
+                Every article is reviewed by Dr. Amara Okonkwo, PharmD, BCPS, ensuring medical accuracy and evidence-based information.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transparency -->
+        <div class="bg-slate-50 rounded-lg p-8 border border-slate-200">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-brand-accent/10 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">Full Transparency</h3>
+              <p class="text-slate-700">
+                We disclose our research process, data sources, potential conflicts of interest, and affiliate relationships on every article.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-slate-50 border-t border-slate-200">
+    <div class="container-custom max-w-4xl text-center">
+      <h2 class="text-3xl font-bold text-slate-900 mb-4">
+        Explore Our Research
+      </h2>
+      <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+        Discover independent, expert-reviewed comparisons of men's telehealth services
+      </p>
+      <a href="/" class="btn-primary inline-flex items-center gap-2">
+        View All Comparisons
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
