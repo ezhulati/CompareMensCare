@@ -88,21 +88,32 @@
 }
 
 @layer components {
-  /* Professional Clinical Button Styles */
+  /* Enterprise Button System - Premium gradients and glows */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-lg font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .btn-primary {
-    @apply btn bg-medical-blue-500 text-white hover:bg-medical-blue-600 focus:ring-medical-blue-500 shadow-sm hover:shadow-md active:shadow-sm;
+    @apply btn bg-gradient-primary text-white focus:ring-medical-blue-500 shadow-soft;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    @apply bg-gradient-primary-hover shadow-glow-blue;
+    transform: translateY(-1px);
+  }
+
+  .btn-primary:active:not(:disabled) {
+    transform: translateY(0) scale(0.98);
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.15);
   }
 
   .btn-secondary {
-    @apply btn bg-medical-gray-100 text-medical-gray-800 hover:bg-medical-gray-200 focus:ring-medical-gray-400 border border-medical-gray-200;
+    @apply btn bg-medical-gray-100 text-medical-gray-800 hover:bg-medical-gray-200 focus:ring-medical-gray-400 border border-medical-gray-200 shadow-soft hover:shadow-medium;
   }
 
   .btn-outline {
-    @apply btn border-2 border-medical-gray-300 text-medical-gray-700 hover:bg-medical-gray-50 hover:border-medical-blue-500 hover:text-medical-blue-500 focus:ring-medical-blue-500;
+    @apply btn border-2 border-medical-gray-300 text-medical-gray-700 hover:bg-medical-gray-50 hover:border-medical-blue-500 hover:text-medical-blue-500 focus:ring-medical-blue-500 shadow-soft hover:shadow-medium;
   }
 
   .btn-ghost {
@@ -114,25 +125,49 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Professional Card Styles - Clinical Elevation System */
+  /* Enterprise Card System - Sophisticated depth and elevation */
   .card {
-    @apply bg-white rounded-xl border border-medical-gray-200 transition-all duration-200 shadow-sm;
+    @apply bg-white rounded-xl border border-medical-gray-200 shadow-soft;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card-hover {
-    @apply card hover:shadow-md hover:border-medical-blue-200 hover:-translate-y-0.5 cursor-pointer;
+    @apply card cursor-pointer;
+  }
+
+  .card-hover:hover {
+    @apply border-medical-blue-200 shadow-medium;
+    transform: translateY(-2px) scale(1.005);
   }
 
   .card-elevated {
-    @apply card shadow-md border-medical-gray-200/50;
+    @apply card shadow-medium border-medical-gray-200/50;
   }
 
+  /* Premium glass effect with enhanced blur */
   .card-glass {
-    @apply backdrop-blur-sm bg-white/90 rounded-xl border border-medical-gray-200/50 shadow-sm;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px) saturate(180%);
+    @apply rounded-xl border border-white/30 shadow-inner-glow;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  /* Featured card with gradient border and glow */
   .card-featured {
-    @apply card border-2 border-medical-blue-200 bg-medical-blue-50/30 shadow-md;
+    position: relative;
+    @apply bg-white rounded-xl shadow-glow-blue;
+    border: 2px solid transparent;
+    background-image:
+      linear-gradient(white, white),
+      linear-gradient(135deg, rgba(0, 102, 204, 1), rgba(0, 102, 204, 0.3));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-featured:hover {
+    @apply shadow-glow-blue-strong;
+    transform: translateY(-2px);
   }
 
   /* Card Spacing Variants - Responsive padding system */
@@ -216,25 +251,51 @@
     @apply w-4 h-4 rounded-full hover:bg-white/20 transition-colors cursor-pointer;
   }
 
-  /* Quick Pick Styles */
+  /* Enterprise Quick Pick Cards - Premium gradients with glow */
   .quick-pick-card {
-    @apply card p-card-md md:p-card-lg hover:shadow-md transition-all duration-200 border-l-4;
+    @apply p-card-md md:p-card-lg rounded-xl border-l-4;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .quick-pick-card-budget {
-    @apply quick-pick-card border-l-emerald-500 bg-emerald-50/30 hover:bg-emerald-50/50;
+    @apply quick-pick-card border-l-emerald-500 bg-gradient-emerald-soft shadow-soft;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 0 20px rgba(16, 185, 129, 0.03);
+  }
+
+  .quick-pick-card-budget:hover {
+    @apply bg-gradient-emerald-medium shadow-glow-emerald;
+    transform: translateY(-2px);
   }
 
   .quick-pick-card-privacy {
-    @apply quick-pick-card border-l-purple-500 bg-purple-50/30 hover:bg-purple-50/50;
+    @apply quick-pick-card border-l-purple-500 bg-gradient-purple-soft shadow-soft;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 0 20px rgba(139, 92, 246, 0.03);
+  }
+
+  .quick-pick-card-privacy:hover {
+    @apply bg-gradient-purple-medium shadow-glow-purple;
+    transform: translateY(-2px);
   }
 
   .quick-pick-card-speed {
-    @apply quick-pick-card border-l-amber-500 bg-amber-50/30 hover:bg-amber-50/50;
+    @apply quick-pick-card border-l-amber-500 bg-gradient-amber-soft shadow-soft;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 0 20px rgba(245, 158, 11, 0.03);
+  }
+
+  .quick-pick-card-speed:hover {
+    @apply bg-gradient-amber-medium;
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.12), inset 0 0 40px rgba(245, 158, 11, 0.06);
+    transform: translateY(-2px);
   }
 
   .quick-pick-card-quality {
-    @apply quick-pick-card border-l-blue-500 bg-blue-50/30 hover:bg-blue-50/50;
+    @apply quick-pick-card border-l-blue-500 bg-gradient-blue-soft shadow-soft;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 0 20px rgba(0, 102, 204, 0.03);
+  }
+
+  .quick-pick-card-quality:hover {
+    @apply bg-gradient-blue-medium shadow-glow-blue;
+    transform: translateY(-2px);
   }
 
   .quick-pick-label {

@@ -124,6 +124,52 @@ export default {
       backdropBlur: {
         xs: '2px',
       },
+      // Enterprise shadow system - layered, sophisticated depth
+      boxShadow: {
+        // Soft elevation - resting state for cards
+        'soft': '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06)',
+        // Medium elevation - hover states
+        'medium': '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06)',
+        // Strong elevation - active/focused states
+        'strong': '0 8px 32px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08)',
+        // Overlay - modals, popovers
+        'overlay': '0 24px 48px rgba(0, 0, 0, 0.16), 0 12px 24px rgba(0, 0, 0, 0.12)',
+        // Glow effects for premium elements
+        'glow-blue': '0 0 20px rgba(0, 102, 204, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08)',
+        'glow-blue-strong': '0 0 40px rgba(0, 102, 204, 0.2), 0 8px 24px rgba(0, 102, 204, 0.15)',
+        'glow-green': '0 0 20px rgba(5, 150, 105, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08)',
+        'glow-purple': '0 0 20px rgba(139, 92, 246, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08)',
+        'glow-emerald': '0 0 20px rgba(16, 185, 129, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08)',
+        // Inner glow for glass effects
+        'inner-glow': 'inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 2px 8px rgba(0, 0, 0, 0.04)',
+      },
+      // Gradient utilities
+      backgroundImage: {
+        // Primary gradients
+        'gradient-primary': 'linear-gradient(135deg, #0066CC 0%, #0052A3 100%)',
+        'gradient-primary-hover': 'linear-gradient(135deg, #0052A3 0%, #003D7A 100%)',
+
+        // Mesh gradients for backgrounds
+        'mesh-blue': 'radial-gradient(at 0% 0%, rgba(0, 102, 204, 0.08) 0%, transparent 50%), radial-gradient(at 100% 100%, rgba(5, 150, 105, 0.08) 0%, transparent 50%)',
+        'mesh-blue-strong': 'radial-gradient(at 0% 0%, rgba(0, 102, 204, 0.12) 0%, transparent 50%), radial-gradient(at 100% 100%, rgba(5, 150, 105, 0.12) 0%, transparent 50%)',
+
+        // Quick Pick gradients
+        'gradient-emerald-soft': 'linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, white 100%)',
+        'gradient-emerald-medium': 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, white 100%)',
+        'gradient-purple-soft': 'linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, white 100%)',
+        'gradient-purple-medium': 'linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, white 100%)',
+        'gradient-amber-soft': 'linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, white 100%)',
+        'gradient-amber-medium': 'linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, white 100%)',
+        'gradient-blue-soft': 'linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, white 100%)',
+        'gradient-blue-medium': 'linear-gradient(135deg, rgba(0, 102, 204, 0.08) 0%, white 100%)',
+
+        // Stat card gradients
+        'gradient-stat': 'linear-gradient(135deg, rgba(0, 102, 204, 0.03) 0%, rgba(5, 150, 105, 0.03) 100%)',
+
+        // Text gradients
+        'gradient-text-blue-green': 'linear-gradient(135deg, #0066CC, #059669)',
+        'gradient-text-blue': 'linear-gradient(135deg, #0F172A 0%, #475569 100%)',
+      },
     },
   },
   plugins: [

@@ -38,13 +38,13 @@ const {
 } = Astro.props;
 
 const cardClass = featured
-  ? 'card-hover ring-2 ring-brand-accent shadow-lg'
+  ? 'card-featured'
   : 'card-hover';
 ---
 
 <article class={`${cardClass} p-card-sm md:p-card-md lg:p-card-lg group relative overflow-hidden flex flex-col`}>
   {featured && (
-    <div class="absolute -top-1 -right-1 bg-brand-accent text-white text-xs font-semibold px-3 py-1 rounded-bl-lg rounded-tr-2xl">
+    <div class="absolute -top-1 -right-1 bg-gradient-primary text-white text-xs font-semibold px-3 py-1 rounded-bl-lg rounded-tr-2xl shadow-glow-blue">
       Top Pick
     </div>
   )}
