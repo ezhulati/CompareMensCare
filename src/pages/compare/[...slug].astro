@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
 import type { GetStaticPaths } from 'astro';
 
-export const prerender = false; // SSR mode
+export const prerender = true; // Static generation
 
 export const getStaticPaths = (async () => {
   const comparisons = await getCollection('comparisons');
