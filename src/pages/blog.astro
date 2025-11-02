@@ -33,6 +33,23 @@ const schema = {
   name: 'CompareMensCare Blog',
   description: 'Latest news, updates, and insights about men\'s health telehealth services.',
 };
+
+// ItemList schema for blog posts
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: sortedPosts.slice(0, 50).map((post, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'BlogPosting',
+      name: post.data.title,
+      url: `https://comparemenscare.com/blog/${post.slug}`,
+      datePublished: post.data.publishDate.toISOString(),
+      description: post.data.description,
+    }
+  }))
+};
 ---
 
 <BaseLayout
@@ -40,6 +57,9 @@ const schema = {
   description="Comprehensive guides on ED treatment, hair loss, testosterone therapy, weight loss medications, and mental health with evidence-based research and expert insights."
   schema={schema}
 >
+  <!-- ItemList Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+
   <!-- Hero Section -->
   <section class="bg-gradient-to-br from-brand-primary to-brand-accent text-white py-16">
     <div class="container-custom max-w-6xl text-center">

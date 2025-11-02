@@ -4,6 +4,7 @@ import ComparisonTable from '../components/ComparisonTable.astro';
 import QuickPicks from '../components/QuickPicks.astro';
 import TrustSignals from '../components/TrustSignals.astro';
 import FAQSection from '../components/FAQSection.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 import type { Brand } from '../components/ComparisonTable.astro';
 import Icon from '../components/Icon.astro';
 import { getCollection } from 'astro:content';
@@ -202,6 +203,13 @@ const faqs = [
   image="/images/diagnostics-og.png"
   schema={schema}
 >
+
+  <!-- Breadcrumb Schema -->
+  <BreadcrumbSchema items={[
+    { name: 'Home', url: '/' },
+    { name: 'Diagnostics & Lab Testing', url: '/diagnostics' },
+  ]} />
+
   <!-- Hero Section -->
   <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
     <div class="container-custom">

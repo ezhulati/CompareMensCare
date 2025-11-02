@@ -6,6 +6,7 @@ import QuickPicks from '../components/QuickPicks.astro';
 import TrustSignals from '../components/TrustSignals.astro';
 import PrivacyAssurance from '../components/PrivacyAssurance.astro';
 import FAQSection from '../components/FAQSection.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 import Icon from '../components/Icon.astro';
 import type { FilterableBrand } from '../components/FilterableComparison.astro';
 
@@ -120,6 +121,12 @@ const faqs = [
   image="/images/sexual-health-og.png"
   schema={schema}
 >
+  <!-- Breadcrumb Schema -->
+  <BreadcrumbSchema items={[
+    { name: 'Home', url: '/' },
+    { name: 'Sexual Health', url: '/sexual-health' },
+  ]} />
+
   <!-- Hero Section -->
   <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
     <div class="container-custom">

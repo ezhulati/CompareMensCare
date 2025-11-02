@@ -5,6 +5,7 @@ import FilterableComparison from '../components/FilterableComparison.astro';
 import QuickPicks from '../components/QuickPicks.astro';
 import TrustSignals from '../components/TrustSignals.astro';
 import FAQSection from '../components/FAQSection.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 import type { FilterableBrand } from '../components/FilterableComparison.astro';
 
 // Get all brands that offer peptide therapy
@@ -106,6 +107,13 @@ const faqs = [
   image="/images/pill_bottles_barbell.png"
   schema={schema}
 >
+
+  <!-- Breadcrumb Schema -->
+  <BreadcrumbSchema items={[
+    { name: 'Home', url: '/' },
+    { name: 'Peptide Therapy', url: '/peptides' },
+  ]} />
+
   <!-- Hero Section -->
   <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
     <div class="container-custom">

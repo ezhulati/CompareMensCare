@@ -39,6 +39,22 @@ const schema = {
   name: 'Men\'s Health Guides & Resources',
   description: 'Comprehensive guides about men\'s health topics including ED, hair loss, TRT, weight loss, and mental health.',
 };
+
+// ItemList schema for guides
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: guides.slice(0, 50).map((guide, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Article',
+      name: guide.title,
+      url: `https://comparemenscare.com${guide.slug}`,
+      description: guide.description,
+    }
+  }))
+};
 ---
 
 <BaseLayout
@@ -46,6 +62,9 @@ const schema = {
   description="In-depth guides covering ED treatment, hair loss, testosterone therapy, weight loss, mental health, and at-home testing. Evidence-based information you can trust."
   schema={schema}
 >
+  <!-- ItemList Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+
   <!-- Hero Section -->
   <section class="bg-white py-12 lg:py-16 border-b border-slate-200">
     <div class="container-custom">
