@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import GuidedMatcher from '../components/GuidedMatcher.astro';
 import PersonalizedResults from '../components/PersonalizedResults.astro';
 import OrganizationSchema from '../components/OrganizationSchema.astro';
-import { Eye, ShieldCheck, Shield, Heart, Sparkles, Activity, TrendingDown, Brain, Stethoscope, Zap, Moon, AlertCircle } from 'lucide-astro';
+import { Eye, ShieldCheck, Shield, Flame, Sparkles, Dumbbell, TrendingDown, Brain, Stethoscope, Zap, Moon } from 'lucide-astro';
 import { getCategoryIcon } from '../utils/helpers';
 
 const categories = [
@@ -64,15 +64,15 @@ const categories = [
 ];
 
 const categoryIcons: Record<string, any> = {
-  'sexual-health': Heart,
+  'sexual-health': Flame,
   'hair-health': Sparkles,
-  'testosterone': Activity,
+  'testosterone': Dumbbell,
   'weight-loss': TrendingDown,
   'peptides': Zap,
   'mental-health': Brain,
   'diagnostics': Stethoscope,
   'sleep': Moon,
-  'herpes': AlertCircle,
+  'herpes': Shield,
 };
 
 ---
