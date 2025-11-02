@@ -133,7 +133,7 @@ const currentPath = Astro.url.pathname;
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div class="absolute left-0 mt-2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div class="absolute left-0 mt-2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 max-h-[500px] overflow-y-auto">
             <div class="bg-white rounded-lg shadow-lg border border-slate-200 py-3">
               <div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider border-b border-slate-100">
                 View All Comparisons
@@ -141,24 +141,36 @@ const currentPath = Astro.url.pathname;
               <a href="/compare" class="block px-4 py-2 text-sm text-brand-accent hover:bg-blue-50 font-medium">
                 → Browse All Comparisons
               </a>
-              {Object.entries(comparisons).map(([category, items]) => (
-                <div class="mt-2">
-                  <div class="px-4 py-1.5 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                    {category}
+              {Object.entries(comparisons).map(([category, items], index) => (
+                <div class="mt-2 border-t border-slate-100">
+                  <button
+                    type="button"
+                    class="comparison-category-toggle w-full px-4 py-2.5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                    data-category={category.toLowerCase().replace(/\s+/g, '-')}
+                    aria-expanded="false"
+                  >
+                    <span class="text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                      {category} ({items.length})
+                    </span>
+                    <svg class="w-4 h-4 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div class="comparison-category-items hidden" data-category={category.toLowerCase().replace(/\s+/g, '-')}>
+                    {items.map((item) => (
+                      <a
+                        href={item.href}
+                        class:list={[
+                          'block px-4 py-2 text-sm transition-colors',
+                          currentPath === item.href
+                            ? 'text-brand-primary bg-blue-50 font-medium'
+                            : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50'
+                        ]}
+                      >
+                        {item.title}
+                      </a>
+                    ))}
                   </div>
-                  {items.map((item) => (
-                    <a
-                      href={item.href}
-                      class:list={[
-                        'block px-4 py-2 text-sm transition-colors',
-                        currentPath === item.href
-                          ? 'text-brand-primary bg-blue-50 font-medium'
-                          : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50'
-                      ]}
-                    >
-                      {item.title}
-                    </a>
-                  ))}
                 </div>
               ))}
             </div>
@@ -278,22 +290,34 @@ const currentPath = Astro.url.pathname;
           </a>
           {Object.entries(comparisons).map(([category, items]) => (
             <div class="mt-3">
-              <div class="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                {category}
+              <button
+                type="button"
+                class="comparison-category-toggle-mobile w-full px-3 py-2 text-left flex items-center justify-between hover:bg-gray-50 rounded-md transition-colors"
+                data-category={category.toLowerCase().replace(/\s+/g, '-')}
+                aria-expanded="false"
+              >
+                <span class="text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                  {category} ({items.length})
+                </span>
+                <svg class="w-4 h-4 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="comparison-category-items-mobile hidden" data-category={category.toLowerCase().replace(/\s+/g, '-')}>
+                {items.map((item) => (
+                  <a
+                    href={item.href}
+                    class:list={[
+                      'block px-3 py-2 rounded-md text-sm',
+                      currentPath === item.href
+                        ? 'bg-brand-primary text-white font-medium'
+                        : 'text-gray-700 hover:bg-gray-100'
+                    ]}
+                  >
+                    {item.title}
+                  </a>
+                ))}
               </div>
-              {items.map((item) => (
-                <a
-                  href={item.href}
-                  class:list={[
-                    'block px-3 py-2 rounded-md text-sm',
-                    currentPath === item.href
-                      ? 'bg-brand-primary text-white font-medium'
-                      : 'text-gray-700 hover:bg-gray-100'
-                  ]}
-                >
-                  {item.title}
-                </a>
-              ))}
             </div>
           ))}
         </div>
@@ -359,5 +383,45 @@ const currentPath = Astro.url.pathname;
       button?.setAttribute('aria-expanded', 'false');
       button?.focus();
     }
+  });
+
+  // Desktop comparison category accordion
+  document.querySelectorAll('.comparison-category-toggle').forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      const button = e.currentTarget as HTMLButtonElement;
+      const category = button.dataset.category;
+      const items = document.querySelector(`.comparison-category-items[data-category="${category}"]`);
+      const icon = button.querySelector('svg');
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+      // Toggle visibility
+      items?.classList.toggle('hidden');
+
+      // Rotate icon
+      icon?.classList.toggle('rotate-180');
+
+      // Update aria-expanded
+      button.setAttribute('aria-expanded', String(!isExpanded));
+    });
+  });
+
+  // Mobile comparison category accordion
+  document.querySelectorAll('.comparison-category-toggle-mobile').forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      const button = e.currentTarget as HTMLButtonElement;
+      const category = button.dataset.category;
+      const items = document.querySelector(`.comparison-category-items-mobile[data-category="${category}"]`);
+      const icon = button.querySelector('svg');
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+      // Toggle visibility
+      items?.classList.toggle('hidden');
+
+      // Rotate icon
+      icon?.classList.toggle('rotate-180');
+
+      // Update aria-expanded
+      button.setAttribute('aria-expanded', String(!isExpanded));
+    });
   });
 </script>
