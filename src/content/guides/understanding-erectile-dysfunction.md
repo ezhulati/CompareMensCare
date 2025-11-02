@@ -213,15 +213,9 @@ ED is not a disease itself but rather a symptom of underlying physical or psycho
 
 ## How Common Is Erectile Dysfunction?
 
-Erectile dysfunction is extremely common:
+Erectile dysfunction is extremely common. Approximately 30 million men in the United States alone struggle with ED. The prevalence increases significantly with age—about 40% of men in their 40s experience some degree of ED, roughly 50% in their 50s, around 60% in their 60s, and 70% or more in their 70s and beyond.
 
-- **Overall prevalence**: Affects approximately 30 million men in the United States alone
-- **Age-related increase**:
-  - 40s: About 40% of men experience some degree of ED
-  - 50s: Approximately 50% affected
-  - 60s: Around 60% affected
-  - 70s: 70% or more affected
-- **Younger men**: ED is increasingly recognized in men under 40, often related to psychological factors, lifestyle, or underlying health conditions
+ED isn't just an older man's problem. It's increasingly recognized in men under 40, often related to psychological factors, lifestyle choices, or underlying health conditions that haven't been diagnosed yet.
 
 The good news: ED is highly treatable regardless of age or cause. Modern treatments are effective for the vast majority of men.
 
@@ -257,67 +251,33 @@ ED can result from physical causes, psychological factors, or a combination of b
 ### Physical Causes (Most Common in Older Men)
 
 #### Cardiovascular Issues
-- **Atherosclerosis**: Narrowed or blocked blood vessels reduce blood flow to the penis
-- **High blood pressure**: Damages blood vessels and reduces blood flow
-- **Heart disease**: Often coexists with ED; ED can be an early warning sign
-- **High cholesterol**: Contributes to blood vessel damage
+Cardiovascular problems are among the leading physical causes of ED. Atherosclerosis (narrowed or blocked blood vessels) reduces blood flow to the penis, making erections difficult or impossible. High blood pressure damages blood vessels throughout your body and significantly reduces blood flow. Heart disease often coexists with ED—in fact, ED can be an early warning sign of cardiovascular disease. High cholesterol also contributes to blood vessel damage over time.
 
 #### Hormonal Imbalances
-- **Low testosterone**: Reduces libido and can contribute to ED
-- **Thyroid problems**: Both hyperthyroidism and hypothyroidism can cause ED
-- **Diabetes**: Damages nerves and blood vessels, leading to ED in up to 75% of diabetic men
+Hormones play a crucial role in sexual function. Low testosterone reduces libido and can directly contribute to ED. Thyroid problems—both hyperthyroidism (overactive thyroid) and hypothyroidism (underactive thyroid)—can cause erectile difficulties. Diabetes is particularly problematic, as it damages both nerves and blood vessels, leading to ED in up to 75% of diabetic men.
 
 #### Neurological Conditions
-- **Parkinson's disease**
-- **Multiple sclerosis**
-- **Stroke**
-- **Spinal cord injuries**
-- **Nerve damage from surgery** (especially prostate or bladder surgery)
+Conditions that affect the nervous system can interfere with the brain's ability to send signals necessary for erections. Parkinson's disease, multiple sclerosis, and stroke can all cause ED. Spinal cord injuries often result in erectile dysfunction depending on the location and severity of the injury. Nerve damage from surgery—especially prostate or bladder surgery—is another common cause, as these procedures can inadvertently damage nerves essential for erectile function.
 
 #### Medications
-Many medications can cause or contribute to ED:
-- **Antidepressants** (SSRIs, SNRIs)
-- **Blood pressure medications** (beta-blockers, diuretics)
-- **Antihistamines**
-- **Prostate medications**
-- **Anti-anxiety medications**
-
-Always consult your doctor before stopping any medication.
+Many common medications can cause or contribute to ED. Antidepressants (particularly SSRIs and SNRIs) are frequent culprits. Blood pressure medications like beta-blockers and diuretics can affect erectile function. Antihistamines, prostate medications, and anti-anxiety medications have also been linked to ED. Always consult your doctor before stopping any medication—they may be able to switch you to an alternative that doesn't affect sexual function.
 
 #### Lifestyle Factors
-- **Smoking**: Damages blood vessels
-- **Excessive alcohol**: Impairs nervous system function
-- **Drug use**: Cocaine, marijuana, and opioids can cause ED
-- **Obesity**: Linked to cardiovascular problems and low testosterone
-- **Lack of exercise**: Contributes to poor cardiovascular health
+Your lifestyle choices have a significant impact on erectile function. Smoking damages blood vessels throughout your body, including those essential for erections. Excessive alcohol impairs nervous system function and can lead to chronic ED. Recreational drug use—including cocaine, marijuana, and opioids—can cause erectile dysfunction. Obesity is linked to both cardiovascular problems and low testosterone, both of which contribute to ED. Lack of exercise compounds these issues by contributing to poor cardiovascular health.
 
 #### Other Physical Causes
-- **Peyronie's disease**: Scar tissue in the penis
-- **Sleep disorders**: Especially sleep apnea
-- **Metabolic syndrome**
-- **Chronic kidney disease**
-- **Enlarged prostate (BPH)** or prostate cancer treatment
+Several other physical conditions can cause ED. Peyronie's disease (scar tissue in the penis) can make erections painful or impossible. Sleep disorders, especially sleep apnea, disrupt hormones and oxygen levels during sleep. Metabolic syndrome and chronic kidney disease both affect vascular health. Enlarged prostate (BPH) or prostate cancer treatment can damage nerves or blood vessels critical for erections.
 
 ### Psychological Causes (More Common in Younger Men)
 
 #### Mental Health Conditions
-- **Depression**: Reduces libido and sexual interest
-- **Anxiety**: Including performance anxiety
-- **Stress**: From work, finances, relationships
-- **PTSD**: Can affect sexual function
+Mental health significantly impacts sexual function. Depression reduces libido and sexual interest, making it difficult to even want sex. Anxiety—including performance anxiety—creates a self-fulfilling prophecy where worry about erectile difficulties actually causes them. Stress from work, finances, or relationships can hijack your nervous system and prevent arousal. PTSD can profoundly affect sexual function, creating triggers or dissociation during intimate moments.
 
 #### Relationship Issues
-- **Communication problems** with partner
-- **Unresolved conflicts**
-- **Lack of intimacy**
-- **Infidelity concerns**
+Problems in your relationship can manifest as erectile dysfunction. Communication problems with your partner create emotional distance that makes physical intimacy difficult. Unresolved conflicts simmer beneath the surface, killing desire and arousal. Lack of emotional intimacy often precedes lack of physical intimacy. Concerns about infidelity—whether founded or not—create anxiety and trust issues that interfere with sexual function.
 
 #### Other Psychological Factors
-- **Low self-esteem**
-- **Body image concerns**
-- **Past sexual trauma**
-- **Guilt about sex**
-- **Fear of intimacy**
+Deeper psychological issues can contribute to ED. Low self-esteem makes you feel unworthy of pleasure or intimacy. Body image concerns create anxiety about being seen naked or judged during sex. Past sexual trauma can create involuntary physical responses that prevent erections. Guilt about sex—often rooted in religious or cultural messaging—creates internal conflict. Fear of intimacy causes some men to subconsciously sabotage sexual encounters.
 
 ### The Cycle of Performance Anxiety
 
@@ -337,36 +297,23 @@ Breaking this cycle often requires both physical treatment and psychological sup
 ## Symptoms and Diagnosis
 
 ### Symptoms of ED
-- **Consistent inability** to achieve an erection
-- **Difficulty maintaining** an erection during sexual activity
-- **Reduced sexual desire** (may indicate hormonal issues)
+ED has three main symptoms. The first is a consistent inability to achieve an erection when you want one. The second is difficulty maintaining an erection during sexual activity—you might get hard but lose it before finishing. The third is reduced sexual desire, which may indicate underlying hormonal issues like low testosterone.
 
 Occasional erectile difficulties are normal and don't constitute ED.
 
 ### How ED Is Diagnosed
 
 #### Medical History
-Your doctor will ask about:
-- Sexual history and symptoms
-- Medical conditions
-- Medications
-- Lifestyle factors
-- Psychological health
+Your doctor will ask detailed questions about your sexual history and symptoms, existing medical conditions, current medications, lifestyle factors like smoking and exercise, and psychological health including stress and depression.
 
 #### Physical Examination
-- Blood pressure check
-- Examination of penis and testicles
-- Prostate examination (if indicated)
-- Cardiovascular assessment
+The physical exam typically includes checking your blood pressure, examining your penis and testicles for abnormalities, possibly examining your prostate if indicated, and assessing your overall cardiovascular health.
 
 #### Laboratory Tests
-- **Blood tests**: Testosterone, glucose (diabetes), cholesterol, thyroid
-- **Urinalysis**: Check for diabetes and other conditions
+Blood tests check testosterone levels, glucose (to screen for diabetes), cholesterol, and thyroid function. Urinalysis can reveal diabetes and other conditions that contribute to ED.
 
 #### Specialized Tests (If Needed)
-- **Nocturnal erection test**: Checks for nighttime erections (indicates physical vs psychological cause)
-- **Ultrasound**: Evaluates blood flow to the penis
-- **Psychological evaluation**: If psychological factors suspected
+Some cases require specialized testing. A nocturnal erection test checks whether you get erections during sleep, which helps distinguish between physical and psychological causes—if you get nighttime erections, the problem is more likely psychological. Ultrasound can evaluate blood flow to the penis. A psychological evaluation may be recommended if psychological factors are suspected.
 
 </div>
 
@@ -397,72 +344,41 @@ Learn more: [Sildenafil vs Tadalafil comparison](/guides/sildenafil-vs-tadalafil
 Learn more: [Sildenafil vs Tadalafil comparison](/guides/sildenafil-vs-tadalafil)
 
 #### Vardenafil (Levitra) & Avanafil (Stendra)
-- Similar mechanism to sildenafil
-- Slightly different timing and duration
-- Good alternatives if sildenafil/tadalafil don't work well
+These medications work through a similar mechanism as sildenafil but have slightly different timing and duration profiles. They're good alternatives if sildenafil or tadalafil don't work well for you.
 
 **Important Notes:**
-- These medications don't cause automatic erections—sexual stimulation still required
-- Don't take with nitrate medications (dangerous interaction)
-- Side effects may include headache, flushing, nasal congestion, indigestion
+These medications don't cause automatic erections—sexual stimulation is still required. Never take them with nitrate medications, as this creates a dangerous interaction that can be life-threatening. Side effects may include headache, flushing, nasal congestion, and indigestion.
 
 ### Testosterone Replacement Therapy (TRT)
 
-If low testosterone is contributing to ED:
-- **Injections, gels, or pellets**
-- Increases testosterone levels
-- May improve libido and erections
-- Requires ongoing monitoring
+If low testosterone is contributing to your ED, testosterone replacement therapy may help. TRT comes in several forms including injections, gels, or pellets. It increases your testosterone levels, which may improve both libido and erections. TRT requires ongoing monitoring by a healthcare provider to ensure safety and effectiveness.
 
 ### Other Medications
 
-- **Alprostadil injections**: Injected directly into penis
-- **Alprostadil urethral suppository**: Inserted into urethra
-- **Combination therapies**: Multiple medications together
+For men who don't respond to oral medications, there are other options. Alprostadil can be injected directly into the penis before sexual activity. Alternatively, alprostadil urethral suppositories are inserted into the urethra. Some doctors prescribe combination therapies using multiple medications together for enhanced effectiveness.
 
 ### Devices and Procedures
 
 #### Vacuum Erection Devices (Penis Pumps)
-- Creates vacuum to draw blood into penis
-- Elastic ring maintains erection
-- Non-invasive, no medication
+Vacuum erection devices create a vacuum that draws blood into the penis, producing an erection. An elastic ring placed at the base maintains the erection by preventing blood from flowing back out. This is a non-invasive option that doesn't require medication.
 
 #### Penile Implants
-- Surgical option for severe ED
-- Inflatable or semi-rigid rods implanted
-- High satisfaction rates
-- Reserved for when other treatments fail
+Penile implants are a surgical option for severe ED when other treatments have failed. Surgeons implant either inflatable or semi-rigid rods into the penis. Despite being invasive, they have high satisfaction rates among men who choose them. This option is typically reserved for cases where medications and other treatments haven't worked.
 
 #### Vascular Surgery
-- Rarely used, for specific vascular problems
-- Repairs arteries or blocks veins
+Vascular surgery is rarely used and only appropriate for specific vascular problems. The surgery either repairs damaged arteries to improve blood flow or blocks veins to prevent blood from draining too quickly from the penis.
 
 ### Lifestyle Changes and Natural Remedies
 
-Often effective, especially for mild ED or as adjunct to treatment:
-
-- **Exercise regularly**: Improves cardiovascular health
-- **Maintain healthy weight**: Reduces cardiovascular risk
-- **Quit smoking**: Improves blood flow
-- **Limit alcohol**: Excessive drinking causes ED
-- **Manage stress**: Meditation, therapy, relaxation techniques
-- **Get adequate sleep**: 7-9 hours per night
-- **Healthy diet**: Mediterranean diet linked to better erectile function
+Lifestyle modifications are often effective, especially for mild ED or as adjunct to medical treatment. Exercise regularly to improve cardiovascular health—even 30 minutes of walking most days can help. Maintain a healthy weight to reduce cardiovascular risk factors. Quit smoking, as it dramatically improves blood flow throughout your body. Limit alcohol consumption since excessive drinking directly causes ED. Manage stress through meditation, therapy, or relaxation techniques. Get adequate sleep—aim for 7-9 hours per night. Follow a healthy diet; the Mediterranean diet has been specifically linked to better erectile function.
 
 ### Psychological Counseling and Therapy
 
-For psychological ED or relationship issues:
-- **Cognitive behavioral therapy (CBT)**
-- **Sex therapy**
-- **Couples counseling**
-- **Stress management techniques**
+For psychological ED or relationship issues, therapy can be highly effective. Cognitive behavioral therapy (CBT) helps identify and change thought patterns that contribute to performance anxiety. Sex therapy specifically addresses sexual dysfunction and provides practical techniques. Couples counseling can resolve relationship issues that manifest as ED. Stress management techniques teach you how to reduce overall stress levels that interfere with sexual function.
 
 ### Combining Treatments
 
-Often most effective to combine approaches:
-- Medication + lifestyle changes
-- Medication + psychological therapy
-- TRT + PDE5 inhibitors (if appropriate)
+Combining approaches is often most effective. Pairing medication with lifestyle changes addresses both immediate symptoms and underlying causes. Medication combined with psychological therapy tackles both physical and mental components. For some men, TRT combined with PDE5 inhibitors (when appropriate and under medical supervision) provides optimal results.
 
 </div>
 
@@ -471,28 +387,18 @@ Often most effective to combine approaches:
 ## Living with Erectile Dysfunction
 
 ### Communication with Your Partner
-- Be honest about the problem
-- Avoid blame or shame
-- Focus on intimacy, not just intercourse
-- Consider couples therapy if needed
+Communication is essential when dealing with ED. Be honest with your partner about the problem rather than avoiding intimacy entirely. Avoid blame or shame—ED is a medical condition, not a personal failure. Focus on intimacy and connection, not just intercourse. Physical and emotional closeness matter more than penetrative sex. Consider couples therapy if communication breaks down or resentment builds.
 
 ### Managing Expectations
-- Treatment may require trial and error
-- Be patient—finding the right solution takes time
-- ED doesn't define your masculinity or worth
-- Many men successfully manage ED
+Managing your expectations helps reduce frustration. Treatment often requires trial and error to find what works for you. Be patient—finding the right solution takes time and may involve trying multiple approaches. Remember that ED doesn't define your masculinity or worth as a person or partner. Many men successfully manage ED and maintain satisfying sex lives.
 
 ### When Treatment Doesn't Work
 
-If first-line treatments fail:
-- Try different medications or dosages
-- Explore combination therapies
-- Consider penile injections or implants
-- Consult a urologist or ED specialist
+If first-line treatments fail, don't give up. Try different medications or dosages—what doesn't work at one dose might work at another. Explore combination therapies that address multiple factors simultaneously. Consider penile injections or implants if oral medications aren't effective. Consult a urologist or ED specialist for advanced treatment options and specialized expertise.
 
 </div>
 
-## The Bottom Line
+## Summary
 
 **Erectile dysfunction is:**
 - Very common (affects 30 million+ US men)
