@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+
+// Enable prerendering for this page
+export const prerender = true;
+---
+
+<BaseLayout
+  title="Contact Us | CompareMensCare"
+  description="Get in touch with our team of telehealth experts. We're here to answer your questions about men's health services and provider comparisons."
+>
+  <!-- Breadcrumb Schema -->
+  <BreadcrumbSchema items={[
+    { name: 'Home', url: '/' },
+    { name: 'Contact Us', url: '/contact' },
+  ]} />
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-brand-primary to-brand-accent text-white py-16 md:py-20">
+    <div class="container-custom text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        Get in Touch
+      </h1>
+      <p class="text-xl md:text-2xl text-blue-100 mb-4 max-w-3xl mx-auto">
+        Have questions about telehealth services? We're here to help.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="section bg-gradient-to-b from-slate-50 to-white">
+    <div class="container-custom max-w-4xl">
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Contact Info -->
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">Contact Information</h2>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-brand-accent/10 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900 mb-1">Email</h3>
+                <a href="mailto:hello@comparemenscare.com" class="text-brand-accent hover:underline">
+                  hello@comparemenscare.com
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-brand-accent/10 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900 mb-1">Response Time</h3>
+                <p class="text-slate-600">We typically respond within 24-48 hours</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-brand-accent/10 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900 mb-1">What We Can Help With</h3>
+                <ul class="text-slate-600 space-y-1 text-sm">
+                  <li>• Provider recommendations</li>
+                  <li>• Insurance coverage questions</li>
+                  <li>• Site feedback and suggestions</li>
+                  <li>• Partnership inquiries</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="mt-8 p-6 bg-slate-50 rounded-lg border border-slate-200">
+            <h3 class="text-lg font-semibold text-slate-900 mb-3">Quick Links</h3>
+            <div class="space-y-2">
+              <a href="/team" class="block text-brand-accent hover:underline">
+                Meet Our Expert Team
+              </a>
+              <a href="/guides" class="block text-brand-accent hover:underline">
+                Browse Treatment Guides
+              </a>
+              <a href="/#match" class="block text-brand-accent hover:underline">
+                Find Your Match
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">Send Us a Message</h2>
+
+          <form id="contact-form" class="space-y-6">
+            <!-- Name -->
+            <div>
+              <label for="name" class="block text-sm font-semibold text-slate-900 mb-2">
+                Name *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all"
+                placeholder="Your name"
+              />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email" class="block text-sm font-semibold text-slate-900 mb-2">
+                Email *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all"
+                placeholder="your@email.com"
+              />
+            </div>
+
+            <!-- Subject -->
+            <div>
+              <label for="subject" class="block text-sm font-semibold text-slate-900 mb-2">
+                Subject *
+              </label>
+              <select
+                id="subject"
+                name="subject"
+                required
+                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all"
+              >
+                <option value="">Select a topic</option>
+                <option value="provider-question">Provider Question</option>
+                <option value="insurance-coverage">Insurance Coverage</option>
+                <option value="site-feedback">Site Feedback</option>
+                <option value="partnership">Partnership Inquiry</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-sm font-semibold text-slate-900 mb-2">
+                Message *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="6"
+                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all resize-none"
+                placeholder="Tell us more about your question or feedback..."
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+              <button
+                type="submit"
+                class="w-full px-8 py-4 bg-brand-accent text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                id="submit-button"
+              >
+                Send Message
+              </button>
+            </div>
+
+            <!-- Status Messages -->
+            <div id="form-status" class="hidden">
+              <div id="success-message" class="hidden p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-emerald-800">
+                <div class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <div>
+                    <div class="font-semibold mb-1">Message sent successfully!</div>
+                    <div class="text-sm">We'll get back to you within 24-48 hours.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="error-message" class="hidden p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
+                <div class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <div>
+                    <div class="font-semibold mb-1">Failed to send message</div>
+                    <div class="text-sm">Please try again or email us directly at hello@comparemenscare.com</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section bg-white border-t border-slate-200">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">
+        Frequently Asked Questions
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 bg-slate-50 rounded-lg border border-slate-200">
+          <h3 class="text-lg font-semibold text-slate-900 mb-2">
+            Do you recommend specific providers?
+          </h3>
+          <p class="text-slate-600">
+            We provide independent comparisons to help you make informed decisions. We don't receive compensation for specific recommendations.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-lg border border-slate-200">
+          <h3 class="text-lg font-semibold text-slate-900 mb-2">
+            Can you help with insurance questions?
+          </h3>
+          <p class="text-slate-600">
+            While we provide general insurance coverage information, we recommend contacting your insurance provider or the telehealth service directly for specific coverage details.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-lg border border-slate-200">
+          <h3 class="text-lg font-semibold text-slate-900 mb-2">
+            How do you keep information updated?
+          </h3>
+          <p class="text-slate-600">
+            Our team regularly reviews and updates all comparisons. Each article shows the last review date, and we verify pricing and service details monthly.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-lg border border-slate-200">
+          <h3 class="text-lg font-semibold text-slate-900 mb-2">
+            Do you offer medical advice?
+          </h3>
+          <p class="text-slate-600">
+            We provide educational information only. Always consult with a licensed healthcare provider for medical advice, diagnosis, or treatment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Handle form submission
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitButton = document.getElementById('submit-button') as HTMLButtonElement;
+  const formStatus = document.getElementById('form-status') as HTMLDivElement;
+  const successMessage = document.getElementById('success-message') as HTMLDivElement;
+  const errorMessage = document.getElementById('error-message') as HTMLDivElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Disable submit button
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+
+    // Hide previous messages
+    formStatus.classList.add('hidden');
+    successMessage.classList.add('hidden');
+    errorMessage.classList.add('hidden');
+
+    // Get form data
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        // Show success message
+        formStatus.classList.remove('hidden');
+        successMessage.classList.remove('hidden');
+
+        // Reset form
+        form.reset();
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      // Show error message
+      formStatus.classList.remove('hidden');
+      errorMessage.classList.remove('hidden');
+    } finally {
+      // Re-enable submit button
+      submitButton.disabled = false;
+      submitButton.textContent = 'Send Message';
+    }
+  });
+</script>
