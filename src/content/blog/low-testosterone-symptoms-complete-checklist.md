@@ -3,7 +3,8 @@ title: "Low Testosterone Symptoms: Do You Have Low T? Checklist"
 description: "Exhausted, low libido, can't get hard, gaining weight—sounds like low T, right? Maybe. 40% of guys with these symptoms have normal testosterone. Here's how to tell if it's actually low T or something else."
 category: ["testosterone"]
 tags: ["low testosterone symptoms", "low T signs", "testosterone deficiency", "hypogonadism symptoms"]
-publishDate: 2025-02-19T00:00:00.000Z
+publishDate: 2024-04-04
+lastReviewed: 2025-01-15
 featured: true
 summary: "Low T symptoms: low libido (70-90%), erectile dysfunction (60-70%), crushing fatigue (80%), mood changes (60%). But 40% of guys with these symptoms have normal testosterone. Diagnosis requires testosterone <300 ng/dL on two morning tests. Symptoms overlap with depression, sleep apnea, thyroid disorders. TRT improves sexual symptoms in 70-80% of confirmed low T cases. Get tested—don't guess based on symptoms alone."
 summaryPoints:

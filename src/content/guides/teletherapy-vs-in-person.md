@@ -2,7 +2,7 @@
 title: "Teletherapy vs In-Person Therapy: Which Is Better 2025?"
 description: "Comprehensive comparison of online therapy and traditional in-person therapy including effectiveness research, pros and cons, cost analysis, and which situations benefit from each approach."
 category: "mental-health"
-publishDate: 2025-01-15
+publishDate: 2024-06-07
 lastReviewed: 2025-01-15
 featured: false
 citations:

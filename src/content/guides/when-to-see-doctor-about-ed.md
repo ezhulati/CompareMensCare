@@ -2,7 +2,7 @@
 title: "When to See a Doctor About ED: Warning Signs 2025"
 description: "Learn when erectile dysfunction requires medical attention, warning signs of serious conditions, what to expect at your appointment, and how to prepare for the conversation with your doctor."
 category: "sexual-health"
-publishDate: 2025-01-15
+publishDate: 2024-03-01
 lastReviewed: 2025-01-15
 featured: false
 summary: "See a doctor for ED if it persists for 3+ months, appears suddenly, or occurs with cardiovascular symptoms (chest pain, shortness of breath). ED can be an early warning sign of heart disease—men with ED have 50% higher risk of cardiovascular events within 3-5 years. Immediate medical attention is needed for sudden ED, painful erections lasting 4+ hours, or ED with chest pain."

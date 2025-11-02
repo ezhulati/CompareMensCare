@@ -3,7 +3,8 @@ title: "Generic vs Brand ED Meds: Are They the Same? 2025"
 description: "Complete guide to generic vs brand-name Viagra and Cialis including effectiveness, safety, FDA approval, cost savings, and whether generics are worth it."
 category: ["sexual-health"]
 tags: ["ed treatment", "viagra", "cialis", "generic medications"]
-publishDate: 2025-01-15T00:00:00.000Z
+publishDate: 2024-01-24
+lastReviewed: 2025-01-15
 featured: false
 writtenBy: "Henrik Johansson"
 writtenByCredentials: "MPH - Health Policy Analyst"

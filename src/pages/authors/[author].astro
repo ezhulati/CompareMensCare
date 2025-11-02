@@ -21,23 +21,38 @@ const allGuides = await getCollection('guides');
 const allBlog = await getCollection('blog');
 const allBrands = await getCollection('brands');
 
-const authorGuides = allGuides.filter(guide =>
+// Check if this is a reviewer
+const isReviewer = author.slug === 'amara-okonkwo';
+
+// For writers, filter by writtenBy field
+const authorGuides = !isReviewer ? allGuides.filter(guide =>
   guide.data.writtenBy === author.name
-);
+) : [];
 
-const authorBlog = allBlog.filter(post =>
+const authorBlog = !isReviewer ? allBlog.filter(post =>
   post.data.writtenBy === author.name
-);
+) : [];
 
-const authorBrands = allBrands.filter(brand =>
+const authorBrands = !isReviewer ? allBrands.filter(brand =>
   brand.data.writtenBy === author.name
-);
+) : [];
 
 const totalArticles = authorGuides.length + authorBlog.length + authorBrands.length;
 
-// For medical reviewer, count all articles
-const isReviewer = author.slug === 'amara-okonkwo';
-const reviewCount = isReviewer ? allGuides.length + allBlog.length + allBrands.length : 0;
+// For medical reviewer, filter by medicalReviewer field
+const reviewerGuides = isReviewer ? allGuides.filter(guide =>
+  guide.data.medicalReviewer === author.name
+) : [];
+
+const reviewerBlog = isReviewer ? allBlog.filter(post =>
+  post.data.medicalReviewer === author.name
+) : [];
+
+const reviewerBrands = isReviewer ? allBrands.filter(brand =>
+  brand.data.medicalReviewer === author.name
+) : [];
+
+const reviewCount = reviewerGuides.length + reviewerBlog.length + reviewerBrands.length;
 ---
 
 <BaseLayout
@@ -184,15 +199,15 @@ const reviewCount = isReviewer ? allGuides.length + allBlog.length + allBrands.l
               </p>
               <div class="grid grid-cols-3 gap-4 text-center">
                 <div class="bg-emerald-50 rounded-lg p-4">
-                  <div class="text-3xl font-bold text-emerald-600">{authorGuides.length}</div>
+                  <div class="text-3xl font-bold text-emerald-600">{reviewerGuides.length}</div>
                   <div class="text-sm text-slate-600">Guides Reviewed</div>
                 </div>
                 <div class="bg-emerald-50 rounded-lg p-4">
-                  <div class="text-3xl font-bold text-emerald-600">{authorBlog.length}</div>
+                  <div class="text-3xl font-bold text-emerald-600">{reviewerBlog.length}</div>
                   <div class="text-sm text-slate-600">Blog Posts Reviewed</div>
                 </div>
                 <div class="bg-emerald-50 rounded-lg p-4">
-                  <div class="text-3xl font-bold text-emerald-600">{authorBrands.length}</div>
+                  <div class="text-3xl font-bold text-emerald-600">{reviewerBrands.length}</div>
                   <div class="text-sm text-slate-600">Brand Reviews</div>
                 </div>
               </div>

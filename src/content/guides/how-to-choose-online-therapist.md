@@ -2,7 +2,7 @@
 title: "How to Choose an Online Therapist: Complete Guide 2025"
 description: "Comprehensive guide to finding and choosing the right online therapist including credentials to look for, questions to ask, red flags to avoid, and how to get started with teletherapy."
 category: "mental-health"
-publishDate: 2025-01-15
+publishDate: 2024-05-24
 lastReviewed: 2025-01-15
 featured: true
 summary: "Choosing an online therapist requires verification of state licensure (LCSW, LMFT, LPC, PhD, PsyD), specialization match (anxiety, depression, trauma), and therapy approach (CBT 75-80% effective for anxiety/depression). Online therapy costs $60-100/week ($240-400/month) through platforms like BetterHelp and Talkspace. 75-80% of clients report improvement with online therapy, matching in-person effectiveness."

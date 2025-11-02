@@ -2,7 +2,7 @@
 title: "Does Insurance Cover Weight Loss Telehealth? 2025 Guide"
 description: "Comprehensive guide to insurance coverage for weight loss medications, telehealth visits, and GLP-1 drugs including Medicare, Medicaid, and private insurance policies."
 category: "weight-loss"
-publishDate: 2025-01-15
+publishDate: 2024-05-10
 lastReviewed: 2025-01-15
 featured: false
 summary: "Insurance coverage for weight loss varies drastically: telehealth visits are usually covered (83% of private insurers), but GLP-1 medications (Wegovy, Zepbound) are rarely covered for weight loss—though often covered for diabetes. Medicare doesn't cover weight loss drugs under Part D. Medicaid covers in only 13 states. Most pay out-of-pocket: $99-350/month for compounded semaglutide, $900-1,400/month for brand-name without coverage."

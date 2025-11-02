@@ -9,6 +9,7 @@ import HowWeResearch from '../../components/HowWeResearch.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import KeyTakeaways from '../../components/KeyTakeaways.astro';
 import { formatDate } from '../../utils/helpers';
+import { getAuthorByName } from '../../data/authors';
 
 // Enable prerendering for all blog posts (faster, better SEO)
 export const prerender = true;
@@ -24,6 +25,10 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await post.render();
 
+// Get author data for headshot
+const authorData = getAuthorByName(post.data.writtenBy);
+const medicalReviewerData = getAuthorByName(post.data.medicalReviewer || '');
+
 // Article Schema for SEO
 const articleSchema = {
   '@context': 'https://schema.org',
@@ -32,7 +37,7 @@ const articleSchema = {
   description: post.data.description,
   image: post.data.image || 'https://comparemenscare.com/og-image.png',
   datePublished: post.data.publishDate.toISOString(),
-  dateModified: post.data.publishDate.toISOString(),
+  dateModified: post.data.lastReviewed.toISOString(),
   author: {
     '@type': 'Person',
     name: post.data.author,
@@ -154,7 +159,7 @@ const relatedPosts = allPosts
           <HowWeResearch
             hoursSpent={post.data.researchHours}
             sourcesReviewed={post.data.sourcesReviewed}
-            lastUpdated={post.data.publishDate}
+            lastUpdated={post.data.lastReviewed}
             compact={false}
           />
         </div>
@@ -188,9 +193,17 @@ const relatedPosts = allPosts
         <div class="flex items-start gap-4">
           <div class="flex-shrink-0">
             <a href={`/authors/${post.data.writtenBy.toLowerCase().replace(/ /g, '-')}`}>
-              <div class="w-16 h-16 bg-gradient-to-br from-brand-accent to-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xl hover:opacity-90 transition-opacity">
-                {post.data.writtenBy.split(' ').map(n => n[0]).join('')}
-              </div>
+              {authorData?.image ? (
+                <img
+                  src={authorData.image}
+                  alt={post.data.writtenBy}
+                  class="w-16 h-16 rounded-full object-cover hover:opacity-90 transition-opacity"
+                />
+              ) : (
+                <div class="w-16 h-16 bg-gradient-to-br from-brand-accent to-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xl hover:opacity-90 transition-opacity">
+                  {post.data.writtenBy.split(' ').map(n => n[0]).join('')}
+                </div>
+              )}
             </a>
           </div>
           <div class="flex-1">

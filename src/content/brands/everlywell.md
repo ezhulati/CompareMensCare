@@ -71,8 +71,8 @@ features:
   mobileApp: true
   pharmacyPickup: false
 featured: true
-publishDate: 2025-01-30T00:00:00.000Z
-lastReviewed: 2025-01-30T00:00:00.000Z
+publishDate: 2024-01-05
+lastReviewed: 2025-01-15
 reviewerName: "Dr. Trevor Ashford"
 reviewerCredentials: "MD, Internal Medicine & Preventive Health"
 writtenBy: "Layla Reyes"

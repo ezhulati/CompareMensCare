@@ -3,7 +3,8 @@ title: "Compounded vs FDA-Approved Meds: What's the Difference?"
 description: "Complete guide to compounded medications vs FDA-approved drugs including safety, quality, cost, and why telehealth services offer compounded versions of popular treatments."
 category: ["general", "weight-loss"]
 tags: ["compounded medications", "FDA-approved", "GLP-1", "safety"]
-publishDate: 2025-01-15T00:00:00.000Z
+publishDate: 2024-02-08
+lastReviewed: 2025-01-15
 featured: false
 writtenBy: "Henrik Johansson"
 writtenByCredentials: "MPH - Health Policy Analyst"

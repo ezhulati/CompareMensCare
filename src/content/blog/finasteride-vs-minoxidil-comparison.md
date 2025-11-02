@@ -3,7 +3,8 @@ title: "Finasteride vs Minoxidil: Which Stops Hair Loss? 2025"
 description: "Finasteride blocks DHT (the cause), minoxidil stimulates growth (treats symptom). Finasteride stops loss in 90% of guys, minoxidil regrows hair in 66%. Here's which one you need—or why you should use both."
 category: ["hair-health"]
 tags: ["finasteride", "minoxidil", "hair loss comparison", "rogaine", "propecia"]
-publishDate: 2025-02-15T00:00:00.000Z
+publishDate: 2024-08-08
+lastReviewed: 2025-01-15
 featured: true
 summary: "Finasteride stops hair loss by blocking DHT (90% maintain or improve) while minoxidil stimulates growth without stopping the cause (66% regrowth). Finasteride is once-daily pill ($15-50/month, 2-4% sexual side effects), minoxidil is twice-daily topical ($15-30/month, scalp irritation). Using both together works for 80-85% vs 60-70% with either alone. Start with finasteride for prevention, add minoxidil for regrowth."
 summaryPoints:

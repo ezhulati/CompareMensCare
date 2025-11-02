@@ -3,8 +3,8 @@ title: "Peptides for Health: Complete Evidence-Based Guide 2025"
 description: "Comprehensive guide to peptide therapy covering FDA-approved and experimental peptides, safety, effectiveness, where to get them, and how they compare to alternatives like HGH and TRT."
 category: "peptides"
 image: "/images/peptide-therapy.png"
-publishDate: 2025-01-15T00:00:00Z
-lastReviewed: 2025-01-15T00:00:00Z
+publishDate: 2024-08-09
+lastReviewed: 2025-01-15
 featured: true
 summary: "Peptide therapy is surging in popularity with FDA-approved options like semaglutide achieving 15% weight loss and experimental peptides like BPC-157 showing promise for healing. This comprehensive guide separates evidence from hype, covering 15+ major peptides across 7 categories, safety considerations, where to obtain them safely, and how they compare to alternatives like HGH and TRT."
 summaryPoints:

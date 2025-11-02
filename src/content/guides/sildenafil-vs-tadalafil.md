@@ -2,7 +2,7 @@
 title: "Sildenafil vs Tadalafil: Which ED Med Is Best? 2025"
 description: "Comprehensive comparison of sildenafil (Viagra) and tadalafil (Cialis) covering effectiveness, duration, side effects, cost, and which medication works best for different situations."
 category: "sexual-health"
-publishDate: 2025-01-15
+publishDate: 2024-03-15
 lastReviewed: 2025-01-15
 featured: true
 summary: "Sildenafil (Viagra) and tadalafil (Cialis) are equally effective ED medications (70-85% success rates) with identical mechanisms, but differ primarily in duration: sildenafil lasts 4-6 hours while tadalafil lasts up to 36 hours. Both cost $2-10 per dose for generics, with sildenafil requiring more precise timing and tadalafil offering daily-use options."

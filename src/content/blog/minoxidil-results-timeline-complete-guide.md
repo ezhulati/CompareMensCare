@@ -3,7 +3,8 @@ title: "Minoxidil Results Timeline: Month-by-Month Guide 2025"
 description: "Starting minoxidil? What happens—the shedding phase that freaks everyone out (normal, means it's working), when you'll see results (4-6 months), and why you have to do this forever."
 category: ["hair-health"]
 tags: ["minoxidil", "rogaine", "hair regrowth timeline", "results timeline", "hair loss treatment"]
-publishDate: 2025-02-13T00:00:00.000Z
+publishDate: 2024-09-05
+lastReviewed: 2025-01-15
 featured: true
 summary: "Minoxidil takes 4-6 months for visible regrowth with peak results at 12-18 months. Initial shedding (weeks 2-8) affects half of users and means it's working. 60-66% of guys see regrowth with 5% minoxidil at 1 year. You have to use it forever—stopping reverses all gains within 3-6 months. Use 5% foam, twice daily, be patient through shedding."
 summaryPoints:

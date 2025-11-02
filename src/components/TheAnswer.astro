@@ -1,0 +1,87 @@
+---
+interface Props {
+  question: string;
+  answer: string;
+  tldr?: string[];
+  cta?: {
+    text: string;
+    href: string;
+    subtext?: string;
+  };
+  timeToRead?: string;
+}
+
+const { question, answer, tldr, cta, timeToRead } = Astro.props;
+---
+
+<section id="the-answer" class="bg-gradient-to-br from-blue-50 via-white to-blue-50 border-2 border-blue-100 rounded-2xl p-8 md:p-10 mb-12 shadow-lg">
+  <div class="max-w-4xl mx-auto">
+    <!-- Question Header -->
+    <div class="flex items-start gap-3 mb-6">
+      <div class="flex-shrink-0 w-12 h-12 bg-brand-accent rounded-full flex items-center justify-center">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <div class="flex-1">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+          {question}
+        </h2>
+        {timeToRead && (
+          <p class="text-sm text-gray-500">
+            <svg class="inline w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            {timeToRead} read
+          </p>
+        )}
+      </div>
+    </div>
+
+    <!-- Main Answer -->
+    <div class="prose prose-lg max-w-none mb-6">
+      <p class="text-xl leading-relaxed text-gray-800 font-medium">
+        {answer}
+      </p>
+    </div>
+
+    <!-- TL;DR Points (if provided) -->
+    {tldr && tldr.length > 0 && (
+      <div class="bg-white/80 rounded-xl p-6 mb-6 border border-blue-100">
+        <h3 class="text-sm font-bold text-gray-700 uppercase tracking-wider mb-3 flex items-center gap-2">
+          <svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          Quick Takeaways
+        </h3>
+        <ul class="space-y-2">
+          {tldr.map((point) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-medical-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700 leading-relaxed">{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <!-- Primary CTA -->
+    {cta && (
+      <div class="bg-gradient-to-r from-brand-accent to-blue-600 rounded-xl p-6 text-center shadow-md hover:shadow-xl transition-shadow">
+        <a
+          href={cta.href}
+          class="inline-block bg-white text-brand-accent font-bold text-lg px-8 py-4 rounded-lg hover:bg-gray-50 transition-all transform hover:scale-105 shadow-sm mb-2"
+        >
+          {cta.text}
+        </a>
+        {cta.subtext && (
+          <p class="text-sm text-blue-100 mt-3">
+            {cta.subtext}
+          </p>
+        )}
+      </div>
+    )}
+  </div>
+</section>

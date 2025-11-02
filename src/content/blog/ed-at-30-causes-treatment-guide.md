@@ -3,7 +3,8 @@ title: "ED at 30: Causes, Treatment & What Fixes It 2025"
 description: "Had ED at 30 and freaking out? You're not alone—8-11% of guys your age deal with this. What's causing it (usually not what you think), what fixes it (85-95% success rate), and when to worry."
 category: ["sexual-health"]
 tags: ["ED at 30", "young men ED", "erectile dysfunction causes", "30s sexual health"]
-publishDate: 2025-02-11T00:00:00.000Z
+publishDate: 2024-10-31
+lastReviewed: 2025-01-15
 featured: true
 summary: "ED affects 8-11% of men in their 30s. Most causes are psychological (performance anxiety, stress) or lifestyle-related (weight, porn use, alcohol)—not serious disease. Treatment works for 85-95% of guys this age using medications, therapy, or lifestyle changes. It's almost always reversible, rarely permanent, and excellent prognosis compared to older men."
 summaryPoints:

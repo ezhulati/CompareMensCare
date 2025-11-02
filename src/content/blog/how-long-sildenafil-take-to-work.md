@@ -3,7 +3,8 @@ title: "How Long Does Sildenafil Take to Work? Complete Guide"
 description: "Sildenafil takes 60 minutes to hit peak effectiveness. But if you're watching the clock after 30 minutes wondering if it's working, you're making the anxiety worse. What affects timing—and how to stop sabotaging yourself."
 category: ["sexual-health"]
 tags: ["sildenafil", "viagra", "onset time", "how long to work", "ED medication timing"]
-publishDate: 2025-02-09T00:00:00.000Z
+publishDate: 2024-10-17
+lastReviewed: 2025-01-15
 featured: true
 summary: "Sildenafil takes 60 minutes to reach peak effectiveness. The biggest timing saboteurs: eating a heavy meal (adds 30-60 minutes), watching the clock anxiously (constricts blood vessels), and expecting an automatic erection without arousal. Take it 60-90 minutes before sex on an empty stomach, then forget about it and focus on foreplay."
 summaryPoints:

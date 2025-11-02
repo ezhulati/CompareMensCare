@@ -9,6 +9,7 @@ import HowWeResearch from '../../components/HowWeResearch.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import KeyTakeaways from '../../components/KeyTakeaways.astro';
 import { formatDate, getCategoryName } from '../../utils/helpers';
+import { getAuthorByName } from '../../data/authors';
 
 // Enable prerendering for all guide pages (faster, better SEO)
 export const prerender = true;
@@ -23,6 +24,10 @@ export async function getStaticPaths() {
 
 const { guide } = Astro.props;
 const { Content } = await guide.render();
+
+// Get author data for headshot
+const authorData = getAuthorByName(guide.data.writtenBy);
+const medicalReviewerData = getAuthorByName(guide.data.medicalReviewer || '');
 
 // Article Schema for SEO
 const articleSchema = {
@@ -131,21 +136,6 @@ const articleSchema = {
         </div>
       </div>
 
-      <!-- Medical Reviewer -->
-      {guide.data.medicalReviewer && (
-        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-6 mb-8">
-          <div class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-            <div>
-              <div class="text-sm font-semibold text-emerald-900 mb-1">Medically Reviewed</div>
-              <div class="text-sm text-emerald-800">{guide.data.medicalReviewer}</div>
-            </div>
-          </div>
-        </div>
-      )}
-
       <!-- Quick Summary (AI-SEO Optimization) -->
       {guide.data.summary && guide.data.summaryPoints && (
         <div class="mb-8">
@@ -185,9 +175,17 @@ const articleSchema = {
         <div class="flex items-start gap-4">
           <div class="flex-shrink-0">
             <a href={`/authors/${guide.data.writtenBy.toLowerCase().replace(/ /g, '-')}`}>
-              <div class="w-16 h-16 bg-gradient-to-br from-brand-accent to-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xl hover:opacity-90 transition-opacity">
-                {guide.data.writtenBy.split(' ').map(n => n[0]).join('')}
-              </div>
+              {authorData?.image ? (
+                <img
+                  src={authorData.image}
+                  alt={guide.data.writtenBy}
+                  class="w-16 h-16 rounded-full object-cover hover:opacity-90 transition-opacity"
+                />
+              ) : (
+                <div class="w-16 h-16 bg-gradient-to-br from-brand-accent to-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xl hover:opacity-90 transition-opacity">
+                  {guide.data.writtenBy.split(' ').map(n => n[0]).join('')}
+                </div>
+              )}
             </a>
           </div>
           <div class="flex-1">

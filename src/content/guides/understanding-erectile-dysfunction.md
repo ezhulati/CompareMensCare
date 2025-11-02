@@ -2,7 +2,7 @@
 title: "Erectile Dysfunction: Causes, Symptoms & Treatment 2025"
 description: "Comprehensive guide to erectile dysfunction (ED) covering causes, risk factors, diagnosis, and treatment options including medications, lifestyle changes, and when to seek medical help."
 category: "sexual-health"
-publishDate: 2025-01-15
+publishDate: 2024-01-05
 lastReviewed: 2025-01-15
 featured: true
 summary: "Erectile dysfunction (ED) affects 30 million+ US men and is highly treatable with 70-90% success rates. ED increases with age (40% of men in their 40s, 70%+ in their 70s) but is caused by physical factors like cardiovascular disease, diabetes, low testosterone, or psychological issues like stress and anxiety."

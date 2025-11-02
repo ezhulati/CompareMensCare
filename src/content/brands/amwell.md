@@ -68,8 +68,8 @@ features:
   mobileApp: true
   pharmacyPickup: false
 featured: false
-publishDate: 2025-01-30T00:00:00.000Z
-lastReviewed: 2025-01-30T00:00:00.000Z
+publishDate: 2024-01-05
+lastReviewed: 2025-01-15
 reviewerName: "Dr. Naveen Patel"
 reviewerCredentials: "MD, Psychiatry"
 writtenBy: "Layla Reyes"

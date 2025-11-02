@@ -1,0 +1,157 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  summary?: string;
+  badge?: string;
+  defaultExpanded?: boolean;
+  variant?: 'default' | 'educational' | 'technical';
+}
+
+const {
+  id,
+  title,
+  summary,
+  badge,
+  defaultExpanded = false,
+  variant = 'default',
+} = Astro.props;
+
+const variantClasses = {
+  default: 'border-gray-200 bg-white',
+  educational: 'border-blue-200 bg-blue-50/30',
+  technical: 'border-purple-200 bg-purple-50/30',
+};
+
+const headerClasses = {
+  default: 'bg-gray-50 hover:bg-gray-100',
+  educational: 'bg-blue-50 hover:bg-blue-100',
+  technical: 'bg-purple-50 hover:bg-purple-100',
+};
+---
+
+<div
+  class={`expandable-section border-2 rounded-xl overflow-hidden mb-6 transition-all ${variantClasses[variant]}`}
+  data-section-id={id}
+>
+  <button
+    type="button"
+    class={`expandable-header w-full px-6 py-5 flex items-center justify-between transition-colors ${headerClasses[variant]}`}
+    aria-expanded={defaultExpanded ? 'true' : 'false'}
+    aria-controls={`${id}-content`}
+  >
+    <div class="flex items-center gap-3 flex-1 text-left">
+      {badge && (
+        <span class="bg-brand-accent text-white text-xs font-bold px-2.5 py-1 rounded-full">
+          {badge}
+        </span>
+      )}
+      <div class="flex-1">
+        <h3 class="text-xl font-bold text-gray-900 mb-1">
+          {title}
+        </h3>
+        {summary && (
+          <p class="text-sm text-gray-600 leading-relaxed">
+            {summary}
+          </p>
+        )}
+      </div>
+    </div>
+    <div class="ml-4 flex-shrink-0">
+      <svg
+        class="expandable-icon w-6 h-6 text-gray-500 transition-transform duration-300"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </button>
+
+  <div
+    id={`${id}-content`}
+    class="expandable-content"
+    style={defaultExpanded ? '' : 'max-height: 0; overflow: hidden;'}
+  >
+    <div class="px-6 py-6 prose prose-lg max-w-none">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<style>
+  .expandable-header[aria-expanded="true"] .expandable-icon {
+    transform: rotate(180deg);
+  }
+
+  .expandable-content {
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  }
+
+  /* Prose styling for content inside expandable sections */
+  .expandable-content .prose {
+    @apply text-gray-700;
+  }
+
+  .expandable-content .prose h1,
+  .expandable-content .prose h2,
+  .expandable-content .prose h3,
+  .expandable-content .prose h4 {
+    @apply text-gray-900 font-bold;
+  }
+
+  .expandable-content .prose a {
+    @apply text-brand-accent hover:text-blue-700 underline;
+  }
+
+  .expandable-content .prose strong {
+    @apply text-gray-900 font-semibold;
+  }
+
+  .expandable-content .prose ul,
+  .expandable-content .prose ol {
+    @apply text-gray-700;
+  }
+
+  .expandable-content .prose code {
+    @apply bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-sm;
+  }
+</style>
+
+<script>
+  // Handle expandable section toggles
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.expandable-section');
+
+    sections.forEach((section) => {
+      const header = section.querySelector('.expandable-header');
+      const content = section.querySelector('.expandable-content') as HTMLElement;
+
+      if (!header || !content) return;
+
+      header.addEventListener('click', () => {
+        const isExpanded = header.getAttribute('aria-expanded') === 'true';
+
+        if (isExpanded) {
+          // Collapse
+          header.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = '0';
+          content.style.overflow = 'hidden';
+        } else {
+          // Expand
+          header.setAttribute('aria-expanded', 'true');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.overflow = 'visible';
+
+          // After animation completes, set to auto to allow dynamic content
+          setTimeout(() => {
+            if (header.getAttribute('aria-expanded') === 'true') {
+              content.style.maxHeight = 'none';
+            }
+          }, 400);
+        }
+      });
+    });
+  });
+</script>

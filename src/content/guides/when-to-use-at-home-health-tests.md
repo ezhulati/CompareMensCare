@@ -2,7 +2,7 @@
 title: "When to Use At-Home Health Tests: Complete Guide 2025"
 description: "Comprehensive guide to at-home health testing including when it's appropriate, what tests are available, accuracy, limitations, and when you need to see a doctor instead."
 category: "diagnostics"
-publishDate: 2025-01-15
+publishDate: 2024-06-21
 lastReviewed: 2025-01-15
 featured: true
 summary: "At-home health tests offer 95-99% accuracy (when using CLIA-certified labs) for testosterone, STD screening, vitamin levels, cholesterol, and thyroid function. Tests cost $49-299 depending on panel complexity. Results arrive in 2-5 days via secure portal. Best for: screening, routine monitoring, privacy-sensitive tests. Not for: emergency symptoms, complex diagnosis, or conditions requiring physical exam."

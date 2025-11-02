@@ -3,7 +3,8 @@ title: "Finasteride Results Timeline: Month-by-Month Guide 2025"
 description: "Complete month-by-month timeline of finasteride results including when shedding stops, regrowth begins, peak results occur, and realistic expectations with clinical study data and user experiences."
 category: ["hair-health"]
 tags: ["finasteride", "hair loss", "results timeline", "male pattern baldness", "treatment expectations"]
-publishDate: 2025-02-01T00:00:00.000Z
+publishDate: 2024-08-22
+lastReviewed: 2025-01-15
 featured: true
 summary: "Finasteride takes 3-6 months for visible results and 12-24 months for peak effectiveness. Clinical studies show 83-90% of men maintain or improve hair after 2 years, with regrowth occurring in 66% at 1 year. Expect initial shedding (months 1-3), stabilization (months 3-6), visible regrowth (months 6-12), and continued improvement through year 2."
 summaryPoints:

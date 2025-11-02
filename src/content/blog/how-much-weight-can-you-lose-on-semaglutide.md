@@ -1,7 +1,8 @@
 ---
 title: "How Much Weight Will You Lose on Semaglutide? Numbers"
 description: "Semaglutide at 2.4mg = 15-17% weight loss (33-37 lbs for 220lb person) over 12-16 months. But 10-15% lose <5%. What to actually expect, month by month, and why some people lose way more than others."
-publishDate: 2025-01-23
+publishDate: 2024-06-27
+lastReviewed: 2025-01-15
 category: ["weight-loss"]
 tags: ["weight-loss", "medications", "semaglutide", "ozempic", "wegovy"]
 featured: false

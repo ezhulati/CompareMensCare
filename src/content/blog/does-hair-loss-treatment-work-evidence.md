@@ -3,7 +3,8 @@ title: "Does Hair Loss Treatment Work? Evidence & Numbers 2025"
 description: "Skeptical about hair loss treatments? What the clinical trials actually show: finasteride works for 83-90% of guys, minoxidil for 60-66%, combination for 80-85%. The evidence is solid. What 'works' actually means."
 category: ["hair-health"]
 tags: ["hair loss treatment effectiveness", "clinical evidence", "do hair loss treatments work", "scientific proof"]
-publishDate: 2025-02-17T00:00:00.000Z
+publishDate: 2024-07-25
+lastReviewed: 2025-01-15
 featured: true
 summary: "Yes, hair loss treatments work with proven clinical evidence. Finasteride: 83-90% maintain or improve (10+ RCTs, 4,000+ patients). Minoxidil: 60-66% regrowth (8+ RCTs, 2,500+ patients). Combination: 80-85% success. PRP and laser have weaker evidence (30-40% improvement, small studies). Most supplements don't work except modest effects from saw palmetto (11-27%). Start early for best results—Norwood 2-4 shows 75-85% success vs 50-60% at advanced stages."
 summaryPoints:

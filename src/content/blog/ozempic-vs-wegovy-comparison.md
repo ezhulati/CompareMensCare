@@ -1,7 +1,8 @@
 ---
 title: "Ozempic vs Wegovy: Same Drug, Different Price 2025"
 description: "Ozempic and Wegovy are the same medication (semaglutide). Wegovy's 2.4mg dose = 15-17% weight loss ($1,300-1,600/month). Ozempic 1mg = 10-12% loss ($900-1,200/month). Here's how to decide."
-publishDate: 2025-01-22
+publishDate: 2024-07-11
+lastReviewed: 2025-01-15
 category: ["weight-loss"]
 tags: ["weight-loss", "medications", "comparison", "ozempic", "wegovy", "semaglutide"]
 featured: false

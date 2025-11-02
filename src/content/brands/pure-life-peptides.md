@@ -64,8 +64,8 @@ features:
   mobileApp: false
   pharmacyPickup: false
 featured: false
-publishDate: 2025-01-31T00:00:00.000Z
-lastReviewed: 2025-01-31T00:00:00.000Z
+publishDate: 2024-01-05
+lastReviewed: 2025-01-15
 writtenBy: "Layla Reyes"
 writtenByCredentials: "BCPA, MPH - Patient Advocate & Telehealth Specialist"
 medicalReviewer: "Dr. Amara Okonkwo"

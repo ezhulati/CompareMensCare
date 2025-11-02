@@ -3,7 +3,8 @@ title: "GLP-1 Insurance Coverage: State-by-State Guide 2025"
 description: "Comprehensive guide to GLP-1 medication insurance coverage including which plans cover Ozempic, Wegovy, Mounjaro, and Zepbound, state mandates, prior authorization requirements, and out-of-pocket costs with coverage strategies."
 category: ["weight-loss"]
 tags: ["GLP-1", "insurance coverage", "Ozempic", "Wegovy", "Mounjaro", "Zepbound", "weight loss medication"]
-publishDate: 2025-02-05T00:00:00.000Z
+publishDate: 2024-05-30
+lastReviewed: 2025-01-15
 featured: true
 summary: "GLP-1 insurance coverage varies dramatically: diabetes GLP-1s (Ozempic, Mounjaro) are covered by 80-90% of plans with $25-100 copays, while weight loss GLP-1s (Wegovy, Zepbound) are covered by only 25-40% of commercial plans and zero Medicare plans. 6 states now mandate coverage (Connecticut, Delaware, Maryland, New Jersey, Vermont, West Virginia) with more pending. Without coverage, costs are $900-1,400/month out-of-pocket."
 summaryPoints:

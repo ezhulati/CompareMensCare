@@ -3,7 +3,8 @@ title: "Hims vs Ro: Which Is Better? Complete 2025 Comparison"
 description: "Detailed comparison of Hims and Ro covering pricing, services, effectiveness, customer reviews, and which platform is best for ED, hair loss, and men's health."
 category: ["sexual-health", "hair-health"]
 tags: ["hims", "ro", "comparison", "telehealth"]
-publishDate: 2025-01-15T00:00:00.000Z
+publishDate: 2024-11-28
+lastReviewed: 2025-01-15
 featured: true
 writtenBy: "Henrik Johansson"
 writtenByCredentials: "MPH - Health Policy Analyst"

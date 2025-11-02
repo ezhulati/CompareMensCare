@@ -128,6 +128,53 @@ const guides = defineCollection({
       source: z.string(),
     })).optional(),
     featured: z.boolean().default(false),
+    // Decision-first guide fields (new architecture)
+    quickAnswer: z.string().optional(), // Direct answer to main question
+    tldrPoints: z.array(z.string()).optional(), // Quick takeaways for TheAnswer component
+    timeToRead: z.string().optional(), // e.g., "2 min"
+    primaryCTA: z.object({
+      text: z.string(),
+      href: z.string(),
+      subtext: z.string().optional(),
+    }).optional(),
+    quickNavSections: z.array(z.object({
+      id: z.string(),
+      label: z.string(),
+      icon: z.string().optional(),
+    })).optional(),
+    // Treatment options data
+    treatmentOptions: z.array(z.object({
+      name: z.string(),
+      description: z.string(),
+      effectiveness: z.string().optional(),
+      speed: z.string().optional(),
+      cost: z.string().optional(),
+      availability: z.string().optional(),
+    })).optional(),
+    topServices: z.array(z.object({
+      name: z.string(),
+      brandSlug: z.string(),
+      affiliateId: z.string(),
+      rating: z.number(),
+      price: z.string(),
+      bestFor: z.string(),
+      highlights: z.array(z.string()),
+      badge: z.string().optional(),
+    })).optional(),
+    // Qualification checker data
+    goodCandidateIf: z.array(z.string()).optional(),
+    notRightIf: z.array(z.string()).optional(),
+    whenToSeeDoctorTitle: z.string().optional(),
+    whenToSeeDoctor: z.array(z.string()).optional(),
+    // Educational sections for expandable content
+    educationalSections: z.array(z.object({
+      id: z.string(),
+      title: z.string(),
+      summary: z.string().optional(),
+      badge: z.string().optional(),
+      defaultExpanded: z.boolean().optional(),
+      variant: z.enum(['default', 'educational', 'technical']).optional(),
+    })).optional(),
   }),
 });
 
@@ -181,6 +228,7 @@ const blog = defineCollection({
     category: z.array(z.string()),
     tags: z.array(z.string()),
     publishDate: z.date(),
+    lastReviewed: z.date(),
     // Dual attribution model
     writtenBy: z.string(), // Primary author
     writtenByCredentials: z.string(), // Primary author credentials
@@ -200,6 +248,53 @@ const blog = defineCollection({
       answer: z.string(),
     })).optional(),
     featured: z.boolean().default(false),
+    // Decision-first guide fields (new architecture)
+    quickAnswer: z.string().optional(), // Direct answer to main question
+    tldrPoints: z.array(z.string()).optional(), // Quick takeaways for TheAnswer component
+    timeToRead: z.string().optional(), // e.g., "2 min"
+    primaryCTA: z.object({
+      text: z.string(),
+      href: z.string(),
+      subtext: z.string().optional(),
+    }).optional(),
+    quickNavSections: z.array(z.object({
+      id: z.string(),
+      label: z.string(),
+      icon: z.string().optional(),
+    })).optional(),
+    // Treatment options data
+    treatmentOptions: z.array(z.object({
+      name: z.string(),
+      description: z.string(),
+      effectiveness: z.string().optional(),
+      speed: z.string().optional(),
+      cost: z.string().optional(),
+      availability: z.string().optional(),
+    })).optional(),
+    topServices: z.array(z.object({
+      name: z.string(),
+      brandSlug: z.string(),
+      affiliateId: z.string(),
+      rating: z.number(),
+      price: z.string(),
+      bestFor: z.string(),
+      highlights: z.array(z.string()),
+      badge: z.string().optional(),
+    })).optional(),
+    // Qualification checker data
+    goodCandidateIf: z.array(z.string()).optional(),
+    notRightIf: z.array(z.string()).optional(),
+    whenToSeeDoctorTitle: z.string().optional(),
+    whenToSeeDoctor: z.array(z.string()).optional(),
+    // Educational sections for expandable content
+    educationalSections: z.array(z.object({
+      id: z.string(),
+      title: z.string(),
+      summary: z.string().optional(),
+      badge: z.string().optional(),
+      defaultExpanded: z.boolean().optional(),
+      variant: z.enum(['default', 'educational', 'technical']).optional(),
+    })).optional(),
   }),
 });
 

@@ -1,7 +1,8 @@
 ---
 title: "GLP-1 Side Effects: Month-by-Month Reality 2025"
 description: "You're terrified of starting semaglutide/Wegovy because of side effects. Here's the truth: Weeks 5-8 are brutal (50-60% get nausea), then it gets 70-80% better by month 3. Here's exactly what to expect and what you can control."
-publishDate: 2025-01-24
+publishDate: 2024-06-13
+lastReviewed: 2025-01-15
 category: ["weight-loss"]
 tags: ["weight-loss", "medications", "side-effects"]
 featured: false

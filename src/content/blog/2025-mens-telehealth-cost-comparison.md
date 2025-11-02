@@ -3,7 +3,8 @@ title: "Men's Telehealth Cost Comparison: What You'll Pay 2025"
 description: "Comprehensive breakdown of real costs for men's telehealth services including ED treatment, hair loss, TRT, and weight loss with price comparisons across Hims, Ro, BlueChew, and more."
 category: ["general", "sexual-health", "hair-health"]
 tags: ["cost comparison", "telehealth pricing", "mens health"]
-publishDate: 2025-01-15T00:00:00.000Z
+publishDate: 2024-01-10
+lastReviewed: 2025-01-15
 featured: true
 writtenBy: "Layla Reyes"
 writtenByCredentials: "BCPA, MPH - Patient Advocate & Telehealth Specialist"

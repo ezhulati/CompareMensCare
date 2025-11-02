@@ -2,7 +2,7 @@
 title: "Male Pattern Baldness: Causes, Stages & Treatment 2025"
 description: "Complete guide to androgenetic alopecia (male pattern baldness) including genetics, DHT, Norwood scale stages, prevention strategies, and evidence-based treatments."
 category: "hair-health"
-publishDate: 2025-01-15
+publishDate: 2024-02-02
 lastReviewed: 2025-01-15
 featured: true
 summary: "Male pattern baldness (androgenetic alopecia) affects 50% of men by age 50 and 80% by age 70, caused by genetic sensitivity to DHT hormone. The condition follows predictable Norwood Scale stages from receding hairline to crown thinning. Early treatment with finasteride (85-90% effective) or minoxidil (60% effective) prevents progression—starting treatment in early stages (Norwood 2-3) provides best results."
