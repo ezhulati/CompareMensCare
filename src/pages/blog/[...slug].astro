@@ -295,9 +295,11 @@ const relatedPosts = allPosts
   )}
 
   <!-- Embedded Matcher Section -->
-  <EmbeddedMatcher
-    category={post.data.category[0] || 'general'}
-    title="Find Your Best Match"
-    description="Answer 2 quick questions to get personalized service recommendations"
-  />
+  <div class="container-custom max-w-7xl px-4">
+    <EmbeddedMatcher
+      category={post.data.category[0] || 'general'}
+      title="Find Your Best Match"
+      description="Answer 2 quick questions to get personalized service recommendations"
+    />
+  </div>
 </BaseLayout>
