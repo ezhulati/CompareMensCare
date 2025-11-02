@@ -28,3 +28,7 @@ pnpm-debug.log*
 # Astro
 .astro/
 .vercel
+
+# Playwright test results
+test-results/
+playwright-report/

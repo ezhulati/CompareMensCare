@@ -22,6 +22,148 @@ keyTakeaways:
   - "Telehealth services provide convenient, discreet ED treatment with online consultations and home delivery for $4-49/month, making treatment more accessible."
   - "Combining medication with lifestyle changes (exercise, weight loss, smoking cessation) provides the best outcomes for long-term erectile function."
   - "Psychological factors like stress, anxiety, and depression cause ED in many younger men—therapy combined with medication often provides best results."
+
+# Decision-First Guide Fields
+quickAnswer: "Start with an online consultation through a licensed telehealth service (Hims, Ro, or BlueChew) to get a prescription for FDA-approved ED medication (sildenafil or tadalafil) within 24 hours. These medications are 70-85% effective for most men, cost $4-49/month, and are delivered discreetly to your door. If symptoms persist for several weeks, consider seeing a doctor in person to rule out underlying cardiovascular or hormonal issues."
+tldrPoints:
+  - "Get ED medication online in 24 hours through telehealth ($4-49/month)"
+  - "Sildenafil (Viagra) and tadalafil (Cialis) are 70-85% effective for most men"
+  - "See a doctor if ED persists beyond a few weeks—could indicate heart problems"
+  - "Combine medication with lifestyle changes for best long-term results"
+timeToRead: "3 min"
+primaryCTA:
+  text: "Find Your Best ED Treatment →"
+  href: "/#matcher"
+  subtext: "Answer 3 questions to get personalized service recommendations"
+quickNavSections:
+  - id: "the-answer"
+    label: "The Answer"
+    icon: "✓"
+  - id: "treatment-options"
+    label: "Your Options"
+  - id: "qualification"
+    label: "Am I a Candidate?"
+  - id: "understanding-ed"
+    label: "Understanding ED"
+  - id: "full-details"
+    label: "Full Details"
+
+# Treatment Options Data
+treatmentOptions:
+  - name: "Sildenafil (Viagra)"
+    description: "First-line ED medication"
+    effectiveness: "70-85%"
+    speed: "30-60 min onset"
+    cost: "$4-$20/dose"
+    availability: "Online or in-person Rx"
+  - name: "Tadalafil (Cialis)"
+    description: "Long-lasting ED medication"
+    effectiveness: "70-85%"
+    speed: "30 min onset, lasts 36h"
+    cost: "$8-$49/month"
+    availability: "Online or in-person Rx"
+  - name: "Lifestyle Changes"
+    description: "Exercise, diet, stress management"
+    effectiveness: "40-60% (mild ED)"
+    speed: "2-3 months to see results"
+    cost: "Free"
+    availability: "Start immediately"
+  - name: "Testosterone Therapy"
+    description: "For low T contributing to ED"
+    effectiveness: "20-30% (when low T confirmed)"
+    speed: "4-6 weeks"
+    cost: "$50-$500/month"
+    availability: "Requires blood test & Rx"
+
+topServices:
+  - name: "Hims"
+    brandSlug: "hims"
+    affiliateId: "hims"
+    rating: 4.5
+    price: "$4-49/mo"
+    bestFor: "Best overall for affordability and flexibility"
+    highlights:
+      - "Sildenafil as low as $4/dose"
+      - "Same-day online consultations"
+      - "Combination treatment options"
+    badge: "Best Value"
+  - name: "Ro"
+    brandSlug: "ro"
+    affiliateId: "ro"
+    rating: 4.6
+    price: "$20-85/mo"
+    bestFor: "Best for premium telehealth experience"
+    highlights:
+      - "Comprehensive health tracking"
+      - "Ongoing physician support"
+      - "Flexible dosing options"
+  - name: "BlueChew"
+    brandSlug: "bluechew"
+    affiliateId: "bluechew"
+    rating: 4.4
+    price: "$20-90/mo"
+    bestFor: "Best for chewable medications"
+    highlights:
+      - "Chewable sildenafil & tadalafil"
+      - "Subscription model"
+      - "Discreet monthly delivery"
+
+# Qualification Data
+goodCandidateIf:
+  - "You're experiencing consistent difficulty getting or maintaining erections for several weeks"
+  - "You're generally healthy with no major cardiovascular issues"
+  - "You're not taking nitrate medications (nitroglycerin) for heart conditions"
+  - "You're looking for a convenient, discreet way to address ED"
+  - "You want to combine medication with lifestyle improvements"
+  - "You're comfortable with online consultations and home delivery"
+
+notRightIf:
+  - "You have severe cardiovascular disease or recently had a heart attack/stroke"
+  - "You're taking nitrate medications (dangerous interaction with ED meds)"
+  - "You have uncontrolled high blood pressure (above 170/110)"
+  - "You have severe liver or kidney disease"
+  - "You're under 18 years old"
+  - "ED developed suddenly alongside chest pain (seek emergency care immediately)"
+
+whenToSeeDoctorTitle: "When to See a Doctor Immediately"
+whenToSeeDoctor:
+  - "ED developed suddenly along with chest pain, shortness of breath, or dizziness (possible heart issue)"
+  - "You're experiencing painful erections or erections lasting more than 4 hours (priapism)"
+  - "ED is accompanied by difficulty urinating or blood in urine"
+  - "You have numbness in the genital area or loss of bladder control"
+  - "ED started after pelvic injury or surgery"
+
+# Educational Sections (Expandable)
+educationalSections:
+  - id: "understanding-ed"
+    title: "Understanding Erectile Dysfunction"
+    summary: "Learn what ED is, how common it is, and how erections normally work"
+    badge: "Basics"
+    defaultExpanded: false
+    variant: "educational"
+  - id: "causes"
+    title: "What Causes ED?"
+    summary: "Physical and psychological factors that contribute to erectile dysfunction"
+    badge: "Deep Dive"
+    defaultExpanded: false
+    variant: "educational"
+  - id: "diagnosis"
+    title: "Diagnosis & Testing"
+    summary: "How doctors diagnose ED and what tests you might need"
+    defaultExpanded: false
+    variant: "technical"
+  - id: "all-treatments"
+    title: "Complete Treatment Guide"
+    summary: "Full breakdown of all ED treatment options including devices, procedures, and therapy"
+    badge: "Comprehensive"
+    defaultExpanded: false
+    variant: "educational"
+  - id: "living-with-ed"
+    title: "Living with ED: Communication & Expectations"
+    summary: "Managing ED in relationships and what to do when first-line treatments don't work"
+    defaultExpanded: false
+    variant: "default"
+
 faqs:
   - question: "What is the main cause of erectile dysfunction?"
     answer: "ED has multiple causes, with cardiovascular issues being the most common in older men (narrowed blood vessels, high blood pressure, atherosclerosis). In men under 40, psychological factors (stress, anxiety, depression) are more common. Up to 75% of diabetic men develop ED due to nerve and blood vessel damage. Many cases involve a combination of physical and psychological factors."
@@ -43,6 +185,7 @@ faqs:
     answer: "Yes, when using licensed telehealth services that require medical consultations with licensed physicians. Legitimate services (Hims, Ro, BlueChew) use FDA-approved medications, verify medical history, screen for contraindications, and provide ongoing physician access. Avoid unlicensed overseas pharmacies or services that don't require prescriptions. Telehealth ED treatment is legal, safe, and endorsed by medical organizations when properly regulated."
   - question: "What's the difference between Viagra and Cialis?"
     answer: "Viagra (sildenafil) works in 30-60 minutes, lasts 4-6 hours, and is taken on-demand before sex. Cialis (tadalafil) works in 30 minutes but lasts up to 36 hours, allowing more spontaneity. Cialis also comes in low daily doses (2.5-5mg) for continuous effectiveness. Both are 70-85% effective and work similarly by increasing blood flow. Choose based on timing preference: Viagra for planned sex, Cialis for weekend flexibility or daily use."
+
 citations:
   - title: "Erectile Dysfunction: AUA Guideline"
     url: "https://www.auanet.org/guidelines/erectile-dysfunction-(ed)-guideline"
@@ -53,11 +196,14 @@ citations:
   - title: "Oral phosphodiesterase-5 inhibitors and hormonal treatments for erectile dysfunction: A systematic review and meta-analysis"
     url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3036019/"
     source: "PubMed Central"
+
 writtenBy: "Kai Nakano"
 writtenByCredentials: "Health Journalist & Men's Health Specialist"
 medicalReviewer: "Dr. Amara Okonkwo"
 medicalReviewerCredentials: "PharmD, BCPS - Clinical Pharmacotherapy Specialist"
 ---
+
+<div id="understanding-ed">
 
 ## What Is Erectile Dysfunction?
 
@@ -99,6 +245,10 @@ The erection is maintained as long as sexual stimulation continues and blood flo
 The blood vessels constrict, allowing blood to flow out, and the penis returns to its flaccid state.
 
 **ED occurs when any step in this process is disrupted.**
+
+</div>
+
+<div id="causes">
 
 ## Causes of Erectile Dysfunction
 
@@ -180,6 +330,10 @@ ED can create a vicious cycle:
 
 Breaking this cycle often requires both physical treatment and psychological support.
 
+</div>
+
+<div id="diagnosis">
+
 ## Symptoms and Diagnosis
 
 ### Symptoms of ED
@@ -188,15 +342,6 @@ Breaking this cycle often requires both physical treatment and psychological sup
 - **Reduced sexual desire** (may indicate hormonal issues)
 
 Occasional erectile difficulties are normal and don't constitute ED.
-
-### When to See a Doctor
-
-See a healthcare provider if:
-- ED persists for several weeks or months
-- You have other symptoms (chest pain, urinary problems)
-- ED developed suddenly (may indicate underlying health issue)
-- You're concerned about your erections or sex life
-- ED is causing stress or relationship problems
 
 ### How ED Is Diagnosed
 
@@ -223,9 +368,11 @@ Your doctor will ask about:
 - **Ultrasound**: Evaluates blood flow to the penis
 - **Psychological evaluation**: If psychological factors suspected
 
-## Treatment Options for Erectile Dysfunction
+</div>
 
-The good news: ED is highly treatable. Treatment success rates are very high with modern options.
+<div id="all-treatments">
+
+## Complete Treatment Options
 
 ### Oral Medications (PDE5 Inhibitors)
 
@@ -317,24 +464,9 @@ Often most effective to combine approaches:
 - Medication + psychological therapy
 - TRT + PDE5 inhibitors (if appropriate)
 
-## Modern Telehealth Options
+</div>
 
-Convenient online platforms now offer ED treatment with discreet online consultations, medications delivered to your door, and often more affordable pricing than traditional healthcare.
-
-### Our Top Recommendations
-
-**Best Overall:** [**Hims**](/hims) offers comprehensive ED treatment with affordable pricing ($4-49/month), same-day consultations, and flexible medication options including sildenafil, tadalafil, and combination treatments. Great for most men seeking convenient, affordable care.
-
-**Best for Budget:** [**BlueChew**](/bluechew) provides chewable ED medications at the lowest monthly cost ($20-90/month) with a subscription model. Perfect if you want affordable on-demand treatment without insurance.
-
-**Best Telehealth Experience:** [**Ro**](/ro) delivers premium care with flexible dosing options, ongoing physician support, and comprehensive health tracking. Ideal if you want the most thorough online medical care and don't mind paying slightly more.
-
-**International Options:**
-- [**Manual**](/manual) (UK) - Discreet care for UK residents
-- [**Numan**](/numan) (UK) - Comprehensive men's health platform
-- [**healthyMale**](/healthymale) (Australia) - Trusted Australian telehealth
-
-See our complete [ED treatment service comparison](/sexual-health) to find the best fit for your needs and budget.
+<div id="living-with-ed">
 
 ## Living with Erectile Dysfunction
 
@@ -357,6 +489,8 @@ If first-line treatments fail:
 - Explore combination therapies
 - Consider penile injections or implants
 - Consult a urologist or ED specialist
+
+</div>
 
 ## The Bottom Line
 

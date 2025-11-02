@@ -19,7 +19,9 @@ const { compact = false } = Astro.props;
     </p>
   </div>
 ) : (
-  <div class="privacy-assurance mb-8">
+  <section class="py-12 bg-purple-50/30">
+    <div class="container-custom max-w-4xl">
+      <div class="privacy-assurance px-4">
     <div class="privacy-assurance-header">
       <Shield class="privacy-assurance-icon" />
       <span>Your Privacy Matters</span>
@@ -68,5 +70,7 @@ const { compact = false } = Astro.props;
         Learn more about <a href="/privacy" class="font-semibold hover:underline">how we protect your privacy →</a>
       </p>
     </div>
-  </div>
+      </div>
+    </div>
+  </section>
 )}

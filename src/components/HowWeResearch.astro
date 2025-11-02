@@ -47,62 +47,98 @@ const formatDate = (date: Date) => {
     </div>
   </div>
 ) : (
-  <!-- Full Version -->
-  <div class="how-we-research bg-white border-2 border-brand-accent/20 rounded-lg p-8 my-8">
-    <div class="flex items-center gap-3 mb-6">
-      <svg class="w-8 h-8 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-      </svg>
-      <h3 class="font-bold text-slate-900">How We Research This Guide</h3>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-4 mb-6">
-      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
-        <div class="text-3xl font-bold text-blue-600 mb-1">{hoursSpent}+</div>
-        <div class="text-sm font-medium text-blue-900">Hours of Research</div>
-      </div>
-      <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 text-center">
-        <div class="text-3xl font-bold text-emerald-600 mb-1">{sourcesReviewed}+</div>
-        <div class="text-sm font-medium text-emerald-900">Sources Reviewed</div>
-      </div>
-      {lastUpdated && (
-        <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 text-center">
-          <div class="text-lg font-bold text-purple-600 mb-1">{formatDate(lastUpdated)}</div>
-          <div class="text-sm font-medium text-purple-900">Last Updated</div>
+  <!-- Full Version (Accordion) -->
+  <div class="how-we-research bg-white border-2 border-brand-accent/20 rounded-lg my-8">
+    <!-- Accordion Header (Always Visible) -->
+    <button
+      type="button"
+      class="research-toggle w-full p-8 text-left flex items-center justify-between hover:bg-slate-50 transition-colors rounded-lg"
+      aria-expanded="false"
+    >
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-6">
+          <svg class="w-8 h-8 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+          </svg>
+          <h3 class="text-2xl font-bold text-slate-900">How We Research This Guide</h3>
         </div>
-      )}
-    </div>
 
-    <div class="space-y-4 text-sm text-slate-700">
-      <div class="flex gap-3">
-        <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-        </svg>
-        <p><strong>Direct Source Verification:</strong> All pricing and service information is collected directly from provider websites and verified monthly.</p>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+            <div class="text-3xl font-bold text-blue-600 mb-1">{hoursSpent}+</div>
+            <div class="text-sm font-medium text-blue-900">Hours of Research</div>
+          </div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 text-center">
+            <div class="text-3xl font-bold text-emerald-600 mb-1">{sourcesReviewed}+</div>
+            <div class="text-sm font-medium text-emerald-900">Sources Reviewed</div>
+          </div>
+          {lastUpdated && (
+            <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 text-center">
+              <div class="text-lg font-bold text-purple-600 mb-1">{formatDate(lastUpdated)}</div>
+              <div class="text-sm font-medium text-purple-900">Last Updated</div>
+            </div>
+          )}
+        </div>
       </div>
 
-      <div class="flex gap-3">
-        <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-        </svg>
-        <p><strong>Evidence-Based Medical Information:</strong> Health information is sourced from peer-reviewed research published in medical journals, NIH databases, and clinical guidelines.</p>
-      </div>
+      <svg class="research-chevron w-6 h-6 text-slate-500 transition-transform ml-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
 
-      <div class="flex gap-3">
-        <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-        </svg>
-        <p><strong>User Experience Analysis:</strong> We analyze verified user reviews from Trustpilot, Better Business Bureau, and Reddit to identify common experiences.</p>
-      </div>
+    <!-- Accordion Content (Expandable) -->
+    <div class="research-content hidden px-8 pb-8">
+      <div class="space-y-4 text-sm text-slate-700 border-t border-slate-200 pt-6">
+        <div class="flex gap-3">
+          <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <p><strong>Direct Source Verification:</strong> All pricing and service information is collected directly from provider websites and verified monthly.</p>
+        </div>
 
-      <div class="flex gap-3">
-        <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-        </svg>
-        <p><strong>Transparent Methodology:</strong> Our comparison criteria and rating system are fully documented. See our <a href="/methodology" class="text-brand-accent hover:underline font-semibold">methodology page</a> for complete details.</p>
+        <div class="flex gap-3">
+          <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <p><strong>Evidence-Based Medical Information:</strong> Health information is sourced from peer-reviewed research published in medical journals, NIH databases, and clinical guidelines.</p>
+        </div>
+
+        <div class="flex gap-3">
+          <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <p><strong>User Experience Analysis:</strong> We analyze verified user reviews from Trustpilot, Better Business Bureau, and Reddit to identify common experiences.</p>
+        </div>
+
+        <div class="flex gap-3">
+          <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <p><strong>Transparent Methodology:</strong> Our comparison criteria and rating system are fully documented. See our <a href="/methodology" class="text-brand-accent hover:underline font-semibold">methodology page</a> for complete details.</p>
+        </div>
       </div>
     </div>
   </div>
+
+  <script>
+    // Research accordion toggle
+    document.querySelectorAll('.research-toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const content = toggle.nextElementSibling as HTMLElement;
+        const chevron = toggle.querySelector('.research-chevron');
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+        // Toggle visibility
+        content?.classList.toggle('hidden');
+
+        // Rotate chevron
+        chevron?.classList.toggle('rotate-180');
+
+        // Update aria-expanded
+        toggle.setAttribute('aria-expanded', String(!isExpanded));
+      });
+    });
+  </script>
 )}
 
 <style>
