@@ -1,0 +1,187 @@
+---
+/**
+ * Table of Contents Component
+ *
+ * Desktop: Sticky right sidebar with scroll spy
+ * Mobile: Expandable accordion at top of article
+ *
+ * Features:
+ * - Auto-generated from headings
+ * - Active section highlighting
+ * - Smooth scroll navigation
+ * - Sticky positioning on scroll
+ */
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+}
+
+const { headings } = Astro.props;
+
+// Filter to only show h2 (top-level sections) for cleaner TOC
+const tocHeadings = headings.filter(h => h.depth === 2);
+---
+
+{tocHeadings.length > 0 && (
+  <>
+    <!-- Mobile TOC - Expandable at top -->
+    <div class="lg:hidden mb-8">
+      <button
+        type="button"
+        class="toc-mobile-toggle w-full flex items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-xl hover:bg-slate-100 transition-colors"
+        aria-expanded="false"
+      >
+        <div class="flex items-center gap-3">
+          <svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+          <span class="font-semibold text-slate-900">On This Page</span>
+          <span class="text-xs text-slate-500">({tocHeadings.length} sections)</span>
+        </div>
+        <svg class="toc-mobile-chevron w-5 h-5 text-slate-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      <div class="toc-mobile-content hidden mt-3 p-4 bg-white border border-slate-200 rounded-xl">
+        <nav class="toc-nav space-y-1">
+          {tocHeadings.map((heading) => (
+            <a
+              href={`#${heading.slug}`}
+              class="toc-link block py-2 px-3 text-sm font-medium text-slate-900 rounded-lg transition-all hover:bg-slate-50"
+              data-heading-id={heading.slug}
+            >
+              {heading.text}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </div>
+
+    <!-- Desktop TOC - Sticky Sidebar -->
+    <aside class="hidden lg:block">
+      <div class="sticky top-6 z-10">
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-soft">
+            <div class="flex items-center gap-2 mb-4 pb-3 border-b border-slate-200">
+              <svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+              </svg>
+              <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wide">On This Page</h2>
+            </div>
+
+            <nav class="toc-nav space-y-1">
+              {tocHeadings.map((heading) => (
+                <a
+                  href={`#${heading.slug}`}
+                  class="toc-link block py-2 px-3 text-sm font-medium text-slate-700 rounded-lg transition-all border-l-2 border-transparent hover:border-brand-accent hover:bg-slate-50"
+                  data-heading-id={heading.slug}
+                >
+                  {heading.text}
+                </a>
+              ))}
+            </nav>
+        </div>
+      </div>
+    </aside>
+  </>
+)}
+
+<script>
+  // Mobile TOC toggle
+  const mobileToggle = document.querySelector('.toc-mobile-toggle');
+  const mobileContent = document.querySelector('.toc-mobile-content');
+  const mobileChevron = document.querySelector('.toc-mobile-chevron');
+
+  if (mobileToggle && mobileContent && mobileChevron) {
+    mobileToggle.addEventListener('click', () => {
+      const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+
+      mobileToggle.setAttribute('aria-expanded', String(!isExpanded));
+      mobileContent.classList.toggle('hidden');
+      mobileChevron.classList.toggle('rotate-180');
+    });
+  }
+
+  // Smooth scroll for TOC links
+  const tocLinks = document.querySelectorAll('.toc-link');
+
+  tocLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href')?.substring(1);
+      if (!targetId) return;
+
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const offset = 100; // Account for sticky header
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+
+        // Close mobile TOC after click
+        if (mobileContent && !mobileContent.classList.contains('hidden')) {
+          mobileContent.classList.add('hidden');
+          mobileChevron?.classList.remove('rotate-180');
+          mobileToggle?.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+  });
+
+  // Scroll spy - highlight active section
+  const observerOptions = {
+    rootMargin: '-100px 0px -66%',
+    threshold: 0
+  };
+
+  const headingObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const headingId = entry.target.id;
+      const tocLink = document.querySelector(`.toc-link[data-heading-id="${headingId}"]`);
+
+      if (!tocLink) return;
+
+      if (entry.isIntersecting) {
+        // Remove active state from all links
+        document.querySelectorAll('.toc-link').forEach(link => {
+          link.classList.remove('toc-link-active', 'bg-blue-50', 'border-brand-accent', 'text-brand-accent');
+        });
+
+        // Add active state to current link
+        tocLink.classList.add('toc-link-active', 'bg-blue-50', 'border-brand-accent', 'text-brand-accent');
+      }
+    });
+  }, observerOptions);
+
+  // Observe all headings that are in the TOC
+  const observedHeadings = Array.from(tocLinks).map(link => {
+    const headingId = link.getAttribute('data-heading-id');
+    return headingId ? document.getElementById(headingId) : null;
+  }).filter(Boolean);
+
+  observedHeadings.forEach(heading => {
+    if (heading) {
+      headingObserver.observe(heading);
+    }
+  });
+</script>
+
+<style>
+  /* Smooth transition for active state */
+  .toc-link {
+    transition: all 0.2s ease;
+  }
+
+  .toc-link-active {
+    font-weight: 600;
+  }
+</style>

@@ -106,6 +106,7 @@ export default {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
+        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -119,6 +120,10 @@ export default {
         scaleIn: {
           '0%': { transform: 'scale(0.95)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        pulseGlow: {
+          '0%, 100%': { boxShadow: '0 0 40px rgba(0, 102, 204, 0.2), 0 8px 24px rgba(0, 102, 204, 0.15)' },
+          '50%': { boxShadow: '0 0 60px rgba(0, 102, 204, 0.3), 0 12px 32px rgba(0, 102, 204, 0.2)' },
         },
       },
       backdropBlur: {

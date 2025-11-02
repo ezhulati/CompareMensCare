@@ -8,6 +8,8 @@ import QuickSummary from '../../components/QuickSummary.astro';
 import HowWeResearch from '../../components/HowWeResearch.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import KeyTakeaways from '../../components/KeyTakeaways.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+import EmbeddedMatcher from '../../components/EmbeddedMatcher.astro';
 import { formatDate } from '../../utils/helpers';
 import { getAuthorByName } from '../../data/authors';
 
@@ -23,7 +25,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 
 // Get author data for headshot
 const authorData = getAuthorByName(post.data.writtenBy);
@@ -100,7 +102,16 @@ const relatedPosts = allPosts
 
   <!-- Article Header -->
   <article class="py-12 bg-white">
-    <div class="container-custom max-w-4xl">
+    <div class="container-custom max-w-7xl">
+      <!-- Mobile TOC -->
+      <div class="lg:hidden max-w-4xl mx-auto px-4">
+        <TableOfContents headings={headings} />
+      </div>
+
+      <!-- 2-Column Layout: Content + Sidebar TOC -->
+      <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+        <!-- Main Content Column -->
+        <div class="lg:col-span-8 max-w-4xl">
       <!-- Category Tags -->
       <div class="flex flex-wrap gap-2 mb-6 px-4">
         {post.data.category.map((cat) => (
@@ -111,9 +122,20 @@ const relatedPosts = allPosts
       </div>
 
       <!-- Title -->
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
-        {post.data.title}
-      </h1>
+      {post.data.title.includes(':') ? (
+        <div class="px-4 mb-4 sm:mb-6">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+            {post.data.title.split(':')[0].trim()}
+          </h1>
+          <p class="text-xl sm:text-2xl md:text-3xl text-slate-600 mt-2 sm:mt-3 leading-snug">
+            {post.data.title.split(':')[1].trim()}
+          </p>
+        </div>
+      ) : (
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
+          {post.data.title}
+        </h1>
+      )}
 
       <!-- Meta Info -->
       <div class="flex flex-wrap items-center gap-4 text-sm text-slate-600 mb-8 pb-8 border-b border-slate-200">
@@ -236,6 +258,15 @@ const relatedPosts = allPosts
           </div>
         </div>
       )}
+        </div>
+        <!-- End Main Content Column -->
+
+        <!-- TOC Sidebar Column (Desktop Only) -->
+        <div class="lg:col-span-4">
+          <TableOfContents headings={headings} />
+        </div>
+      </div>
+      <!-- End 2-Column Grid -->
     </div>
   </article>
 
@@ -263,21 +294,10 @@ const relatedPosts = allPosts
     </section>
   )}
 
-  <!-- CTA Section -->
-  <section class="section bg-white border-t border-slate-200">
-    <div class="container-custom max-w-4xl text-center">
-      <h2 class="text-3xl font-bold text-slate-900 mb-4">
-        Ready to Compare Services?
-      </h2>
-      <p class="text-base sm:text-lg lg:text-xl text-slate-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-        Find the best telehealth service for your needs with our comparison tools.
-      </p>
-      <a href="/" class="btn-primary inline-flex items-center gap-2">
-        Start Comparing
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-        </svg>
-      </a>
-    </div>
-  </section>
+  <!-- Embedded Matcher Section -->
+  <EmbeddedMatcher
+    category={post.data.category[0] || 'general'}
+    title="Find Your Best Match"
+    description="Answer 2 quick questions to get personalized service recommendations"
+  />
 </BaseLayout>

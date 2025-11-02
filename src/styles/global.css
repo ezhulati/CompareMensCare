@@ -100,7 +100,7 @@
 
   .btn-primary:hover:not(:disabled) {
     @apply bg-gradient-primary-hover shadow-glow-blue;
-    transform: translateY(-1px);
+    transform: translateY(-3px) scale(1.02);
   }
 
   .btn-primary:active:not(:disabled) {
@@ -136,8 +136,8 @@
   }
 
   .card-hover:hover {
-    @apply border-medical-blue-200 shadow-medium;
-    transform: translateY(-2px) scale(1.005);
+    @apply border-medical-blue-200 shadow-strong;
+    transform: translateY(-4px) scale(1.01);
   }
 
   .card-elevated {
@@ -167,7 +167,7 @@
 
   .card-featured:hover {
     @apply shadow-glow-blue-strong;
-    transform: translateY(-2px);
+    transform: translateY(-4px) scale(1.01);
   }
 
   /* Card Spacing Variants - Responsive padding system */
@@ -258,44 +258,47 @@
   }
 
   .quick-pick-card-budget {
-    @apply quick-pick-card border-l-emerald-500 bg-gradient-emerald-soft shadow-soft;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 0 20px rgba(16, 185, 129, 0.03);
+    @apply quick-pick-card border-l-emerald-500 bg-gradient-emerald-medium shadow-soft;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 0 30px rgba(16, 185, 129, 0.06);
   }
 
   .quick-pick-card-budget:hover {
-    @apply bg-gradient-emerald-medium shadow-glow-emerald;
-    transform: translateY(-2px);
+    @apply shadow-glow-emerald;
+    background-image: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, white 100%);
+    transform: translateY(-4px) scale(1.02);
   }
 
   .quick-pick-card-privacy {
-    @apply quick-pick-card border-l-purple-500 bg-gradient-purple-soft shadow-soft;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 0 20px rgba(139, 92, 246, 0.03);
+    @apply quick-pick-card border-l-purple-500 bg-gradient-purple-medium shadow-soft;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 0 30px rgba(139, 92, 246, 0.06);
   }
 
   .quick-pick-card-privacy:hover {
-    @apply bg-gradient-purple-medium shadow-glow-purple;
-    transform: translateY(-2px);
+    @apply shadow-glow-purple;
+    background-image: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, white 100%);
+    transform: translateY(-4px) scale(1.02);
   }
 
   .quick-pick-card-speed {
-    @apply quick-pick-card border-l-amber-500 bg-gradient-amber-soft shadow-soft;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 0 20px rgba(245, 158, 11, 0.03);
+    @apply quick-pick-card border-l-amber-500 bg-gradient-amber-medium shadow-soft;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 0 30px rgba(245, 158, 11, 0.06);
   }
 
   .quick-pick-card-speed:hover {
-    @apply bg-gradient-amber-medium;
-    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.12), inset 0 0 40px rgba(245, 158, 11, 0.06);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15), inset 0 0 50px rgba(245, 158, 11, 0.08);
+    background-image: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, white 100%);
+    transform: translateY(-4px) scale(1.02);
   }
 
   .quick-pick-card-quality {
-    @apply quick-pick-card border-l-blue-500 bg-gradient-blue-soft shadow-soft;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 0 20px rgba(0, 102, 204, 0.03);
+    @apply quick-pick-card border-l-blue-500 bg-gradient-blue-medium shadow-soft;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 0 30px rgba(0, 102, 204, 0.06);
   }
 
   .quick-pick-card-quality:hover {
-    @apply bg-gradient-blue-medium shadow-glow-blue;
-    transform: translateY(-2px);
+    @apply shadow-glow-blue;
+    background-image: linear-gradient(135deg, rgba(0, 102, 204, 0.12) 0%, white 100%);
+    transform: translateY(-4px) scale(1.02);
   }
 
   .quick-pick-label {

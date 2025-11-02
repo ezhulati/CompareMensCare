@@ -8,6 +8,13 @@ import QuickSummary from '../../components/QuickSummary.astro';
 import HowWeResearch from '../../components/HowWeResearch.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import KeyTakeaways from '../../components/KeyTakeaways.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+import QuickNav from '../../components/QuickNav.astro';
+import TheAnswer from '../../components/TheAnswer.astro';
+import TreatmentOptions from '../../components/TreatmentOptions.astro';
+import QualificationChecker from '../../components/QualificationChecker.astro';
+import ExpandableSection from '../../components/ExpandableSection.astro';
+import EmbeddedMatcher from '../../components/EmbeddedMatcher.astro';
 import { formatDate, getCategoryName } from '../../utils/helpers';
 import { getAuthorByName } from '../../data/authors';
 
@@ -23,7 +30,7 @@ export async function getStaticPaths() {
 }
 
 const { guide } = Astro.props;
-const { Content } = await guide.render();
+const { Content, headings } = await guide.render();
 
 // Get author data for headshot
 const authorData = getAuthorByName(guide.data.writtenBy);
@@ -94,7 +101,16 @@ const articleSchema = {
 
   <!-- Article Header -->
   <article class="py-12 bg-white">
-    <div class="container-custom max-w-4xl">
+    <div class="container-custom max-w-7xl">
+      <!-- Mobile TOC -->
+      <div class="lg:hidden max-w-4xl mx-auto px-4">
+        <TableOfContents headings={headings} />
+      </div>
+
+      <!-- 2-Column Layout: Content + Sidebar TOC -->
+      <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+        <!-- Main Content Column -->
+        <div class="lg:col-span-8 max-w-4xl">
       <!-- Category Badge -->
       <div class="mb-6 px-4">
         <a
@@ -106,9 +122,20 @@ const articleSchema = {
       </div>
 
       <!-- Title -->
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
-        {guide.data.title}
-      </h1>
+      {guide.data.title.includes(':') ? (
+        <div class="px-4 mb-4 sm:mb-6">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+            {guide.data.title.split(':')[0].trim()}
+          </h1>
+          <p class="text-xl sm:text-2xl md:text-3xl text-slate-600 mt-2 sm:mt-3 leading-snug">
+            {guide.data.title.split(':')[1].trim()}
+          </p>
+        </div>
+      ) : (
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
+          {guide.data.title}
+        </h1>
+      )}
 
       <!-- Meta Info -->
       <div class="flex flex-wrap items-center gap-4 text-sm text-slate-600 mb-8 pb-8 border-b border-slate-200">
@@ -136,8 +163,50 @@ const articleSchema = {
         </div>
       </div>
 
-      <!-- Quick Summary (AI-SEO Optimization) -->
-      {guide.data.summary && guide.data.summaryPoints && (
+      <!-- Quick Nav (Decision-First Guides) -->
+      {guide.data.quickNavSections && guide.data.quickNavSections.length > 0 && (
+        <QuickNav sections={guide.data.quickNavSections} />
+      )}
+
+      <!-- The Answer (Decision-First Guides) -->
+      {guide.data.quickAnswer && (
+        <TheAnswer
+          question={guide.data.title.includes(':') ? guide.data.title.split(':')[0].trim() + '?' : `What should I know about ${guide.data.title}?`}
+          answer={guide.data.quickAnswer}
+          tldr={guide.data.tldrPoints}
+          cta={guide.data.primaryCTA}
+          timeToRead={guide.data.timeToRead}
+        />
+      )}
+
+      <!-- Treatment Options (Decision-First Guides) -->
+      {(guide.data.treatmentOptions || guide.data.topServices) && (
+        <TreatmentOptions
+          title="Your Treatment Options"
+          description="Compare effectiveness, speed, cost, and availability of different approaches"
+          comparisonTable={guide.data.treatmentOptions}
+          topServices={guide.data.topServices}
+          showComparison={guide.data.treatmentOptions && guide.data.treatmentOptions.length > 0}
+          showServices={guide.data.topServices && guide.data.topServices.length > 0}
+        />
+      )}
+
+      <!-- Qualification Checker (Decision-First Guides) -->
+      {guide.data.goodCandidateIf && guide.data.notRightIf && (
+        <QualificationChecker
+          title="Are You a Good Candidate?"
+          description="Quickly determine if this treatment approach is right for you"
+          goodCandidateIf={guide.data.goodCandidateIf}
+          notRightIf={guide.data.notRightIf}
+          whenToSeeDoctorTitle={guide.data.whenToSeeDoctorTitle}
+          whenToSeeDoctor={guide.data.whenToSeeDoctor}
+          ctaText={guide.data.primaryCTA?.text}
+          ctaHref={guide.data.primaryCTA?.href}
+        />
+      )}
+
+      <!-- Quick Summary (Legacy - AI-SEO Optimization) -->
+      {!guide.data.quickAnswer && guide.data.summary && guide.data.summaryPoints && (
         <div class="mb-8">
           <QuickSummary
             summary={guide.data.summary}
@@ -159,9 +228,121 @@ const articleSchema = {
       )}
 
       <!-- Article Content -->
-      <div class="prose prose-lg max-w-none">
+      <div class="prose prose-lg max-w-none" id="guide-content">
         <Content />
       </div>
+
+      <!-- Client-side script to wrap educational sections in expandable components -->
+      {guide.data.educationalSections && guide.data.educationalSections.length > 0 && (
+        <script define:vars={{ educationalSections: guide.data.educationalSections }}>
+          document.addEventListener('DOMContentLoaded', () => {
+            educationalSections.forEach((sectionMeta) => {
+              const sectionDiv = document.getElementById(sectionMeta.id);
+              if (!sectionDiv) return;
+
+              // Create wrapper
+              const wrapper = document.createElement('div');
+              wrapper.className = `expandable-section border-2 rounded-xl overflow-hidden mb-6 transition-all ${
+                sectionMeta.variant === 'educational' ? 'border-blue-200 bg-blue-50/30' :
+                sectionMeta.variant === 'technical' ? 'border-purple-200 bg-purple-50/30' :
+                'border-gray-200 bg-white'
+              }`;
+              wrapper.setAttribute('data-section-id', sectionMeta.id);
+
+              // Create header
+              const header = document.createElement('button');
+              header.type = 'button';
+              header.className = `expandable-header w-full px-6 py-5 flex items-center justify-between transition-colors ${
+                sectionMeta.variant === 'educational' ? 'bg-blue-50 hover:bg-blue-100' :
+                sectionMeta.variant === 'technical' ? 'bg-purple-50 hover:bg-purple-100' :
+                'bg-gray-50 hover:bg-gray-100'
+              }`;
+              header.setAttribute('aria-expanded', sectionMeta.defaultExpanded ? 'true' : 'false');
+              header.setAttribute('aria-controls', `${sectionMeta.id}-content`);
+
+              const headerContent = document.createElement('div');
+              headerContent.className = 'flex items-center gap-3 flex-1 text-left';
+
+              if (sectionMeta.badge) {
+                const badge = document.createElement('span');
+                badge.className = 'bg-brand-accent text-white text-xs font-bold px-2.5 py-1 rounded-full';
+                badge.textContent = sectionMeta.badge;
+                headerContent.appendChild(badge);
+              }
+
+              const titleDiv = document.createElement('div');
+              titleDiv.className = 'flex-1';
+
+              const title = document.createElement('h3');
+              title.className = 'text-xl font-bold text-gray-900 mb-1';
+              title.textContent = sectionMeta.title;
+              titleDiv.appendChild(title);
+
+              if (sectionMeta.summary) {
+                const summary = document.createElement('p');
+                summary.className = 'text-sm text-gray-600 leading-relaxed';
+                summary.textContent = sectionMeta.summary;
+                titleDiv.appendChild(summary);
+              }
+
+              headerContent.appendChild(titleDiv);
+              header.appendChild(headerContent);
+
+              const icon = document.createElement('div');
+              icon.className = 'ml-4 flex-shrink-0';
+              icon.innerHTML = `<svg class="expandable-icon w-6 h-6 text-gray-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>`;
+              header.appendChild(icon);
+
+              // Create content wrapper
+              const contentWrapper = document.createElement('div');
+              contentWrapper.id = `${sectionMeta.id}-content`;
+              contentWrapper.className = 'expandable-content';
+              contentWrapper.style.maxHeight = sectionMeta.defaultExpanded ? 'none' : '0';
+              contentWrapper.style.overflow = sectionMeta.defaultExpanded ? 'visible' : 'hidden';
+
+              const contentInner = document.createElement('div');
+              contentInner.className = 'px-6 py-6 prose prose-lg max-w-none';
+              contentInner.innerHTML = sectionDiv.innerHTML;
+              contentWrapper.appendChild(contentInner);
+
+              // Assemble wrapper
+              wrapper.appendChild(header);
+              wrapper.appendChild(contentWrapper);
+
+              // Replace original div
+              sectionDiv.parentNode.replaceChild(wrapper, sectionDiv);
+
+              // Add click handler
+              header.addEventListener('click', () => {
+                const isExpanded = header.getAttribute('aria-expanded') === 'true';
+
+                if (isExpanded) {
+                  header.setAttribute('aria-expanded', 'false');
+                  contentWrapper.style.maxHeight = '0';
+                  contentWrapper.style.overflow = 'hidden';
+                  icon.querySelector('svg').style.transform = 'rotate(0deg)';
+                } else {
+                  header.setAttribute('aria-expanded', 'true');
+                  contentWrapper.style.maxHeight = contentWrapper.scrollHeight + 'px';
+                  contentWrapper.style.overflow = 'visible';
+                  icon.querySelector('svg').style.transform = 'rotate(180deg)';
+
+                  setTimeout(() => {
+                    if (header.getAttribute('aria-expanded') === 'true') {
+                      contentWrapper.style.maxHeight = 'none';
+                    }
+                  }, 400);
+                }
+              });
+
+              // Set initial icon rotation
+              if (sectionMeta.defaultExpanded) {
+                icon.querySelector('svg').style.transform = 'rotate(180deg)';
+              }
+            });
+          });
+        </script>
+      )}
 
       <!-- Key Takeaways (AI-SEO Optimization) -->
       {guide.data.keyTakeaways && guide.data.keyTakeaways.length > 0 && (
@@ -236,24 +417,22 @@ const articleSchema = {
           </ol>
         </div>
       )}
+        </div>
+        <!-- End Main Content Column -->
+
+        <!-- TOC Sidebar Column (Desktop Only) -->
+        <div class="lg:col-span-4">
+          <TableOfContents headings={headings} />
+        </div>
+      </div>
+      <!-- End 2-Column Grid -->
     </div>
   </article>
 
-  <!-- CTA Section -->
-  <section class="section bg-slate-50 border-t border-slate-200">
-    <div class="container-custom max-w-4xl text-center">
-      <h2 class="text-3xl font-bold text-slate-900 mb-4">
-        Ready to Find Your Best Match?
-      </h2>
-      <p class="text-base sm:text-lg lg:text-xl text-slate-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-        Use our personalized matcher to find the right telehealth service for your needs.
-      </p>
-      <a href="/#matcher" class="btn-primary inline-flex items-center gap-2">
-        Find Your Match
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-        </svg>
-      </a>
-    </div>
-  </section>
+  <!-- Embedded Matcher Section -->
+  <EmbeddedMatcher
+    category={guide.data.category}
+    title="Find Your Best Match"
+    description="Answer 2 quick questions to get personalized service recommendations"
+  />
 </BaseLayout>
