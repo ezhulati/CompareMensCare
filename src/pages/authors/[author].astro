@@ -3,6 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getAuthor, getAllAuthors } from '../../data/authors';
 import { getCollection } from 'astro:content';
 
+// Enable prerendering for all author pages (faster, better SEO)
+export const prerender = true;
+
 export async function getStaticPaths() {
   const authors = getAllAuthors();
   return authors.map(author => ({
