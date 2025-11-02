@@ -167,6 +167,7 @@ const comparisons = defineCollection({
       feature: z.string(),
       brand1Value: z.string(),
       brand2Value: z.string(),
+      winner: z.enum(['1', '2', 'tie']).optional(),
     })),
   }),
 });
