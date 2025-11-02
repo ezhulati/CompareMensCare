@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import GuidedMatcher from '../components/GuidedMatcher.astro';
 import PersonalizedResults from '../components/PersonalizedResults.astro';
 import OrganizationSchema from '../components/OrganizationSchema.astro';
-import { Eye, ShieldCheck, Shield, Heart, Sparkles, Activity, TrendingDown, Brain, Stethoscope, Zap } from 'lucide-astro';
+import { Eye, ShieldCheck, Shield, Heart, Sparkles, Activity, TrendingDown, Brain, Stethoscope, Zap, Moon, AlertCircle } from 'lucide-astro';
 import { getCategoryIcon } from '../utils/helpers';
 
 const categories = [
@@ -49,6 +49,18 @@ const categories = [
     description: 'Know what\'s really going on. Lab-quality testing without the doctor visit.',
     providersCount: 1,
   },
+  {
+    title: 'Sleep & Insomnia',
+    slug: 'sleep',
+    description: 'Finally sleep through the night. Science-backed solutions for better rest.',
+    providersCount: 1,
+  },
+  {
+    title: 'Herpes Treatment',
+    slug: 'herpes',
+    description: 'Discreet treatment and prevention. Manage outbreaks with medical support.',
+    providersCount: 1,
+  },
 ];
 
 const categoryIcons: Record<string, any> = {
@@ -59,6 +71,8 @@ const categoryIcons: Record<string, any> = {
   'peptides': Zap,
   'mental-health': Brain,
   'diagnostics': Stethoscope,
+  'sleep': Moon,
+  'herpes': AlertCircle,
 };
 
 ---
@@ -213,7 +227,7 @@ const categoryIcons: Record<string, any> = {
             >
               <div class="flex items-start justify-between mb-3 sm:mb-4">
                 <div class="flex-1">
-                  <h3 class="font-heading font-bold mb-1.5 sm:mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
+                  <h3 class="font-heading font-bold text-base sm:text-lg mb-1.5 sm:mb-2 text-slate-900 group-hover:text-brand-accent transition-colors">
                     {category.title}
                   </h3>
                   <span class="text-xs sm:text-sm text-slate-500">
