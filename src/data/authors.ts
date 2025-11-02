@@ -47,7 +47,7 @@ export const AUTHORS: Record<string, Author> = {
       'National Association of Healthcare Advocacy (NAHAC)',
       'Alliance of Professional Health Advocates (APHA)'
     ],
-    image: '/images/layla_reyes.jpg'
+    image: '/images/layla-reyes.jpeg'
   },
 
   'henrik-johansson': {
@@ -80,7 +80,7 @@ export const AUTHORS: Record<string, Author> = {
       'AcademyHealth',
       'Former Policy Analyst, Kaiser Family Foundation'
     ],
-    image: '/images/henrik_johansson.jpg'
+    image: '/images/henrik-johansson.jpeg'
   },
 
   'kai-nakano': {
@@ -111,7 +111,7 @@ export const AUTHORS: Record<string, Author> = {
     affiliations: [
       'Association of Health Care Journalists (AHCJ)'
     ],
-    image: '/images/kai_nakano.jpg'
+    image: '/images/kai-nakano.jpeg'
   },
 
   'amara-okonkwo': {
@@ -145,7 +145,7 @@ export const AUTHORS: Record<string, Author> = {
       'American College of Clinical Pharmacy (ACCP)',
       'American Pharmacists Association (APhA)'
     ],
-    image: '/images/amara_okonkwo.jpg'
+    image: '/images/amara-okonkwo.jpeg'
   }
 };
 
